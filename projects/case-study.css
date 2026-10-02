@@ -32,7 +32,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 
 /* ── Header ── */
 .cs-header{width:var(--content);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;padding:28px 0}
-.cs-header__brand{font-family:var(--serif);font-size:26px;letter-spacing:-.04em}
+.cs-header__brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.01em}
 .cs-header__back{font-size:14px;color:var(--muted);transition:color .2s}
 .cs-header__back:hover{color:var(--fg)}
 
@@ -40,8 +40,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-hero{padding-top:clamp(72px,10vw,160px);margin-bottom:52px}
 .cs-hero__label{grid-column:1 / span 4;font-size:16px;color:var(--muted);padding-top:.35em}
 .cs-hero__head{grid-column:5 / span 6}
-.cs-hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-.02em}
-.cs-hero__thesis{margin-top:20px;max-width:376px;font-size:16px;line-height:1.2;color:var(--muted)}
+.cs-hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-.01em;max-width:376px;font-size:16px;line-height:1.2;color:var(--muted)}
 
 /* ── Carousel ── */
 .cs-carousel{
@@ -98,7 +97,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-story{grid-column:5 / span 5;padding-block:80px;display:flex;flex-direction:column;align-items:flex-start;gap:48px}
 .cs-story__text{font-size:clamp(26px,2.6vw,36px);line-height:1.1;max-width:620px}
 /* First sentence rendered as serif spans, rest as sans spans */
-.cs-story__text .s1{font-family:var(--serif);letter-spacing:-.02em}
+.cs-story__text .s1{font-family:var(--serif);letter-spacing:-.005em}
 .cs-story__text .s2{font-family:var(--sans);letter-spacing:0;font-size:.88em;line-height:1.35}
 .cs-story__text .w{display:inline-block;white-space:nowrap}
 .cs-story__text .c{color:var(--faint);transition:color .25s ease}
@@ -116,8 +115,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 /* ── More work flipbook ── */
 .cs-more{padding:clamp(80px,10vw,140px) 0 clamp(96px,12vw,160px)}
 .cs-more__head{width:var(--content);margin-inline:auto;margin-bottom:40px}
-.cs-more__title{font-family:var(--serif);font-weight:500;font-size:36px;line-height:1;letter-spacing:-.02em}
-.cs-more__sub{margin-top:10px;font-size:16px;color:var(--muted)}
+.cs-more__title{font-family:var(--serif);font-weight:500;font-size:36px;line-height:1;letter-spacing:-.01em;font-size:16px;color:var(--muted)}
 
 /* Horizontal scroll strip */
 .cs-related{
@@ -194,7 +192,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 
 .cs-read{width:min(490px,calc(100vw - 48px));margin:0 auto;padding:96px 0 120px}
 .cs-read p{font-family:var(--sans);font-size:clamp(17px,1.8vw,20px);line-height:1.6;color:rgba(247,247,242,.84);margin-bottom:1.4em}
-.cs-read p.first{font-family:var(--serif);font-size:clamp(24px,2.5vw,34px);line-height:1.05;letter-spacing:-.02em;color:var(--fg);margin-bottom:1.2em}
+.cs-read p.first{font-family:var(--serif);font-size:clamp(24px,2.5vw,34px);line-height:1.05;letter-spacing:-.005em;color:var(--fg);margin-bottom:1.2em}
 .cs-read hr{border:0;border-top:1px solid rgba(247,247,242,.16);margin:64px 0 32px}
 .cs-read dl{display:grid;grid-template-columns:140px 1fr;row-gap:16px;font-size:16px}
 .cs-read dt{color:var(--muted)}
