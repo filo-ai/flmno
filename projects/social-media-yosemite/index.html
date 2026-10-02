@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Media | flmno</title>
+  <link rel="stylesheet" href="../case-study.css">
+  <link rel="icon" type="image/gif" href="../../assets/favicon.gif">
+</head>
+<body>
+  <header class="cs-header">
+    <a class="cs-header__brand" href="../../index.html">flmno</a>
+    <a class="cs-header__back" href="../../index.html#work">Back to work</a>
+  </header>
+
+  <main>
+    <section class="cs-hero grid">
+      <p class="cs-hero__label">Case Study</p>
+      <hgroup class="cs-hero__head">
+        <h1 class="cs-hero__title">Social Media</h1>
+        <p class="cs-hero__thesis">Photography, video, and copy for Mount Rainier National Park — shot and written on the ground.</p>
+      </hgroup>
+    </section>
+
+    <div class="cs-body grid">
+      <dl class="cs-meta">
+        <div><dt>Client</dt><dd>Mount Rainier National Park</dd></div>
+        <div><dt>Role</dt><dd>Photography, Videography, Copywriting</dd></div>
+        <div><dt>Platform</dt><dd>Instagram, Facebook</dd></div>
+        <div><dt>Tags</dt><dd>social media</dd></div>
+      </dl>
+      <section class="cs-story">
+        <p class="cs-story__text">Add your story here — what was the brief, what did you photograph, film, and write?</p>
+        <button class="cs-pill" type="button" data-open="story">Read the full story <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 1h5v5M6 13H1V8"/></svg></button>
+      </section>
+    </div>
+
+    <div class="cs-feed" id="cs-feed" aria-label="Instagram posts"></div>
+    <script>
+    (() => {
+      const POSTS = [
+          "https://www.instagram.com/p/Ddt8nPfj7nO/",
+          "https://www.instagram.com/p/DdpE2qgiTju/",
+          "https://www.instagram.com/p/Ddoy_9KiXgM/",
+          "https://www.instagram.com/p/DdU5Tf8mbCB/",
+          "https://www.instagram.com/p/Dc1gzkUid2I/",
+          "https://www.instagram.com/p/DcwCsyCCSuN/",
+          "https://www.instagram.com/p/DbEbjv3CTQZ/",
+          "https://www.instagram.com/p/Da3BJltGq2D/",
+          "https://www.instagram.com/p/DOjavFBDaAs/",
+          "https://www.instagram.com/p/DOhKy5piSyT/",
+          "https://www.instagram.com/p/DOOncikDz0P/",
+          "https://www.instagram.com/p/DOKVOaBDq7n/",
+          "https://www.instagram.com/p/DN8m04jDWoJ/",
+          "https://www.instagram.com/p/DNo00Cht8tc/",
+          "https://www.instagram.com/p/DNEyxmrPWYj/",
+          "https://www.instagram.com/p/DMyw-i3taUH/",
+          "https://www.instagram.com/p/DMg0l_XRcmc/",
+          "https://www.instagram.com/p/DMZO1tXC4zg/",
+          "https://www.instagram.com/p/DMOuRUTsd60/",
+          "https://www.instagram.com/p/DLqfDITpD7E/",
+          "https://www.instagram.com/p/DLWIAyWi30n/",
+          "https://www.instagram.com/p/DDkRq0DCXH6/",
+          "https://www.instagram.com/p/DBSCe5FvQlE/",
+          "https://www.instagram.com/p/DAPY39_P7GJ/",
+          "https://www.instagram.com/p/C_WvXw2CxpQ/",
+          "https://www.instagram.com/p/C-JgeMdOLc_/",
+          "https://www.instagram.com/p/C9V0aNTgiJL/"
+      ];
+      const feed  = document.getElementById("cs-feed");
+      POSTS.forEach((url, i) => {
+        const item = document.createElement("div");
+        item.className = "cs-feed__item is-loading";
+        feed.appendChild(item);
+        setTimeout(() => {
+          fetch(`/api/instagram?url=${encodeURIComponent(url)}`)
+            .then(r => r.json())
+            .then(data => {
+              if (!data.html) throw new Error(data.error || "no html");
+              item.classList.remove("is-loading");
+              item.innerHTML = data.html;
+              if (window.instgrm) window.instgrm.Embeds.process();
+            })
+            .catch(() => {
+              item.classList.remove("is-loading");
+              item.innerHTML = `<div class="cs-feed__error"><a href="${url}" target="_blank" rel="noopener">View on Instagram ↗</a></div>`;
+            });
+        }, i * 120);
+      });
+      const s = document.createElement("script");
+      s.src = "https://www.instagram.com/embed.js";
+      s.async = true;
+      document.body.appendChild(s);
+    })();
+    </script>
+
+    <section class="cs-impact">
+      <div class="cs-impact__head"><h2>Impact</h2></div>
+      <div class="cs-impact__track">
+        <div class="cs-impact__card is-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cs-impact__card__body">
+            <h3>Authentic Voice</h3>
+            <p>Content shot and written on the ground gave the account a consistent, credible identity that resonated with followers.</p>
+          </div>
+        </div>
+        <div class="cs-impact__card is-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cs-impact__card__body">
+            <h3>Engagement Growth</h3>
+            <p>Posts produced during this period outperformed the account's historical average for saves, shares, and comments.</p>
+          </div>
+        </div>
+        <div class="cs-impact__card is-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cs-impact__card__body">
+            <h3>Visitor Inspiration</h3>
+            <p>Multiple followers cited specific posts as the moment they decided to visit or revisit the park.</p>
+          </div>
+        </div>
+        <div class="cs-impact__card is-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cs-impact__card__body">
+            <h3>Institutional Adoption</h3>
+            <p>Several images were selected for use in park print and digital communications beyond the original social context.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-more">
+      <div class="cs-more__head">
+        <h2 class="cs-more__title">More Work</h2>
+        <p class="cs-more__sub">Drag or scroll to browse</p>
+      </div>
+      <div class="cs-related">
+        <a class="cs-related__card" href="../mountain-as-a-muse/index.html" draggable="false">
+          <img src="https://static.wixstatic.com/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png/v1/fill/w_800,h_800,al_c,q_80,usm_0.33_1.00_0.20,enc_avif,quality_auto/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png" alt="" loading="lazy">
+          <div class="cs-related__card__foot"><p class="cs-related__card__title">Mountain as a Muse</p></div>
+        </a>
+        <a class="cs-related__card" href="../poetry-in-parks/index.html" draggable="false">
+          <img src="https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png/v1/fill/w_800,h_800,al_c,q_80,usm_0.33_1.00_0.20,enc_avif,quality_auto/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png" alt="" loading="lazy">
+          <div class="cs-related__card__foot"><p class="cs-related__card__title">Poetry in Parks</p></div>
+        </a>
+        <a class="cs-related__card" href="../yosemite-national-park-after-dark/index.html" draggable="false">
+          <img src="https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png/v1/fill/w_800,h_800,al_c,q_80,usm_0.33_1.00_0.20,enc_avif,quality_auto/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png" alt="" loading="lazy">
+          <div class="cs-related__card__foot"><p class="cs-related__card__title">Yosemite NP After Dark</p></div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="cs-sheet" data-key="story" aria-label="Social Media: the full story">
+    <button class="cs-sheet__close" type="button" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg></button>
+    <div class="cs-sheet__scroll">
+      <article class="cs-read">
+        <p class="first">Add your story here — what was the brief, what did you photograph, film, and write?</p>
+      <hr>
+      <dl>
+          <dt>Client</dt><dd>Mount Rainier National Park</dd>
+          <dt>Role</dt><dd>Photography, Videography, Copywriting</dd>
+          <dt>Platform</dt><dd>Instagram, Facebook</dd>
+          <dt>Tags</dt><dd>social media</dd>
+      </dl>
+      </article>
+    </div>
+  </dialog>
+  <script src="../case-study.js"></script>
+</body>
+</html>
