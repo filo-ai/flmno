@@ -1,0 +1,2 @@
+Place your licensed Laica and Apercu font files in this folder.
+Font files are intentionally not included in this zip.
