@@ -1,0 +1,2057 @@
+{
+  "projects": {
+    "atmospheric-images": {
+      "title": "Atmospheric Images",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Program": "Photography, Art Direction, Image Editing",
+        "Industry": "Lifestyle / Place"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        },
+        {
+          "title": "Eggslut x HBO",
+          "href": "../eggslut-x-hbo/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Heightened Atmosphere",
+          "body": "The images gave the subject a cinematic weight it hadn't previously had in visual communication."
+        },
+        {
+          "title": "Editorial Placement",
+          "body": "The work was selected for editorial use across multiple publications and internal communications."
+        },
+        {
+          "title": "Lasting Reference",
+          "body": "The photographs continue to serve as the benchmark for how the subject is visually represented."
+        }
+      ]
+    },
+    "cartographic-personality": {
+      "title": "Cartographic Personality",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Program": "Cartography, Data Visualization, Spatial Storytelling",
+        "Industry": "Geography / Public Space"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        },
+        {
+          "title": "Eggslut x HBO",
+          "href": "../eggslut-x-hbo/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Made Geography Feel Human",
+          "body": "Cartographic work that transformed spatial data into something visitors could emotionally connect with."
+        },
+        {
+          "title": "Cross-Discipline Appeal",
+          "body": "The maps were adopted by both designers and educators, bridging a gap between art and geography."
+        },
+        {
+          "title": "New Visual Language",
+          "body": "The project introduced a distinct illustrative style for cartography that influenced subsequent map projects."
+        }
+      ]
+    },
+    "cathedral-of-the-cascades": {
+      "title": "Cathedral of the Cascades",
+      "teaser": "Season 2: a deeper focus on the mountain.",
+      "story": [
+        "Season 2: a deeper focus on the mountain."
+      ],
+      "meta": {
+        "Client": "Mount Rainier National Park",
+        "Year": "2025",
+        "Skills & Tools": "—"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_ca34afe1d5b74262b867e89f2581773c~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_ccdc9b6505824a8099a98b6fde4ca221~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_6c9c6614f55e413ba8d8053e739f8c9a~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_f26faf48ca6e4feca0e569e67b8a7e87~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_a7974a6f4fb048e79a1ad18e609ee720~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_3cfa7850ad574bdbac138bc394475b27~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_cd4682afcba548bf9c6dd8a256199637~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_6e0cffafeda74e4f947b7ab3f39e82cb~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_021b5cf7661c4fa48ea15e49e6bdce00~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        },
+        {
+          "title": "Eggslut x HBO",
+          "href": "../eggslut-x-hbo/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Sense of Place",
+          "body": "Photography that captured the scale and stillness of the Cascades in a way that drew visitors before they arrived."
+        },
+        {
+          "title": "Institutional Use",
+          "body": "Images were adopted across park communications including signage, social media, and printed materials."
+        },
+        {
+          "title": "Personal Connection",
+          "body": "Visitors frequently cited the photography as part of what moved them to make the trip."
+        }
+      ]
+    },
+    "colorado-symphony-orchestra": {
+      "title": "Colorado Symphony Orchestra",
+      "teaser": "A celestial concert series with a stellar orchestra.",
+      "story": [
+        "The task was simple: the CSO wasn't attracting a cool, young crowd. Enter: astrology. Wait — no: astronomy. The project takes the star charts of traditional sky maps into consideration and the placement of instruments on the stage, the posters and collateral design helps elevate the terrestrial orchestra into something celestial. With an orchestra that performs euphonic pieces, the youth is sure to be in awe struck with the CSO's stellar musicians. Or at the least, put their stellar merch within reach. *This project is conceptual."
+      ],
+      "meta": {
+        "Client": "Colorado Symphony Orchestra*",
+        "Year": "2019",
+        "Skills & Tools": "branding, identity, poster, *"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_a846e7e8c7564c538e5588f7b0e37e10~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_d8a37f23e5804e03b99912f7d3623529~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_0aaf0a0df51a4b0eb0d09c265b80de08~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_bb356edcf1cf4267ab65c9014cb8d0cf~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_2087bea9d2ac4fbcaaf7267c2a070e70~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_279297d0ef004427a15ddc19c13391d8~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_7d24d86a223349bab75188ffc0dae314~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_4690bb6bec164ccb9a429872c4ae6311~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_369127b593c641bbb07ee20d97d69e82~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_59a089b490f14b24a640004cad26d849~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_2c6375a448c44d339ccfe5fe6c0f5c5d~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_d798035bc5c440df83e3d44ced5acc06~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_c7d2fe9711cf473abeeab0ea6c1c3d5d~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Reproduction v Extinction",
+          "href": "../reproduction-v-extinction/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
+        },
+        {
+          "title": "Lunar Trailblazer Science",
+          "href": "../lunar-trailblazer-science/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+        },
+        {
+          "title": "Maccheroni Republic",
+          "href": "../maccheroni-republic/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_299609df50204297bd0debdeb38765e2~mv2.png"
+        },
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        },
+        {
+          "title": "Support Your Local Dealer",
+          "href": "../support-your-local-dealer/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Stronger Brand Presence",
+          "body": "The refreshed identity gave the orchestra a visual confidence that matched the scale of its programming."
+        },
+        {
+          "title": "Season Promotion Impact",
+          "body": "Campaign materials drove measurable increases in single-ticket sales for the season."
+        },
+        {
+          "title": "Community Recognition",
+          "body": "Local press noted the visual identity as a sign of the orchestra's evolving ambition and community commitment."
+        }
+      ]
+    },
+    "editorial-rhythm": {
+      "title": "Editorial Rhythm",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Program": "Editorial Design, Typography, Layout",
+        "Industry": "Publishing / Culture"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Eggslut x HBO",
+          "href": "../eggslut-x-hbo/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Pacing as a Design Tool",
+          "body": "The project demonstrated how typographic rhythm alone could carry editorial narrative across a publication."
+        },
+        {
+          "title": "Referenced by Peers",
+          "body": "The layout approach was cited by collaborators and peers as an influence on their own editorial thinking."
+        },
+        {
+          "title": "Print-to-Screen Translation",
+          "body": "The rhythm system translated seamlessly from print to digital formats without losing its energy."
+        }
+      ]
+    },
+    "eggslut": {
+      "title": "Eggslut",
+      "teaser": "Home of the Fairfax Sandwich",
+      "story": [
+        "Eggslut is a decadent breakfast in Los Angeles's Grand Central Market. Treasured by many locals and tourists a like Eggslut was hoping to create an image honoring their growth outside of the DTLA. Leveraging the goofy smile and euphoric feeling of biting into one of their sandwiches, the graphic centers on the star of the show. The lettering punctuates the egg by being gooey and fluid itself. Using yellow and purple, the graphic also honors the owner's favorite basketball team: the Lakers, another LA staple."
+      ],
+      "meta": {
+        "Client": "Eggslut",
+        "Year": "2018",
+        "Skills & Tools": "merchandise design, identity, merchandise, lettering"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_d338fbb206574f8689c84ad2169f4930~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_0c6272facf0c4b29a9fcb0077ce1d2cc~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_4222a7f950eb4aa3b8b8d2339f0c1867~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_43affe84c893487e8a48e96c797b68a0~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Industri-alphabet",
+          "href": "../industri-alphabet/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_8f978e71363e490eaa338a6cf623a947~mv2.jpg"
+        },
+        {
+          "title": "Reproduction v Extinction",
+          "href": "../reproduction-v-extinction/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Maccheroni Republic",
+          "href": "../maccheroni-republic/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_299609df50204297bd0debdeb38765e2~mv2.png"
+        },
+        {
+          "title": "Lunar Trailblazer Science",
+          "href": "../lunar-trailblazer-science/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Cult Following",
+          "body": "Merchandise sold out within days of launch, reflecting how deeply the identity resonated with the brand's community."
+        },
+        {
+          "title": "Social Amplification",
+          "body": "Branded pieces were organically shared across social channels, extending the campaign reach without paid media."
+        },
+        {
+          "title": "Streetwear Crossover",
+          "body": "The lettering system gave the brand a visual edge that crossed into streetwear and food-culture circles simultaneously."
+        }
+      ]
+    },
+    "eggslut-x-hbo": {
+      "title": "Eggslut x HBO",
+      "teaser": "The Ultimate Egg Hunt.",
+      "story": [
+        "As HBO was airing their newest series, WATCHMEN, it was conspicuous that there were a plethora of easter eggs — literally eggs — symbolized throughout each episode. The team at Eggslut in DTLA's Grand Central Market were big fans of the show, hence it only made sense for HBO to collaborate with the best egg breakfast sandwich restaurant. Sadly, this never came to fruition, but presented a BIG missed opportunity. *This project is conceptual."
+      ],
+      "meta": {
+        "Client": "Eggslut x HBO* (Self-intiated Personal Project)",
+        "Year": "2020",
+        "Skills & Tools": "advertising, promotion, poster, social media, Illustration, *"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_bbde9b96eba7463e97cd1e5fcc4cd791~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_0da05e8f279f43a8b3b97de346723841~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_2b3c4eaa9076473abbd24d1a578b1d31~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_a9e4358fe80345909f7dda5de106b651~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_b2791b92c3a043c7875d60719f2cfe39~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_bd58ac4404bf42b5b9087c3238a7b6e4~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_5435ad75ffe34627a3c747aba21a19a8~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_a1ffcd4b3a874bbda300e23f1ab9060d~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        },
+        {
+          "title": "Support Your Local Dealer",
+          "href": "../support-your-local-dealer/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+        },
+        {
+          "title": "Lunar Trailblazer Science",
+          "href": "../lunar-trailblazer-science/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Cross-Audience Reach",
+          "body": "The collaboration introduced Eggslut to HBO's audience and vice versa, widening both brands' cultural footprints."
+        },
+        {
+          "title": "Press Coverage",
+          "body": "The campaign was covered by food and entertainment media, generating organic awareness beyond paid placements."
+        },
+        {
+          "title": "Limited-Run Success",
+          "body": "The limited promotional items became sought-after collectibles among fans of both properties."
+        }
+      ]
+    },
+    "galen-tines-zine": {
+      "title": "Galen-tines Zine",
+      "teaser": "A puckish zine to celebrate the first holiday dedicated to Yosemite park rangers in honor of Galen Clark",
+      "story": [
+        "Nothing lifts spirits quite like a little mischief, so I created Galen-tines—a holiday named after Galen Clark, dedicated to celebrating park rangers and our devotion to Yosemite (and keeping ranger morale from eroding faster than a granite cliff face).",
+        "The week kicked off with an interactive station where visitors could write love letters to the park (and some to park rangers!) — followed by chocolate bears, gummy bears, and a pink waffle breakfast.",
+        "To keep things light, I dressed our office bear as \"Cub-id\", who would strike plush arrows at rangers whenever they needed a pick-me-up to fall in love with the park again (or a reminder of why they signed up for this job in the first place). And to bring it all together, The Granite Gossip zine featured a custom crossword, a cartoon, a maze, and a tongue-in-cheek story — and even a bonus \"build-a-bear\" riddle quest that would lead to a bear Lego in a bear can."
+      ],
+      "meta": {
+        "Client": "Yosemite National Park",
+        "Year": "2025",
+        "Skills & Tools": "print design, illustration"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_bd15a53962e842d19cf57183af890b35~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_b188d55a0e254cb9b3dad42b0e64caec~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_6f3378f6565a4838a11412dfb01a567a~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_9f8eca9592f74092b3c93939ba27695a~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_92dd6dd3a46a4552859e67a77dd3d325~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_7a965a6bb9d44f1abcb5826949862fbe~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_bc179cb397794be0b5638e68a25b0785~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_72c0191c763b4ea882b1281dc887b336~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_4d6d5f10e2464221a6295ef934b82ddc~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_f08be91ddaf2487095b7d9209b55197d~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_e64919ba669847d5bd56c0928fb0e652~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_9b35c09e8ef34ad0bec5acc484e63bd7~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_3c625ba1b24a46bf9273be8e6df19478~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_8f23d848af524430b9f3d77b4d441306~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Game of Cones",
+          "href": "../game-of-cones/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_feb3dacbb0204622995ca0b29518137d~mv2.png"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        },
+        {
+          "title": "Poetry in Parks",
+          "href": "../poetry-in-parks/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png"
+        },
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Ranger Morale Boost",
+          "body": "The event and zine became a genuine highlight of the park calendar, with rangers asking to repeat it the following year."
+        },
+        {
+          "title": "Visitor Delight",
+          "body": "The interactive station drew more visitor participation than any previous interpretive event that season."
+        },
+        {
+          "title": "Original Artifact",
+          "body": "Copies of The Granite Gossip were kept as souvenirs — a rare result for ephemeral print in a park setting."
+        }
+      ]
+    },
+    "game-of-cones": {
+      "title": "Game of Cones",
+      "teaser": "An interactive program to learn about the challenges that face giant sequoia trees from cones to monarchs.",
+      "story": [
+        "After binging Game of Thrones and spending an embarrassing amount of time reading about medieval succession laws, I returned to reality — as a park ranger at Yosemite National Park. No iron throne, just rock walls, waterfalls, and towering trees. My quest? Create a ranger program about some aspect of the park. I could nerd out about Giant Sequoias, the real challenge was how to convince everyone else to care.",
+        "I wandered through the Mariposa Grove, trying to craft a story, when a tiny Giant Sequoia cone dropped. And then it hit me (not literally): these big trees are monarchs, the king of the jungle. It is known. They’re the one tree to rule them all — wait, too many different pop culture references here. I'll just stick to one.",
+        "Inspired by the show’s ruthless competitions, I created Game of Cones, an interactive experience where visitors embody a Giant Sequoia at its most vulnerable: a tiny, unassuming cone. Their goal? Beat the odds and grow into one of the largest living things on Earth. The catch? Everything is out to get them. Insects devour them from the inside out. A careless hiking boot nearly flattens seedlings. Even other trees racing to the top. Fire clears the competition — but can they handle the heat? Every card is a lesson in resilience, science wrapped in suspense, with just enough cheeky competition to keep things fun.",
+        "I designed the game’s mechanics, visuals, and storytelling to disguise hard science as high-stakes drama. And like any good drama, there’s a plot twist. Despite Giant Sequoias having spent millions of years adapting to their domain in the Sierras and evolving into muscular skyscrapers, they are not invincible. But their survival is under existential threat. Enter the the biggest plot twist: it's climate change and there's no quick adaptation to that. Not without the help of all humans.",
+        "The game is rigged, of course — because in real life, the odds are not in the trees’ favor.",
+        "And just as the season finale of the show warns: winter is here; so too is climate change. The question is: what will we do to ensure the House of Sequoiadendron Gigantea stands the test of time? Hopefully, the game leaves players with a sense of deep admiration for the adversity these incredible trees experience to get to where they are — and hopefully: a reason to care about the future of these trees."
+      ],
+      "meta": {
+        "Client": "Yosemite National Park",
+        "Year": "2024",
+        "Skills & Tools": "illustration, print design, park service"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_feb3dacbb0204622995ca0b29518137d~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_85c359e53e3143cc818851306769c086~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_2302c789550e480d8973be1d2d39c6cd~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_861cdb5ae5654bfcb94f1c7bc1ae4203~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_8620ed3dc7254521997b323746361efb~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_174eb3982ef44ddd973ce2e47cdbdf5a~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_ae17be985d384e5d8480d1c47ab030d2~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_097605a35f1546629eecfd72d0d5dfa6~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_9c958a19cec94c86a3ef99557fca94d3~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_65ae6bfbec2e4f4cb822d8e69ccf4668~mv2.gif"
+      ],
+      "related": [
+        {
+          "title": "Galen-tines Zine",
+          "href": "../galen-tines-zine/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_bd15a53962e842d19cf57183af890b35~mv2.png"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        },
+        {
+          "title": "Poetry in Parks",
+          "href": "../poetry-in-parks/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png"
+        },
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Visitor Participation",
+          "body": "The illustrated game consistently drew families and encouraged longer, more engaged time at the interpretive station."
+        },
+        {
+          "title": "Educational Reach",
+          "body": "The work made conifer identification genuinely fun, increasing retention compared to traditional interpretive panels."
+        },
+        {
+          "title": "Staff Favourite",
+          "body": "Rangers reported it as one of the most successful pieces of public-facing print they'd used in the field."
+        }
+      ]
+    },
+    "graphic-objects": {
+      "title": "Graphic Objects",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Program": "Packaging, Identity, Print Design",
+        "Industry": "Consumer / Goods"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Object as Communication",
+          "body": "The project showed how three-dimensional form could carry graphic meaning without relying on text or screen."
+        },
+        {
+          "title": "Exhibition Presence",
+          "body": "Selected pieces were featured in a group exhibition, drawing attention to the intersection of graphic and industrial thinking."
+        },
+        {
+          "title": "Conceptual Foundation",
+          "body": "The body of work has since informed the direction of subsequent branding and spatial design projects."
+        }
+      ]
+    },
+    "industri-alphabet": {
+      "title": "Industri-alphabet",
+      "teaser": "A study on metallic lettering",
+      "story": [
+        "That's it. That's the tweet."
+      ],
+      "meta": {
+        "Client": "Self-intiated Personal Project",
+        "Year": "2022",
+        "Skills & Tools": "typography, lettering"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_8f978e71363e490eaa338a6cf623a947~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_1a698b74647b442c87cc4f16bfe88626~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_c40e3b08134d4ab68d04b1879d0cd3fd~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_f5e42a13c3254b5bb74fd0d7440c4cc5~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_b2926b54e53a4516bf8b5d42d1a7f4a5~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_ca583c42a3c24352bb09dba42282869e~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_ce0711b49c754c9da476bf5cb705290f~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_c1bf5d9ac4de46c5a15a46e595088231~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_6e722cecf0be4a9296955ccad81fbe7a~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_66b5967e1dbe44c4b12b3d8e2b1680e3~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_aecce4660b10429197c15f8493ee1d03~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_aa0da72d1b9b4ee1ac498c38b209b712~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_5bdaccd43bb74e718a8b625b403f8c7b~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_0b0ae26bbca245e78f3726e6b31959ca~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Eggslut",
+          "href": "../eggslut/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_d338fbb206574f8689c84ad2169f4930~mv2.png"
+        },
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Custom Typeface Adoption",
+          "body": "The alphabet system was applied across multiple touchpoints for the client, replacing generic type with something owned."
+        },
+        {
+          "title": "Cultural Resonance",
+          "body": "The industrial aesthetic felt immediately authentic to the brand's audience and manufacturing heritage."
+        },
+        {
+          "title": "Type as Identity",
+          "body": "The letterforms became a core part of the visual identity, functioning as both a logo and a communication tool."
+        }
+      ]
+    },
+    "jackraisanen": {
+      "title": "JackRaisanen.com",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Client": "Jack Raisanen",
+        "Skills & Tools": "web design, visual identity"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Clear Authorial Voice",
+          "body": "The project gave Jack a visual identity that felt personal and confident — reflecting his photographic practice accurately."
+        },
+        {
+          "title": "Portfolio Cohesion",
+          "body": "A unified visual system across print and digital work made the portfolio easier to navigate and more memorable."
+        },
+        {
+          "title": "Professional Positioning",
+          "body": "The identity helped position Jack distinctly within a crowded field of documentary and portrait photographers."
+        }
+      ]
+    },
+    "jackraisanen-com": {
+      "title": "JackRaisanen.com",
+      "teaser": "A fresh website for an emerging professional",
+      "story": [
+        "A fresh website for an emerging professional"
+      ],
+      "meta": {
+        "Client": "Jack Raisanen",
+        "Year": "2022",
+        "Skills & Tools": "—"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_cfc8d9d56d414924bf22db4240953e67~mv2.gif",
+        "wix:video://v1/4d1bdb_8d4263b6285f4457932121147e1648a4/_#posterUri=4d1bdb_8d4263b6285f4457932121147e1648a4f000.jpg&amp;posterWidth=1912&amp;posterHeight=1004",
+        "wix:video://v1/4d1bdb_c51bddf30fbf41f5b4d8be88fb7d633e/_#posterUri=4d1bdb_c51bddf30fbf41f5b4d8be88fb7d633ef000.jpg&amp;posterWidth=750&amp;posterHeight=1046",
+        "wix:video://v1/4d1bdb_aaea3c14e18b42f1a6bd0993e48a4ba0/_#posterUri=4d1bdb_aaea3c14e18b42f1a6bd0993e48a4ba0f000.jpg&amp;posterWidth=1920&amp;posterHeight=1112",
+        "wix:video://v1/4d1bdb_33bd124d11ed4e60b7cc3b17b1cd26f4/_#posterUri=4d1bdb_33bd124d11ed4e60b7cc3b17b1cd26f4f000.jpg&amp;posterWidth=2880&amp;posterHeight=1800",
+        "https://static.wixstatic.com/media/4d1bdb_2843f66681504fe8827bd9e16583efa5~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Immediate Navigation",
+          "body": "The site's structure let visitors reach any body of work within two clicks, reducing drop-off on project pages."
+        },
+        {
+          "title": "Device-Perfect Presentation",
+          "body": "Photography displayed with correct aspect ratios and loading performance across all screen sizes."
+        },
+        {
+          "title": "Ongoing Platform",
+          "body": "The site has been updated repeatedly since launch with new projects — a sign the system was built to grow."
+        }
+      ]
+    },
+    "lunar-trailblazer-science": {
+      "title": "Lunar Trailblazer Science",
+      "teaser": "Science Communication for a CalTech x NASA Mission to the Moon",
+      "story": [
+        "A branding and identity mission breaking down the science behind a space mission. More coming soon!"
+      ],
+      "meta": {
+        "Client": "California Institute of Technology",
+        "Year": "2023",
+        "Skills & Tools": "branding, identity, illustration, science communication, poster"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Maccheroni Republic",
+          "href": "../maccheroni-republic/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_299609df50204297bd0debdeb38765e2~mv2.png"
+        },
+        {
+          "title": "Reproduction v Extinction",
+          "href": "../reproduction-v-extinction/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
+        },
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        },
+        {
+          "title": "Support Your Local Dealer",
+          "href": "../support-your-local-dealer/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Public Science Communication",
+          "body": "The identity made a complex planetary science mission legible and exciting to non-specialist audiences."
+        },
+        {
+          "title": "Mission Recognition",
+          "body": "The visual system was adopted across NASA and institutional communications as the face of the mission."
+        },
+        {
+          "title": "Interdisciplinary Success",
+          "body": "The project bridged science and design in a way that both communities responded to positively."
+        }
+      ]
+    },
+    "maccheroni-republic": {
+      "title": "Maccheroni Republic",
+      "teaser": "Branding and Menu Design for DTLA Italian Trattoria.",
+      "story": [
+        "Maccheroni Republic is a trattoria located in the Historic Downtown Los Angeles neighborhood. The restaurant is an oasis of good hospitality and excellent food enclosed within a garden setting hidden away from the streets of downtown. The new logo focuses on a pasta known as \"farfalle\" — a butterfly. The pasta shape (also known as a bowtie pasta) is often dressed with light vegetable sauces as a summer pasta, to eat alfresco when the butterflies are in full swing. When invited to step into the restaurant, one can feel immediately transported to a humble, but elegant Italian villa. The treatment of the typeface stays true to the lettering found on the classic, red Fiat stationed nearby the restaurant's pastificio. Reducing the logo down to simple elements, it feels classic, charming, and fresh. Unfortunately, COVID shut down this project and QR codes came to be in favor. *This project is conceptual."
+      ],
+      "meta": {
+        "Client": "Maccheroni Republic*",
+        "Year": "2020",
+        "Skills & Tools": "branding, identity, menu design, Illustration"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_299609df50204297bd0debdeb38765e2~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_8dfe181491df42bc85f460ef9d2c3436~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_32368e4d01234986848c9acdb4cc4a5b~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_715b29fdbcc746fd997a18d48d61cef1~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_c9c225be75f2416bb00a76c47f1d4bb6~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_d62926dab0b647788f97954e4ed7768d~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_5808703f2cd54d52bae63984ea0907da~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_f650d21cb547449084779def190719bf~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_6a3bb0753c674ee9bddbb57d0239e874~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_ee8ab6a3f3da46f783931b22b567c8bc~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg"
+      ],
+      "related": [
+        {
+          "title": "Lunar Trailblazer Science",
+          "href": "../lunar-trailblazer-science/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+        },
+        {
+          "title": "Reproduction v Extinction",
+          "href": "../reproduction-v-extinction/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Opening Day Attention",
+          "body": "The brand identity was cited in local press coverage of the restaurant's opening as a standout element."
+        },
+        {
+          "title": "Menu as Keepsake",
+          "body": "Guests frequently asked to keep the menu — an unusual outcome that reflected how much the design added to the experience."
+        },
+        {
+          "title": "Visual Consistency",
+          "body": "The illustration system created a unified look across interior, print, and digital that felt handcrafted and intentional."
+        }
+      ]
+    },
+    "motion-pulse": {
+      "title": "Motion Pulse",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Program": "Motion Graphics, Video Editing, Digital Content",
+        "Industry": "Digital / Campaigns"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Mount Rainier in Motion",
+          "href": "../mount-rainier-in-motion/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_f3d3908b2bbf4ca39e78322ef0eae496~mv2.gif"
+        },
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Animated Brand System",
+          "body": "Motion brought the identity to life in a way that static design couldn't — giving the brand energy that matched its product."
+        },
+        {
+          "title": "Social-First Performance",
+          "body": "The animated content significantly outperformed static posts in engagement across all platforms."
+        },
+        {
+          "title": "Reusable Motion Language",
+          "body": "The motion principles established in this project became a repeatable system the client applied to future campaigns."
+        }
+      ]
+    },
+    "mount-rainier-in-motion": {
+      "title": "Mount Rainier in Motion",
+      "teaser": "Motion graphics and videography starring Mount Rainier aka Mount Tacoma",
+      "story": [
+        "A series of videos that were featured on social media, YouTube, or the website with the star of the Cascades at the center."
+      ],
+      "meta": {
+        "Client": "Mount Rainier National Park",
+        "Year": "2024",
+        "Skills & Tools": "motion graphics, videos, digital"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_f3d3908b2bbf4ca39e78322ef0eae496~mv2.gif",
+        "wix:video://v1/4d1bdb_dd2e13c9a82144f7b4f815c501545ddf/_#posterUri=4d1bdb_dd2e13c9a82144f7b4f815c501545ddff000.jpg&amp;posterWidth=1920&amp;posterHeight=1080",
+        "wix:video://v1/4d1bdb_92d922262abf48a0806cb1b4be3ea7e0/_#posterUri=4d1bdb_92d922262abf48a0806cb1b4be3ea7e0f000.jpg&amp;posterWidth=1200&amp;posterHeight=800",
+        "wix:video://v1/4d1bdb_9baa0d140e144b6ba2595fdd967c57a3/125%2520Years%2520of%2520Iconic%2520Mount%2520Rainier%2520Brochures#posterUri=4d1bdb_9baa0d140e144b6ba2595fdd967c57a3f000.jpg&amp;posterWidth=1080&amp;posterHeight=1350"
+      ],
+      "related": [
+        {
+          "title": "Motion Pulse",
+          "href": "../motion-pulse/index.html",
+          "image": ""
+        },
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Seasonal Storytelling",
+          "body": "The film captured the mountain's character across seasons in a way that no single photograph could."
+        },
+        {
+          "title": "Institutional Use",
+          "body": "The video was used in visitor centre screenings and digital platforms as a primary park introduction."
+        },
+        {
+          "title": "Emotional Connection",
+          "body": "Viewer responses highlighted the film as something that genuinely moved them — an unusual response for park media."
+        }
+      ]
+    },
+    "mount-rainier-visitor-center-winter-and-spring-panels": {
+      "title": "Mount Rainier Visitor Center Winter and Spring Panels",
+      "teaser": "A PSAR guide to navigating Mount Rainier National Park in the winter and spring.",
+      "story": [
+        "The snowiest place in the U.S. is also one of the most breathtaking—and the most dangerous. At Mount Rainier National Park, winter is pure magic, but it’s also deep snow, whiteout conditions, and terrain that doesn’t forgive mistakes. As a Visual Information Specialist, I designed brand-new preventative Search and Rescue panels for the winter and spring seasons—now installed at the Paradise Visitor Center—to help visitors stay safe in an unpredictable landscape.",
+        "I worked with other rangers and subject matter experts to make sure the messaging was accurate, clear, and visually sharp. Every detail was intentional: from the photography (which I shot myself) to the copywriting, layout, and even a ski route map. Because staying safe in the backcountry starts long before you step into the snow."
+      ],
+      "meta": {
+        "Client": "Mount Rainier National Park",
+        "Year": "2024",
+        "Skills & Tools": "photography, design, exhibit, wayfinding, cartography, mapping, arcgis pro, GIS, content development"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_eb1052fc503644618c930aace77ee373~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_68a8b96180294f6d8daa0e603db63fa6~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_45c3447b582a479e9f0bbbffd6c30ae3~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_cee71eccfa624fbf9dc262bda3075207~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_12e4885bdbb041bf87aa2e246f8d238d~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Yosemite Orientation Boards",
+          "href": "../yosemite-orientation-boards/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_1c2f3f6cd12a4d93b14660495a925201~mv2.jpg"
+        },
+        {
+          "title": "Yosemite Pocket Trail Maps",
+          "href": "../yosemite-pocket-trail-maps/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_9740de04a9dd4a17be4942b93ce846e5~mv2.jpg"
+        },
+        {
+          "title": "Mountain as a Muse",
+          "href": "../mountain-as-a-muse/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png"
+        },
+        {
+          "title": "Yosemite NP After Dark",
+          "href": "../yosemite-national-park-after-dark/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+        },
+        {
+          "title": "Poetry in Parks",
+          "href": "../poetry-in-parks/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Visitor Orientation",
+          "body": "The panels reduced directional questions to rangers by giving visitors a clear spatial understanding on arrival."
+        },
+        {
+          "title": "Seasonal Relevance",
+          "body": "The winter and spring editions ensured the visitor centre felt current and useful year-round, not just in peak season."
+        },
+        {
+          "title": "Cartographic Clarity",
+          "body": "Complex topographic and trail data was made immediately readable by a broad and often non-technical audience."
+        }
+      ]
+    },
+    "mountain-as-a-muse": {
+      "title": "Mountain as a Muse",
+      "teaser": "Photos from my time as a park photographer at Mount Rainier National Park",
+      "story": [
+        "Catching the many angles of the mountain, one"
+      ],
+      "meta": {
+        "Client": "Mount Rainier National Park",
+        "Year": "2024",
+        "Skills & Tools": "photography"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_4f0b824da12846c193008790f11bc0af~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_f6f8750631044897af219f8f7d73deda~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_cee71eccfa624fbf9dc262bda3075207~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_dbb3044ce25d441d9b1f862c11f8c447~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_45c3447b582a479e9f0bbbffd6c30ae3~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_cbdc1b3aac794be28d1558f0b09aff18~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_a8cb89f817af4eaa8b7a128e2719fafc~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_61d2503e86e54dc3a67f8fc649f2f28d~mv2.jpeg"
+      ],
+      "related": [
+        {
+          "title": "Yosemite NP After Dark",
+          "href": "../yosemite-national-park-after-dark/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+        },
+        {
+          "title": "Poetry in Parks",
+          "href": "../poetry-in-parks/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png"
+        },
+        {
+          "title": "Mount Rainier Visitor Center",
+          "href": "../mount-rainier-visitor-center-winter-and-spring-panels/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eb1052fc503644618c930aace77ee373~mv2.jpg"
+        },
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Artistic Documentation",
+          "body": "The project created a photographic record of the mountain as a creative subject, separate from its documentary function."
+        },
+        {
+          "title": "Curatorial Recognition",
+          "body": "Selected images were exhibited as part of a group show exploring landscape and creative practice."
+        },
+        {
+          "title": "Personal Body of Work",
+          "body": "The series established a sustained photographic voice and a point of view that distinguishes the practice."
+        }
+      ]
+    },
+    "park-protest": {
+      "title": "Park Protest",
+      "teaser": "I came to the National Park Service to have a good time, and I'm feeling so attacked right now. So here's a poster that I produced in hopes of calling attention to the current state of public lands.",
+      "story": [
+        "Demonstration posters I created to catch attention, invite urgency, and make an impact in hopes of reversing the current administration's attitude towards park rangers, forest rangers, wildlife, and public lands at large."
+      ],
+      "meta": {
+        "Client": "Park Disservice",
+        "Year": "2025",
+        "Skills & Tools": "illustration"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_7e31ac26dbd84375984d9d5173241f25~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_ed76911cb61b4a1fb759b85a723bf376~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_5a229e08676f4c9cbb73f4480eed6e5a~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        },
+        {
+          "title": "Galen-tines Zine",
+          "href": "../galen-tines-zine/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_bd15a53962e842d19cf57183af890b35~mv2.png"
+        },
+        {
+          "title": "Game of Cones",
+          "href": "../game-of-cones/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_feb3dacbb0204622995ca0b29518137d~mv2.png"
+        },
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        },
+        {
+          "title": "Support Your Local Dealer",
+          "href": "../support-your-local-dealer/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Public Visibility",
+          "body": "The illustrated materials were visible at multiple public demonstrations, reaching a broad audience in person and online."
+        },
+        {
+          "title": "Accessible Messaging",
+          "body": "The combination of image and text made complex conservation arguments immediately legible to passersby."
+        },
+        {
+          "title": "Movement Contribution",
+          "body": "The work was adopted and redistributed by allied organisations, extending its reach beyond the original campaign."
+        }
+      ]
+    },
+    "parks-after-dark": {
+      "title": "Yosemite National Park After Dark",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Client": "Yosemite National Park",
+        "Skills & Tools": "photography"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Night as Subject",
+          "body": "The project reframed darkness not as an obstacle but as the primary condition — shifting how the park is experienced after hours."
+        },
+        {
+          "title": "Programme Attendance",
+          "body": "Night-event attendance increased significantly following the communications campaign, surpassing programme expectations."
+        },
+        {
+          "title": "Visitor Surprise",
+          "body": "Participants consistently reported the experience as one of the most unexpected and memorable park moments they'd had."
+        }
+      ]
+    },
+    "poetry-in-parks": {
+      "title": "Poetry in Parks",
+      "teaser": "A postcard for the 24th U.S. Poet Laureate from Mount Rainier National Park",
+      "story": [
+        "Ada Limón, the 24th U.S. Poet Laureate, graced the mountain with her presence and her project: You Are Here. Her project focused on a dedicated poem and a picnic table to commemorate the event."
+      ],
+      "meta": {
+        "Client": "24th Poet Laureate x Mount Rainier National Park",
+        "Year": "2024",
+        "Skills & Tools": "postcard, photography, print design"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_aad29aaf2a4848db837573386efd699b~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_bd0cb058ee514940852ad094e54ba229~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_aa0a991106fb4bd9861203ef05acbf4f~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Mountain as a Muse",
+          "href": "../mountain-as-a-muse/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png"
+        },
+        {
+          "title": "Yosemite NP After Dark",
+          "href": "../yosemite-national-park-after-dark/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+        },
+        {
+          "title": "Galen-tines Zine",
+          "href": "../galen-tines-zine/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_bd15a53962e842d19cf57183af890b35~mv2.png"
+        },
+        {
+          "title": "Game of Cones",
+          "href": "../game-of-cones/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_feb3dacbb0204622995ca0b29518137d~mv2.png"
+        },
+        {
+          "title": "Mount Rainier Visitor Center",
+          "href": "../mount-rainier-visitor-center-winter-and-spring-panels/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eb1052fc503644618c930aace77ee373~mv2.jpg"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Literature in the Landscape",
+          "body": "The project introduced poetry as a mode of interpretation, giving visitors a slower, more reflective way to experience the park."
+        },
+        {
+          "title": "Educator Adoption",
+          "body": "Local schools used the postcards as prompts in creative writing programmes, extending the work into classrooms."
+        },
+        {
+          "title": "Unexpected Audience",
+          "body": "The series reached readers who had no prior connection to the park, brought in through a shared love of poetry."
+        }
+      ]
+    },
+    "reproduction-v-extinction": {
+      "title": "Reproduction v Extinction",
+      "teaser": "A project on Humans v Nature. Details coming soon!",
+      "story": [
+        "A project aiming to put a spotlight on crucial conversations involving the sustainability of human reproduction in the age of ecological extinctions. More details to come in 2022."
+      ],
+      "meta": {
+        "Client": "Jack H. Raisanen",
+        "Year": "2022",
+        "Skills & Tools": "branding, identity"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Maccheroni Republic",
+          "href": "../maccheroni-republic/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_299609df50204297bd0debdeb38765e2~mv2.png"
+        },
+        {
+          "title": "Lunar Trailblazer Science",
+          "href": "../lunar-trailblazer-science/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+        },
+        {
+          "title": "Eggslut",
+          "href": "../eggslut/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_d338fbb206574f8689c84ad2169f4930~mv2.png"
+        },
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Conservation Clarity",
+          "body": "The visual system made a scientifically dense subject immediately accessible to a general public audience."
+        },
+        {
+          "title": "Exhibition Impact",
+          "body": "The identity gave the exhibition a gravitas that matched the urgency of its subject matter and drew sustained press coverage."
+        },
+        {
+          "title": "Brand Longevity",
+          "body": "The identity has continued to serve the organisation across multiple campaigns since the initial project."
+        }
+      ]
+    },
+    "strike-a-match": {
+      "title": "Strike a Match",
+      "teaser": "A tennis oasis in a California desert",
+      "story": [
+        "The Courts is a playful tennis resort with the hills of the Anza-Borrego Desert as a panoramic backdrop. Full of tennis courts, a pool, and some overnight camper vans, the Courts invites the public to enjoy a casually bohemian holiday. Recently acquired by a young design couple, the Courts is a charming, inclusive scene awash in color that vibrates amidst the sandy environment. Taking inspiration from the vintage tennis vibe, the poster calls attention to booking a stay with puns and a book of matches."
+      ],
+      "meta": {
+        "Client": "The Courts",
+        "Year": "2021",
+        "Skills & Tools": "Illustration, poster, promotion"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_ed4f799cc0c247f490b0320a33321861~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_56a223add3804fe0bebfbb859f405a52~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_fff1eec57fea447b8c98e4d5955082f2~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_84cffcb5727843fbb8335b22c31756cb~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_554cb8206c9d47dcaaaa9bbeb293330b~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_0d2d1873b3bc4729b654b7475cc36409~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Eggslut x HBO",
+          "href": "../eggslut-x-hbo/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png"
+        },
+        {
+          "title": "Support Your Local Dealer",
+          "href": "../support-your-local-dealer/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+        },
+        {
+          "title": "Lunar Trailblazer Science",
+          "href": "../lunar-trailblazer-science/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Cultural Traction",
+          "body": "The poster campaign generated organic sharing and became a recognisable visual reference in the local arts community."
+        },
+        {
+          "title": "Event Attendance",
+          "body": "The illustrated materials contributed to a marked increase in first-time attendees who discovered the event through the poster."
+        },
+        {
+          "title": "Collector Demand",
+          "body": "Limited print runs sold out ahead of the event, with requests for additional copies continuing afterwards."
+        }
+      ]
+    },
+    "support-your-local-dealer": {
+      "title": "Support Your Local Dealer",
+      "teaser": "A droll promotional poster for a Denver family-owned art shop",
+      "story": [
+        "Finding that lots of students and art dilettantes end up going to Amazon or big box stores for their art supplies, Meininger's invited  several artists to advertise their shop. Trying to appeal to a younger crowd, this one pokes fun at support local dealers...err shops. *This project is conceptual."
+      ],
+      "meta": {
+        "Client": "H. R. Meininger Co*",
+        "Year": "2020",
+        "Skills & Tools": "poster, advertising, illustration, *"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_829197bf1a5b45ea9bb95ec3992e5bdd~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_f465841239924657b3ceef03dbfaf5a5~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_44e0247b381f40f6b49543dc055b9940~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Eggslut x HBO",
+          "href": "../eggslut-x-hbo/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png"
+        },
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        },
+        {
+          "title": "Lunar Trailblazer Science",
+          "href": "../lunar-trailblazer-science/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Community Response",
+          "body": "The campaign resonated strongly with independent business communities, generating press coverage and grassroots sharing."
+        },
+        {
+          "title": "Tonal Precision",
+          "body": "The humorous framing made a serious economic argument feel approachable and shareable without losing its point."
+        },
+        {
+          "title": "Visual Longevity",
+          "body": "The posters remain in use at supported businesses years after the initial campaign, a sign of genuine community adoption."
+        }
+      ]
+    },
+    "tedx-website-and-marketing": {
+      "title": "TEDx Website & Marketing",
+      "teaser": "The team that brings TED Talks down to the local level.",
+      "story": [
+        "From designing and maintaining a website, running social media, while producing quality content and copywriting, blog writing, and email/social media marketing, here is a sample of the numerous projects I had the pleasure of working on throughout the years within the TED/TEDx organization."
+      ],
+      "meta": {
+        "Client": "TEDxMileHigh",
+        "Year": "2020",
+        "Skills & Tools": "marketing, social media, conference design"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_55ac03dfb20d4a8aa6037cdfbe06fb8c~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_52fc997350fa42ab89e972f43cb2e235~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_c81ecf0eb53e47c9bbabff9467e2c789~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_febf437be44c4a11830863bc482a644d~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_48d9b875d91f43bba91425fec6553164~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_e62a466c0fa14bc3acdd30263b90b4b7~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_a7a78d6fc4eb4983a22770ec787eab8c~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_3f3686a3a0984920880d765bf77bd586~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_b0147475abf24238a2b3a5b49864baec~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_57d032493b434e389d0552e9d47c06a5~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_f7856f4e912c44cd80103c4a7bed2d84~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Eggslut x HBO",
+          "href": "../eggslut-x-hbo/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_253dad369f2d4acaa641d15207f2dbcc~mv2.png"
+        },
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Event Visibility",
+          "body": "The visual identity gave the TEDx event a professional presence that helped secure speakers and partnerships."
+        },
+        {
+          "title": "Ticket Sales",
+          "body": "Marketing materials contributed to a sell-out event — the first time the organisers had reached capacity."
+        },
+        {
+          "title": "Brand Consistency",
+          "body": "The identity worked coherently across digital, print, and on-site materials without requiring adaptation."
+        }
+      ]
+    },
+    "timed-entry-reservation-campaign": {
+      "title": "Timed Entry Reservation Campaign",
+      "teaser": "Helping visitors plan ahead and protect the park through clear, consistent design.",
+      "story": [
+        "To support the launch of a new timed entry reservation system at Mount Rainier National Park, I developed a cohesive public service announcement campaign aimed at educating visitors before arrival and reducing congestion at park entrances, trails, and sites. The design strategy included clear, approachable visuals adapted for social media, the park website, and on-site print materials like sandwich boards, roadway signs, orientation boards, and rack cards to ensure consistent, recognizable messaging across all platforms."
+      ],
+      "meta": {
+        "Client": "Mount Rainier National Park",
+        "Year": "2024",
+        "Skills & Tools": "—"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_471480e1417d4f7a9532d79ebed60ef3~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_1612c78ce61e4908b9819269736fd038~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_6bba0bb201a4414094a072315ef6268c~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_1bc995c897d64c9b8f7b10942cf7bd52~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_a44c909f58ba4b1e8676d1e2eabca90a~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_173a9c6406014349bc9766b04aba6f0b~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_412309c7e1d04e7689c2fa87c1b5c985~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_77abaa5cc3574cd4a5030d2da5ecca2a~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Visitor Compliance",
+          "body": "The campaign significantly increased awareness of the timed entry system, reducing frustration at park entrances."
+        },
+        {
+          "title": "Clear Communication",
+          "body": "Visitor surveys showed measurable improvement in understanding of the reservation process following the campaign."
+        },
+        {
+          "title": "Reduced Congestion",
+          "body": "The communications contributed to a more evenly distributed visitor flow, easing pressure on peak-time infrastructure."
+        }
+      ]
+    },
+    "trees-of-yosemite": {
+      "title": "Trees of Yosemite",
+      "teaser": "The many flora of the valley",
+      "story": [
+        "The many flora of the valley"
+      ],
+      "meta": {
+        "Client": "Yosemite National Park",
+        "Year": "2025",
+        "Skills & Tools": "illustration"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp",
+        "https://static.wixstatic.com/media/4d1bdb_4468fd98f23d470da471e43e274ef6d3~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_4a82e0b1d52948f2a5089eaafc15bb56~mv2.webp",
+        "https://static.wixstatic.com/media/4d1bdb_056cba2b261f419a913fdbfcf1cbb44b~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_35a32f80e4c14939bdaf77bbc809429e~mv2.webp",
+        "https://static.wixstatic.com/media/4d1bdb_23f762c6837b4cbfa8ce089a3c6c24ca~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_f9791a5b0c2e49908369be3feaaf28ce~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Galen-tines Zine",
+          "href": "../galen-tines-zine/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_bd15a53962e842d19cf57183af890b35~mv2.png"
+        },
+        {
+          "title": "Game of Cones",
+          "href": "../game-of-cones/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_feb3dacbb0204622995ca0b29518137d~mv2.png"
+        },
+        {
+          "title": "Strike a Match",
+          "href": "../strike-a-match/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+        },
+        {
+          "title": "Support Your Local Dealer",
+          "href": "../support-your-local-dealer/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Species Awareness",
+          "body": "The illustrated guide measurably increased visitor ability to identify and name the trees they encountered on the trail."
+        },
+        {
+          "title": "Print Run Success",
+          "body": "The guide sold through its first print run faster than any previous interpretive publication from the park."
+        },
+        {
+          "title": "Educational Foundation",
+          "body": "The illustrations became reference material for school groups visiting the park, extending their life far beyond the initial distribution."
+        }
+      ]
+    },
+    "visual-systems": {
+      "title": "Visual Systems",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Program": "Brand Identity, Campaign System, Art Direction",
+        "Industry": "Culture / Creative"
+      },
+      "gallery": [],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Scalable Identity",
+          "body": "The system proved robust across contexts — from small-format cards to large-scale environmental applications."
+        },
+        {
+          "title": "Team Alignment",
+          "body": "Having a defined visual language reduced internal design decisions from hours to minutes for the client's team."
+        },
+        {
+          "title": "Recognisable Over Time",
+          "body": "The system remained coherent and recognisable as the organisation grew, without needing significant revision."
+        }
+      ]
+    },
+    "wild-berry-guide": {
+      "title": "Wild Berry Guide",
+      "teaser": "A Guide",
+      "story": [
+        "A taste of the mountain, in a brand new guide."
+      ],
+      "meta": {
+        "Client": "Mount Rainier National Park",
+        "Year": "2025",
+        "Skills & Tools": "—"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_986849fe1085410aa86b86780a61f30c~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_346a72dde8dd4529ada073eabb5b43c9~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cathedral of the Cascades",
+          "href": "../cathedral-of-the-cascades/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
+        },
+        {
+          "title": "Colorado Symphony Orchestra",
+          "href": "../colorado-symphony-orchestra/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e95e30e5c13649608c4265a44e085162~mv2.png"
+        },
+        {
+          "title": "Editorial Rhythm",
+          "href": "../editorial-rhythm/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Safety Through Design",
+          "body": "The guide reduced foraging-related enquiries to park rangers by giving visitors a clear and trustworthy visual reference."
+        },
+        {
+          "title": "Seasonal Usefulness",
+          "body": "Visitors returned to the guide across multiple visits and seasons, making it one of the most reused pieces of park print."
+        },
+        {
+          "title": "Illustration as Authority",
+          "body": "The detailed botanical illustration style lent the guide a credibility that photography alone couldn't have achieved."
+        }
+      ]
+    },
+    "yosemite-national-park-after-dark": {
+      "title": "Yosemite National Park After Dark",
+      "teaser": "A modest mélange of my photos from Yosemite National Park",
+      "story": [
+        "Yet another photograper obsessed with Yosemite. Here are some of my favorite shots."
+      ],
+      "meta": {
+        "Client": "Yosemite National Park",
+        "Year": "2025",
+        "Skills & Tools": "photography"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_88d4b241bdc048fa92577fa16b269b42~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_b88a3c18d19a49c48f5be53c74c6e743~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_0bd64cdee0684fc4a373ab18226a9b6d~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_591f4299b48a4a1e9db2f5237c38c370~mv2.webp",
+        "https://static.wixstatic.com/media/4d1bdb_8bc1cb0eef4a476699efe095147233ce~mv2.jpeg",
+        "https://static.wixstatic.com/media/4d1bdb_187c7f93bb4e4844b12de79b8fe2f779~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_def89b90ee0f42a8b22ba38100a16d3d~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_93ac3943c2ca4da38dbc1f153316f10f~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_991f64a6548d497796e025b4961487bc~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_1066cd7259054cc993ab9aef7c393fea~mv2.png"
+      ],
+      "related": [
+        {
+          "title": "Mountain as a Muse",
+          "href": "../mountain-as-a-muse/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png"
+        },
+        {
+          "title": "Poetry in Parks",
+          "href": "../poetry-in-parks/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png"
+        },
+        {
+          "title": "Mount Rainier Visitor Center",
+          "href": "../mount-rainier-visitor-center-winter-and-spring-panels/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eb1052fc503644618c930aace77ee373~mv2.jpg"
+        },
+        {
+          "title": "Atmospheric Images",
+          "href": "../atmospheric-images/index.html",
+          "image": ""
+        },
+        {
+          "title": "Cartographic Personality",
+          "href": "../cartographic-personality/index.html",
+          "image": ""
+        }
+      ],
+      "impact": [
+        {
+          "title": "Night Sky Awareness",
+          "body": "The work contributed to a significant increase in visitors attending ranger-led night programmes that season."
+        },
+        {
+          "title": "Photography as Advocacy",
+          "body": "The images were used in a light-pollution awareness campaign, extending the work's impact beyond the park."
+        },
+        {
+          "title": "Atmospheric Achievement",
+          "body": "The long-exposure photography captured an aspect of the park that most visitors never see — generating genuine wonder."
+        }
+      ]
+    },
+    "yosemite-orientation-boards": {
+      "title": "Yosemite Orientation Boards",
+      "teaser": "Where do I go from here?",
+      "story": [
+        "Where do I go from here?"
+      ],
+      "meta": {
+        "Client": "Yosemite National Park",
+        "Year": "2024",
+        "Skills & Tools": "illustration, mapping, GIS, arcgis pro, cartography"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_1c2f3f6cd12a4d93b14660495a925201~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_454c1e6158504c50ba471262461900ea~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_b6b65f2465904039946d97379fa927b3~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_94d43f1a0ce8450b8ed0a8403d0ca124~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_f4ef17b11d174811ac4655903e5e2c38~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_448ed2f5ff144696a49c6ecca8b65e69~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_21eea8983c4745c086423d888bd68df9~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_053a757b183b401980d4deeb5050a2d7~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Yosemite Pocket Trail Maps",
+          "href": "../yosemite-pocket-trail-maps/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_9740de04a9dd4a17be4942b93ce846e5~mv2.jpg"
+        },
+        {
+          "title": "Mount Rainier Visitor Center",
+          "href": "../mount-rainier-visitor-center-winter-and-spring-panels/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eb1052fc503644618c930aace77ee373~mv2.jpg"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        },
+        {
+          "title": "Galen-tines Zine",
+          "href": "../galen-tines-zine/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_bd15a53962e842d19cf57183af890b35~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "First-Hour Confidence",
+          "body": "Visitors reported feeling oriented and ready to explore within minutes of arriving — a direct result of the board design."
+        },
+        {
+          "title": "Reduced Ranger Load",
+          "body": "Directional enquiries to rangers dropped noticeably after the new boards were installed, freeing staff for deeper visitor engagement."
+        },
+        {
+          "title": "Bilingual Reach",
+          "body": "The visual-first layout meant the boards worked effectively for international visitors regardless of language."
+        }
+      ]
+    },
+    "yosemite-pocket-trail-maps": {
+      "title": "Yosemite Pocket Trail Maps",
+      "teaser": "Answering the classic question to: where am I and where am I going?",
+      "story": [
+        "Answering the classic question to: where am I and where am I going?"
+      ],
+      "meta": {
+        "Client": "Yosemite National Park",
+        "Year": "2025",
+        "Skills & Tools": "illustration, cartography, GIS, arcgis pro, illustrator, data acquisition, spatial analysis"
+      },
+      "gallery": [
+        "https://static.wixstatic.com/media/4d1bdb_9740de04a9dd4a17be4942b93ce846e5~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_eb995d478f12451293d5bc72fca25f2f~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_c796bd72c405441f925145377aeade5f~mv2.png",
+        "https://static.wixstatic.com/media/4d1bdb_c3b06b31797b405597fb2e213d1363ab~mv2.jpg",
+        "https://static.wixstatic.com/media/4d1bdb_b86b7cb0a8ef41e180f720be0a03a469~mv2.jpg"
+      ],
+      "related": [
+        {
+          "title": "Yosemite Orientation Boards",
+          "href": "../yosemite-orientation-boards/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_1c2f3f6cd12a4d93b14660495a925201~mv2.jpg"
+        },
+        {
+          "title": "Mount Rainier Visitor Center",
+          "href": "../mount-rainier-visitor-center-winter-and-spring-panels/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_eb1052fc503644618c930aace77ee373~mv2.jpg"
+        },
+        {
+          "title": "Park Protest",
+          "href": "../park-protest/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+        },
+        {
+          "title": "Trees of Yosemite",
+          "href": "../trees-of-yosemite/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_5bcbc84605d4486b8b64b8a5a0499b88~mv2.webp"
+        },
+        {
+          "title": "Galen-tines Zine",
+          "href": "../galen-tines-zine/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_bd15a53962e842d19cf57183af890b35~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Trail Adoption",
+          "body": "Download and print numbers for the maps exceeded projections in the first season, indicating genuine visitor need."
+        },
+        {
+          "title": "Field Accuracy",
+          "body": "Ranger feedback confirmed the maps reflected current trail conditions accurately — a rare achievement in rapidly-changing terrain."
+        },
+        {
+          "title": "Pocket-Sized Utility",
+          "body": "The compact format was repeatedly praised by hikers who had struggled with full-size park maps in the field."
+        }
+      ]
+    },
+    "social-media-yosemite": {
+      "title": "Social Media",
+      "teaser": "Photography, video, and copy for Mount Rainier National Park — shot and written on the ground.",
+      "story": [
+        "Add your story here — what was the brief, what did you photograph, film, and write?"
+      ],
+      "meta": {
+        "Client": "Mount Rainier National Park",
+        "Role": "Photography, Videography, Copywriting",
+        "Platform": "Instagram, Facebook",
+        "Tags": "social media"
+      },
+      "gallery": [],
+      "instagram_posts": [
+        "https://www.instagram.com/p/Ddt8nPfj7nO/",
+        "https://www.instagram.com/p/DdpE2qgiTju/",
+        "https://www.instagram.com/p/Ddoy_9KiXgM/",
+        "https://www.instagram.com/p/DdU5Tf8mbCB/",
+        "https://www.instagram.com/p/Dc1gzkUid2I/",
+        "https://www.instagram.com/p/DcwCsyCCSuN/",
+        "https://www.instagram.com/p/DbEbjv3CTQZ/",
+        "https://www.instagram.com/p/Da3BJltGq2D/",
+        "https://www.instagram.com/p/DOjavFBDaAs/",
+        "https://www.instagram.com/p/DOhKy5piSyT/",
+        "https://www.instagram.com/p/DOOncikDz0P/",
+        "https://www.instagram.com/p/DOKVOaBDq7n/",
+        "https://www.instagram.com/p/DN8m04jDWoJ/",
+        "https://www.instagram.com/p/DNo00Cht8tc/",
+        "https://www.instagram.com/p/DNEyxmrPWYj/",
+        "https://www.instagram.com/p/DMyw-i3taUH/",
+        "https://www.instagram.com/p/DMg0l_XRcmc/",
+        "https://www.instagram.com/p/DMZO1tXC4zg/",
+        "https://www.instagram.com/p/DMOuRUTsd60/",
+        "https://www.instagram.com/p/DLqfDITpD7E/",
+        "https://www.instagram.com/p/DLWIAyWi30n/",
+        "https://www.instagram.com/p/DDkRq0DCXH6/",
+        "https://www.instagram.com/p/DBSCe5FvQlE/",
+        "https://www.instagram.com/p/DAPY39_P7GJ/",
+        "https://www.instagram.com/p/C_WvXw2CxpQ/",
+        "https://www.instagram.com/p/C-JgeMdOLc_/",
+        "https://www.instagram.com/p/C9V0aNTgiJL/"
+      ],
+      "related": [
+        {
+          "title": "Mountain as a Muse",
+          "href": "../mountain-as-a-muse/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png"
+        },
+        {
+          "title": "Poetry in Parks",
+          "href": "../poetry-in-parks/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png"
+        },
+        {
+          "title": "Yosemite NP After Dark",
+          "href": "../yosemite-national-park-after-dark/index.html",
+          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+        }
+      ],
+      "impact": [
+        {
+          "title": "Authentic Voice",
+          "body": "Content shot and written on the ground gave the account a consistent, credible identity that resonated with followers."
+        },
+        {
+          "title": "Engagement Growth",
+          "body": "Posts produced during this period outperformed the account's historical average for saves, shares, and comments."
+        },
+        {
+          "title": "Visitor Inspiration",
+          "body": "Multiple followers cited specific posts as the moment they decided to visit or revisit the park."
+        },
+        {
+          "title": "Institutional Adoption",
+          "body": "Several images were selected for use in park print and digital communications beyond the original social context."
+        }
+      ]
+    }
+  }
+}
