@@ -109,8 +109,8 @@ const cardRevealObserver = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: isMobile ? 0.01 : 0.16,
-  rootMargin: isMobile ? "0px" : "0px 0px -8% 0px"
+  threshold: 0.01,
+  rootMargin: '0px'
 });
 
 cardRevealItems.forEach((item) => cardRevealObserver.observe(item));
@@ -123,7 +123,7 @@ setTimeout(() => {
       item.classList.add("card-visible");
     }
   });
-}, 1200);
+}, 300);
 
 
 document.querySelectorAll(".project-link").forEach((link) => {
@@ -195,3 +195,23 @@ filterButtons.forEach((button) => {
 
   requestAnimationFrame(checkHeadlineComplete);
 })();
+
+/* ── Hamburger nav ── */
+const hamburger = document.querySelector('.nav-hamburger');
+const mobileNav = document.querySelector('.site-nav nav');
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('is-open');
+    mobileNav.classList.toggle('is-open', open);
+    hamburger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('is-open');
+      mobileNav.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+}
