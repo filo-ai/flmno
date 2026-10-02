@@ -25,7 +25,7 @@
 
 /* FLMNO-style typography mapping */
 body{font-family:"Apercu",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
-.brand{font-family:"Reckless",serif;font-weight:500}
+.brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;text-decoration:none}
 nav,.kicker,.section-heading p,.text-button,.logo-grid p,.frost-overlay p,.apple-card span,.contact-form span,footer strong,.apple-modal span,.scribble-label-svg{font-family:"Apercu Mono",monospace;font-weight:400}
 .scroll-headline{font-family:"Reckless",serif;font-weight:400}
 .display-heading,.contact-copy h2,.apple-modal h2{font-family:"Reckless",serif;font-weight:500}
@@ -40,7 +40,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,B
 a{color:inherit;text-decoration:none}
 .ambient{display:none}
 .site-nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(24px,5vw,72px);background:rgba(5,5,7,.66);backdrop-filter:blur(24px) saturate(165%)}
-.brand{font-size:17px;font-weight:600;letter-spacing:-.05em}
+.brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;text-decoration:none}
 nav{display:flex;gap:24px;font-size:10px;letter-spacing:.055em;color:rgba(247,247,242,.72);flex-wrap:wrap}nav a:hover{color:#fff}
 .hero{min-height:calc(100vh - 66px);padding:clamp(96px,12vw,168px) clamp(24px,6vw,88px) clamp(86px,10vw,140px);display:flex;flex-direction:column;justify-content:center;align-items:center}
 .kicker{margin:0 0 22px;color:rgba(247,247,242,.55);font-size:11px;letter-spacing:.12em}
@@ -58,11 +58,11 @@ nav{display:flex;gap:24px;font-size:10px;letter-spacing:.055em;color:rgba(247,24
 .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,6vw,88px);align-items:center}.display-heading{max-width:1000px;margin:0;font-size:clamp(40px,6.3vw,104px);line-height:.94;letter-spacing:-.067em;font-weight:200}.lettering-card{min-height:520px;padding:clamp(28px,5vw,64px);border-radius:36px;background:transparent;display:flex;align-items:center;justify-content:center;overflow:hidden}.lettering-card span{font-size:clamp(70px,13vw,188px);font-weight:700;letter-spacing:-.18em;transition:transform .4s ease}.lettering-card:hover span:nth-child(odd){transform:translateY(-18px)}.lettering-card:hover span:nth-child(even){transform:translateY(18px)}
 .body-copy{max-width:760px;margin:28px 0 0;color:rgba(247,247,242,.7);font-size:clamp(18px,2vw,27px);line-height:1.42}
 .apple-service-grid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.apple-card{position:relative;min-height:360px;padding:34px;border:0;border-radius:36px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));color:#fff;text-align:left;cursor:pointer;backdrop-filter:blur(24px) saturate(140%);transition:transform .45s cubic-bezier(.22,1,.36,1),background .35s ease,box-shadow .45s ease;box-shadow:0 20px 80px rgba(0,0,0,.28)}.apple-card:hover{transform:translateY(-8px);background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.06));box-shadow:0 40px 120px rgba(0,0,0,.34)}.apple-card span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:11px;letter-spacing:.12em}.apple-card h3{max-width:460px;margin:0;font-size:clamp(26px,2.6vw,42px);line-height:.98;letter-spacing:-.06em;font-weight:300}.apple-card b{position:absolute;left:34px;bottom:30px;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:rgba(255,255,255,.1);font-size:28px;font-weight:300}
-.contact{padding:clamp(96px,12vw,180px) clamp(24px,6vw,88px)}.contact-panel{min-height:76vh;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,92px);align-items:end}.contact-copy h2{margin:0;font-size:clamp(44px,7.8vw,128px);line-height:.88;letter-spacing:-.08em;font-weight:200}.contact-copy p:not(.kicker){max-width:520px;margin:28px 0 0;color:rgba(255,255,255,.66);font-size:clamp(18px,2vw,26px);line-height:1.35}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,30px)}.contact-form label{display:grid;gap:12px}.contact-form .full{grid-column:1/-1}.contact-form span{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.58)}.contact-form input,.contact-form textarea{width:100%;border:0;border-radius:24px;background:rgba(255,255,255,.12);color:inherit;padding:18px 22px;font:300 18px/1.25 inherit;outline:none}.contact-form textarea{min-height:190px;resize:vertical}.contact-form button{grid-column:1/-1;justify-self:start;border:0;border-radius:999px;background:#fff;color:#050507;padding:17px 30px;font-size:11px;letter-spacing:.13em;cursor:pointer}
-footer{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;padding:36px clamp(24px,6vw,88px) 54px;color:rgba(247,247,242,.78);font-size:12px}footer p{display:grid;gap:8px;margin:0}footer strong{font-size:10px;letter-spacing:.14em;color:rgba(247,247,242,.46)}
+.contact{padding:clamp(96px,12vw,180px) clamp(24px,6vw,88px)}.contact-panel{min-height:76vh;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,92px);align-items:end}.contact-copy h2{margin:0;font-size:clamp(44px,7.8vw,128px);line-height:.88;letter-spacing:-.04em;font-weight:200}.contact-copy p:not(.kicker){max-width:520px;margin:28px 0 0;color:rgba(255,255,255,.66);font-size:clamp(18px,2vw,26px);line-height:1.35}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,30px)}.contact-form label{display:grid;gap:12px}.contact-form .full{grid-column:1/-1}.contact-form span{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.58)}.contact-form input,.contact-form textarea{width:100%;border:0;border-radius:24px;background:rgba(255,255,255,.12);color:inherit;padding:18px 22px;font:300 18px/1.25 inherit;outline:none}.contact-form textarea{min-height:190px;resize:vertical}.contact-form button{grid-column:1/-1;justify-self:start;border:0;border-radius:999px;background:#fff;color:#050507;padding:17px 30px;font-size:11px;letter-spacing:.13em;cursor:pointer}
+footer{padding:28px clamp(20px,5vw,72px);color:rgba(247,247,242,.36);font-size:13px}
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.52);backdrop-filter:blur(18px);opacity:0;pointer-events:none;transition:opacity .35s ease;z-index:90}.modal-backdrop.active{opacity:1;pointer-events:auto}.apple-modal{position:fixed;left:50%;top:50%;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;padding:44px;border-radius:40px;background:linear-gradient(180deg,rgba(24,24,28,.98),rgba(10,10,12,.98));color:#fff;transform:translate(-50%,-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1);z-index:100;box-shadow:0 50px 160px rgba(0,0,0,.52)}.apple-modal.active{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}.modal-close{position:absolute;right:24px;top:24px;width:44px;height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:28px;cursor:pointer}.apple-modal span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:12px;letter-spacing:.12em}.apple-modal h2{max-width:760px;margin:0 0 24px;font-size:clamp(42px,5vw,72px);line-height:.92;letter-spacing:-.07em;font-weight:300}.apple-modal p{max-width:700px;color:rgba(255,255,255,.72);font-size:20px;line-height:1.5}.apple-modal a{display:inline-block;margin-top:18px;color:#fff;font-size:18px}body.modal-open{overflow:hidden}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-body.contact-mode{background:var(--contact-bg,#FAF3C7);color:#050507}body.contact-mode .site-nav{background:rgba(250,243,199,.72)}body.contact-mode .brand,body.contact-mode nav,body.contact-mode nav a,body.contact-mode .kicker,body.contact-mode .section-heading p,body.contact-mode .body-copy,body.contact-mode .logo-grid p,body.contact-mode footer,body.contact-mode footer strong{color:#050507}body.contact-mode .scroll-char{color:rgba(5,5,7,.24)}body.contact-mode .scroll-char.visible{color:#050507}body.contact-mode .contact-copy p:not(.kicker){color:rgba(0,0,0,.66)}body.contact-mode .contact-form span{color:rgba(0,0,0,.58)}body.contact-mode .text-button{color:#050507}body.contact-mode .text-button.muted{color:rgba(0,0,0,.58)}body.contact-mode .logo-grid article,body.contact-mode .logo-grid span,body.contact-mode .lettering-card,body.contact-mode .contact-form input,body.contact-mode .contact-form textarea{background:rgba(255,255,255,.28)}
+body.contact-mode{background:var(--contact-bg,#FAF3C7);color:#050507}body.contact-mode .site-nav{background:rgba(250,243,199,.72)}body.contact-mode .brand,body.contact-mode nav,body.contact-mode nav a,body.contact-mode .kicker,body.contact-mode .section-heading p,body.contact-mode .body-copy,body.contact-mode .logo-grid p,body.contact-mode footer,body.contact-mode body.contact-mode .scroll-char{color:rgba(5,5,7,.24)}body.contact-mode .scroll-char.visible{color:#050507}body.contact-mode .contact-copy p:not(.kicker){color:rgba(0,0,0,.66)}body.contact-mode .contact-form span{color:rgba(0,0,0,.58)}body.contact-mode .text-button{color:#050507}body.contact-mode .text-button.muted{color:rgba(0,0,0,.58)}body.contact-mode .logo-grid article,body.contact-mode .logo-grid span,body.contact-mode .lettering-card,body.contact-mode .contact-form input,body.contact-mode .contact-form textarea{background:rgba(255,255,255,.28)}
 @media(max-width:900px){.site-nav{align-items:flex-start;flex-direction:column}.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr 1fr}.split,.contact-panel{grid-template-columns:1fr}.apple-card{min-height:280px}footer{grid-template-columns:1fr}}
 @media(max-width:620px){nav{gap:12px}.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr}.hero,.section,.contact{padding-left:20px;padding-right:20px}.contact-form{grid-template-columns:1fr}.work-tile,.tile-image,.frost-overlay{border-radius:26px}.apple-modal{padding:30px}.apple-modal h2{font-size:38px}}
 
@@ -255,9 +255,7 @@ nav,
 .text-button,
 .apple-card span,
 .contact-form span,
-footer strong{
-  font-family:"Apercu Mono",monospace;
-}
+
 
 
 /* --- user notes fix pass --- */
@@ -665,9 +663,7 @@ nav,
 .apple-card span,
 .contact-form span,
 footer,
-footer strong{
-  font-size:min(var(--body-size, 16px), 16px);
-}
+
 
 .kicker,
 .section-heading p,
@@ -868,11 +864,7 @@ nav,
 .section-heading p,
 .text-button,
 .frost-overlay p,
-footer strong{
-  font-size:12px;
-  letter-spacing:.04em;
-  line-height:1.2;
-}
+
 
 .contact-form span{
   color:rgba(255,255,255,.66);
@@ -883,9 +875,7 @@ body.contact-mode .body-copy,
 body.contact-mode .contact-copy p,
 body.contact-mode .logo-grid p,
 body.contact-mode footer,
-body.contact-mode footer strong{
-  color:rgba(5,5,7,.66);
-}
+body.contact-mode 
 
 /* Shorter, cleaner A-to-B drawing presentation */
 .about .scribble-svg{
@@ -956,18 +946,9 @@ main > .headline-scroll-spacer{
 }
 
 /* Logo styling */
-.brand{
-  font-family:"Apercu", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  font-weight:700;
-  font-size:32px;
-  line-height:1;
-  letter-spacing:-0.06em;
-  color:#fff;
-}
+.brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;text-decoration:none}
 
-body.contact-mode .brand{
-  color:#050507;
-}
+body.contact-mode .brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;text-decoration:none}
 
 /* Keep footer full width, but align its inner grid nicely */
 footer{
@@ -976,16 +957,9 @@ footer{
 }
 
 /* Prevent older Laica logo mapping from overriding */
-.site-nav .brand{
-  font-family:"Apercu", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  font-weight:700;
-  font-size:32px;
-  color:#fff;
-}
+.site-nav .brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;text-decoration:none}
 
-body.contact-mode .site-nav .brand{
-  color:#050507;
-}
+body.contact-mode .site-nav .brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;text-decoration:none}
 
 @media(max-width:1000px){
   main > section,
@@ -1333,9 +1307,7 @@ nav,
 .section-heading p,
 .text-button,
 .frost-overlay p,
-footer strong{
-  font-size:12px;
-}
+
 
 /* Logo captions should feel editorial */
 .logo-grid h3{
@@ -1399,13 +1371,7 @@ nav,
 .text-button,
 .frost-overlay p,
 footer,
-footer strong{
-  font-family:"Apercu",sans-serif;
-  font-size:24px !important;
-  line-height:1.42;
-  letter-spacing:-0.015em;
-  font-weight:300;
-}
+
 
 /* Apercu Mono */
 nav,
@@ -1773,24 +1739,7 @@ body.contact-mode .filter-pill.is-active{
   margin-top:clamp(22px,5vw,48px);
 }
 
-.hero-scroll-cue{
-  width:52px;
-  height:52px;
-  border-radius:999px;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.18);
-  background:transparent;
-  opacity:0;
-  transform:translateY(10px);
-  pointer-events:none;
-  transition:
-    opacity .5s ease,
-    transform .5s ease,
-    border-color .25s ease;
-}
+.hero-scroll-cue{display:grid;place-items:center;color:rgba(255,255,255,.52);text-decoration:none;transition:color .2s,transform .3s ease;animation:cue-bob 2.4s ease-in-out infinite}
 
 .hero-scroll-cue span{
   display:block;
@@ -1806,23 +1755,16 @@ body.contact-mode .filter-pill.is-active{
   animation:heroArrowBounce 1.8s ease-in-out infinite;
 }
 
-.hero-scroll-cue:hover{
-  border-color:rgba(255,255,255,.38);
-}
+.hero-scroll-cue:hover{color:rgba(255,255,255,.9);transform:translateY(4px)}
 
 @keyframes heroArrowBounce{
   0%,100%{ transform:translateY(0); }
   50%{ transform:translateY(6px); }
 }
 
-body.contact-mode .hero-scroll-cue{
-  color:#050507;
-  border-color:rgba(5,5,7,.18);
-}
+body.contact-mode .hero-scroll-cue{display:grid;place-items:center;color:rgba(255,255,255,.52);text-decoration:none;transition:color .2s,transform .3s ease;animation:cue-bob 2.4s ease-in-out infinite}
 
-body.contact-mode .hero-scroll-cue:hover{
-  border-color:rgba(5,5,7,.38);
-}
+body.contact-mode .hero-scroll-cue:hover{color:rgba(255,255,255,.9);transform:translateY(4px)}
 
 .work-heading p{
   max-width:720px;
@@ -2273,3 +2215,5 @@ section::after,
 .headline-panel{
   background:transparent !important;
 }
+
+.site-footer a{color:rgba(247,247,242,.36);text-decoration:none}.site-footer a:hover{color:var(--fg,#f7f7f2)}
