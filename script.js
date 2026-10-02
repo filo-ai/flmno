@@ -100,6 +100,8 @@ if (scribblePath && scribbleSection) {
 
 const cardRevealItems = document.querySelectorAll(".card-reveal");
 
+// Lower threshold on mobile so cards trigger as soon as they enter the viewport
+const isMobile = window.innerWidth < 768;
 const cardRevealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -107,11 +109,21 @@ const cardRevealObserver = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.16,
-  rootMargin: "0px 0px -8% 0px"
+  threshold: isMobile ? 0.01 : 0.16,
+  rootMargin: isMobile ? "0px" : "0px 0px -8% 0px"
 });
 
 cardRevealItems.forEach((item) => cardRevealObserver.observe(item));
+
+// Safety net: after 1.2s, any card still invisible gets shown
+// (catches cases where IntersectionObserver fires before layout is ready)
+setTimeout(() => {
+  cardRevealItems.forEach((item) => {
+    if (!item.classList.contains("card-visible")) {
+      item.classList.add("card-visible");
+    }
+  });
+}, 1200);
 
 
 document.querySelectorAll(".project-link").forEach((link) => {
