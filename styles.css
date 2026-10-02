@@ -1,31 +1,37 @@
-@font-face{font-family:"Laica A";src:url("assets/fonts/LaicaA-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Laica A";src:url("assets/fonts/LaicaA-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Laica A";src:url("assets/fonts/LaicaA-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Laica A";src:url("assets/fonts/LaicaA-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Laica A";src:url("assets/fonts/LaicaA-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
-@font-face{font-family:"Laica A";src:url("assets/fonts/LaicaA-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
-@font-face{font-family:"Laica B";src:url("assets/fonts/LaicaB-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Laica B";src:url("assets/fonts/LaicaB-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Laica B";src:url("assets/fonts/LaicaB-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Laica B";src:url("assets/fonts/LaicaB-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Laica B";src:url("assets/fonts/LaicaB-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
-@font-face{font-family:"Laica B";src:url("assets/fonts/LaicaB-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/Apercu Pro Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/Apercu Pro Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/Apercu Pro Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/Apercu Pro Light Italic.otf") format("opentype");font-weight:300;font-style:italic;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/Apercu Pro Medium Italic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-LightItalic.otf") format("opentype");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Book.otf") format("opentype");font-weight:450;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-BookItalic.otf") format("opentype");font-weight:450;font-style:italic;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraLight.ttf") format("truetype");font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraLightItalic.ttf") format("truetype");font-weight:200;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Thin.ttf") format("truetype");font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ThinItalic.ttf") format("truetype");font-weight:100;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-LightItalic.ttf") format("truetype");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraBold.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraBoldItalic.ttf") format("truetype");font-weight:800;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-BlackItalic.ttf") format("truetype");font-weight:900;font-style:italic;font-display:swap}
 @font-face{font-family:"Apercu Mono";src:url("assets/fonts/Apercu Pro Mono.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 
 /* FLMNO-style typography mapping */
 body{font-family:"Apercu",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
-.brand{font-family:"Laica B",serif;font-weight:500}
+.brand{font-family:"Reckless",serif;font-weight:500}
 nav,.kicker,.section-heading p,.text-button,.logo-grid p,.frost-overlay p,.apple-card span,.contact-form span,footer strong,.apple-modal span,.scribble-label-svg{font-family:"Apercu Mono",monospace;font-weight:400}
-.scroll-headline{font-family:"Laica A",serif;font-weight:400}
-.display-heading,.contact-copy h2,.apple-modal h2{font-family:"Laica B",serif;font-weight:500}
-.frost-overlay h2,.logo-grid h3,.apple-card h3{font-family:"Laica B",serif;font-weight:500}
+.scroll-headline{font-family:"Reckless",serif;font-weight:400}
+.display-heading,.contact-copy h2,.apple-modal h2{font-family:"Reckless",serif;font-weight:500}
+.frost-overlay h2,.logo-grid h3,.apple-card h3{font-family:"Reckless",serif;font-weight:500}
 .body-copy,.contact-copy p,.apple-modal p,.contact-form input,.contact-form textarea{font-family:"Apercu",sans-serif}
-.lettering-card span,.logo-grid span{font-family:"Laica B",serif}
+.lettering-card span,.logo-grid span{font-family:"Reckless",serif}
 
 *{box-sizing:border-box}
 :root{--bg:#050507;--text:#f7f7f2;--muted:rgba(247,247,242,.62)}
@@ -221,20 +227,20 @@ body.contact-mode .scribble-section.is-complete .label-b-svg{
 
 /* Final font-use overrides */
 .scroll-headline{
-  font-family:"Laica A",serif;
+  font-family:"Reckless",serif;
   font-weight:400;
   letter-spacing:-0.02em;
 }
 .display-heading,
 .contact-copy h2,
 .apple-modal h2{
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-weight:500;
   letter-spacing:-0.055em;
 }
 .apple-card h3,
 .frost-overlay h2{
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-weight:500;
 }
 body,
@@ -482,7 +488,7 @@ h1,h2,h3,
 
 .apple-card h3{
   --local-size:clamp(25px,2.4vw,36px);
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-weight:500;
   line-height:1;
   letter-spacing:-0.045em;
@@ -495,7 +501,7 @@ h1,h2,h3,
 
 /* 2b. Modals: title case label not mono/body; black/gray in contact mode */
 .apple-modal span{
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-size:24px;
   line-height:1;
   letter-spacing:-0.04em;
@@ -536,7 +542,7 @@ body.contact-mode .apple-modal span{
   background:
     radial-gradient(circle at 35% 25%,rgba(255,255,255,.22),transparent 22%),
     linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-size:clamp(32px,5vw,72px);
   font-weight:500;
   letter-spacing:-0.08em;
@@ -546,7 +552,7 @@ body.contact-mode .apple-modal span{
   --local-size:16px;
   padding:0 4px;
   margin:0 0 6px;
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-weight:500;
   line-height:1.15;
   letter-spacing:-0.02em;
@@ -721,7 +727,7 @@ footer{
 
 .logo-tile .frost-overlay h2{
   --local-size:clamp(24px,2.8vw,36px);
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-weight:500;
   letter-spacing:-0.055em;
 }
@@ -730,7 +736,7 @@ footer{
   --local-size:16px;
   margin:0 0 4px;
   padding:0 4px;
-  font-family:"Laica B",serif;
+  font-family:"Reckless",serif;
   font-weight:500;
   line-height:1.15;
   letter-spacing:-0.02em;
@@ -2008,7 +2014,7 @@ h3,
 h4,
 .display,
 .section-heading p{
-  font-family:"Laica B", serif !important;
+  font-family:"Reckless", serif !important;
   font-weight:500 !important;
   letter-spacing:-0.04em;
   line-height:.98;
@@ -2049,7 +2055,7 @@ label{
 .work-item > h3,
 .logo-item > h3{
   font-size:18px !important;
-  font-family:"Laica B", serif !important;
+  font-family:"Reckless", serif !important;
   font-weight:500 !important;
 }
 
