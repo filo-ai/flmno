@@ -331,7 +331,7 @@ if (hamburger && mobileNav) {
 
 /* ── Random logo frame on each page load ── */
 (function () {
-  const FRAMES = 30;
+  const FRAMES = 4;
   const frame  = Math.floor(Math.random() * FRAMES);
   const padded = String(frame).padStart(2, "0");
   // Resolve path relative to current page
