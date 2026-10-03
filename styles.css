@@ -2435,3 +2435,54 @@ button[type="submit"],
   height: auto;
   image-rendering: pixelated; /* keep the pixel art crisp */
 }
+
+/* ── First-visit interaction hints ── */
+.hint {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  font-family: "Apercu", sans-serif;
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: rgba(247,247,242,.55);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .5s ease, transform .5s ease;
+  z-index: 10;
+}
+.hint svg {
+  flex-shrink: 0;
+  opacity: .7;
+}
+.hint.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.hint.is-hiding {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Position variants */
+.hint--below { bottom: -28px; }
+.hint--above { top: -28px; }
+.hint--inline {
+  position: relative;
+  left: auto;
+  transform: none;
+  display: inline-flex;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.hint--inline.is-visible { opacity: 1; transform: none; }
+.hint--inline.is-hiding  { opacity: 0; transform: none; }
+
+/* Parent needs position:relative for absolute hints */
+.cs-carousel,
+.cs-related,
+.cs-impact__track { position: relative; }

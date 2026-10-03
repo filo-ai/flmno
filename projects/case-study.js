@@ -176,3 +176,49 @@
       el.classList.remove("is-dragging");
     });
   });
+
+/* ── First-visit interaction hints ── */
+(function () {
+  const ARROW_LR = `<svg width="28" height="10" viewBox="0 0 28 10" fill="none" aria-hidden="true"><path d="M1 5h26M21 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 1L3 5l4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+  function showHint(el, text, key, delay) {
+    try { if (localStorage.getItem("hint_" + key)) return; } catch(e) {}
+
+    const hint = document.createElement("div");
+    hint.className = "hint hint--below";
+    hint.innerHTML = ARROW_LR + `<span>${text}</span>`;
+    el.style.position = "relative";
+    el.appendChild(hint);
+
+    setTimeout(() => {
+      hint.classList.add("is-visible");
+
+      const hideTimer = setTimeout(() => {
+        hint.classList.remove("is-visible");
+        hint.classList.add("is-hiding");
+        setTimeout(() => hint.remove(), 550);
+        try { localStorage.setItem("hint_" + key, "1"); } catch(e) {}
+      }, 2800);
+
+      const dismiss = () => {
+        clearTimeout(hideTimer);
+        hint.classList.remove("is-visible");
+        hint.classList.add("is-hiding");
+        setTimeout(() => hint.remove(), 550);
+        try { localStorage.setItem("hint_" + key, "1"); } catch(e) {}
+      };
+      el.addEventListener("pointerdown", dismiss, { once: true });
+      el.addEventListener("scroll", dismiss, { once: true, passive: true });
+      el.addEventListener("touchstart", dismiss, { once: true, passive: true });
+    }, delay);
+  }
+
+  const carousel = document.querySelector(".cs-carousel");
+  if (carousel) showHint(carousel, "Drag or scroll to browse", "carousel", 900);
+
+  const related = document.querySelector(".cs-related");
+  if (related) showHint(related, "Drag or scroll to browse", "related", 1000);
+
+  const impact = document.querySelector(".cs-impact__track");
+  if (impact) showHint(impact, "Drag or scroll to browse", "impact", 1100);
+})();

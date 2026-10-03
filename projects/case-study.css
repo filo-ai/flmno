@@ -335,3 +335,10 @@ h1,h2,p,dl,dd,figure{margin:0}
 @media (max-width: 700px) {
   .cs-impact__track { grid-auto-columns: 280px }
 }
+
+/* ── First-visit hints (inherits from main styles.css) ── */
+.hint { position:absolute; left:50%; transform:translateX(-50%) translateY(4px); white-space:nowrap; font-family:"Apercu",sans-serif; font-size:12px; letter-spacing:.04em; color:rgba(247,247,242,.55); display:flex; align-items:center; gap:7px; pointer-events:none; opacity:0; transition:opacity .5s ease, transform .5s ease; z-index:10; }
+.hint svg { flex-shrink:0; opacity:.7; }
+.hint.is-visible { opacity:1; transform:translateX(-50%) translateY(0); }
+.hint.is-hiding  { opacity:0; transform:translateX(-50%) translateY(-4px); }
+.hint--below { bottom:-30px; }

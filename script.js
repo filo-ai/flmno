@@ -270,3 +270,61 @@ if (hamburger && mobileNav) {
     setTimeout(() => splash.remove(), 650);
   });
 })();
+
+/* ── First-visit interaction hints ── */
+(function () {
+  const ARROW_LR = `<svg width="28" height="10" viewBox="0 0 28 10" fill="none" aria-hidden="true"><path d="M1 5h26M21 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 1L3 5l4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+  function showHint(el, text, key, position = "below", delay = 700) {
+    // Only show once per key, ever
+    try { if (localStorage.getItem("hint_" + key)) return; } catch(e) {}
+
+    const hint = document.createElement("div");
+    hint.className = "hint hint--" + position;
+    hint.innerHTML = ARROW_LR + `<span>${text}</span>`;
+    el.style.position = "relative";
+    el.appendChild(hint);
+
+    // Fade in after delay
+    const showTimer = setTimeout(() => {
+      hint.classList.add("is-visible");
+
+      // Fade out after 2.8s
+      const hideTimer = setTimeout(() => {
+        hint.classList.remove("is-visible");
+        hint.classList.add("is-hiding");
+        setTimeout(() => hint.remove(), 550);
+        try { localStorage.setItem("hint_" + key, "1"); } catch(e) {}
+      }, 2800);
+
+      // Also dismiss immediately on first interaction
+      const dismiss = () => {
+        clearTimeout(hideTimer);
+        hint.classList.remove("is-visible");
+        hint.classList.add("is-hiding");
+        setTimeout(() => hint.remove(), 550);
+        try { localStorage.setItem("hint_" + key, "1"); } catch(e) {}
+        el.removeEventListener("pointerdown", dismiss);
+        el.removeEventListener("scroll", dismiss);
+        el.removeEventListener("touchstart", dismiss);
+      };
+      el.addEventListener("pointerdown", dismiss, { once: true });
+      el.addEventListener("scroll", dismiss, { once: true, passive: true });
+      el.addEventListener("touchstart", dismiss, { once: true, passive: true });
+    }, delay);
+  }
+
+  // Homepage: filter bar nudge
+  const filterBar = document.querySelector(".filter-bar");
+  if (filterBar) showHint(filterBar, "Filter by discipline", "filter", "below", 1200);
+
+  // Project pages: carousel, related strip, impact track
+  const carousel = document.querySelector(".cs-carousel");
+  if (carousel) showHint(carousel, "Drag or scroll to browse", "carousel", "below", 900);
+
+  const related = document.querySelector(".cs-related");
+  if (related) showHint(related, "Drag or scroll to browse", "related", "below", 900);
+
+  const impact = document.querySelector(".cs-impact__track");
+  if (impact) showHint(impact, "Drag or scroll to browse", "impact", "below", 900);
+})();
