@@ -213,7 +213,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         },
         {
           "title": "Support Your Local Dealer",
@@ -391,7 +391,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         },
         {
           "title": "Support Your Local Dealer",
@@ -482,7 +482,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         }
       ],
       "impact": [
@@ -551,7 +551,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         }
       ],
       "impact": [
@@ -578,12 +578,15 @@
         "Industry": "Consumer / Goods"
       },
       "gallery": [
+        "/assets/images/square-eyes-illy.webp",
+        "/assets/images/selfportrait-popsicle-illy.webp",
+        "/assets/images/woof.webp",
+        "/assets/images/boom-pow-bang.webp",
+        "/assets/images/palm-tree-drought-1.webp",
+        "/assets/images/trash-dump.webp",
+        "/assets/images/trash-dump-1.webp",
         "/assets/images/lettering--f_loading_flmno.gif",
-        "/assets/images/lettering--x.gif",
-        "/assets/images/lettering--asset-1.webp",
-        "/assets/images/lettering--nike_flmno.webp",
-        "/assets/images/lettering--losangelesca_flmno.webp",
-        "/assets/images/lettering--losangelesca_flmno_1.webp"
+        "/assets/images/lettering--x.gif"
       ],
       "related": [
         {
@@ -857,7 +860,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         },
         {
           "title": "Support Your Local Dealer",
@@ -1209,7 +1212,9 @@
         "/assets/images/illustration--protest-poster-side-b_1.webp",
         "/assets/images/illustration--qblm.webp",
         "/assets/images/illustration--the-courts-poster.webp",
-        "/assets/images/illustration--the-courts-poster_1.webp"
+        "/assets/images/illustration--the-courts-poster_1.webp",
+        "/assets/images/peace-edited.webp",
+        "/assets/images/boom-pow-bang.webp"
       ],
       "related": [
         {
@@ -1230,7 +1235,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         },
         {
           "title": "Support Your Local Dealer",
@@ -1431,6 +1436,7 @@
         "Skills & Tools": "Illustration, poster, promotion"
       },
       "gallery": [
+        "/assets/images/matchbook.webp",
         "/assets/images/illustration--music-v-horror-movies.webp",
         "/assets/images/illustration--halloween-houses-of-fiction.webp",
         "/assets/images/illustration--nasa-destroying-asteroid.webp",
@@ -1494,9 +1500,11 @@
       },
       "gallery": [
         "/assets/images/illustration--get-a-woof-of-that.webp",
+        "/assets/images/woof.webp",
+        "/assets/images/peace-edited.webp",
         "/assets/images/illustration--evolution-of-arrowheads.webp",
         "/assets/images/illustration--a-b_flmno_2x.webp",
-        "/assets/images/illustration--flmno-peace.webp"
+        "/assets/images/palm-tree-drought-1.webp"
       ],
       "related": [
         {
@@ -1507,7 +1515,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         },
         {
           "title": "Lunar Trailblazer Science",
@@ -1701,7 +1709,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/illustration--music-v-horror-movies.webp"
+          "image": "/assets/images/matchbook.webp"
         },
         {
           "title": "Support Your Local Dealer",
