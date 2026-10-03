@@ -2479,8 +2479,8 @@ h1, h2, h3,
 }
 .nav-logo {
   display: block;
-  width: 44px;
-  height: 44px;
+  width:132px;
+  height:132px;
   image-rendering: pixelated;
 }
 .brand span { display: none; }
@@ -2550,4 +2550,31 @@ h1, h2, h3,
     letter-spacing: .02em;
     color: rgba(247,247,242,.9);
   }
+}
+
+/* ── Mobile nav close pill ── */
+.nav-close-pill {
+  display: none;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(247,247,242,.28);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(247,247,242,.7);
+  font-family: "Apercu", sans-serif;
+  font-size: 14px;
+  letter-spacing: .04em;
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  white-space: nowrap;
+}
+.nav-close-pill:hover {
+  background: rgba(247,247,242,.1);
+  color: #f7f7f2;
+}
+.site-nav nav.is-open .nav-close-pill {
+  display: block;
 }

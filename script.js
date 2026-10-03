@@ -200,12 +200,20 @@ filterButtons.forEach((button) => {
 const hamburger = document.querySelector('.nav-hamburger');
 const mobileNav = document.querySelector('.site-nav nav');
 if (hamburger && mobileNav) {
+  function closeNav() {
+    hamburger.classList.remove('is-open');
+    mobileNav.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
   hamburger.addEventListener('click', () => {
     const open = hamburger.classList.toggle('is-open');
     mobileNav.classList.toggle('is-open', open);
     hamburger.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
+  const closePill = mobileNav.querySelector('.nav-close-pill');
+  if (closePill) closePill.addEventListener('click', closeNav);
   mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       hamburger.classList.remove('is-open');
