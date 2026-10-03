@@ -443,6 +443,7 @@
         "Skills & Tools": "print design, illustration"
       },
       "gallery": [
+        "/assets/images/nps-bear-hug.webp",
         "/assets/images/galentines--galentines_1-goc.webp",
         "/assets/images/galentines--img_4620.webp",
         "/assets/images/galentines--img_4629.webp",
@@ -498,7 +499,8 @@
           "title": "Original Artifact",
           "body": "Copies of The Granite Gossip were kept as souvenirs — a rare result for ephemeral print in a park setting."
         }
-      ]
+      ],
+      "related_image": null
     },
     "game-of-cones": {
       "title": "Game of Cones",
@@ -531,7 +533,7 @@
         {
           "title": "Galen-tines Zine",
           "href": "../galen-tines-zine/index.html",
-          "image": "/assets/images/galentines--galentines_1-goc.webp"
+          "image": "/assets/images/nps-bear-hug.webp"
         },
         {
           "title": "Park Protest",
@@ -1225,7 +1227,7 @@
         {
           "title": "Galen-tines Zine",
           "href": "../galen-tines-zine/index.html",
-          "image": "/assets/images/galentines--galentines_1-goc.webp"
+          "image": "/assets/images/nps-bear-hug.webp"
         },
         {
           "title": "Game of Cones",
@@ -1340,7 +1342,7 @@
         {
           "title": "Galen-tines Zine",
           "href": "../galen-tines-zine/index.html",
-          "image": "/assets/images/galentines--galentines_1-goc.webp"
+          "image": "/assets/images/nps-bear-hug.webp"
         },
         {
           "title": "Game of Cones",
@@ -1701,7 +1703,7 @@
         {
           "title": "Galen-tines Zine",
           "href": "../galen-tines-zine/index.html",
-          "image": "/assets/images/galentines--galentines_1-goc.webp"
+          "image": "/assets/images/nps-bear-hug.webp"
         },
         {
           "title": "Game of Cones",
@@ -1965,7 +1967,7 @@
         {
           "title": "Galen-tines Zine",
           "href": "../galen-tines-zine/index.html",
-          "image": "/assets/images/galentines--galentines_1-goc.webp"
+          "image": "/assets/images/nps-bear-hug.webp"
         }
       ],
       "impact": [
@@ -2025,7 +2027,7 @@
         {
           "title": "Galen-tines Zine",
           "href": "../galen-tines-zine/index.html",
-          "image": "/assets/images/galentines--galentines_1-goc.webp"
+          "image": "/assets/images/nps-bear-hug.webp"
         }
       ],
       "impact": [

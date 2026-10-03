@@ -252,3 +252,21 @@ if (hamburger && mobileNav) {
   lb.addEventListener("click", e => { if (e.target === lb) close(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !lb.hidden) close(); });
 })();
+
+/* ── Splash screen ── */
+(function () {
+  const splash = document.getElementById("splash");
+  if (!splash) return;
+
+  // Let the GIF play for at least 1.4s, then wait for page load — whichever is longer
+  const minTime = new Promise(r => setTimeout(r, 1400));
+  const pageLoad = new Promise(r => {
+    if (document.readyState === "complete") r();
+    else window.addEventListener("load", r, { once: true });
+  });
+
+  Promise.all([minTime, pageLoad]).then(() => {
+    splash.classList.add("fade-out");
+    setTimeout(() => splash.remove(), 650);
+  });
+})();

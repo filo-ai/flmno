@@ -2414,3 +2414,24 @@ button[type="submit"],
   color: rgba(247,247,242,.5);
   letter-spacing: .02em;
 }
+
+/* ── Splash screen ── */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: #050507;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .6s ease;
+}
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+#splash img {
+  width: clamp(80px, 12vw, 140px);
+  height: auto;
+  image-rendering: pixelated; /* keep the pixel art crisp */
+}
