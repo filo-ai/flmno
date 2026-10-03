@@ -342,3 +342,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 .hint.is-visible { opacity:1; transform:translateX(-50%) translateY(0); }
 .hint.is-hiding  { opacity:0; transform:translateX(-50%) translateY(-4px); }
 .hint--below { bottom:-30px; }
+
+.nav-logo { width:44px; height:44px; image-rendering:pixelated; display:block; }
+
+.nav-logo{width:44px!important;height:44px!important}.brand span,.cs-header__brand span{display:none!important}
