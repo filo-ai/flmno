@@ -54,10 +54,25 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-carousel.is-dragging{cursor:grabbing}
 .cs-carousel.is-dragging *{pointer-events:none}
 .cs-carousel__item{
-  flex:0 0 auto;height:450px;border:0;padding:0;background:rgba(255,255,255,.05);
+  flex:0 0 auto;
+  height:450px;
+  /* width is driven by the img's natural aspect ratio */
+  width:auto;
+  min-width:200px;   /* never fully collapses while loading */
+  max-width:72vw;
+  border:0;padding:0;
+  background:rgba(255,255,255,.05);
   border-radius:var(--radius);overflow:hidden;cursor:pointer;
 }
-.cs-carousel__item img{height:100%;width:auto;max-width:none;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.cs-carousel__item img{
+  height:100%;
+  width:auto;        /* natural width from aspect ratio */
+  max-width:72vw;
+  display:block;
+  object-fit:cover;  /* fill the space, crop minimally */
+  user-select:none;
+  -webkit-user-drag:none;
+}
 
 /* Explore card */
 .cs-explore{
