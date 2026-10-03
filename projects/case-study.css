@@ -40,7 +40,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-hero{padding-top:clamp(72px,10vw,160px);margin-bottom:52px}
 .cs-hero__label{grid-column:1 / span 4;font-size:16px;color:var(--muted);padding-top:.35em}
 .cs-hero__head{grid-column:5 / span 6}
-.cs-hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:.01em;max-width:376px;font-size:16px;line-height:1.2;color:var(--muted)}
+
 
 /* ── Carousel ── */
 .cs-carousel{
@@ -343,6 +343,60 @@ h1,h2,p,dl,dd,figure{margin:0}
 .hint.is-hiding  { opacity:0; transform:translateX(-50%) translateY(-4px); }
 .hint--below { bottom:-30px; }
 
-.nav-logo { width:44px; height:44px; image-rendering:pixelated; display:block; }
 
-.nav-logo{width:44px!important;height:44px!important}.brand span,.cs-header__brand span{display:none!important}
+
+.brand span,
+
+/* JS adds .on chars — title gets same lit treatment via the scroll observer */
+
+/* ── Case study nav — matches homepage exactly ── */
+.cs-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px clamp(20px,4vw,48px);
+  background: transparent;
+}
+.cs-header__brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.cs-header__brand .nav-logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+  image-rendering: pixelated;
+}
+.cs-header__brand span { display: none; }
+.cs-header__back {
+  font-family: "Apercu", sans-serif;
+  font-size: 14px;
+  letter-spacing: .01em;
+  color: rgba(247,247,242,.52);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.cs-header__back:hover { color: var(--fg, #f7f7f2); }
+
+/* ── Hero title — same scroll-lit char treatment as cs-story__text ── */
+.cs-hero__title {
+  font-family: var(--serif, "Reckless", serif);
+  font-size: clamp(36px, 5.5vw, 72px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .01em;
+  max-width: 820px;
+}
+/* Individual chars added by JS — start faint, light up on scroll */
+.cs-hero__title .c {
+  color: var(--faint, rgba(247,247,242,.18));
+  transition: color .25s ease;
+}
+.cs-hero__title .c.on {
+  color: var(--fg, #f7f7f2);
+}
