@@ -31,10 +31,10 @@ h1,h2,p,dl,dd,figure{margin:0}
 .grid{width:var(--content);margin-inline:auto;display:grid;grid-template-columns:repeat(10,1fr);column-gap:var(--col-gap)}
 
 /* ── Header ── */
-.cs-header{width:var(--content);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;padding:28px 0}
-.cs-header__brand{font-family:"Apercu",-apple-system,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em}
-.cs-header__back{font-size:14px;color:var(--muted);transition:color .2s}
-.cs-header__back:hover{color:var(--fg)}
+
+
+
+
 
 /* ── Hero ── */
 .cs-hero{padding-top:clamp(72px,10vw,160px);margin-bottom:52px}

@@ -328,3 +328,16 @@ if (hamburger && mobileNav) {
   const impact = document.querySelector(".cs-impact__track");
   if (impact) showHint(impact, "Drag or scroll to browse", "impact", "below", 900);
 })();
+
+/* ── Random logo frame on each page load ── */
+(function () {
+  const FRAMES = 30;
+  const frame  = Math.floor(Math.random() * FRAMES);
+  const padded = String(frame).padStart(2, "0");
+  // Resolve path relative to current page
+  const isProject = location.pathname.includes("/projects/");
+  const base = isProject ? "../../assets/logo-frames/" : "/assets/logo-frames/";
+  const logo = document.getElementById("nav-logo");
+  if (logo) logo.src = base + "f" + padded + ".webp";
+})();
+
