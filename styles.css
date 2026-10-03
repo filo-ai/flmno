@@ -1,26 +1,26 @@
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-LightItalic.otf") format("opentype");font-weight:300;font-style:italic;font-display:swap}
+
+
 @font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Book.otf") format("opentype");font-weight:450;font-style:normal;font-display:swap}
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-BookItalic.otf") format("opentype");font-weight:450;font-style:italic;font-display:swap}
+
+
 @font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraLight.ttf") format("truetype");font-weight:200;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraLightItalic.ttf") format("truetype");font-weight:200;font-style:italic;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Thin.ttf") format("truetype");font-weight:100;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ThinItalic.ttf") format("truetype");font-weight:100;font-style:italic;font-display:swap}
+
+
+
+
 @font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-LightItalic.ttf") format("truetype");font-weight:300;font-style:italic;font-display:swap}
+
 @font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+
 @font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
+
 @font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraBold.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-ExtraBoldItalic.ttf") format("truetype");font-weight:800;font-style:italic;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-BlackItalic.ttf") format("truetype");font-weight:900;font-style:italic;font-display:swap}
+
+
+
+
 @font-face{font-family:"Apercu Mono";src:url("assets/fonts/Apercu Pro Mono.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 
 /* FLMNO-style typography mapping */
@@ -49,10 +49,10 @@ nav{display:flex;gap:24px;font-size:10px;letter-spacing:.055em;color:rgba(247,24
 .section{padding:clamp(86px,11vw,160px) clamp(24px,6vw,88px)}.section-heading{margin-bottom:clamp(26px,4vw,48px)}.section-heading p{margin:0;font-size:12px;letter-spacing:.08em;color:rgba(247,247,242,.64)}
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px)}
 .work-tile{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:34px;background:transparent}
-.tile-image{position:absolute;inset:0;border-radius:34px;background:var(--image);background-size:cover;background-position:center;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .45s ease}
+.tile-image{position:absolute;inset:0;border-radius:34px;overflow:hidden;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .45s ease}.tile-image img{width:100%;height:100%;object-fit:cover;display:block;transition:inherit;pointer-events:none;user-select:none;}
 .image-one{--image:radial-gradient(circle at 46% 38%,#f8f7f2 0 8%,transparent 9%),linear-gradient(135deg,#0b0d12,#5569ff 44%,#e7e1d4)}.image-two{--image:linear-gradient(145deg,#f7f5ee,#1a1d25 45%,#7d74f9)}.image-three{--image:repeating-linear-gradient(125deg,#0c111b 0 16px,#d7e4ff 16px 18px,#39465b 18px 52px)}.image-four{--image:radial-gradient(circle at 72% 34%,#fff 0 8%,transparent 9%),linear-gradient(135deg,#050505,#2234a8 48%,#0b0d12)}.image-five{--image:linear-gradient(145deg,#050505,#21242c 40%,#b8c6ff)}.image-six{--image:repeating-linear-gradient(90deg,#f2efe8 0 18px,#171717 18px 22px,#6c6c72 22px 54px)}.image-seven{--image:radial-gradient(circle at 25% 25%,#fff,transparent 12%),radial-gradient(circle at 72% 56%,#757dff,transparent 18%),linear-gradient(135deg,#101010,#30343d)}.image-eight{--image:linear-gradient(135deg,#fafafa 0 20%,#161616 20% 24%,#aaa 24% 70%,#fff 70%)}
 .frost-overlay{position:absolute;inset:0;border-radius:34px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:clamp(26px,4vw,52px);background:rgba(0,0,0,.22);color:#fff;opacity:0;transition:opacity .35s ease}
-.frost-overlay p{margin:0 0 10px;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.72)}.frost-overlay h2{max-width:620px;margin:0;font-size:clamp(24px,2.8vw,42px);line-height:.98;letter-spacing:-.055em;font-weight:300}.work-tile:hover .tile-image{transform:scale(1.04);filter:brightness(.38) blur(3px)}.work-tile:hover .frost-overlay{opacity:1}
+.frost-overlay p{margin:0 0 10px;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.72)}.frost-overlay h2{max-width:620px;margin:0;font-size:clamp(24px,2.8vw,42px);line-height:.98;letter-spacing:-.055em;font-weight:300}.work-tile:hover .tile-image img{transform:scale(1.04);filter:brightness(.38) blur(3px)}.work-tile:hover .frost-overlay{opacity:1}
 .logo-grid{display:grid;max-width:none;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,38px)}.logo-grid article{padding:clamp(22px,3vw,36px);border-radius:30px;background:rgba(255,255,255,.045)}.logo-grid span{height:150px;display:grid;place-items:center;margin-bottom:22px;border-radius:26px;background:transparent;font-size:clamp(34px,5vw,78px);font-weight:300;letter-spacing:-.08em}.logo-grid h3{margin:0 0 7px;font-size:15px;font-weight:300}.logo-grid p{margin:0;color:var(--muted);font-size:12px}
 .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,6vw,88px);align-items:center}.display-heading{max-width:1000px;margin:0;font-size:clamp(40px,6.3vw,104px);line-height:.94;letter-spacing:-.067em;font-weight:200}.lettering-card{min-height:520px;padding:clamp(28px,5vw,64px);border-radius:36px;background:transparent;display:flex;align-items:center;justify-content:center;overflow:hidden}.lettering-card span{font-size:clamp(70px,13vw,188px);font-weight:700;letter-spacing:-.18em;transition:transform .4s ease}.lettering-card:hover span:nth-child(odd){transform:translateY(-18px)}.lettering-card:hover span:nth-child(even){transform:translateY(18px)}
 .body-copy{max-width:760px;margin:28px 0 0;color:rgba(247,247,242,.7);font-size:clamp(18px,2vw,27px);line-height:1.42}
@@ -712,7 +712,7 @@ footer{
   background:transparent;
 }
 
-.logo-tile .tile-image{
+.logo-tile .tile-image img{width:100%;height:100%;object-fit:cover}.logo-tile .tile-image{
   border-radius:34px;
 }
 
