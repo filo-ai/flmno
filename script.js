@@ -215,3 +215,40 @@ if (hamburger && mobileNav) {
     });
   });
 }
+
+/* ── Image lightbox ── */
+(function () {
+  const lb      = document.getElementById("img-lightbox");
+  const lbImg   = lb?.querySelector(".img-lightbox__img");
+  const lbCap   = lb?.querySelector(".img-lightbox__caption");
+  const lbClose = lb?.querySelector(".img-lightbox__close");
+  if (!lb) return;
+
+  function open(src, title) {
+    lbImg.src = src;
+    lbImg.alt = title;
+    lbCap.textContent = title;
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
+    // Force reflow so transition fires
+    lb.offsetHeight;
+    lb.style.opacity = "1";
+    lbClose.focus();
+  }
+
+  function close() {
+    lb.style.opacity = "0";
+    document.body.style.overflow = "";
+    setTimeout(() => { lb.hidden = true; lbImg.src = ""; }, 300);
+  }
+
+  document.querySelectorAll(".lightbox-tile").forEach(btn => {
+    btn.addEventListener("click", () => {
+      open(btn.dataset.lightboxSrc, btn.dataset.lightboxTitle);
+    });
+  });
+
+  lbClose.addEventListener("click", close);
+  lb.addEventListener("click", e => { if (e.target === lb) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !lb.hidden) close(); });
+})();
