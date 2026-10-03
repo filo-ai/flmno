@@ -213,12 +213,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
+          "image": "/assets/images/syld--syld-wall-advertisment.webp"
         }
       ],
       "impact": [
@@ -391,12 +391,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
+          "image": "/assets/images/syld--syld-wall-advertisment.webp"
         },
         {
           "title": "Lunar Trailblazer Science",
@@ -482,7 +482,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         }
       ],
       "impact": [
@@ -517,6 +517,7 @@
         "Skills & Tools": "illustration, print design, park service"
       },
       "gallery": [
+        "/assets/images/yose--goc.gif",
         "/assets/images/goc--hot-cone-summer-goc.webp",
         "/assets/images/goc--cone-action-shot-goc.webp",
         "/assets/images/goc--crowded-action-shot-goc.webp",
@@ -524,8 +525,7 @@
         "/assets/images/goc--hcs-square-goc.webp",
         "/assets/images/goc--seeds-goc.webp",
         "/assets/images/goc--snow-goc.webp",
-        "/assets/images/goc--sprout-action-shot-goc.webp",
-        "/assets/images/goc--goc-gif.gif"
+        "/assets/images/goc--sprout-action-shot-goc.webp"
       ],
       "related": [
         {
@@ -551,7 +551,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         }
       ],
       "impact": [
@@ -860,12 +860,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
+          "image": "/assets/images/syld--syld-wall-advertisment.webp"
         }
       ],
       "impact": [
@@ -1108,7 +1108,7 @@
         {
           "title": "Yosemite NP After Dark",
           "href": "../yosemite-national-park-after-dark/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+          "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
         {
           "title": "Poetry in Parks",
@@ -1157,7 +1157,7 @@
         {
           "title": "Yosemite NP After Dark",
           "href": "../yosemite-national-park-after-dark/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+          "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
         {
           "title": "Poetry in Parks",
@@ -1235,12 +1235,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
+          "image": "/assets/images/syld--syld-wall-advertisment.webp"
         }
       ],
       "impact": [
@@ -1335,7 +1335,7 @@
         {
           "title": "Yosemite NP After Dark",
           "href": "../yosemite-national-park-after-dark/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+          "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
         {
           "title": "Galen-tines Zine",
@@ -1436,14 +1436,14 @@
         "Skills & Tools": "Illustration, poster, promotion"
       },
       "gallery": [
-        "/assets/images/matchbook.webp",
-        "/assets/images/illustration--music-v-horror-movies.webp",
-        "/assets/images/illustration--halloween-houses-of-fiction.webp",
-        "/assets/images/illustration--nasa-destroying-asteroid.webp",
-        "/assets/images/illustration--turn-on.webp",
-        "/assets/images/illustration--digital-flower.webp",
-        "/assets/images/illustration--spot-the-painter.webp",
-        "/assets/images/illustration--self-portrait.webp"
+        "/assets/images/the-courts--the-courts.webp",
+        "/assets/images/the-courts--strike-a-match.webp",
+        "/assets/images/the-courts--strike-a-match-2.webp",
+        "/assets/images/the-courts--strike-a-match-02.webp",
+        "/assets/images/the-courts--location-inspiration-imagery-2.webp",
+        "/assets/images/the-courts--location-inspiration-imagery-2-1.webp",
+        "/assets/images/the-courts--location-inspiration-imagery-3.webp",
+        "/assets/images/static--matchbook.webp"
       ],
       "related": [
         {
@@ -1454,7 +1454,7 @@
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
+          "image": "/assets/images/syld--syld-wall-advertisment.webp"
         },
         {
           "title": "Lunar Trailblazer Science",
@@ -1499,12 +1499,14 @@
         "Skills & Tools": "poster, advertising, illustration, *"
       },
       "gallery": [
+        "/assets/images/syld--syld-wall-advertisment.webp",
+        "/assets/images/syld--syld-sticker.webp",
+        "/assets/images/syld--support-your-local-dealer.webp",
+        "/assets/images/syld--support-your-local-dealer-wbg.webp",
         "/assets/images/illustration--get-a-woof-of-that.webp",
-        "/assets/images/woof.webp",
-        "/assets/images/peace-edited.webp",
-        "/assets/images/illustration--evolution-of-arrowheads.webp",
-        "/assets/images/illustration--a-b_flmno_2x.webp",
-        "/assets/images/palm-tree-drought-1.webp"
+        "/assets/images/static--woof.webp",
+        "/assets/images/static--peace-edited.webp",
+        "/assets/images/static--palm-tree-drought.webp"
       ],
       "related": [
         {
@@ -1515,7 +1517,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         },
         {
           "title": "Lunar Trailblazer Science",
@@ -1709,12 +1711,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "/assets/images/matchbook.webp"
+          "image": "/assets/images/the-courts--the-courts.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
+          "image": "/assets/images/syld--syld-wall-advertisment.webp"
         }
       ],
       "impact": [
@@ -1867,17 +1869,14 @@
         "Skills & Tools": "photography"
       },
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_88d4b241bdc048fa92577fa16b269b42~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_b88a3c18d19a49c48f5be53c74c6e743~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_0bd64cdee0684fc4a373ab18226a9b6d~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_591f4299b48a4a1e9db2f5237c38c370~mv2.webp",
-        "https://static.wixstatic.com/media/4d1bdb_8bc1cb0eef4a476699efe095147233ce~mv2.jpeg",
-        "https://static.wixstatic.com/media/4d1bdb_187c7f93bb4e4844b12de79b8fe2f779~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_def89b90ee0f42a8b22ba38100a16d3d~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_93ac3943c2ca4da38dbc1f153316f10f~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_991f64a6548d497796e025b4961487bc~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_1066cd7259054cc993ab9aef7c393fea~mv2.png"
+        "/assets/images/yose--yosemite-dark-sky.webp",
+        "/assets/images/yose--firefall-evening.webp",
+        "/assets/images/yose--yosemite-horsetail-falls-firefall.webp",
+        "/assets/images/yose--yosemite-falls-at-night.webp",
+        "/assets/images/yose--yosemite-falls-stair-trails.webp",
+        "/assets/images/yose--cooks-meadow.webp",
+        "/assets/images/yose--coopers-hawk.webp",
+        "/assets/images/yose--great-grey-owl.webp"
       ],
       "related": [
         {
@@ -2100,7 +2099,7 @@
         {
           "title": "Yosemite NP After Dark",
           "href": "../yosemite-national-park-after-dark/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_1c70b62a26974abe92c8abf4546ebba7~mv2.png"
+          "image": "/assets/images/yose--yosemite-dark-sky.webp"
         }
       ],
       "impact": [
