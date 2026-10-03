@@ -152,12 +152,14 @@ ${items}
 function renderRelated(related) {
   if (!related?.length) return "";
   const cards = related.map(n => {
-    const img = n.image
-      ? `<img src="${wix(n.image, 800, 800, 80)}" alt="" loading="lazy">`
-      : "";
+    const imgUrl = n.image ? wix(n.image, 800, 800, 80) : "";
+    const imgStyle = imgUrl ? ` style="--image:url('${imgUrl}')"` : "";
     return `        <a class="cs-related__card" href="${esc(n.href)}" draggable="false">
-          ${img}
-          <div class="cs-related__card__foot"><p class="cs-related__card__title">${esc(n.title)}</p></div>
+          <div class="cs-related__card__img"${imgStyle}></div>
+          <div class="cs-related__card__frost">
+            <p>Project</p>
+            <h3>${esc(n.title)}</h3>
+          </div>
         </a>`;
   }).join("\n");
   return `

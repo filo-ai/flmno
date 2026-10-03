@@ -152,30 +152,68 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-related__card{
   flex:0 0 clamp(180px,22vw,260px);
   aspect-ratio:1 / 1;
-  border-radius:var(--radius);
+  border-radius:34px;
   overflow:hidden;
   background:#1a1a1c;
   text-decoration:none;
   color:inherit;
   position:relative;
+  display:block;
   -webkit-user-drag:none;
-  transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
+  transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
 }
-.cs-related__card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.4); }
-.cs-related__card img{
-  width:100%;height:100%;
-  object-fit:cover;
-  pointer-events:none;
-  transition:transform .5s var(--ease);
+
+/* Image layer — same as .tile-image */
+.cs-related__card__img{
+  position:absolute;
+  inset:0;
+  border-radius:34px;
+  background-image:var(--image);
+  background-size:cover;
+  background-position:center;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease;
 }
-.cs-related__card:hover img { transform: none; }
-.cs-related__card__foot{
-  position:absolute;inset:auto 0 0;
-  padding:14px 16px;
-  background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+
+/* Frost overlay — same as .frost-overlay */
+.cs-related__card__frost{
+  position:absolute;
+  inset:0;
+  border-radius:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:clamp(16px,3vw,32px);
+  background:rgba(0,0,0,.22);
+  color:#fff;
+  opacity:0;
+  transition:opacity .35s ease;
 }
-.cs-related__card__title{
-  font-size:14px;line-height:1.2;color:#fff;
+.cs-related__card__frost p{
+  margin:0 0 8px;
+  font-family:"Apercu Mono",monospace;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+}
+.cs-related__card__frost h3{
+  margin:0;
+  font-family:"Reckless",serif;
+  font-size:clamp(16px,2vw,24px);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:.01em;
+}
+
+/* Hover — identical behaviour to work-tile */
+.cs-related__card:hover .cs-related__card__img{
+  transform:scale(1.04);
+  filter:brightness(.38) blur(3px);
+}
+.cs-related__card:hover .cs-related__card__frost{
+  opacity:1;
 }
 
 /* ── Sheets ── */
