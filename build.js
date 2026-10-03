@@ -27,7 +27,8 @@ function esc(str) {
 
 function wixFit(url, h = 900, q = 82) {
   // Fit to height, preserve aspect ratio — no crop
-  if (!url || !url.includes("static.wixstatic.com/media/")) return url;
+  if (!url) return url;
+  if (!url.includes("static.wixstatic.com/media/")) return url; // local path — pass through
   if (url.includes("/v1/fit/")) return url;
   const m = url.match(/https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.[a-z]+/);
   if (!m) return url;
@@ -37,7 +38,8 @@ function wixFit(url, h = 900, q = 82) {
 }
 
 function wix(url, w, h, q = 82) {
-  if (!url || !url.includes("static.wixstatic.com/media/")) return url;
+  if (!url) return url;
+  if (!url.includes("static.wixstatic.com/media/")) return url; // local path — pass through
   if (url.includes("/v1/fill/")) return url;
   const fname = url.split("/").pop();
   const dims  = h ? `w_${w},h_${h}` : `w_${w}`;
