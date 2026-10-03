@@ -25,6 +25,17 @@ function esc(str) {
     .replace(/"/g, "&quot;");
 }
 
+function wixFit(url, h = 900, q = 82) {
+  // Fit to height, preserve aspect ratio — no crop
+  if (!url || !url.includes("static.wixstatic.com/media/")) return url;
+  if (url.includes("/v1/fit/")) return url;
+  const m = url.match(/https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.[a-z]+/);
+  if (!m) return url;
+  const base = m[0];
+  const fname = base.split("/").pop();
+  return `${base}/v1/fit/h_${h},q_${q},usm_0.33_1.00_0.20,enc_avif,quality_auto/${fname}`;
+}
+
 function wix(url, w, h, q = 82) {
   if (!url || !url.includes("static.wixstatic.com/media/")) return url;
   if (url.includes("/v1/fill/")) return url;
@@ -43,7 +54,7 @@ function renderCarousel(gallery) {
   if (!gallery?.length) return "";
   const slides = gallery.slice(0, 3).map(src =>
     `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery">` +
-    `<img src="${wix(src, 900, 600, 82)}" alt="" loading="eager" draggable="false"></button>`
+    `<img src="${wixFit(src, 900, 82)}" alt="" loading="eager" draggable="false"></button>`
   ).join("\n");
 
   const rest   = gallery.slice(3).length ? gallery.slice(3) : gallery;
