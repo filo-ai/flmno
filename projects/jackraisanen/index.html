@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JackRaisanen.com | flmno</title>
   <link rel="stylesheet" href="../case-study.css">
+  <link rel="preload" as="image" href="/assets/images/jr-com--ltb-logo-thin.webp">
   <link rel="icon" type="image/gif" href="../../assets/favicon.gif">
 </head>
 <body>
@@ -19,6 +20,20 @@
       <hgroup class="cs-hero__head">
         <h1 class="cs-hero__title">JackRaisanen.com</h1>
       </hgroup>
+    </section>
+
+    <section class="cs-carousel" aria-label="Project images">
+      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery"><img src="/assets/images/jr-com--ltb-logo-thin.webp" alt="" loading="eager" draggable="false"></button>
+      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery"><img src="/assets/images/jr-com--lunar-trailblazer-logo.webp" alt="" loading="eager" draggable="false"></button>
+      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery"><img src="/assets/images/jr-com--ltb-logo.webp" alt="" loading="eager" draggable="false"></button>
+      <button class="cs-explore" type="button" data-open="gallery">
+        <span class="cs-explore__stack" aria-hidden="true">
+          <span class="cs-explore__thumb"><img src="/assets/images/jr-com--ltb-logo_1.webp" alt="" loading="lazy" draggable="false"></span>
+          <span class="cs-explore__thumb"><img src="/assets/images/jr-com--ltb-logo_2.webp" alt="" loading="lazy" draggable="false"></span>
+          <span class="cs-explore__thumb"><img src="/assets/images/jr-com--danaclublogo_flmno.webp" alt="" loading="lazy" draggable="false"></span>
+        </span>
+        <span class="cs-explore__label"><span>Explore the gallery</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 1h5v5M6 13H1V8"/></svg></span>
+      </button>
     </section>
 
     <div class="cs-body grid">
@@ -81,12 +96,27 @@
           <div class="cs-related__card__foot"><p class="cs-related__card__title">Colorado Symphony Orchestra</p></div>
         </a>
         <a class="cs-related__card" href="../editorial-rhythm/index.html" draggable="false">
-          
+          <img src="/assets/images/lettering--a_metal.webp" alt="" loading="lazy">
           <div class="cs-related__card__foot"><p class="cs-related__card__title">Editorial Rhythm</p></div>
         </a>
       </div>
     </section>
   </main>
+
+  <dialog class="cs-sheet" data-key="gallery" aria-label="JackRaisanen.com gallery">
+    <button class="cs-sheet__close" type="button" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg></button>
+    <div class="cs-sheet__scroll">
+      <div class="cs-gallery">
+        <figure class="full"><img src="/assets/images/jr-com--ltb-logo-thin.webp" alt="" loading="lazy"></figure>
+        <figure><img src="/assets/images/jr-com--lunar-trailblazer-logo.webp" alt="" loading="lazy"></figure>
+        <figure><img src="/assets/images/jr-com--ltb-logo.webp" alt="" loading="lazy"></figure>
+        <figure class="full"><img src="/assets/images/jr-com--ltb-logo_1.webp" alt="" loading="lazy"></figure>
+        <figure><img src="/assets/images/jr-com--ltb-logo_2.webp" alt="" loading="lazy"></figure>
+        <figure><img src="/assets/images/jr-com--danaclublogo_flmno.webp" alt="" loading="lazy"></figure>
+        <figure class="full"><img src="/assets/images/jr-com--dana_club_white_logo_flmno-8.webp" alt="" loading="lazy"></figure>
+      </div>
+    </div>
+  </dialog>
 
   <script src="../case-study.js"></script>
 </body>

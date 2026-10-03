@@ -28,7 +28,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         },
         {
           "title": "Eggslut x HBO",
@@ -79,7 +79,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         },
         {
           "title": "Eggslut x HBO",
@@ -144,7 +144,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         },
         {
           "title": "Eggslut x HBO",
@@ -213,12 +213,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
         }
       ],
       "impact": [
@@ -244,7 +244,22 @@
         "Program": "Editorial Design, Typography, Layout",
         "Industry": "Publishing / Culture"
       },
-      "gallery": [],
+      "gallery": [
+        "/assets/images/lettering--a_metal.webp",
+        "/assets/images/lettering--d_metal.webp",
+        "/assets/images/lettering--f_metal.webp",
+        "/assets/images/lettering--h_metal.webp",
+        "/assets/images/lettering--l_metal.webp",
+        "/assets/images/lettering--m.webp",
+        "/assets/images/lettering--n_metal.webp",
+        "/assets/images/lettering--n2_metal.webp",
+        "/assets/images/lettering--o_metal.webp",
+        "/assets/images/lettering--o2_metal.webp",
+        "/assets/images/lettering--r_metal.webp",
+        "/assets/images/lettering--t_metal.webp",
+        "/assets/images/lettering--x_metal.webp",
+        "/assets/images/lettering--y_metal.webp"
+      ],
       "related": [
         {
           "title": "Atmospheric Images",
@@ -299,10 +314,14 @@
         "Skills & Tools": "merchandise design, identity, merchandise, lettering"
       },
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_d338fbb206574f8689c84ad2169f4930~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_0c6272facf0c4b29a9fcb0077ce1d2cc~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_4222a7f950eb4aa3b8b8d2339f0c1867~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_43affe84c893487e8a48e96c797b68a0~mv2.jpg"
+        "/assets/images/logos--eggslut_logo_flmno.webp",
+        "/assets/images/logos--eggslut_logo_flmno_1.webp",
+        "/assets/images/logos--glamazon_logo_flmno.webp",
+        "/assets/images/logos--glamazon_logo_flmno_1.webp",
+        "/assets/images/logos--r-co_logo_flmno.webp",
+        "/assets/images/logos--r-co_logo_flmno_1.webp",
+        "/assets/images/logos--amazon_studios_logo_flmno.webp",
+        "/assets/images/logos--amazon_studios_logo_flmno_1.webp"
       ],
       "related": [
         {
@@ -372,12 +391,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
         },
         {
           "title": "Lunar Trailblazer Science",
@@ -387,7 +406,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
@@ -448,7 +467,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
@@ -463,7 +482,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         }
       ],
       "impact": [
@@ -517,7 +536,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
@@ -532,7 +551,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         }
       ],
       "impact": [
@@ -558,7 +577,14 @@
         "Program": "Packaging, Identity, Print Design",
         "Industry": "Consumer / Goods"
       },
-      "gallery": [],
+      "gallery": [
+        "/assets/images/lettering--f_loading_flmno.gif",
+        "/assets/images/lettering--x.gif",
+        "/assets/images/lettering--asset-1.webp",
+        "/assets/images/lettering--nike_flmno.webp",
+        "/assets/images/lettering--losangelesca_flmno.webp",
+        "/assets/images/lettering--losangelesca_flmno_1.webp"
+      ],
       "related": [
         {
           "title": "Atmospheric Images",
@@ -583,7 +609,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         }
       ],
       "impact": [
@@ -632,7 +658,7 @@
         {
           "title": "Eggslut",
           "href": "../eggslut/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_d338fbb206574f8689c84ad2169f4930~mv2.png"
+          "image": "/assets/images/logos--eggslut_logo_flmno.webp"
         },
         {
           "title": "Atmospheric Images",
@@ -678,7 +704,15 @@
         "Client": "Jack Raisanen",
         "Skills & Tools": "web design, visual identity"
       },
-      "gallery": [],
+      "gallery": [
+        "/assets/images/jr-com--ltb-logo-thin.webp",
+        "/assets/images/jr-com--lunar-trailblazer-logo.webp",
+        "/assets/images/jr-com--ltb-logo.webp",
+        "/assets/images/jr-com--ltb-logo_1.webp",
+        "/assets/images/jr-com--ltb-logo_2.webp",
+        "/assets/images/jr-com--danaclublogo_flmno.webp",
+        "/assets/images/jr-com--dana_club_white_logo_flmno-8.webp"
+      ],
       "related": [
         {
           "title": "Atmospheric Images",
@@ -703,7 +737,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         }
       ],
       "impact": [
@@ -733,12 +767,20 @@
         "Skills & Tools": "—"
       },
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_cfc8d9d56d414924bf22db4240953e67~mv2.gif",
-        "wix:video://v1/4d1bdb_8d4263b6285f4457932121147e1648a4/_#posterUri=4d1bdb_8d4263b6285f4457932121147e1648a4f000.jpg&amp;posterWidth=1912&amp;posterHeight=1004",
-        "wix:video://v1/4d1bdb_c51bddf30fbf41f5b4d8be88fb7d633e/_#posterUri=4d1bdb_c51bddf30fbf41f5b4d8be88fb7d633ef000.jpg&amp;posterWidth=750&amp;posterHeight=1046",
-        "wix:video://v1/4d1bdb_aaea3c14e18b42f1a6bd0993e48a4ba0/_#posterUri=4d1bdb_aaea3c14e18b42f1a6bd0993e48a4ba0f000.jpg&amp;posterWidth=1920&amp;posterHeight=1112",
-        "wix:video://v1/4d1bdb_33bd124d11ed4e60b7cc3b17b1cd26f4/_#posterUri=4d1bdb_33bd124d11ed4e60b7cc3b17b1cd26f4f000.jpg&amp;posterWidth=2880&amp;posterHeight=1800",
-        "https://static.wixstatic.com/media/4d1bdb_2843f66681504fe8827bd9e16583efa5~mv2.png"
+        "/assets/images/jr-com--jr-com-main.webp",
+        "/assets/images/jr-com--jr-com-m-v.webp",
+        "/assets/images/jr-com--jr-com-terve.webp",
+        "/assets/images/jr-com--jr-com_flmno.gif",
+        "/assets/images/jr-com--jr-com-mobile.gif",
+        "/assets/images/jr-com--atlas_logo__flmno.webp",
+        "/assets/images/jr-com--blm_logo__flmno.webp",
+        "/assets/images/jr-com--btu_logo__flmno.webp",
+        "/assets/images/jr-com--cso_logo__flmno.webp",
+        "/assets/images/jr-com--dana_club_white_logo_flmno.webp",
+        "/assets/images/jr-com--jaxs_logo__flmno.webp",
+        "/assets/images/jr-com--jr-com_logo__flmno.webp",
+        "/assets/images/jr-com--lacroix_logo__flmno.webp",
+        "/assets/images/jr-com--mr_logo__flmno.webp"
       ],
       "related": [
         {
@@ -764,7 +806,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         }
       ],
       "impact": [
@@ -815,12 +857,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
         }
       ],
       "impact": [
@@ -882,7 +924,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
@@ -1162,10 +1204,12 @@
         "Skills & Tools": "illustration"
       },
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_7e31ac26dbd84375984d9d5173241f25~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_ed76911cb61b4a1fb759b85a723bf376~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_5a229e08676f4c9cbb73f4480eed6e5a~mv2.png"
+        "/assets/images/illustration--protest-poster-side-a.webp",
+        "/assets/images/illustration--protest-poster-side-b.webp",
+        "/assets/images/illustration--protest-poster-side-b_1.webp",
+        "/assets/images/illustration--qblm.webp",
+        "/assets/images/illustration--the-courts-poster.webp",
+        "/assets/images/illustration--the-courts-poster_1.webp"
       ],
       "related": [
         {
@@ -1186,12 +1230,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
         }
       ],
       "impact": [
@@ -1242,7 +1286,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         }
       ],
       "impact": [
@@ -1352,7 +1396,7 @@
         {
           "title": "Eggslut",
           "href": "../eggslut/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_d338fbb206574f8689c84ad2169f4930~mv2.png"
+          "image": "/assets/images/logos--eggslut_logo_flmno.webp"
         },
         {
           "title": "Atmospheric Images",
@@ -1387,13 +1431,13 @@
         "Skills & Tools": "Illustration, poster, promotion"
       },
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_ed4f799cc0c247f490b0320a33321861~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_56a223add3804fe0bebfbb859f405a52~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_fff1eec57fea447b8c98e4d5955082f2~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_84cffcb5727843fbb8335b22c31756cb~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_554cb8206c9d47dcaaaa9bbeb293330b~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_0d2d1873b3bc4729b654b7475cc36409~mv2.jpg"
+        "/assets/images/illustration--music-v-horror-movies.webp",
+        "/assets/images/illustration--halloween-houses-of-fiction.webp",
+        "/assets/images/illustration--nasa-destroying-asteroid.webp",
+        "/assets/images/illustration--turn-on.webp",
+        "/assets/images/illustration--digital-flower.webp",
+        "/assets/images/illustration--spot-the-painter.webp",
+        "/assets/images/illustration--self-portrait.webp"
       ],
       "related": [
         {
@@ -1404,7 +1448,7 @@
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
         },
         {
           "title": "Lunar Trailblazer Science",
@@ -1414,7 +1458,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
@@ -1449,10 +1493,10 @@
         "Skills & Tools": "poster, advertising, illustration, *"
       },
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_829197bf1a5b45ea9bb95ec3992e5bdd~mv2.jpg",
-        "https://static.wixstatic.com/media/4d1bdb_f465841239924657b3ceef03dbfaf5a5~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_44e0247b381f40f6b49543dc055b9940~mv2.png"
+        "/assets/images/illustration--get-a-woof-of-that.webp",
+        "/assets/images/illustration--evolution-of-arrowheads.webp",
+        "/assets/images/illustration--a-b_flmno_2x.webp",
+        "/assets/images/illustration--flmno-peace.webp"
       ],
       "related": [
         {
@@ -1463,7 +1507,7 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         },
         {
           "title": "Lunar Trailblazer Science",
@@ -1473,7 +1517,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
@@ -1508,17 +1552,10 @@
         "Skills & Tools": "marketing, social media, conference design"
       },
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_55ac03dfb20d4a8aa6037cdfbe06fb8c~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_52fc997350fa42ab89e972f43cb2e235~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_c81ecf0eb53e47c9bbabff9467e2c789~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_febf437be44c4a11830863bc482a644d~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_48d9b875d91f43bba91425fec6553164~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_e62a466c0fa14bc3acdd30263b90b4b7~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_a7a78d6fc4eb4983a22770ec787eab8c~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_3f3686a3a0984920880d765bf77bd586~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_b0147475abf24238a2b3a5b49864baec~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_57d032493b434e389d0552e9d47c06a5~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_f7856f4e912c44cd80103c4a7bed2d84~mv2.png"
+        "/assets/images/logos--ted_logo_flmno.webp",
+        "/assets/images/logos--ted_logo_flmno_1.webp",
+        "/assets/images/logos--tedxmilehigh_logo_flmno.webp",
+        "/assets/images/logos--tedxmilehigh_logo_flmno_1.webp"
       ],
       "related": [
         {
@@ -1607,7 +1644,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         }
       ],
       "impact": [
@@ -1649,7 +1686,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Galen-tines Zine",
@@ -1664,12 +1701,12 @@
         {
           "title": "Strike a Match",
           "href": "../strike-a-match/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_694741430b5347ab87cc6358a3370105~mv2.png"
+          "image": "/assets/images/illustration--music-v-horror-movies.webp"
         },
         {
           "title": "Support Your Local Dealer",
           "href": "../support-your-local-dealer/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_6809273eb68a435581e60017c88240e8~mv2.png"
+          "image": "/assets/images/illustration--get-a-woof-of-that.webp"
         }
       ],
       "impact": [
@@ -1695,7 +1732,22 @@
         "Program": "Brand Identity, Campaign System, Art Direction",
         "Industry": "Culture / Creative"
       },
-      "gallery": [],
+      "gallery": [
+        "/assets/images/instruments--cso-before-after_2x.webp",
+        "/assets/images/instruments--asset-1.webp",
+        "/assets/images/instruments--asset-2.webp",
+        "/assets/images/instruments--asset-3.webp",
+        "/assets/images/instruments--asset-4.webp",
+        "/assets/images/instruments--asset-5.webp",
+        "/assets/images/instruments--asset-6.webp",
+        "/assets/images/instruments--asset-7.webp",
+        "/assets/images/instruments--asset-8.webp",
+        "/assets/images/instruments--asset-9.webp",
+        "/assets/images/instruments--asset-10.webp",
+        "/assets/images/instruments--asset-11.webp",
+        "/assets/images/instruments--asset-12.webp",
+        "/assets/images/instruments--asset-13.webp"
+      ],
       "related": [
         {
           "title": "Atmospheric Images",
@@ -1720,7 +1772,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         }
       ],
       "impact": [
@@ -1777,7 +1829,7 @@
         {
           "title": "Editorial Rhythm",
           "href": "../editorial-rhythm/index.html",
-          "image": ""
+          "image": "/assets/images/lettering--a_metal.webp"
         }
       ],
       "impact": [
@@ -1896,7 +1948,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
@@ -1956,7 +2008,7 @@
         {
           "title": "Park Protest",
           "href": "../park-protest/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_e00c95e7d4b84ad0a1c10f4c39607f67~mv2.png"
+          "image": "/assets/images/illustration--protest-poster-side-a.webp"
         },
         {
           "title": "Trees of Yosemite",
