@@ -373,3 +373,33 @@ if (hamburger && mobileNav) {
     el.addEventListener('input', nextFrame);
   });
 })();
+
+/* ── Active nav link based on scroll section ── */
+(function () {
+  const links = {
+    work:    document.querySelector('.site-nav nav a[href="#work"]'),
+    about:   document.querySelector('.site-nav nav a[href="#about"]'),
+    contact: document.querySelector('.site-nav nav a[href="#contact"]'),
+  };
+  const sections = {
+    work:    document.getElementById('work'),
+    about:   document.getElementById('about'),
+    contact: document.getElementById('contact'),
+  };
+
+  function setActive(id) {
+    Object.values(links).forEach(l => l?.classList.remove('is-active'));
+    if (links[id]) links[id].classList.add('is-active');
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) setActive(e.target.id);
+    });
+  }, { threshold: 0.2 });
+
+  Object.values(sections).forEach(s => s && obs.observe(s));
+
+  // Default: highlight Work on load
+  setActive('work');
+})();

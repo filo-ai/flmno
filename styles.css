@@ -2681,3 +2681,7 @@ body.contact-mode
   align-items: center;
   cursor: pointer;
 }
+
+.filter-bar { overflow-x: auto !important; overflow-y: visible !important; }
+
+.site-nav nav a { font-size: clamp(13px,1vw,15px) !important; }
