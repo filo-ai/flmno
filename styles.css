@@ -3028,3 +3028,14 @@ body.contact-mode .filter-pill.is-active {
 @media (max-width: 680px) {
   .brand, .cs-header__brand { display: flex !important; }
 }
+
+/* ── Mobile: content fills from top edge, no reserved space ── */
+@media (max-width: 680px) {
+  /* Remove any top padding that was reserving space for the nav */
+  body { padding-top: 0 !important; }
+  main { padding-top: 0 !important; }
+  /* Hero fills the full screen from the very top */
+  .hero-pin-stage, .hero { margin-top: 0 !important; padding-top: 0 !important; }
+  /* Case study hero too */
+  .cs-hero { padding-top: clamp(24px,6vw,48px) !important; }
+}
