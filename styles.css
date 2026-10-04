@@ -2725,3 +2725,26 @@ body.contact-mode .site-nav nav a.is-active {
 .contact-form button[type="submit"] {
   font-size: 18px !important;
 }
+
+/* ══ INPUTS: ZERO OUTLINES/BORDERS IN ALL STATES FOREVER ══ */
+input, textarea, select,
+input:hover, textarea:hover,
+input:focus, textarea:focus,
+input:active, textarea:active,
+input:focus-visible, textarea:focus-visible,
+input:focus-within, textarea:focus-within,
+.contact-form input, .contact-form textarea,
+.contact-form input:hover, .contact-form textarea:hover,
+.contact-form input:focus, .contact-form textarea:focus,
+.contact-form input:active, .contact-form textarea:active,
+.contact-form input:focus-visible, .contact-form textarea:focus-visible {
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  outline-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
