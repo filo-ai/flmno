@@ -263,8 +263,8 @@ function buildPage(slug, project) {
 </head>
 <body>
   <header class="cs-header">
-    <a class="cs-header__brand" href="../../index.html"><img class="nav-logo" id="nav-logo" src="../../assets/logo-frames/f00.webp" alt="flmno"><span>flmno</span></a>
-    <a class="cs-header__back" href="../../index.html#work">Back to work</a>
+    <a class="cs-header__brand" href="../../index.html"><img class="nav-logo" id="nav-logo" src="../../assets/logo-frames/f00.webp" alt="flmno"></a>
+    <a class="cs-header__back filter-pill" href="../../index.html#work">Back to work</a>
   </header>
 
   <main>

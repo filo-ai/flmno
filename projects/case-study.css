@@ -467,45 +467,87 @@ body.contact-mode .filter-pill.is-active {
   box-shadow: none !important;
 }
 
-/* ── Mobile: case study nav pinned to bottom, same as homepage ── */
+
+/* ══ NAV: identical on every page ══ */
+
+/* Desktop: fixed top, logo left, links right */
+.site-nav, .cs-header {
+  position: fixed !important;
+  top: 0 !important; bottom: auto !important;
+  left: 0 !important; right: 0 !important;
+  height: 64px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding: 0 clamp(20px,4vw,48px) !important;
+  background: transparent !important;
+  z-index: 60 !important;
+}
+
+/* Logo: absolute top-left */
+.brand, .cs-header__brand {
+  position: absolute !important;
+  top: 50% !important;
+  left: clamp(16px,3vw,40px) !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  line-height: 0 !important;
+}
+.nav-logo {
+  display: block !important;
+  width: 132px !important;
+  height: 132px !important;
+  image-rendering: pixelated !important;
+}
+/* Hide any text in brand */
+.brand span, .cs-header__brand span { display: none !important; }
+
+/* Nav links right side */
+.site-nav nav, .cs-header__back {
+  pointer-events: auto !important;
+}
+.site-nav nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Mobile: flip to bottom */
 @media (max-width: 680px) {
-  .cs-header {
-    position: fixed !important;
+  .site-nav, .cs-header {
     top: auto !important;
     bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 64px !important;
-    padding: 0 clamp(20px,5vw,32px) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    background: rgba(5,5,7,.72) !important;
+    background: rgba(5,5,7,.82) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
-    z-index: 60 !important;
+    justify-content: space-between !important;
+    padding: 0 clamp(16px,4vw,28px) !important;
   }
-
-  .cs-header__brand {
+  .brand, .cs-header__brand {
     position: static !important;
-    top: auto !important;
-    left: auto !important;
+    transform: none !important;
+    top: auto !important; left: auto !important;
   }
-
-  .cs-header__brand .nav-logo {
-    width: 44px !important;
-    height: 44px !important;
+  .nav-logo { width: 44px !important; height: 44px !important; }
+  .site-nav nav {
+    position: static !important;
+    display: flex !important;
+    background: none !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
   }
-
-  /* "Back to work" styled as a nav pill, right side */
-  .cs-header__back {
-    margin-left: auto !important;
+  .site-nav nav a {
     font-size: clamp(12px,3.5vw,15px) !important;
     padding: 7px 10px !important;
   }
-
-  /* Add bottom padding so content isn't hidden behind nav */
-  main {
-    padding-bottom: 64px !important;
+  .cs-header__back {
+    font-size: clamp(12px,3.5vw,15px) !important;
+    padding: 7px 10px !important;
   }
+  body, main { padding-bottom: 64px !important; }
+  .nav-hamburger { display: none !important; }
 }
