@@ -3081,3 +3081,20 @@ body.contact-mode .filter-pill.is-active {
     margin-left: auto !important;
   }
 }
+
+/* ── Mobile nav: no logo, buttons centred, full pill size ── */
+@media (max-width: 680px) {
+  .brand, .cs-header__brand { display: none !important; }
+  .site-nav, .cs-header {
+    justify-content: center !important;
+  }
+  .site-nav nav {
+    margin-left: 0 !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .site-nav nav a, .cs-header__back {
+    font-size: 18px !important;
+    padding: 9px 12px !important;
+  }
+}
