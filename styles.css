@@ -2888,3 +2888,24 @@ body.contact-mode .filter-pill.is-active {
     padding-bottom: 64px !important;
   }
 }
+
+/* ── Mobile: show nav links directly, hide hamburger ── */
+@media (max-width: 680px) {
+  .nav-hamburger { display: none !important; }
+
+  .site-nav nav {
+    display: flex !important;
+    position: static !important;
+    background: none !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    pointer-events: auto !important;
+  }
+
+  .site-nav nav a {
+    font-size: clamp(12px, 3.5vw, 15px) !important;
+    padding: 7px 10px !important;
+  }
+}
