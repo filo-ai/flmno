@@ -2688,3 +2688,40 @@ body.contact-mode
 
 .site-nav nav a { font-size: clamp(13px,1vw,15px) !important; }
 /* v-filterbust-1 */
+
+/* ══ TARGETED FIXES ══ */
+
+/* 1. Input boxes: no border when inactive */
+.contact-form input,
+.contact-form textarea {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 2. Nav links: exact same font-size as filter pills (18px) */
+.site-nav nav a {
+  font-size: 18px !important;
+}
+
+/* 3. Nav active state: same as filter-pill.is-active */
+.site-nav nav a.is-active {
+  background: rgba(255,255,255,.92) !important;
+  color: #050507 !important;
+  transform: none !important;
+}
+body.contact-mode .site-nav nav a.is-active {
+  background: rgb(5,5,7) !important;
+  color: rgb(247,247,242) !important;
+}
+
+/* 4. Send button: same font-size as pills, not inheriting contact form's size */
+.contact-form button[type="submit"] {
+  font-size: 18px !important;
+}
