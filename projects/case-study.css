@@ -466,3 +466,46 @@ body.contact-mode .filter-pill.is-active {
 *:not(.apple-card):not(.apple-modal) {
   box-shadow: none !important;
 }
+
+/* ── Mobile: case study nav pinned to bottom, same as homepage ── */
+@media (max-width: 680px) {
+  .cs-header {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 64px !important;
+    padding: 0 clamp(20px,5vw,32px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: rgba(5,5,7,.72) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    z-index: 60 !important;
+  }
+
+  .cs-header__brand {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .cs-header__brand .nav-logo {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* "Back to work" styled as a nav pill, right side */
+  .cs-header__back {
+    margin-left: auto !important;
+    font-size: clamp(12px,3.5vw,15px) !important;
+    padding: 7px 10px !important;
+  }
+
+  /* Add bottom padding so content isn't hidden behind nav */
+  main {
+    padding-bottom: 64px !important;
+  }
+}
