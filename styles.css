@@ -2278,6 +2278,8 @@ h1, h2, h3,
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   overflow-x: auto;
   overflow-y: visible;
   scrollbar-width: none;
@@ -2685,3 +2687,4 @@ body.contact-mode
 .filter-bar { overflow-x: auto !important; overflow-y: visible !important; }
 
 .site-nav nav a { font-size: clamp(13px,1vw,15px) !important; }
+/* v-filterbust-1 */
