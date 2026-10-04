@@ -2676,12 +2676,17 @@ body.contact-mode .hint { color: rgba(5,5,7,.5); }
 }
 
 /* 3. Send button: dark on pastel, matches pills on dark */
+
+
+
+/* Send = active filter-pill in both modes */
 body.contact-mode .contact-form button[type="submit"] {
-  background: rgba(5,5,7,.1) !important;
-  color: rgba(5,5,7,.75) !important;
+  background: rgb(5,5,7) !important;
+  color: rgb(247,247,242) !important;
   border: 0 !important;
 }
 body.contact-mode .contact-form button[type="submit"]:hover {
-  background: rgba(5,5,7,.18) !important;
-  color: #050507 !important;
+  background: rgba(5,5,7,.82) !important;
+  color: rgb(247,247,242) !important;
+  transform: translateY(-2px) !important;
 }
