@@ -2748,3 +2748,102 @@ input:focus-within, textarea:focus-within,
   -moz-appearance: none !important;
   appearance: none !important;
 }
+
+/* ══════════════════════════════════════════════════════
+   UNIFIED BUTTON SYSTEM — single source of truth
+   Every interactive button on the site uses these rules.
+   Exceptions: hamburger (icon), scroll cue (arrow),
+   lightbox close (icon), apple cards (intentional cards)
+   ══════════════════════════════════════════════════════ */
+
+/* The one button style */
+.site-nav nav a,
+.filter-pill,
+.contact-form button[type="submit"],
+.cs-pill,
+.story-trigger,
+.nav-close-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  padding: 9px 12px !important;
+  border-radius: 10px !important;
+  border: 0 !important;
+  background: rgba(255,255,255,.075) !important;
+  color: rgba(247,247,242,.7) !important;
+  font-family: "Apercu", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: .01em !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  box-shadow: none !important;
+  transition: background .2s ease, color .2s ease, transform .2s ease !important;
+}
+
+/* Hover — all buttons */
+.site-nav nav a:hover,
+.filter-pill:hover,
+.contact-form button[type="submit"]:hover,
+.cs-pill:hover,
+.story-trigger:hover,
+.nav-close-pill:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: rgba(247,247,242,.95) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: none !important;
+}
+
+/* Active / selected state */
+.site-nav nav a.is-active,
+.filter-pill.is-active {
+  background: rgb(247,247,242) !important;
+  color: rgb(5,5,7) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.site-nav nav a.is-active:hover,
+.filter-pill.is-active:hover {
+  background: rgb(247,247,242) !important;
+  color: rgb(5,5,7) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: none !important;
+}
+
+/* Contact mode — all buttons invert */
+body.contact-mode .site-nav nav a,
+body.contact-mode .filter-pill,
+body.contact-mode .contact-form button[type="submit"],
+body.contact-mode .cs-pill,
+body.contact-mode .story-trigger,
+body.contact-mode .nav-close-pill {
+  background: rgba(5,5,7,.08) !important;
+  color: rgba(5,5,7,.7) !important;
+  box-shadow: none !important;
+}
+body.contact-mode .site-nav nav a:hover,
+body.contact-mode .filter-pill:hover,
+body.contact-mode .contact-form button[type="submit"]:hover,
+body.contact-mode .cs-pill:hover,
+body.contact-mode .story-trigger:hover {
+  background: rgba(5,5,7,.16) !important;
+  color: rgb(5,5,7) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: none !important;
+}
+body.contact-mode .site-nav nav a.is-active,
+body.contact-mode .filter-pill.is-active {
+  background: rgb(5,5,7) !important;
+  color: rgb(247,247,242) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove ALL box-shadows from everything except apple cards */
+*:not(.apple-card):not(.apple-modal) {
+  box-shadow: none !important;
+}
