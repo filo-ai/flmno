@@ -3015,3 +3015,11 @@ body.contact-mode .filter-pill.is-active {
     -webkit-backdrop-filter: none !important;
   }
 }
+
+/* ── Mobile nav: buttons flush right ── */
+@media (max-width: 680px) {
+  .site-nav { justify-content: flex-end !important; }
+  .site-nav nav { margin-left: 0 !important; }
+  .brand, .cs-header__brand { display: none !important; }
+  .cs-header { justify-content: flex-end !important; }
+}
