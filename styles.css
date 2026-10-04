@@ -3039,3 +3039,17 @@ body.contact-mode .filter-pill.is-active {
   /* Case study hero too */
   .cs-hero { padding-top: clamp(24px,6vw,48px) !important; }
 }
+
+/* ── Mobile: hero text top-aligned, no black void above ── */
+@media (max-width: 680px) {
+  .hero-pin-stage .hero {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding-top: clamp(48px,12vw,80px) !important;
+    min-height: auto !important;
+  }
+  .scroll-text {
+    text-align: left !important;
+    padding: 0 clamp(20px,5vw,32px) !important;
+  }
+}
