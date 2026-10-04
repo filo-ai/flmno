@@ -3070,3 +3070,14 @@ body.contact-mode .filter-pill.is-active {
     min-height: auto !important;
   }
 }
+
+/* ── Nav links: force flush right with margin-left auto ── */
+.site-nav nav {
+  margin-left: auto !important;
+  justify-content: flex-end !important;
+}
+@media (max-width: 680px) {
+  .site-nav nav {
+    margin-left: auto !important;
+  }
+}
