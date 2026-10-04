@@ -2848,46 +2848,6 @@ body.contact-mode .filter-pill.is-active {
   box-shadow: none !important;
 }
 
-/* ── Mobile nav: pinned to bottom (thumb zone) ── */
-@media (max-width: 680px) {
-  .site-nav {
-    position: fixed !important;
-    top: auto !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 64px !important;
-    padding: 0 clamp(20px,5vw,32px) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    background: rgba(5,5,7,.72) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    z-index: 60 !important;
-  }
-
-  /* Logo stays left, smaller on mobile */
-  .brand {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-  }
-  .nav-logo {
-    width: 44px !important;
-    height: 44px !important;
-  }
-
-  /* Hamburger stays right */
-  .nav-hamburger {
-    margin-left: auto !important;
-  }
-
-  /* Add bottom padding to body so content isn't hidden behind the nav */
-  body {
-    padding-bottom: 64px !important;
-  }
-}
 
 /* ── Mobile: show nav links directly, hide hamburger ── */
 @media (max-width: 680px) {
@@ -2910,7 +2870,6 @@ body.contact-mode .filter-pill.is-active {
   }
 }
 
-/* ══ NAV: identical on every page ══ */
 
 /* Desktop: fixed top, logo left, links right */
 .site-nav, .cs-header {
@@ -2957,77 +2916,6 @@ body.contact-mode .filter-pill.is-active {
   flex-wrap: nowrap !important;
 }
 
-/* Mobile: flip to bottom */
-@media (max-width: 680px) {
-  .site-nav, .cs-header {
-    top: auto !important;
-    bottom: 0 !important;
-    background: rgba(5,5,7,.82) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    justify-content: space-between !important;
-    padding: 0 clamp(16px,4vw,28px) !important;
-  }
-  .brand, .cs-header__brand {
-    position: static !important;
-    transform: none !important;
-    top: auto !important; left: auto !important;
-  }
-  .nav-logo { width: 44px !important; height: 44px !important; }
-  .site-nav nav {
-    position: static !important;
-    display: flex !important;
-    background: none !important;
-    flex-direction: row !important;
-    justify-content: flex-end !important;
-    gap: 8px !important;
-  }
-  .site-nav nav a {
-    font-size: clamp(12px,3.5vw,15px) !important;
-    padding: 7px 10px !important;
-  }
-  .cs-header__back {
-    font-size: clamp(12px,3.5vw,15px) !important;
-    padding: 7px 10px !important;
-  }
-  body, main { padding-bottom: 64px !important; }
-  .nav-hamburger { display: none !important; }
-}
-
-/* ── iOS Safari safe area — bottom nav clears the browser chrome ── */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  @media (max-width: 680px) {
-    .site-nav, .cs-header {
-      height: calc(64px + env(safe-area-inset-bottom)) !important;
-      padding-bottom: env(safe-area-inset-bottom) !important;
-    }
-    body, main {
-      padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
-    }
-  }
-}
-
-/* ── Mobile nav: no background ── */
-@media (max-width: 680px) {
-  .site-nav, .cs-header {
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-}
-
-/* ── Mobile nav: buttons flush right ── */
-@media (max-width: 680px) {
-  .site-nav { justify-content: flex-end !important; }
-  .site-nav nav { margin-left: 0 !important; }
-  .brand, .cs-header__brand { display: none !important; }
-  .cs-header { justify-content: flex-end !important; }
-}
-
-/* ── Mobile nav: show logo, buttons flush right ── */
-@media (max-width: 680px) {
-  .brand, .cs-header__brand { display: flex !important; }
-}
 
 /* ── Mobile: content fills from top edge, no reserved space ── */
 @media (max-width: 680px) {
@@ -3071,33 +2959,6 @@ body.contact-mode .filter-pill.is-active {
   }
 }
 
-/* ── Nav links: force flush right with margin-left auto ── */
-.site-nav nav {
-  margin-left: auto !important;
-  justify-content: flex-end !important;
-}
-@media (max-width: 680px) {
-  .site-nav nav {
-    margin-left: auto !important;
-  }
-}
-
-/* ── Mobile nav: no logo, buttons centred, full pill size ── */
-@media (max-width: 680px) {
-  .brand, .cs-header__brand { display: none !important; }
-  .site-nav, .cs-header {
-    justify-content: center !important;
-  }
-  .site-nav nav {
-    margin-left: 0 !important;
-    justify-content: center !important;
-    gap: 8px !important;
-  }
-  .site-nav nav a, .cs-header__back {
-    font-size: 18px !important;
-    padding: 9px 12px !important;
-  }
-}
 
 /* ══ MOBILE NAV — FINAL, ONE BLOCK, NO CONFLICTS ══ */
 @media (max-width: 680px) {
@@ -3143,4 +3004,62 @@ body.contact-mode .filter-pill.is-active {
   body, main {
     padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
   }
+}
+
+/* ══════════════════════════════════════════
+   NAV — THE ONLY NAV RULES. DO NOT ADD MORE.
+   ══════════════════════════════════════════ */
+
+/* Desktop: fixed top, logo absolute left, links right */
+.site-nav, .cs-header {
+  position: fixed;
+  top: 0; bottom: auto;
+  left: 0; right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(20px,4vw,48px);
+  background: transparent;
+  z-index: 60;
+}
+.brand, .cs-header__brand {
+  position: absolute;
+  top: 50%; left: clamp(16px,3vw,40px);
+  transform: translateY(-50%);
+  display: flex; align-items: center;
+  text-decoration: none; line-height: 0;
+}
+.nav-logo { display: block; width: 132px; height: 132px; image-rendering: pixelated; }
+.brand span, .cs-header__brand span { display: none; }
+.site-nav nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  margin-left: auto;
+}
+
+/* Mobile: bottom bar, no logo, buttons centred */
+@media (max-width: 680px) {
+  .site-nav, .cs-header {
+    top: auto;
+    bottom: 0;
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
+    padding: 0 clamp(16px,4vw,24px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: transparent;
+  }
+  .brand, .cs-header__brand { display: none; }
+  .site-nav { justify-content: center; }
+  .cs-header { justify-content: center; }
+  .site-nav nav {
+    margin-left: 0;
+    justify-content: center;
+    gap: 8px;
+  }
+  .site-nav nav a, .cs-header__back {
+    font-size: 18px !important;
+    padding: 9px 12px !important;
+  }
+  body, main { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
 }
