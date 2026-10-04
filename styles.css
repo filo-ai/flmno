@@ -61,7 +61,7 @@ nav{display:flex;gap:24px;font-size:10px;letter-spacing:.055em;color:rgba(247,24
 footer{padding:28px clamp(20px,5vw,72px);color:rgba(247,247,242,.36);font-size:13px}
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.52);backdrop-filter:blur(18px);opacity:0;pointer-events:none;transition:opacity .35s ease;z-index:90}.modal-backdrop.active{opacity:1;pointer-events:auto}.apple-modal{position:fixed;left:50%;top:50%;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;padding:44px;border-radius:40px;background:linear-gradient(180deg,rgba(24,24,28,.98),rgba(10,10,12,.98));color:#fff;transform:translate(-50%,-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1);z-index:100;box-shadow:0 50px 160px rgba(0,0,0,.52)}.apple-modal.active{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}.modal-close{position:absolute;right:24px;top:24px;width:44px;height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:28px;cursor:pointer}.apple-modal span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:12px;letter-spacing:.12em}.apple-modal h2{max-width:760px;margin:0 0 24px;font-size:clamp(42px,5vw,72px);line-height:.92;letter-spacing:-.07em;font-weight:300}.apple-modal p{max-width:700px;color:rgba(255,255,255,.72);font-size:20px;line-height:1.5}.apple-modal a{display:inline-block;margin-top:18px;color:#fff;font-size:18px}body.modal-open{overflow:hidden}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-body.contact-mode{background:var(--contact-bg,#FAF3C7);color:#050507}body.contact-mode .scroll-char.visible{color:#050507}body.contact-mode .contact-copy p:not(.kicker){color:rgba(0,0,0,.66)}body.contact-mode .contact-form span{color:rgba(0,0,0,.58)}body.contact-mode .text-button{color:#050507}body.contact-mode .text-button.muted{color:rgba(0,0,0,.58)}body.contact-mode .logo-grid article,body.contact-mode .logo-grid span,body.contact-mode .lettering-card,body.contact-mode .contact-form input,body.contact-mode .contact-form textarea{background:rgba(255,255,255,.28)}
+
 @media(max-width:900px){.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr 1fr}.split,.contact-panel{grid-template-columns:1fr}.apple-card{min-height:280px}footer{grid-template-columns:1fr}}
 @media(max-width:620px){nav{gap:12px}.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr}.hero,.section,.contact{padding-left:20px;padding-right:20px}.contact-form{grid-template-columns:1fr}.work-tile,.tile-image,.frost-overlay{border-radius:26px}.apple-modal{padding:30px}.apple-modal h2{font-size:38px}}
 
@@ -129,24 +129,13 @@ body.contact-mode{background:var(--contact-bg,#FAF3C7);color:#050507}body.contac
   color:#fff;
 }
 
-body.contact-mode .scribble-base{
-  stroke:rgba(5,5,7,.24);
-}
 
-body.contact-mode .scribble-draw{
-  stroke:#050507;
-  filter:none;
-}
 
-body.contact-mode .scribble-label{
-  color:rgba(5,5,7,.42);
-}
 
-body.contact-mode .scribble-section.is-drawing .label-a,
-body.contact-mode .scribble-section.is-complete .label-a,
-body.contact-mode .scribble-section.is-complete .label-b{
-  color:#050507;
-}
+
+
+
+
 
 @media(max-width:620px){
   .scribble-section{
@@ -205,15 +194,9 @@ body.contact-mode .scribble-section.is-complete .label-b{
   fill:#fff;
 }
 
-body.contact-mode .scribble-label-svg{
-  fill:rgba(5,5,7,.42);
-}
 
-body.contact-mode .scribble-section.is-drawing .label-a-svg,
-body.contact-mode .scribble-section.is-complete .label-a-svg,
-body.contact-mode .scribble-section.is-complete .label-b-svg{
-  fill:#050507;
-}
+
+
 
 @media(max-width:620px){
   .scribble-section{
@@ -260,15 +243,7 @@ nav,
 /* --- user notes fix pass --- */
 
 /* 1. Header should stay clear/transparent when contact color mode is active */
-body.contact-mode 
 
-/* 2. Side-by-side about copy + animated drawing */
-.about-intro{
-  display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);
-  gap:clamp(28px,6vw,90px);
-  align-items:center;
-}
 
 .about-copy-block{
   min-width:0;
@@ -338,61 +313,31 @@ body.contact-mode
 }
 
 /* 5. Contact mode should make service cards and modals black/gray */
-body.contact-mode .apple-card{
-  color:#050507;
-  background:rgba(255,255,255,.28);
-}
 
-body.contact-mode .apple-card:hover{
-  background:rgba(255,255,255,.42);
-}
 
-body.contact-mode .apple-card span{
-  color:rgba(5,5,7,.55);
-}
 
-body.contact-mode .apple-card b{
-  background:rgba(5,5,7,.08);
-  color:#050507;
-}
 
-body.contact-mode .apple-modal{
-  background:rgba(255,255,255,.92);
-  color:#050507;
-  box-shadow:none;
-}
 
-body.contact-mode .apple-modal span{
-  color:rgba(5,5,7,.52);
-}
 
-body.contact-mode .apple-modal p{
-  color:rgba(5,5,7,.66);
-}
 
-body.contact-mode .apple-modal a{
-  color:#050507;
-}
 
-body.contact-mode .modal-close{
-  background:rgba(5,5,7,.08);
-  color:#050507;
-}
 
-body.contact-mode .modal-backdrop{
-  background:rgba(255,255,255,.36);
-}
+
+
+
+
+
+
+
+
+
+
 
 /* Let the modal itself also react after a user types into the form */
-body.contact-mode.modal-open .apple-modal{
-  color:#050507;
-}
+
 
 /* make form placeholder readable in contact mode */
-body.contact-mode .contact-form input::placeholder,
-body.contact-mode .contact-form textarea::placeholder{
-  color:rgba(5,5,7,.42);
-}
+
 
 @media(max-width:900px){
   .about-intro{
@@ -503,9 +448,7 @@ h1,h2,h3,
   color:rgba(255,255,255,.88);
 }
 
-body.contact-mode .apple-modal span{
-  color:#050507;
-}
+
 
 /* 3. Animation finishes slightly earlier and visibly ends at B */
 .scribble-draw{
@@ -557,29 +500,14 @@ body.contact-mode .apple-modal span{
 }
 
 /* contact mode: keep service/modal readable and shadowless */
-body.contact-mode .apple-card{
-  background:rgba(255,255,255,.28);
-  color:#050507;
-}
 
-body.contact-mode .apple-card h3{
-  color:#050507;
-}
 
-body.contact-mode .apple-card b{
-  background:rgba(5,5,7,.08);
-  color:#050507;
-}
+
+
+
 
 /* Header remains visually clear */
-body.contact-mode 
 
-/* Global safeguard: no giant headings */
-.section h2,
-.about h2,
-.contact h2{
-  max-font-size:36px;
-}
 
 @media(max-width:900px){
   .apple-service-grid{
@@ -863,18 +791,7 @@ nav,
   color:rgba(255,255,255,.66);
 }
 
-body.contact-mode .contact-form span,
-body.contact-mode .body-copy,
-body.contact-mode .contact-copy p,
-body.contact-mode .logo-grid p,
-body.contact-mode footer,
-body.contact-mode 
 
-/* Shorter, cleaner A-to-B drawing presentation */
-.about .scribble-svg{
-  width:min(100%,440px);
-  max-height:320px;
-}
 
 .scribble-base,
 .scribble-draw{
@@ -938,24 +855,12 @@ main > .headline-scroll-spacer{
 /* Logo styling */
 
 
-body.contact-mode 
 
-/* Keep footer full width, but align its inner grid nicely */
-footer{
-  max-width:none;
-  width:100%;
-}
 
 /* Prevent older Laica logo mapping from overriding */
 
 
-body.contact-mode 
 
-@media(max-width:1000px){
-  main > section,
-  main > .headline-scroll-spacer{
-    max-width:100%;
-  }
 }
 
 
@@ -976,10 +881,7 @@ body.headline-complete .scroll-headline .scroll-char{
   opacity:1;
 }
 
-body.contact-mode.headline-complete .scroll-headline .scroll-char{
-  color:#050507;
-  opacity:1;
-}
+
 
 /* Fade hero out only as it naturally gives way to the next section, not when animation completes */
 .hero{
@@ -1117,10 +1019,7 @@ body.headline-complete .scroll-headline .scroll-char{
   opacity:1;
 }
 
-body.contact-mode.headline-complete .scroll-headline .scroll-char{
-  color:#050507;
-  opacity:1;
-}
+
 
 
 /* --- smooth headline release fix --- */
@@ -1157,10 +1056,7 @@ body.headline-complete .scroll-headline .scroll-char{
   opacity:1;
 }
 
-body.contact-mode.headline-complete .scroll-headline .scroll-char{
-  color:#050507;
-  opacity:1;
-}
+
 
 /* Hide only the little scroll guide after completion, never the headline */
 body.headline-complete .hero::after{
@@ -1223,10 +1119,7 @@ body.headline-complete .scroll-headline .scroll-char{
   opacity:1;
 }
 
-body.contact-mode.headline-complete .scroll-headline .scroll-char{
-  color:#050507;
-  opacity:1;
-}
+
 
 /* Remove any accidental huge empty spacing from previous main > spacer rule */
 main > .headline-scroll-spacer{
@@ -1541,9 +1434,7 @@ footer strong,
   transform:translate(18px,8px);
 }
 
-body.contact-mode .scribble-label-svg{
-  stroke:var(--contact-bg,#FAF3C7);
-}
+
 
 /* Make the white drawing finish before it visually collides with B */
 .scribble-draw{
@@ -1621,17 +1512,7 @@ body.leaving-page{
 
 
 
-body.contact-mode 
 
-body.contact-mode 
-
-.work-item{
-  display:block;
-  transition:
-    opacity .35s ease,
-    transform .35s ease,
-    filter .35s ease;
-}
 
 .work-item.is-hidden{
   display:none;
@@ -1732,9 +1613,9 @@ body.contact-mode
   50%{ transform:translateY(6px); }
 }
 
-body.contact-mode .hero-scroll-cue{display:grid;place-items:center;color:rgba(255,255,255,.52);text-decoration:none;transition:color .2s,transform .3s ease;animation:cue-bob 2.4s ease-in-out infinite}
 
-body.contact-mode .hero-scroll-cue:hover{color:rgba(255,255,255,.9);transform:translateY(4px)}
+
+
 
 .work-heading p{
   max-width:720px;
@@ -2602,3 +2483,114 @@ h1, h2, h3,
   white-space: nowrap;
   pointer-events: auto;
 }
+
+/* ══════════════════════════════════════════════
+   CONTACT MODE — full invert when pastel activates
+   Everything that was light → dark
+   ══════════════════════════════════════════════ */
+
+body.contact-mode {
+  background: var(--contact-bg, #b8f0e0);
+  color: #050507;
+  transition: background .6s ease, color .4s ease;
+}
+
+/* Nav links */
+body.contact-mode .site-nav nav a,
+body.contact-mode .brand,
+body.contact-mode .nav-hamburger span {
+  color: rgba(5,5,7,.6);
+}
+body.contact-mode .site-nav nav a:hover { color: #050507; }
+
+/* Hero scroll chars */
+body.contact-mode .scroll-char { color: rgba(5,5,7,.2); }
+body.contact-mode .scroll-char.visible { color: #050507; }
+
+/* Filter pills */
+body.contact-mode .filter-pill {
+  background: rgba(5,5,7,.08);
+  color: rgba(5,5,7,.65);
+  border-color: transparent;
+}
+body.contact-mode .filter-pill:hover {
+  background: rgba(5,5,7,.15);
+  color: #050507;
+}
+body.contact-mode .filter-pill.is-active {
+  background: #050507;
+  color: #f7f7f2;
+}
+
+/* Work tile frost overlay */
+body.contact-mode .frost-overlay {
+  background: linear-gradient(rgba(255,255,255,.72) 0%, rgba(255,255,255,.42) 38%, rgba(255,255,255,.08) 100%);
+  color: #050507;
+}
+body.contact-mode .frost-overlay h2,
+body.contact-mode .frost-overlay p { color: #050507; }
+
+/* Work tiles background */
+body.contact-mode .tile-image { filter: brightness(.92); }
+
+/* Apple cards / services */
+body.contact-mode .apple-card {
+  background: rgba(5,5,7,.08);
+  color: #050507;
+}
+body.contact-mode .apple-card h3,
+body.contact-mode .apple-card p { color: rgba(5,5,7,.75); }
+
+/* Contact section */
+body.contact-mode .contact-copy h2,
+body.contact-mode .contact-copy p { color: #050507; }
+
+body.contact-mode .contact-form input,
+body.contact-mode .contact-form textarea {
+  border-color: rgba(5,5,7,.2) !important;
+  background: rgba(255,255,255,.4) !important;
+  color: #050507 !important;
+}
+body.contact-mode .contact-form input::placeholder,
+body.contact-mode .contact-form textarea::placeholder { color: rgba(5,5,7,.4) !important; }
+body.contact-mode .contact-form label,
+body.contact-mode .contact-form span { color: rgba(5,5,7,.6); }
+
+body.contact-mode .contact-form input:not(:placeholder-shown),
+body.contact-mode .contact-form textarea:not(:placeholder-shown) {
+  border-color: rgba(5,5,7,.45) !important;
+  background: rgba(255,255,255,.6) !important;
+}
+
+/* Send button */
+body.contact-mode button[type="submit"],
+body.contact-mode .contact-submit {
+  background: #050507;
+  color: #f7f7f2;
+  border-color: #050507;
+}
+body.contact-mode button[type="submit"]:hover {
+  background: #2a2a2e;
+}
+
+/* Section headings */
+body.contact-mode h2,
+body.contact-mode h3 { color: #050507; }
+
+/* Scribble */
+body.contact-mode .scribble-base { stroke: rgba(5,5,7,.2); }
+body.contact-mode .scribble-draw { stroke: #050507; filter: none; }
+body.contact-mode .scribble-label,
+body.contact-mode .label-a-svg,
+body.contact-mode .label-b-svg { fill: rgba(5,5,7,.5); color: rgba(5,5,7,.5); }
+
+/* Scroll cue arrow */
+body.contact-mode .hero-scroll-cue { color: rgba(5,5,7,.5); }
+
+/* Footer */
+body.contact-mode footer,
+body.contact-mode .site-footer { color: rgba(5,5,7,.4); }
+body.contact-mode .site-footer a { color: rgba(5,5,7,.4); }
+
+/* Hint labels */
+body.contact-mode .hint { color: rgba(5,5,7,.5); }
