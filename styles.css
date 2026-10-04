@@ -2993,3 +2993,16 @@ body.contact-mode .filter-pill.is-active {
   body, main { padding-bottom: 64px !important; }
   .nav-hamburger { display: none !important; }
 }
+
+/* ── iOS Safari safe area — bottom nav clears the browser chrome ── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  @media (max-width: 680px) {
+    .site-nav, .cs-header {
+      height: calc(64px + env(safe-area-inset-bottom)) !important;
+      padding-bottom: env(safe-area-inset-bottom) !important;
+    }
+    body, main {
+      padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
+    }
+  }
+}
