@@ -349,39 +349,6 @@ h1,h2,p,dl,dd,figure{margin:0}
 
 /* JS adds .on chars — title gets same lit treatment via the scroll observer */
 
-/* ── Case study nav — matches homepage exactly ── */
-.cs-header {
-  position: sticky;
-  top: 0;
-  z-index: 60;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px clamp(20px,4vw,48px);
-  background: transparent;
-}
-.cs-header__brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-.cs-header__brand .nav-logo {
-  display: block;
-  width:132px;
-  height:132px;
-  image-rendering: pixelated;
-}
-.cs-header__brand span { display: none; }
-.cs-header__back {
-  font-family: "Apercu", sans-serif;
-  font-size: 14px;
-  letter-spacing: .01em;
-  color: rgba(247,247,242,.52);
-  text-decoration: none;
-  transition: color .2s ease;
-}
-.cs-header__back:hover { color: var(--fg, #f7f7f2); }
 
 /* ── Hero title — same scroll-lit char treatment as cs-story__text ── */
 .cs-hero__title {

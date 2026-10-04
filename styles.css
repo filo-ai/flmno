@@ -2457,45 +2457,61 @@ h1, h2, h3,
   
 }
 
-/* ═══════════════════════════════════════════════
-   NAV — single source of truth for all pages
-   Logo top-left, menu/hamburger top-right, always
-   ═══════════════════════════════════════════════ */
-.site-nav {
-  position: sticky;
+
+/* ═══════════════════════
+   NAV — final, clean version
+   Logo: absolute top-left, overflows nav
+   Links: right side, nav stays slim
+   ═══════════════════════ */
+
+/* The nav bar itself stays slim — just enough for the links */
+.site-nav,
+.cs-header {
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 60;
+  height: 64px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px clamp(20px,4vw,48px);
+  justify-content: flex-end;
+  padding: 0 clamp(20px,4vw,48px);
   background: transparent;
+  pointer-events: none; /* let clicks through except on children */
 }
 
-/* Logo — top left */
-.brand {
+/* Logo: sits top-left, absolute, larger than the nav bar */
+.brand,
+.cs-header__brand {
+  position: absolute;
+  top: 12px;
+  left: clamp(16px,3vw,40px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   text-decoration: none;
-  flex-shrink: 0;
+  pointer-events: auto;
   line-height: 0;
 }
 .nav-logo {
   display: block;
-  width:132px;
-  height:132px;
+  width: 132px;
+  height: 132px;
   image-rendering: pixelated;
 }
-.brand span { display: none; }
+.brand span,
+.cs-header__brand span { display: none; }
 
-/* Nav links — top right on desktop */
+/* Nav links — right side */
 .site-nav nav {
   display: flex;
   align-items: center;
   gap: 28px;
   flex-wrap: nowrap;
+  pointer-events: auto;
 }
-.site-nav nav a {
+.site-nav nav a,
+.cs-header__back {
   font-family: "Apercu", sans-serif;
   font-size: 14px;
   letter-spacing: .01em;
@@ -2504,9 +2520,15 @@ h1, h2, h3,
   transition: color .2s ease;
   white-space: nowrap;
 }
-.site-nav nav a:hover { color: #f7f7f2; }
+.site-nav nav a:hover,
+.cs-header__back:hover { color: #f7f7f2; }
 
-/* Hamburger — hidden on desktop */
+/* Back to work on case study pages */
+.cs-header__back {
+  pointer-events: auto;
+}
+
+/* Hamburger — right side on mobile */
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -2519,6 +2541,7 @@ h1, h2, h3,
   cursor: pointer;
   padding: 4px;
   flex-shrink: 0;
+  pointer-events: auto;
 }
 .nav-hamburger span {
   display: block;
@@ -2531,7 +2554,7 @@ h1, h2, h3,
 .nav-hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .nav-hamburger.is-open span:nth-child(2) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* Mobile: hamburger top-right, links in full-screen overlay */
+/* Mobile: show hamburger, hide links until open */
 @media (max-width: 680px) {
   .nav-hamburger { display: flex; }
   .site-nav nav {
@@ -2544,6 +2567,7 @@ h1, h2, h3,
     align-items: center;
     gap: 32px;
     background: var(--bg, #050507);
+    pointer-events: auto;
   }
   .site-nav nav.is-open { display: flex; }
   .site-nav nav.is-open a {
@@ -2553,31 +2577,4 @@ h1, h2, h3,
     letter-spacing: .02em;
     color: rgba(247,247,242,.9);
   }
-}
-
-/* ── Mobile nav close pill ── */
-.nav-close-pill {
-  display: none;
-  position: absolute;
-  bottom: 48px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid rgba(247,247,242,.28);
-  border-radius: 999px;
-  background: transparent;
-  color: rgba(247,247,242,.7);
-  font-family: "Apercu", sans-serif;
-  font-size: 14px;
-  letter-spacing: .04em;
-  padding: 12px 32px;
-  cursor: pointer;
-  transition: background .2s, color .2s;
-  white-space: nowrap;
-}
-.nav-close-pill:hover {
-  background: rgba(247,247,242,.1);
-  color: #f7f7f2;
-}
-.site-nav nav.is-open .nav-close-pill {
-  display: block;
 }
