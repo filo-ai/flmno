@@ -3098,3 +3098,49 @@ body.contact-mode .filter-pill.is-active {
     padding: 9px 12px !important;
   }
 }
+
+/* ══ MOBILE NAV — FINAL, ONE BLOCK, NO CONFLICTS ══ */
+@media (max-width: 680px) {
+
+  /* Hide logo entirely */
+  .brand,
+  .cs-header__brand {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Nav bar: centred, no padding */
+  .site-nav,
+  .cs-header {
+    padding: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Nav links: centred row */
+  .site-nav nav {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    background: none !important;
+    width: 100% !important;
+  }
+
+  /* Full pill size */
+  .site-nav nav a,
+  .cs-header__back {
+    font-size: 18px !important;
+    padding: 9px 12px !important;
+  }
+
+  /* Body padding for bottom nav */
+  body, main {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
