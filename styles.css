@@ -57,7 +57,7 @@ nav{display:flex;gap:24px;font-size:10px;letter-spacing:.055em;color:rgba(247,24
 .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,6vw,88px);align-items:center}.display-heading{max-width:1000px;margin:0;font-size:clamp(40px,6.3vw,104px);line-height:.94;letter-spacing:-.067em;font-weight:200}.lettering-card{min-height:520px;padding:clamp(28px,5vw,64px);border-radius:36px;background:transparent;display:flex;align-items:center;justify-content:center;overflow:hidden}.lettering-card span{font-size:clamp(70px,13vw,188px);font-weight:700;letter-spacing:-.18em;transition:transform .4s ease}.lettering-card:hover span:nth-child(odd){transform:translateY(-18px)}.lettering-card:hover span:nth-child(even){transform:translateY(18px)}
 .body-copy{max-width:760px;margin:28px 0 0;color:rgba(247,247,242,.7);font-size:clamp(18px,2vw,27px);line-height:1.42}
 .apple-service-grid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.apple-card{position:relative;min-height:360px;padding:34px;border:0;border-radius:36px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));color:#fff;text-align:left;cursor:pointer;backdrop-filter:blur(24px) saturate(140%);transition:transform .45s cubic-bezier(.22,1,.36,1),background .35s ease,box-shadow .45s ease;box-shadow:0 20px 80px rgba(0,0,0,.28)}.apple-card:hover{transform:translateY(-8px);background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.06));box-shadow:0 40px 120px rgba(0,0,0,.34)}.apple-card span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:11px;letter-spacing:.12em}.apple-card h3{max-width:460px;margin:0;font-size:clamp(26px,2.6vw,42px);line-height:.98;letter-spacing:-.06em;font-weight:300}.apple-card b{position:absolute;left:34px;bottom:30px;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:rgba(255,255,255,.1);font-size:28px;font-weight:300}
-.contact{padding:clamp(96px,12vw,180px) clamp(24px,6vw,88px)}.contact-panel{min-height:76vh;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,92px);align-items:end}.contact-copy h2{margin:0;font-size:clamp(44px,7.8vw,128px);line-height:.88;letter-spacing:-.04em;font-weight:200}.contact-copy p:not(.kicker){max-width:520px;margin:28px 0 0;color:rgba(255,255,255,.66);font-size:clamp(18px,2vw,26px);line-height:1.35}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,30px)}.contact-form label{display:grid;gap:12px}.contact-form .full{grid-column:1/-1}.contact-form span{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.58)}.contact-form input,.contact-form textarea{width:100%;border:0;border-radius:24px;background:rgba(255,255,255,.12);color:inherit;padding:18px 22px;font:300 18px/1.25 inherit;outline:none}.contact-form textarea{min-height:190px;resize:vertical}.contact-form button{grid-column:1/-1;justify-self:start;border:0;border-radius:999px;background:#fff;color:#050507;padding:17px 30px;font-size:11px;letter-spacing:.13em;cursor:pointer}
+.contact{padding:clamp(96px,12vw,180px) clamp(24px,6vw,88px)}.contact-panel{min-height:76vh;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,92px);align-items:end}.contact-copy h2{margin:0;font-size:clamp(44px,7.8vw,128px);line-height:.88;letter-spacing:-.04em;font-weight:200}.contact-copy p:not(.kicker){max-width:520px;margin:28px 0 0;color:rgba(255,255,255,.66);font-size:clamp(18px,2vw,26px);line-height:1.35}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,30px)}.contact-form label{display:grid;gap:12px}.contact-form .full{grid-column:1/-1}.contact-form span{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.58)}.contact-form input,.contact-form textarea{width:100%;border:0;border-radius:24px;background:rgba(255,255,255,.12);color:inherit;padding:18px 22px;font:300 18px/1.25 inherit;outline:none}.contact-form textarea{min-height:190px;resize:vertical}.contact-form button{grid-column:1/-1;justify-self:start;border:0;border-radius:10px;background:rgba(255,255,255,.075);color:rgba(247,247,242,.7);padding:9px 12px;font-size:clamp(13px,1vw,15px);letter-spacing:.01em;border:0;cursor:pointer}}
 footer{padding:28px clamp(20px,5vw,72px);color:rgba(247,247,242,.36);font-size:13px}
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.52);backdrop-filter:blur(18px);opacity:0;pointer-events:none;transition:opacity .35s ease;z-index:90}.modal-backdrop.active{opacity:1;pointer-events:auto}.apple-modal{position:fixed;left:50%;top:50%;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;padding:44px;border-radius:40px;background:linear-gradient(180deg,rgba(24,24,28,.98),rgba(10,10,12,.98));color:#fff;transform:translate(-50%,-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1);z-index:100;box-shadow:0 50px 160px rgba(0,0,0,.52)}.apple-modal.active{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}.modal-close{position:absolute;right:24px;top:24px;width:44px;height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:28px;cursor:pointer}.apple-modal span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:12px;letter-spacing:.12em}.apple-modal h2{max-width:760px;margin:0 0 24px;font-size:clamp(42px,5vw,72px);line-height:.92;letter-spacing:-.07em;font-weight:300}.apple-modal p{max-width:700px;color:rgba(255,255,255,.72);font-size:20px;line-height:1.5}.apple-modal a{display:inline-block;margin-top:18px;color:#fff;font-size:18px}body.modal-open{overflow:hidden}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
@@ -2624,3 +2624,37 @@ body.contact-mode .hint { color: rgba(5,5,7,.5); }
 .contact-form #input3       { grid-area: email; }
 .contact-form #textBox1     { grid-area: msg; }
 .contact-form button        { grid-area: send; justify-self: start; }
+
+/* ── Contact form: send button = filter pill, input no outline ── */
+.contact-form button[type="submit"] {
+  border-radius: 10px !important;
+  background: rgba(255,255,255,.075) !important;
+  color: rgba(247,247,242,.7) !important;
+  padding: 9px 12px !important;
+  font-size: clamp(13px,1vw,15px) !important;
+  letter-spacing: .01em !important;
+  border: 0 !important;
+  line-height: 1 !important;
+  transition: background .2s ease, color .2s ease, transform .2s ease !important;
+}
+.contact-form button[type="submit"]:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: rgba(247,247,242,.95) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Kill every possible source of input outline */
+.contact-form input,
+.contact-form textarea,
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible,
+.contact-form input:active,
+.contact-form textarea:active {
+  outline: 0 !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+}
