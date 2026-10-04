@@ -2288,6 +2288,7 @@ h1, h2, h3,
 .filter-bar::-webkit-scrollbar { display: none; }
 
 /* ── Filter pills — original style restored ── */
+.site-nav nav a,
 .contact-form button[type="submit"],
 .filter-pill {
   border: 0;
@@ -2303,6 +2304,7 @@ h1, h2, h3,
   white-space: nowrap;
   transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
+.site-nav nav a:hover,
 .contact-form button[type="submit"]:hover,
 .filter-pill:hover {
   transform: translateY(-2px);
@@ -2511,12 +2513,14 @@ body.contact-mode .scroll-char { color: rgba(5,5,7,.2); }
 body.contact-mode .scroll-char.visible { color: #050507; }
 
 /* Filter pills */
+body.contact-mode .site-nav nav a,
 body.contact-mode .contact-form button[type="submit"],
 body.contact-mode .filter-pill {
   background: rgba(5,5,7,.08);
   color: rgba(5,5,7,.65);
   border-color: transparent;
 }
+body.contact-mode .site-nav nav a:hover,
 body.contact-mode .contact-form button[type="submit"]:hover,
 body.contact-mode .filter-pill:hover {
   background: rgba(5,5,7,.15);
@@ -2669,3 +2673,11 @@ body.contact-mode .hint { color: rgba(5,5,7,.5); }
 /* Send = active filter-pill in both modes */
 body.contact-mode 
 body.contact-mode 
+
+/* Nav links styled as filter pills */
+.site-nav nav a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
