@@ -3053,3 +3053,20 @@ body.contact-mode .filter-pill.is-active {
     padding: 0 clamp(20px,5vw,32px) !important;
   }
 }
+
+/* ── Mobile hero: kill the full-height centering ── */
+@media (max-width: 680px) {
+  .hero,
+  .hero-pin-stage .hero,
+  body.headline-complete .hero {
+    min-height: auto !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding-top: clamp(32px,8vw,56px) !important;
+    position: relative !important;
+  }
+  .hero-pin-stage {
+    min-height: auto !important;
+  }
+}
