@@ -392,14 +392,20 @@ if (hamburger && mobileNav) {
     if (links[id]) links[id].classList.add('is-active');
   }
 
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) setActive(e.target.id);
-    });
-  }, { threshold: 0.2 });
+  // Use scroll position to determine active section — more reliable than threshold
+  function updateActive() {
+    const scrollMid = scrollY + innerHeight * 0.35;
+    const order = ['work', 'about', 'contact'];
+    let active = 'work';
+    for (const id of order) {
+      const el = sections[id];
+      if (el && el.getBoundingClientRect().top + scrollY <= scrollMid) {
+        active = id;
+      }
+    }
+    setActive(active);
+  }
 
-  Object.values(sections).forEach(s => s && obs.observe(s));
-
-  // Default: highlight Work on load
-  setActive('work');
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive(); // run on load
 })();
