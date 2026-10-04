@@ -349,3 +349,27 @@ if (hamburger && mobileNav) {
   if (logo) logo.src = base + "f" + padded + ".webp";
 })();
 
+
+/* ── Logo cycles on keypress or input typing ── */
+(function () {
+  const FRAMES = 4;
+  let current = parseInt(document.getElementById('nav-logo')?.src.match(/f(\d+)\.webp/)?.[1] || '0');
+  
+  function nextFrame() {
+    const logo = document.getElementById('nav-logo');
+    if (!logo) return;
+    current = (current + 1) % FRAMES;
+    const padded = String(current).padStart(2, '0');
+    const isProject = location.pathname.includes('/projects/');
+    const base = isProject ? '../../assets/logo-frames/' : '/assets/logo-frames/';
+    logo.src = base + 'f' + padded + '.webp';
+  }
+
+  // Change on any keydown anywhere on the page
+  document.addEventListener('keydown', nextFrame);
+  
+  // Change on input in text fields
+  document.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('input', nextFrame);
+  });
+})();

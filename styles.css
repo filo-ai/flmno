@@ -61,7 +61,7 @@ nav{display:flex;gap:24px;font-size:10px;letter-spacing:.055em;color:rgba(247,24
 footer{padding:28px clamp(20px,5vw,72px);color:rgba(247,247,242,.36);font-size:13px}
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.52);backdrop-filter:blur(18px);opacity:0;pointer-events:none;transition:opacity .35s ease;z-index:90}.modal-backdrop.active{opacity:1;pointer-events:auto}.apple-modal{position:fixed;left:50%;top:50%;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;padding:44px;border-radius:40px;background:linear-gradient(180deg,rgba(24,24,28,.98),rgba(10,10,12,.98));color:#fff;transform:translate(-50%,-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1);z-index:100;box-shadow:0 50px 160px rgba(0,0,0,.52)}.apple-modal.active{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}.modal-close{position:absolute;right:24px;top:24px;width:44px;height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:28px;cursor:pointer}.apple-modal span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:12px;letter-spacing:.12em}.apple-modal h2{max-width:760px;margin:0 0 24px;font-size:clamp(42px,5vw,72px);line-height:.92;letter-spacing:-.07em;font-weight:300}.apple-modal p{max-width:700px;color:rgba(255,255,255,.72);font-size:20px;line-height:1.5}.apple-modal a{display:inline-block;margin-top:18px;color:#fff;font-size:18px}body.modal-open{overflow:hidden}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-body.contact-mode{background:var(--contact-bg,#FAF3C7);color:#050507}body.contact-mode body.contact-mode body.contact-mode .scroll-char.visible{color:#050507}body.contact-mode .contact-copy p:not(.kicker){color:rgba(0,0,0,.66)}body.contact-mode .contact-form span{color:rgba(0,0,0,.58)}body.contact-mode .text-button{color:#050507}body.contact-mode .text-button.muted{color:rgba(0,0,0,.58)}body.contact-mode .logo-grid article,body.contact-mode .logo-grid span,body.contact-mode .lettering-card,body.contact-mode .contact-form input,body.contact-mode .contact-form textarea{background:rgba(255,255,255,.28)}
+body.contact-mode{background:var(--contact-bg,#FAF3C7);color:#050507}body.contact-mode .scroll-char.visible{color:#050507}body.contact-mode .contact-copy p:not(.kicker){color:rgba(0,0,0,.66)}body.contact-mode .contact-form span{color:rgba(0,0,0,.58)}body.contact-mode .text-button{color:#050507}body.contact-mode .text-button.muted{color:rgba(0,0,0,.58)}body.contact-mode .logo-grid article,body.contact-mode .logo-grid span,body.contact-mode .lettering-card,body.contact-mode .contact-form input,body.contact-mode .contact-form textarea{background:rgba(255,255,255,.28)}
 @media(max-width:900px){.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr 1fr}.split,.contact-panel{grid-template-columns:1fr}.apple-card{min-height:280px}footer{grid-template-columns:1fr}}
 @media(max-width:620px){nav{gap:12px}.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr}.hero,.section,.contact{padding-left:20px;padding-right:20px}.contact-form{grid-template-columns:1fr}.work-tile,.tile-image,.frost-overlay{border-radius:26px}.apple-modal{padding:30px}.apple-modal h2{font-size:38px}}
 
@@ -1187,9 +1187,12 @@ body.headline-complete .hero::after{
   position:sticky;
   top:0;
   min-height:100vh;
-  max-width:960px;
-  margin-left:auto;
-  margin-right:auto;
+  max-width:none;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   z-index:1;
 }
 
