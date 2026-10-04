@@ -2658,3 +2658,30 @@ body.contact-mode .hint { color: rgba(5,5,7,.5); }
   box-shadow: none !important;
   -webkit-appearance: none !important;
 }
+
+/* ══ FINAL FIXES — highest specificity ══ */
+
+/* 1. Nav links: force to right edge */
+.site-nav nav {
+  margin-left: auto !important;
+}
+
+/* 2. Input: kill outline AND border on focus so nothing shows */
+#input2:focus, #input3:focus, #textBox1:focus,
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 3. Send button: dark on pastel, matches pills on dark */
+body.contact-mode .contact-form button[type="submit"] {
+  background: rgba(5,5,7,.1) !important;
+  color: rgba(5,5,7,.75) !important;
+  border: 0 !important;
+}
+body.contact-mode .contact-form button[type="submit"]:hover {
+  background: rgba(5,5,7,.18) !important;
+  color: #050507 !important;
+}
