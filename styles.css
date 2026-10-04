@@ -2282,7 +2282,7 @@ h1, h2, h3,
   overflow-y: visible;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  padding: 6px clamp(20px,4vw,40px) 8px;
+  
   margin-bottom: clamp(24px,4vw,40px);
 }
 .filter-bar::-webkit-scrollbar { display: none; }
@@ -2306,7 +2306,7 @@ h1, h2, h3,
   transform: translateY(-2px);
   background: rgba(255,255,255,.14);
   color: rgba(247,247,242,.95);
-  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+  
 }
 .filter-pill.is-active {
   background: #f7f7f2;
@@ -2494,6 +2494,7 @@ body.contact-mode {
   color: #050507;
   transition: background .6s ease, color .4s ease;
 }
+body.contact-mode .body-copy { color: rgba(5,5,7,.65); }
 
 /* Nav links */
 body.contact-mode .site-nav nav a,
@@ -2594,3 +2595,32 @@ body.contact-mode .site-footer a { color: rgba(5,5,7,.4); }
 
 /* Hint labels */
 body.contact-mode .hint { color: rgba(5,5,7,.5); }
+
+/* ── Contact form: no outline, no labels ── */
+.contact-form input,
+.contact-form textarea {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* Send button matches filter-pill exactly — handled by .filter-pill class in HTML */
+.contact-form button.filter-pill {
+  width: auto;
+  justify-self: start;
+}
+/* grid fix since we removed label wrappers */
+.contact-form {
+  grid-template-areas:
+    "name email"
+    "msg  msg"
+    "send send";
+}
+.contact-form #input2       { grid-area: name; }
+.contact-form #input3       { grid-area: email; }
+.contact-form #textBox1     { grid-area: msg; }
+.contact-form button        { grid-area: send; justify-self: start; }
