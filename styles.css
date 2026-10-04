@@ -3023,3 +3023,8 @@ body.contact-mode .filter-pill.is-active {
   .brand, .cs-header__brand { display: none !important; }
   .cs-header { justify-content: flex-end !important; }
 }
+
+/* ── Mobile nav: show logo, buttons flush right ── */
+@media (max-width: 680px) {
+  .brand, .cs-header__brand { display: flex !important; }
+}
