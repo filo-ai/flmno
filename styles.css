@@ -3701,3 +3701,9 @@ body.contact-mode .divider {
   background: none !important;
   background-color: transparent !important;
 }
+
+/* ── Logo: align left edge with section content ── */
+.site-nav {
+  padding-left: clamp(24px,6vw,88px) !important;
+  padding-right: clamp(24px,6vw,88px) !important;
+}
