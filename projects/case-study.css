@@ -634,3 +634,54 @@ body.contact-mode .contact-copy p {
   line-height: 1.08 !important;
   color: var(--fg, #f7f7f2) !important;
 }
+
+/* ══ APERCU: ONE TREATMENT, NO EXCEPTIONS ══ */
+* { font-family: inherit; }
+
+/* Every element using Apercu gets identical treatment */
+body, p, li, a, span, div, input, textarea, button, label,
+dd, dt, figcaption, blockquote, td, th, caption,
+.body-copy, .contact-copy p, .apple-modal p, .apple-card p,
+.hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
+.cs-related__card__frost p, .site-footer, .filter-bar,
+.cs-header__back, .cs-read p, footer {
+  font-family: "Apercu", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  line-height: 1.5;
+}
+
+/* Only serif/display elements override */
+h1, h2, h3, h4,
+.display-heading, .contact-copy h2, .apple-modal h2,
+.apple-card h3, .cs-hero__title, .cs-story__text,
+.cs-read p.first, .cs-more__title, .cs-impact__card h3,
+.scroll-char, .scroll-text {
+  font-family: "Reckless", Georgia, serif;
+  font-size: revert;
+  font-weight: revert;
+  letter-spacing: revert;
+  line-height: revert;
+}
+
+/* Monospace elements */
+.kicker, .cs-hero__eyebrow, .cs-tldr__kicker,
+.apple-card span, .apple-modal span,
+.cs-related__card__frost p, .nav-label {
+  font-family: "Apercu Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .08em;
+  line-height: 1.4;
+}
+
+/* Buttons/nav keep 18px but same font/weight/tracking */
+.filter-pill, .site-nav nav a, .cs-header__back,
+.contact-form button, .cs-pill, .story-trigger,
+.nav-close-pill {
+  font-family: "Apercu", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.3px !important;
+}
