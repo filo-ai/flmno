@@ -3141,3 +3141,86 @@ p {
     font-size: clamp(18px,5vw,24px) !important;
   }
 }
+
+/* ══ UNIFIED BODY TEXT — one treatment for all prose ══
+   18px / 400 / -0.3px / 1.5 line-height / Apercu
+   Colour adapts to context (dark or pastel bg)
+   ══════════════════════════════════════════════════════ */
+
+/* Apply to every prose element */
+p,
+li,
+.body-copy,
+.contact-copy p,
+.apple-modal p,
+.apple-card h3 + p,
+.hint span,
+.cs-meta dd,
+.cs-more__sub,
+.cs-impact__card p,
+.cs-related__card__frost p,
+.site-footer {
+  font-family: "Apercu", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.3px !important;
+  line-height: 1.5 !important;
+}
+
+/* Exceptions that should keep their own size/style */
+.cs-read p.first,
+.cs-story__text,
+.cs-hero__title,
+.display-heading,
+.contact-copy h2,
+.apple-modal h2,
+.apple-card h3,
+.scroll-char,
+.filter-pill,
+.site-nav nav a,
+.cs-header__back,
+.contact-form button,
+.hint,
+footer strong,
+.kicker,
+.cs-tldr__kicker,
+.cs-hero__eyebrow,
+.apple-card span,
+.apple-modal span {
+  font-size: revert !important;
+  font-weight: revert !important;
+  letter-spacing: revert !important;
+  line-height: revert !important;
+}
+
+/* Colour on dark bg */
+p, li, .body-copy, .contact-copy p, .apple-modal p, .hint span,
+.cs-meta dd, .cs-more__sub, .cs-impact__card p, .site-footer {
+  color: rgba(247,247,242,.72);
+}
+
+/* Colour on pastel bg */
+body.contact-mode p,
+body.contact-mode li,
+body.contact-mode .body-copy,
+body.contact-mode .contact-copy p {
+  color: rgba(5,5,7,.65) !important;
+}
+
+/* Case study read sheet — first p stays serif, rest body text */
+.cs-read p {
+  font-family: "Apercu", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.3px !important;
+  line-height: 1.5 !important;
+  color: rgba(247,247,242,.72) !important;
+}
+.cs-read p.first {
+  font-family: "Reckless", serif !important;
+  font-size: clamp(22px,2.5vw,30px) !important;
+  font-weight: 500 !important;
+  letter-spacing: .01em !important;
+  line-height: 1.08 !important;
+  color: var(--fg, #f7f7f2) !important;
+}
