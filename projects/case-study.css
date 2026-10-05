@@ -901,17 +901,20 @@ h2.cs-story__text {
 }
 
 /* 3. cs-related: left-align with content, fix desktop scroll */
-.cs-more {
-  padding-left: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
-  padding-right: 0 !important;
-}
-.cs-more__head {
-  padding-right: clamp(24px,6vw,88px) !important;
-}
+
+
 .cs-related {
   padding-inline: 0 !important;
   padding-left: 0 !important;
   /* Desktop: allow overflow scroll */
   overflow-x: auto !important;
   overflow-y: visible !important;
+}
+
+/* ══ More Work: head and strip share same left edge ══ */
+.cs-more__head {
+  padding-inline: var(--inset) !important;
+}
+.cs-related {
+  padding-left: var(--inset) !important;
 }
