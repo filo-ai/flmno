@@ -685,3 +685,15 @@ h1, h2, h3, h4,
   font-weight: 400 !important;
   letter-spacing: -0.3px !important;
 }
+
+/* ══ APERCU: 300 / -0.2px — final update ══ */
+body, p, li, a, span, div, input, textarea, button, label,
+dd, dt, figcaption, blockquote, td, th,
+.body-copy, .contact-copy p, .apple-modal p,
+.hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
+.cs-related__card__frost p, .site-footer, footer,
+.filter-pill, .site-nav nav a, .cs-header__back,
+.contact-form button, .cs-pill, .story-trigger {
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+}
