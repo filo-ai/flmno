@@ -126,37 +126,6 @@
     update();
   });
 
-  /* ── Related projects: horizontal scroll strip with drag + momentum ── */
-  document.querySelectorAll(".cs-related").forEach((el) => {
-    let down = false, moved = false, startX = 0, startScroll = 0, lastX = 0, v = 0, raf;
-
-    el.addEventListener("pointerdown", (e) => {
-      down = true; moved = false;
-      startX = lastX = e.clientX; startScroll = el.scrollLeft; v = 0;
-      cancelAnimationFrame(raf);
-    });
-    window.addEventListener("pointermove", (e) => {
-      if (!down) return;
-      const dx = e.clientX - startX;
-      if (!moved && Math.abs(dx) > 5) { moved = true; el.classList.add("is-dragging"); }
-      if (moved) { el.scrollLeft = startScroll - dx; v = lastX - e.clientX; lastX = e.clientX; }
-    });
-    window.addEventListener("pointerup", () => {
-      if (!down) return; down = false;
-      if (!moved) return;
-      el.classList.remove("is-dragging");
-      const glide = () => {
-        if (Math.abs(v) < 0.3) return;
-        el.scrollLeft += v; v *= 0.9;
-        raf = requestAnimationFrame(glide);
-      };
-      glide();
-      el.addEventListener("click", (e) => { e.stopPropagation(); e.preventDefault(); }, { capture: true, once: true });
-      setTimeout(() => { moved = false; }, 80);
-    });
-  });
-})();
-
   /* ── Impact track drag ── */
   document.querySelectorAll(".cs-impact__track").forEach((el) => {
     let down = false, startX = 0, startScroll = 0, v = 0, moved = false, raf;
@@ -265,3 +234,48 @@
     setLogo(idx);
   }, { passive: true });
 })();
+
+/* ── Flipbook: click front card → cycle ── */
+document.querySelectorAll(".cs-flipbook").forEach((stage) => {
+  const cards = [...stage.querySelectorAll(".cs-flipbook__card")];
+  if (!cards.length) return;
+
+  function setPositions() {
+    cards.forEach((c, i) => {
+      const pos = parseInt(c.dataset.pos);
+      c.dataset.pos = pos;
+    });
+  }
+
+  function advance() {
+    // Rotate: front goes to back, rest step forward
+    const positions = cards.map(c => parseInt(c.dataset.pos));
+    const newPositions = positions.map(p => {
+      if (p === 0) return cards.length - 1; // front → back
+      if (p === -1) return -1;
+      return p - 1;
+    });
+    // Clamp beyond 2 to -1
+    newPositions.forEach((p, i) => {
+      cards[i].dataset.pos = p > 2 ? -1 : p;
+    });
+  }
+
+  // Click front card to advance
+  stage.addEventListener("click", (e) => {
+    const front = stage.querySelector('[data-pos="0"]');
+    if (front && (front === e.target || front.contains(e.target))) {
+      // If clicking a link and it's the front card, advance first then navigate
+      const href = front.getAttribute("href");
+      e.preventDefault();
+      advance();
+      if (href) setTimeout(() => { window.location.href = href; }, 400);
+    }
+  });
+
+  // Keyboard
+  stage.setAttribute("tabindex", "0");
+  stage.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "Enter") advance();
+  });
+});

@@ -151,12 +151,12 @@ ${items}
 
 function renderRelated(related) {
   if (!related?.length) return "";
-  const cards = related.map(n => {
-    const imgUrl = n.image ? wix(n.image, 800, 800, 80) : "";
-    const imgStyle = imgUrl ? ` style="--image:url('${imgUrl}')"` : "";
-    return `        <a class="cs-related__card" href="${esc(n.href)}" draggable="false">
-          <div class="cs-related__card__img"${imgStyle}></div>
-          <div class="cs-related__card__frost">
+  const cards = related.map((n, i) => {
+    const imgUrl = n.image ? wixFit(n.image, 900, 82) : "";
+    const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy">` : "";
+    return `        <a class="cs-flipbook__card" href="${esc(n.href)}" data-pos="${i < 3 ? i : -1}" draggable="false">
+          ${imgTag}
+          <div class="cs-flipbook__card__frost">
             <p>Project</p>
             <h3>${esc(n.title)}</h3>
           </div>
@@ -166,9 +166,9 @@ function renderRelated(related) {
     <section class="cs-more">
       <div class="cs-more__head">
         <h2 class="cs-more__title">More Work</h2>
-        <p class="cs-more__sub">Drag or scroll to browse</p>
+        <p class="cs-more__sub">Click to browse</p>
       </div>
-      <div class="cs-related">
+      <div class="cs-flipbook" aria-label="Related projects">
 ${cards}
       </div>
     </section>`;

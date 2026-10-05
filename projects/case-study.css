@@ -133,89 +133,25 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-more__title{font-family:var(--serif);font-weight:500;font-size:36px;line-height:1;letter-spacing:.01em;font-size:16px;color:var(--muted)}
 
 /* Horizontal scroll strip */
-.cs-related{
-  display:flex;gap:16px;
-  overflow-x:auto;overflow-y:hidden;
-  padding-inline:var(--inset);
-  padding-bottom:4px;          /* room for focus rings */
-  scrollbar-width:none;
-  cursor:grab;
-  touch-action:pan-y;
-  user-select:none;
-  scroll-behavior:smooth;
-}
-.cs-related::-webkit-scrollbar{display:none}
-.cs-related.is-dragging{cursor:grabbing}
-.cs-related.is-dragging *{pointer-events:none}
+
+
+
+
 
 /* Square cards */
-.cs-related__card{
-  flex:0 0 clamp(200px,22vw,282px);
-  aspect-ratio:1 / 1;
-  border-radius:10px;
-  overflow:hidden;
-  background:transparent;
-  text-decoration:none;
-  color:inherit;
-  position:relative;
-  display:block;
-  -webkit-user-drag:none;
-  transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
-}
+
 
 /* Image layer — identical to .tile-image */
-.cs-related__card__img{
-  position:absolute;
-  inset:0;
-  border-radius:10px;
-  background-image:var(--image);
-  background-size:cover;
-  background-position:center;
-  transition:transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease;
-}
+
 
 /* Frost overlay — identical to homepage .frost-overlay */
-.cs-related__card__frost{
-  position:absolute;
-  inset:0;
-  border-radius:10px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items:flex-start;
-  padding:20px;
-  background:linear-gradient(rgba(5,5,7,.72) 0%, rgba(5,5,7,.42) 38%, rgba(5,5,7,.08) 100%);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  color:#fff;
-  opacity:0;
-  transition:opacity .35s ease;
-}
-.cs-related__card__frost p{
-  margin:0 0 6px;
-  font-family:"Apercu Mono",monospace;
-  font-size:16px;
-  letter-spacing:-.015em;
-  color:rgba(255,255,255,.72);
-  text-transform:none;
-}
-.cs-related__card__frost h3{
-  margin:0;
-  font-family:"Reckless",serif;
-  font-size:27px;
-  font-weight:500;
-  line-height:.98;
-  letter-spacing:.01em;
-}
+
+
+
 
 /* Hover — identical to work-tile hover */
-.cs-related__card:hover .cs-related__card__img{
-  transform:scale(1.04);
-  filter:brightness(.38) blur(3px);
-}
-.cs-related__card:hover .cs-related__card__frost{
-  opacity:1;
-}
+
+
 
 /* ── Sheets ── */
 .cs-sheet{
@@ -568,14 +504,7 @@ li,
 .cs-meta dd,
 .cs-more__sub,
 .cs-impact__card p,
-.cs-related__card__frost p,
-.site-footer {
-  font-family: "Apercu", sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.3px !important;
-  line-height: 1.5 !important;
-}
+
 
 /* Exceptions that should keep their own size/style */
 .cs-read p.first,
@@ -643,14 +572,7 @@ body, p, li, a, span, div, input, textarea, button, label,
 dd, dt, figcaption, blockquote, td, th, caption,
 .body-copy, .contact-copy p, .apple-modal p, .apple-card p,
 .hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
-.cs-related__card__frost p, .site-footer, .filter-bar,
-.cs-header__back, .cs-read p, footer {
-  font-family: "Apercu", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: -0.3px;
-  line-height: 1.5;
-}
+
 
 /* Only serif/display elements override */
 h1, h2, h3, h4,
@@ -668,13 +590,7 @@ h1, h2, h3, h4,
 /* Monospace elements */
 .kicker, .cs-hero__eyebrow, .cs-tldr__kicker,
 .apple-card span, .apple-modal span,
-.cs-related__card__frost p, .nav-label {
-  font-family: "Apercu Mono", monospace;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: .08em;
-  line-height: 1.4;
-}
+
 
 /* Buttons/nav keep 18px but same font/weight/tracking */
 .filter-pill, .site-nav nav a, .cs-header__back,
@@ -691,12 +607,7 @@ body, p, li, a, span, div, input, textarea, button, label,
 dd, dt, figcaption, blockquote, td, th,
 .body-copy, .contact-copy p, .apple-modal p,
 .hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
-.cs-related__card__frost p, .site-footer, footer,
-.filter-pill, .site-nav nav a, .cs-header__back,
-.contact-form button, .cs-pill, .story-trigger {
-  font-weight: 300 !important;
-  letter-spacing: -0.2px !important;
-}
+
 
 /* ══ FINAL TYPOGRAPHY ══ */
 /* Apercu: 20px / 300 / -0.2px */
@@ -704,13 +615,7 @@ body, p, li, span, div, input, textarea, button, label,
 dd, dt, figcaption, blockquote,
 .body-copy, .contact-copy p, .apple-modal p,
 .hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
-.cs-related__card__frost p, .site-footer, footer,
-.filter-pill, .site-nav nav a, .cs-header__back,
-.contact-form button, .cs-pill, .story-trigger {
-  font-size: 20px !important;
-  font-weight: 300 !important;
-  letter-spacing: -0.2px !important;
-}
+
 
 /* Reckless: 500 / 0.36px everywhere */
 h1, h2, h3, h4,
@@ -853,14 +758,8 @@ h2.cs-story__text {
 }
 
 /* ── More Work strip: smooth horizontal scroll on mobile ── */
-.cs-related {
-  -webkit-overflow-scrolling: touch !important;
-  touch-action: pan-x !important;
-  scroll-snap-type: x mandatory !important;
-}
-.cs-related__card {
-  scroll-snap-align: start !important;
-}
+
+
 
 /* ══ FINAL FIXES ══ */
 
@@ -900,21 +799,118 @@ h2.cs-story__text {
   transform: translateY(-2px) !important;
 }
 
-/* 3. cs-related: left-align with content, fix desktop scroll */
 
-
-.cs-related {
-  padding-inline: 0 !important;
-  padding-left: 0 !important;
-  /* Desktop: allow overflow scroll */
-  overflow-x: auto !important;
-  overflow-y: visible !important;
+/* ══ More Work: flipbook ══ */
+.cs-more {
+  padding: clamp(80px,10vw,140px) 0 clamp(96px,12vw,160px);
 }
-
-/* ══ More Work: head and strip share same left edge ══ */
 .cs-more__head {
-  padding-inline: var(--inset) !important;
+  width: var(--content);
+  margin-inline: auto;
+  margin-bottom: 48px;
+  padding-inline: var(--inset);
 }
-.cs-related {
-  padding-left: var(--inset) !important;
+.cs-more__title {
+  font-family: var(--serif) !important;
+  font-size: clamp(28px,3vw,40px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+  color: var(--fg) !important;
+  margin: 0 0 6px !important;
+}
+.cs-more__sub {
+  font-size: 14px !important;
+  color: var(--muted) !important;
+  margin: 0 !important;
+}
+
+/* Flipbook stage */
+.cs-flipbook {
+  width: var(--content);
+  margin-inline: auto;
+  padding-inline: var(--inset);
+  position: relative;
+  height: clamp(280px,40vw,520px);
+  cursor: pointer;
+  user-select: none;
+}
+.cs-flipbook__card {
+  position: absolute;
+  width: clamp(220px,32vw,400px);
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #1a1a1c;
+  transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .4s ease, box-shadow .4s ease;
+  -webkit-user-drag: none;
+}
+.cs-flipbook__card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: block;
+}
+/* Card positions */
+.cs-flipbook__card[data-pos="0"] {
+  left: 0; z-index: 3;
+  transform: none;
+  box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+.cs-flipbook__card[data-pos="1"] {
+  left: clamp(18px,3vw,32px); z-index: 2;
+  transform: scale(.94) translateY(12px);
+  opacity: .7;
+  box-shadow: none;
+}
+.cs-flipbook__card[data-pos="2"] {
+  left: clamp(32px,5vw,56px); z-index: 1;
+  transform: scale(.88) translateY(24px);
+  opacity: .45;
+  box-shadow: none;
+}
+.cs-flipbook__card[data-pos="-1"] {
+  left: 0; z-index: 0;
+  transform: scale(.82) translateY(36px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Frost overlay */
+.cs-flipbook__card__frost {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  background: linear-gradient(rgba(5,5,7,.72) 0%, rgba(5,5,7,.42) 38%, rgba(5,5,7,.08) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .35s ease;
+  border-radius: 14px;
+}
+.cs-flipbook__card[data-pos="0"]:hover .cs-flipbook__card__frost { opacity: 1; }
+.cs-flipbook__card__frost p {
+  font-family: "Apercu Mono", monospace !important;
+  font-size: 11px !important;
+  letter-spacing: .1em !important;
+  margin: 0 0 6px !important;
+  color: rgba(255,255,255,.65) !important;
+}
+.cs-flipbook__card__frost h3 {
+  font-family: "Reckless", serif !important;
+  font-size: 27px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 680px) {
+  .cs-flipbook { height: clamp(200px,60vw,320px); }
+  .cs-flipbook__card { width: clamp(160px,55vw,260px); }
 }

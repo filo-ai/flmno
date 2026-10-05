@@ -3765,3 +3765,20 @@ body.contact-mode #site-logo-img {
     padding-right: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
   }
 }
+
+/* ── Apple service grid: font and left alignment ── */
+.apple-card h3 {
+  font-family: "Apercu", sans-serif !important;
+  font-size: clamp(16px,1.8vw,22px) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+.apple-service-grid {
+  text-align: left !important;
+}
+.apple-card {
+  text-align: left !important;
+  align-items: flex-start !important;
+}
