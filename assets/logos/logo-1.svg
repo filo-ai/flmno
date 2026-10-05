@@ -19,9 +19,8 @@
     </style>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
-    <rect class="cls-2" y="6.43" width="500" height="500"/>
-    <rect class="cls-2" y="6.43" width="500" height="500"/>
-    <text class="cls-1" transform="translate(101.9 88.89)"><tspan x="0" y="0">t</tspan></text>
+
+<text class="cls-1" transform="translate(101.9 88.89)"><tspan x="0" y="0">t</tspan></text>
     <text class="cls-3" transform="translate(184 340)"><tspan x="0" y="0">f</tspan></text>
   </g>
 </svg>
