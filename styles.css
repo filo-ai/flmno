@@ -3703,3 +3703,20 @@ body.contact-mode .divider {
 body.contact-mode #site-logo-img {
   filter: brightness(0) !important;
 }
+
+/* ── Mobile: logo top-centred, above everything ── */
+@media (max-width: 680px) {
+  #site-logo {
+    position: fixed !important;
+    top: 12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 70 !important;
+    width: 48px !important;
+    margin: 0 !important;
+  }
+  /* Keep it out of the nav bar flow */
+  .brand.site-logo, .cs-header__brand.site-logo {
+    display: none !important;
+  }
+}
