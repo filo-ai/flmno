@@ -3369,3 +3369,128 @@ body, p, li, span, div, input, textarea, button, label, a, dd, dt {
 body.contact-mode .site-logo img {
   filter: invert(0);
 }
+
+/* ══ LOGO + NAV LAYOUT ══ */
+
+/* Remove old nav-logo (pixel gif) entirely */
+.nav-logo { display: none !important; }
+
+/* Site logo: part of the nav bar, flush left on desktop */
+.brand.site-logo, .cs-header__brand.site-logo {
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0;
+  margin-right: auto; /* pushes nav links to the right */
+}
+.brand.site-logo img, .cs-header__brand.site-logo img {
+  width: 48px !important;
+  height: auto !important;
+  display: block !important;
+  filter: invert(1);
+  transition: opacity .2s ease;
+}
+.brand.site-logo:hover img, .cs-header__brand.site-logo:hover img {
+  opacity: .75;
+}
+body.contact-mode .brand.site-logo img,
+body.contact-mode .cs-header__brand.site-logo img {
+  filter: invert(0);
+}
+
+/* Mobile: logo centered top, floating above content */
+@media (max-width: 680px) {
+  .brand.site-logo, .cs-header__brand.site-logo {
+    position: fixed !important;
+    top: 16px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-right: 0 !important;
+    z-index: 58 !important;
+  }
+  .brand.site-logo img, .cs-header__brand.site-logo img {
+    width: 40px !important;
+  }
+}
+
+/* ══ FROST OVERLAY TAGS: sentence case, no uppercase ══ */
+.frost-overlay p {
+  text-transform: none !important;
+}
+
+/* ══ APPLE GRID: 3-col 2-row, narrower, + top-right ══ */
+.apple-service-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 10px !important;
+}
+.apple-card {
+  min-height: 160px !important;
+  padding: 16px 18px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+}
+/* + button: top-right */
+.apple-card b {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.apple-card h3 {
+  font-size: clamp(16px,1.8vw,22px) !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 680px) {
+  .apple-service-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .apple-card { min-height: 120px !important; }
+}
+
+/* ══ INPUTS + MODAL OPEN: translucent white, black text ══ */
+body.contact-mode .contact-form input,
+body.contact-mode .contact-form textarea {
+  background: rgba(255,255,255,.55) !important;
+  color: #050507 !important;
+}
+body.contact-mode .contact-form input::placeholder,
+body.contact-mode .contact-form textarea::placeholder {
+  color: rgba(5,5,7,.4) !important;
+}
+
+/* Apple modal open state */
+.apple-modal.active {
+  background: rgba(255,255,255,.82) !important;
+  backdrop-filter: blur(24px) !important;
+  color: #050507 !important;
+}
+.apple-modal.active h2,
+.apple-modal.active p,
+.apple-modal.active span {
+  color: #050507 !important;
+}
+.apple-modal.active a {
+  background: rgba(5,5,7,.08) !important;
+  color: rgba(5,5,7,.75) !important;
+}
+.apple-modal.active a:hover {
+  background: rgba(5,5,7,.16) !important;
+  color: #050507 !important;
+}
+.apple-modal.active .modal-close {
+  background: rgba(5,5,7,.08) !important;
+  color: #050507 !important;
+}
