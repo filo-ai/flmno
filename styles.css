@@ -3758,3 +3758,10 @@ body.contact-mode #site-logo-img {
     margin: 0 auto !important;
   }
 }
+
+/* ── Nav: right edge aligns with content right edge ── */
+@media (min-width: 681px) {
+  .site-nav {
+    padding-right: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
+  }
+}
