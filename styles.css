@@ -3651,3 +3651,53 @@ body.contact-mode .site-footer,
 body.contact-mode footer {
   color: rgba(5,5,7,.3) !important;
 }
+
+/* ── Frost overlay tag text: always white, always visible ── */
+.frost-overlay p {
+  color: rgba(255,255,255,.85) !important;
+  font-size: 11px !important;
+  letter-spacing: .12em !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* ── contact-heading = display-heading treatment ── */
+.contact-heading {
+  font-family: "Reckless", Georgia, serif !important;
+  font-size: clamp(40px,6.3vw,104px) !important;
+  line-height: .94 !important;
+  letter-spacing: -.067em !important;
+  font-weight: 200 !important;
+  max-width: 1000px !important;
+  margin: 0 0 48px !important;
+  color: var(--fg, #f7f7f2) !important;
+}
+body.contact-mode .contact-heading {
+  color: #050507 !important;
+}
+
+/* ── Section dividers: black on pastel bg ── */
+body.contact-mode hr,
+body.contact-mode .section-divider,
+body.contact-mode .divider {
+  border-color: rgba(5,5,7,.2) !important;
+}
+
+/* ── Logo: zero background always ── */
+.brand.site-logo,
+.cs-header__brand.site-logo,
+.site-logo {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.brand.site-logo img,
+.cs-header__brand.site-logo img,
+#site-logo-img {
+  background: none !important;
+  background-color: transparent !important;
+}

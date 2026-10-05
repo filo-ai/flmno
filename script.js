@@ -417,7 +417,7 @@ if (hamburger && mobileNav) {
 /* ══ Cycling logo: one step per 80px scrolled ══ */
 (function () {
   const TOTAL = 7;
-  const STEP  = 80; // px per logo step
+  const STEP  = 40; // px per logo step // px per logo step
   const BASE  = '/assets/logos/logo-';
   let idx     = 1;
   let lastStep = 0;
