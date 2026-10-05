@@ -113,7 +113,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-story__text{font-size:clamp(26px,2.6vw,36px);line-height:1.1;max-width:620px}
 /* First sentence rendered as serif spans, rest as sans spans */
 .cs-story__text .s1{font-family:var(--serif);letter-spacing:.01em}
-.cs-story__text .s2{font-family:var(--sans);letter-spacing:0;font-size:.88em;line-height:1.35}
+.cs-story__text .s2{font-family:"Reckless",Georgia,serif;letter-spacing:0.36px;font-size:1em;line-height:1.0}
 .cs-story__text .w{display:inline-block;white-space:nowrap}
 .cs-story__text .c{color:var(--faint);transition:color .25s ease}
 .cs-story__text .c.on{color:var(--fg)}
@@ -860,4 +860,58 @@ h2.cs-story__text {
 }
 .cs-related__card {
   scroll-snap-align: start !important;
+}
+
+/* ══ FINAL FIXES ══ */
+
+/* 1. cs-header: logo left, links right — same as homepage */
+.cs-header {
+  padding-left: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
+  padding-right: clamp(24px,6vw,88px) !important;
+  justify-content: space-between !important;
+}
+/* links push to right edge of 960px content */
+.cs-header__back {
+  margin-left: auto !important;
+}
+
+/* 2. Get back to work = nav pill (same as Work/About/Contact) */
+.cs-header__back {
+  background: rgba(255,255,255,.075) !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  color: rgba(247,247,242,.7) !important;
+  font-family: "Apercu", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+  padding: 9px 12px !important;
+  text-decoration: none !important;
+  transition: background .2s ease, color .2s ease, transform .2s ease !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+}
+.cs-header__back:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: rgba(247,247,242,.95) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 3. cs-related: left-align with content, fix desktop scroll */
+.cs-more {
+  padding-left: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
+  padding-right: 0 !important;
+}
+.cs-more__head {
+  padding-right: clamp(24px,6vw,88px) !important;
+}
+.cs-related {
+  padding-inline: 0 !important;
+  padding-left: 0 !important;
+  /* Desktop: allow overflow scroll */
+  overflow-x: auto !important;
+  overflow-y: visible !important;
 }
