@@ -801,3 +801,63 @@ h2.cs-story__text {
 .cs-story__text.is-ready {
   visibility: visible;
 }
+
+/* ── cs-header: nav padding matches content edges ── */
+@media (min-width: 681px) {
+  .cs-header {
+    padding-left: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
+    padding-right: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
+  }
+}
+
+/* ── Get back to work: no background ── */
+.cs-header__back {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgba(247,247,242,.7) !important;
+  font-family: "Apercu", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+  text-decoration: none !important;
+  transition: color .2s ease !important;
+  padding: 9px 12px !important;
+}
+.cs-header__back:hover {
+  color: #f7f7f2 !important;
+  background: transparent !important;
+}
+
+/* ── Mobile logo on project pages ── */
+#mobile-logo {
+  display: none;
+}
+@media (max-width: 680px) {
+  #mobile-logo {
+    display: block;
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 70;
+    width: 44px;
+    line-height: 0;
+  }
+  #mobile-logo img {
+    width: 44px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* ── More Work strip: smooth horizontal scroll on mobile ── */
+.cs-related {
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-x !important;
+  scroll-snap-type: x mandatory !important;
+}
+.cs-related__card {
+  scroll-snap-align: start !important;
+}

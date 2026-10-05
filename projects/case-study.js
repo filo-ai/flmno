@@ -236,3 +236,32 @@
   if (logo) logo.src = base + "f" + padded + ".webp";
 })();
 
+
+/* ══ Cycling logo on project pages ══ */
+(function () {
+  const TOTAL = 7;
+  const STEP  = 40;
+  const BASE  = '../../assets/logos/logo-';
+  let idx     = 1;
+  let dir     = 1;
+  let lastScrollStep = 0;
+
+  function setLogo(n) {
+    document.querySelectorAll('#site-logo-img, #mobile-logo-img').forEach(img => {
+      if (img) img.src = BASE + n + '.svg';
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    const currentStep = Math.floor(window.scrollY / STEP);
+    const delta = currentStep - lastScrollStep;
+    if (delta === 0) return;
+    lastScrollStep = currentStep;
+    for (let i = 0; i < Math.abs(delta); i++) {
+      idx += dir;
+      if (idx >= TOTAL) { idx = TOTAL; dir = -1; }
+      else if (idx <= 1) { idx = 1;    dir =  1; }
+    }
+    setLogo(idx);
+  }, { passive: true });
+})();
