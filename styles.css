@@ -3720,3 +3720,30 @@ body.contact-mode #site-logo-img {
     display: none !important;
   }
 }
+
+/* ── Mobile-only logo: top centre ── */
+#mobile-logo {
+  display: none;
+}
+@media (max-width: 680px) {
+  #mobile-logo {
+    display: block;
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 70;
+    width: 44px;
+    height: auto;
+    line-height: 0;
+  }
+  #mobile-logo img {
+    width: 44px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+  body.contact-mode #mobile-logo img {
+    filter: brightness(0);
+  }
+}
