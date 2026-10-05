@@ -3359,3 +3359,13 @@ body, p, li, span, div, input, textarea, button, label, a, dd, dt {
     position: fixed !important;
   }
 }
+
+/* ══ Site logo colour ══ */
+/* Default (dark bg): white */
+.site-logo img {
+  filter: invert(1);
+}
+/* Pastel / light bg: black */
+body.contact-mode .site-logo img {
+  filter: invert(0);
+}
