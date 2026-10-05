@@ -412,13 +412,15 @@ if (hamburger && mobileNav) {
 
 
 
-/* ══ Cycling logo: forward on scroll down, backward on scroll up ══ */
+
+
+/* ══ Cycling logo: one step per 80px scrolled ══ */
 (function () {
   const TOTAL = 7;
+  const STEP  = 80; // px per logo step
   const BASE  = '/assets/logos/logo-';
-  let idx = 1;
-  let lastY = window.scrollY;
-  let ticking = false;
+  let idx     = 1;
+  let lastStep = 0;
 
   function setLogo(n) {
     const img = document.getElementById('site-logo-img');
@@ -426,18 +428,11 @@ if (hamburger && mobileNav) {
   }
 
   window.addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const y = window.scrollY;
-      const dir = y > lastY ? 1 : -1;
-      lastY = y;
-      idx = Math.max(1, Math.min(TOTAL, idx + dir));
-      // Bounce at ends
-      if (idx === TOTAL) dir === 1 && (idx = TOTAL);
-      if (idx === 1)     dir === -1 && (idx = 1);
-      setLogo(idx);
-      ticking = false;
-    });
+    const currentStep = Math.floor(window.scrollY / STEP);
+    const delta = currentStep - lastStep;
+    if (delta === 0) return;
+    lastStep = currentStep;
+    idx = ((idx - 1 + delta) % TOTAL + TOTAL) % TOTAL + 1;
+    setLogo(idx);
   }, { passive: true });
 })();

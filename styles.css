@@ -3570,3 +3570,84 @@ body.contact-mode .site-footer a:hover,
 body.contact-mode footer a:hover {
   color: rgba(5,5,7,.6) !important;
 }
+
+/* ══ FINAL CONTACT + LOGO + FOOTER ══ */
+
+/* Contact: full-width single column, aligned to content */
+.contact {
+  padding: clamp(80px,10vw,140px) clamp(20px,4vw,40px) !important;
+  max-width: 960px !important;
+  margin-inline: auto !important;
+  display: block !important;
+}
+.contact-heading {
+  font-family: "Reckless", Georgia, serif !important;
+  font-size: clamp(36px,5vw,72px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+  line-height: 1.05 !important;
+  margin: 0 0 32px !important;
+  width: 100% !important;
+  color: var(--fg, #f7f7f2) !important;
+}
+.contact-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.contact-form button[type="submit"] {
+  align-self: flex-start !important;
+  width: auto !important;
+}
+.contact-copy { display: none !important; }
+.contact-panel { display: block !important; }
+
+/* Logo: align with content, no absolute, no boxy bg */
+.site-nav {
+  max-width: none !important;
+  padding: 0 clamp(20px,4vw,40px) !important;
+}
+.brand.site-logo, .cs-header__brand.site-logo {
+  position: static !important;
+  transform: none !important;
+  top: auto !important; left: auto !important;
+  margin-right: auto !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.brand.site-logo img, .cs-header__brand.site-logo img {
+  width: 48px !important;
+  height: auto !important;
+  filter: invert(1) !important;
+  background: none !important;
+}
+body.contact-mode .brand.site-logo img,
+body.contact-mode .cs-header__brand.site-logo img {
+  filter: invert(0) !important;
+}
+
+/* Footer: centred, quiet */
+.site-footer, footer {
+  text-align: center !important;
+  padding: 24px clamp(20px,4vw,40px) !important;
+  color: rgba(247,247,242,.3) !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+}
+.site-footer a, footer a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+body.contact-mode .site-footer,
+body.contact-mode footer {
+  color: rgba(5,5,7,.3) !important;
+}
