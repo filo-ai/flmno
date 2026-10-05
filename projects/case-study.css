@@ -765,3 +765,21 @@ h1, h2, h3, h4,
   font-size: 1em !important;
   line-height: 1.0 !important;
 }
+
+/* ── cs-hero__head: full width, left-aligned ── */
+.cs-hero__head {
+  grid-column: 1 / -1 !important;
+  text-align: left !important;
+}
+
+/* ── h3: no default browser margin/padding ── */
+h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ── cs-story__text as h2: reset browser h2 margin ── */
+h2.cs-story__text {
+  margin: 0 !important;
+  padding: 0 !important;
+}

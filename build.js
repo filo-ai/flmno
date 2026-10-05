@@ -124,7 +124,7 @@ function renderMeta(meta) {
 }
 
 function renderStory(fill, hasFullStory) {
-  const text = fill ? `        <p class="cs-story__text">${esc(fill)}</p>` : "";
+  const text = fill ? `        <h2 class="cs-story__text">${esc(fill)}</h2>` : "";
   const btn  = hasFullStory
     ? `        <button class="cs-pill" type="button" data-open="story">Read the full story ${EXPAND}</button>`
     : "";
