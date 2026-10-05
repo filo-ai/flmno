@@ -3747,3 +3747,14 @@ body.contact-mode #site-logo-img {
     filter: brightness(0);
   }
 }
+
+/* ── Mobile: Back to work — centred, no bg ── */
+@media (max-width: 680px) {
+  .cs-header {
+    justify-content: center !important;
+  }
+  .cs-header__back {
+    background: transparent !important;
+    margin: 0 auto !important;
+  }
+}
