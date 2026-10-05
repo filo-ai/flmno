@@ -3707,3 +3707,10 @@ body.contact-mode .divider {
   padding-left: clamp(24px,6vw,88px) !important;
   padding-right: clamp(24px,6vw,88px) !important;
 }
+
+/* ── Logo: align with centred content block ── */
+.site-nav {
+  max-width: none !important;
+  padding-left: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
+  padding-right: clamp(24px,6vw,88px) !important;
+}
