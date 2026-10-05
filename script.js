@@ -414,25 +414,32 @@ if (hamburger && mobileNav) {
 
 
 
-/* ══ Cycling logo: one step per 80px scrolled ══ */
+
+
+/* ══ Cycling logo: boomerang 1→7→1→7 on scroll ══ */
 (function () {
   const TOTAL = 7;
-  const STEP  = 40; // px per logo step // px per logo step
-  const BASE  = '/assets/logos/logo-';
-  let idx     = 1;
-  let lastStep = 0;
+  const STEP  = 40;
+  let idx     = 0; // 0-indexed internally
+  let dir     = 1;
+  let lastScrollStep = 0;
 
   function setLogo(n) {
     const img = document.getElementById('site-logo-img');
-    if (img) img.src = BASE + n + '.svg';
+    if (img) img.src = '/assets/logos/logo-' + n + '.svg';
   }
 
   window.addEventListener('scroll', () => {
     const currentStep = Math.floor(window.scrollY / STEP);
-    const delta = currentStep - lastStep;
+    const delta = currentStep - lastScrollStep;
     if (delta === 0) return;
-    lastStep = currentStep;
-    idx = ((idx - 1 + delta) % TOTAL + TOTAL) % TOTAL + 1;
-    setLogo(idx);
+    lastScrollStep = currentStep;
+
+    for (let i = 0; i < Math.abs(delta); i++) {
+      idx += dir;
+      if (idx >= TOTAL - 1) { idx = TOTAL - 1; dir = -1; }
+      else if (idx <= 0)    { idx = 0;          dir =  1; }
+    }
+    setLogo(idx + 1);
   }, { passive: true });
 })();

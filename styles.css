@@ -28,7 +28,7 @@ body{font-family:"Apercu",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Aria
 
 nav,.kicker,.section-heading p,.text-button,.logo-grid p,.frost-overlay p,.apple-card span,.contact-form span,footer strong,.apple-modal span,.scribble-label-svg{max-width:960px;margin-inline:auto;padding-inline:clamp(20px,4vw,40px);font-family:"Apercu Mono",monospace;font-weight:400}
 .scroll-headline{font-family:"Reckless",serif;font-weight:400}
-.display-heading,.contact-copy h2,.apple-modal h2{font-family:"Reckless",serif;font-weight:500}
+.contact-heading, .display-heading,.contact-copy h2,.apple-modal h2{font-family:"Reckless",serif;font-weight:500}
 .frost-overlay h2,.logo-grid h3,.apple-card h3{font-family:"Reckless",serif;font-weight:500}
 .body-copy,.contact-copy p,.apple-modal p,.contact-form input,.contact-form textarea{font-family:"Apercu",sans-serif}
 .lettering-card span,.logo-grid span{font-family:"Reckless",serif}
@@ -3525,15 +3525,7 @@ body.contact-mode .contact-form textarea::placeholder {
   width: 100% !important;
   max-width: none !important;
 }
-.contact-heading {
-  font-family: "Reckless", Georgia, serif !important;
-  font-size: clamp(28px,4vw,56px) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.36px !important;
-  line-height: 1.05 !important;
-  margin: 0 0 16px !important;
-  width: 100% !important;
-}
+
 .contact-form input,
 .contact-form textarea {
   width: 100% !important;
@@ -3580,16 +3572,7 @@ body.contact-mode footer a:hover {
   margin-inline: auto !important;
   display: block !important;
 }
-.contact-heading {
-  font-family: "Reckless", Georgia, serif !important;
-  font-size: clamp(36px,5vw,72px) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.36px !important;
-  line-height: 1.05 !important;
-  margin: 0 0 32px !important;
-  width: 100% !important;
-  color: var(--fg, #f7f7f2) !important;
-}
+
 .contact-form {
   display: flex !important;
   flex-direction: column !important;
@@ -3663,20 +3646,9 @@ body.contact-mode footer {
   display: block !important;
 }
 
-/* ── contact-heading = display-heading treatment ── */
-.contact-heading {
-  font-family: "Reckless", Georgia, serif !important;
-  font-size: clamp(40px,6.3vw,104px) !important;
-  line-height: .94 !important;
-  letter-spacing: -.067em !important;
-  font-weight: 200 !important;
-  max-width: 1000px !important;
-  margin: 0 0 48px !important;
-  color: var(--fg, #f7f7f2) !important;
-}
-body.contact-mode .contact-heading {
-  color: #050507 !important;
-}
+
+
+body.contact-mode 
 
 /* ── Section dividers: black on pastel bg ── */
 body.contact-mode hr,
