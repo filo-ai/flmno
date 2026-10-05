@@ -112,6 +112,7 @@
 
     el.innerHTML = wrapChars(first, "s1") + (rest ? " " + wrapChars(rest, "s2") : "");
 
+    el.classList.add('is-ready');
     const chars = el.querySelectorAll(".c");
     let lastN = -1;
     const update = () => {

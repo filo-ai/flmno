@@ -783,3 +783,21 @@ h2.cs-story__text {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* ── More Work title: full white ── */
+.cs-more__title {
+  color: var(--fg, #f7f7f2) !important;
+}
+
+/* ── cs-meta: left-aligned ── */
+.cs-meta {
+  grid-column: 1 / span 3 !important;
+}
+
+/* ── cs-story__text: hide until JS wraps chars (prevents FOUC) ── */
+.cs-story__text:not(.is-ready) {
+  visibility: hidden;
+}
+.cs-story__text.is-ready {
+  visibility: visible;
+}
