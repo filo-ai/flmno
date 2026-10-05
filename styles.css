@@ -3350,3 +3350,12 @@ body, p, li, span, div, input, textarea, button, label, a, dd, dt {
     width: 48px;
   }
 }
+
+/* ══ MOBILE NAV: ALWAYS BOTTOM — FINAL OVERRIDE ══ */
+@media (max-width: 680px) {
+  .site-nav, .cs-header {
+    top: auto !important;
+    bottom: 0 !important;
+    position: fixed !important;
+  }
+}
