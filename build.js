@@ -269,7 +269,6 @@ function buildPage(slug, project) {
 
   <main>
     <section class="cs-hero grid">
-      <p class="cs-hero__label">Case Study</p>
       <hgroup class="cs-hero__head">
         <h1 class="cs-hero__title">${esc(title)}</h1>${teaser ? `\n        <p class="cs-hero__thesis">${esc(teaser)}</p>` : ""}
       </hgroup>

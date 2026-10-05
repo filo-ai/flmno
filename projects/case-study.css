@@ -735,3 +735,33 @@ h1, h2, h3, h4,
     margin: 0 !important;
   }
 }
+
+/* ── Remove case study label spacing, shift up ── */
+.cs-hero {
+  padding-top: clamp(32px,5vw,72px) !important;
+}
+.cs-hero__label {
+  display: none !important;
+}
+
+/* ── cs-story__text: h2 treatment like scroll-headline ── */
+.cs-story__text {
+  font-family: "Reckless", Georgia, serif !important;
+  font-size: clamp(32px,4vw,56px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+  line-height: 1.0 !important;
+  max-width: 820px !important;
+}
+.cs-story__text .s1 {
+  font-family: "Reckless", Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+}
+.cs-story__text .s2 {
+  font-family: "Reckless", Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+  font-size: 1em !important;
+  line-height: 1.0 !important;
+}
