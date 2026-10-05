@@ -697,3 +697,28 @@ dd, dt, figcaption, blockquote, td, th,
   font-weight: 300 !important;
   letter-spacing: -0.2px !important;
 }
+
+/* ══ FINAL TYPOGRAPHY ══ */
+/* Apercu: 20px / 300 / -0.2px */
+body, p, li, span, div, input, textarea, button, label,
+dd, dt, figcaption, blockquote,
+.body-copy, .contact-copy p, .apple-modal p,
+.hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
+.cs-related__card__frost p, .site-footer, footer,
+.filter-pill, .site-nav nav a, .cs-header__back,
+.contact-form button, .cs-pill, .story-trigger {
+  font-size: 20px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+}
+
+/* Reckless: 500 / 0.36px everywhere */
+h1, h2, h3, h4,
+.display-heading, .contact-copy h2, .apple-modal h2,
+.apple-card h3, .cs-hero__title, .cs-story__text,
+.cs-read p.first, .cs-more__title, .cs-impact__card h3,
+.scroll-text, .scroll-char {
+  font-family: "Reckless", Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+}
