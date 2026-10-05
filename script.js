@@ -426,7 +426,7 @@ if (hamburger && mobileNav) {
 
   function setLogo(n) {
     const img = document.getElementById('site-logo-img') || document.querySelector('#mobile-logo img');
-    document.querySelectorAll('#site-logo-img, #mobile-logo img').forEach(i => { if(i) i.src = '/assets/logos/logo-' + n + '.svg'; });
+    document.querySelectorAll('#site-logo-img, #mobile-logo-img').forEach(i => { if(i) i.src = '/assets/logos/logo-' + n + '.svg'; });
   }
 
   window.addEventListener('scroll', () => {
