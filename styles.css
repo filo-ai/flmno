@@ -3609,12 +3609,12 @@ body.contact-mode footer a:hover {
 .brand.site-logo img, .cs-header__brand.site-logo img {
   width: 48px !important;
   height: auto !important;
-  filter: invert(1) !important;
+  filter: brightness(0) invert(1) !important;
   background: none !important;
 }
 body.contact-mode .brand.site-logo img,
 body.contact-mode .cs-header__brand.site-logo img {
-  filter: invert(0) !important;
+  filter: brightness(0) !important;
 }
 
 /* Footer: centred, quiet */
@@ -3685,4 +3685,21 @@ body.contact-mode .divider {
   max-width: none !important;
   padding-left: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
   padding-right: clamp(24px,6vw,88px) !important;
+}
+
+/* ── Logo: no background, correct colour ── */
+#site-logo, #site-logo img,
+.brand.site-logo, .brand.site-logo img,
+.cs-header__brand.site-logo, .cs-header__brand.site-logo img {
+  background: transparent !important;
+  background-color: transparent !important;
+  mix-blend-mode: normal !important;
+}
+/* White on dark */
+#site-logo-img {
+  filter: brightness(0) invert(1) !important;
+}
+/* Black on pastel */
+body.contact-mode #site-logo-img {
+  filter: brightness(0) !important;
 }
