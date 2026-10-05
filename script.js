@@ -409,3 +409,26 @@ if (hamburger && mobileNav) {
   window.addEventListener('scroll', updateActive, { passive: true });
   updateActive(); // run on load
 })();
+
+/* ══ Cycling logo: 1→2→…→7→6→5→…→1→2 bounce ══ */
+(function () {
+  const TOTAL = 7;
+  const BASE  = '/assets/logos/logo-';
+  let idx = 1;      // current logo number (1–7)
+  let dir = 1;      // 1 = ascending, -1 = descending
+
+  function nextLogo() {
+    const img = document.getElementById('site-logo-img');
+    if (!img) return;
+    idx += dir;
+    if (idx >= TOTAL) { idx = TOTAL; dir = -1; }
+    else if (idx <= 1) { idx = 1;     dir =  1; }
+    img.src = BASE + idx + '.svg';
+  }
+
+  document.addEventListener('click',   nextLogo);
+  document.addEventListener('keydown',  nextLogo);
+  document.querySelectorAll('input, textarea').forEach(el =>
+    el.addEventListener('input', nextLogo)
+  );
+})();

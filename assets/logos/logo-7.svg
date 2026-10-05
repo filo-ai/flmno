@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 513.23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Redaction100-Italic, 'Redaction 100';
+        font-size: 400px;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect class="cls-1" y="13.23" width="500" height="500"/>
+    <text class="cls-2" transform="translate(190 340)"><tspan x="0" y="0">f</tspan></text>
+  </g>
+</svg>
