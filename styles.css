@@ -3494,3 +3494,79 @@ body.contact-mode .contact-form textarea::placeholder {
   background: rgba(5,5,7,.08) !important;
   color: #050507 !important;
 }
+
+/* ══ NAV LOGO: truly flush left ══ */
+.brand.site-logo, .cs-header__brand.site-logo {
+  position: static !important;
+  transform: none !important;
+  top: auto !important; left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin-right: auto !important;
+  text-decoration: none !important;
+}
+/* Standalone duplicate logo: hide it */
+#site-logo:not(.brand):not(.cs-header__brand) {
+  display: none !important;
+}
+
+/* ══ FROST OVERLAY: tag text always white ══ */
+.frost-overlay p {
+  color: #fff !important;
+  text-transform: none !important;
+}
+
+/* ══ CONTACT SECTION: full-width layout ══ */
+.contact-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+.contact-heading {
+  font-family: "Reckless", Georgia, serif !important;
+  font-size: clamp(28px,4vw,56px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+  line-height: 1.05 !important;
+  margin: 0 0 16px !important;
+  width: 100% !important;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.contact-form button[type="submit"] {
+  align-self: flex-start !important;
+  width: auto !important;
+}
+/* Hide old contact-copy wrapper */
+.contact-copy { display: none !important; }
+
+/* ══ FOOTER: centred, unobtrusive ══ */
+.site-footer, footer {
+  text-align: center !important;
+  padding: 32px !important;
+  color: rgba(247,247,242,.32) !important;
+  font-size: 14px !important;
+  letter-spacing: -0.2px !important;
+  font-weight: 300 !important;
+}
+.site-footer a, footer a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.site-footer a:hover, footer a:hover {
+  color: rgba(247,247,242,.6) !important;
+}
+body.contact-mode .site-footer,
+body.contact-mode footer {
+  color: rgba(5,5,7,.32) !important;
+}
+body.contact-mode .site-footer a:hover,
+body.contact-mode footer a:hover {
+  color: rgba(5,5,7,.6) !important;
+}

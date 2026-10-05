@@ -410,25 +410,34 @@ if (hamburger && mobileNav) {
   updateActive(); // run on load
 })();
 
-/* ══ Cycling logo: 1→2→…→7→6→5→…→1→2 bounce ══ */
+
+
+/* ══ Cycling logo: forward on scroll down, backward on scroll up ══ */
 (function () {
   const TOTAL = 7;
   const BASE  = '/assets/logos/logo-';
-  let idx = 1;      // current logo number (1–7)
-  let dir = 1;      // 1 = ascending, -1 = descending
+  let idx = 1;
+  let lastY = window.scrollY;
+  let ticking = false;
 
-  function nextLogo() {
+  function setLogo(n) {
     const img = document.getElementById('site-logo-img');
-    if (!img) return;
-    idx += dir;
-    if (idx >= TOTAL) { idx = TOTAL; dir = -1; }
-    else if (idx <= 1) { idx = 1;     dir =  1; }
-    img.src = BASE + idx + '.svg';
+    if (img) img.src = BASE + n + '.svg';
   }
 
-  document.addEventListener('click',   nextLogo);
-  document.addEventListener('keydown',  nextLogo);
-  document.querySelectorAll('input, textarea').forEach(el =>
-    el.addEventListener('input', nextLogo)
-  );
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      const dir = y > lastY ? 1 : -1;
+      lastY = y;
+      idx = Math.max(1, Math.min(TOTAL, idx + dir));
+      // Bounce at ends
+      if (idx === TOTAL) dir === 1 && (idx = TOTAL);
+      if (idx === 1)     dir === -1 && (idx = 1);
+      setLogo(idx);
+      ticking = false;
+    });
+  }, { passive: true });
 })();
