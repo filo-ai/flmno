@@ -763,3 +763,133 @@ h1, h2, h3, h4,
     filter: brightness(0) invert(1);
   }
 }
+
+/* ══ COLLINS flipbook — faithful implementation ══ */
+
+/* Section wrapper */
+.cs-more {
+  padding: clamp(80px,10vw,140px) 0 clamp(96px,12vw,160px);
+}
+.cs-more__head {
+  width: var(--content);
+  margin-inline: auto;
+  padding-inline: var(--inset);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.cs-more__title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px,3vw,40px);
+  letter-spacing: 0.36px;
+  color: var(--fg);
+  margin: 0;
+}
+.cs-more__sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 300;
+  letter-spacing: -0.2px;
+}
+
+/* Flipbook outer — contains both the card stack and text carousel */
+.cs-flipbook-wrap {
+  width: var(--content);
+  margin-inline: auto;
+  padding-inline: var(--inset);
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+/* Text carousel (project titles) — horizontal scroll */
+.cs-flipbook-titles {
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+}
+.cs-flipbook-titles.is-dragging { cursor: grabbing; }
+.cs-flipbook-titles-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.45s cubic-bezier(.22,1,.36,1);
+}
+.cs-flipbook-title {
+  flex-shrink: 0;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.2px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .2s ease;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+.cs-flipbook-title.is-active {
+  color: var(--fg);
+}
+
+/* Card stack — grid stacking + perspective */
+.cs-flipbook-stage {
+  perspective: 1200px;
+  height: clamp(280px,45vw,480px);
+  position: relative;
+  display: grid;
+}
+.cs-flipbook-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  transform-style: preserve-3d;
+  height: 100%;
+}
+.cs-flipbook-card {
+  grid-area: 1 / 1;
+  width: clamp(180px,28vw,320px);
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: transform .5s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+  transform: translateX(var(--tx,0)) translateZ(var(--tz,0px)) rotateY(var(--ry,0deg));
+  opacity: var(--op,1);
+  pointer-events: none;
+}
+.cs-flipbook-card.is-active {
+  pointer-events: auto;
+}
+.cs-flipbook-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.cs-flipbook-card__label {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+  font-family: var(--serif);
+  font-size: clamp(18px,2vw,26px);
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.36px;
+}
+
+@media (max-width: 680px) {
+  .cs-flipbook-stage { height: clamp(220px,60vw,360px); }
+  .cs-flipbook-card { width: clamp(160px,52vw,260px); }
+  .cs-flipbook-card__label { font-size: 18px; padding: 14px; }
+}

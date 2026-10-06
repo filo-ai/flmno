@@ -154,29 +154,33 @@ function renderRelated(related) {
     const cards = related.map((n, i) => {
     const imgUrl = n.image ? wixFit(n.image, 900, 82) : "";
     const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy">` : "";
-    return `        <div class="collins-card" data-index="${i}">
-          <a class="collins-card__link" href="${esc(n.href)}" draggable="false">
-            <div class="collins-card__inner">
-              <div class="collins-card__cover">${imgTag}</div>
-              <div class="collins-card__body">
-                <p class="collins-card__eyebrow">Project</p>
-                <h3>${esc(n.title)}</h3>
-              </div>
-            </div>
-          </a>
-        </div>`;
+    const tx = i === 0 ? "0" : "25%";
+    const tz = i === 0 ? "0px" : `${-i * 200}px`;
+    const ry = i === 0 ? "0deg" : "-25deg";
+    const op = i === 0 ? "1" : i === 1 ? "0.22" : "0";
+    const zi = 50 - i;
+    return `        <a class="cs-flipbook-card${i === 0 ? " is-active" : ""}" href="${esc(n.href)}" draggable="false" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${zi}">
+          ${imgTag}
+          <div class="cs-flipbook-card__label">${esc(n.title)}</div>
+        </a>`;
   }).join("\n");
+  const titleItems = related.map((n, i) =>
+    `<span class="cs-flipbook-title${i === 0 ? " is-active" : ""}" data-index="${i}">${esc(n.title)}</span>`
+  ).join("");
   return `
     <section class="cs-more">
       <div class="cs-more__head">
         <h2 class="cs-more__title">More Work</h2>
         <p class="cs-more__sub">Drag to browse</p>
       </div>
-      <div class="collins-flipbook" data-active-index="0">
-        <div class="collins-flipbook__stage">
-          <div class="collins-flipbook__stack">
+      <div class="cs-flipbook-wrap">
+        <div class="cs-flipbook-stage">
+          <div class="cs-flipbook-stack">
 ${cards}
           </div>
+        </div>
+        <div class="cs-flipbook-titles">
+          <div class="cs-flipbook-titles-track">${titleItems}</div>
         </div>
       </div>
     </section>`;

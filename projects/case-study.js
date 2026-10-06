@@ -235,3 +235,119 @@
   if (logo) logo.src = base + "f" + padded + ".webp";
 })();
 
+
+/* ══ COLLINS flipbook ══ */
+(() => {
+  document.querySelectorAll('.cs-flipbook-wrap').forEach(wrap => {
+    const stage   = wrap.querySelector('.cs-flipbook-stage');
+    const cards   = [...wrap.querySelectorAll('.cs-flipbook-card')];
+    const track   = wrap.querySelector('.cs-flipbook-titles-track');
+    const titles  = [...wrap.querySelectorAll('.cs-flipbook-title')];
+    if (!cards.length) return;
+
+    let active = 0;
+    let pointerDown = false, startX = 0, currentX = 0, moved = false;
+
+    function render(dragOffset = 0) {
+      cards.forEach((card, i) => {
+        const delta = i - active;
+        const dragging = dragOffset !== 0;
+        const influence = dragOffset / 280;
+        const d = delta - influence;
+        const abs = Math.abs(d);
+        const dir = d < 0 ? -1 : 1;
+
+        card.classList.toggle('is-active', delta === 0 && Math.abs(dragOffset) < 50);
+
+        if (delta === 0) {
+          card.style.setProperty('--tx', `${dragOffset * 0.35}px`);
+          card.style.setProperty('--tz', '0px');
+          card.style.setProperty('--ry', `${dragOffset * -0.02}deg`);
+          card.style.setProperty('--op', '1');
+        } else {
+          const tx = dir * Math.min(Math.abs(d), 3) * 25;
+          const tz = -Math.min(Math.abs(d), 4) * 200;
+          card.style.setProperty('--tx', `${tx}%`);
+          card.style.setProperty('--tz', `${tz}px`);
+          card.style.setProperty('--ry', `${dir * -25}deg`);
+          card.style.setProperty('--op', abs <= 1 ? '0.22' : '0');
+        }
+        card.style.zIndex = 50 - Math.round(Math.abs(delta));
+      });
+
+      // Move title track
+      if (track) track.style.transform = `translateX(${-active * 160}px)`;
+      titles.forEach((t, i) => t.classList.toggle('is-active', i === active));
+    }
+
+    render();
+
+    // Drag on stage
+    stage.addEventListener('pointerdown', e => {
+      pointerDown = true; moved = false;
+      startX = e.clientX; currentX = 0;
+      stage.classList.add('is-dragging');
+      stage.setPointerCapture?.(e.pointerId);
+    });
+    stage.addEventListener('pointermove', e => {
+      if (!pointerDown) return;
+      currentX = e.clientX - startX;
+      if (Math.abs(currentX) > 6) moved = true;
+      render(currentX);
+    });
+    function finishDrag() {
+      if (!pointerDown) return;
+      pointerDown = false;
+      stage.classList.remove('is-dragging');
+      const n = cards.length;
+      if (currentX < -80 && active < n - 1) active++;
+      else if (currentX > 80 && active > 0) active--;
+      currentX = 0;
+      render(0);
+      setTimeout(() => { moved = false; }, 80);
+    }
+    stage.addEventListener('pointerup', finishDrag);
+    stage.addEventListener('pointercancel', finishDrag);
+    stage.addEventListener('mouseleave', finishDrag);
+
+    // Click inactive card → bring to front; click active → navigate
+    cards.forEach((card, i) => {
+      card.addEventListener('click', e => {
+        if (moved) { e.preventDefault(); e.stopPropagation(); return; }
+        if (i !== active) {
+          e.preventDefault(); e.stopPropagation();
+          active = i; render(0);
+        }
+        // if active, allow navigation
+      }, true);
+    });
+
+    // Click title
+    titles.forEach((t, i) => {
+      t.addEventListener('click', () => { active = i; render(0); });
+    });
+  });
+})();
+
+/* ══ Cycling logo on project pages ══ */
+(function () {
+  const TOTAL = 7, STEP = 40, BASE = '../../assets/logos/logo-';
+  let idx = 1, dir = 1, lastStep = 0;
+  function setLogo(n) {
+    document.querySelectorAll('#site-logo-img, #mobile-logo-img').forEach(img => {
+      if (img) img.src = BASE + n + '.svg';
+    });
+  }
+  window.addEventListener('scroll', () => {
+    const s = Math.floor(window.scrollY / STEP);
+    const delta = s - lastStep;
+    if (!delta) return;
+    lastStep = s;
+    for (let i = 0; i < Math.abs(delta); i++) {
+      idx += dir;
+      if (idx >= TOTAL) { idx = TOTAL; dir = -1; }
+      else if (idx <= 1) { idx = 1; dir = 1; }
+    }
+    setLogo(idx);
+  }, { passive: true });
+})();
