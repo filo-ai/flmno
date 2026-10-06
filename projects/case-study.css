@@ -937,3 +937,23 @@ h1, h2, h3, h4,
     height: 100% !important;
   }
 }
+
+/* ── Flipbook: force centre on all screens ── */
+.cs-more {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.cs-more__head {
+  width: 100% !important;
+  max-width: var(--content) !important;
+}
+.cs-flipbook-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.cs-flipbook-stage {
+  margin-inline: auto !important;
+}
