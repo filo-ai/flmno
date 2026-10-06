@@ -916,3 +916,15 @@ h1, h2, h3, h4,
 .cs-flipbook-titles {
   display: none !important;
 }
+
+/* ── Mobile: flipbook full width ── */
+@media (max-width: 680px) {
+  .cs-flipbook-stage {
+    width: 100vw !important;
+    height: 100vw !important;
+  }
+  .cs-flipbook-card {
+    width: 72vw !important;
+    height: 96vw !important;
+  }
+}
