@@ -951,3 +951,28 @@ h2.cs-story__text {
   .collins-card__body { padding: 18px; }
   .collins-card__body h3 { font-size: 25px; }
 }
+
+/* ══ TARGETED FIXES — do not remove ══ */
+
+/* 1. Carousel: allow cs-explore button to receive clicks */
+.cs-carousel {
+  overflow-y: visible !important;
+}
+
+/* 2. More Work head: single line */
+.cs-more__head {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 16px !important;
+}
+
+/* 3. Back button: no background */
+.cs-header__back {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 4. Flipbook: set initial card positions before JS runs */
+.collins-card { opacity: 0; visibility: hidden; }
+.collins-card:nth-child(1) { opacity: 1; visibility: visible; }
+.collins-card.is-active { opacity: 1 !important; visibility: visible !important; }
