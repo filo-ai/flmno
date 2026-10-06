@@ -903,3 +903,16 @@ h1, h2, h3, h4,
 /* ── cs-meta: start from col 1 ── */
 .cs-meta { grid-column: 1 / span 3 !important; padding-left: 0 !important; }
 .cs-story { grid-column: 4 / span 6 !important; }
+
+/* ── Flipbook: centred, hide title strip ── */
+.cs-flipbook-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.cs-flipbook-stage {
+  margin-inline: auto !important;
+}
+.cs-flipbook-titles {
+  display: none !important;
+}
