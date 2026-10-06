@@ -928,3 +928,15 @@ h1, h2, h3, h4,
     height: 96vw !important;
   }
 }
+
+/* ── Mobile: cards full width, proportional height (3:4) ── */
+@media (max-width: 680px) {
+  .cs-flipbook-stage {
+    width: 100vw !important;
+    height: 133vw !important;
+  }
+  .cs-flipbook-card {
+    width: 100vw !important;
+    height: 133vw !important;
+  }
+}
