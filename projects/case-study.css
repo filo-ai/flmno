@@ -951,25 +951,3 @@ h2.cs-story__text {
   .collins-card__body { padding: 18px; }
   .collins-card__body h3 { font-size: 25px; }
 }
-
-/* ── Flipbook fixes ── */
-/* Head: single line */
-.cs-more__head {
-  display: flex !important;
-  align-items: baseline !important;
-  gap: 16px !important;
-  flex-wrap: nowrap !important;
-}
-/* Cards behind: ensure initial CSS vars are set before JS runs */
-.collins-card:not([style]) {
-  opacity: 0.22;
-  visibility: visible;
-}
-.collins-card:first-child:not([style]) {
-  opacity: 1;
-}
-/* Get back to work: no background */
-.cs-header__back {
-  background: transparent !important;
-  box-shadow: none !important;
-}
