@@ -742,3 +742,24 @@ h1, h2, h3, h4,
   .collins-flipbook__stage { height: 420px !important; }
   .collins-card { width: min(280px, 68vw) !important; }
 }
+
+/* ── mobile-logo: hidden on desktop, top-centre on mobile ── */
+#mobile-logo { display: none; }
+@media (max-width: 680px) {
+  #mobile-logo {
+    display: block;
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 70;
+    width: 44px;
+    line-height: 0;
+  }
+  #mobile-logo img {
+    width: 44px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+}
