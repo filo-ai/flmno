@@ -2382,8 +2382,8 @@ h1, h2, h3,
 }
 .nav-logo {
   display: block;
-  width: 132px;
-  height: 132px;
+  width: 44px;
+  height: 44px;
   image-rendering: pixelated;
 }
 .brand span,
@@ -2898,8 +2898,8 @@ body.contact-mode .filter-pill.is-active {
 }
 .nav-logo {
   display: block !important;
-  width: 132px !important;
-  height: 132px !important;
+  width: 44px !important;
+  height: 44px !important;
   image-rendering: pixelated !important;
 }
 /* Hide any text in brand */
@@ -3029,7 +3029,7 @@ body.contact-mode .filter-pill.is-active {
   display: flex; align-items: center;
   text-decoration: none; line-height: 0;
 }
-.nav-logo { display: block; width: 132px; height: 132px; image-rendering: pixelated; }
+.nav-logo { display: block; width: 44px; height: 44px; image-rendering: pixelated; }
 .brand span, .cs-header__brand span { display: none; }
 .site-nav nav {
   display: flex;
