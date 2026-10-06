@@ -112,7 +112,6 @@
 
     el.innerHTML = wrapChars(first, "s1") + (rest ? " " + wrapChars(rest, "s2") : "");
 
-    el.classList.add('is-ready');
     const chars = el.querySelectorAll(".c");
     let lastN = -1;
     const update = () => {
@@ -125,6 +124,37 @@
     addEventListener("resize", update);
     update();
   });
+
+  /* ── Related projects: horizontal scroll strip with drag + momentum ── */
+  document.querySelectorAll(".cs-related").forEach((el) => {
+    let down = false, moved = false, startX = 0, startScroll = 0, lastX = 0, v = 0, raf;
+
+    el.addEventListener("pointerdown", (e) => {
+      down = true; moved = false;
+      startX = lastX = e.clientX; startScroll = el.scrollLeft; v = 0;
+      cancelAnimationFrame(raf);
+    });
+    window.addEventListener("pointermove", (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) > 5) { moved = true; el.classList.add("is-dragging"); }
+      if (moved) { el.scrollLeft = startScroll - dx; v = lastX - e.clientX; lastX = e.clientX; }
+    });
+    window.addEventListener("pointerup", () => {
+      if (!down) return; down = false;
+      if (!moved) return;
+      el.classList.remove("is-dragging");
+      const glide = () => {
+        if (Math.abs(v) < 0.3) return;
+        el.scrollLeft += v; v *= 0.9;
+        raf = requestAnimationFrame(glide);
+      };
+      glide();
+      el.addEventListener("click", (e) => { e.stopPropagation(); e.preventDefault(); }, { capture: true, once: true });
+      setTimeout(() => { moved = false; }, 80);
+    });
+  });
+})();
 
   /* ── Impact track drag ── */
   document.querySelectorAll(".cs-impact__track").forEach((el) => {
@@ -205,179 +235,3 @@
   if (logo) logo.src = base + "f" + padded + ".webp";
 })();
 
-
-
-
-
-  }
-
-  function advance() {
-    // Rotate: front goes to back, rest step forward
-    const positions = cards.map(c => parseInt(c.dataset.pos));
-    const newPositions = positions.map(p => {
-      if (p === 0) return cards.length - 1; // front → back
-      if (p === -1) return -1;
-      return p - 1;
-    });
-    // Clamp beyond 2 to -1
-    newPositions.forEach((p, i) => {
-      cards[i].dataset.pos = p > 2 ? -1 : p;
-    });
-  }
-
-  // Click front card to advance
-  stage.addEventListener("click", (e) => {
-    const front = stage.querySelector('[data-pos="0"]');
-    if (front && (front === e.target || front.contains(e.target))) {
-      // If clicking a link and it's the front card, advance first then navigate
-      const href = front.getAttribute("href");
-      e.preventDefault();
-      advance();
-      if (href) setTimeout(() => { window.location.href = href; }, 400);
-    }
-  });
-
-  // Keyboard
-  stage.setAttribute("tabindex", "0");
-  stage.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight" || e.key === "Enter") advance();
-  });
-});
-
-/* ══ COLLINS flipbook — restored from original ══ */
-(() => {
-  function initCollinsFlipbooks() {
-    document.querySelectorAll(".collins-flipbook").forEach((flipbook) => {
-      if (flipbook.dataset.bound === "true") return;
-      flipbook.dataset.bound = "true";
-
-      const stage = flipbook.querySelector(".collins-flipbook__stage");
-      const cards = Array.from(flipbook.querySelectorAll(".collins-card"));
-      if (!stage || !cards.length) return;
-
-      let active = Number(flipbook.dataset.activeIndex || 0);
-      let pointerDown = false;
-      let startX = 0;
-      let currentX = 0;
-      let moved = false;
-
-      function clamp(value) {
-        return Math.max(0, Math.min(cards.length - 1, value));
-      }
-
-      function render(offset = 0) {
-        active = clamp(active);
-
-        cards.forEach((card, index) => {
-          const rawDelta = index - active;
-          const dragInfluence = offset / 260;
-          const delta = rawDelta + dragInfluence;
-          const abs = Math.abs(delta);
-          const dir = delta < 0 ? -1 : 1;
-          const visible = abs <= 3.15;
-          const near = abs <= 2.15;
-
-          card.classList.toggle("is-active", rawDelta === 0 && Math.abs(offset) < 45);
-
-          if (rawDelta === 0) {
-            card.style.setProperty("--x", `${offset * .34}px`);
-            card.style.setProperty("--z", "0px");
-            card.style.setProperty("--ry", `${offset * -.018}deg`);
-            card.style.setProperty("--opacity", "1");
-            card.style.setProperty("--visibility", "visible");
-            card.style.setProperty("--layer", "50");
-            card.style.setProperty("--inner-x", `${offset * -.018}%`);
-            card.style.setProperty("--inner-ry", `${offset * .006}deg`);
-            return;
-          }
-
-          card.style.setProperty("--x", `${dir * Math.min(abs, 3) * 25}%`);
-          card.style.setProperty("--z", `${-Math.min(abs, 4) * 200}px`);
-          card.style.setProperty("--ry", `${dir * -25}deg`);
-          card.style.setProperty("--opacity", near ? ".22" : "0");
-          card.style.setProperty("--visibility", visible ? "visible" : "hidden");
-          card.style.setProperty("--layer", String(40 - Math.round(abs)));
-          card.style.setProperty("--inner-x", `${offset * -.012}%`);
-          card.style.setProperty("--inner-ry", `${offset * .004}deg`);
-        });
-      }
-
-      render();
-
-      stage.addEventListener("pointerdown", (event) => {
-        pointerDown = true;
-        moved = false;
-        startX = event.clientX;
-        currentX = 0;
-        stage.classList.add("is-dragging");
-        stage.setPointerCapture?.(event.pointerId);
-      });
-
-      stage.addEventListener("pointermove", (event) => {
-        if (!pointerDown) return;
-        currentX = event.clientX - startX;
-        if (Math.abs(currentX) > 6) moved = true;
-        render(currentX);
-      });
-
-      function finishDrag() {
-        if (!pointerDown) return;
-        pointerDown = false;
-        stage.classList.remove("is-dragging");
-
-        if (currentX < -80) active = clamp(active + 1);
-        else if (currentX > 80) active = clamp(active - 1);
-
-        currentX = 0;
-        render(0);
-        setTimeout(() => { moved = false; }, 80);
-      }
-
-      stage.addEventListener("pointerup", finishDrag);
-      stage.addEventListener("pointercancel", finishDrag);
-      stage.addEventListener("mouseleave", finishDrag);
-
-      cards.forEach((card, index) => {
-        card.addEventListener("click", (event) => {
-          if (moved) { event.preventDefault(); event.stopPropagation(); return; }
-          if (index !== active) {
-            event.preventDefault();
-            event.stopPropagation();
-            active = index;
-            render(0);
-          }
-        }, true);
-      });
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initCollinsFlipbooks);
-  } else {
-    initCollinsFlipbooks();
-  }
-})();
-
-/* ══ Cycling logo on project pages ══ */
-(function () {
-  const TOTAL = 7, STEP = 40;
-  const BASE = '../../assets/logos/logo-';
-  let idx = 1, dir = 1, lastStep = 0;
-  function setLogo(n) {
-    document.querySelectorAll('#site-logo-img, #mobile-logo-img').forEach(img => {
-      if (img) img.src = BASE + n + '.svg';
-    });
-  }
-  window.addEventListener('scroll', () => {
-    const s = Math.floor(window.scrollY / STEP);
-    const delta = s - lastStep;
-    if (!delta) return;
-    lastStep = s;
-    for (let i = 0; i < Math.abs(delta); i++) {
-      idx += dir;
-      if (idx >= TOTAL) { idx = TOTAL; dir = -1; }
-      else if (idx <= 1) { idx = 1; dir = 1; }
-    }
-    setLogo(idx);
-  }, { passive: true });
-})();
