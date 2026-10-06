@@ -917,26 +917,23 @@ h1, h2, h3, h4,
   display: none !important;
 }
 
-/* ── Mobile: flipbook full width ── */
-@media (max-width: 680px) {
-  .cs-flipbook-stage {
-    width: 100vw !important;
-    height: 100vw !important;
-  }
-  .cs-flipbook-card {
-    width: 72vw !important;
-    height: 96vw !important;
-  }
-}
 
-/* ── Mobile: cards full width, proportional height (3:4) ── */
+
+/* ── Mobile: flipbook proportional, no overflow ── */
 @media (max-width: 680px) {
+  .cs-more {
+    overflow: hidden !important;
+  }
+  .cs-flipbook-wrap {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
   .cs-flipbook-stage {
-    width: 100vw !important;
-    height: 133vw !important;
+    width: 100% !important;
+    height: calc(100vw * 1.33) !important;
   }
   .cs-flipbook-card {
-    width: 100vw !important;
-    height: 133vw !important;
+    width: 85% !important;
+    height: 100% !important;
   }
 }
