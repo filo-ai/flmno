@@ -206,45 +206,9 @@
 })();
 
 
-/* ══ Cycling logo on project pages ══ */
-(function () {
-  const TOTAL = 7;
-  const STEP  = 40;
-  const BASE  = '../../assets/logos/logo-';
-  let idx     = 1;
-  let dir     = 1;
-  let lastScrollStep = 0;
 
-  function setLogo(n) {
-    document.querySelectorAll('#site-logo-img, #mobile-logo-img').forEach(img => {
-      if (img) img.src = BASE + n + '.svg';
-    });
-  }
 
-  window.addEventListener('scroll', () => {
-    const currentStep = Math.floor(window.scrollY / STEP);
-    const delta = currentStep - lastScrollStep;
-    if (delta === 0) return;
-    lastScrollStep = currentStep;
-    for (let i = 0; i < Math.abs(delta); i++) {
-      idx += dir;
-      if (idx >= TOTAL) { idx = TOTAL; dir = -1; }
-      else if (idx <= 1) { idx = 1;    dir =  1; }
-    }
-    setLogo(idx);
-  }, { passive: true });
-})();
 
-/* ── Flipbook: click front card → cycle ── */
-document.querySelectorAll(".cs-flipbook").forEach((stage) => {
-  const cards = [...stage.querySelectorAll(".cs-flipbook__card")];
-  if (!cards.length) return;
-
-  function setPositions() {
-    cards.forEach((c, i) => {
-      const pos = parseInt(c.dataset.pos);
-      c.dataset.pos = pos;
-    });
   }
 
   function advance() {
@@ -279,3 +243,141 @@ document.querySelectorAll(".cs-flipbook").forEach((stage) => {
     if (e.key === "ArrowRight" || e.key === "Enter") advance();
   });
 });
+
+/* ══ COLLINS flipbook — restored from original ══ */
+(() => {
+  function initCollinsFlipbooks() {
+    document.querySelectorAll(".collins-flipbook").forEach((flipbook) => {
+      if (flipbook.dataset.bound === "true") return;
+      flipbook.dataset.bound = "true";
+
+      const stage = flipbook.querySelector(".collins-flipbook__stage");
+      const cards = Array.from(flipbook.querySelectorAll(".collins-card"));
+      if (!stage || !cards.length) return;
+
+      let active = Number(flipbook.dataset.activeIndex || 0);
+      let pointerDown = false;
+      let startX = 0;
+      let currentX = 0;
+      let moved = false;
+
+      function clamp(value) {
+        return Math.max(0, Math.min(cards.length - 1, value));
+      }
+
+      function render(offset = 0) {
+        active = clamp(active);
+
+        cards.forEach((card, index) => {
+          const rawDelta = index - active;
+          const dragInfluence = offset / 260;
+          const delta = rawDelta + dragInfluence;
+          const abs = Math.abs(delta);
+          const dir = delta < 0 ? -1 : 1;
+          const visible = abs <= 3.15;
+          const near = abs <= 2.15;
+
+          card.classList.toggle("is-active", rawDelta === 0 && Math.abs(offset) < 45);
+
+          if (rawDelta === 0) {
+            card.style.setProperty("--x", `${offset * .34}px`);
+            card.style.setProperty("--z", "0px");
+            card.style.setProperty("--ry", `${offset * -.018}deg`);
+            card.style.setProperty("--opacity", "1");
+            card.style.setProperty("--visibility", "visible");
+            card.style.setProperty("--layer", "50");
+            card.style.setProperty("--inner-x", `${offset * -.018}%`);
+            card.style.setProperty("--inner-ry", `${offset * .006}deg`);
+            return;
+          }
+
+          card.style.setProperty("--x", `${dir * Math.min(abs, 3) * 25}%`);
+          card.style.setProperty("--z", `${-Math.min(abs, 4) * 200}px`);
+          card.style.setProperty("--ry", `${dir * -25}deg`);
+          card.style.setProperty("--opacity", near ? ".22" : "0");
+          card.style.setProperty("--visibility", visible ? "visible" : "hidden");
+          card.style.setProperty("--layer", String(40 - Math.round(abs)));
+          card.style.setProperty("--inner-x", `${offset * -.012}%`);
+          card.style.setProperty("--inner-ry", `${offset * .004}deg`);
+        });
+      }
+
+      render();
+
+      stage.addEventListener("pointerdown", (event) => {
+        pointerDown = true;
+        moved = false;
+        startX = event.clientX;
+        currentX = 0;
+        stage.classList.add("is-dragging");
+        stage.setPointerCapture?.(event.pointerId);
+      });
+
+      stage.addEventListener("pointermove", (event) => {
+        if (!pointerDown) return;
+        currentX = event.clientX - startX;
+        if (Math.abs(currentX) > 6) moved = true;
+        render(currentX);
+      });
+
+      function finishDrag() {
+        if (!pointerDown) return;
+        pointerDown = false;
+        stage.classList.remove("is-dragging");
+
+        if (currentX < -80) active = clamp(active + 1);
+        else if (currentX > 80) active = clamp(active - 1);
+
+        currentX = 0;
+        render(0);
+        setTimeout(() => { moved = false; }, 80);
+      }
+
+      stage.addEventListener("pointerup", finishDrag);
+      stage.addEventListener("pointercancel", finishDrag);
+      stage.addEventListener("mouseleave", finishDrag);
+
+      cards.forEach((card, index) => {
+        card.addEventListener("click", (event) => {
+          if (moved) { event.preventDefault(); event.stopPropagation(); return; }
+          if (index !== active) {
+            event.preventDefault();
+            event.stopPropagation();
+            active = index;
+            render(0);
+          }
+        }, true);
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCollinsFlipbooks);
+  } else {
+    initCollinsFlipbooks();
+  }
+})();
+
+/* ══ Cycling logo on project pages ══ */
+(function () {
+  const TOTAL = 7, STEP = 40;
+  const BASE = '../../assets/logos/logo-';
+  let idx = 1, dir = 1, lastStep = 0;
+  function setLogo(n) {
+    document.querySelectorAll('#site-logo-img, #mobile-logo-img').forEach(img => {
+      if (img) img.src = BASE + n + '.svg';
+    });
+  }
+  window.addEventListener('scroll', () => {
+    const s = Math.floor(window.scrollY / STEP);
+    const delta = s - lastStep;
+    if (!delta) return;
+    lastStep = s;
+    for (let i = 0; i < Math.abs(delta); i++) {
+      idx += dir;
+      if (idx >= TOTAL) { idx = TOTAL; dir = -1; }
+      else if (idx <= 1) { idx = 1; dir = 1; }
+    }
+    setLogo(idx);
+  }, { passive: true });
+})();

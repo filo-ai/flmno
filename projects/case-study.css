@@ -800,117 +800,154 @@ h2.cs-story__text {
 }
 
 
-/* ══ More Work: flipbook ══ */
+
+/* ══ COLLINS flipbook — restored from original ══ */
+
 .cs-more {
   padding: clamp(80px,10vw,140px) 0 clamp(96px,12vw,160px);
 }
 .cs-more__head {
   width: var(--content);
   margin-inline: auto;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   padding-inline: var(--inset);
 }
 .cs-more__title {
-  font-family: var(--serif) !important;
-  font-size: clamp(28px,3vw,40px) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.36px !important;
-  color: var(--fg) !important;
-  margin: 0 0 6px !important;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px,3vw,40px);
+  letter-spacing: 0.36px;
+  color: var(--fg);
+  margin: 0 0 6px;
 }
 .cs-more__sub {
-  font-size: 14px !important;
-  color: var(--muted) !important;
-  margin: 0 !important;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
 }
 
-/* Flipbook stage */
-.cs-flipbook {
+.collins-flipbook {
   width: var(--content);
   margin-inline: auto;
   padding-inline: var(--inset);
+}
+
+.collins-flipbook__stage {
   position: relative;
-  height: clamp(280px,40vw,520px);
-  cursor: pointer;
+  height: 620px;
+  perspective: 1400px;
+  cursor: grab;
+  touch-action: pan-y;
   user-select: none;
 }
-.cs-flipbook__card {
-  position: absolute;
-  width: clamp(220px,32vw,400px);
-  height: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #1a1a1c;
-  transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .4s ease, box-shadow .4s ease;
-  -webkit-user-drag: none;
-}
-.cs-flipbook__card img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-  display: block;
-}
-/* Card positions */
-.cs-flipbook__card[data-pos="0"] {
-  left: 0; z-index: 3;
-  transform: none;
-  box-shadow: 0 24px 60px rgba(0,0,0,.5);
-}
-.cs-flipbook__card[data-pos="1"] {
-  left: clamp(18px,3vw,32px); z-index: 2;
-  transform: scale(.94) translateY(12px);
-  opacity: .7;
-  box-shadow: none;
-}
-.cs-flipbook__card[data-pos="2"] {
-  left: clamp(32px,5vw,56px); z-index: 1;
-  transform: scale(.88) translateY(24px);
-  opacity: .45;
-  box-shadow: none;
-}
-.cs-flipbook__card[data-pos="-1"] {
-  left: 0; z-index: 0;
-  transform: scale(.82) translateY(36px);
-  opacity: 0;
-  pointer-events: none;
+
+.collins-flipbook__stage.is-dragging {
+  cursor: grabbing;
 }
 
-/* Frost overlay */
-.cs-flipbook__card__frost {
+.collins-flipbook__stack {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 20px;
-  background: linear-gradient(rgba(5,5,7,.72) 0%, rgba(5,5,7,.42) 38%, rgba(5,5,7,.08) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  color: #fff;
-  opacity: 0;
-  transition: opacity .35s ease;
-  border-radius: 14px;
-}
-.cs-flipbook__card[data-pos="0"]:hover .cs-flipbook__card__frost { opacity: 1; }
-.cs-flipbook__card__frost p {
-  font-family: "Apercu Mono", monospace !important;
-  font-size: 11px !important;
-  letter-spacing: .1em !important;
-  margin: 0 0 6px !important;
-  color: rgba(255,255,255,.65) !important;
-}
-.cs-flipbook__card__frost h3 {
-  font-family: "Reckless", serif !important;
-  font-size: 27px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.36px !important;
-  line-height: 1 !important;
-  margin: 0 !important;
-  color: #fff !important;
+  transform-style: preserve-3d;
+  perspective: 1400px;
 }
 
-@media (max-width: 680px) {
-  .cs-flipbook { height: clamp(200px,60vw,320px); }
-  .cs-flipbook__card { width: clamp(160px,55vw,260px); }
+.collins-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(400px, 64vw);
+  aspect-ratio: 3 / 4;
+  transform:
+    translate(-50%, -50%)
+    translateX(var(--x, 0))
+    translateZ(var(--z, 0))
+    rotateY(var(--ry, 0deg));
+  opacity: var(--opacity, 1);
+  visibility: var(--visibility, visible);
+  z-index: var(--layer, 1);
+  transition:
+    transform .5s cubic-bezier(.22,1,.36,1),
+    opacity .35s ease,
+    visibility .35s ease;
+  pointer-events: none;
+}
+
+.collins-card.is-active {
+  pointer-events: auto;
+}
+
+.collins-card__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.collins-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  transform: translateX(var(--inner-x, 0)) rotateY(var(--inner-ry, 0deg));
+  transition: transform .18s ease;
+}
+
+.collins-card__cover {
+  position: absolute;
+  inset: 0;
+}
+
+.collins-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.collins-card__body {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 22px;
+  background: linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.24) 62%, transparent);
+}
+
+.collins-card__eyebrow {
+  margin: 0 0 8px;
+  font-family: "Apercu Mono", monospace;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: .045em;
+  color: rgba(255,255,255,.68);
+}
+
+.collins-card__body h3 {
+  margin: 0;
+  font-family: "Reckless", serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.36px;
+  line-height: 1;
+  color: #fff;
+}
+
+.collins-card:not(.is-active) .collins-card__body {
+  opacity: .55;
+}
+
+.collins-card.is-active .collins-card__inner:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 760px) {
+  .collins-flipbook__stage { height: 500px; }
+  .collins-card { width: min(310px, 74vw); }
+  .collins-card__body { padding: 18px; }
+  .collins-card__body h3 { font-size: 25px; }
 }

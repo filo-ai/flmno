@@ -151,25 +151,33 @@ ${items}
 
 function renderRelated(related) {
   if (!related?.length) return "";
-  const cards = related.map((n, i) => {
+    const cards = related.map((n, i) => {
     const imgUrl = n.image ? wixFit(n.image, 900, 82) : "";
     const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy">` : "";
-    return `        <a class="cs-flipbook__card" href="${esc(n.href)}" data-pos="${i < 3 ? i : -1}" draggable="false">
-          ${imgTag}
-          <div class="cs-flipbook__card__frost">
-            <p>Project</p>
-            <h3>${esc(n.title)}</h3>
-          </div>
-        </a>`;
+    return `        <div class="collins-card" data-index="${i}">
+          <a class="collins-card__link" href="${esc(n.href)}" draggable="false">
+            <div class="collins-card__inner">
+              <div class="collins-card__cover">${imgTag}</div>
+              <div class="collins-card__body">
+                <p class="collins-card__eyebrow">Project</p>
+                <h3>${esc(n.title)}</h3>
+              </div>
+            </div>
+          </a>
+        </div>`;
   }).join("\n");
   return `
     <section class="cs-more">
       <div class="cs-more__head">
         <h2 class="cs-more__title">More Work</h2>
-        <p class="cs-more__sub">Click to browse</p>
+        <p class="cs-more__sub">Drag to browse</p>
       </div>
-      <div class="cs-flipbook" aria-label="Related projects">
+      <div class="collins-flipbook" data-active-index="0">
+        <div class="collins-flipbook__stage">
+          <div class="collins-flipbook__stack">
 ${cards}
+          </div>
+        </div>
       </div>
     </section>`;
 }
