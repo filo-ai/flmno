@@ -893,32 +893,10 @@ h1, h2, h3, h4,
   .cs-flipbook-card { width: clamp(160px,52vw,260px); }
   .cs-flipbook-card__label { font-size: 18px; padding: 14px; }
 }
-
-/* ── Left-align all content to --inset edge ── */
-.cs-hero__head {
-  grid-column: 1 / -1 !important;
-}
-.cs-hero.grid {
-  padding-inline: var(--inset) !important;
-}
-.cs-carousel {
+/* ── Left-align to content edge ── */
+.cs-hero__head { grid-column: 1 / -1 !important; }
+.cs-carousel { padding-left: var(--inset) !important; }
+.cs-meta { padding-left: var(--inset) !important; }
+.cs-more__head, .cs-flipbook-wrap {
   padding-left: var(--inset) !important;
-}
-.cs-meta {
-  grid-column: 1 / -1 !important;
-  padding-inline: var(--inset) !important;
-}
-.cs-more {
-  padding-inline: 0 !important;
-}
-.cs-more__head,
-.cs-flipbook-wrap {
-  width: var(--content) !important;
-  margin-inline: auto !important;
-  padding-inline: var(--inset) !important;
-  box-sizing: border-box !important;
-}
-.cs-flipbook-stage {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
 }
