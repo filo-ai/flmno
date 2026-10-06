@@ -957,3 +957,26 @@ h1, h2, h3, h4,
 .cs-flipbook-stage {
   margin-inline: auto !important;
 }
+
+/* ── Mobile: flipbook truly centred ── */
+@media (max-width: 680px) {
+  .cs-flipbook-wrap {
+    padding-inline: 0 !important;
+    margin-inline: 0 !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+  .cs-flipbook-stage {
+    margin-inline: auto !important;
+    width: 100% !important;
+  }
+  .cs-flipbook-stack {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .cs-flipbook-card[style*="--tx:0"] {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
