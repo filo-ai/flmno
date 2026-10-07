@@ -530,3 +530,29 @@ if (__RM) document.body.classList.add("nav-revealed");
 
 /* ── Footer year stays current ── */
 document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
+
+/* ── Return to where you were in the grid after viewing a project ── */
+(() => {
+  const KEY = 'flmno-return';
+  // remember position + filter whenever a project is opened from the homepage
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href*="projects/"]');
+    if (!a) return;
+    const f = document.querySelector('.filter-pill.is-active');
+    try { sessionStorage.setItem(KEY, JSON.stringify({ y: scrollY, f: f ? f.dataset.filter : 'all' })); } catch (err) {}
+  }, true);
+
+  // coming back from a project (not via a category breadcrumb): restore it
+  let saved = null;
+  try { saved = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (err) {}
+  const fromProject = document.referrer && new URL(document.referrer, location.href).pathname.startsWith('/projects/');
+  if (!saved || !fromProject || new URLSearchParams(location.search).get('filter')) return;
+  try { sessionStorage.removeItem(KEY); } catch (err) {}
+  if (saved.f && saved.f !== 'all') {
+    const pill = document.querySelector(`.filter-pill[data-filter="${CSS.escape(saved.f)}"]`);
+    if (pill) pill.click();
+  }
+  const go = () => window.scrollTo({ top: saved.y, behavior: 'instant' });
+  go();
+  addEventListener('load', () => requestAnimationFrame(go), { once: true });
+})();

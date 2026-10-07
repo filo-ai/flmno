@@ -3901,3 +3901,8 @@ h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
 }
 /* Footer year */
 .site-footer .js-year { font: inherit !important; letter-spacing: inherit !important; color: inherit !important; }
+
+/* ── Homepage tiles: soft tone while loading, then a gentle fade-in ── */
+.tile-image { background-color: #141417; }
+.tile-image img.fade-img { opacity: 0; transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease; }
+.tile-image img.fade-img.is-loaded { opacity: 1; }

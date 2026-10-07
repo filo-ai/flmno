@@ -403,6 +403,7 @@ ${renderStorySheet(title, story, meta)}
 const targetSlug = process.argv[2] || null;
 const projects   = CONTENT.projects;
 let built = 0, skipped = 0;
+const builtSlugs = [];
 
 for (const [slug, project] of Object.entries(projects)) {
   if (targetSlug && slug !== targetSlug) { skipped++; continue; }
@@ -416,6 +417,22 @@ for (const [slug, project] of Object.entries(projects)) {
   fs.writeFileSync(path.join(dir, "index.html"), html, "utf8");
   console.log(`  built  ${slug}`);
   built++;
+  builtSlugs.push(slug);
 }
 
 console.log(`\n✓ ${built} page${built !== 1 ? "s" : ""} built${skipped ? `, ${skipped} skipped` : ""}.`);
+
+// ── sitemap.xml + robots.txt (help search engines find every project) ──
+{
+  const SITE_URL = "https://flmno.com";
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = [`${SITE_URL}/`, ...builtSlugs.map((s) => `${SITE_URL}/projects/${s}/`)];
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}
+</urlset>
+`;
+  fs.writeFileSync(path.join(__dirname, "sitemap.xml"), xml);
+  fs.writeFileSync(path.join(__dirname, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  console.log(`✓ sitemap.xml (${urls.length} URLs) + robots.txt`);
+}

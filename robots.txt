@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flmno.com/sitemap.xml
