@@ -1263,3 +1263,13 @@ h2.cs-story__text {
   .cs-hero-spacer { display: none; }
   .cs-hero-stage .cs-hero { position: relative; }
 }
+
+/* ── "Read the full story" appears once the story text has fully lit up ── */
+.cs-story__text.is-lighting ~ .cs-pill {
+  transition: opacity .6s ease, visibility .6s ease, background .2s ease, color .2s ease, transform .2s ease !important;
+}
+.cs-story__text.is-lighting:not(.is-lit) ~ .cs-pill {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

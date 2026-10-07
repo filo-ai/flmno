@@ -133,6 +133,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     el.innerHTML = wrapChars(first, "s1") + (rest ? " " + wrapChars(rest, "s2") : "");
 
+    el.classList.add("is-lighting");                 // JS is running: button waits for the reveal
     const chars  = el.querySelectorAll(".c");
     const stage  = el.closest(".cs-hero-stage");
     const hero   = el.closest(".cs-hero");
@@ -150,6 +151,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const eased  = 1 - Math.pow(1 - raw, 1.45);              // same curve as the homepage
       const n      = raw >= .985 ? chars.length : Math.floor(eased * chars.length);
       if (n !== lastN) { chars.forEach((c, i) => c.classList.toggle("on", i < n)); lastN = n; }
+      if (raw >= .985) el.classList.add("is-lit");      // stays revealed once shown
     };
     const onScroll = () => {
       if (ticking) return;
