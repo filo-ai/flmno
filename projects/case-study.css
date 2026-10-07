@@ -937,3 +937,14 @@ h1, h2, h3, h4,
     height: 100% !important;
   }
 }
+
+/* ── Mobile: Get back to work — centred, no bg ── */
+@media (max-width: 680px) {
+  .cs-header {
+    justify-content: center !important;
+  }
+  .cs-header__back {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}
