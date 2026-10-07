@@ -1183,3 +1183,8 @@ h2.cs-story__text {
 .cs-story {
   padding: 20px 0 !important;
 }
+
+/* ── cs-meta: padding 0 0 20px 0 ── */
+.cs-meta {
+  padding: 0 0 20px 0 !important;
+}
