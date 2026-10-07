@@ -1218,3 +1218,18 @@ h2.cs-story__text {
 .cs-flipbook-stage {
   pointer-events: none;
 }
+
+/* ── Scroller: pass clicks through to cards underneath ── */
+.cs-flipbook-scroller {
+  pointer-events: none !important;
+}
+.cs-flipbook-stage {
+  pointer-events: auto !important;
+}
+.cs-flipbook-card {
+  pointer-events: auto !important;
+}
+.cs-flipbook-card.is-active {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}

@@ -303,10 +303,34 @@
 
     scroller.addEventListener('scroll', onScroll, { passive: true });
 
-    // Cursor feedback
-    scroller.addEventListener('pointerdown', () => scroller.classList.add('is-dragging'));
-    scroller.addEventListener('pointerup',   () => scroller.classList.remove('is-dragging'));
-    scroller.addEventListener('pointercancel',() => scroller.classList.remove('is-dragging'));
+    // Forward drag from stage to scroller so clicks reach cards
+    const stage = wrap.querySelector('.cs-flipbook-stage');
+    let dragStart = null;
+
+    stage.addEventListener('pointerdown', e => {
+      dragStart = { x: e.clientX, scrollLeft: scroller.scrollLeft };
+      scroller.classList.add('is-dragging');
+      stage.setPointerCapture?.(e.pointerId);
+    });
+    stage.addEventListener('pointermove', e => {
+      if (!dragStart) return;
+      const dx = dragStart.x - e.clientX;
+      scroller.scrollLeft = dragStart.scrollLeft + dx;
+    });
+    stage.addEventListener('pointerup', () => {
+      dragStart = null;
+      scroller.classList.remove('is-dragging');
+    });
+    stage.addEventListener('pointercancel', () => {
+      dragStart = null;
+      scroller.classList.remove('is-dragging');
+    });
+
+    // Wheel / trackpad
+    stage.addEventListener('wheel', e => {
+      e.preventDefault();
+      scroller.scrollLeft += e.deltaX || e.deltaY * 0.5;
+    }, { passive: false });
 
     // Click: inactive card → scroll to it; active card → navigate
     cards.forEach((card, i) => {
