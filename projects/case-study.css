@@ -1123,3 +1123,14 @@ h1, h2, h3, h4,
 .cs-meta {
   padding: 0 !important;
 }
+
+/* ── cs-story__text: force Reckless on every child span ── */
+.cs-story__text,
+.cs-story__text *,
+.cs-story__text .s1,
+.cs-story__text .s2,
+.cs-story__text .w,
+.cs-story__text .c,
+.cs-story__text .c.on {
+  font-family: "Reckless", Georgia, serif !important;
+}
