@@ -38,6 +38,7 @@ function animateHeadlineOnScroll(){
 
   renderHeadline(charsVisible);
   document.body.classList.toggle("headline-complete", rawProgress >= .985);
+  if (rawProgress >= .985) document.body.classList.add("nav-revealed");
 
   requestAnimationFrame(animateHeadlineOnScroll);
 }
@@ -491,3 +492,6 @@ document.addEventListener('contextmenu', e => {
   new MutationObserver(sync).observe(document.body, { attributes: true, attributeFilter: ['class', 'style'] });
   sync();
 })();
+
+/* ── Nav reveal: no scroll-lit animation under reduced motion, so show nav right away ── */
+if (__RM) document.body.classList.add("nav-revealed");

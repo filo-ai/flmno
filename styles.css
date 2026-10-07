@@ -3861,3 +3861,13 @@ body.contact-mode .contact-form button[type="submit"]:focus-visible {
   .scroll-char { color: #fff !important; opacity: 1 !important; }
   body.contact-mode .scroll-char { color: #050507 !important; }
 }
+
+/* ── Homepage: nav buttons appear once the headline has fully lit up ── */
+.js .site-nav nav {
+  transition: opacity .6s ease, visibility .6s ease;
+}
+.js body:not(.nav-revealed) .site-nav nav {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
