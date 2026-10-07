@@ -47,7 +47,7 @@ function imgFill(url, w, h, q = 82) {
 function media(src, url, attrs = "", alt = "", sizes = "") {
   return isVideo(src)
     ? `<video src="${src}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(alt)}"${attrs}></video>`
-    : `<img src="${url}" alt="${esc(alt)}"${sizeAttrs(src, sizes)}${attrs}>`;
+    : `<img src="${url}" alt="${esc(alt)}" class="fade-img" onload="this.classList.add('is-loaded')" onerror="this.classList.add('is-loaded')"${sizeAttrs(src, sizes)}${attrs}>`;
 }
 
 const ARROW  = `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -67,6 +67,7 @@ function sizeAttrs(src, sizes) {
   if (e.v.length && sizes) out += ` srcset="${[...e.v.map(vw => `${variant(src, vw)} ${vw}w`), `${src} ${e.w}w`].join(", ")}" sizes="${sizes}"`;
   return out;
 }
+const ph = (src) => (SIZES[src]?.c || "#141417");
 const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
 
 // ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
@@ -83,7 +84,7 @@ function altFor(src, i) {
 function renderCarousel(gallery) {
   if (!gallery?.length) return "";
   const slides = gallery.slice(0, 3).map((src, i) =>
-    `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery">` +
+    `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery" data-cursor="View" style="background-color:${ph(src)}">` +
     `${media(src, imgFit(src, 900, 82), ` loading="eager" draggable="false"${i === 0 ? ` style="view-transition-name: p-${PAGE.slug}"` : ""}`, altFor(src, i), "(max-width: 680px) 85vw, 480px")}</button>`
   ).join("\n");
 
@@ -183,12 +184,12 @@ function renderRelated(related) {
   if (!related.length) return "";
     const cards = related.map((n, i) => {
     const imgUrl = n.image ? imgFit(n.image, 900, 82) : "";
-    const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy"${sizeAttrs(n.image, "(max-width: 680px) 85vw, 480px")}>` : "";
+    const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy" class="fade-img" onload="this.classList.add('is-loaded')" onerror="this.classList.add('is-loaded')"${sizeAttrs(n.image, "(max-width: 680px) 85vw, 480px")}>` : "";
     const tx = i === 0 ? "0%" : "25%";
     const tz = `${-Math.min(i, 4) * 200}px`;
     const ry = i === 0 ? "0deg" : "-25deg";
     const op = i <= 1 ? "1" : "0";
-    return `          <div class="cs-flipbook-card${i === 0 ? " is-active" : ""}" aria-hidden="true" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${100 - i * 10}">
+    return `          <div class="cs-flipbook-card${i === 0 ? " is-active" : ""}" aria-hidden="true" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${100 - i * 10};background-color:${ph(n.image)}">
             ${imgTag}
             <div class="cs-flipbook-card__label">${esc(n.title)}</div>
           </div>`;
@@ -208,7 +209,7 @@ function renderRelated(related) {
 ${cards}
           </div>
         </div>
-        <div class="cs-flipbook-scroller">
+        <div class="cs-flipbook-scroller" data-cursor="Drag">
 ${slides}
         </div>
       </div>
@@ -218,11 +219,15 @@ ${slides}
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
   const figs = gallery.map((src, i) =>
-    `        <figure${i % 3 === 0 ? ' class="full"' : ""}>${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}</figure>`
+    `        <figure${i % 3 === 0 ? ' class="full"' : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
     <button class="cs-sheet__close" type="button" aria-label="Close">${CLOSE}</button>
+    <div class="cs-zoom" hidden role="dialog" aria-label="Image viewer">
+      <img class="cs-zoom__img" alt="" draggable="false">
+      <button class="cs-sheet__close cs-zoom__close" type="button" aria-label="Close image">${CLOSE}</button>
+    </div>
     <p class="cs-sheet__count" aria-live="polite"><span class="cs-sheet__count-n">1</span> / ${gallery.length}</p>
     <div class="cs-sheet__scroll">
       <div class="cs-gallery">
@@ -351,8 +356,10 @@ function buildPage(slug, project) {
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">${crumbsSchema(slug, title)}</script>
-  <link rel="preload" href="/assets/fonts/RecklessStandardM-TRIAL-Medium.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="/assets/fonts/ApercuPro-Light.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/assets/fonts/RecklessStandardM-TRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ApercuPro-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/projects/*"},"eagerness":"moderate"}]}</script>
+  <noscript><style>img.fade-img{opacity:1!important}</style></noscript>
   <link rel="stylesheet" href="../case-study.css">
   <script defer src="/_vercel/insights/script.js"></script>${preload}
   <meta name="theme-color" content="#050507">

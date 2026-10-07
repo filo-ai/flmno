@@ -1,22 +1,22 @@
 
 
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Regular.woff2") format("woff2"),url("assets/fonts/RecklessStandardM-TRIAL-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 
 
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Medium.woff2") format("woff2"),url("assets/fonts/RecklessStandardM-TRIAL-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.woff2") format("woff2"),url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
 
 
 
 
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Light.woff2") format("woff2"),url("assets/fonts/ApercuPro-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Regular.woff2") format("woff2"),url("assets/fonts/ApercuPro-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Medium.woff2") format("woff2"),url("assets/fonts/ApercuPro-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
 
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Bold.woff2") format("woff2"),url("assets/fonts/ApercuPro-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-BoldItalic.woff2") format("woff2"),url("assets/fonts/ApercuPro-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
 
 
 
@@ -3888,3 +3888,16 @@ h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
 @media (max-width: 680px) {
   .site-nav nav a, .filter-pill, .contact-form button[type="submit"], .apple-modal a { min-height: 44px !important; }
 }
+
+/* ── Motion tiles: a quiet loop plays on hover (title stays; blur lifts so the motion shows) ── */
+.tile-motion {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity .4s ease; pointer-events: none;
+  filter: none !important; transform: none !important;
+}
+.work-tile.has-motion.is-playing .tile-motion { opacity: 1; }
+.work-tile.has-motion:hover .frost-overlay {
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+}
+/* Footer year */
+.site-footer .js-year { font: inherit !important; letter-spacing: inherit !important; color: inherit !important; }

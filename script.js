@@ -505,3 +505,28 @@ if (__RM) document.body.classList.add("nav-revealed");
   const pill = document.querySelector(`.filter-pill[data-filter="${CSS.escape(f)}"]`);
   if (pill) pill.click();
 })();
+
+/* ── Motion tiles: play a quiet loop on hover (desktop) ── */
+(() => {
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches || __RM) return;
+  document.querySelectorAll('.work-tile.has-motion').forEach((tile) => {
+    const m = tile.querySelector('.tile-motion');
+    if (!m) return;
+    tile.addEventListener('pointerenter', () => {
+      if (m.tagName === 'VIDEO') {
+        m.currentTime = 0;
+        m.play().then(() => tile.classList.add('is-playing')).catch(() => {});
+      } else {
+        if (!m.src) { m.onload = () => tile.matches(':hover') && tile.classList.add('is-playing'); m.src = m.dataset.src; }
+        else tile.classList.add('is-playing');
+      }
+    });
+    tile.addEventListener('pointerleave', () => {
+      tile.classList.remove('is-playing');
+      if (m.tagName === 'VIDEO') setTimeout(() => { if (!tile.classList.contains('is-playing')) m.pause(); }, 400);
+    });
+  });
+})();
+
+/* ── Footer year stays current ── */
+document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(new Date().getFullYear()); });

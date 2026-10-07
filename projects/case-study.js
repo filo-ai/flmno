@@ -43,6 +43,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   Object.values(sheets).forEach((sheet) => {
     let startY = 0, dy = 0, active = false;
     sheet.addEventListener("touchstart", (e) => {
+      if (sheet.dataset.zoom) { active = false; return; }
       startY = e.touches[0].clientY; dy = 0; active = true;
     }, { passive: true });
     sheet.addEventListener("touchmove", (e) => {
@@ -448,7 +449,7 @@ document.addEventListener('contextmenu', e => {
   figs.forEach((f) => io.observe(f));
 
   document.addEventListener('keydown', (e) => {
-    if (!sheet.open) return;
+    if (!sheet.open || sheet.dataset.zoom) return;
     const next = e.key === 'ArrowDown' || e.key === 'ArrowRight';
     const prev = e.key === 'ArrowUp' || e.key === 'ArrowLeft';
     if (!next && !prev) return;
@@ -457,4 +458,129 @@ document.addEventListener('contextmenu', e => {
     figs[i].scrollIntoView({ block: 'center', behavior: __RM ? 'auto' : 'smooth' });
     show(i);
   });
+})();
+
+/* ══ Reading progress: the line under the title fills as you read ══ */
+(() => {
+  const head = document.querySelector('.cs-hero__head');
+  if (!head) return;
+  let t = false;
+  const set = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    head.style.setProperty('--read', max > 0 ? Math.min(1, scrollY / max).toFixed(4) : '0');
+    t = false;
+  };
+  addEventListener('scroll', () => { if (!t) { t = true; requestAnimationFrame(set); } }, { passive: true });
+  addEventListener('resize', set);
+  set();
+})();
+
+/* ══ Desktop cursor label ("Drag" over the flipbook, "View" over images) ══ */
+(() => {
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const el = document.createElement('div');
+  el.className = 'fx-cursor';
+  el.setAttribute('aria-hidden', 'true');
+  el.innerHTML = '<div class="fx-cursor__dot"><span class="fx-cursor__label"></span></div>';
+  document.body.appendChild(el);
+  const label = el.querySelector('.fx-cursor__label');
+  let x = -200, y = -200, tx = -200, ty = -200, raf = 0;
+  const loop = () => {
+    x += (tx - x) * (__RM ? 1 : .22); y += (ty - y) * (__RM ? 1 : .22);
+    el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    raf = (Math.abs(tx - x) > .1 || Math.abs(ty - y) > .1) ? requestAnimationFrame(loop) : 0;
+  };
+  addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    tx = e.clientX; ty = e.clientY;
+    const target = e.target.closest && e.target.closest('[data-cursor]');
+    if (target) { label.textContent = target.dataset.cursor; el.classList.add('is-on'); } else el.classList.remove('is-on');
+    if (!raf) raf = requestAnimationFrame(loop);
+  }, { passive: true });
+  addEventListener('pointerdown', () => el.classList.add('is-down'));
+  addEventListener('pointerup', () => el.classList.remove('is-down'));
+  document.addEventListener('mouseleave', () => el.classList.remove('is-on'));
+})();
+
+/* ══ Gallery: full-screen viewer — tap to open, pinch/double-tap to zoom, swipe for next ══ */
+(() => {
+  const sheet = document.querySelector('.cs-sheet[data-key="gallery"]');
+  const zoom = sheet && sheet.querySelector('.cs-zoom');
+  if (!zoom) return;
+  const img = zoom.querySelector('.cs-zoom__img');
+  const figs = [...sheet.querySelectorAll('.cs-gallery figure')].filter(f => f.querySelector('img'));
+  if (!figs.length) return;
+  let index = 0, z = 1, px = 0, py = 0;
+  const apply = () => { img.style.setProperty('--z', z); img.style.setProperty('--x', px + 'px'); img.style.setProperty('--y', py + 'px'); };
+  const reset = () => { z = 1; px = 0; py = 0; apply(); };
+  const show = (i) => {
+    index = (i + figs.length) % figs.length;
+    const src = figs[index].querySelector('img');
+    img.src = src.getAttribute('src'); img.alt = src.alt; reset();
+  };
+  const open = (i) => {
+    show(i); zoom.hidden = false; sheet.dataset.zoom = '1';
+    requestAnimationFrame(() => zoom.classList.add('is-open'));
+  };
+  const close = () => {
+    zoom.classList.remove('is-open'); delete sheet.dataset.zoom;
+    setTimeout(() => { zoom.hidden = true; img.removeAttribute('src'); }, 250);
+  };
+  figs.forEach((f, i) => f.addEventListener('click', () => open(i)));
+  zoom.querySelector('.cs-zoom__close').addEventListener('click', (e) => { e.stopPropagation(); close(); });
+  sheet.addEventListener('cancel', (e) => { if (sheet.dataset.zoom) { e.preventDefault(); e.stopImmediatePropagation(); close(); } }, true);
+  document.addEventListener('keydown', (e) => {
+    if (!sheet.dataset.zoom) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); show(index + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(index - 1); }
+  });
+  zoom.addEventListener('wheel', (e) => {
+    if (!e.ctrlKey) return;
+    e.preventDefault();
+    z = Math.min(4, Math.max(1, z * (1 - e.deltaY * 0.01)));
+    if (z === 1) { px = 0; py = 0; }
+    apply();
+  }, { passive: false });
+  const pts = new Map();
+  let start = null, lastTap = 0, moved = false;
+  const dist = () => { const [a, b] = [...pts.values()]; return Math.hypot(a.x - b.x, a.y - b.y); };
+  zoom.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.cs-zoom__close')) return;
+    zoom.setPointerCapture(e.pointerId);
+    pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    zoom.classList.add('is-gesturing');
+    moved = false;
+    start = { x: e.clientX, y: e.clientY, px, py, z, d: pts.size === 2 ? dist() : 0 };
+  });
+  zoom.addEventListener('pointermove', (e) => {
+    if (!pts.has(e.pointerId) || !start) return;
+    pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pts.size === 2) {
+      if (!start.d) start.d = dist();
+      z = Math.min(4, Math.max(1, start.z * dist() / start.d)); moved = true;
+    } else {
+      const dx = e.clientX - start.x, dy = e.clientY - start.y;
+      if (Math.abs(dx) > 6 || Math.abs(dy) > 6) moved = true;
+      if (z > 1) { px = start.px + dx; py = start.py + dy; }
+    }
+    apply();
+  });
+  const end = (e) => {
+    if (!pts.has(e.pointerId)) return;
+    pts.delete(e.pointerId);
+    if (pts.size) { const p = [...pts.values()][0]; start = { x: p.x, y: p.y, px, py, z, d: 0 }; return; }
+    zoom.classList.remove('is-gesturing');
+    const dx = e.clientX - start.x, dy = e.clientY - start.y;
+    if (z <= 1.02) {
+      reset();
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) { show(index + (dx < 0 ? 1 : -1)); return; }
+    }
+    if (!moved) {
+      const now = Date.now();
+      if (now - lastTap < 300) { z = z > 1 ? 1 : 2.5; if (z === 1) { px = 0; py = 0; } apply(); lastTap = 0; }
+      else lastTap = now;
+    }
+  };
+  zoom.addEventListener('pointerup', end);
+  zoom.addEventListener('pointercancel', end);
 })();
