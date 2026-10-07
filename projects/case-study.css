@@ -1158,3 +1158,8 @@ h2.cs-story__text {
 .cs-more {
   padding: 0 !important;
 }
+
+/* ── cs-more__head: no padding ── */
+.cs-more__head {
+  padding: 0 !important;
+}
