@@ -375,6 +375,34 @@ document.querySelectorAll(".cs-sheet").forEach((sheet) => {
     dragging = false;
     sheet.style.transition = "";
     if (currentY > 120) {
+      // Close properly — same as the X button
+      sheet.style.transform = "";
+      sheet.classList.remove("is-open");
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      setTimeout(() => {
+        try { sheet.close(); } catch(e) {}
+      }, 500);
+    } else {
+      sheet.style.transform = "";
+    }
+    currentY = 0;
+  });
+});
+
+  sheet.addEventListener("touchmove", (e) => {
+    if (!dragging) return;
+    currentY = e.touches[0].clientY - startY;
+    if (currentY > 0) {
+      sheet.style.transform = `translateY(${currentY}px)`;
+      sheet.style.transition = "none";
+    }
+  }, { passive: true });
+
+  sheet.addEventListener("touchend", () => {
+    dragging = false;
+    sheet.style.transition = "";
+    if (currentY > 120) {
       sheet.classList.remove("is-open");
       sheet.style.transform = "";
       setTimeout(() => { try { sheet.close(); } catch(e){} }, 500);
