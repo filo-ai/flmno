@@ -2306,7 +2306,7 @@ h1, h2, h3,
   border: 0;
   border-radius: 10px;
   padding: 9px 12px;
-  background: rgba(255,255,255,.075);
+  background: rgba(255,255,255,.12);
   color: rgba(247,247,242,.7);
   font-family: "Apercu", sans-serif;
   font-size: clamp(13px, 1vw, 15px);
@@ -2320,7 +2320,7 @@ h1, h2, h3,
 .contact-form button[type="submit"]:hover,
 .filter-pill:hover {
   transform: translateY(-2px);
-  background: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.19);
   color: rgba(247,247,242,.95);
   
 }
@@ -2528,7 +2528,7 @@ body.contact-mode .scroll-char.visible { color: #050507; }
 body.contact-mode .site-nav nav a,
 body.contact-mode .contact-form button[type="submit"],
 body.contact-mode .filter-pill {
-  background: rgba(5,5,7,.08);
+  background: rgba(5,5,7,.12);
   color: rgba(5,5,7,.65);
   border-color: transparent;
 }
@@ -2780,7 +2780,7 @@ input:focus-within, textarea:focus-within,
   padding: 9px 12px !important;
   border-radius: 10px !important;
   border: 0 !important;
-  background: rgba(255,255,255,.075) !important;
+  background: rgba(255,255,255,.12) !important;
   color: rgba(247,247,242,.7) !important;
   font-family: "Apercu", sans-serif !important;
   font-size: 18px !important;
@@ -2802,7 +2802,7 @@ input:focus-within, textarea:focus-within,
 .cs-pill:hover,
 .story-trigger:hover,
 .nav-close-pill:hover {
-  background: rgba(255,255,255,.14) !important;
+  background: rgba(255,255,255,.19) !important;
   color: rgba(247,247,242,.95) !important;
   transform: translateY(-2px) !important;
   box-shadow: none !important;
@@ -2831,7 +2831,7 @@ body.contact-mode .contact-form button[type="submit"],
 body.contact-mode .cs-pill,
 body.contact-mode .story-trigger,
 body.contact-mode .nav-close-pill {
-  background: rgba(5,5,7,.08) !important;
+  background: rgba(5,5,7,.12) !important;
   color: rgba(5,5,7,.7) !important;
   box-shadow: none !important;
 }
@@ -2840,7 +2840,7 @@ body.contact-mode .filter-pill:hover,
 body.contact-mode .contact-form button[type="submit"]:hover,
 body.contact-mode .cs-pill:hover,
 body.contact-mode .story-trigger:hover {
-  background: rgba(5,5,7,.16) !important;
+  background: rgba(5,5,7,.2) !important;
   color: rgb(5,5,7) !important;
   transform: translateY(-2px) !important;
   box-shadow: none !important;
@@ -3104,7 +3104,7 @@ p {
   padding: 9px 12px !important;
   border-radius: 10px !important;
   border: 0 !important;
-  background: rgba(255,255,255,.075) !important;
+  background: rgba(255,255,255,.12) !important;
   color: rgba(247,247,242,.7) !important;
   font-family: "Apercu", sans-serif !important;
   font-size: 18px !important;
@@ -3116,7 +3116,7 @@ p {
   transition: background .2s ease, color .2s ease, transform .2s ease !important;
 }
 .apple-modal a:hover {
-  background: rgba(255,255,255,.14) !important;
+  background: rgba(255,255,255,.19) !important;
   color: rgba(247,247,242,.95) !important;
   transform: translateY(-2px) !important;
 }
@@ -3497,15 +3497,15 @@ body.contact-mode .contact-form textarea::placeholder {
   color: #050507 !important;
 }
 .apple-modal.active a {
-  background: rgba(5,5,7,.08) !important;
+  background: rgba(5,5,7,.12) !important;
   color: rgba(5,5,7,.75) !important;
 }
 .apple-modal.active a:hover {
-  background: rgba(5,5,7,.16) !important;
+  background: rgba(5,5,7,.2) !important;
   color: #050507 !important;
 }
 .apple-modal.active .modal-close {
-  background: rgba(5,5,7,.08) !important;
+  background: rgba(5,5,7,.12) !important;
   color: #050507 !important;
 }
 
@@ -3834,14 +3834,14 @@ body.contact-mode .contact-status { color: rgba(5,5,7,.65); }
 .site-nav nav a:focus-visible,
 .filter-pill:focus-visible,
 .contact-form button[type="submit"]:focus-visible {
-  background: rgba(255,255,255,.14) !important;
+  background: rgba(255,255,255,.19) !important;
   color: rgba(247,247,242,.95) !important;
   transform: translateY(-2px) !important;
 }
 body.contact-mode .site-nav nav a:focus-visible,
 body.contact-mode .filter-pill:focus-visible,
 body.contact-mode .contact-form button[type="submit"]:focus-visible {
-  background: rgba(5,5,7,.16) !important;
+  background: rgba(5,5,7,.2) !important;
   color: rgb(5,5,7) !important;
 }
 .work-tile:focus-visible .frost-overlay,

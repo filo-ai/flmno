@@ -389,7 +389,7 @@ h1,h2,p,dl,dd,figure{margin:0}
   padding: 9px 12px !important;
   border-radius: 10px !important;
   border: 0 !important;
-  background: rgba(255,255,255,.075) !important;
+  background: rgba(255,255,255,.12) !important;
   color: rgba(247,247,242,.7) !important;
   font-family: "Apercu", sans-serif !important;
   font-size: 18px !important;
@@ -411,7 +411,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-pill:hover,
 .story-trigger:hover,
 .nav-close-pill:hover {
-  background: rgba(255,255,255,.14) !important;
+  background: rgba(255,255,255,.19) !important;
   color: rgba(247,247,242,.95) !important;
   transform: translateY(-2px) !important;
   box-shadow: none !important;
@@ -440,7 +440,7 @@ body.contact-mode .contact-form button[type="submit"],
 body.contact-mode .cs-pill,
 body.contact-mode .story-trigger,
 body.contact-mode .nav-close-pill {
-  background: rgba(5,5,7,.08) !important;
+  background: rgba(5,5,7,.12) !important;
   color: rgba(5,5,7,.7) !important;
   box-shadow: none !important;
 }
@@ -449,7 +449,7 @@ body.contact-mode .filter-pill:hover,
 body.contact-mode .contact-form button[type="submit"]:hover,
 body.contact-mode .cs-pill:hover,
 body.contact-mode .story-trigger:hover {
-  background: rgba(5,5,7,.16) !important;
+  background: rgba(5,5,7,.2) !important;
   color: rgb(5,5,7) !important;
   transform: translateY(-2px) !important;
   box-shadow: none !important;
@@ -1036,7 +1036,7 @@ h1, h2, h3, h4,
   padding: 9px 12px !important;
   border-radius: 10px !important;
   border: 0 !important;
-  background: rgba(255,255,255,.075) !important;
+  background: rgba(255,255,255,.12) !important;
   color: rgba(247,247,242,.7) !important;
   font-family: "Apercu", sans-serif !important;
   font-size: 18px !important;
@@ -1049,7 +1049,7 @@ h1, h2, h3, h4,
   white-space: nowrap !important;
 }
 .cs-header__back:hover {
-  background: rgba(255,255,255,.14) !important;
+  background: rgba(255,255,255,.19) !important;
   color: rgba(247,247,242,.95) !important;
   transform: translateY(-2px) !important;
 }
@@ -1232,7 +1232,7 @@ h2.cs-story__text {
 /* ══ Keyboard focus — mirrors hover, keyboard only, no outlines ══ */
 :focus-visible { outline: none !important; }
 .cs-header__back:focus-visible {
-  background: rgba(255,255,255,.14) !important;
+  background: rgba(255,255,255,.19) !important;
   color: rgba(247,247,242,.95) !important;
   transform: translateY(-2px) !important;
 }
