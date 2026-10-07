@@ -300,6 +300,7 @@ function buildPage(slug, project) {
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../case-study.css">${preload}
+  <meta name="theme-color" content="#050507">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">

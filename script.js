@@ -476,3 +476,18 @@ document.addEventListener('contextmenu', e => {
     }
   });
 })();
+
+/* ── Phone top bar (theme-color + root background) follows the page color ── */
+(() => {
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const DARK = '#050507';
+  const sync = () => {
+    const c = document.body.classList.contains('contact-mode')
+      ? (document.body.style.getPropertyValue('--contact-bg').trim() || '#b8f0e0')
+      : DARK;
+    if (meta && meta.content !== c) meta.setAttribute('content', c);
+    document.documentElement.style.backgroundColor = c;
+  };
+  new MutationObserver(sync).observe(document.body, { attributes: true, attributeFilter: ['class', 'style'] });
+  sync();
+})();
