@@ -1273,3 +1273,7 @@ h2.cs-story__text {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* ── Project type scale: title = site h1 (36px), story text = site h3 (18px) ── */
+h1.cs-hero__title { font-size: 36px !important; }
+h1.cs-story__text { font-size: 18px !important; }
