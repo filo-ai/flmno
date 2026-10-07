@@ -1173,3 +1173,8 @@ h2.cs-story__text {
 .cs-more__title {
   font-size: 36px !important;
 }
+
+/* ── cs-story: 20px padding only ── */
+.cs-story {
+  padding: 20px !important;
+}
