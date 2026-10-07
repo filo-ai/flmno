@@ -338,24 +338,6 @@
     stage.addEventListener('pointercancel', finishDrag);
     // removed mouseleave — no accidental cancels
 
-    // Two-finger trackpad / wheel gesture on desktop
-    let wheelTimer = null;
-    let wheelAcc = 0;
-    stage.addEventListener('wheel', e => {
-      e.preventDefault();
-      // Only respond to horizontal or pinch-zoom style gestures
-      wheelAcc += e.deltaX || -e.deltaY * 0.3;
-      clearTimeout(wheelTimer);
-      wheelTimer = setTimeout(() => {
-        const n = cards.length;
-        if (wheelAcc > 40 && active < n - 1) { active++; render(0); }
-        else if (wheelAcc < -40 && active > 0) { active--; render(0); }
-        wheelAcc = 0;
-      }, 60);
-      // Live preview
-      render(Math.max(-120, Math.min(120, wheelAcc * 0.8)));
-    }, { passive: false });
-
     cards.forEach((card, i) => {
       card.addEventListener('click', e => {
         if (moved) { e.preventDefault(); e.stopPropagation(); return; }
