@@ -255,6 +255,31 @@ function ogImage(slug, gallery) {
   return `${SITE}/assets/og/flmno.jpg`;
 }
 
+
+// ── Breadcrumb categories: read from the homepage tiles + filter labels ──
+const HOME_HTML = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+const PROJECT_TAGS = {};
+for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\//g))
+  PROJECT_TAGS[m[2]] = m[1].trim().split(/\s+/)[0];
+const FILTER_LABELS = {};
+for (const m of HOME_HTML.matchAll(/data-filter="([^"]+)">([^<]+)<\/button>/g)) FILTER_LABELS[m[1]] = m[2].trim();
+
+function crumbsFor(slug) {
+  const tag = PROJECT_TAGS[slug], label = tag && FILTER_LABELS[tag];
+  const items = [`<li><a href="/#work">Work</a></li>`];
+  if (label) items.push(`<li><a href="/?filter=${tag}#work">${esc(label)}</a></li>`);
+  return `<nav class="cs-crumbs" aria-label="Breadcrumb"><ol>${items.join("")}</ol></nav>`;
+}
+
+function crumbsSchema(slug, title) {
+  const tag = PROJECT_TAGS[slug], label = tag && FILTER_LABELS[tag];
+  const list = [{ name: "Work", item: "https://flmno.com/" }];
+  if (label) list.push({ name: label, item: `https://flmno.com/?filter=${tag}` });
+  list.push({ name: title, item: `https://flmno.com/projects/${slug}/` });
+  return JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList",
+    itemListElement: list.map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })) }).replace(/</g, "\\u003c");
+}
+
 function buildPage(slug, project) {
   const {
     title, teaser, story = [], meta = {}, gallery = [],
@@ -299,6 +324,7 @@ function buildPage(slug, project) {
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">${crumbsSchema(slug, title)}</script>
   <link rel="stylesheet" href="../case-study.css">${preload}
   <meta name="theme-color" content="#050507">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -315,9 +341,10 @@ function buildPage(slug, project) {
   <main>
     <div class="cs-hero-stage">
     <section class="cs-hero grid">
-      <hgroup class="cs-hero__head">
+      <div class="cs-hero__head">
+        ${crumbsFor(slug)}
         <h1 class="cs-hero__title">${esc(title)}</h1>
-      </hgroup>
+      </div>
 ${renderStory(fillText, hasStory)}
     </section>${fillText ? `\n      <div class="cs-hero-spacer" aria-hidden="true"></div>` : ""}
     </div>

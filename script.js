@@ -495,3 +495,11 @@ document.addEventListener('contextmenu', e => {
 
 /* ── Nav reveal: no scroll-lit animation under reduced motion, so show nav right away ── */
 if (__RM) document.body.classList.add("nav-revealed");
+
+/* ── Open the grid pre-filtered when arriving from a breadcrumb (?filter=…) ── */
+(() => {
+  const f = new URLSearchParams(location.search).get('filter');
+  if (!f) return;
+  const pill = document.querySelector(`.filter-pill[data-filter="${CSS.escape(f)}"]`);
+  if (pill) pill.click();
+})();

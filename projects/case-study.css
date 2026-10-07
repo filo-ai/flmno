@@ -1313,3 +1313,28 @@ h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
   .cs-hero__head.is-compact { padding-bottom: 10px !important; }
   .cs-hero__head.is-compact h1.cs-hero__title { font-size: 20px !important; }
 }
+
+/* ── Breadcrumb above the project title ── */
+.cs-crumbs { margin: 0 0 12px; }
+.cs-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; }
+.cs-crumbs li,
+.cs-crumbs a {
+  font-family: "Apercu", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+  line-height: 1.4 !important;
+  color: rgba(247,247,242,.5) !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+}
+.cs-crumbs li + li::before { content: "/"; margin: 0 .6em; color: rgba(247,247,242,.28); }
+.cs-crumbs a { transition: color .2s ease; }
+.cs-crumbs a:hover,
+.cs-crumbs a:focus-visible { color: rgba(247,247,242,.95) !important; }
+
+@media (max-width: 680px) {
+  .cs-crumbs { max-height: 40px; overflow: hidden; transition: opacity .3s ease, max-height .35s ease, margin .35s ease; }
+  .cs-crumbs ol { justify-content: center; }
+  .cs-hero__head.is-compact .cs-crumbs { opacity: 0; max-height: 0; margin-bottom: 0; }
+}
