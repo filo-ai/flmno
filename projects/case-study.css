@@ -916,3 +916,24 @@ h1, h2, h3, h4,
 .cs-flipbook-titles {
   display: none !important;
 }
+
+
+
+/* ── Mobile: flipbook proportional, no overflow ── */
+@media (max-width: 680px) {
+  .cs-more {
+    overflow: hidden !important;
+  }
+  .cs-flipbook-wrap {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .cs-flipbook-stage {
+    width: 100% !important;
+    height: calc(100vw * 1.33) !important;
+  }
+  .cs-flipbook-card {
+    width: 85% !important;
+    height: 100% !important;
+  }
+}
