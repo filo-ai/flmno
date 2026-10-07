@@ -3807,3 +3807,43 @@ img {
   -webkit-user-select: none !important;
   user-select: none !important;
 }
+
+/* ── Contact form: honeypot + status line ── */
+.contact-hp { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
+.contact-status { margin: 0; min-height: 1.5em; color: rgba(247,247,242,.6); }
+.contact-status a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+body.contact-mode .contact-status { color: rgba(5,5,7,.65); }
+.contact-form button[type="submit"]:disabled { cursor: default !important; transform: none !important; }
+
+/* ══ Keyboard focus — mirrors hover, keyboard only, no outlines ══ */
+:focus-visible { outline: none !important; }
+.site-nav nav a:focus-visible,
+.filter-pill:focus-visible,
+.contact-form button[type="submit"]:focus-visible {
+  background: rgba(255,255,255,.14) !important;
+  color: rgba(247,247,242,.95) !important;
+  transform: translateY(-2px) !important;
+}
+body.contact-mode .site-nav nav a:focus-visible,
+body.contact-mode .filter-pill:focus-visible,
+body.contact-mode .contact-form button[type="submit"]:focus-visible {
+  background: rgba(5,5,7,.16) !important;
+  color: rgb(5,5,7) !important;
+}
+.work-tile:focus-visible .frost-overlay,
+.logo-tile:focus-visible .frost-overlay { opacity: 1; }
+.work-tile:focus-visible .tile-image img { transform: scale(1.04); filter: brightness(.38) blur(3px); }
+.apple-card:focus-visible { transform: translateY(-8px); background: linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.06)); }
+.brand.site-logo:focus-visible img { opacity: .75; }
+
+/* ══ Reduced motion ══ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .scroll-char { color: #fff !important; opacity: 1 !important; }
+  body.contact-mode .scroll-char { color: #050507 !important; }
+}

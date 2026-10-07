@@ -1,8 +1,9 @@
+const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const reveals=document.querySelectorAll(".reveal");
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("visible")})},{threshold:.12});
 reveals.forEach(el=>observer.observe(el));
 
-document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener("click",event=>{const target=document.querySelector(link.getAttribute("href"));if(!target)return;event.preventDefault();target.scrollIntoView({behavior:"smooth",block:"start"});closeAllModals?.();})});
+document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener("click",event=>{const target=document.querySelector(link.getAttribute("href"));if(!target)return;event.preventDefault();target.scrollIntoView({behavior: __RM ? 'auto' : 'smooth',block:"start"});closeAllModals?.();})});
 
 const fullText="I am a multidisciplinary graphic designer bringing magic to the mundane with insight & imagination at the center of my practice.";
 const headline=document.getElementById("scrollHeadline");
@@ -418,6 +419,7 @@ if (hamburger && mobileNav) {
 
 /* ══ Cycling logo: boomerang 1→7→1→7 on scroll ══ */
 (function () {
+  if (__RM) return;
   const TOTAL = 7;
   const STEP  = 40;
   let idx     = 0; // 0-indexed internally
@@ -448,3 +450,29 @@ if (hamburger && mobileNav) {
 document.addEventListener('contextmenu', e => {
   if (e.target.tagName === 'IMG') e.preventDefault();
 });
+
+/* ── Contact form: send via /api/contact, inline status ── */
+(() => {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+  const btn = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('.contact-status');
+  const say = (html) => { status.innerHTML = html; };
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if (!data.email || !data.message) { say('Add your email and a message, and I’ll take it from there.'); return; }
+    btn.disabled = true; btn.textContent = 'Sending…'; say('');
+    try {
+      const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      if (!r.ok) throw new Error();
+      form.reset();
+      btn.textContent = 'Sent';
+      say('Thank you. I’ll be in touch soon.');
+      setTimeout(() => { btn.textContent = 'Send'; btn.disabled = false; }, 4000);
+    } catch {
+      btn.textContent = 'Send'; btn.disabled = false;
+      say('Something went wrong. You can email me at <a href="mailto:hello@flmno.com">hello@flmno.com</a>.');
+    }
+  });
+})();

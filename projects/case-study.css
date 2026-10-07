@@ -1228,3 +1228,28 @@ h2.cs-story__text {
 /* ── "Swipe to browse": temporary, fades out ── */
 .cs-more__sub { transition: opacity .8s ease; }
 .cs-more__sub.is-faded { opacity: 0; }
+
+/* ══ Keyboard focus — mirrors hover, keyboard only, no outlines ══ */
+:focus-visible { outline: none !important; }
+.cs-header__back:focus-visible {
+  background: rgba(255,255,255,.14) !important;
+  color: rgba(247,247,242,.95) !important;
+  transform: translateY(-2px) !important;
+}
+.cs-pill:focus-visible { background: var(--fg); color: var(--bg); }
+.cs-carousel__item:focus-visible { transform: translateY(-4px); }
+.cs-explore:focus-visible .cs-explore__thumb:nth-child(1){transform:translate(27px,54px) rotateX(30deg) rotateY(15deg) rotate(10deg)}
+.cs-explore:focus-visible .cs-explore__thumb:nth-child(2){transform:translate(-54px,-27px) rotateY(-25deg) rotate(-10deg)}
+.cs-explore:focus-visible .cs-explore__thumb:nth-child(3){transform:translate(34px,-82px) rotateX(-25deg) rotateY(20deg) rotate(7deg)}
+.cs-sheet__close:focus-visible { background: rgba(255,255,255,.85) !important; }
+
+/* ══ Reduced motion ══ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cs-story__text .c, .cs-hero__title .c { color: var(--fg, #f7f7f2) !important; }
+}

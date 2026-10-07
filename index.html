@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>flmno | multidisciplinary graphic designer</title>
   <meta name="description" content="FLMNO is a multidisciplinary graphic designer bringing magic to the mundane." />
+  <link rel="canonical" href="https://flmno.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="flmno" />
+  <meta property="og:title" content="flmno | multidisciplinary graphic designer" />
+  <meta property="og:description" content="A multidisciplinary graphic designer bringing magic to the mundane with insight &amp; imagination." />
+  <meta property="og:url" content="https://flmno.com/" />
+  <meta property="og:image" content="https://flmno.com/assets/og/flmno.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/gif" href="/assets/favicon.gif">
   <link rel="shortcut icon" type="image/gif" href="/assets/favicon.gif">
@@ -315,12 +325,14 @@
     </section>
 
     <section id="contact" class="contact reveal">
-      <form class="contact-form" action="mailto:hello@flmno.com" method="post" enctype="text/plain">
+      <form class="contact-form" action="/api/contact" method="post" novalidate>
         <h2 class="contact-heading">Let's build new futures together.</h2>
         <input id="input2" name="name" type="text" placeholder="Your name" />
         <input id="input3" name="email" type="email" placeholder="you@example.com" />
         <textarea id="textBox1" name="message" rows="6" placeholder="What are we making?"></textarea>
+        <input class="contact-hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit" class="filter-pill">Send</button>
+        <p class="contact-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>

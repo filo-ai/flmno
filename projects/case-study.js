@@ -1,3 +1,4 @@
+const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* flmno case study — interactions */
 (() => {
   /* ── Sheets (gallery + story), URL-synced like ?gallery=true ── */
@@ -315,7 +316,7 @@
       if (!dragged) return;
       const projected = (scroller.scrollLeft - vel * 250) / slideW;
       const target = Math.max(0, Math.min(slides.length - 1, Math.round(projected)));
-      scroller.scrollTo({ left: target * slideW, behavior: 'smooth' });
+      scroller.scrollTo({ left: target * slideW, behavior: __RM ? 'auto' : 'smooth' });
       setTimeout(() => scroller.classList.remove('is-dragging'), 450);
     });
 
@@ -325,7 +326,7 @@
         if (dragged) { e.preventDefault(); dragged = false; return; }
         if (i !== activeIndex()) {
           e.preventDefault();
-          scroller.scrollTo({ left: i * slideW, behavior: 'smooth' });
+          scroller.scrollTo({ left: i * slideW, behavior: __RM ? 'auto' : 'smooth' });
         }
       });
     });
@@ -344,6 +345,7 @@
 
 /* ══ Cycling logo on project pages ══ */
 (function () {
+  if (__RM) return;
   const TOTAL = 7, STEP = 40, BASE = '../../assets/logos/logo-';
   let idx = 1, dir = 1, lastStep = 0;
   function setLogo(n) {

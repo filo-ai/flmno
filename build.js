@@ -237,6 +237,19 @@ function renderStats(stats) {
 
 // ── Page assembly ──────────────────────────────────────────────────────────
 
+
+// ── Link-preview (Open Graph) image for a project ──
+function ogImage(slug, gallery) {
+  const SITE = "https://flmno.com";
+  const first = (gallery || [])[0];
+  if (first && first.includes("static.wixstatic.com/media/")) {
+    const m = first.match(/https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.[a-z]+/);
+    if (m) return `${m[0]}/v1/fill/w_1200,h_630,al_c,q_85/${m[0].split("/").pop()}`;
+  }
+  if (fs.existsSync(path.join(__dirname, "assets", "og", `${slug}.jpg`))) return `${SITE}/assets/og/${slug}.jpg`;
+  return `${SITE}/assets/og/flmno.jpg`;
+}
+
 function buildPage(slug, project) {
   const {
     title, teaser, story = [], meta = {}, gallery = [],
@@ -270,6 +283,17 @@ function buildPage(slug, project) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)} | flmno</title>
+  <meta name="description" content="${esc(teaser || fillText || "")}">
+  <link rel="canonical" href="https://flmno.com/projects/${slug}/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="flmno">
+  <meta property="og:title" content="${esc(title)} | flmno">
+  <meta property="og:description" content="${esc(teaser || fillText || "")}">
+  <meta property="og:url" content="https://flmno.com/projects/${slug}/">
+  <meta property="og:image" content="${ogImage(slug, gallery)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../case-study.css">${preload}
   <link rel="icon" type="image/gif" href="../../assets/favicon.gif">
 </head>
