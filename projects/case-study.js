@@ -133,16 +133,32 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     el.innerHTML = wrapChars(first, "s1") + (rest ? " " + wrapChars(rest, "s2") : "");
 
-    const chars = el.querySelectorAll(".c");
-    let lastN = -1;
+    const chars  = el.querySelectorAll(".c");
+    const stage  = el.closest(".cs-hero-stage");
+    const hero   = el.closest(".cs-hero");
+    const spacer = stage && stage.querySelector(".cs-hero-spacer");
+    let lastN = -1, ticking = false;
+
+    // Pin the hero exactly where it sits on load, so it holds still while lighting up
+    const pinAt = () => {
+      if (stage && hero) hero.style.top = Math.max(0, stage.getBoundingClientRect().top + scrollY) + "px";
+    };
+
     const update = () => {
-      const r = el.getBoundingClientRect(), vh = innerHeight;
-      const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (vh * 0.85 - vh * 0.35)));
-      const n = Math.round(p * chars.length);
+      const dist   = spacer && spacer.offsetHeight ? spacer.offsetHeight : 0;
+      const raw    = dist ? Math.min(1, Math.max(0, scrollY / dist)) : 1;
+      const eased  = 1 - Math.pow(1 - raw, 1.45);              // same curve as the homepage
+      const n      = raw >= .985 ? chars.length : Math.floor(eased * chars.length);
       if (n !== lastN) { chars.forEach((c, i) => c.classList.toggle("on", i < n)); lastN = n; }
     };
-    addEventListener("scroll", update, { passive: true });
-    addEventListener("resize", update);
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { update(); ticking = false; });
+    };
+    addEventListener("scroll", onScroll, { passive: true });
+    addEventListener("resize", () => { pinAt(); update(); });
+    pinAt();
     update();
   });
 

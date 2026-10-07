@@ -115,7 +115,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 
 
 .cs-story__text .w{display:inline-block;white-space:nowrap}
-.cs-story__text .c{color:var(--faint);transition:color .25s ease}
+.cs-story__text .c{color:var(--faint);transition:color .28s ease}
 .cs-story__text .c.on{color:var(--fg)}
 
 .cs-pill{
@@ -1252,4 +1252,14 @@ h2.cs-story__text {
     scroll-behavior: auto !important;
   }
   .cs-story__text .c, .cs-hero__title .c { color: var(--fg, #f7f7f2) !important; }
+}
+
+/* ── Story text reveal: pinned while it lights up, like the homepage headline ── */
+.cs-hero-stage { position: relative; }
+.cs-hero-stage .cs-hero { position: sticky; z-index: 1; }
+.cs-hero-spacer { height: 80vh; }
+@media (max-width: 620px) { .cs-hero-spacer { height: 60vh; } }
+@media (prefers-reduced-motion: reduce) {
+  .cs-hero-spacer { display: none; }
+  .cs-hero-stage .cs-hero { position: relative; }
 }

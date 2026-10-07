@@ -313,12 +313,14 @@ function buildPage(slug, project) {
   </header>
 
   <main>
+    <div class="cs-hero-stage">
     <section class="cs-hero grid">
       <hgroup class="cs-hero__head">
         <h1 class="cs-hero__title">${esc(title)}</h1>
       </hgroup>
 ${renderStory(fillText, hasStory)}
-    </section>
+    </section>${fillText ? `\n      <div class="cs-hero-spacer" aria-hidden="true"></div>` : ""}
+    </div>
 ${renderCarousel(gallery)}
 ${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}
