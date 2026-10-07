@@ -160,8 +160,10 @@ function renderRelated(related) {
     const op = i === 0 ? "1" : i === 1 ? "0.22" : "0";
     const zi = 50 - i;
     return `        <a class="cs-flipbook-card${i === 0 ? " is-active" : ""}" href="${esc(n.href)}" draggable="false" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${zi}">
-          ${imgTag}
-          <div class="cs-flipbook-card__label">${esc(n.title)}</div>
+          <div class="cs-flipbook-card__inner">
+            ${imgTag}
+            <div class="cs-flipbook-card__label">${esc(n.title)}</div>
+          </div>
         </a>`;
   }).join("\n");
   const titleItems = related.map((n, i) =>
