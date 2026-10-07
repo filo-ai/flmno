@@ -256,109 +256,89 @@
 })();
 
 
-/* ══ COLLINS flipbook ══ */
+/* ══ COLLINS flipbook — scroll-driven ══ */
 (() => {
   document.querySelectorAll('.cs-flipbook-wrap').forEach(wrap => {
-    const stage  = wrap.querySelector('.cs-flipbook-stage');
-    const cards  = [...wrap.querySelectorAll('.cs-flipbook-card')];
-    const track  = wrap.querySelector('.cs-flipbook-titles-track');
-    const titles = [...wrap.querySelectorAll('.cs-flipbook-title')];
-    if (!cards.length) return;
+    const scroller = wrap.querySelector('.cs-flipbook-scroller');
+    const slides   = [...wrap.querySelectorAll('.cs-flipbook-slide')];
+    const cards    = [...wrap.querySelectorAll('.cs-flipbook-card')];
+    if (!scroller || !cards.length) return;
 
-    let active = 0;
-    let pointerDown = false, startX = 0, currentX = 0, velocityX = 0;
-    let lastX = 0, lastT = 0, moved = false;
+    let slideW = 1, ticking = false;
+    const progress = () => scroller.scrollLeft / slideW;
+    const activeIndex = () => Math.round(progress());
 
-    function render(dragOffset = 0) {
+    function measure() {
+      slideW = cards[0].offsetWidth || 300;
+      scroller.style.setProperty('--fb-w', slideW + 'px');
+    }
+
+    function render() {
+      const p = progress();
       cards.forEach((card, i) => {
-        const delta     = i - active;
-        const influence = dragOffset / 160; // more responsive
-        const d         = delta - influence;
-        const abs       = Math.abs(d);
-        const dir       = d < 0 ? -1 : 1;
-
-        card.classList.toggle('is-active', delta === 0 && Math.abs(dragOffset) < 30);
-
-        if (delta === 0) {
-          card.style.setProperty('--tx', `${dragOffset * 0.45}px`);
-          card.style.setProperty('--tz', '0px');
-          card.style.setProperty('--ry', `${dragOffset * -0.025}deg`);
-          card.style.setProperty('--op', '1');
-          // Inner micro-tilt — matches COLLINS card__inner behaviour
-          const inner = card.querySelector('.cs-flipbook-card__inner');
-          if (inner) {
-            inner.style.setProperty('--inner-x', `${dragOffset * -0.012}%`);
-            inner.style.setProperty('--inner-ry', `${dragOffset * 0.005}deg`);
-          }
-        } else {
-          // Reset inner on non-active cards
-          const inner = card.querySelector('.cs-flipbook-card__inner');
-          if (inner) {
-            inner.style.setProperty('--inner-x', '0%');
-            inner.style.setProperty('--inner-ry', '0deg');
-          }
-          const tx = dir * Math.min(Math.abs(d), 3) * 25;
-          const tz = -Math.min(Math.abs(d), 4) * 200;
-          card.style.setProperty('--tx', `${tx}%`);
-          card.style.setProperty('--tz', `${tz}px`);
-          card.style.setProperty('--ry', `${dir * -25}deg`);
-          card.style.setProperty('--op', abs <= 1 ? '0.22' : '0');
-        }
-        card.style.zIndex = 50 - Math.round(Math.abs(delta));
+        const d = i - p, abs = Math.abs(d), dir = d < 0 ? -1 : 1, k = Math.min(abs, 1);
+        card.style.setProperty('--tx', `${dir * k * 25}%`);
+        card.style.setProperty('--tz', `${-Math.min(abs, 4) * 200}px`);
+        card.style.setProperty('--ry', `${-dir * k * 25}deg`);
+        card.style.setProperty('--op', String(Math.max(0, Math.min(1, 2 - abs))));
+        card.style.zIndex = String(100 - Math.round(abs * 10));
+        card.classList.toggle('is-active', abs < 0.5);
       });
-      if (track) track.style.transform = `translateX(${-active * 160}px)`;
-      titles.forEach((t, i) => t.classList.toggle('is-active', i === active));
     }
 
-    render();
+    scroller.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { render(); ticking = false; });
+    }, { passive: true });
 
-    stage.addEventListener('pointerdown', e => {
-      pointerDown = true; moved = false;
-      startX = e.clientX; currentX = 0;
-      lastX = e.clientX; lastT = Date.now();
-      velocityX = 0;
-      stage.classList.add('is-dragging');
-      stage.setPointerCapture?.(e.pointerId);
+    // Desktop mouse drag with inertia (touch + trackpad use native scrolling)
+    let down = false, dragged = false, startX = 0, startLeft = 0, lastX = 0, lastT = 0, vel = 0;
+    scroller.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      down = true; dragged = false; vel = 0;
+      startX = lastX = e.clientX; startLeft = scroller.scrollLeft; lastT = performance.now();
     });
-
-    stage.addEventListener('pointermove', e => {
-      if (!pointerDown) return;
-      const now = Date.now();
-      velocityX = (e.clientX - lastX) / Math.max(now - lastT, 1);
+    window.addEventListener('pointermove', e => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (!dragged && Math.abs(dx) > 5) { dragged = true; scroller.classList.add('is-dragging'); }
+      if (!dragged) return;
+      const now = performance.now();
+      vel = (e.clientX - lastX) / Math.max(now - lastT, 1);
       lastX = e.clientX; lastT = now;
-      currentX = e.clientX - startX;
-      if (Math.abs(currentX) > 4) moved = true;
-      render(currentX);
+      scroller.scrollLeft = startLeft - dx;
+    });
+    window.addEventListener('pointerup', () => {
+      if (!down) return;
+      down = false;
+      if (!dragged) return;
+      const projected = (scroller.scrollLeft - vel * 250) / slideW;
+      const target = Math.max(0, Math.min(slides.length - 1, Math.round(projected)));
+      scroller.scrollTo({ left: target * slideW, behavior: 'smooth' });
+      setTimeout(() => scroller.classList.remove('is-dragging'), 450);
     });
 
-    function finishDrag() {
-      if (!pointerDown) return;
-      pointerDown = false;
-      stage.classList.remove('is-dragging');
-      const n = cards.length;
-      // advance on distance OR velocity (flick)
-      const flick = Math.abs(velocityX) > 0.4;
-      const far   = Math.abs(currentX) > 40;
-      if ((currentX < 0 && (far || flick)) && active < n - 1) active++;
-      else if ((currentX > 0 && (far || flick)) && active > 0) active--;
-      currentX = 0; velocityX = 0;
-      render(0);
-      setTimeout(() => { moved = false; }, 60);
-    }
-
-    stage.addEventListener('pointerup', finishDrag);
-    stage.addEventListener('pointercancel', finishDrag);
-    // removed mouseleave — no accidental cancels
-
-    cards.forEach((card, i) => {
-      card.addEventListener('click', e => {
-        if (moved) { e.preventDefault(); e.stopPropagation(); return; }
-        if (i !== active) {
-          e.preventDefault(); e.stopPropagation();
-          active = i; render(0);
+    // Tap: front card opens the project; a side card slides to the front
+    slides.forEach((slide, i) => {
+      slide.addEventListener('click', e => {
+        if (dragged) { e.preventDefault(); dragged = false; return; }
+        if (i !== activeIndex()) {
+          e.preventDefault();
+          scroller.scrollTo({ left: i * slideW, behavior: 'smooth' });
         }
-      }, true);
+      });
     });
+
+    window.addEventListener('resize', () => {
+      const idx = activeIndex();
+      measure();
+      scroller.scrollLeft = idx * slideW;
+      render();
+    });
+
+    measure();
+    render();
   });
 })();
 

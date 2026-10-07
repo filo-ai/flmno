@@ -154,21 +154,18 @@ function renderRelated(related) {
     const cards = related.map((n, i) => {
     const imgUrl = n.image ? wixFit(n.image, 900, 82) : "";
     const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy">` : "";
-    const tx = i === 0 ? "0" : "25%";
-    const tz = i === 0 ? "0px" : `${-i * 200}px`;
+    const tx = i === 0 ? "0%" : "25%";
+    const tz = `${-Math.min(i, 4) * 200}px`;
     const ry = i === 0 ? "0deg" : "-25deg";
-    const op = i === 0 ? "1" : i === 1 ? "0.22" : "0";
-    const zi = 50 - i;
-    return `        <a class="cs-flipbook-card${i === 0 ? " is-active" : ""}" href="${esc(n.href)}" draggable="false" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${zi}">
-          <div class="cs-flipbook-card__inner">
+    const op = i <= 1 ? "1" : "0";
+    return `          <div class="cs-flipbook-card${i === 0 ? " is-active" : ""}" aria-hidden="true" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${100 - i * 10}">
             ${imgTag}
             <div class="cs-flipbook-card__label">${esc(n.title)}</div>
-          </div>
-        </a>`;
+          </div>`;
   }).join("\n");
-  const titleItems = related.map((n, i) =>
-    `<span class="cs-flipbook-title${i === 0 ? " is-active" : ""}" data-index="${i}">${esc(n.title)}</span>`
-  ).join("");
+  const slides = related.map((n) =>
+    `          <a class="cs-flipbook-slide" href="${esc(n.href)}" draggable="false" aria-label="${esc(n.title)}"></a>`
+  ).join("\n");
   return `
     <section class="cs-more">
       <div class="cs-more__head">
@@ -181,8 +178,8 @@ function renderRelated(related) {
 ${cards}
           </div>
         </div>
-        <div class="cs-flipbook-titles">
-          <div class="cs-flipbook-titles-track">${titleItems}</div>
+        <div class="cs-flipbook-scroller">
+${slides}
         </div>
       </div>
     </section>`;
