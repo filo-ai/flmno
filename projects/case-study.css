@@ -1109,3 +1109,17 @@ h1, h2, h3, h4,
   display: flex !important;
   flex-direction: column !important;
 }
+
+/* ── cs-story full width; cs-meta no padding ── */
+.cs-story {
+  grid-column: 1 / -1 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+.cs-story__text {
+  max-width: none !important;
+  width: 100% !important;
+}
+.cs-meta {
+  padding: 0 !important;
+}
