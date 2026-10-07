@@ -727,7 +727,7 @@ h1, h2, h3, h4,
 .collins-flipbook__stage {
   height: 520px !important;
   min-height: 0 !important;
-  /* font-size inflation prevented via explicit card font-size instead */
+  font-size: 0 !important; /* prevent font-size inflation */
 }
 .collins-card {
   width: min(360px, 56vw) !important;
@@ -915,91 +915,4 @@ h1, h2, h3, h4,
 }
 .cs-flipbook-titles {
   display: none !important;
-}
-
-
-
-/* ── Mobile: flipbook proportional, no overflow ── */
-@media (max-width: 680px) {
-  
-  .cs-flipbook-wrap {
-    width: 100% !important;
-    overflow: hidden !important;
-  }
-  .cs-flipbook-stage {
-    width: 100% !important;
-    height: calc(100vw * 1.33) !important;
-  }
-  .cs-flipbook-card {
-    width: 85% !important;
-    height: 100% !important;
-  }
-}
-
-/* ── Flipbook: force centre on all screens ── */
-.cs-more {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-}
-.cs-more__head {
-  width: 100% !important;
-  max-width: var(--content) !important;
-}
-.cs-flipbook-wrap {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  width: 100% !important;
-}
-.cs-flipbook-stage {
-  margin-inline: auto !important;
-}
-
-/* ── Mobile: flipbook truly centred ── */
-@media (max-width: 680px) {
-  .cs-flipbook-wrap {
-    padding-inline: 0 !important;
-    margin-inline: 0 !important;
-    width: 100% !important;
-    align-items: center !important;
-  }
-  .cs-flipbook-stage {
-    margin-inline: auto !important;
-    width: 100% !important;
-  }
-  .cs-flipbook-stack {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  .cs-flipbook-card[style*="--tx:0"] {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-}
-
-/* ── Flipbook: match impact card height, centred ── */
-.cs-flipbook-stage {
-  height: 380px !important;
-  font-size: 16px !important;
-}
-.cs-flipbook-card {
-  font-size: 16px !important;
-}
-/* Mobile: proportional full width, no overflow */
-@media (max-width: 680px) {
-  .cs-flipbook-wrap {
-    overflow: hidden !important;
-  }
-  .cs-flipbook-stage {
-    width: 100% !important;
-    height: calc(100vw * 1.1) !important;
-    font-size: 16px !important;
-  }
-  .cs-flipbook-card {
-    width: 85% !important;
-    height: 100% !important;
-    font-size: 16px !important;
-  }
 }
