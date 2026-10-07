@@ -307,44 +307,22 @@
     const stage = wrap.querySelector('.cs-flipbook-stage');
     let dragStart = null;
 
-    let dragged = false;
-
     stage.addEventListener('pointerdown', e => {
       dragStart = { x: e.clientX, scrollLeft: scroller.scrollLeft };
-      dragged = false;
+      scroller.classList.add('is-dragging');
       stage.setPointerCapture?.(e.pointerId);
     });
     stage.addEventListener('pointermove', e => {
       if (!dragStart) return;
       const dx = dragStart.x - e.clientX;
-      if (Math.abs(dx) > 6) {
-        dragged = true;
-        scroller.classList.add('is-dragging');
-        scroller.scrollLeft = dragStart.scrollLeft + dx;
-      }
+      scroller.scrollLeft = dragStart.scrollLeft + dx;
     });
-    stage.addEventListener('pointerup', e => {
-      scroller.classList.remove('is-dragging');
-      if (!dragged && dragStart) {
-        // It was a tap — find which card was clicked and act on it
-        const el = document.elementFromPoint(e.clientX, e.clientY);
-        const card = el?.closest('.cs-flipbook-card');
-        if (card) {
-          const i = cards.indexOf(card);
-          if (i !== -1 && i !== active) {
-            scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
-          } else if (i === active) {
-            const href = card.getAttribute('href');
-            if (href) window.location.href = href;
-          }
-        }
-      }
+    stage.addEventListener('pointerup', () => {
       dragStart = null;
-      dragged = false;
+      scroller.classList.remove('is-dragging');
     });
     stage.addEventListener('pointercancel', () => {
       dragStart = null;
-      dragged = false;
       scroller.classList.remove('is-dragging');
     });
 
