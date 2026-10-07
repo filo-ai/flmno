@@ -34,7 +34,7 @@ function wixFit(url, h = 900, q = 82) {
   if (!m) return url;
   const base = m[0];
   const fname = base.split("/").pop();
-  return `${base}/v1/fit/h_${h},q_${q},usm_0.33_1.00_0.20,enc_avif,quality_auto/${fname}`;
+  return `${base}/v1/fit/w_${Math.round(h * 1.8)},h_${h},q_${q},usm_0.33_1.00_0.20,enc_avif,quality_auto/${fname}`;
 }
 
 function wix(url, w, h, q = 82) {
@@ -150,7 +150,8 @@ ${items}
 }
 
 function renderRelated(related) {
-  if (!related?.length) return "";
+  related = (related || []).filter(n => n.image);
+  if (!related.length) return "";
     const cards = related.map((n, i) => {
     const imgUrl = n.image ? wixFit(n.image, 900, 82) : "";
     const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy">` : "";
@@ -170,7 +171,7 @@ function renderRelated(related) {
     <section class="cs-more">
       <div class="cs-more__head">
         <h1 class="cs-more__title">More Work</h1>
-        <p class="cs-more__sub">Drag to browse</p>
+        <p class="cs-more__sub">Swipe to browse</p>
       </div>
       <div class="cs-flipbook-wrap">
         <div class="cs-flipbook-stage">
@@ -286,7 +287,6 @@ function buildPage(slug, project) {
       </hgroup>
 ${renderStory(fillText, hasStory)}
     </section>
-${renderMeta(meta)}
 ${renderCarousel(gallery)}
 ${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}

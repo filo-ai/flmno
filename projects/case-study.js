@@ -371,3 +371,16 @@ document.addEventListener('contextmenu', e => {
     e.preventDefault();
   }
 });
+
+/* ── "Swipe to browse" hint: fades a few seconds after the flipbook is seen, or on first swipe ── */
+(() => {
+  const hint = document.querySelector('.cs-more__sub');
+  const wrap = document.querySelector('.cs-flipbook-wrap');
+  if (!hint || !wrap) return;
+  let done = false;
+  const fade = () => { if (!done) { done = true; hint.classList.add('is-faded'); } };
+  new IntersectionObserver((entries, obs) => {
+    if (entries.some(e => e.isIntersecting)) { obs.disconnect(); setTimeout(fade, 3500); }
+  }, { threshold: 0.5 }).observe(wrap);
+  wrap.querySelector('.cs-flipbook-scroller')?.addEventListener('scroll', () => setTimeout(fade, 600), { once: true, passive: true });
+})();

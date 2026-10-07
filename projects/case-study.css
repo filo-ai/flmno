@@ -1224,3 +1224,7 @@ h2.cs-story__text {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
+
+/* ── "Swipe to browse": temporary, fades out ── */
+.cs-more__sub { transition: opacity .8s ease; }
+.cs-more__sub.is-faded { opacity: 0; }
