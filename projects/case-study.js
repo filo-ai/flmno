@@ -265,51 +265,40 @@
 
     const n = cards.length;
     let active = 0;
-    let rafId  = null;
+    let ticking = false;
 
     function setCards(progress) {
-      // progress: 0..n-1 (can be fractional during scroll)
-      const intPart  = Math.floor(progress);
-      const fraction = progress - intPart;
-
       cards.forEach((card, i) => {
         const delta = i - progress;
         const abs   = Math.abs(delta);
         const dir   = delta < 0 ? -1 : 1;
-
-        const isActive = abs < 0.5;
         card.classList.toggle('is-active', abs < 0.5);
-
         if (abs < 0.01) {
-          // exactly active
           card.style.setProperty('--tx', '0px');
           card.style.setProperty('--tz', '0px');
           card.style.setProperty('--ry', '0deg');
           card.style.setProperty('--op', '1');
-        } else if (abs <= 1.5) {
-          const tx  = dir * Math.min(abs, 3) * 25;
-          const tz  = -Math.min(abs, 4) * 200;
-          const op  = abs <= 1 ? 0.22 * (1 - (abs - 0)) : 0;
-          card.style.setProperty('--tx', `${tx}%`);
-          card.style.setProperty('--tz', `${tz}px`);
-          card.style.setProperty('--ry', `${dir * -25}deg`);
-          card.style.setProperty('--op', String(Math.max(0, Math.min(1, abs <= 1 ? 0.22 : 0))));
         } else {
-          card.style.setProperty('--tx', `${dir * 25}%`);
-          card.style.setProperty('--tz', `${-Math.min(abs,4)*200}px`);
+          card.style.setProperty('--tx', `${dir * Math.min(abs, 3) * 25}%`);
+          card.style.setProperty('--tz', `${-Math.min(abs, 4) * 200}px`);
           card.style.setProperty('--ry', `${dir * -25}deg`);
-          card.style.setProperty('--op', '0');
+          card.style.setProperty('--op', abs <= 1 ? '0.22' : '0');
         }
         card.style.zIndex = String(50 - Math.round(abs * 10));
       });
     }
 
     function onScroll() {
-      const slideW = scroller.clientWidth;
-      if (!slideW) return;
-      const progress = scroller.scrollLeft / slideW;
-      setCards(progress);
-      active = Math.round(progress);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const slideW = scroller.clientWidth;
+        if (!slideW) { ticking = false; return; }
+        const progress = scroller.scrollLeft / slideW;
+        setCards(progress);
+        active = Math.round(progress);
+        ticking = false;
+      });
     }
 
     scroller.addEventListener('scroll', onScroll, { passive: true });
@@ -319,7 +308,7 @@
     scroller.addEventListener('pointerup',   () => scroller.classList.remove('is-dragging'));
     scroller.addEventListener('pointercancel',() => scroller.classList.remove('is-dragging'));
 
-    // Click on a visible card — scroll to it
+    // Click: inactive card → scroll to it; active card → navigate
     cards.forEach((card, i) => {
       card.addEventListener('click', e => {
         if (i !== active) {
@@ -327,10 +316,10 @@
           e.stopPropagation();
           scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
         }
+        // active card: let the <a> href navigate naturally
       }, true);
     });
 
-    // Init
     setCards(0);
   });
 })();
