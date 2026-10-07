@@ -279,8 +279,8 @@
           card.style.setProperty('--ry', '0deg');
           card.style.setProperty('--op', '1');
         } else {
-          card.style.setProperty('--tx', `${dir * Math.min(abs,3) * 25}%`);
-          card.style.setProperty('--tz', `${-Math.min(abs,4) * 200}px`);
+          card.style.setProperty('--tx', `${dir * Math.min(abs, 3) * 25}%`);
+          card.style.setProperty('--tz', `${-Math.min(abs, 4) * 200}px`);
           card.style.setProperty('--ry', `${dir * -25}deg`);
           card.style.setProperty('--op', abs <= 1 ? '0.22' : '0');
         }
@@ -288,53 +288,82 @@
       });
     }
 
-    scroller.addEventListener('scroll', () => {
+    function onScroll() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
         const slideW = scroller.clientWidth;
-        if (slideW) {
-          const progress = scroller.scrollLeft / slideW;
-          setCards(progress);
-          active = Math.round(progress);
-        }
+        if (!slideW) { ticking = false; return; }
+        const progress = scroller.scrollLeft / slideW;
+        setCards(progress);
+        active = Math.round(progress);
         ticking = false;
       });
-    }, { passive: true });
+    }
 
-    // Wheel / trackpad on stage — forward to scroller
+    scroller.addEventListener('scroll', onScroll, { passive: true });
+
+    // Forward drag from stage to scroller so clicks reach cards
     const stage = wrap.querySelector('.cs-flipbook-stage');
+    let dragStart = null;
+
+    let dragged = false;
+
+    stage.addEventListener('pointerdown', e => {
+      dragStart = { x: e.clientX, scrollLeft: scroller.scrollLeft };
+      dragged = false;
+      stage.setPointerCapture?.(e.pointerId);
+    });
+    stage.addEventListener('pointermove', e => {
+      if (!dragStart) return;
+      const dx = dragStart.x - e.clientX;
+      if (Math.abs(dx) > 6) {
+        dragged = true;
+        scroller.classList.add('is-dragging');
+        scroller.scrollLeft = dragStart.scrollLeft + dx;
+      }
+    });
+    stage.addEventListener('pointerup', e => {
+      scroller.classList.remove('is-dragging');
+      if (!dragged && dragStart) {
+        // It was a tap — find which card was clicked and act on it
+        const el = document.elementFromPoint(e.clientX, e.clientY);
+        const card = el?.closest('.cs-flipbook-card');
+        if (card) {
+          const i = cards.indexOf(card);
+          if (i !== -1 && i !== active) {
+            scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
+          } else if (i === active) {
+            const href = card.getAttribute('href');
+            if (href) window.location.href = href;
+          }
+        }
+      }
+      dragStart = null;
+      dragged = false;
+    });
+    stage.addEventListener('pointercancel', () => {
+      dragStart = null;
+      dragged = false;
+      scroller.classList.remove('is-dragging');
+    });
+
+    // Wheel / trackpad
     stage.addEventListener('wheel', e => {
       e.preventDefault();
-      scroller.scrollLeft += (e.deltaX || e.deltaY * 0.5);
+      scroller.scrollLeft += e.deltaX || e.deltaY * 0.5;
     }, { passive: false });
 
-    // Tap detection — scroller handles drag/swipe natively
-    // We only need to detect taps (no movement) to navigate
-    let tapStart = null;
-    scroller.addEventListener('pointerdown', e => {
-      tapStart = { x: e.clientX, y: e.clientY };
-    });
-    scroller.addEventListener('pointerup', e => {
-      if (!tapStart) return;
-      const dx = Math.abs(e.clientX - tapStart.x);
-      const dy = Math.abs(e.clientY - tapStart.y);
-      tapStart = null;
-      if (dx > 8 || dy > 8) return; // was a swipe, not a tap
-      // Find card under finger
-      scroller.style.pointerEvents = 'none';
-      const el = document.elementFromPoint(e.clientX, e.clientY);
-      scroller.style.pointerEvents = '';
-      const card = el?.closest('.cs-flipbook-card');
-      if (!card) return;
-      const i = cards.indexOf(card);
-      if (i === -1) return;
-      if (i !== active) {
-        scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
-      } else {
-        const href = card.getAttribute('href');
-        if (href) window.location.href = href;
-      }
+    // Click: inactive card → scroll to it; active card → navigate
+    cards.forEach((card, i) => {
+      card.addEventListener('click', e => {
+        if (i !== active) {
+          e.preventDefault();
+          e.stopPropagation();
+          scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
+        }
+        // active card: let the <a> href navigate naturally
+      }, true);
     });
 
     setCards(0);
