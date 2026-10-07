@@ -1381,3 +1381,6 @@ p.cs-sheet__count {
   font-weight: 300 !important; letter-spacing: -0.2px !important; line-height: 1.4 !important;
   font-variant-numeric: tabular-nums; pointer-events: none;
 }
+
+/* Counter number matches the rest of the counter (beats the global span size rule) */
+p.cs-sheet__count .cs-sheet__count-n { font: inherit !important; letter-spacing: inherit !important; }
