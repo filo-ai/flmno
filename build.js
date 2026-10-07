@@ -286,12 +286,12 @@ function buildPage(slug, project) {
         <h1 class="cs-hero__title">${esc(title)}</h1>
       </hgroup>
     </section>
-${renderMeta(meta)}
-${renderCarousel(gallery)}
-${renderStats(stats)}
     <div class="cs-body grid">
 ${renderStory(fillText, hasStory)}
     </div>
+${renderMeta(meta)}
+${renderCarousel(gallery)}
+${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}
 ${renderImpact(impact)}
 ${renderRelated(related)}
