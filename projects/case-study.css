@@ -1348,3 +1348,14 @@ h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
   .cs-crumbs ol { justify-content: center; }
   .cs-hero__head.is-compact .cs-crumbs { opacity: 0; max-height: 0; margin-bottom: 0; }
 }
+
+/* ── Flipbook: rounded corners hold during 3D motion; GPU-smooth frames ── */
+.cs-flipbook-wrap .cs-flipbook-card {
+  clip-path: inset(0 round 12px);
+  -webkit-clip-path: inset(0 round 12px);
+  isolation: isolate;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.cs-flipbook-wrap .cs-flipbook-card img { border-radius: inherit; }

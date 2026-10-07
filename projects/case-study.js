@@ -288,7 +288,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const activeIndex = () => Math.round(progress());
 
     function measure() {
-      slideW = cards[0].offsetWidth || 300;
+      slideW = (cards[0].offsetWidth || 300) * 0.55;   // shorter swipe per card = cards keep up with the finger
       scroller.style.setProperty('--fb-w', slideW + 'px');
     }
 
@@ -332,7 +332,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!down) return;
       down = false;
       if (!dragged) return;
-      const projected = (scroller.scrollLeft - vel * 250) / slideW;
+      const projected = (scroller.scrollLeft - vel * 350) / slideW;   // longer, gliding throw
       const target = Math.max(0, Math.min(slides.length - 1, Math.round(projected)));
       scroller.scrollTo({ left: target * slideW, behavior: __RM ? 'auto' : 'smooth' });
       setTimeout(() => scroller.classList.remove('is-dragging'), 450);
