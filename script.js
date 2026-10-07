@@ -443,3 +443,8 @@ if (hamburger && mobileNav) {
     setLogo(idx + 1);
   }, { passive: true });
 })();
+
+/* ── Block right-click / long-press save on all images ── */
+document.addEventListener('contextmenu', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
