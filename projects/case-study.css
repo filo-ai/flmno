@@ -727,7 +727,7 @@ h1, h2, h3, h4,
 .collins-flipbook__stage {
   height: 520px !important;
   min-height: 0 !important;
-  font-size: 0 !important; /* prevent font-size inflation */
+  /* font-size inflation prevented via explicit card font-size instead */
 }
 .collins-card {
   width: min(360px, 56vw) !important;
@@ -921,9 +921,7 @@ h1, h2, h3, h4,
 
 /* ── Mobile: flipbook proportional, no overflow ── */
 @media (max-width: 680px) {
-  .cs-more {
-    overflow: hidden !important;
-  }
+  
   .cs-flipbook-wrap {
     width: 100% !important;
     overflow: hidden !important;
@@ -978,5 +976,30 @@ h1, h2, h3, h4,
   .cs-flipbook-card[style*="--tx:0"] {
     left: 50% !important;
     transform: translateX(-50%) !important;
+  }
+}
+
+/* ── Flipbook: match impact card height, centred ── */
+.cs-flipbook-stage {
+  height: 380px !important;
+  font-size: 16px !important;
+}
+.cs-flipbook-card {
+  font-size: 16px !important;
+}
+/* Mobile: proportional full width, no overflow */
+@media (max-width: 680px) {
+  .cs-flipbook-wrap {
+    overflow: hidden !important;
+  }
+  .cs-flipbook-stage {
+    width: 100% !important;
+    height: calc(100vw * 1.1) !important;
+    font-size: 16px !important;
+  }
+  .cs-flipbook-card {
+    width: 85% !important;
+    height: 100% !important;
+    font-size: 16px !important;
   }
 }
