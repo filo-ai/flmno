@@ -957,3 +957,25 @@ h1, h2, h3, h4,
     -webkit-backdrop-filter: none !important;
   }
 }
+
+/* ── Flipbook: square cards ── */
+.cs-flipbook-stage {
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+}
+.cs-flipbook-card {
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+}
+@media (max-width: 680px) {
+  .cs-flipbook-stage {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+  .cs-flipbook-card {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    width: 85% !important;
+  }
+}
