@@ -3871,3 +3871,6 @@ body.contact-mode .contact-form button[type="submit"]:focus-visible {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* ── Standard leading for every h1 and h2 ── */
+h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
