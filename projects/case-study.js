@@ -409,7 +409,20 @@ document.addEventListener('contextmenu', e => {
 (() => {
   const head = document.querySelector('.cs-hero__head');
   if (!head) return;
-  const set = () => document.documentElement.style.setProperty('--cs-titlebar-h', head.offsetHeight + 'px');
+  // measure at full size only, so the page doesn't jump when the bar shrinks
+  const set = () => { if (!head.classList.contains('is-compact')) document.documentElement.style.setProperty('--cs-titlebar-h', head.offsetHeight + 'px'); };
+
+  // shrink once scrolling, restore near the top (small gap between thresholds avoids flicker)
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      if (scrollY > 24) head.classList.add('is-compact');
+      else if (scrollY < 8) head.classList.remove('is-compact');
+      ticking = false;
+    });
+  }, { passive: true });
   set();
   addEventListener('resize', set);
   document.fonts?.ready.then(set);

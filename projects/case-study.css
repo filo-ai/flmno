@@ -1305,3 +1305,11 @@ h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
   /* page content starts just below the pinned bar */
   .cs-hero { padding-top: calc(var(--cs-titlebar-h, 140px) + 4px) !important; }
 }
+
+/* ── Mobile pinned title: centered, shrinks once scrolling ── */
+@media (max-width: 680px) {
+  .cs-hero__head { text-align: center; transition: padding .35s ease; }
+  .cs-hero__head h1.cs-hero__title { transition: font-size .35s ease; }
+  .cs-hero__head.is-compact { padding-bottom: 10px !important; }
+  .cs-hero__head.is-compact h1.cs-hero__title { font-size: 20px !important; }
+}
