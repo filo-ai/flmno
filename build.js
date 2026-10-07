@@ -164,6 +164,9 @@ function renderRelated(related) {
           <div class="cs-flipbook-card__label">${esc(n.title)}</div>
         </a>`;
   }).join("\n");
+  const scrollSlides = related.map((n, i) =>
+    `          <div class="cs-flipbook-slide"></div>`
+  ).join("\n");
   const titleItems = related.map((n, i) =>
     `<span class="cs-flipbook-title${i === 0 ? " is-active" : ""}" data-index="${i}">${esc(n.title)}</span>`
   ).join("");
@@ -174,13 +177,13 @@ function renderRelated(related) {
         <p class="cs-more__sub">Drag to browse</p>
       </div>
       <div class="cs-flipbook-wrap">
+        <div class="cs-flipbook-scroller" aria-hidden="true">
+${scrollSlides}
+        </div>
         <div class="cs-flipbook-stage">
           <div class="cs-flipbook-stack">
 ${cards}
           </div>
-        </div>
-        <div class="cs-flipbook-titles">
-          <div class="cs-flipbook-titles-track">${titleItems}</div>
         </div>
       </div>
     </section>`;

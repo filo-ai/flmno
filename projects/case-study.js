@@ -256,97 +256,82 @@
 })();
 
 
-/* ══ COLLINS flipbook ══ */
+/* ══ COLLINS flipbook — scroll driven ══ */
 (() => {
   document.querySelectorAll('.cs-flipbook-wrap').forEach(wrap => {
-    const stage  = wrap.querySelector('.cs-flipbook-stage');
-    const cards  = [...wrap.querySelectorAll('.cs-flipbook-card')];
-    const track  = wrap.querySelector('.cs-flipbook-titles-track');
-    const titles = [...wrap.querySelectorAll('.cs-flipbook-title')];
-    if (!cards.length) return;
+    const scroller = wrap.querySelector('.cs-flipbook-scroller');
+    const cards    = [...wrap.querySelectorAll('.cs-flipbook-card')];
+    if (!scroller || !cards.length) return;
 
+    const n = cards.length;
     let active = 0;
-    let pointerDown = false, startX = 0, currentX = 0, velocityX = 0;
-    let lastX = 0, lastT = 0, moved = false;
+    let rafId  = null;
 
-    function render(dragOffset = 0) {
+    function setCards(progress) {
+      // progress: 0..n-1 (can be fractional during scroll)
+      const intPart  = Math.floor(progress);
+      const fraction = progress - intPart;
+
       cards.forEach((card, i) => {
-        const delta     = i - active;
-        const influence = dragOffset / 160; // more responsive
-        const d         = delta - influence;
-        const abs       = Math.abs(d);
-        const dir       = d < 0 ? -1 : 1;
+        const delta = i - progress;
+        const abs   = Math.abs(delta);
+        const dir   = delta < 0 ? -1 : 1;
 
-        card.classList.toggle('is-active', delta === 0 && Math.abs(dragOffset) < 30);
+        const isActive = abs < 0.5;
+        card.classList.toggle('is-active', abs < 0.5);
 
-        if (delta === 0) {
-          card.style.setProperty('--tx', `${dragOffset * 0.45}px`);
+        if (abs < 0.01) {
+          // exactly active
+          card.style.setProperty('--tx', '0px');
           card.style.setProperty('--tz', '0px');
-          card.style.setProperty('--ry', `${dragOffset * -0.025}deg`);
+          card.style.setProperty('--ry', '0deg');
           card.style.setProperty('--op', '1');
-        } else {
-          const tx = dir * Math.min(Math.abs(d), 3) * 25;
-          const tz = -Math.min(Math.abs(d), 4) * 200;
+        } else if (abs <= 1.5) {
+          const tx  = dir * Math.min(abs, 3) * 25;
+          const tz  = -Math.min(abs, 4) * 200;
+          const op  = abs <= 1 ? 0.22 * (1 - (abs - 0)) : 0;
           card.style.setProperty('--tx', `${tx}%`);
           card.style.setProperty('--tz', `${tz}px`);
           card.style.setProperty('--ry', `${dir * -25}deg`);
-          card.style.setProperty('--op', abs <= 1 ? '0.22' : '0');
+          card.style.setProperty('--op', String(Math.max(0, Math.min(1, abs <= 1 ? 0.22 : 0))));
+        } else {
+          card.style.setProperty('--tx', `${dir * 25}%`);
+          card.style.setProperty('--tz', `${-Math.min(abs,4)*200}px`);
+          card.style.setProperty('--ry', `${dir * -25}deg`);
+          card.style.setProperty('--op', '0');
         }
-        card.style.zIndex = 50 - Math.round(Math.abs(delta));
+        card.style.zIndex = String(50 - Math.round(abs * 10));
       });
-      if (track) track.style.transform = `translateX(${-active * 160}px)`;
-      titles.forEach((t, i) => t.classList.toggle('is-active', i === active));
     }
 
-    render();
-
-    stage.addEventListener('pointerdown', e => {
-      pointerDown = true; moved = false;
-      startX = e.clientX; currentX = 0;
-      lastX = e.clientX; lastT = Date.now();
-      velocityX = 0;
-      stage.classList.add('is-dragging');
-      stage.setPointerCapture?.(e.pointerId);
-    });
-
-    stage.addEventListener('pointermove', e => {
-      if (!pointerDown) return;
-      const now = Date.now();
-      velocityX = (e.clientX - lastX) / Math.max(now - lastT, 1);
-      lastX = e.clientX; lastT = now;
-      currentX = e.clientX - startX;
-      if (Math.abs(currentX) > 4) moved = true;
-      render(currentX);
-    });
-
-    function finishDrag() {
-      if (!pointerDown) return;
-      pointerDown = false;
-      stage.classList.remove('is-dragging');
-      const n = cards.length;
-      // advance on distance OR velocity (flick)
-      const flick = Math.abs(velocityX) > 0.4;
-      const far   = Math.abs(currentX) > 40;
-      if ((currentX < 0 && (far || flick)) && active < n - 1) active++;
-      else if ((currentX > 0 && (far || flick)) && active > 0) active--;
-      currentX = 0; velocityX = 0;
-      render(0);
-      setTimeout(() => { moved = false; }, 60);
+    function onScroll() {
+      const slideW = scroller.clientWidth;
+      if (!slideW) return;
+      const progress = scroller.scrollLeft / slideW;
+      setCards(progress);
+      active = Math.round(progress);
     }
 
-    stage.addEventListener('pointerup', finishDrag);
-    stage.addEventListener('pointercancel', finishDrag);
-    // removed mouseleave — no accidental cancels
+    scroller.addEventListener('scroll', onScroll, { passive: true });
 
+    // Cursor feedback
+    scroller.addEventListener('pointerdown', () => scroller.classList.add('is-dragging'));
+    scroller.addEventListener('pointerup',   () => scroller.classList.remove('is-dragging'));
+    scroller.addEventListener('pointercancel',() => scroller.classList.remove('is-dragging'));
+
+    // Click on a visible card — scroll to it
     cards.forEach((card, i) => {
       card.addEventListener('click', e => {
-        if (moved) { e.preventDefault(); e.stopPropagation(); return; }
         if (i !== active) {
-          e.preventDefault(); e.stopPropagation();
-          active = i; render(0);
+          e.preventDefault();
+          e.stopPropagation();
+          scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
         }
       }, true);
     });
+
+    // Init
+    setCards(0);
   });
 })();
 
