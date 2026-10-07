@@ -1168,3 +1168,8 @@ h2.cs-story__text {
 .cs-flipbook-wrap {
   padding: 0 !important;
 }
+
+/* ── cs-more__title: 36px ── */
+.cs-more__title {
+  font-size: 36px !important;
+}
