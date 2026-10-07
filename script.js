@@ -267,6 +267,8 @@ if (hamburger && mobileNav) {
 (function () {
   const splash = document.getElementById("splash");
   if (!splash) return;
+  if (document.documentElement.classList.contains("splash-seen")) { splash.remove(); return; }
+  try { sessionStorage.setItem("flmno-splash", "1"); } catch (e) {}
 
   // Let the GIF play for at least 1.4s, then wait for page load — whichever is longer
   const minTime = new Promise(r => setTimeout(r, 1400));

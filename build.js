@@ -44,10 +44,10 @@ function imgFill(url, w, h, q = 82) {
 }
 
 // Image or looping video, whichever the source is
-function media(src, url, attrs = "") {
+function media(src, url, attrs = "", alt = "", sizes = "") {
   return isVideo(src)
-    ? `<video src="${src}" autoplay muted loop playsinline preload="metadata"${attrs}></video>`
-    : `<img src="${url}" alt=""${attrs}>`;
+    ? `<video src="${src}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(alt)}"${attrs}></video>`
+    : `<img src="${url}" alt="${esc(alt)}"${sizeAttrs(src, sizes)}${attrs}>`;
 }
 
 const ARROW  = `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -56,18 +56,42 @@ const CLOSE  = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strok
 
 // ── Sections ────────────────────────────────────────────────────────────────
 
+
+// ── Responsive images: smaller copies (-800/-1400.webp) listed in assets/images/sizes.json ──
+const SIZES = (() => { try { return JSON.parse(fs.readFileSync(path.join(__dirname, "assets", "images", "sizes.json"), "utf8")); } catch { return {}; } })();
+const variant = (src, vw) => src.replace(/\.[a-z0-9]+$/i, `-${vw}.webp`);
+function sizeAttrs(src, sizes) {
+  const e = SIZES[src];
+  if (!e) return "";
+  let out = ` width="${e.w}" height="${e.h}"`;
+  if (e.v.length && sizes) out += ` srcset="${[...e.v.map(vw => `${variant(src, vw)} ${vw}w`), `${src} ${e.w}w`].join(", ")}" sizes="${sizes}"`;
+  return out;
+}
+const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
+
+// ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
+let PAGE = { slug: "", title: "", alts: {} };
+function altFor(src, i) {
+  if (PAGE.alts[src]) return PAGE.alts[src];
+  let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
+  const generic = /~mv2|^[0-9a-f]{6}_[0-9a-f]{12,}|^img[_-]?\d+$|^asset[-_ ]?\d+|^\d+$|f000$/i.test(name) || name.length < 3;
+  if (generic) return `${PAGE.title}, image ${i + 1}`;
+  name = name.replace(/[-_]+/g, " ").replace(/\b(\d+x|final|edited|copy)\b/gi, "").replace(/\s+/g, " ").trim();
+  return `${PAGE.title}: ${name.charAt(0).toUpperCase()}${name.slice(1)}`;
+}
+
 function renderCarousel(gallery) {
   if (!gallery?.length) return "";
-  const slides = gallery.slice(0, 3).map(src =>
+  const slides = gallery.slice(0, 3).map((src, i) =>
     `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery">` +
-    `${media(src, imgFit(src, 900, 82), ' loading="eager" draggable="false"')}</button>`
+    `${media(src, imgFit(src, 900, 82), ` loading="eager" draggable="false"${i === 0 ? ` style="view-transition-name: p-${PAGE.slug}"` : ""}`, altFor(src, i), "(max-width: 680px) 85vw, 480px")}</button>`
   ).join("\n");
 
   const stills = gallery.filter(s => !isVideo(s));
   const rest   = stills.slice(3).length ? stills.slice(3) : stills;
   const thumbs = [...rest, ...rest, ...rest].slice(0, 3);
   const thumbHtml = thumbs.map(t =>
-    `          <span class="cs-explore__thumb"><img src="${imgFill(t, 280, 280, 75)}" alt="" loading="lazy" draggable="false"></span>`
+    `          <span class="cs-explore__thumb"><img src="${imgFill(smallest(t), 280, 280, 75)}" alt="" loading="lazy" draggable="false"></span>`
   ).join("\n");
 
   return `
@@ -159,7 +183,7 @@ function renderRelated(related) {
   if (!related.length) return "";
     const cards = related.map((n, i) => {
     const imgUrl = n.image ? imgFit(n.image, 900, 82) : "";
-    const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy">` : "";
+    const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy"${sizeAttrs(n.image, "(max-width: 680px) 85vw, 480px")}>` : "";
     const tx = i === 0 ? "0%" : "25%";
     const tz = `${-Math.min(i, 4) * 200}px`;
     const ry = i === 0 ? "0deg" : "-25deg";
@@ -194,11 +218,12 @@ ${slides}
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
   const figs = gallery.map((src, i) =>
-    `        <figure${i % 3 === 0 ? ' class="full"' : ""}>${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"')}</figure>`
+    `        <figure${i % 3 === 0 ? ' class="full"' : ""}>${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
     <button class="cs-sheet__close" type="button" aria-label="Close">${CLOSE}</button>
+    <p class="cs-sheet__count" aria-live="polite"><span class="cs-sheet__count-n">1</span> / ${gallery.length}</p>
     <div class="cs-sheet__scroll">
       <div class="cs-gallery">
 ${figs}
@@ -285,6 +310,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
+  PAGE = { slug, title, alts: project.alts || {} };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {
@@ -327,7 +353,8 @@ function buildPage(slug, project) {
   <script type="application/ld+json">${crumbsSchema(slug, title)}</script>
   <link rel="preload" href="/assets/fonts/RecklessStandardM-TRIAL-Medium.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" href="/assets/fonts/ApercuPro-Light.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="../case-study.css">${preload}
+  <link rel="stylesheet" href="../case-study.css">
+  <script defer src="/_vercel/insights/script.js"></script>${preload}
   <meta name="theme-color" content="#050507">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">

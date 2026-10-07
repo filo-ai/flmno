@@ -427,3 +427,34 @@ document.addEventListener('contextmenu', e => {
   addEventListener('resize', set);
   document.fonts?.ready.then(set);
 })();
+
+/* ── Gallery: live image counter + arrow-key navigation ── */
+(() => {
+  const sheet = document.querySelector('.cs-sheet[data-key="gallery"]');
+  if (!sheet) return;
+  const scroll = sheet.querySelector('.cs-sheet__scroll');
+  const figs = [...sheet.querySelectorAll('.cs-gallery figure')];
+  const out = sheet.querySelector('.cs-sheet__count-n');
+  if (!scroll || !figs.length) return;
+  let current = 0;
+  const ratios = new Map();
+  const show = (i) => { current = i; if (out) out.textContent = String(i + 1); };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => ratios.set(e.target, e.intersectionRatio));
+    let best = 0, bestR = -1;
+    figs.forEach((f, i) => { const r = ratios.get(f) || 0; if (r > bestR + 0.001) { bestR = r; best = i; } });
+    show(best);
+  }, { root: scroll, threshold: [0, .25, .5, .75, 1] });
+  figs.forEach((f) => io.observe(f));
+
+  document.addEventListener('keydown', (e) => {
+    if (!sheet.open) return;
+    const next = e.key === 'ArrowDown' || e.key === 'ArrowRight';
+    const prev = e.key === 'ArrowUp' || e.key === 'ArrowLeft';
+    if (!next && !prev) return;
+    e.preventDefault();
+    const i = Math.max(0, Math.min(figs.length - 1, current + (next ? 1 : -1)));
+    figs[i].scrollIntoView({ block: 'center', behavior: __RM ? 'auto' : 'smooth' });
+    show(i);
+  });
+})();

@@ -3874,3 +3874,17 @@ body.contact-mode .contact-form button[type="submit"]:focus-visible {
 
 /* ── Standard leading for every h1 and h2 ── */
 h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
+
+/* ── Smooth page transitions (homepage ⇄ projects): project image morphs, page cross-fades ── */
+@view-transition { navigation: auto; }
+::view-transition-group(*) { animation-duration: .5s; animation-timing-function: cubic-bezier(.22,1,.36,1); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+/* Splash: only on the first load of a visit */
+.splash-seen #splash { display: none !important; }
+
+/* Comfortable tap targets on phones (44px) */
+@media (max-width: 680px) {
+  .site-nav nav a, .filter-pill, .contact-form button[type="submit"], .apple-modal a { min-height: 44px !important; }
+}

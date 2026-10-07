@@ -8,5 +8,12 @@
       "source": "/media/:path*",
       "destination": "https://static.wixstatic.com/media/:path*"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/projects/parks-after-dark/:path*",
+      "destination": "/projects/yosemite-national-park-after-dark/",
+      "permanent": true
+    }
   ]
 }

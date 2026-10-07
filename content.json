@@ -1289,57 +1289,6 @@
         }
       ]
     },
-    "parks-after-dark": {
-      "title": "Yosemite National Park After Dark",
-      "teaser": "",
-      "story": [],
-      "meta": {
-        "Client": "Yosemite National Park",
-        "Skills & Tools": "photography"
-      },
-      "gallery": [],
-      "related": [
-        {
-          "title": "Atmospheric Images",
-          "href": "../atmospheric-images/index.html",
-          "image": ""
-        },
-        {
-          "title": "Cartographic Personality",
-          "href": "../cartographic-personality/index.html",
-          "image": ""
-        },
-        {
-          "title": "Cathedral of the Cascades",
-          "href": "../cathedral-of-the-cascades/index.html",
-          "image": "/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg"
-        },
-        {
-          "title": "Colorado Symphony Orchestra",
-          "href": "../colorado-symphony-orchestra/index.html",
-          "image": "/assets/images/cso--cso-concert-series-final-03.webp"
-        },
-        {
-          "title": "Editorial Rhythm",
-          "href": "../editorial-rhythm/index.html",
-          "image": "/assets/images/lettering--a_metal.webp"
-        }
-      ],
-      "impact": [
-        {
-          "title": "Night as Subject",
-          "body": "The project reframed darkness not as an obstacle but as the primary condition — shifting how the park is experienced after hours."
-        },
-        {
-          "title": "Programme Attendance",
-          "body": "Night-event attendance increased significantly following the communications campaign, surpassing programme expectations."
-        },
-        {
-          "title": "Visitor Surprise",
-          "body": "Participants consistently reported the experience as one of the most unexpected and memorable park moments they'd had."
-        }
-      ]
-    },
     "poetry-in-parks": {
       "title": "Poetry in Parks",
       "teaser": "A postcard for the 24th U.S. Poet Laureate from Mount Rainier National Park",
