@@ -1092,3 +1092,20 @@ h1, h2, h3, h4,
   font-weight: 500 !important;
   letter-spacing: 0.36px !important;
 }
+
+/* ── cs-meta: single row above carousel ── */
+.cs-meta {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 0 48px !important;
+  grid-column: unset !important;
+  width: var(--content) !important;
+  margin-inline: auto !important;
+  padding: 16px var(--inset) 32px !important;
+  box-sizing: border-box !important;
+}
+.cs-meta > div {
+  display: flex !important;
+  flex-direction: column !important;
+}
