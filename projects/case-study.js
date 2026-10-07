@@ -404,3 +404,13 @@ document.addEventListener('contextmenu', e => {
   }, { threshold: 0.5 }).observe(wrap);
   wrap.querySelector('.cs-flipbook-scroller')?.addEventListener('scroll', () => setTimeout(fade, 600), { once: true, passive: true });
 })();
+
+/* ── Measure the pinned mobile title bar so content starts right below it ── */
+(() => {
+  const head = document.querySelector('.cs-hero__head');
+  if (!head) return;
+  const set = () => document.documentElement.style.setProperty('--cs-titlebar-h', head.offsetHeight + 'px');
+  set();
+  addEventListener('resize', set);
+  document.fonts?.ready.then(set);
+})();

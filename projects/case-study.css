@@ -1280,3 +1280,28 @@ h1.cs-story__text { font-size: 27px !important; }
 
 /* ── Standard leading for every h1 and h2 ── */
 h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
+
+/* ── Line under the project title (all screens) ── */
+.cs-hero__head {
+  border-bottom: 1px solid rgba(247,247,242,.14);
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+/* ── Mobile: title + line stay pinned to the top for the whole page ── */
+@media (max-width: 680px) {
+  .cs-hero__head {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 60;                                  /* under the floating logo (70) */
+    margin: 0 !important;
+    padding: calc(68px + env(safe-area-inset-top, 0px)) var(--inset) 14px !important;
+    border-bottom: 0 !important;
+    background:
+      linear-gradient(rgba(247,247,242,.14), rgba(247,247,242,.14)) bottom center / calc(100% - 2 * var(--inset)) 1px no-repeat,
+      var(--bg);
+    box-sizing: border-box;
+  }
+  /* page content starts just below the pinned bar */
+  .cs-hero { padding-top: calc(var(--cs-titlebar-h, 140px) + 4px) !important; }
+}
