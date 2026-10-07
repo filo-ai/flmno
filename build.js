@@ -325,6 +325,8 @@ function buildPage(slug, project) {
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">${crumbsSchema(slug, title)}</script>
+  <link rel="preload" href="/assets/fonts/RecklessStandardM-TRIAL-Medium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/assets/fonts/ApercuPro-Light.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../case-study.css">${preload}
   <meta name="theme-color" content="#050507">
   <link rel="icon" href="/favicon.ico" sizes="any">

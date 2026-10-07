@@ -1,3 +1,13 @@
+/* ── Fonts (same files as the homepage) ── */
+@font-face{font-family:"Reckless";src:url("/assets/fonts/RecklessStandardM-TRIAL-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("/assets/fonts/RecklessStandardM-TRIAL-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Reckless";src:url("/assets/fonts/RecklessStandardM-TRIAL-MediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Apercu";src:url("/assets/fonts/ApercuPro-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("/assets/fonts/ApercuPro-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("/assets/fonts/ApercuPro-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("/assets/fonts/ApercuPro-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Apercu";src:url("/assets/fonts/ApercuPro-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+
 /* =========================================================
    flmno case study — modelled on wearecollins.com/case-studies
    ========================================================= */
