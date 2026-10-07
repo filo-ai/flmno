@@ -285,10 +285,8 @@ function buildPage(slug, project) {
       <hgroup class="cs-hero__head">
         <h1 class="cs-hero__title">${esc(title)}</h1>
       </hgroup>
-    </section>
-    <div class="cs-body grid">
 ${renderStory(fillText, hasStory)}
-    </div>
+    </section>
 ${renderMeta(meta)}
 ${renderCarousel(gallery)}
 ${renderStats(stats)}
