@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" }
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/media/:path*",
+      "destination": "https://static.wixstatic.com/media/:path*"
+    }
   ]
 }

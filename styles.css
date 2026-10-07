@@ -2942,16 +2942,19 @@ body.contact-mode .filter-pill.is-active {
   }
 }
 
-/* ── Mobile hero: kill the full-height centering ── */
+/* ── Mobile hero: headline sits in the vertical middle of the screen on load ── */
 @media (max-width: 680px) {
   .hero,
   .hero-pin-stage .hero,
   body.headline-complete .hero {
-    min-height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100svh !important;
     height: auto !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     align-items: flex-start !important;
-    padding-top: clamp(32px,8vw,56px) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    box-sizing: border-box !important;
     position: relative !important;
   }
   .hero-pin-stage {

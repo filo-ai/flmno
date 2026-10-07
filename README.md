@@ -46,15 +46,15 @@ node build.js galen-tines-zine
       },
 
       "gallery": [
-        "https://static.wixstatic.com/media/4d1bdb_abc~mv2.png",
-        "https://static.wixstatic.com/media/4d1bdb_def~mv2.jpg"
+        "/assets/images/project--hero.webp",
+        "/assets/images/project--detail.webp"
       ],
 
       "related": [
         {
           "title": "Game of Cones",
           "href":  "../game-of-cones/index.html",
-          "image": "https://static.wixstatic.com/media/4d1bdb_xyz~mv2.png"
+          "image": "/assets/images/other-project--cover.webp"
         }
       ],
 
@@ -77,7 +77,7 @@ node build.js galen-tines-zine
 | `teaser` | Subtitle under the title | One sentence |
 | `story` | Scroll-lit excerpt + full story sheet | Array of paragraphs. First = serif. |
 | `meta` | Left column next to story | Any keys you like |
-| `gallery` | Carousel, explore card, gallery sheet | Wix URLs, order matters |
+| `gallery` | Carousel, explore card, gallery sheet | Image paths (`/assets/images/…`), order matters |
 | `related` | "More Work" horizontal scroll strip | 3–5 works best |
 | `impact` | Impact cards section | `title` + `body` per card |
 | `instagram_posts` | Instagram feed (social-media page only) | Array of post URLs |
@@ -87,11 +87,11 @@ node build.js galen-tines-zine
 
 ## Adding a new image
 
-1. Upload to Wix Media Manager → copy the link
+1. Add the image to `assets/images/` → use its path
 2. Paste into the `"gallery"` array in `content.json`
 3. Run `node build.js your-project-slug`
 
-The build script handles Wix's resize API automatically — you never touch URLs manually.
+The build script handles image sizing automatically — you never touch URLs manually.
 
 ---
 

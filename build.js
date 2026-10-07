@@ -25,25 +25,29 @@ function esc(str) {
     .replace(/"/g, "&quot;");
 }
 
-function wixFit(url, h = 900, q = 82) {
-  // Fit to height, preserve aspect ratio — no crop
-  if (!url) return url;
-  if (!url.includes("static.wixstatic.com/media/")) return url; // local path — pass through
-  if (url.includes("/v1/fit/")) return url;
-  const m = url.match(/https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.[a-z]+/);
+const isVideo = (src) => /\.(mp4|webm|mov)$/i.test(src || "");
+
+// Resize remote /media/ images on request; local /assets/ files pass through untouched
+function imgFit(url, h = 900, q = 82, w = Math.round(h * 1.8)) {
+  if (!url || !url.startsWith("/media/") || url.includes("/v1/")) return url;
+  const m = url.match(/^\/media\/[^/]+~mv2\.[a-z]+/i);
   if (!m) return url;
-  const base = m[0];
-  const fname = base.split("/").pop();
-  return `${base}/v1/fit/w_${Math.round(h * 1.8)},h_${h},q_${q},usm_0.33_1.00_0.20,enc_avif,quality_auto/${fname}`;
+  const fname = m[0].split("/").pop();
+  return `${m[0]}/v1/fit/w_${w},h_${h},q_${q},usm_0.33_1.00_0.20,enc_avif,quality_auto/${fname}`;
 }
 
-function wix(url, w, h, q = 82) {
-  if (!url) return url;
-  if (!url.includes("static.wixstatic.com/media/")) return url; // local path — pass through
-  if (url.includes("/v1/fill/")) return url;
+function imgFill(url, w, h, q = 82) {
+  if (!url || !url.startsWith("/media/") || url.includes("/v1/")) return url;
+  if (!h) return imgFit(url, w, q, w);
   const fname = url.split("/").pop();
-  const dims  = h ? `w_${w},h_${h}` : `w_${w}`;
-  return `${url}/v1/fill/${dims},al_c,q_${q},usm_0.33_1.00_0.20,enc_avif,quality_auto/${fname}`;
+  return `${url}/v1/fill/w_${w},h_${h},al_c,q_${q},usm_0.33_1.00_0.20,enc_avif,quality_auto/${fname}`;
+}
+
+// Image or looping video, whichever the source is
+function media(src, url, attrs = "") {
+  return isVideo(src)
+    ? `<video src="${src}" autoplay muted loop playsinline preload="metadata"${attrs}></video>`
+    : `<img src="${url}" alt=""${attrs}>`;
 }
 
 const ARROW  = `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -56,13 +60,14 @@ function renderCarousel(gallery) {
   if (!gallery?.length) return "";
   const slides = gallery.slice(0, 3).map(src =>
     `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery">` +
-    `<img src="${wixFit(src, 900, 82)}" alt="" loading="eager" draggable="false"></button>`
+    `${media(src, imgFit(src, 900, 82), ' loading="eager" draggable="false"')}</button>`
   ).join("\n");
 
-  const rest   = gallery.slice(3).length ? gallery.slice(3) : gallery;
+  const stills = gallery.filter(s => !isVideo(s));
+  const rest   = stills.slice(3).length ? stills.slice(3) : stills;
   const thumbs = [...rest, ...rest, ...rest].slice(0, 3);
   const thumbHtml = thumbs.map(t =>
-    `          <span class="cs-explore__thumb"><img src="${wix(t, 280, 280, 75)}" alt="" loading="lazy" draggable="false"></span>`
+    `          <span class="cs-explore__thumb"><img src="${imgFill(t, 280, 280, 75)}" alt="" loading="lazy" draggable="false"></span>`
   ).join("\n");
 
   return `
@@ -153,7 +158,7 @@ function renderRelated(related) {
   related = (related || []).filter(n => n.image);
   if (!related.length) return "";
     const cards = related.map((n, i) => {
-    const imgUrl = n.image ? wixFit(n.image, 900, 82) : "";
+    const imgUrl = n.image ? imgFit(n.image, 900, 82) : "";
     const imgTag = imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy">` : "";
     const tx = i === 0 ? "0%" : "25%";
     const tz = `${-Math.min(i, 4) * 200}px`;
@@ -189,7 +194,7 @@ ${slides}
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
   const figs = gallery.map((src, i) =>
-    `        <figure${i % 3 === 0 ? ' class="full"' : ""}><img src="${wix(src, 1400, null, 85)}" alt="" loading="lazy"></figure>`
+    `        <figure${i % 3 === 0 ? ' class="full"' : ""}>${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"')}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
@@ -242,9 +247,9 @@ function renderStats(stats) {
 function ogImage(slug, gallery) {
   const SITE = "https://flmno.com";
   const first = (gallery || [])[0];
-  if (first && first.includes("static.wixstatic.com/media/")) {
-    const m = first.match(/https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.[a-z]+/);
-    if (m) return `${m[0]}/v1/fill/w_1200,h_630,al_c,q_85/${m[0].split("/").pop()}`;
+  if (first && first.startsWith("/media/")) {
+    const m = first.match(/^\/media\/[^/]+~mv2\.[a-z]+/i);
+    if (m) return `${SITE}${m[0]}/v1/fill/w_1200,h_630,al_c,q_85/${m[0].split("/").pop()}`;
   }
   if (fs.existsSync(path.join(__dirname, "assets", "og", `${slug}.jpg`))) return `${SITE}/assets/og/${slug}.jpg`;
   return `${SITE}/assets/og/flmno.jpg`;
@@ -273,8 +278,8 @@ function buildPage(slug, project) {
   const hasStory   = story.length > 0;
   const hasIG      = instagram_posts?.length > 0;
 
-  const preload = hasGallery
-    ? `\n  <link rel="preload" as="image" href="${wix(gallery[0], 900, 600, 82)}">`
+  const preload = hasGallery && !isVideo(gallery[0])
+    ? `\n  <link rel="preload" as="image" href="${imgFit(gallery[0], 900, 82)}">`
     : "";
 
   return `<!doctype html>
@@ -295,7 +300,9 @@ function buildPage(slug, project) {
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../case-study.css">${preload}
-  <link rel="icon" type="image/gif" href="../../assets/favicon.gif">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
   <a href="../../index.html" id="mobile-logo" aria-label="flmno home"><img src="../../assets/logos/logo-1.svg" alt="flmno" id="mobile-logo-img"></a>
