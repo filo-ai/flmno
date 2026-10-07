@@ -988,3 +988,14 @@ h1, h2, h3, h4,
 .cs-flipbook-card {
   justify-self: center !important;
 }
+
+/* ── Gallery: close button bottom-centre ── */
+.cs-sheet__close {
+  position: fixed !important;
+  bottom: calc(32px + env(safe-area-inset-bottom, 0px)) !important;
+  left: 50% !important;
+  top: auto !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  z-index: 100 !important;
+}

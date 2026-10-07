@@ -3782,3 +3782,21 @@ body.contact-mode #site-logo-img {
   text-align: left !important;
   align-items: flex-start !important;
 }
+
+/* ── No saving images ── */
+img, video {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  pointer-events: none !important;
+}
+/* Restore pointer events on interactive images (tiles, carousel) */
+.work-tile img,
+.cs-carousel__item img,
+.cs-flipbook-card img,
+.collins-card img,
+.apple-card img,
+a img, button img {
+  pointer-events: auto !important;
+  -webkit-touch-callout: none !important;
+}
