@@ -979,3 +979,12 @@ h1, h2, h3, h4,
     width: 85% !important;
   }
 }
+
+/* ── Flipbook: front card always centred ── */
+.cs-flipbook-stack {
+  justify-items: center !important;
+  align-items: center !important;
+}
+.cs-flipbook-card {
+  justify-self: center !important;
+}
