@@ -38,6 +38,26 @@
     el.addEventListener("click", () => open(el.dataset.open))
   );
 
+  /* ── Swipe down to close sheet ── */
+  Object.values(sheets).forEach((sheet) => {
+    let startY = 0, dy = 0, active = false;
+    sheet.addEventListener("touchstart", (e) => {
+      startY = e.touches[0].clientY; dy = 0; active = true;
+    }, { passive: true });
+    sheet.addEventListener("touchmove", (e) => {
+      if (!active) return;
+      dy = e.touches[0].clientY - startY;
+      if (dy > 0) { sheet.style.cssText += `transform:translateY(${dy}px);transition:none`; }
+    }, { passive: true });
+    sheet.addEventListener("touchend", () => {
+      active = false;
+      sheet.style.transform = "";
+      sheet.style.transition = "";
+      if (dy > 160) sheet._close();
+      dy = 0;
+    });
+  });
+
   const params = new URLSearchParams(location.search);
   Object.keys(sheets).forEach((k) => { if (params.get(k) === "true") open(k); });
 
