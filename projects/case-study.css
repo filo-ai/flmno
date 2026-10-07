@@ -1189,47 +1189,24 @@ h2.cs-story__text {
   padding: 0 0 20px 0 !important;
 }
 
-/* ── Flipbook: native scroll drives the cards ── */
-.cs-flipbook-wrap {
-  position: relative !important;
-}
-.cs-flipbook-scroller {
-  position: absolute;
-  inset: 0;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  z-index: 10;
-  cursor: grab;
-  scrollbar-width: none;
-}
-.cs-flipbook-scroller::-webkit-scrollbar { display: none; }
-.cs-flipbook-scroller.is-dragging { cursor: grabbing; }
-.cs-flipbook-slide {
-  flex-shrink: 0;
+/* ── Flipbook card__inner: subtle independent lean during drag ── */
+.cs-flipbook-card__inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: translateX(var(--inner-x, 0%)) rotateY(var(--inner-ry, 0deg));
+  transition: transform .18s ease;
+}
+.cs-flipbook-card__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   pointer-events: none;
+  user-select: none;
 }
-/* Stage sits behind the scroller visually but scroller is transparent */
-.cs-flipbook-stage {
-  pointer-events: none;
-}
-
-/* ── Scroller: pass clicks through to cards underneath ── */
-.cs-flipbook-scroller {
-  pointer-events: none !important;
-}
-.cs-flipbook-stage {
-  pointer-events: auto !important;
-}
-.cs-flipbook-card {
-  pointer-events: auto !important;
-}
-.cs-flipbook-card.is-active {
-  pointer-events: auto !important;
-  cursor: pointer !important;
+.cs-flipbook-card__label {
+  position: absolute !important;
 }

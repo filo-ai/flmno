@@ -256,95 +256,109 @@
 })();
 
 
-/* ══ COLLINS flipbook — scroll driven ══ */
+/* ══ COLLINS flipbook ══ */
 (() => {
   document.querySelectorAll('.cs-flipbook-wrap').forEach(wrap => {
-    const scroller = wrap.querySelector('.cs-flipbook-scroller');
-    const cards    = [...wrap.querySelectorAll('.cs-flipbook-card')];
-    if (!scroller || !cards.length) return;
+    const stage  = wrap.querySelector('.cs-flipbook-stage');
+    const cards  = [...wrap.querySelectorAll('.cs-flipbook-card')];
+    const track  = wrap.querySelector('.cs-flipbook-titles-track');
+    const titles = [...wrap.querySelectorAll('.cs-flipbook-title')];
+    if (!cards.length) return;
 
-    const n = cards.length;
     let active = 0;
-    let ticking = false;
+    let pointerDown = false, startX = 0, currentX = 0, velocityX = 0;
+    let lastX = 0, lastT = 0, moved = false;
 
-    function setCards(progress) {
+    function render(dragOffset = 0) {
       cards.forEach((card, i) => {
-        const delta = i - progress;
-        const abs   = Math.abs(delta);
-        const dir   = delta < 0 ? -1 : 1;
-        card.classList.toggle('is-active', abs < 0.5);
-        if (abs < 0.01) {
-          card.style.setProperty('--tx', '0px');
+        const delta     = i - active;
+        const influence = dragOffset / 160; // more responsive
+        const d         = delta - influence;
+        const abs       = Math.abs(d);
+        const dir       = d < 0 ? -1 : 1;
+
+        card.classList.toggle('is-active', delta === 0 && Math.abs(dragOffset) < 30);
+
+        if (delta === 0) {
+          card.style.setProperty('--tx', `${dragOffset * 0.45}px`);
           card.style.setProperty('--tz', '0px');
-          card.style.setProperty('--ry', '0deg');
+          card.style.setProperty('--ry', `${dragOffset * -0.025}deg`);
           card.style.setProperty('--op', '1');
+          // Inner micro-tilt — matches COLLINS card__inner behaviour
+          const inner = card.querySelector('.cs-flipbook-card__inner');
+          if (inner) {
+            inner.style.setProperty('--inner-x', `${dragOffset * -0.012}%`);
+            inner.style.setProperty('--inner-ry', `${dragOffset * 0.005}deg`);
+          }
         } else {
-          card.style.setProperty('--tx', `${dir * Math.min(abs, 3) * 25}%`);
-          card.style.setProperty('--tz', `${-Math.min(abs, 4) * 200}px`);
+          // Reset inner on non-active cards
+          const inner = card.querySelector('.cs-flipbook-card__inner');
+          if (inner) {
+            inner.style.setProperty('--inner-x', '0%');
+            inner.style.setProperty('--inner-ry', '0deg');
+          }
+          const tx = dir * Math.min(Math.abs(d), 3) * 25;
+          const tz = -Math.min(Math.abs(d), 4) * 200;
+          card.style.setProperty('--tx', `${tx}%`);
+          card.style.setProperty('--tz', `${tz}px`);
           card.style.setProperty('--ry', `${dir * -25}deg`);
           card.style.setProperty('--op', abs <= 1 ? '0.22' : '0');
         }
-        card.style.zIndex = String(50 - Math.round(abs * 10));
+        card.style.zIndex = 50 - Math.round(Math.abs(delta));
       });
+      if (track) track.style.transform = `translateX(${-active * 160}px)`;
+      titles.forEach((t, i) => t.classList.toggle('is-active', i === active));
     }
 
-    function onScroll() {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const slideW = scroller.clientWidth;
-        if (!slideW) { ticking = false; return; }
-        const progress = scroller.scrollLeft / slideW;
-        setCards(progress);
-        active = Math.round(progress);
-        ticking = false;
-      });
-    }
-
-    scroller.addEventListener('scroll', onScroll, { passive: true });
-
-    // Forward drag from stage to scroller so clicks reach cards
-    const stage = wrap.querySelector('.cs-flipbook-stage');
-    let dragStart = null;
+    render();
 
     stage.addEventListener('pointerdown', e => {
-      dragStart = { x: e.clientX, scrollLeft: scroller.scrollLeft };
-      scroller.classList.add('is-dragging');
+      pointerDown = true; moved = false;
+      startX = e.clientX; currentX = 0;
+      lastX = e.clientX; lastT = Date.now();
+      velocityX = 0;
+      stage.classList.add('is-dragging');
       stage.setPointerCapture?.(e.pointerId);
     });
+
     stage.addEventListener('pointermove', e => {
-      if (!dragStart) return;
-      const dx = dragStart.x - e.clientX;
-      scroller.scrollLeft = dragStart.scrollLeft + dx;
-    });
-    stage.addEventListener('pointerup', () => {
-      dragStart = null;
-      scroller.classList.remove('is-dragging');
-    });
-    stage.addEventListener('pointercancel', () => {
-      dragStart = null;
-      scroller.classList.remove('is-dragging');
+      if (!pointerDown) return;
+      const now = Date.now();
+      velocityX = (e.clientX - lastX) / Math.max(now - lastT, 1);
+      lastX = e.clientX; lastT = now;
+      currentX = e.clientX - startX;
+      if (Math.abs(currentX) > 4) moved = true;
+      render(currentX);
     });
 
-    // Wheel / trackpad
-    stage.addEventListener('wheel', e => {
-      e.preventDefault();
-      scroller.scrollLeft += e.deltaX || e.deltaY * 0.5;
-    }, { passive: false });
+    function finishDrag() {
+      if (!pointerDown) return;
+      pointerDown = false;
+      stage.classList.remove('is-dragging');
+      const n = cards.length;
+      // advance on distance OR velocity (flick)
+      const flick = Math.abs(velocityX) > 0.4;
+      const far   = Math.abs(currentX) > 40;
+      if ((currentX < 0 && (far || flick)) && active < n - 1) active++;
+      else if ((currentX > 0 && (far || flick)) && active > 0) active--;
+      currentX = 0; velocityX = 0;
+      render(0);
+      setTimeout(() => { moved = false; }, 60);
+    }
 
-    // Click: inactive card → scroll to it; active card → navigate
+    stage.addEventListener('pointerup', finishDrag);
+    stage.addEventListener('pointercancel', finishDrag);
+    // removed mouseleave — no accidental cancels
+
     cards.forEach((card, i) => {
       card.addEventListener('click', e => {
+        if (moved) { e.preventDefault(); e.stopPropagation(); return; }
         if (i !== active) {
-          e.preventDefault();
-          e.stopPropagation();
-          scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
+          e.preventDefault(); e.stopPropagation();
+          active = i; render(0);
         }
-        // active card: let the <a> href navigate naturally
       }, true);
     });
-
-    setCards(0);
   });
 })();
 
