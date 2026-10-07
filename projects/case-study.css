@@ -1135,3 +1135,13 @@ h1, h2, h3, h4,
   letter-spacing: inherit !important;
   line-height: inherit !important;
 }
+
+/* ── cs-story and cs-body: no font styling, inherit only ── */
+.cs-story,
+.cs-story *,
+.cs-body,
+.cs-body * {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+}
