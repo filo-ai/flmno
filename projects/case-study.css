@@ -112,8 +112,8 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-story{grid-column:5 / span 5;padding-block:80px;display:flex;flex-direction:column;align-items:flex-start;gap:48px}
 .cs-story__text{font-size:clamp(26px,2.6vw,36px);line-height:1.1;max-width:620px}
 /* First sentence rendered as serif spans, rest as sans spans */
-.cs-story__text .s1{font-family:var(--serif);letter-spacing:.01em}
-.cs-story__text .s2{font-family:var(--serif);letter-spacing:.01em;font-size:1em;line-height:1.1}
+.cs-story__text .s1{font-family:var(--serif) !important;letter-spacing:.01em}
+.cs-story__text .s2{font-family:var(--serif) !important;letter-spacing:.01em;font-size:1em;line-height:1.1}
 .cs-story__text .w{display:inline-block;white-space:nowrap}
 .cs-story__text .c{color:var(--faint);transition:color .25s ease}
 .cs-story__text .c.on{color:var(--fg)}
@@ -1091,4 +1091,64 @@ h1, h2, h3, h4,
   font-family: var(--serif) !important;
   font-weight: 500 !important;
   letter-spacing: 0.36px !important;
+}
+
+/* ══ Project page layout fixes ══ */
+
+/* 1. cs-meta: single row above carousel, no grid */
+.cs-meta {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 0 48px !important;
+  padding: 24px var(--inset) !important;
+  grid-column: unset !important;
+  width: var(--content) !important;
+  margin-inline: auto !important;
+  box-sizing: border-box !important;
+}
+.cs-meta dt {
+  font-size: 12px !important;
+  font-family: "Apercu Mono", monospace !important;
+  letter-spacing: .08em !important;
+  color: var(--muted) !important;
+  text-transform: none !important;
+  margin-bottom: 4px !important;
+}
+.cs-meta dd {
+  font-size: 16px !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.cs-meta > div, .cs-meta > dl {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 2. cs-story: full 960px width */
+.cs-story {
+  grid-column: 1 / -1 !important;
+  max-width: none !important;
+  padding-inline: var(--inset) !important;
+}
+.cs-story__text {
+  max-width: none !important;
+  width: 100% !important;
+}
+/* Force all spans in cs-story__text to Reckless — kill global Apercu override */
+.cs-story__text,
+.cs-story__text .s1,
+.cs-story__text .s2,
+.cs-story__text .w,
+.cs-story__text .c,
+.cs-story__text .c.on {
+  font-family: "Reckless", Georgia, serif !important;
+}
+
+/* 3. cs-more__head: no padding-inline on desktop */
+@media (min-width: 681px) {
+  .cs-more__head {
+    padding-inline: 0 !important;
+    padding-left: 0 !important;
+  }
 }
