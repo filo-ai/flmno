@@ -1188,25 +1188,3 @@ h2.cs-story__text {
 .cs-meta {
   padding: 0 0 20px 0 !important;
 }
-
-/* ── Flipbook card__inner: subtle independent lean during drag ── */
-.cs-flipbook-card__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  transform: translateX(var(--inner-x, 0%)) rotateY(var(--inner-ry, 0deg));
-  transition: transform .18s ease;
-}
-.cs-flipbook-card__inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-}
-.cs-flipbook-card__label {
-  position: absolute !important;
-}

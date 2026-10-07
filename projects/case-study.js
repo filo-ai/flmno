@@ -284,19 +284,7 @@
           card.style.setProperty('--tz', '0px');
           card.style.setProperty('--ry', `${dragOffset * -0.025}deg`);
           card.style.setProperty('--op', '1');
-          // Inner micro-tilt — matches COLLINS card__inner behaviour
-          const inner = card.querySelector('.cs-flipbook-card__inner');
-          if (inner) {
-            inner.style.setProperty('--inner-x', `${dragOffset * -0.012}%`);
-            inner.style.setProperty('--inner-ry', `${dragOffset * 0.005}deg`);
-          }
         } else {
-          // Reset inner on non-active cards
-          const inner = card.querySelector('.cs-flipbook-card__inner');
-          if (inner) {
-            inner.style.setProperty('--inner-x', '0%');
-            inner.style.setProperty('--inner-ry', '0deg');
-          }
           const tx = dir * Math.min(Math.abs(d), 3) * 25;
           const tz = -Math.min(Math.abs(d), 4) * 200;
           card.style.setProperty('--tx', `${tx}%`);
