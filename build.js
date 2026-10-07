@@ -124,7 +124,7 @@ function renderMeta(meta) {
 }
 
 function renderStory(fill, hasFullStory) {
-  const text = fill ? `        <h2 class="cs-story__text">${esc(fill)}</h2>` : "";
+  const text = fill ? `        <h1 class="cs-story__text">${esc(fill)}</h1>` : "";
   const btn  = hasFullStory
     ? `        <button class="cs-pill" type="button" data-open="story">Read the full story ${EXPAND}</button>`
     : "";
@@ -170,7 +170,7 @@ function renderRelated(related) {
   return `
     <section class="cs-more">
       <div class="cs-more__head">
-        <h2 class="cs-more__title">More Work</h2>
+        <h1 class="cs-more__title">More Work</h1>
         <p class="cs-more__sub">Drag to browse</p>
       </div>
       <div class="cs-flipbook-wrap">
@@ -283,7 +283,7 @@ function buildPage(slug, project) {
   <main>
     <section class="cs-hero grid">
       <hgroup class="cs-hero__head">
-        <h1 class="cs-hero__title">${esc(title)}</h1>${teaser ? `\n        <p class="cs-hero__thesis">${esc(teaser)}</p>` : ""}
+        <h1 class="cs-hero__title">${esc(title)}</h1>
       </hgroup>
     </section>
 ${renderCarousel(gallery)}

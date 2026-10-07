@@ -113,7 +113,7 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-story__text{font-size:clamp(26px,2.6vw,36px);line-height:1.1;max-width:620px}
 /* First sentence rendered as serif spans, rest as sans spans */
 .cs-story__text .s1{font-family:var(--serif);letter-spacing:.01em}
-.cs-story__text .s2{font-family:var(--sans);letter-spacing:0;font-size:.88em;line-height:1.35}
+.cs-story__text .s2{font-family:var(--serif);letter-spacing:.01em;font-size:1em;line-height:1.1}
 .cs-story__text .w{display:inline-block;white-space:nowrap}
 .cs-story__text .c{color:var(--faint);transition:color .25s ease}
 .cs-story__text .c.on{color:var(--fg)}
@@ -1023,4 +1023,72 @@ h1, h2, h3, h4,
   -webkit-user-select: none !important;
   user-select: none !important;
   pointer-events: none !important;
+}
+
+/* ── Project page fixes ── */
+
+/* 1. Hide thesis */
+.cs-hero__thesis { display: none !important; }
+
+/* 2. Get back to work = same as all nav buttons */
+.cs-header__back {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 9px 12px !important;
+  border-radius: 10px !important;
+  border: 0 !important;
+  background: rgba(255,255,255,.075) !important;
+  color: rgba(247,247,242,.7) !important;
+  font-family: "Apercu", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: background .2s ease, color .2s ease, transform .2s ease !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+}
+.cs-header__back:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: rgba(247,247,242,.95) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 3. Gallery close: white circle, black X */
+.cs-sheet__close {
+  background: #fff !important;
+  color: #050507 !important;
+  border-radius: 50% !important;
+  border: none !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.cs-sheet__close svg {
+  stroke: #050507 !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+.cs-sheet__close:hover {
+  background: rgba(255,255,255,.85) !important;
+  transform: translateY(-2px) translateX(-50%) !important;
+}
+
+/* 4. Desktop flipbook: much bigger */
+@media (min-width: 681px) {
+  .cs-flipbook-stage {
+    height: clamp(400px,55vw,640px) !important;
+  }
+  .cs-flipbook-card {
+    width: clamp(280px,38vw,480px) !important;
+  }
+}
+
+/* 5. Impact heading as h1 style */
+.cs-impact__card h3 {
+  font-family: var(--serif) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
 }
