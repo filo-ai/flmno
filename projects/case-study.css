@@ -1153,3 +1153,8 @@ h2.cs-story__text {
   font-weight: 500 !important;
   letter-spacing: 0.36px !important;
 }
+
+/* ── cs-more: no padding ── */
+.cs-more {
+  padding: 0 !important;
+}
