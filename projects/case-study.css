@@ -112,8 +112,8 @@ h1,h2,p,dl,dd,figure{margin:0}
 .cs-story{grid-column:5 / span 5;padding-block:80px;display:flex;flex-direction:column;align-items:flex-start;gap:48px}
 .cs-story__text{font-size:clamp(26px,2.6vw,36px);line-height:1.1;max-width:620px}
 /* First sentence rendered as serif spans, rest as sans spans */
-.cs-story__text .s1{font-family:var(--serif);letter-spacing:.01em}
-.cs-story__text .s2{font-family:var(--serif);letter-spacing:.01em;font-size:1em;line-height:1.1}
+
+
 .cs-story__text .w{display:inline-block;white-space:nowrap}
 .cs-story__text .c{color:var(--faint);transition:color .25s ease}
 .cs-story__text .c.on{color:var(--fg)}
@@ -579,7 +579,6 @@ li,
 
 /* Exceptions that should keep their own size/style */
 .cs-read p.first,
-.cs-story__text,
 .cs-hero__title,
 .display-heading,
 .contact-copy h2,
@@ -655,7 +654,7 @@ dd, dt, figcaption, blockquote, td, th, caption,
 /* Only serif/display elements override */
 h1, h2, h3, h4,
 .display-heading, .contact-copy h2, .apple-modal h2,
-.apple-card h3, .cs-hero__title, .cs-story__text,
+.apple-card h3, .cs-hero__title,
 .cs-read p.first, .cs-more__title, .cs-impact__card h3,
 .scroll-char, .scroll-text {
   font-family: "Reckless", Georgia, serif;
@@ -715,7 +714,7 @@ dd, dt, figcaption, blockquote,
 /* Reckless: 500 / 0.36px everywhere */
 h1, h2, h3, h4,
 .display-heading, .contact-copy h2, .apple-modal h2,
-.apple-card h3, .cs-hero__title, .cs-story__text,
+.apple-card h3, .cs-hero__title,
 .cs-read p.first, .cs-more__title, .cs-impact__card h3,
 .scroll-text, .scroll-char {
   font-family: "Reckless", Georgia, serif !important;
@@ -1125,12 +1124,14 @@ h1, h2, h3, h4,
 }
 
 /* ── cs-story__text: force Reckless on every child span ── */
+
+
+/* ── cs-story__text: pure h2 styling, no overrides ── */
 .cs-story__text,
-.cs-story__text *,
-.cs-story__text .s1,
-.cs-story__text .s2,
-.cs-story__text .w,
-.cs-story__text .c,
-.cs-story__text .c.on {
-  font-family: "Reckless", Georgia, serif !important;
+.cs-story__text * {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
 }
