@@ -1587,7 +1587,16 @@ body.leaving-page{
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-top:clamp(22px,5vw,48px);
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:clamp(20px,4vh,40px);
+  margin-top:0;
+}
+@media (max-width: 680px){
+  .hero-actions.hero-scroll-cue-wrap{
+    bottom:calc(68px + env(safe-area-inset-bottom, 0px)); /* clears the bottom nav */
+  }
 }
 
 .hero-scroll-cue{display:grid;place-items:center;color:rgba(255,255,255,.52);text-decoration:none;transition:color .2s,transform .3s ease;animation:cue-bob 2.4s ease-in-out infinite}
@@ -2051,6 +2060,7 @@ section::after,
 /* Better scroll destination for arrow click */
 #work{
   scroll-margin-top:72px;
+  padding-top:clamp(28px,4vw,48px);
 }
 
 /* Remove any remaining kicker styling/visibility */
@@ -2955,7 +2965,8 @@ body.contact-mode .filter-pill.is-active {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     box-sizing: border-box !important;
-    position: relative !important;
+    position: sticky !important;
+    top: 0 !important;
   }
   .hero-pin-stage {
     min-height: auto !important;
