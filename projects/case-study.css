@@ -1145,3 +1145,11 @@ h1, h2, h3, h4,
   font-weight: inherit !important;
   letter-spacing: inherit !important;
 }
+
+/* ── cs-story__text: explicit Reckless on the h2 so children inherit it ── */
+h1.cs-story__text,
+h2.cs-story__text {
+  font-family: "Reckless", Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.36px !important;
+}
