@@ -372,3 +372,10 @@
     setLogo(idx);
   }, { passive: true });
 })();
+
+/* ── Block image saving in gallery ── */
+document.addEventListener('contextmenu', e => {
+  if (e.target.closest('.cs-sheet, .cs-gallery')) {
+    e.preventDefault();
+  }
+});

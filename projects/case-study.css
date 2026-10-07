@@ -999,3 +999,28 @@ h1, h2, h3, h4,
   transform: translateX(-50%) !important;
   z-index: 100 !important;
 }
+
+/* ── Gallery fixes ── */
+/* No outline on close button */
+.cs-sheet__close,
+.cs-sheet__close:focus,
+.cs-sheet__close:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+/* No top space above first image */
+.cs-gallery {
+  padding-top: 16px !important;
+}
+@media (max-width: 680px) {
+  .cs-gallery { padding-top: 16px !important; }
+}
+/* No saving images — block context menu and touch callout on gallery images */
+.cs-gallery img,
+.cs-sheet img {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  pointer-events: none !important;
+}
