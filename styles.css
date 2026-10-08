@@ -3236,7 +3236,7 @@ h2[class] {
 :root .apple-modal a {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 0 !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
   -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   color: rgba(247, 247, 242, 0.9) !important;
@@ -3247,14 +3247,14 @@ h2[class] {
 :root .contact-form button[type="submit"]:hover, :root .contact-form button[type="submit"]:focus-visible,
 :root .apple-modal a:hover, :root .apple-modal a:focus-visible {
   background: rgba(255, 255, 255, 0.18) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
   color: #fff !important;
   transform: translateY(-2px) !important;
 }
 :root .site-nav nav a.is-active,
 :root .filter-pill.is-active {
   background: rgba(250, 250, 247, 0.88) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
   color: #050507 !important;
 }
 /* light backgrounds: contact mode + open service modal */
@@ -3264,7 +3264,7 @@ h2[class] {
 :root .apple-modal.active a {
   background: rgba(255, 255, 255, 0.42) !important;
   border: 0 !important;
-  box-shadow: inset 0 0 0 0.5px rgba(5, 5, 7, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(5, 5, 7, 0.04), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(5, 5, 7, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(5, 5, 7, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
   color: rgba(5, 5, 7, 0.8) !important;
 }
 :root body.contact-mode .site-nav nav a:hover, :root body.contact-mode .site-nav nav a:focus-visible,
@@ -3405,7 +3405,7 @@ h2[class] {
   width: 52px !important; height: 52px !important; padding: 0 !important; box-sizing: border-box;
   border-radius: 10px !important;
   background: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
   -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   transition: background 0.2s ease, box-shadow 0.2s ease !important;
@@ -3416,7 +3416,7 @@ h2[class] {
 }
 :root #site-logo:hover, :root #site-logo:focus-visible {
   background: rgba(255, 255, 255, 0.18) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
 }
 @media (max-width: 680px) {
   :root #mobile-logo { width: 48px !important; height: 48px !important; }
@@ -3426,7 +3426,7 @@ h2[class] {
 /* contact mode: light glass, dark logo (same as the buttons) */
 :root body.contact-mode #site-logo, :root body.contact-mode #mobile-logo {
   background: rgba(255, 255, 255, 0.42) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(5, 5, 7, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(5, 5, 7, 0.04), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(5, 5, 7, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(5, 5, 7, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
 }
 :root body.contact-mode #site-logo img, :root body.contact-mode #mobile-logo img { filter: brightness(0) !important; }
 
@@ -3512,7 +3512,7 @@ html.is-returned body { animation: flmno-calm-in 0.5s cubic-bezier(0.22, 1, 0.36
   letter-spacing: -0.2px;
   color: rgba(247, 247, 242, 0.95);
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07);
   -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
   pointer-events: none;
@@ -3531,4 +3531,16 @@ body.contact-mode .tile-soon { background: rgba(255, 255, 255, 0.42); color: #05
   :root.nav-compact .site-nav nav a { border-radius: calc(10px / 0.7) !important; }
 }
 :root .modal-close,
-:root .img-lightbox__close { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important; }
+:root .img-lightbox__close { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important; }
+
+/* ── Send button: glass edge only, no drop shadow ── */
+:root .contact-form button[type="submit"],
+:root .contact-form button[type="submit"]:hover,
+:root .contact-form button[type="submit"]:focus-visible {
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+:root body.contact-mode .contact-form button[type="submit"],
+:root body.contact-mode .contact-form button[type="submit"]:hover,
+:root body.contact-mode .contact-form button[type="submit"]:focus-visible {
+  box-shadow: inset 0 0 0 0.5px rgba(5, 5, 7, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(5, 5, 7, 0.04) !important;
+}
