@@ -556,3 +556,17 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   go();
   addEventListener('load', () => requestAnimationFrame(go), { once: true });
 })();
+
+/* ── Mobile: measure the nav row (left of Work → right of Contact) for the Send button ── */
+(() => {
+  const links = document.querySelectorAll('.site-nav nav a');
+  if (links.length < 2) return;
+  const set = () => {
+    const first = links[0].getBoundingClientRect(), last = links[links.length - 1].getBoundingClientRect();
+    const span = Math.round(last.right - first.left);
+    if (span > 0) document.documentElement.style.setProperty('--nav-span', span + 'px');
+  };
+  set();
+  addEventListener('resize', set);
+  document.fonts && document.fonts.ready.then(set);
+})();

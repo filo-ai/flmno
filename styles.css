@@ -3285,3 +3285,30 @@ h2[class] {
   color: #f7f7f2 !important;
 }
 :root .contact-form button[type="submit"]:disabled { transform: none !important; }
+
+/* ══ GLASS INPUTS (frosted, no edge line — inputs never get outlines) ══ */
+:root .contact-form input:not(.contact-hp),
+:root .contact-form textarea {
+  background: rgba(255, 255, 255, 0.08) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
+}
+:root .contact-form input:not(.contact-hp):not(:placeholder-shown),
+:root .contact-form textarea:not(:placeholder-shown) { background: rgba(255, 255, 255, 0.1) !important; }
+:root .contact-form input:not(.contact-hp):focus,
+:root .contact-form textarea:focus { background: rgba(255, 255, 255, 0.12) !important; }
+:root body.contact-mode .contact-form input:not(.contact-hp),
+:root body.contact-mode .contact-form textarea { background: rgba(255, 255, 255, 0.42) !important; }
+:root body.contact-mode .contact-form input:not(.contact-hp):not(:placeholder-shown),
+:root body.contact-mode .contact-form textarea:not(:placeholder-shown) { background: rgba(255, 255, 255, 0.55) !important; }
+:root body.contact-mode .contact-form input:not(.contact-hp):focus,
+:root body.contact-mode .contact-form textarea:focus { background: rgba(255, 255, 255, 0.6) !important; }
+
+/* ══ Mobile: Send button centered, exactly as wide as the Work → Contact nav row ══ */
+@media (max-width: 680px) {
+  :root .contact-form button[type="submit"] {
+    align-self: center !important;
+    width: var(--nav-span, auto) !important;
+    justify-content: center !important;
+  }
+}
