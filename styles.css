@@ -3316,10 +3316,23 @@ h2[class] {
 /* ══ Header nav: no margin or padding of its own ══ */
 :root .site-nav nav { margin: 0 !important; padding: 0 !important; }
 
-/* ══ Header aligned to the 880px content column (desktop) ══ */
+/* ══ Desktop: one 960px column for header and content ══ */
 @media (min-width: 681px) {
   :root .site-nav {
-    padding-left: max(clamp(24px, 6vw, 88px), calc((100vw - 880px) / 2)) !important;
-    padding-right: max(clamp(24px, 6vw, 88px), calc((100vw - 880px) / 2)) !important;
+    padding-left: max(clamp(20px, 4vw, 40px), calc((100vw - 960px) / 2)) !important;
+    padding-right: max(clamp(20px, 4vw, 40px), calc((100vw - 960px) / 2)) !important;
+  }
+  :root main > .section,
+  :root main > .contact {
+    max-width: none !important;
+    margin-inline: 0 !important;
+    padding-left: max(clamp(20px, 4vw, 40px), calc((100vw - 960px) / 2)) !important;
+    padding-right: max(clamp(20px, 4vw, 40px), calc((100vw - 960px) / 2)) !important;
+  }
+  :root main > .section::before,
+  :root main > .contact::before {
+    left: max(clamp(20px, 4vw, 40px), calc((100vw - 960px) / 2)) !important;
+    right: max(clamp(20px, 4vw, 40px), calc((100vw - 960px) / 2)) !important;
+    width: auto !important;
   }
 }

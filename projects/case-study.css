@@ -1746,11 +1746,11 @@ img.fade-img.is-loaded {
   .cs-more__head { flex-direction: column !important; align-items: center !important; gap: 6px !important; text-align: center !important; }
 }
 
-/* ══ Desktop header: same layout as the homepage (880px column, 48px logo left, button right) ══ */
+/* ══ Desktop header: same layout as the homepage (960px column, 48px logo left, button right) ══ */
 @media (min-width: 681px) {
   :root .cs-header {
-    padding-left: max(clamp(24px, 6vw, 88px), calc((100vw - 880px) / 2)) !important;
-    padding-right: max(clamp(24px, 6vw, 88px), calc((100vw - 880px) / 2)) !important;
+    padding-left: var(--inset) !important;
+    padding-right: var(--inset) !important;
   }
   :root .cs-header__brand {
     position: static !important;
