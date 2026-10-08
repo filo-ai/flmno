@@ -15,7 +15,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('flmno-splash'))document.documentElement.classList.add('splash-seen')}catch(e){}</script>
+  <script>document.documentElement.classList.add('js');try{var d=document.documentElement;if(document.referrer&&new URL(document.referrer).pathname.indexOf('/projects/')===0){d.classList.add('is-returning');d.style.scrollBehavior='auto';addEventListener('pagereveal',function(e){if(e.viewTransition)e.viewTransition.skipTransition()});setTimeout(function(){d.classList.remove('is-returning')},1800)}}catch(e){}try{if(sessionStorage.getItem('flmno-splash'))document.documentElement.classList.add('splash-seen')}catch(e){}</script>
   <link rel="stylesheet" href="styles.css" />
   <noscript><style>img.fade-img{opacity:1!important}</style></noscript>
   <script defer src="/_vercel/insights/script.js"></script>

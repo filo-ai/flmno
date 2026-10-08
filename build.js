@@ -213,7 +213,6 @@ function renderRelated(related) {
     <section class="cs-more">
       <div class="cs-more__head">
         <h1 class="cs-more__title">More Work</h1>
-        <p class="cs-more__sub">Swipe to browse</p>
       </div>
       <div class="cs-flipbook-wrap">
         <div class="cs-flipbook-stage">
@@ -305,6 +304,22 @@ const PROJECT_TAG_LIST = {};
 for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\//g)) {
   PROJECT_TAGS[m[2]] = m[1].trim().split(/\s+/)[0];
   PROJECT_TAG_LIST[m[2]] = m[1].trim().split(/\s+/);
+}
+// ── More Work: other homepage projects that share this project's tags ──
+const HOME_TILES = [];
+for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\/[^"]*">\s*<div class="tile-image"><img[^>]*?src="([^"]+)"[\s\S]*?<h2>([^<]+)<\/h2>/g)) {
+  HOME_TILES.push({ slug: m[2], tags: m[1].trim().split(/\s+/), image: m[3].replace(/\/v1\/fill\/.*$/, ""), title: m[4].trim() });
+}
+function relatedByTags(slug, fallback, max = 6) {
+  const me = HOME_TILES.find(t => t.slug === slug);
+  if (!me) return fallback;
+  const picks = HOME_TILES
+    .map((t, order) => ({ t, order, shared: t.tags.filter(x => me.tags.includes(x)).length, primary: t.tags.includes(me.tags[0]) ? 1 : 0 }))
+    .filter(x => x.t.slug !== slug && x.shared > 0)
+    .sort((a, b) => b.primary - a.primary || b.shared - a.shared || a.order - b.order)
+    .slice(0, max)
+    .map(({ t }) => ({ title: t.title.replace(/&amp;/g, "&"), href: `../${t.slug}/index.html`, image: t.image }));
+  return picks.length ? picks : fallback;
 }
 const FILTER_LABELS = {};
 for (const m of HOME_HTML.matchAll(/data-filter="([^"]+)">([^<]+)<\/button>/g)) FILTER_LABELS[m[1]] = m[2].trim();
@@ -403,7 +418,7 @@ ${renderCarousel(gallery)}
 ${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}
 ${renderImpact(impact)}
-${renderRelated(related)}
+${renderRelated(relatedByTags(slug, related))}
   </main>
 ${renderGallerySheet(title, gallery)}
 ${renderStorySheet(title, story, meta)}

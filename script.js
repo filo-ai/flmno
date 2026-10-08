@@ -542,11 +542,27 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
     try { sessionStorage.setItem(KEY, JSON.stringify({ y: scrollY, f: f ? f.dataset.filter : 'all' })); } catch (err) {}
   }, true);
 
-  // coming back from a project (not via a category breadcrumb): restore it
+  // coming back from a project: land in place with nothing animating, then fade the page in calmly
+  const root = document.documentElement;
+  const settle = () => {
+    document.querySelectorAll('.card-reveal').forEach((c) => c.classList.add('card-visible'));
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (!root.classList.contains('is-returning')) return;
+      root.classList.remove('is-returning');
+      root.classList.add('is-returned');
+      setTimeout(() => { root.classList.remove('is-returned'); root.style.scrollBehavior = ''; }, 700);
+    }));
+  };
   let saved = null;
   try { saved = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (err) {}
-  const fromProject = document.referrer && new URL(document.referrer, location.href).pathname.startsWith('/projects/');
-  if (!saved || !fromProject || new URLSearchParams(location.search).get('filter')) return;
+  const fromProject = root.classList.contains('is-returning');
+  if (!fromProject) return;
+  if (!saved || new URLSearchParams(location.search).get('filter')) {
+    const target = location.hash && document.querySelector(location.hash);
+    if (target && !new URLSearchParams(location.search).get('filter')) target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    settle();
+    return;
+  }
   try { sessionStorage.removeItem(KEY); } catch (err) {}
   if (saved.f && saved.f !== 'all') {
     const pill = document.querySelector(`.filter-pill[data-filter="${CSS.escape(saved.f)}"]`);
@@ -554,6 +570,7 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   }
   const go = () => window.scrollTo({ top: saved.y, behavior: 'instant' });
   go();
+  settle();
   addEventListener('load', () => requestAnimationFrame(go), { once: true });
 })();
 

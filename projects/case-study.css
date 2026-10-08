@@ -1982,3 +1982,9 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   :root .cs-hero__head h1.cs-hero__title,
   :root .cs-hero__head.is-compact h1.cs-hero__title { font-size: calc(27px - 7px * var(--k, 0)) !important; }
 }
+
+/* ── Page end: a little tighter still ── */
+:root .cs-more .cs-flipbook-wrap { margin-bottom: -72px !important; }
+@media (max-width: 680px) {
+  :root .cs-more .cs-flipbook-wrap { margin-bottom: -40px !important; }
+}
