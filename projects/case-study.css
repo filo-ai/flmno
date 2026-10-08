@@ -1941,3 +1941,16 @@ img.fade-img.is-loaded {
     margin-bottom: calc(12px * (1 - var(--k, 0)));
   }
 }
+
+/* ── Page end: trim empty space under More Work so it isn't scrolled under the title bar ── */
+:root .cs-more .cs-flipbook-wrap { margin-top: -40px !important; margin-bottom: -40px !important; }
+@media (max-width: 680px) {
+  :root .cs-more .cs-flipbook-wrap { margin-top: 0 !important; margin-bottom: -20px !important; }
+}
+
+/* ── "Read the full story" stays hidden from first paint until the story text has lit up ── */
+.cs-story__text:not(.is-lit) ~ .cs-pill {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
