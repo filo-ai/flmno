@@ -589,3 +589,27 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
     });
   }, { passive: true });
 })();
+
+/* ── Screenshot deterrent: images go dark when a screenshot shortcut is pressed or the page loses focus ── */
+(() => {
+  const root = document.documentElement;
+  let t;
+  const on = (ms) => { root.classList.add('img-shield'); clearTimeout(t); if (ms) t = setTimeout(off, ms); };
+  const off = () => { clearTimeout(t); root.classList.remove('img-shield'); };
+  addEventListener('keydown', (e) => {
+    const k = (e.key || '').toLowerCase();
+    if (k === 'printscreen' || k === 'snapshot' ||
+        ((e.metaKey || e.ctrlKey) && e.shiftKey && ['3', '4', '5', '6', 's', '#', '$', '%', '^'].includes(k)) ||
+        (e.metaKey && e.shiftKey) ) on(3000);
+    if (k === 'printscreen') { try { navigator.clipboard.writeText(''); } catch (_) {} }
+  }, true);
+  addEventListener('keyup', (e) => { if ((e.key || '').toLowerCase() === 'printscreen') { on(3000); try { navigator.clipboard.writeText(''); } catch (_) {} } }, true);
+  // snipping tools and screen-capture apps take focus away from the page
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    addEventListener('blur', () => on());
+    addEventListener('focus', () => setTimeout(off, 150));
+  }
+  document.addEventListener('visibilitychange', () => { document.hidden ? on() : setTimeout(off, 150); });
+  addEventListener('beforeprint', () => on());
+  addEventListener('afterprint', () => off());
+})();

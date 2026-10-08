@@ -1954,3 +1954,17 @@ img.fade-img.is-loaded {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* ── Screenshot deterrent: hide imagery while shielded and when printing ── */
+:root.img-shield img,
+:root.img-shield video,
+:root.img-shield picture,
+:root.img-shield canvas,
+:root.img-shield [style*="background-image"] {
+  filter: blur(40px) brightness(0) !important;
+  transition: none !important;
+}
+@media print {
+  img, video, picture, canvas, [style*="background-image"] { visibility: hidden !important; }
+}
+img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; }
