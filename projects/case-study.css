@@ -2110,3 +2110,7 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
   pointer-events: none;
 }
+
+/* ── Sheets: top corners match the 16px radius used on images and cards ── */
+:root .cs-sheet,
+:root .cs-sheet[data-key="gallery"] { border-radius: 16px 16px 0 0 !important; }
