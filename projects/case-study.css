@@ -2073,7 +2073,6 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
 }
 :root .cs-sheet[data-key="gallery"] .cs-gallery { padding-top: 92px !important; }
-:root .cs-sheet[data-key="gallery"] .cs-zoom { z-index: 20; }
 @media (max-width: 680px) {
   :root .cs-sheet__head { padding: 22px 16px 12px; gap: 8px; }
   :root .cs-sheet__title { font-size: 18px !important; }
@@ -2084,4 +2083,30 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 @media (max-width: 680px) {
   :root .cs-sheet__head { grid-template-columns: minmax(62px, 1fr) minmax(0, auto) minmax(62px, 1fr); }
   :root .cs-sheet__head p.cs-sheet__count { padding: 0 10px !important; font-size: 15px !important; }
+}
+
+/* ── Gallery sheet v2: top bar is grabber + title only; close stays bottom center; counter lives in the full-screen viewer ── */
+:root .cs-sheet__head { display: flex !important; justify-content: center; padding: 24px var(--inset) 16px !important; }
+:root .cs-sheet[data-key="gallery"] .cs-gallery { padding-top: 76px !important; }
+@media (max-width: 680px) { :root .cs-sheet[data-key="gallery"] .cs-gallery { padding-top: 72px !important; } }
+:root .cs-zoom__count {
+  position: absolute;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  margin: 0;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font: 300 16px/36px "Apercu", sans-serif;
+  letter-spacing: -0.2px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: rgba(247, 247, 242, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14);
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+  pointer-events: none;
 }

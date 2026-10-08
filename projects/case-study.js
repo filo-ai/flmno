@@ -566,6 +566,7 @@ document.addEventListener('contextmenu', e => {
     index = (i + figs.length) % figs.length;
     const src = figs[index].querySelector('img');
     img.src = src.getAttribute('src'); img.alt = src.alt; reset();
+    const n = zoom.querySelector('.cs-zoom__count-n'); if (n) n.textContent = String(index + 1);
   };
   const open = (i) => {
     show(i); zoom.hidden = false; sheet.dataset.zoom = '1';

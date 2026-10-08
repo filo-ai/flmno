@@ -234,13 +234,13 @@ function renderGallerySheet(title, gallery) {
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
+    <button class="cs-sheet__close" type="button" aria-label="Close">${CLOSE}</button>
     <div class="cs-sheet__head">
       <span class="cs-sheet__grab" aria-hidden="true"></span>
-      <button class="cs-sheet__close" type="button" aria-label="Close">${CLOSE}</button>
       <h2 class="cs-sheet__title">${esc(title)}</h2>
-      <p class="cs-sheet__count" aria-live="polite"><span class="cs-sheet__count-n">1</span> / ${gallery.length}</p>
     </div>
     <div class="cs-zoom" hidden role="dialog" aria-label="Image viewer">
+      <p class="cs-zoom__count" aria-live="polite"><span class="cs-zoom__count-n">1</span> / ${gallery.length}</p>
       <img class="cs-zoom__img" alt="" draggable="false">
       <button class="cs-sheet__close cs-zoom__close" type="button" aria-label="Close image">${CLOSE}</button>
     </div>
