@@ -2166,3 +2166,4 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.14);
   pointer-events: none;
 }
+:root .cs-sheet__title { text-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0 2px 24px rgba(0, 0, 0, 0.45), 0 4px 48px rgba(0, 0, 0, 0.35); }
