@@ -1925,3 +1925,19 @@ img.fade-img.is-loaded {
 /* ══ "Return home" icon ══ */
 :root .cs-header__back { gap: 8px !important; }
 .return-icon { flex: none; display: block; }
+
+/* ── Mobile title: scroll-linked shrink, pushed up by the story text (--k: 0 → 1) ── */
+@media (max-width: 680px) {
+  :root .cs-hero__head,
+  :root .cs-hero__head.is-compact { transition: none !important; padding-bottom: calc(14px - 4px * var(--k, 0)) !important; }
+  :root .cs-hero__head h1.cs-hero__title,
+  :root .cs-hero__head.is-compact h1.cs-hero__title { transition: none !important; font-size: calc(36px - 16px * var(--k, 0)) !important; }
+  :root .cs-hero__head .cs-crumbs,
+  :root .cs-hero__head.is-compact .cs-crumbs {
+    transition: none !important;
+    overflow: hidden;
+    opacity: calc(1 - var(--k, 0) * 1.6);
+    max-height: calc(var(--ch, 60px) * (1 - var(--k, 0)));
+    margin-bottom: calc(12px * (1 - var(--k, 0)));
+  }
+}

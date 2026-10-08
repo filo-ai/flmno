@@ -413,22 +413,26 @@ document.addEventListener('contextmenu', e => {
   // measure at full size only, so the page doesn't jump when the bar shrinks
   const set = () => { if (!head.classList.contains('is-compact')) document.documentElement.style.setProperty('--cs-titlebar-h', head.offsetHeight + 'px'); };
 
-  // shrink once scrolling, restore near the top (small gap between thresholds avoids flicker)
-  let ticking = false;
-  addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      // stay large until the story text has fully lit up, then tighten (no story text: tighten on scroll)
-      // live check (not remembered): the reveal must be complete on THIS pass
-      const spacer = document.querySelector('.cs-hero-spacer');
-      const dist = spacer ? spacer.offsetHeight : 0;
-      const lit = !dist || scrollY / dist >= 0.985;
-      if (scrollY > 24 && lit) head.classList.add('is-compact');
-      else if (scrollY < 8) head.classList.remove('is-compact');
-      ticking = false;
-    });
-  }, { passive: true });
+  // Title stays large while the story lights up; once lit, the story text scrolls up into the
+  // bar and pushes it smaller 1:1 with scroll (mobile). Scroll-linked, so it reverses naturally.
+  const mq = matchMedia('(max-width: 680px)');
+  const crumbs = head.querySelector('.cs-crumbs');
+  let crumbsH = 0, range = 70, ticking = false;
+  const measure = () => { if (!head.style.getPropertyValue('--k') || head.style.getPropertyValue('--k') === '0.0000' || head.style.getPropertyValue('--k') === '0') { crumbsH = crumbs ? crumbs.offsetHeight : 0; head.style.setProperty('--ch', crumbsH + 'px');
+    if (mq.matches) { const full = head.offsetHeight; head.style.setProperty('--k', '1'); range = Math.max(1, full - head.offsetHeight); head.style.setProperty('--k', '0'); } } };
+  const update = () => {
+    ticking = false;
+    const spacer = document.querySelector('.cs-hero-spacer');
+    const dist = spacer ? spacer.offsetHeight : 0;
+    if (!mq.matches) { head.style.removeProperty('--k'); head.classList.remove('is-compact'); return; }
+    const start = dist + 4;                               // text meets the bar's bottom edge
+    const k = Math.min(1, Math.max(0, (scrollY - start) / range));
+    head.style.setProperty('--k', k.toFixed(4));
+    head.classList.toggle('is-compact', k >= 1);
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', () => { measure(); update(); });
+  measure(); update();
   set();
   addEventListener('resize', set);
   document.fonts?.ready.then(set);
