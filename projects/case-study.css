@@ -1917,3 +1917,11 @@ img.fade-img.is-loaded {
 @media (max-width: 680px) {
   :root #site-logo { display: none !important; }   /* phones use the floating logo at the top */
 }
+
+/* ══ Image hover panels stay inside their own image (never over counters, titles or bars) ══ */
+:root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card { isolation: isolate; }
+:root p.cs-sheet__count { z-index: 5 !important; }
+
+/* ══ "Return home" icon ══ */
+:root .cs-header__back { gap: 8px !important; }
+.return-icon { flex: none; display: block; }
