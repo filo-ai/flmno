@@ -2114,3 +2114,22 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 /* ── Sheets: top corners match the 16px radius used on images and cards ── */
 :root .cs-sheet,
 :root .cs-sheet[data-key="gallery"] { border-radius: 16px 16px 0 0 !important; }
+
+/* ── Sheets reach the bottom of the screen (runs on under the toolbar / home bar) ── */
+:root .cs-sheet {
+  top: max(12px, calc(env(safe-area-inset-top, 0px) + 8px)) !important;
+  bottom: -80px !important;
+  height: auto !important;
+  touch-action: pan-y;
+}
+:root .cs-sheet__scroll { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+/* close button rides with the sheet (so it follows a drag) and sits above the screen edge */
+:root .cs-sheet > .cs-sheet__close {
+  position: absolute !important;
+  bottom: calc(80px + 32px + env(safe-area-inset-bottom, 0px)) !important;
+}
+/* rounded corners hold on every layer (Safari can paint a scrolling layer square during the slide) */
+:root .cs-sheet__scroll,
+:root .cs-sheet__head { border-radius: 16px 16px 0 0; }
+:root .cs-sheet { isolation: isolate; }
+:root .cs-sheet[data-key] { height: auto !important; }

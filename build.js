@@ -267,6 +267,10 @@ function renderStorySheet(title, story, meta) {
   return `
   <dialog class="cs-sheet" data-key="story" aria-label="${esc(title)}: the full story">
     <button class="cs-sheet__close" type="button" aria-label="Close">${CLOSE}</button>
+    <div class="cs-sheet__head">
+      <span class="cs-sheet__grab" aria-hidden="true"></span>
+      <h2 class="cs-sheet__title">${esc(title)}</h2>
+    </div>
     <div class="cs-sheet__scroll">
       <article class="cs-read">
 ${paras}${hr}
