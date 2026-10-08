@@ -3396,7 +3396,7 @@ h2[class] {
     will-change: scale;
     transition: opacity .6s ease, visibility .6s ease, scale .35s cubic-bezier(.22, 1, .36, 1) !important;
   }
-  :root.nav-compact .site-nav nav { scale: .78; }
+  :root.nav-compact .site-nav nav { scale: .7; }
 }
 
 /* ══ Logo on a glass tile, logo itself white ══ */
@@ -3528,5 +3528,5 @@ body.contact-mode .tile-soon { background: rgba(255, 255, 255, 0.42); color: #05
 /* nav shrinks with scale on phones; keep its corners reading as 10px */
 @media (max-width: 680px) {
   :root .site-nav nav a { transition-property: background, color, border-radius, transform, opacity; }
-  :root.nav-compact .site-nav nav a { border-radius: calc(10px / 0.78) !important; }
+  :root.nav-compact .site-nav nav a { border-radius: calc(10px / 0.7) !important; }
 }

@@ -1855,7 +1855,7 @@ img.fade-img.is-loaded {
     will-change: scale;
     transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease, opacity .6s ease, visibility .6s ease, scale .35s cubic-bezier(.22, 1, .36, 1) !important;
   }
-  :root.nav-compact .cs-header__back { scale: .78; }
+  :root.nav-compact .cs-header__back { scale: .7; }
 }
 
 /* ── Flipbook: a double-ended arrow shows it swipes sideways ── */
@@ -1992,7 +1992,7 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 /* ── One corner radius for every button: 10px, same as the Coming soon pill ── */
 :root .cs-sheet__close { border-radius: 10px !important; }
 @media (max-width: 680px) {
-  :root.nav-compact .cs-header__back { border-radius: calc(10px / 0.78) !important; }
+  :root.nav-compact .cs-header__back { border-radius: calc(10px / 0.7) !important; }
 }
 
 /* ── More Work: never clip the flipbook card (clip sideways only) ── */
