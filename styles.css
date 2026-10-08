@@ -3312,3 +3312,6 @@ h2[class] {
     justify-content: center !important;
   }
 }
+
+/* ══ Header nav: no margin or padding of its own ══ */
+:root .site-nav nav { margin: 0 !important; padding: 0 !important; }
