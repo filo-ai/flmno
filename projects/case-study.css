@@ -1726,7 +1726,7 @@ img.fade-img.is-loaded {
 :root .cs-pill {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 0 !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
   -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   color: rgba(247, 247, 242, 0.9) !important;
@@ -1735,7 +1735,7 @@ img.fade-img.is-loaded {
 :root .cs-header__back:hover, :root .cs-header__back:focus-visible,
 :root .cs-pill:hover, :root .cs-pill:focus-visible {
   background: rgba(255, 255, 255, 0.18) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
   color: #fff !important;
   transform: translateY(-2px) !important;
 }
@@ -1875,7 +1875,7 @@ img.fade-img.is-loaded {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 0 !important;
   border-radius: 50% !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
   -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   color: rgba(247, 247, 242, 0.9) !important;
@@ -1885,7 +1885,7 @@ img.fade-img.is-loaded {
 :root .cs-sheet__close:hover,
 :root .cs-sheet__close:focus-visible {
   background: rgba(255, 255, 255, 0.18) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
   color: #fff !important;
   transform: translateX(-50%) translateY(-2px) !important;
 }
@@ -1896,7 +1896,7 @@ img.fade-img.is-loaded {
   width: 52px !important; height: 52px !important; padding: 0 !important; box-sizing: border-box;
   border-radius: 10px !important;
   background: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
   -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   transition: background 0.2s ease, box-shadow 0.2s ease !important;
@@ -1907,7 +1907,7 @@ img.fade-img.is-loaded {
 }
 :root #site-logo:hover, :root #site-logo:focus-visible {
   background: rgba(255, 255, 255, 0.18) !important;
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14) !important;
 }
 @media (max-width: 680px) {
   :root #mobile-logo { width: 48px !important; height: 48px !important; }
@@ -1998,3 +1998,90 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 /* ── More Work: never clip the flipbook card (clip sideways only) ── */
 :root .cs-more { overflow: visible !important; overflow-x: clip !important; }
 :root .cs-more .cs-flipbook-wrap { overflow: visible !important; overflow-x: clip !important; }
+
+/* ══ Gallery sheet: iOS-style top bar (grabber · close · title · counter) ══ */
+:root .cs-sheet[data-key="gallery"] {
+  height: calc(100dvh - max(12px, env(safe-area-inset-top, 0px) + 8px)) !important;
+  border-radius: 28px 28px 0 0 !important;
+  touch-action: pan-y;
+}
+:root .cs-sheet.is-open::backdrop {
+  background: rgba(0, 0, 0, calc(0.55 * (1 - var(--drag, 0))));
+}
+:root .cs-sheet__head {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, auto) 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 22px var(--inset) 14px;
+  background: linear-gradient(var(--surface) 72%, color-mix(in srgb, var(--surface) 0%, transparent));
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+:root .cs-sheet__head:active { cursor: grabbing; }
+:root .cs-sheet__grab {
+  position: absolute;
+  top: 8px; left: 50%;
+  width: 40px; height: 5px;
+  border-radius: 3px;
+  background: rgba(247, 247, 242, 0.28);
+  transform: translateX(-50%);
+}
+:root .cs-sheet__head .cs-sheet__close {
+  position: relative !important;
+  inset: auto !important;
+  justify-self: start;
+  width: 44px !important;
+  height: 44px !important;
+  transform: none !important;
+  z-index: auto !important;
+}
+:root .cs-sheet__head .cs-sheet__close:hover,
+:root .cs-sheet__head .cs-sheet__close:focus-visible { transform: translateY(-2px) !important; }
+:root .cs-sheet__title {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font: 500 20px/1.2 "Reckless", Georgia, serif !important;
+  letter-spacing: 0.36px !important;
+  color: var(--fg);
+}
+:root .cs-sheet__head p.cs-sheet__count {
+  position: relative !important;
+  top: auto !important; left: auto !important;
+  transform: none !important;
+  justify-self: end;
+  display: block;
+  height: 44px;
+  line-height: 44px !important;
+  white-space: nowrap;
+  padding: 0 14px !important;
+  border-radius: 10px;
+  font-size: 16px !important;
+  color: rgba(247, 247, 242, 0.9) !important;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.14);
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+}
+:root .cs-sheet[data-key="gallery"] .cs-gallery { padding-top: 92px !important; }
+:root .cs-sheet[data-key="gallery"] .cs-zoom { z-index: 20; }
+@media (max-width: 680px) {
+  :root .cs-sheet__head { padding: 22px 16px 12px; gap: 8px; }
+  :root .cs-sheet__title { font-size: 18px !important; }
+  :root .cs-sheet[data-key="gallery"] .cs-gallery { padding-top: 88px !important; }
+}
+:root .cs-sheet__head { grid-template-columns: minmax(76px, 1fr) minmax(0, auto) minmax(76px, 1fr); }
+@media (max-width: 680px) { :root .cs-sheet__title { font-size: 17px !important; } }
+@media (max-width: 680px) {
+  :root .cs-sheet__head { grid-template-columns: minmax(62px, 1fr) minmax(0, auto) minmax(62px, 1fr); }
+  :root .cs-sheet__head p.cs-sheet__count { padding: 0 10px !important; font-size: 15px !important; }
+}

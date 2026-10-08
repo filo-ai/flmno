@@ -39,8 +39,74 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     el.addEventListener("click", () => open(el.dataset.open))
   );
 
-  /* ── Swipe down to close sheet ── */
-  Object.values(sheets).forEach((sheet) => {
+  /* ── Gallery sheet: iOS-style drag — follows the finger, background lightens, flick or pull to dismiss ── */
+  const IOS = "cubic-bezier(0.32, 0.72, 0, 1)";
+  Object.values(sheets).filter((s) => s.querySelector(".cs-sheet__head")).forEach((sheet) => {
+    const head = sheet.querySelector(".cs-sheet__head");
+    const scroller = sheet.querySelector(".cs-sheet__scroll");
+    let armed = false, dragging = false, fromHead = false, y0 = 0, dy = 0, lastY = 0, lastT = 0, v = 0;
+    const paint = (y) => {
+      sheet.style.transition = "none";
+      sheet.style.transform = `translateY(${y}px)`;
+      sheet.style.setProperty("--drag", Math.max(0, Math.min(1, y / sheet.offsetHeight)).toFixed(3));
+    };
+    const clear = () => { sheet.style.transform = ""; sheet.style.transition = ""; sheet.style.removeProperty("--drag"); };
+    const start = (y, onHead) => {
+      if (sheet.dataset.zoom || !sheet.classList.contains("is-open")) return;
+      armed = true; dragging = false; fromHead = onHead; y0 = lastY = y; dy = 0; v = 0; lastT = performance.now();
+    };
+    const move = (y, e) => {
+      if (!armed) return;
+      const d = y - y0;
+      if (!dragging) {
+        if (d > 6 && (fromHead || scroller.scrollTop <= 0)) { dragging = true; y0 = y; }
+        else if (Math.abs(d) > 6) { armed = false; return; }
+        else return;
+      }
+      if (e.cancelable) e.preventDefault();
+      const raw = y - y0;
+      dy = raw >= 0 ? raw : -Math.pow(-raw, 0.6);           // pulling up meets a soft resistance
+      const now = performance.now();
+      v = 0.8 * ((y - lastY) / Math.max(1, now - lastT)) + 0.2 * v;
+      lastY = y; lastT = now;
+      paint(dy);
+    };
+    const end = () => {
+      if (!armed) return;
+      armed = false;
+      if (!dragging) return;
+      dragging = false;
+      const h = sheet.offsetHeight;
+      if (dy > h * 0.25 || (v > 0.5 && dy > 24)) {
+        const ms = Math.max(180, Math.min(380, (h - dy) / Math.max(v, 1.2)));
+        sheet.style.transition = `transform ${ms}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
+        sheet.style.transform = "translateY(100%)";
+        sheet.style.setProperty("--drag", "1");
+        sheet._close();
+        setTimeout(clear, 520);
+      } else {
+        sheet.style.transition = `transform 0.5s ${IOS}`;
+        sheet.style.transform = "translateY(0)";
+        sheet.style.setProperty("--drag", "0");
+        setTimeout(() => { if (!dragging) clear(); }, 520);
+      }
+    };
+    sheet.addEventListener("touchstart", (e) => start(e.touches[0].clientY, !!e.target.closest(".cs-sheet__head")), { passive: true });
+    sheet.addEventListener("touchmove", (e) => move(e.touches[0].clientY, e), { passive: false });
+    sheet.addEventListener("touchend", end);
+    sheet.addEventListener("touchcancel", end);
+    // mouse: drag the top bar
+    head.addEventListener("pointerdown", (e) => {
+      if (e.pointerType !== "mouse" || e.target.closest("button")) return;
+      start(e.clientY, true);
+      const mm = (ev) => move(ev.clientY, ev);
+      const mu = () => { end(); removeEventListener("pointermove", mm); removeEventListener("pointerup", mu); };
+      addEventListener("pointermove", mm); addEventListener("pointerup", mu);
+    });
+  });
+
+  /* ── Swipe down to close sheet (story sheet) ── */
+  Object.values(sheets).filter((s) => !s.querySelector(".cs-sheet__head")).forEach((sheet) => {
     let startY = 0, dy = 0, active = false;
     sheet.addEventListener("touchstart", (e) => {
       if (sheet.dataset.zoom) { active = false; return; }
