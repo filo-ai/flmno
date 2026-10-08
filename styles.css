@@ -1,764 +1,850 @@
-
-
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Regular.woff2") format("woff2"),url("assets/fonts/RecklessStandardM-TRIAL-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
-
-
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-Medium.woff2") format("woff2"),url("assets/fonts/RecklessStandardM-TRIAL-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Reckless";src:url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.woff2") format("woff2"),url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
-
-
-
-
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Light.woff2") format("woff2"),url("assets/fonts/ApercuPro-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
-
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Regular.woff2") format("woff2"),url("assets/fonts/ApercuPro-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
-
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Medium.woff2") format("woff2"),url("assets/fonts/ApercuPro-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
-
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-Bold.woff2") format("woff2"),url("assets/fonts/ApercuPro-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Apercu";src:url("assets/fonts/ApercuPro-BoldItalic.woff2") format("woff2"),url("assets/fonts/ApercuPro-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
-
-
-
-
-@font-face{font-family:"Apercu Mono";src:url("assets/fonts/Apercu Pro Mono.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
-
-/* FLMNO-style typography mapping */
-body{font-family:"Apercu",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
-
-nav,.kicker,.section-heading p,.text-button,.logo-grid p,.frost-overlay p,.apple-card span,.contact-form span,footer strong,.apple-modal span,.scribble-label-svg{max-width:960px;margin-inline:auto;padding-inline:clamp(20px,4vw,40px);font-family:"Apercu Mono",monospace;font-weight:400}
-.scroll-headline{font-family:"Reckless",serif;font-weight:400}
-.contact-heading, .display-heading,.contact-copy h2,.apple-modal h2{font-family:"Reckless",serif;font-weight:500}
-.frost-overlay h2,.logo-grid h3,.apple-card h3{font-family:"Reckless",serif;font-weight:500}
-.body-copy,.contact-copy p,.apple-modal p,.contact-form input,.contact-form textarea{font-family:"Apercu",sans-serif}
-.lettering-card span,.logo-grid span{font-family:"Reckless",serif}
-
-*{box-sizing:border-box}
-:root{--bg:#050507;--text:#f7f7f2;--muted:rgba(247,247,242,.62)}
-html{scroll-behavior:smooth;background-color:#050507;transition:background-color .6s ease}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:300;overflow-x:hidden;transition:background-color .45s ease,color .45s ease}
-a{color:inherit;text-decoration:none}
-.ambient{display:none}
-
-nav{display:flex;gap:24px;font-size:10px;letter-spacing:.055em;color:rgba(247,247,242,.72);flex-wrap:wrap}nav a:hover{color:#fff}
-.hero{min-height:calc(100vh - 66px);padding:clamp(96px,12vw,168px) clamp(24px,6vw,88px) clamp(86px,10vw,140px);display:flex;flex-direction:column;justify-content:center;align-items:center}
-.kicker{margin:0 0 22px;color:rgba(247,247,242,.55);font-size:11px;letter-spacing:.12em}
-.scroll-headline{width:100%;max-width:1100px;margin:0 auto;font-size:clamp(24px,3vw,36px);line-height:1.18;letter-spacing:-.025em;font-weight:300;text-align:left;white-space:normal;word-break:normal}
-.scroll-char{color:rgba(247,247,242,.2);opacity:.48;transition:color .28s ease,opacity .28s ease;white-space:pre-wrap}.scroll-char.visible{color:#fff;opacity:1}
-.hero-actions{width:100%;max-width:1100px;display:flex;gap:24px;margin-top:36px}.text-button{font-size:11px;letter-spacing:.08em}.text-button.muted{color:rgba(255,255,255,.56)}
-.section{padding:clamp(86px,11vw,160px) clamp(24px,6vw,88px)}.section-heading{margin-bottom:clamp(26px,4vw,48px)}.section-heading p{margin:0;font-size:12px;letter-spacing:.08em;color:rgba(247,247,242,.64)}
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px)}
-.work-tile{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:34px;background:transparent}
-.tile-image{position:absolute;inset:0;border-radius:34px;overflow:hidden;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .45s ease}.tile-image img{width:100%;height:100%;object-fit:cover;display:block;transition:inherit;pointer-events:none;user-select:none;}
-.image-one{--image:radial-gradient(circle at 46% 38%,#f8f7f2 0 8%,transparent 9%),linear-gradient(135deg,#0b0d12,#5569ff 44%,#e7e1d4)}.image-two{--image:linear-gradient(145deg,#f7f5ee,#1a1d25 45%,#7d74f9)}.image-three{--image:repeating-linear-gradient(125deg,#0c111b 0 16px,#d7e4ff 16px 18px,#39465b 18px 52px)}.image-four{--image:radial-gradient(circle at 72% 34%,#fff 0 8%,transparent 9%),linear-gradient(135deg,#050505,#2234a8 48%,#0b0d12)}.image-five{--image:linear-gradient(145deg,#050505,#21242c 40%,#b8c6ff)}.image-six{--image:repeating-linear-gradient(90deg,#f2efe8 0 18px,#171717 18px 22px,#6c6c72 22px 54px)}.image-seven{--image:radial-gradient(circle at 25% 25%,#fff,transparent 12%),radial-gradient(circle at 72% 56%,#757dff,transparent 18%),linear-gradient(135deg,#101010,#30343d)}.image-eight{--image:linear-gradient(135deg,#fafafa 0 20%,#161616 20% 24%,#aaa 24% 70%,#fff 70%)}
-.frost-overlay{position:absolute;inset:0;border-radius:34px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:clamp(26px,4vw,52px);background:rgba(0,0,0,.22);color:#fff;opacity:0;transition:opacity .35s ease}
-.frost-overlay p{margin:0 0 10px;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.72)}.frost-overlay h2{max-width:620px;margin:0;font-size:clamp(24px,2.8vw,42px);line-height:.98;letter-spacing:-.055em;font-weight:300}.work-tile:hover .tile-image img{transform:scale(1.04);filter:brightness(.38) blur(3px)}.work-tile:hover .frost-overlay{opacity:1}
-.logo-grid{display:grid;max-width:none;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,38px)}.logo-grid article{padding:clamp(22px,3vw,36px);border-radius:30px;background:rgba(255,255,255,.045)}.logo-grid span{height:150px;display:grid;place-items:center;margin-bottom:22px;border-radius:26px;background:transparent;font-size:clamp(34px,5vw,78px);font-weight:300;letter-spacing:-.08em}.logo-grid h3{margin:0 0 7px;font-size:15px;font-weight:300}.logo-grid p{margin:0;color:var(--muted);font-size:12px}
-.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,6vw,88px);align-items:center}.display-heading{max-width:1000px;margin:0;font-size:clamp(40px,6.3vw,104px);line-height:.94;letter-spacing:-.067em;font-weight:200}.lettering-card{min-height:520px;padding:clamp(28px,5vw,64px);border-radius:36px;background:transparent;display:flex;align-items:center;justify-content:center;overflow:hidden}.lettering-card span{font-size:clamp(70px,13vw,188px);font-weight:700;letter-spacing:-.18em;transition:transform .4s ease}.lettering-card:hover span:nth-child(odd){transform:translateY(-18px)}.lettering-card:hover span:nth-child(even){transform:translateY(18px)}
-.body-copy{max-width:760px;margin:28px 0 0;color:rgba(247,247,242,.7);font-size:clamp(18px,2vw,27px);line-height:1.42}
-.apple-service-grid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.apple-card{position:relative;min-height:360px;padding:34px;border:0;border-radius:36px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));color:#fff;text-align:left;cursor:pointer;backdrop-filter:blur(24px) saturate(140%);transition:transform .45s cubic-bezier(.22,1,.36,1),background .35s ease,box-shadow .45s ease;box-shadow:0 20px 80px rgba(0,0,0,.28)}.apple-card:hover{transform:translateY(-8px);background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.06));box-shadow:0 40px 120px rgba(0,0,0,.34)}.apple-card span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:11px;letter-spacing:.12em}.apple-card h3{max-width:460px;margin:0;font-size:clamp(26px,2.6vw,42px);line-height:.98;letter-spacing:-.06em;font-weight:300}.apple-card b{position:absolute;left:34px;bottom:30px;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:rgba(255,255,255,.1);font-size:28px;font-weight:300}
-.contact{padding:clamp(96px,12vw,180px) clamp(24px,6vw,88px)}.contact-panel{min-height:76vh;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,92px);align-items:end}.contact-copy h2{margin:0;font-size:clamp(44px,7.8vw,128px);line-height:.88;letter-spacing:-.04em;font-weight:200}.contact-copy p:not(.kicker){max-width:520px;margin:28px 0 0;color:rgba(255,255,255,.66);font-size:clamp(18px,2vw,26px);line-height:1.35}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,30px)}.contact-form label{display:grid;gap:12px}.contact-form .full{grid-column:1/-1}.contact-form span{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.58)}.contact-form input,.contact-form textarea{width:100%;border:0;border-radius:24px;background:rgba(255,255,255,.12);color:inherit;padding:18px 22px;font:300 18px/1.25 inherit;outline:none}.contact-form textarea{min-height:190px;resize:vertical}}
-footer{padding:28px clamp(20px,5vw,72px);color:rgba(247,247,242,.36);font-size:13px}
-.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.52);backdrop-filter:blur(18px);opacity:0;pointer-events:none;transition:opacity .35s ease;z-index:90}.modal-backdrop.active{opacity:1;pointer-events:auto}.apple-modal{position:fixed;left:50%;top:50%;width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;padding:44px;border-radius:40px;background:linear-gradient(180deg,rgba(24,24,28,.98),rgba(10,10,12,.98));color:#fff;transform:translate(-50%,-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1);z-index:100;box-shadow:0 50px 160px rgba(0,0,0,.52)}.apple-modal.active{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}.modal-close{position:absolute;right:24px;top:24px;width:44px;height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:28px;cursor:pointer}.apple-modal span{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:12px;letter-spacing:.12em}.apple-modal h2{max-width:760px;margin:0 0 24px;font-size:clamp(42px,5vw,72px);line-height:.92;letter-spacing:-.07em;font-weight:300}.apple-modal p{max-width:700px;color:rgba(255,255,255,.72);font-size:20px;line-height:1.5}.apple-modal a{display:inline-block;margin-top:18px;color:#fff;font-size:18px}body.modal-open{overflow:hidden}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-
-@media(max-width:900px){.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr 1fr}.split,.contact-panel{grid-template-columns:1fr}.apple-card{min-height:280px}footer{grid-template-columns:1fr}}
-@media(max-width:620px){nav{gap:12px}.portfolio-grid,.logo-grid,.apple-service-grid{grid-template-columns:1fr}.hero,.section,.contact{padding-left:20px;padding-right:20px}.contact-form{grid-template-columns:1fr}.work-tile,.tile-image,.frost-overlay{border-radius:26px}.apple-modal{padding:30px}.apple-modal h2{font-size:38px}}
-
-
-/* Compact A-to-B scroll scribble */
-
-.scribble-section{
-  min-height:78vh;
-  padding:clamp(34px,6vw,72px) clamp(24px,6vw,88px);
-  display:grid;
-  place-items:center;
+@font-face {
+  font-family: "Reckless";
+  src:
+    url("assets/fonts/RecklessStandardM-TRIAL-Regular.woff2") format("woff2"),
+    url("assets/fonts/RecklessStandardM-TRIAL-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-.scribble-wrap{
-  width:min(100%,780px);
-  position:relative;
-  display:grid;
-  place-items:center;
+@font-face {
+  font-family: "Reckless";
+  src:
+    url("assets/fonts/RecklessStandardM-TRIAL-Medium.woff2") format("woff2"),
+    url("assets/fonts/RecklessStandardM-TRIAL-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Reckless";
+  src:
+    url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.woff2") format("woff2"),
+    url("assets/fonts/RecklessStandardM-TRIAL-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
 }
 
-.scribble-svg{
-  width:min(82vw,620px);
-  height:auto;
-  overflow:visible;
+@font-face {
+  font-family: "Apercu";
+  src:
+    url("assets/fonts/ApercuPro-Light.woff2") format("woff2"),
+    url("assets/fonts/ApercuPro-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apercu";
+  src:
+    url("assets/fonts/ApercuPro-Regular.woff2") format("woff2"),
+    url("assets/fonts/ApercuPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apercu";
+  src:
+    url("assets/fonts/ApercuPro-Medium.woff2") format("woff2"),
+    url("assets/fonts/ApercuPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apercu";
+  src:
+    url("assets/fonts/ApercuPro-Bold.woff2") format("woff2"),
+    url("assets/fonts/ApercuPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Apercu";
+  src:
+    url("assets/fonts/ApercuPro-BoldItalic.woff2") format("woff2"),
+    url("assets/fonts/ApercuPro-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("assets/fonts/Apercu Pro Mono.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+nav,
+.logo-grid p,
+.frost-overlay p,
+.apple-card span,
+.contact-form span,
+footer strong,
+.apple-modal span,
+.scribble-label-svg {
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 40px);
+  font-family: "Apercu Mono", monospace;
+  font-weight: 400;
+}
+.contact-heading,
+.display-heading,
+.apple-modal h2 {
+  font-family: "Reckless", serif;
+  font-weight: 500;
+}
+.frost-overlay h2,
+.logo-grid h3,
+.apple-card h3 {
+  font-family: "Reckless", serif;
+  font-weight: 500;
+}
+.body-copy,
+.apple-modal p,
+.contact-form input,
+.contact-form textarea {
+  font-family: "Apercu", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #050507;
+  --text: #f7f7f2;
+  --muted: rgba(247, 247, 242, 0.62);
+}
+html {
+  scroll-behavior: smooth;
+  background-color: #050507;
+  transition: background-color 0.6s ease;
+}
+body {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.ambient {
+  display: none;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  font-size: 10px;
+  letter-spacing: 0.055em;
+  color: rgba(247, 247, 242, 0.72);
+  flex-wrap: wrap;
+}
+nav a:hover {
+  color: #fff;
+}
+.hero {
+  padding: clamp(96px, 12vw, 168px) clamp(24px, 6vw, 88px) clamp(86px, 10vw, 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scroll-headline {
+  text-align: left;
+}
+.scroll-char {
+  color: rgba(247, 247, 242, 0.2);
+  opacity: 0.48;
+  transition:
+    color 0.28s ease,
+    opacity 0.28s ease;
+  white-space: pre-wrap;
+}
+.scroll-char.visible {
+  color: #fff;
+  opacity: 1;
+}
+.hero-actions {
+  width: 100%;
+  display: flex;
+  margin-top: 36px;
+}
+.section {
+  padding: clamp(86px, 11vw, 160px) clamp(24px, 6vw, 88px);
+}
+.work-tile {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 34px;
+  background: transparent;
+}
+.tile-image {
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  overflow: hidden;
+}
+.tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: inherit;
+  pointer-events: none;
+  user-select: none;
+}
+.frost-overlay {
+  border-radius: 34px;
+  color: #fff;
+}
+.frost-overlay h2 {
+  max-width: 620px;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 300;
+}
+.work-tile:hover .tile-image img {
+  transform: scale(1.04);
+  filter: brightness(0.38) blur(3px);
+}
+.work-tile:hover .frost-overlay {
+  opacity: 1;
+}
+.logo-grid {
+  max-width: none;
+}
+.logo-grid span {
+  margin-bottom: 22px;
+}
+.logo-grid h3 {
+  font-size: 15px;
+}
+.logo-grid p {
+  font-size: 12px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(34px, 6vw, 88px);
+  align-items: center;
+}
+.display-heading {
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(40px, 6.3vw, 104px);
+  line-height: 0.94;
+  letter-spacing: -0.067em;
+  font-weight: 200;
+}
+.body-copy {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: rgba(247, 247, 242, 0.7);
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.42;
+}
+.apple-service-grid {
+  display: grid;
+}
+.apple-card {
+  border: 0;
+  border-radius: 36px;
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(24px) saturate(140%);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease,
+    box-shadow 0.45s ease;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28);
+}
+.apple-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.34);
+}
+.apple-card span {
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+.apple-card h3 {
+  max-width: 460px;
+}
+.apple-card b {
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 300;
+}
+.contact-form {
+  grid-template-columns: 1fr 1fr;
+}
+.contact-form label {
+  display: grid;
+  gap: 12px;
+}
+.contact-form .full {
+  grid-column: 1/-1;
+}
+.contact-form span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.58);
+}
+.contact-form input,
+.contact-form textarea {
+  border-radius: 24px;
+  color: inherit;
+  padding: 18px 22px;
+  font: 300 18px/1.25 inherit;
+}
+.contact-form textarea {
+  min-height: 190px;
+  resize: vertical;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 90;
+}
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.apple-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: min(920px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(24, 24, 28, 0.98), rgba(10, 10, 12, 0.98));
+  color: #fff;
+  transform: translate(-50%, -50%) scale(0.96);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 100;
+  box-shadow: 0 50px 160px rgba(0, 0, 0, 0.52);
+}
+.apple-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+.apple-modal span {
+  display: block;
+  margin-bottom: 18px;
+}
+.apple-modal h2 {
+  max-width: 760px;
+  margin: 0 0 24px;
+  letter-spacing: -0.07em;
+  font-weight: 300;
+}
+.apple-modal p {
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 20px;
+  line-height: 1.5;
+}
+body.modal-open {
+  overflow: hidden;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .apple-card {
+    min-height: 280px;
+  }
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 620px) {
+  nav {
+    gap: 12px;
+  }
+  .hero,
+  .section,
+  .contact {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .work-tile,
+  .tile-image,
+  .frost-overlay {
+    border-radius: 26px;
+  }
+  .apple-modal {
+    padding: 30px;
+  }
+  .apple-modal h2 {
+    font-size: 38px;
+  }
+}
+
+.scribble-section {
+  padding: clamp(34px, 6vw, 72px) clamp(24px, 6vw, 88px);
+  display: grid;
+  place-items: center;
+}
+
+.scribble-svg {
+  width: min(82vw, 620px);
+  height: auto;
+  overflow: visible;
 }
 
 .scribble-base,
-.scribble-draw{
-  fill:none;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  stroke-width:5.5;
+.scribble-draw {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.scribble-base{
-  stroke:rgba(247,247,242,.20);
+.scribble-base {
+  stroke: rgba(247, 247, 242, 0.2);
 }
 
-.scribble-draw{
-  stroke:#fff;
-  filter:drop-shadow(0 0 12px rgba(255,255,255,.16));
+.scribble-draw {
+  stroke: #fff;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.16));
 }
 
-.scribble-label{
-  position:absolute;
-  font-size:13px;
-  letter-spacing:.14em;
-  color:rgba(247,247,242,.38);
-  transition:color .25s ease;
-}
-
-.label-a{
-  left:clamp(4px,5vw,56px);
-  top:clamp(10px,4vw,36px);
-}
-
-.label-b{
-  right:clamp(6px,6vw,74px);
-  bottom:clamp(8px,4vw,34px);
-}
-
-.scribble-section.is-drawing .label-a,
-.scribble-section.is-complete .label-a,
-.scribble-section.is-complete .label-b{
-  color:#fff;
-}
-
-
-
-
-
-
-
-
-
-@media(max-width:620px){
-  .scribble-section{
-    min-height:58vh;
-    padding-top:30px;
-    padding-bottom:30px;
+@media (max-width: 620px) {
+  .scribble-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
-  .scribble-svg{
-    width:min(92vw,520px);
+  .scribble-svg {
+    width: min(92vw, 520px);
   }
 
   .scribble-base,
-  .scribble-draw{
-    stroke-width:4.5;
+  .scribble-draw {
+    stroke-width: 4.5;
   }
 }
 
-
-/* --- delayed A-to-B scribble tuning --- */
-
-.scribble-section{
-  min-height:92vh;
+.scribble-section {
+  min-height: 92vh;
 }
 
-.scribble-wrap{
-  max-height:520px;
+.scribble-svg {
+  max-height: 500px;
 }
 
-.scribble-svg{
-  max-height:500px;
-}
-
-.scribble-label{
-  display:none;
-}
-
-.scribble-label-svg{
-  font: 400 18px/1 -apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;
-  letter-spacing:.14em;
-  fill:rgba(247,247,242,.38);
-  transition:fill .25s ease;
-}
-
-.label-a-svg{
-  transform:translate(0,0);
-}
-
-.label-b-svg{
-  transform:translate(0,0);
+.scribble-label-svg {
+  font:
+    400 18px/1 -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0.14em;
+  fill: rgba(247, 247, 242, 0.38);
+  transition: fill 0.25s ease;
 }
 
 .scribble-section.is-drawing .label-a-svg,
 .scribble-section.is-complete .label-a-svg,
-.scribble-section.is-complete .label-b-svg{
-  fill:#fff;
+.scribble-section.is-complete .label-b-svg {
+  fill: #fff;
 }
 
-
-
-
-
-@media(max-width:620px){
-  .scribble-section{
-    min-height:72vh;
+@media (max-width: 620px) {
+  .scribble-section {
+    min-height: 72vh;
   }
-  .scribble-svg{
-    max-height:390px;
+  .scribble-svg {
+    max-height: 390px;
   }
 }
-
-/* Final font-use overrides */
-.scroll-headline{
-  font-family:"Reckless",serif;
-  font-weight:400;
-  letter-spacing:-0.02em;
+.scroll-headline {
+  font-family: "Reckless", serif;
+  font-weight: 400;
 }
 .display-heading,
-.contact-copy h2,
-.apple-modal h2{
-  font-family:"Reckless",serif;
-  font-weight:500;
-  letter-spacing:-0.055em;
+.apple-modal h2 {
+  font-family: "Reckless", serif;
+  font-weight: 500;
+  letter-spacing: -0.055em;
 }
 .apple-card h3,
-.frost-overlay h2{
-  font-family:"Reckless",serif;
-  font-weight:500;
+.frost-overlay h2 {
+  font-family: "Reckless", serif;
+  font-weight: 500;
 }
 body,
 .body-copy,
-.contact-copy p,
-.apple-modal p{
-  font-family:"Apercu",sans-serif;
+.apple-modal p {
+  font-family: "Apercu", sans-serif;
 }
 nav,
-.kicker,
-.section-heading p,
-.text-button,
 .apple-card span,
 .contact-form span,
-
-
-
-/* --- user notes fix pass --- */
-
-/* 1. Header should stay clear/transparent when contact color mode is active */
-
-
-.about-copy-block{
-  min-width:0;
+.about-copy-block {
+  min-width: 0;
 }
 
-.about .scribble-section{
-  min-height:auto;
-  padding:0;
-  display:grid;
-  place-items:center;
+.about .scribble-section {
+  min-height: auto;
+  padding: 0;
+  display: grid;
+  place-items: center;
 }
-
-.about .scribble-svg{
-  width:min(100%,520px);
-  max-height:390px;
-}
-
-/* 3. Logo boxes: mark on top, text clearly beneath */
-.logo-grid article{
-  display:flex;
-  flex-direction:column;
-  gap:0;
-  padding:0;
-  background:transparent;
-}
-
-.logo-grid span{
-  width:100%;
-  min-height:170px;
-  margin:0 0 18px;
+.logo-grid article {
+  flex-direction: column;
+  gap: 0;
 }
 
 .logo-grid h3,
-.logo-grid p{
-  padding-inline:4px;
+.logo-grid p {
+  padding-inline: 4px;
+}
+.scroll-headline {
+  font-size: clamp(26px, 3vw, 36px);
 }
 
-/* 4. Hero headline: three-line layout + smoother slower reveal */
-.scroll-headline{
-  max-width:980px;
-  font-size:clamp(26px,3vw,36px);
-  line-height:1.22;
-  letter-spacing:-0.015em;
-}
-
-.scroll-line{
-  display:block;
-}
-
-.hero-actions{
-  max-width:980px;
-}
-
-/* 5. Services cards and modals: no shadows */
-.apple-card,
-.apple-card:hover,
-.apple-modal{
-  box-shadow:none;
-}
-
-.apple-card{
-  background:rgba(255,255,255,.075);
-}
-
-.apple-card:hover{
-  background:rgba(255,255,255,.12);
-}
-
-/* 5. Contact mode should make service cards and modals black/gray */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Let the modal itself also react after a user types into the form */
-
-
-/* make form placeholder readable in contact mode */
-
-
-@media(max-width:900px){
-  .about-intro{
-    grid-template-columns:1fr;
+@media (max-width: 900px) {
+  .about-intro {
+    grid-template-columns: 1fr;
   }
 
-  .about .scribble-svg{
-    width:min(100%,560px);
+  .about .scribble-svg {
+    width: min(100%, 560px);
   }
 }
 
-@media(max-width:620px){
-  .scroll-headline{
-    font-size:clamp(24px,7vw,32px);
-  }
-
-  .about .scribble-svg{
-    max-height:320px;
+@media (max-width: 620px) {
+  .scroll-headline {
+    font-size: clamp(24px, 7vw, 32px);
   }
 }
-
-
-/* --- refinements pass 2 --- */
-
-/* 1. Cap all header-like text at 36px */
-h1,h2,h3,
+h1,
+h2,
+h3,
 .scroll-headline,
 .display-heading,
-.contact-copy h2,
 .apple-modal h2,
 .frost-overlay h2,
 .apple-card h3,
-.logo-grid h3{
-  font-size:min(var(--local-size, 36px), 36px);
+.logo-grid h3 {
+  font-size: min(var(--local-size, 36px), 36px);
 }
 
-.scroll-headline{
-  --local-size:clamp(24px,3vw,36px);
-  width:100%;
-  max-width:820px;
-  margin:0 auto;
-  padding:clamp(22px,4vw,38px);
-  border-radius:30px;
-  background:transparent;
-  line-height:1.22;
-  letter-spacing:-0.012em;
-  white-space:normal;
-  word-break:normal;
-  overflow-wrap:break-word;
+.scroll-headline {
+  --local-size: clamp(24px, 3vw, 36px);
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 38px);
+  border-radius: 30px;
+  background: transparent;
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
-
-.scroll-line{
-  display:inline;
-}
-
-/* preserve spacing between generated inline lines when JS inserts them */
-.scroll-line + .scroll-line:before{
-  content:" ";
-}
-
-/* Make the reveal faster than the previous 3-line version */
-.hero-actions{
-  max-width:820px;
-}
-
-/* 2. Service cards: title-only h3 cards, no shadow */
-.apple-service-grid{
-  grid-template-columns:repeat(3,1fr);
+.hero-actions {
+  max-width: 820px;
 }
 
 .apple-card,
-.apple-card:hover{
-  box-shadow:none;
+.apple-card:hover {
+  box-shadow: none;
 }
 
-.apple-card{
-  min-height:190px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  background:rgba(255,255,255,.07);
+.apple-card {
+  background: rgba(255, 255, 255, 0.07);
 }
 
-.apple-card:hover{
-  background:rgba(255,255,255,.12);
+.apple-card:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.apple-card h3{
-  --local-size:clamp(25px,2.4vw,36px);
-  font-family:"Reckless",serif;
-  font-weight:500;
-  line-height:1;
-  letter-spacing:-0.045em;
-  text-transform:none;
+.apple-card h3 {
+  text-transform: none;
 }
 
-.apple-card span{
-  display:none;
+.apple-card span {
+  display: none;
+}
+.apple-modal span {
+  font-family: "Reckless", serif;
+  letter-spacing: -0.04em;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.88);
+}
+.scribble-draw {
+  stroke-dashoffset: 0;
 }
 
-/* 2b. Modals: title case label not mono/body; black/gray in contact mode */
-.apple-modal span{
-  font-family:"Reckless",serif;
-  font-size:24px;
-  line-height:1;
-  letter-spacing:-0.04em;
-  text-transform:none;
-  color:rgba(255,255,255,.88);
+.label-b-svg {
+  dominant-baseline: middle;
 }
 
-
-
-/* 3. Animation finishes slightly earlier and visibly ends at B */
-.scribble-draw{
-  stroke-dashoffset:0;
-}
-
-.label-b-svg{
-  dominant-baseline:middle;
-}
-
-/* 4. Logo boxes treated like image tiles with captions outside below */
-.logo-grid article{
-  display:block;
-  background:transparent;
-  padding:0;
-  border-radius:0;
-}
-
-.logo-grid span{
-  display:grid;
-  place-items:center;
-  aspect-ratio:1 / 1;
-  height:auto;
-  min-height:0;
-  width:100%;
-  margin:0 0 14px;
-  border-radius:34px;
+.logo-grid span {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  min-height: 0;
+  width: 100%;
+  margin: 0 0 14px;
+  border-radius: 34px;
   background:
-    radial-gradient(circle at 35% 25%,rgba(255,255,255,.22),transparent 22%),
-    linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
-  font-family:"Reckless",serif;
-  font-size:clamp(32px,5vw,72px);
-  font-weight:500;
-  letter-spacing:-0.08em;
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.22), transparent 22%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+  font-family: "Reckless", serif;
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.08em;
 }
 
-.logo-grid h3{
-  --local-size:16px;
-  padding:0 4px;
-  margin:0 0 6px;
-  font-family:"Reckless",serif;
-  font-weight:500;
-  line-height:1.15;
-  letter-spacing:-0.02em;
-}
-
-.logo-grid p{
-  padding:0 4px;
-}
-
-/* contact mode: keep service/modal readable and shadowless */
-
-
-
-
-
-
-/* Header remains visually clear */
-
-
-@media(max-width:900px){
-  .apple-service-grid{
-    grid-template-columns:1fr 1fr;
+@media (max-width: 900px) {
+  .apple-service-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media(max-width:620px){
-  .apple-service-grid{
-    grid-template-columns:1fr;
+@media (max-width: 620px) {
+  .apple-service-grid {
+    grid-template-columns: 1fr;
   }
 
-  .scroll-headline{
-    --local-size:clamp(23px,6vw,32px);
-    padding:22px;
+  .scroll-headline {
+    --local-size: clamp(23px, 6vw, 32px);
+    padding: 22px;
   }
 
-  .logo-grid span{
-    border-radius:26px;
+  .logo-grid span {
+    border-radius: 26px;
   }
 }
-
-
-/* --- logo + spacing + paragraph type pass --- */
-
-/* Tighten gaps globally by roughly half */
-.portfolio-grid,
 .logo-grid,
 .apple-service-grid,
-.contact-form,
-.services,
-.feature-grid,
-.illustration-grid{
-  gap:clamp(9px,1.2vw,17px);
+.contact-form {
+  gap: clamp(9px, 1.2vw, 17px);
 }
 
-.hero-actions{
-  gap:12px;
+.hero-actions {
+  gap: 12px;
 }
 
 .split,
-.about-intro,
-.contact-panel{
-  gap:clamp(18px,3vw,45px);
+.about-intro {
+  gap: clamp(18px, 3vw, 45px);
 }
 
-.section-heading{
-  margin-bottom:clamp(14px,2vw,24px);
+.apple-service-grid {
+  margin-top: 32px;
 }
 
-.apple-service-grid{
-  margin-top:32px;
+.body-copy {
+  margin-top: 16px;
 }
-
-.body-copy{
-  margin-top:16px;
-}
-
-/* Apercu/body/paragraph type max 16px */
 body,
 p,
 .body-copy,
-.contact-copy p,
 .apple-modal p,
 .logo-grid p,
 .contact-form input,
 .contact-form textarea,
 .contact-form button,
-.text-button,
 nav,
-.kicker,
-.section-heading p,
 .frost-overlay p,
 .apple-card span,
 .contact-form span,
 footer,
-
-
-.kicker,
-.section-heading p,
 .frost-overlay p,
 .apple-card span,
 .contact-form span,
 footer strong,
-nav,
-.text-button{
-  --body-size:11px;
+nav {
+  --body-size: 11px;
 }
 
 .logo-grid p,
-footer{
-  --body-size:12px;
+footer {
+  --body-size: 12px;
 }
 
-.contact-copy p,
 .body-copy,
-.apple-modal p{
-  --body-size:16px;
-  line-height:1.45;
+.apple-modal p {
+  --body-size: 16px;
+  line-height: 1.45;
+}
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(9px, 1.2vw, 17px);
 }
 
-/* Logo boxes mimic portfolio boxes exactly */
-.logo-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:clamp(9px,1.2vw,17px);
+.logo-grid article {
+  display: block;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
-.logo-grid article,
-.logo-grid .logo-item{
-  display:block;
-  padding:0;
-  background:transparent;
-  border-radius:0;
+.logo-tile {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 0 10px;
+  border-radius: 34px;
+  overflow: hidden;
+  background: transparent;
 }
 
-.logo-tile{
-  display:block;
-  width:100%;
-  aspect-ratio:1 / 1;
-  margin:0 0 10px;
-  border-radius:34px;
-  overflow:hidden;
-  background:transparent;
+.logo-tile .tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo-tile .tile-image {
+  border-radius: 34px;
 }
 
-.logo-tile .tile-image img{width:100%;height:100%;object-fit:cover}.logo-tile .tile-image{
-  border-radius:34px;
+.logo-tile .frost-overlay {
+  border-radius: 34px;
 }
 
-.logo-tile .frost-overlay{
-  border-radius:34px;
+.logo-tile .frost-overlay h2 {
+  --local-size: clamp(24px, 2.8vw, 36px);
+  font-family: "Reckless", serif;
+  font-weight: 500;
+  letter-spacing: -0.055em;
 }
 
-.logo-tile .frost-overlay h2{
-  --local-size:clamp(24px,2.8vw,36px);
-  font-family:"Reckless",serif;
-  font-weight:500;
-  letter-spacing:-0.055em;
+.logo-grid h3 {
+  --local-size: 16px;
+  margin: 0 0 4px;
+  padding: 0 4px;
+  font-family: "Reckless", serif;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.logo-grid h3{
-  --local-size:16px;
-  margin:0 0 4px;
-  padding:0 4px;
-  font-family:"Reckless",serif;
-  font-weight:500;
-  line-height:1.15;
-  letter-spacing:-0.02em;
+.logo-grid p {
+  margin: 0;
+  padding: 0 4px;
+  color: var(--muted);
+  font-family: "Apercu Mono", monospace;
 }
-
-.logo-grid p{
-  margin:0;
-  padding:0 4px;
-  color:var(--muted);
-  font-family:"Apercu Mono",monospace;
+.logo-grid > article > span {
+  display: none;
 }
-
-/* Disable any older custom mark box styling */
-.logo-grid > article > span{
-  display:none;
-}
-
-/* Tighten card internal padding slightly without making it cramped */
-.apple-card{
-  padding:24px;
-  min-height:160px;
-}
-
-.apple-card b{
-  left:24px;
-  bottom:22px;
-}
-
-.frost-overlay{
-  padding:clamp(18px,2vw,28px);
-}
-
-/* Keep all service/modal/card shadows off */
 .apple-card,
 .apple-card:hover,
-.apple-modal{
-  box-shadow:none;
+.apple-modal {
+  box-shadow: none;
 }
 
-@media(max-width:900px){
-  .portfolio-grid,
+@media (max-width: 900px) {
   .logo-grid,
-  .apple-service-grid{
-    grid-template-columns:1fr 1fr;
+  .apple-service-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media(max-width:620px){
-  .portfolio-grid,
+@media (max-width: 620px) {
   .logo-grid,
-  .apple-service-grid{
-    grid-template-columns:1fr;
+  .apple-service-grid {
+    grid-template-columns: 1fr;
   }
 
   .logo-tile,
   .logo-tile .tile-image,
-  .logo-tile .frost-overlay{
-    border-radius:26px;
+  .logo-tile .frost-overlay {
+    border-radius: 26px;
   }
 }
-
-
-/* --- pinned headline + drawing/text polish pass --- */
-
-/* Pin the hero until the headline reveal completes */
-.hero{
-  position:sticky;
-  top:0;
-  z-index:1;
-  min-height:100vh;
+.hero {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:auto 50% 32px auto;
-  width:1px;
-  height:42px;
-  background:rgba(247,247,242,.24);
-  transform:translateX(50%);
-  opacity:.7;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 50% 32px auto;
+  width: 1px;
+  height: 42px;
+  background: rgba(247, 247, 242, 0.24);
+  transform: translateX(50%);
+  opacity: 0.7;
 }
-
-body.headline-complete .hero{
-  position:relative;
+.headline-scroll-spacer {
+  pointer-events: none;
 }
-
-body.headline-complete .hero::after{
-  opacity:0;
+.scroll-headline {
+  max-width: 820px;
 }
-
-/* A subtle spacer creates the scroll distance needed for the pinned reveal */
-.headline-scroll-spacer{
-  height:80vh;
-  pointer-events:none;
-}
-
-/* contained, natural headline box */
-.scroll-headline{
-  max-width:820px;
-}
-
-/* Make all smaller/body utility text match the contact helper paragraph styling */
 .body-copy,
-.contact-copy p,
 .apple-modal p,
 .logo-grid p,
 .contact-form span,
@@ -767,484 +853,245 @@ body.headline-complete .hero::after{
 .contact-form button,
 footer,
 footer strong,
-.text-button,
 nav,
-.kicker,
-.section-heading p,
-.frost-overlay p{
-  font-family:"Apercu",sans-serif;
-  font-size:16px;
-  line-height:1.45;
-  letter-spacing:-0.01em;
-  font-weight:300;
+.frost-overlay p {
+  font-family: "Apercu", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  font-weight: 300;
 }
-
-/* Keep nav/kickers compact but same family/feel */
 nav,
-.kicker,
-.section-heading p,
-.text-button,
 .frost-overlay p,
-
-
-.contact-form span{
-  color:rgba(255,255,255,.66);
+.contact-form span {
+  color: rgba(255, 255, 255, 0.66);
 }
 
-
-
-.scribble-base,
-.scribble-draw{
-  stroke-width:6;
-}
-
-/* Ensure label B sits closer to the visual endpoint */
-.label-b-svg{
-  transform:translate(-22px,-26px);
-}
-
-/* no overlarge paragraph text from earlier rules */
-.contact-copy p:not(.kicker),
-.body-copy,
-.apple-modal p{
-  font-size:16px;
-}
-
-@media(max-width:620px){
-  .headline-scroll-spacer{
-    height:65vh;
-  }
-
-  .about .scribble-svg{
-    max-height:280px;
+@media (max-width: 620px) {
+  .headline-scroll-spacer {
+    height: 65vh;
   }
 }
-
-
-/* --- 960px content container + logo update --- */
-
-/* Keep nav/footer full width, constrain only main site content */
-main{
-  width:100%;
+main {
+  width: 100%;
 }
 
 main > section,
-main > .headline-scroll-spacer{
-  max-width:960px;
-  margin-left:auto;
-  margin-right:auto;
+main > .headline-scroll-spacer {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* Preserve sticky hero behavior while contained */
-.hero{
-  width:100%;
+.hero {
+  width: 100%;
 }
-
-/* Make inner grids respect the 960 container */
 .section,
 .hero,
 .contact,
-.scribble-section{
-  padding-left:clamp(20px,4vw,40px);
-  padding-right:clamp(20px,4vw,40px);
+.scribble-section {
+  padding-left: clamp(20px, 4vw, 40px);
+  padding-right: clamp(20px, 4vw, 40px);
 }
-
-/* Full-width nav remains unconstrained */
-
-
-/* Logo styling */
-
-
-
-
-/* Prevent older Laica logo mapping from overriding */
-
-
-
-}
-
-
-/* --- notes pass: persistent headline + staggered cards + service sizing --- */
-
-/* 1. Hero eyebrow removed in HTML. Keep hero content calmly centered. */
-.hero{
-  justify-content:center;
-}
-
-/* 2. Keep headline visible after animation; let page gently continue. */
-body.headline-complete .hero{
-  position:sticky;
-}
-
-body.headline-complete .scroll-headline .scroll-char{
-  color:#fff;
-  opacity:1;
-}
-
-
-
-/* Fade hero out only as it naturally gives way to the next section, not when animation completes */
-.hero{
-  transition:opacity .5s ease, transform .5s ease;
-}
-
-/* 3. Smooth per-card scroll reveal */
-.card-reveal{
-  opacity:0;
-  transform:translateY(34px);
+.hero {
   transition:
-    opacity .7s cubic-bezier(.22,1,.36,1),
-    transform .7s cubic-bezier(.22,1,.36,1);
-  transition-delay:var(--card-delay,0ms);
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+.card-reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--card-delay, 0ms);
 }
 
-.card-reveal.card-visible{
-  opacity:1;
-  transform:translateY(0);
+.card-reveal.card-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-/* Slightly stagger cards inside grid containers */
-.portfolio-grid .card-reveal:nth-child(1),
 .logo-grid .card-reveal:nth-child(1),
-.apple-service-grid .card-reveal:nth-child(1){--card-delay:0ms}
+.apple-service-grid .card-reveal:nth-child(1) {
+  --card-delay: 0ms;
+}
 
-.portfolio-grid .card-reveal:nth-child(2),
 .logo-grid .card-reveal:nth-child(2),
-.apple-service-grid .card-reveal:nth-child(2){--card-delay:70ms}
+.apple-service-grid .card-reveal:nth-child(2) {
+  --card-delay: 70ms;
+}
 
-.portfolio-grid .card-reveal:nth-child(3),
 .logo-grid .card-reveal:nth-child(3),
-.apple-service-grid .card-reveal:nth-child(3){--card-delay:140ms}
+.apple-service-grid .card-reveal:nth-child(3) {
+  --card-delay: 140ms;
+}
 
-.portfolio-grid .card-reveal:nth-child(4),
 .logo-grid .card-reveal:nth-child(4),
-.apple-service-grid .card-reveal:nth-child(4){--card-delay:210ms}
+.apple-service-grid .card-reveal:nth-child(4) {
+  --card-delay: 210ms;
+}
 
-.portfolio-grid .card-reveal:nth-child(5),
 .logo-grid .card-reveal:nth-child(5),
-.apple-service-grid .card-reveal:nth-child(5){--card-delay:280ms}
+.apple-service-grid .card-reveal:nth-child(5) {
+  --card-delay: 280ms;
+}
 
-.portfolio-grid .card-reveal:nth-child(6),
 .logo-grid .card-reveal:nth-child(6),
-.apple-service-grid .card-reveal:nth-child(6){--card-delay:350ms}
-
-/* 4. Services/modals font size 32px max and no overlap */
-.apple-card{
-  min-height:180px;
-  padding:26px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  gap:28px;
+.apple-service-grid .card-reveal:nth-child(6) {
+  --card-delay: 350ms;
+}
+.apple-card {
+  gap: 28px;
 }
 
-.apple-card h3{
-  --local-size:32px;
-  font-size:32px;
-  line-height:1.05;
-  letter-spacing:-0.04em;
-  margin:0;
-  padding-right:10px;
+.apple-card h3 {
+  --local-size: 32px;
+  line-height: 1.05;
+  padding-right: 10px;
 }
 
-.apple-card b{
-  position:static;
-  flex:0 0 auto;
-  align-self:flex-start;
-  width:38px;
-  height:38px;
-  font-size:24px;
-  margin-top:auto;
+.apple-card b {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: auto;
 }
 
-.apple-modal h2{
-  --local-size:32px;
-  font-size:32px;
-  line-height:1.05;
+.apple-modal h2 {
+  --local-size: 32px;
+  font-size: 32px;
+  line-height: 1.05;
 }
 
-.apple-modal span{
-  font-size:32px;
-  line-height:1.05;
+.apple-modal span {
+  font-size: 32px;
+  line-height: 1.05;
 }
 
-.apple-modal{
-  padding:clamp(28px,5vw,44px);
+.apple-modal {
+  padding: clamp(28px, 5vw, 44px);
 }
 
-.apple-modal p{
-  margin-top:18px;
+.apple-modal p {
+  margin-top: 18px;
 }
-
-/* Prevent earlier general min() header cap from shrinking weirdly */
 .apple-card h3,
 .apple-modal h2,
-.apple-modal span{
-  max-width:100%;
+.apple-modal span {
+  max-width: 100%;
 }
-
-/* Mobile service boxes */
-@media(max-width:620px){
-  .apple-card{
-    min-height:150px;
+@media (max-width: 620px) {
+  .apple-card {
+    min-height: 150px;
   }
 
   .apple-card h3,
   .apple-modal h2,
-  .apple-modal span{
-    font-size:28px;
+  .apple-modal span {
+    font-size: 28px;
   }
 }
-
-
-/* --- headline release fix --- */
-
-/*
-  Keep the hero pinned only until the headline reveal completes.
-  After completion, it releases into the normal document flow so users can
-  continue scrolling down the page.
-*/
-body.headline-complete .hero{
-  position:relative;
-  top:auto;
+body.headline-complete .hero {
+  position: sticky;
+  top: 0;
 }
 
-body.headline-complete .hero::after{
-  opacity:0;
+.hero {
+  z-index: 0;
+  background: transparent;
 }
 
-/* Keep the headline visible after release */
-body.headline-complete .scroll-headline .scroll-char{
-  color:#fff;
-  opacity:1;
+.headline-scroll-spacer {
+  height: 70vh;
+}
+main > section:not(.hero) {
+  position: relative;
+  z-index: 2;
+}
+body.headline-complete .hero::after {
+  opacity: 0;
+}
+.hero-pin-stage {
+  position: relative;
+  min-height: 180vh;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-
-
-/* --- smooth headline release fix --- */
-
-/*
-  Do NOT change the hero from sticky to relative when the animation completes.
-  That causes the apparent disappearing/jump. Instead, keep the hero sticky
-  for the duration of its scroll spacer and let the next section naturally
-  scroll over it after the spacer ends.
-*/
-body.headline-complete .hero{
-  position:sticky;
-  top:0;
+.hero-pin-stage .hero {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  max-width: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
-.hero{
-  z-index:0;
-  background:transparent;
+.hero-pin-stage .headline-scroll-spacer {
+  height: 80vh;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.headline-scroll-spacer{
-  height:70vh;
-}
-
-/* Projects and later sections sit above the sticky hero once reached */
-main > section:not(.hero){
-  position:relative;
-  z-index:2;
-}
-
-/* Keep the headline visible after the reveal completes */
-body.headline-complete .scroll-headline .scroll-char{
-  color:#fff;
-  opacity:1;
-}
-
-
-
-/* Hide only the little scroll guide after completion, never the headline */
-body.headline-complete .hero::after{
-  opacity:0;
-}
-
-
-/* --- correct sticky headline stage --- */
-
-/*
-  The hero is sticky only inside .hero-pin-stage.
-  When the parent stage ends, sticky naturally releases and the user scrolls
-  to the next section normally. No class-based position switching.
-*/
-.hero-pin-stage{
-  position:relative;
-  min-height:180vh;
-  max-width:960px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.hero-pin-stage .hero{
-  position:sticky;
-  top:0;
-  min-height:100vh;
-  max-width:none;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  z-index:1;
-}
-
-.hero-pin-stage .headline-scroll-spacer{
-  height:80vh;
-  max-width:960px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* Override previous release attempts */
 body.headline-complete .hero,
-body.headline-complete .hero-pin-stage .hero{
-  position:sticky;
-  top:0;
+body.headline-complete .hero-pin-stage .hero {
+  position: sticky;
+  top: 0;
 }
-
-/* Make the next sections flow after the pin stage normally */
 .hero-pin-stage + section,
-.hero-pin-stage + .section{
-  position:relative;
-  z-index:2;
+.hero-pin-stage + .section {
+  position: relative;
+  z-index: 2;
+}
+body.headline-complete .scroll-headline .scroll-char {
+  color: #fff;
+  opacity: 1;
+}
+main > .headline-scroll-spacer {
+  display: none;
 }
 
-/* Keep headline visible after reveal */
-body.headline-complete .scroll-headline .scroll-char{
-  color:#fff;
-  opacity:1;
-}
-
-
-
-/* Remove any accidental huge empty spacing from previous main > spacer rule */
-main > .headline-scroll-spacer{
-  display:none;
-}
-
-@media(max-width:1000px){
+@media (max-width: 1000px) {
   .hero-pin-stage,
   .hero-pin-stage .hero,
-  .hero-pin-stage .headline-scroll-spacer{
-    max-width:100%;
+  .hero-pin-stage .headline-scroll-spacer {
+    max-width: 100%;
   }
 }
 
-@media(max-width:620px){
-  .hero-pin-stage{
-    min-height:160vh;
+@media (max-width: 620px) {
+  .hero-pin-stage {
+    min-height: 160vh;
   }
 
-  .hero-pin-stage .headline-scroll-spacer{
-    height:60vh;
+  .hero-pin-stage .headline-scroll-spacer {
+    height: 60vh;
   }
 }
-
-
-/* --- shorter about illustration draw --- */
-
-.about .scribble-svg{
-  width:min(100%,390px);
-  max-height:280px;
-}
-
-.scribble-base,
-.scribble-draw{
-  stroke-width:5.5;
-}
-
-@media(max-width:620px){
-  .about .scribble-svg{
-    max-height:240px;
-  }
-}
-
-
-/* --- Apercu body typography scale update --- */
-
-/*
-  Raise all Apercu-based paragraph/body/helper typography to a minimum
-  readable editorial size while preserving smaller mono utility labels/nav.
-*/
-body,
-p,
-.body-copy,
-.contact-copy p,
-.apple-modal p,
-.logo-grid p,
-.contact-form input,
-.contact-form textarea,
-.contact-form button,
-.contact-form span{
-  font-family:"Apercu",sans-serif;
-  font-size:max(24px, 1.18vw);
-  line-height:1.42;
-  letter-spacing:-0.015em;
-  font-weight:300;
-}
-
-/* Keep the actual utility/mono interface text compact */
 nav,
-.kicker,
-.section-heading p,
-.text-button,
 .frost-overlay p,
-
-
-/* Logo captions should feel editorial */
-.logo-grid h3{
-  margin-top:4px;
+.logo-grid h3 {
+  margin-top: 4px;
 }
 
-.logo-grid p{
-  margin-top:2px;
+.logo-grid p {
+  margin-top: 2px;
 }
-
-/* Inputs and placeholders should match the larger editorial type scale */
 .contact-form input::placeholder,
-.contact-form textarea::placeholder{
-  font-size:24px;
+.contact-form textarea::placeholder {
+  font-size: 24px;
 }
-
-/* Keep service cards balanced despite larger body text elsewhere */
 .apple-card h3,
 .apple-modal h2,
-.apple-modal span{
-  line-height:1.04;
+.apple-modal span {
+  line-height: 1.04;
 }
-
-@media(max-width:620px){
-  body,
-  p,
-  .body-copy,
-  .contact-copy p,
-  .apple-modal p,
-  .logo-grid p,
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button,
-  .contact-form span{
-    font-size:24px;
-  }
-}
-
-
-/* --- GLOBAL Apercu 24px minimum enforcement --- */
-
-/*
-  EVERY instance of Apercu or Apercu Mono across the site
-  now has a minimum 24px size.
-*/
-
-/* Apercu */
 body,
 p,
 .body-copy,
-.contact-copy p,
 .apple-modal p,
 .logo-grid p,
 .contact-form input,
@@ -1252,55 +1099,30 @@ p,
 .contact-form button,
 .contact-form span,
 nav,
-.kicker,
-.section-heading p,
-.text-button,
 .frost-overlay p,
 footer,
-
-
-/* Apercu Mono */
 nav,
-.kicker,
-.section-heading p,
-.text-button,
 .frost-overlay p,
 .apple-card span,
 .contact-form span,
 footer strong,
-.scribble-label-svg{
-  font-family:"Apercu Mono",monospace;
-  font-size:24px !important;
-  line-height:1.25;
-  letter-spacing:-0.02em;
-  font-weight:400;
+.scribble-label-svg {
+  font-family: "Apercu Mono", monospace;
+  font-size: 24px !important;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 400;
 }
-
-/* Inputs/placeholders/buttons */
-.contact-form input,
-.contact-form textarea,
-.contact-form button,
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
-  font-size:24px !important;
+.frost-overlay p {
+  margin-bottom: 14px;
 }
-
-/* Overlay labels */
-.frost-overlay p{
-  margin-bottom:14px;
+footer {
+  gap: 24px;
 }
-
-/* Footer readability */
-footer{
-  gap:24px;
-}
-
-/* Mobile still stays at minimum 24 */
-@media(max-width:620px){
+@media (max-width: 620px) {
   body,
   p,
   .body-copy,
-  .contact-copy p,
   .apple-modal p,
   .logo-grid p,
   .contact-form input,
@@ -1308,178 +1130,130 @@ footer{
   .contact-form button,
   .contact-form span,
   nav,
-  .kicker,
-  .section-heading p,
-  .text-button,
   .frost-overlay p,
   footer,
   footer strong,
   .apple-card span,
-  .scribble-label-svg{
-    font-size:24px !important;
+  .scribble-label-svg {
+    font-size: 24px !important;
   }
 }
-
-
-/* --- refined Apercu sizing: 16–20px --- */
-
-/* Editorial/body Apercu text */
 body,
 p,
 .body-copy,
-.contact-copy p,
 .apple-modal p,
 .logo-grid p,
 .contact-form input,
 .contact-form textarea,
 .contact-form button,
-.contact-form span{
-  font-family:"Apercu",sans-serif;
-  font-size:clamp(16px,1.2vw,20px) !important;
-  line-height:1.42;
-  letter-spacing:-0.015em;
-  font-weight:300;
+.contact-form span {
+  font-family: "Apercu", sans-serif;
+  font-size: clamp(16px, 1.2vw, 20px) !important;
+  line-height: 1.42;
+  letter-spacing: -0.015em;
+  font-weight: 300;
 }
-
-/* Utility/mono Apercu text */
 nav,
-.kicker,
-.section-heading p,
-.text-button,
 .frost-overlay p,
 .apple-card span,
 footer,
 footer strong,
-.scribble-label-svg{
-  font-family:"Apercu Mono",monospace;
-  font-size:clamp(16px,1vw,18px) !important;
-  line-height:1.25;
-  letter-spacing:-0.01em;
-  font-weight:400;
+.scribble-label-svg {
+  font-family: "Apercu Mono", monospace;
+  font-size: clamp(16px, 1vw, 18px) !important;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 400;
 }
-
-/* Inputs/placeholders */
 .contact-form input,
 .contact-form textarea,
 .contact-form button,
 .contact-form input::placeholder,
-.contact-form textarea::placeholder{
-  font-size:clamp(16px,1.2vw,20px) !important;
+.contact-form textarea::placeholder {
+  font-size: clamp(16px, 1.2vw, 20px) !important;
 }
-
-/* Slightly larger helper/editorial copy */
 .body-copy,
-.contact-copy p,
-.apple-modal p{
-  font-size:clamp(18px,1.3vw,20px) !important;
+.apple-modal p {
+  font-size: clamp(18px, 1.3vw, 20px) !important;
 }
 
-@media(max-width:620px){
+@media (max-width: 620px) {
   body,
   p,
   .body-copy,
-  .contact-copy p,
   .apple-modal p,
   .logo-grid p,
   .contact-form input,
   .contact-form textarea,
   .contact-form button,
-  .contact-form span{
-    font-size:16px !important;
+  .contact-form span {
+    font-size: 16px !important;
   }
 
   nav,
-  .kicker,
-  .section-heading p,
-  .text-button,
   .frost-overlay p,
   .apple-card span,
   footer,
   footer strong,
-  .scribble-label-svg{
-    font-size:16px !important;
+  .scribble-label-svg {
+    font-size: 16px !important;
   }
 }
 
-
-/* --- final A/B drawing label + timing fix --- */
-
-.about .scribble-svg{
-  width:min(100%,360px);
-  max-height:250px;
-  overflow:visible;
+.about .scribble-svg {
+  width: min(100%, 360px);
+  max-height: 250px;
+  overflow: visible;
 }
 
 .scribble-base,
-.scribble-draw{
-  stroke-width:5;
+.scribble-draw {
+  stroke-width: 5;
+}
+.scribble-label-svg {
+  font-size: 18px !important;
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 8px;
+  stroke-linejoin: round;
+}
+.label-a-svg {
+  transform: translate(-34px, -12px);
+}
+.label-b-svg {
+  transform: translate(18px, 8px);
+}
+.scribble-draw {
+  stroke-linecap: round;
 }
 
-/* Keep labels readable and away from the stroke */
-.scribble-label-svg{
-  font-size:18px !important;
-  paint-order:stroke;
-  stroke:var(--bg);
-  stroke-width:8px;
-  stroke-linejoin:round;
-}
-
-/* A sits right beside the actual path start */
-.label-a-svg{
-  transform:translate(-34px,-12px);
-}
-
-/* B sits just beyond the final endpoint, not under the line */
-.label-b-svg{
-  transform:translate(18px,8px);
-}
-
-
-
-/* Make the white drawing finish before it visually collides with B */
-.scribble-draw{
-  stroke-linecap:round;
-}
-
-@media(max-width:620px){
-  .about .scribble-svg{
-    width:min(100%,320px);
-    max-height:220px;
+@media (max-width: 620px) {
+  .about .scribble-svg {
+    width: min(100%, 320px);
+    max-height: 220px;
   }
 
-  .scribble-label-svg{
-    font-size:16px !important;
-    stroke-width:7px;
+  .scribble-label-svg {
+    font-size: 16px !important;
+    stroke-width: 7px;
   }
 }
-
-/* Case-study links */
-.work-tile{cursor:pointer}
-
-
-/* Project link transition affordance */
-body.leaving-page{
-  opacity:.92;
-  transition:opacity .18s ease;
+.work-tile {
+  cursor: pointer;
 }
-.project-link{
-  cursor:pointer;
+body.leaving-page {
+  opacity: 0.92;
+  transition: opacity 0.18s ease;
 }
-.project-link:hover{
-  transform:translateY(-2px);
+.project-link {
+  cursor: pointer;
 }
-
-
-/* CSV-populated project images */
-.tile-image[style*="--image:url"]{
-  background-image:var(--image);
+.project-link:hover {
+  transform: translateY(-2px);
 }
-.all-projects-grid .logo-item{
-  min-width:0;
+.tile-image[style*="--image:url"] {
+  background-image: var(--image);
 }
-
-
-/* --- universal 10px radius system --- */
 
 .work-tile,
 .logo-tile,
@@ -1490,669 +1264,428 @@ body.leaving-page{
 .contact-form input,
 .contact-form textarea,
 .scroll-headline,
-.lettering-card,
-.logo-grid span,
-.case-media,
-.case-hero-image,
-.case-image,
-.impact-card,
-.augment,
-.program-list span{
-  border-radius:10px !important;
+.logo-grid span {
+  border-radius: 10px !important;
 }
 
-
-/* --- unified filterable work section --- */
-
-.filter-bar::-webkit-scrollbar{display:none}
-
-
-
-
-
-
-
-
-
-.work-item.is-hidden{
-  display:none;
+.work-item.is-hidden {
+  display: none;
 }
 
-.work-item h3{
-  margin:10px 0 4px;
+.work-item h3 {
+  margin: 10px 0 4px;
 }
 
-.work-item > p{
-  margin:0;
-  color:var(--muted);
-  font-family:"Apercu",sans-serif;
-  font-size:clamp(16px,1.1vw,20px);
+.filterable-grid {
+  align-items: start;
 }
 
-.filterable-grid{
-  align-items:start;
+.scribble-section {
+  scroll-margin-top: 18vh;
 }
-
-
-/* --- quick A-to-B draw timing visual support --- */
-
-.scribble-section{
-  scroll-margin-top:18vh;
+.scribble-draw {
+  transition: stroke-dashoffset 0.03s linear;
 }
-
-.scribble-draw{
-  transition:stroke-dashoffset .06s linear;
-}
-
-
-/* 2x faster line animation */
-.scribble-draw{
-  transition:stroke-dashoffset .03s linear;
-}
-
-
-/* --- homepage work link fix polish --- */
-.work-item .work-tile,
-.logo-item .work-tile{
-  cursor:pointer;
+.work-item .work-tile {
+  cursor: pointer;
 }
 
 .filterable-grid,
 .all-projects-grid,
-.logo-grid{
-  gap:clamp(9px,1.2vw,17px) !important;
+.logo-grid {
+  gap: clamp(9px, 1.2vw, 17px) !important;
 }
 
-
-/* remove frosted white overlay behind work card text */
-.frost-overlay{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:20px;
-  background:transparent !important;
-  backdrop-filter:none !important;
+.hero-actions.hero-scroll-cue-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(20px, 4vh, 40px);
+  margin-top: 0;
 }
-
-.frost-overlay::before{
-  display:none !important;
-}
-
-
-/* --- hero scroll arrow cue --- */
-
-.hero-actions.hero-scroll-cue-wrap{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:clamp(20px,4vh,40px);
-  margin-top:0;
-}
-@media (max-width: 680px){
-  .hero-actions.hero-scroll-cue-wrap{
-    bottom:calc(68px + env(safe-area-inset-bottom, 0px)); /* clears the bottom nav */
+@media (max-width: 680px) {
+  .hero-actions.hero-scroll-cue-wrap {
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px));
   }
 }
 
-.hero-scroll-cue{display:grid;place-items:center;color:rgba(255,255,255,.52);text-decoration:none;transition:color .2s,transform .3s ease;animation:cue-bob 2.4s ease-in-out infinite}
-
-.hero-scroll-cue span{
-  display:block;
-  font-family:"Apercu",sans-serif;
-  font-size:24px;
-  line-height:1;
-}
-
-.hero-scroll-cue.is-visible{
-  opacity:1;
-  transform:translateY(0);
-  pointer-events:auto;
-  animation:heroArrowBounce 1.8s ease-in-out infinite;
-}
-
-.hero-scroll-cue:hover{color:rgba(255,255,255,.9);transform:translateY(4px)}
-
-@keyframes heroArrowBounce{
-  0%,100%{ transform:translateY(0); }
-  50%{ transform:translateY(6px); }
-}
-
-
-
-
-
-.work-heading p{
-  max-width:720px;
-}
-
-
-/* --- image hover behavior: lift, no zoom --- */
-
-/* Disable any image zoom transforms */
-.work-tile:hover .tile-image,
-.logo-tile:hover .tile-image,
-.case-media:hover .case-hero-image,
-.case-media:hover .case-image,
-.case-media:hover img,
-.case-media:hover video,
-.drag-carousel-slide:hover img,
-.drag-carousel-slide:hover video,
-.gallerysheet__item:hover img,
-.gallerysheet__item:hover video,
-.flipbook-card:hover img{
-  transform:none !important;
-  scale:1 !important;
-  filter:none !important;
-}
-
-/* Lift the whole image/card instead, like filter tags */
-.work-tile,
-.logo-tile,
-.case-media,
-.drag-carousel-slide,
-.gallerysheet__item,
-.flipbook-card{
+.hero-scroll-cue {
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.52);
+  text-decoration: none;
   transition:
-    transform .25s ease,
-    background .25s ease,
-    box-shadow .25s ease !important;
+    color 0.2s,
+    transform 0.3s ease;
+  animation: cue-bob 2.4s ease-in-out infinite;
+}
+
+.hero-scroll-cue span {
+  display: block;
+  font-family: "Apercu", sans-serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.hero-scroll-cue.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  animation: heroArrowBounce 1.8s ease-in-out infinite;
+}
+
+.hero-scroll-cue:hover {
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateY(4px);
+}
+
+@keyframes heroArrowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+.work-tile:hover .tile-image,
+.logo-tile:hover .tile-image {
+  transform: none !important;
+  scale: 1 !important;
+  filter: none !important;
+}
+.work-tile,
+.logo-tile {
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease !important;
 }
 
 .work-tile:hover,
-.logo-tile:hover,
-.case-media:hover,
-.drag-carousel-slide:hover,
-.gallerysheet__item:hover,
-.flipbook-card:hover{
-  transform:translateY(-2px) !important;
+.logo-tile:hover {
+  transform: translateY(-2px) !important;
+}
+.tile-image {
+  transition: none !important;
+}
+.frost-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  padding: 20px !important;
+  text-align: left !important;
+  opacity: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 7, 0.72) 0%,
+    rgba(5, 5, 7, 0.42) 38%,
+    rgba(5, 5, 7, 0.08) 100%
+  ) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  transition: opacity 0.25s ease !important;
+  pointer-events: none;
 }
 
-/* Keep overlay text behavior intact without zooming the image */
-.work-tile:hover .frost-overlay,
-.logo-tile:hover .frost-overlay{
-  opacity:1;
-}
-
-/* If project-page CSS has stronger hover rules, override there too */
-.tile-image{
-  transition:none !important;
-}
-
-
-/* --- frosted hover overlay, top-left text, no duplicate captions --- */
-
-/* Card overlay starts hidden, no always-on white panel */
-.frost-overlay{
-  position:absolute !important;
-  inset:0 !important;
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:flex-start !important;
-  align-items:flex-start !important;
-  padding:20px !important;
-  text-align:left !important;
-  opacity:0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(5,5,7,.72) 0%,
-      rgba(5,5,7,.42) 38%,
-      rgba(5,5,7,.08) 100%
-    ) !important;
-  backdrop-filter:blur(14px) !important;
-  -webkit-backdrop-filter:blur(14px) !important;
-  transition:opacity .25s ease !important;
-  pointer-events:none;
-}
-
-.frost-overlay::before{
-  display:none !important;
+.frost-overlay::before {
+  display: none !important;
 }
 
 .work-tile:hover .frost-overlay,
-.logo-tile:hover .frost-overlay{
-  opacity:1 !important;
+.logo-tile:hover .frost-overlay {
+  opacity: 1 !important;
 }
 
 .frost-overlay p,
-.frost-overlay h2{
-  color:#fff !important;
-  text-align:left !important;
-  margin-left:0 !important;
-  max-width:88%;
+.frost-overlay h2 {
+  color: #fff !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  max-width: 88%;
 }
 
-.frost-overlay p{
-  margin:0 0 8px !important;
+.frost-overlay p {
+  margin: 0 0 8px !important;
 }
 
-.frost-overlay h2{
-  margin:0 !important;
+.frost-overlay h2 {
+  margin: 0 !important;
 }
-
-/* Keep image lift, but text overlay should not shift */
 .work-tile:hover .frost-overlay,
-.logo-tile:hover .frost-overlay{
-  transform:none !important;
+.logo-tile:hover .frost-overlay {
+  transform: none !important;
 }
-
-/* Remove visual spacing left behind by deleted captions */
-.work-item,
-.logo-item{
-  display:block;
+.work-item {
+  display: block;
 }
-
-.work-item > h3,
-.work-item > p,
-.logo-item > h3,
-.logo-item > p{
-  display:none !important;
-}
-
-
-/* --- card title + description typography --- */
-
-/* Globally keep paragraph/body type as lightweight Apercu */
 p,
 .body-copy,
-.contact-copy p,
 .apple-modal p,
 .logo-grid p,
-.work-item > p,
-.logo-item > p,
-.project-tldr,
-.case-thesis{
-  font-family:"Apercu",sans-serif !important;
-  font-weight:300 !important;
-  letter-spacing:-0.015em;
+.work-item > p {
+  font-family: "Apercu", sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.015em;
 }
-
-/* Project card titles under image boxes */
-.work-item > h3,
-.logo-item > h3{
-  display:block !important;
-  margin:10px 0 4px !important;
-  font-family:"Apercu",sans-serif !important;
-  font-size:20px !important;
-  line-height:1.15 !important;
-  font-weight:700 !important;
-  letter-spacing:-0.025em;
-  color:inherit;
+.work-item > h3 {
+  display: block !important;
+  margin: 10px 0 4px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.025em;
+  color: inherit;
 }
-
-/* Project card descriptions under image boxes */
-.work-item > p,
-.logo-item > p{
-  display:block !important;
-  margin:0 !important;
-  font-family:"Apercu",sans-serif !important;
-  font-size:clamp(16px,1.05vw,18px) !important;
-  line-height:1.35 !important;
-  font-weight:300 !important;
-  color:var(--muted);
+.work-item > p {
+  display: block !important;
+  margin: 0 !important;
+  font-family: "Apercu", sans-serif !important;
+  font-size: clamp(16px, 1.05vw, 18px) !important;
+  line-height: 1.35 !important;
+  font-weight: 300 !important;
+  color: var(--muted);
 }
-
-/* Make sure the overlay still uses the tag/kicker and title only */
-.frost-overlay p{
-  font-weight:400 !important;
-}
-
-
-/* --- global typography system --- */
 
 h1,
 h2,
 h3,
 h4,
-.display,
-.section-heading p{
-  font-family:"Reckless", serif !important;
-  font-weight:500 !important;
-  letter-spacing:-0.04em;
-  line-height:.98;
+.display {
+  font-family: "Reckless", serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
 }
 
-h1{ font-size:36px !important; }
-h2{ font-size:27px !important; }
-h3{ font-size:18px !important; }
-h4{ font-size:16px !important; }
+h1 {
+  font-size: 36px !important;
+}
+h2 {
+  font-size: 27px !important;
+}
+h3 {
+  font-size: 18px !important;
+}
+h4 {
+  font-size: 16px !important;
+}
 
 p,
 .body-copy,
 .work-item > p,
-.logo-item > p,
-.contact-copy,
-.project-tldr,
-.case-copy,
 input,
 textarea,
 button,
-label{
-  font-family:"Apercu Pro","Apercu",sans-serif !important;
-  font-size:16px !important;
-  font-weight:300 !important;
-  line-height:1.4;
-  letter-spacing:-0.01em;
+label {
+  font-family: "Apercu Pro", "Apercu", sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.01em;
 }
 
-.frost-overlay h2{
-  font-size:27px !important;
+.frost-overlay h2 {
+  font-size: 27px !important;
 }
 
-.frost-overlay p{
-  font-size:16px !important;
-  font-weight:300 !important;
+.work-item > h3 {
+  font-size: 18px !important;
+  font-family: "Reckless", serif !important;
+  font-weight: 500 !important;
 }
-
-.work-item > h3,
-.logo-item > h3{
-  font-size:18px !important;
-  font-family:"Reckless", serif !important;
-  font-weight:500 !important;
-}
-
-
-/* --- global paragraph sizing update --- */
 
 p,
 .body-copy,
 .work-item > p,
-.logo-item > p,
-.contact-copy,
-.project-tldr,
-.case-copy,
 input,
 textarea,
 button,
-label{
-  font-size:18px !important;
-  line-height:1.5 !important;
+label {
+  font-size: 18px !important;
+  line-height: 1.5 !important;
 }
-
-
-/* --- filtered project cards: hover-only info --- */
 .work-item > h3,
-.work-item > p,
-.logo-item > h3,
-.logo-item > p{
-  display:none !important;
+.work-item > p {
+  display: none !important;
 }
-
-
-/* =========================================================
-   SECTION DIVIDERS
-   ========================================================= */
 
 .section,
-section{
-  position:relative;
+section {
+  position: relative;
 }
 
 .section::before,
-section::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:1px;
-  background:rgba(247,247,242,.12);
-  pointer-events:none;
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(247, 247, 242, 0.12);
+  pointer-events: none;
 }
-
-/* avoid line at very top hero */
 .hero::before,
-.site-hero::before,
-.hero-section::before,
-header::before{
-  display:none !important;
+header::before {
+  display: none !important;
 }
-
-/* keep lines aligned with content container */
 .section > *,
-section > *{
-  position:relative;
-  z-index:1;
+section > * {
+  position: relative;
+  z-index: 1;
 }
-
-
-/* =========================================================
-   SECTION LABELS UNDER DIVIDER LINES
-   ========================================================= */
 
 section,
-.section{
-  padding-top:clamp(54px,7vw,86px);
+.section {
+  padding-top: clamp(54px, 7vw, 86px);
 }
 
 section::after,
-.section::after{
-  content:attr(data-section-label);
-  position:absolute;
-  top:10px;
-  left:max(20px,calc((100vw - 960px)/2));
-  z-index:2;
-  font-family:"Apercu Pro","Apercu",sans-serif;
-  font-size:18px;
-  font-weight:300;
-  line-height:1;
-  letter-spacing:-0.01em;
-  color:rgba(247,247,242,.58);
-  pointer-events:none;
+.section::after {
+  content: attr(data-section-label);
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero {
+  padding-top: clamp(72px, 9vw, 112px);
 }
 
-/* Keep hero label from crowding the headline too much */
-.hero{
-  padding-top:clamp(72px,9vw,112px);
+#contact {
+  min-height: auto !important;
 }
 
-/* =========================================================
-   CONTACT ALIGNMENT + HEIGHT
-   ========================================================= */
-
-#contact{
-  min-height:auto !important;
-}
-
-#contact .contact-grid,
-#contact .contact-layout,
-#contact .contact-inner,
-#contact .contact-content{
-  align-items:start !important;
-  max-height:960px !important;
-}
-
-#contact .contact-copy,
 #contact form,
-#contact .contact-form{
-  align-self:start !important;
+#contact .contact-form {
+  align-self: start !important;
 }
 
 #contact .contact-form,
-#contact form{
-  margin-top:0 !important;
+#contact form {
+  margin-top: 0 !important;
+}
+#contact {
+  align-items: start !important;
 }
 
-/* If the contact section itself is the grid/container */
-#contact{
-  align-items:start !important;
-}
-
-@media(max-width:760px){
+@media (max-width: 760px) {
   section::after,
-  .section::after{
-    left:20px;
-  }
-
-  #contact .contact-grid,
-  #contact .contact-layout,
-  #contact .contact-inner,
-  #contact .contact-content{
-    max-height:none !important;
+  .section::after {
+    left: 20px;
   }
 }
-
-
-/* =========================================================
-   SECTION LABELS: TOP LEFT, TITLE CASE, BELOW LINE
-   ========================================================= */
 
 section::after,
-.section::after{
-  top:12px !important;
-  left:20px !important;
-  text-transform:none !important;
-  font-family:"Apercu Pro","Apercu",sans-serif !important;
-  font-size:18px !important;
-  font-weight:300 !important;
-  line-height:1 !important;
-  letter-spacing:-0.01em !important;
-  color:rgba(247,247,242,.58) !important;
+.section::after {
+  top: 12px !important;
+  left: 20px !important;
+  text-transform: none !important;
+  font-family: "Apercu Pro", "Apercu", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.01em !important;
+  color: rgba(247, 247, 242, 0.58) !important;
+}
+.hero::after {
+  display: none !important;
+}
+#work::before {
+  display: block !important;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(247, 247, 242, 0.12);
 }
 
-/* Redundant heading blocks removed from HTML; hide leftovers if any */
-.section-heading.work-heading{
-  display:none !important;
+#work::after {
+  display: block !important;
+  content: attr(data-section-label);
+  position: absolute;
+  top: 12px !important;
+  left: 20px !important;
+  font-family: "Apercu Pro", "Apercu", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.01em !important;
+  color: rgba(247, 247, 242, 0.58) !important;
+  pointer-events: none;
 }
-
-
-/* =========================================================
-   HOMEPAGE LABEL CLEANUP
-   ========================================================= */
-
-/* No label at the very top hero */
-.hero::after{
-  display:none !important;
+#work {
+  scroll-margin-top: 72px;
+  padding-top: clamp(28px, 4vw, 48px);
 }
-
-/* Ensure Work section label/line remain visible and top-left */
-#work::before{
-  display:block !important;
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:1px;
-  background:rgba(247,247,242,.12);
-}
-
-#work::after{
-  display:block !important;
-  content:attr(data-section-label);
-  position:absolute;
-  top:12px !important;
-  left:20px !important;
-  font-family:"Apercu Pro","Apercu",sans-serif !important;
-  font-size:18px !important;
-  font-weight:300 !important;
-  line-height:1 !important;
-  letter-spacing:-0.01em !important;
-  color:rgba(247,247,242,.58) !important;
-  pointer-events:none;
-}
-
-/* Better scroll destination for arrow click */
-#work{
-  scroll-margin-top:72px;
-  padding-top:clamp(28px,4vw,48px);
-}
-
-/* Remove any remaining kicker styling/visibility */
-.kicker{
-  display:none !important;
-}
-
-
-/* remove scroll headline background */
 #scrollHeadline,
-.scroll-headline,
-.headline-shell,
-.headline-panel{
-  background:transparent !important;
+.scroll-headline {
+  background: transparent !important;
 }
 
-.site-footer a{color:rgba(247,247,242,.36);text-decoration:none}.site-footer a:hover{color:var(--fg,#f7f7f2)}
-
-
-
-/* Only highlight when the field has content */
+.site-footer a {
+  color: rgba(247, 247, 242, 0.36);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--fg, #f7f7f2);
+}
 .contact-form input:not(:placeholder-shown),
 .contact-form textarea:not(:placeholder-shown),
 form input:not(:placeholder-shown),
 form textarea:not(:placeholder-shown) {
-  border-color:rgba(247,247,242,.45) !important;
-  background:rgba(247,247,242,.07) !important;
+  border-color: rgba(247, 247, 242, 0.45) !important;
+  background: rgba(247, 247, 242, 0.07) !important;
 }
-
-/* ── Reckless / serif — loosen tracking globally ── */
-.reckless,
-h1, h2, h3,
-.contact-copy h2,
-.contact-copy p,
-.scroll-text,
+h1,
+h2,
+h3,
 [style*="Reckless"] {
-  letter-spacing: .01em !important;
+  letter-spacing: 0.01em !important;
 }
-/* Hero scroll characters */
-.scroll-char { letter-spacing: .015em !important; }
-
-/* ── All reveal elements: show after 150ms regardless ── */
-.reveal { transition: opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1); }
-.reveal:not(.visible):not(.is-visible) { animation: reveal-fallback .15s .15s forwards; }
-@keyframes reveal-fallback { to { opacity:1; transform:none; } }
-
-/* ── Hamburger nav ── */
-
-
-
-
-
-@media (max-width: 680px) {
-  
-  
-  
-  
-  
+.reveal {
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* ── Form inputs: transition on content, not on click ── */
+.reveal:not(.visible):not(.is-visible) {
+  animation: reveal-fallback 0.15s 0.15s forwards;
+}
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 .contact-form input,
 .contact-form textarea {
-  transition: border-color .4s ease, background-color .4s ease !important;
-  border: 1px solid rgba(247,247,242,.12) !important;
-  background: rgba(247,247,242,.04) !important;
-  outline: none !important;
+  transition:
+    border-color 0.4s ease,
+    background-color 0.4s ease !important;
+  background: rgba(247, 247, 242, 0.04) !important;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: rgba(247,247,242,.12) !important;
-  background: rgba(247,247,242,.04) !important;
-  outline: none !important;
-  box-shadow: none !important;
+  border-color: rgba(247, 247, 242, 0.12) !important;
+  background: rgba(247, 247, 242, 0.04) !important;
 }
 .contact-form input:not(:placeholder-shown),
 .contact-form textarea:not(:placeholder-shown) {
-  border-color: rgba(247,247,242,.42) !important;
-  background: rgba(247,247,242,.08) !important;
+  border-color: rgba(247, 247, 242, 0.42) !important;
+  background: rgba(247, 247, 242, 0.08) !important;
 }
-
-/* ── Reckless: open tracking everywhere ── */
 .scroll-headline,
-.contact-copy h2,
-.contact-copy p,
-.section-heading h2,
 .apple-card h3,
-.apple-modal h2 { letter-spacing: .01em !important; }
-.scroll-char { letter-spacing: .012em !important; }
-
-
-/* ── Image lightbox ── */
+.apple-modal h2 {
+  letter-spacing: 0.01em !important;
+}
+.scroll-char {
+  letter-spacing: 0.012em !important;
+}
 .img-lightbox {
   position: fixed;
   inset: 0;
@@ -2160,28 +1693,40 @@ h1, h2, h3,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,.88);
+  background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(20px);
   opacity: 0;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
   cursor: zoom-out;
 }
-.img-lightbox:not([hidden]) { opacity: 1; }
-.img-lightbox[hidden] { display: none; }
+.img-lightbox:not([hidden]) {
+  opacity: 1;
+}
+.img-lightbox[hidden] {
+  display: none;
+}
 .img-lightbox__close {
   position: absolute;
-  top: 24px; right: 24px;
-  width: 44px; height: 44px;
-  border: 1px solid rgba(247,247,242,.24);
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(247, 247, 242, 0.24);
   border-radius: 999px;
   background: transparent;
-  color: rgba(247,247,242,.8);
-  display: grid; place-items: center;
+  color: rgba(247, 247, 242, 0.8);
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  transition: background .2s, color .2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   z-index: 1;
 }
-.img-lightbox__close:hover { background: rgba(247,247,242,.1); color: #f7f7f2; }
+.img-lightbox__close:hover {
+  background: rgba(247, 247, 242, 0.1);
+  color: #f7f7f2;
+}
 .img-lightbox__frame {
   display: flex;
   flex-direction: column;
@@ -2199,18 +1744,18 @@ h1, h2, h3,
   height: auto;
   object-fit: contain;
   border-radius: 10px;
-  transform: scale(.96);
-  transition: transform .4s cubic-bezier(.22,1,.36,1);
+  transform: scale(0.96);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.img-lightbox:not([hidden]) .img-lightbox__img { transform: scale(1); }
+.img-lightbox:not([hidden]) .img-lightbox__img {
+  transform: scale(1);
+}
 .img-lightbox__caption {
   font-family: "Apercu", sans-serif;
   font-size: 14px;
-  color: rgba(247,247,242,.5);
-  letter-spacing: .02em;
+  color: rgba(247, 247, 242, 0.5);
+  letter-spacing: 0.02em;
 }
-
-/* ── Splash screen ── */
 #splash {
   position: fixed;
   inset: 0;
@@ -2219,7 +1764,7 @@ h1, h2, h3,
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity .6s ease;
+  transition: opacity 0.6s ease;
 }
 #splash.fade-out {
   opacity: 0;
@@ -2228,10 +1773,8 @@ h1, h2, h3,
 #splash img {
   width: clamp(80px, 12vw, 140px);
   height: auto;
-  image-rendering: pixelated; /* keep the pixel art crisp */
+  image-rendering: pixelated;
 }
-
-/* ── First-visit interaction hints ── */
 .hint {
   position: absolute;
   left: 50%;
@@ -2239,19 +1782,21 @@ h1, h2, h3,
   white-space: nowrap;
   font-family: "Apercu", sans-serif;
   font-size: 12px;
-  letter-spacing: .04em;
-  color: rgba(247,247,242,.55);
+  letter-spacing: 0.04em;
+  color: rgba(247, 247, 242, 0.55);
   display: flex;
   align-items: center;
   gap: 7px;
   pointer-events: none;
   opacity: 0;
-  transition: opacity .5s ease, transform .5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
   z-index: 10;
 }
 .hint svg {
   flex-shrink: 0;
-  opacity: .7;
+  opacity: 0.7;
 }
 .hint.is-visible {
   opacity: 1;
@@ -2261,68 +1806,54 @@ h1, h2, h3,
   opacity: 0;
   transform: translateX(-50%) translateY(-4px);
 }
-
-/* Position variants */
-.hint--below { bottom: -28px; }
-.hint--above { top: -28px; }
-.hint--inline {
-  position: relative;
-  left: auto;
-  transform: none;
-  display: inline-flex;
-  margin-top: 10px;
-  opacity: 0;
-  transition: opacity .5s ease;
+.hint--below {
+  bottom: -28px;
 }
-.hint--inline.is-visible { opacity: 1; transform: none; }
-.hint--inline.is-hiding  { opacity: 0; transform: none; }
-
-/* Parent needs position:relative for absolute hints */
 .cs-carousel,
 .cs-related,
-.cs-impact__track { position: relative; }
-
-
-/* ── Filter bar ── */
+.cs-impact__track {
+  position: relative;
+}
 .filter-bar {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
   padding-top: 4px;
   padding-bottom: 4px;
-  overflow-x: auto;
-  overflow-y: visible;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  
-  margin-bottom: clamp(24px,4vw,40px);
-}
-.filter-bar::-webkit-scrollbar { display: none; }
 
-/* ── Filter pills — original style restored ── */
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
 .site-nav nav a,
 .contact-form button[type="submit"],
 .filter-pill {
   border: 0;
   border-radius: 10px;
   padding: 9px 12px;
-  background: rgba(255,255,255,.12);
-  color: rgba(247,247,242,.7);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(247, 247, 242, 0.7);
   font-family: "Apercu", sans-serif;
   font-size: clamp(13px, 1vw, 15px);
   line-height: 1;
   cursor: pointer;
   flex-shrink: 0;
   white-space: nowrap;
-  transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .site-nav nav a:hover,
 .contact-form button[type="submit"]:hover,
 .filter-pill:hover {
   transform: translateY(-2px);
-  background: rgba(255,255,255,.19);
-  color: rgba(247,247,242,.95);
-  
+  background: rgba(255, 255, 255, 0.19);
+  color: rgba(247, 247, 242, 0.95);
 }
 .filter-pill.is-active {
   background: #f7f7f2;
@@ -2332,100 +1863,36 @@ h1, h2, h3,
 }
 .filter-pill.is-active:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
-
-/* Brand / logo */
-
-
-
-
-/* Nav links */
-
-
-
-
-
-/* Mobile: hide nav links, show hamburger top-right */
-@media (max-width: 680px) {
-  
-  
-  
-  
-}
-
-
-/* ═══════════════════════
-   NAV — final, clean version
-   Logo: absolute top-left, overflows nav
-   Links: right side, nav stays slim
-   ═══════════════════════ */
-
-/* The nav bar itself stays slim — just enough for the links */
 .site-nav,
 .cs-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 60;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 clamp(20px,4vw,48px);
-  background: transparent;
-  pointer-events: none; /* let clicks through except on children */
+  pointer-events: none;
 }
-
-/* Logo: sits top-left, absolute, larger than the nav bar */
 .brand,
 .cs-header__brand {
-  position: absolute;
-  top: 12px;
-  left: clamp(16px,3vw,40px);
-  display: flex;
-  align-items: flex-start;
-  text-decoration: none;
   pointer-events: auto;
-  line-height: 0;
 }
-.nav-logo {
-  display: block;
-  width: 44px;
-  height: 44px;
-  image-rendering: pixelated;
-}
-.brand span,
-.cs-header__brand span { display: none; }
-
-/* Nav links — right side */
 .site-nav nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: nowrap;
   pointer-events: auto;
 }
 .site-nav nav a,
 .cs-header__back {
   font-family: "Apercu", sans-serif;
   font-size: 14px;
-  letter-spacing: .01em;
-  color: rgba(247,247,242,.52);
+  letter-spacing: 0.01em;
+  color: rgba(247, 247, 242, 0.52);
   text-decoration: none;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
   white-space: nowrap;
 }
 .site-nav nav a:hover,
-.cs-header__back:hover { color: #f7f7f2; }
-
-/* Back to work on case study pages */
+.cs-header__back:hover {
+  color: #f7f7f2;
+}
 .cs-header__back {
   pointer-events: auto;
 }
-
-/* Hamburger — right side on mobile */
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -2444,39 +1911,34 @@ h1, h2, h3,
   display: block;
   width: 22px;
   height: 1.2px;
-  background: rgba(247,247,242,.8);
-  transition: transform .28s ease, opacity .28s ease;
+  background: rgba(247, 247, 242, 0.8);
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease;
   transform-origin: center;
 }
-.nav-hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-hamburger.is-open span:nth-child(2) { transform: translateY(-6.5px) rotate(-45deg); }
-
-/* Mobile: show hamburger, hide links until open */
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-hamburger.is-open span:nth-child(2) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 @media (max-width: 680px) {
-  .nav-hamburger { display: flex; }
   .site-nav nav {
-    display: none;
-    position: fixed;
     inset: 0;
     z-index: 89;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    background: var(--bg, #050507);
-    pointer-events: auto;
   }
-  .site-nav nav.is-open { display: flex; }
+  .site-nav nav.is-open {
+    display: flex;
+  }
   .site-nav nav.is-open a {
-    font-size: clamp(32px,10vw,48px);
+    font-size: clamp(32px, 10vw, 48px);
     font-family: "Reckless", Georgia, serif;
     font-weight: 400;
-    letter-spacing: .02em;
-    color: rgba(247,247,242,.9);
+    letter-spacing: 0.02em;
+    color: rgba(247, 247, 242, 0.9);
   }
 }
-
-/* ── Close pill: only inside the mobile nav overlay ── */
 .nav-close-pill {
   display: none;
 }
@@ -2488,10 +1950,10 @@ h1, h2, h3,
   bottom: 48px;
   left: 50%;
   transform: translateX(-50%);
-  border: 1px solid rgba(247,247,242,.3);
+  border: 1px solid rgba(247, 247, 242, 0.3);
   border-radius: 999px;
   background: transparent;
-  color: rgba(247,247,242,.7);
+  color: rgba(247, 247, 242, 0.7);
   font-family: "Apercu", sans-serif;
   font-size: 14px;
   padding: 12px 32px;
@@ -2500,92 +1962,87 @@ h1, h2, h3,
   pointer-events: auto;
 }
 
-/* ══════════════════════════════════════════════
-   CONTACT MODE — full invert when pastel activates
-   Everything that was light → dark
-   ══════════════════════════════════════════════ */
-
 body.contact-mode {
   background: var(--contact-bg, #b8f0e0);
   color: #050507;
-  transition: background .6s ease, color .4s ease;
+  transition:
+    background 0.6s ease,
+    color 0.4s ease;
 }
-body.contact-mode .body-copy { color: rgba(5,5,7,.65); }
-
-/* Nav links */
+body.contact-mode .body-copy {
+  color: rgba(5, 5, 7, 0.65);
+}
 body.contact-mode .site-nav nav a,
 body.contact-mode .brand,
 body.contact-mode .nav-hamburger span {
-  color: rgba(5,5,7,.6);
+  color: rgba(5, 5, 7, 0.6);
 }
-body.contact-mode .site-nav nav a:hover { color: #050507; }
-
-/* Hero scroll chars */
-body.contact-mode .scroll-char { color: rgba(5,5,7,.2); }
-body.contact-mode .scroll-char.visible { color: #050507; }
-
-/* Filter pills */
+body.contact-mode .site-nav nav a:hover {
+  color: #050507;
+}
+body.contact-mode .scroll-char {
+  color: rgba(5, 5, 7, 0.2);
+}
+body.contact-mode .scroll-char.visible {
+  color: #050507;
+}
 body.contact-mode .site-nav nav a,
 body.contact-mode .contact-form button[type="submit"],
 body.contact-mode .filter-pill {
-  background: rgba(5,5,7,.12);
-  color: rgba(5,5,7,.65);
+  background: rgba(5, 5, 7, 0.12);
+  color: rgba(5, 5, 7, 0.65);
   border-color: transparent;
 }
 body.contact-mode .site-nav nav a:hover,
 body.contact-mode .contact-form button[type="submit"]:hover,
 body.contact-mode .filter-pill:hover {
-  background: rgba(5,5,7,.15);
+  background: rgba(5, 5, 7, 0.15);
   color: #050507;
 }
 body.contact-mode .filter-pill.is-active {
   background: #050507;
   color: #f7f7f2;
 }
-
-/* Work tile frost overlay */
 body.contact-mode .frost-overlay {
-  background: linear-gradient(rgba(255,255,255,.72) 0%, rgba(255,255,255,.42) 38%, rgba(255,255,255,.08) 100%);
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(255, 255, 255, 0.42) 38%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
   color: #050507;
 }
 body.contact-mode .frost-overlay h2,
-body.contact-mode .frost-overlay p { color: #050507; }
-
-/* Work tiles background */
-body.contact-mode .tile-image { filter: brightness(.92); }
-
-/* Apple cards / services */
+body.contact-mode .frost-overlay p {
+  color: #050507;
+}
+body.contact-mode .tile-image {
+  filter: brightness(0.92);
+}
 body.contact-mode .apple-card {
-  background: rgba(5,5,7,.08);
+  background: rgba(5, 5, 7, 0.08);
   color: #050507;
 }
 body.contact-mode .apple-card h3,
-body.contact-mode .apple-card p { color: rgba(5,5,7,.75); }
-
-/* Contact section */
-body.contact-mode .contact-copy h2,
-body.contact-mode .contact-copy p { color: #050507; }
+body.contact-mode .apple-card p {
+  color: rgba(5, 5, 7, 0.75);
+}
 
 body.contact-mode .contact-form input,
 body.contact-mode .contact-form textarea {
-  border-color: rgba(5,5,7,.2) !important;
-  background: rgba(255,255,255,.4) !important;
-  color: #050507 !important;
+  border-color: rgba(5, 5, 7, 0.2) !important;
 }
-body.contact-mode .contact-form input::placeholder,
-body.contact-mode .contact-form textarea::placeholder { color: rgba(5,5,7,.4) !important; }
 body.contact-mode .contact-form label,
-body.contact-mode .contact-form span { color: rgba(5,5,7,.6); }
+body.contact-mode .contact-form span {
+  color: rgba(5, 5, 7, 0.6);
+}
 
 body.contact-mode .contact-form input:not(:placeholder-shown),
 body.contact-mode .contact-form textarea:not(:placeholder-shown) {
-  border-color: rgba(5,5,7,.45) !important;
-  background: rgba(255,255,255,.6) !important;
+  border-color: rgba(5, 5, 7, 0.45) !important;
+  background: rgba(255, 255, 255, 0.6) !important;
 }
 
-
-body.contact-mode button[type="submit"],
-body.contact-mode .contact-submit {
+body.contact-mode button[type="submit"] {
   background: #050507;
   color: #f7f7f2;
   border-color: #050507;
@@ -2593,60 +2050,54 @@ body.contact-mode .contact-submit {
 body.contact-mode button[type="submit"]:hover {
   background: #2a2a2e;
 }
-
-/* Section headings */
 body.contact-mode h2,
-body.contact-mode h3 { color: #050507; }
-
-/* Scribble */
-body.contact-mode .scribble-base { stroke: rgba(5,5,7,.2); }
-body.contact-mode .scribble-draw { stroke: #050507; filter: none; }
-body.contact-mode .scribble-label,
+body.contact-mode h3 {
+  color: #050507;
+}
+body.contact-mode .scribble-base {
+  stroke: rgba(5, 5, 7, 0.2);
+}
+body.contact-mode .scribble-draw {
+  stroke: #050507;
+  filter: none;
+}
 body.contact-mode .label-a-svg,
-body.contact-mode .label-b-svg { fill: rgba(5,5,7,.5); color: rgba(5,5,7,.5); }
-
-/* Scroll cue arrow */
-body.contact-mode .hero-scroll-cue { color: rgba(5,5,7,.5); }
-
-/* Footer */
+body.contact-mode .label-b-svg {
+  fill: rgba(5, 5, 7, 0.5);
+  color: rgba(5, 5, 7, 0.5);
+}
+body.contact-mode .hero-scroll-cue {
+  color: rgba(5, 5, 7, 0.5);
+}
 body.contact-mode footer,
-body.contact-mode .site-footer { color: rgba(5,5,7,.4); }
-body.contact-mode .site-footer a { color: rgba(5,5,7,.4); }
-
-/* Hint labels */
-body.contact-mode .hint { color: rgba(5,5,7,.5); }
-
-/* ── Contact form: no outline, no labels ── */
+body.contact-mode .site-footer {
+  color: rgba(5, 5, 7, 0.4);
+}
+body.contact-mode .site-footer a {
+  color: rgba(5, 5, 7, 0.4);
+}
+body.contact-mode .hint {
+  color: rgba(5, 5, 7, 0.5);
+}
 .contact-form input,
 .contact-form textarea {
-  outline: none !important;
-  box-shadow: none !important;
   -webkit-appearance: none;
 }
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-
-/* grid fix since we removed label wrappers */
 .contact-form {
   grid-template-areas:
     "name email"
     "msg  msg"
     "send send";
 }
-.contact-form #input2       { grid-area: name; }
-.contact-form #input3       { grid-area: email; }
-.contact-form #textBox1     { grid-area: msg; }
-
-
-
-
-
-
-/* Kill every possible source of input outline */
+.contact-form #input2 {
+  grid-area: name;
+}
+.contact-form #input3 {
+  grid-area: email;
+}
+.contact-form #textBox1 {
+  grid-area: msg;
+}
 .contact-form input,
 .contact-form textarea,
 .contact-form input:focus,
@@ -2661,28 +2112,19 @@ body.contact-mode .hint { color: rgba(5,5,7,.5); }
   box-shadow: none !important;
   -webkit-appearance: none !important;
 }
-
-/* ══ FINAL FIXES — highest specificity ══ */
-
-/* 1. Nav links: force to right edge */
 .site-nav nav {
   margin-left: auto !important;
 }
-
-/* 2. Input: kill outline AND border on focus so nothing shows */
-#input2:focus, #input3:focus, #textBox1:focus,
-.contact-form input:focus, .contact-form textarea:focus {
+#input2:focus,
+#input3:focus,
+#textBox1:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
   outline: none !important;
   outline-width: 0 !important;
   border-color: transparent !important;
   box-shadow: none !important;
 }
-
-/* 3. Send button: dark on pastel, matches pills on dark */
-
-
-
-/* Send = active filter-pill in both modes */
 body.contact-mode 
 body.contact-mode 
 
@@ -2694,14 +2136,10 @@ body.contact-mode
   cursor: pointer;
 }
 
-.filter-bar { overflow-x: auto !important; overflow-y: visible !important; }
-
-.site-nav nav a { font-size: clamp(13px,1vw,15px) !important; }
-/* v-filterbust-1 */
-
-/* ══ TARGETED FIXES ══ */
-
-/* 1. Input boxes: no border when inactive */
+.filter-bar {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
 .contact-form input,
 .contact-form textarea {
   border: 0 !important;
@@ -2714,40 +2152,44 @@ body.contact-mode
   outline: none !important;
   box-shadow: none !important;
 }
-
-/* 2. Nav links: exact same font-size as filter pills (18px) */
 .site-nav nav a {
   font-size: 18px !important;
 }
-
-/* 3. Nav active state: same as filter-pill.is-active */
 .site-nav nav a.is-active {
-  background: rgba(255,255,255,.92) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   color: #050507 !important;
   transform: none !important;
 }
 body.contact-mode .site-nav nav a.is-active {
-  background: rgb(5,5,7) !important;
-  color: rgb(247,247,242) !important;
+  background: rgb(5, 5, 7) !important;
+  color: rgb(247, 247, 242) !important;
 }
-
-/* 4. Send button: same font-size as pills, not inheriting contact form's size */
 .contact-form button[type="submit"] {
   font-size: 18px !important;
 }
-
-/* ══ INPUTS: ZERO OUTLINES/BORDERS IN ALL STATES FOREVER ══ */
-input, textarea, select,
-input:hover, textarea:hover,
-input:focus, textarea:focus,
-input:active, textarea:active,
-input:focus-visible, textarea:focus-visible,
-input:focus-within, textarea:focus-within,
-.contact-form input, .contact-form textarea,
-.contact-form input:hover, .contact-form textarea:hover,
-.contact-form input:focus, .contact-form textarea:focus,
-.contact-form input:active, .contact-form textarea:active,
-.contact-form input:focus-visible, .contact-form textarea:focus-visible {
+input,
+textarea,
+select,
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus,
+input:active,
+textarea:active,
+input:focus-visible,
+textarea:focus-visible,
+input:focus-within,
+textarea:focus-within,
+.contact-form input,
+.contact-form textarea,
+.contact-form input:hover,
+.contact-form textarea:hover,
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form input:active,
+.contact-form textarea:active,
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
   outline: none !important;
   outline-width: 0 !important;
   outline-style: none !important;
@@ -2758,20 +2200,10 @@ input:focus-within, textarea:focus-within,
   -moz-appearance: none !important;
   appearance: none !important;
 }
-
-/* ══════════════════════════════════════════════════════
-   UNIFIED BUTTON SYSTEM — single source of truth
-   Every interactive button on the site uses these rules.
-   Exceptions: hamburger (icon), scroll cue (arrow),
-   lightbox close (icon), apple cards (intentional cards)
-   ══════════════════════════════════════════════════════ */
-
-/* The one button style */
 .site-nav nav a,
 .filter-pill,
 .contact-form button[type="submit"],
 .cs-pill,
-.story-trigger,
 .nav-close-pill {
   display: inline-flex !important;
   align-items: center !important;
@@ -2780,97 +2212,81 @@ input:focus-within, textarea:focus-within,
   padding: 9px 12px !important;
   border-radius: 10px !important;
   border: 0 !important;
-  background: rgba(255,255,255,.12) !important;
-  color: rgba(247,247,242,.7) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: rgba(247, 247, 242, 0.7) !important;
   font-family: "Apercu", sans-serif !important;
   font-size: 18px !important;
   font-weight: 400 !important;
   line-height: 1 !important;
-  letter-spacing: .01em !important;
+  letter-spacing: 0.01em !important;
   cursor: pointer !important;
   text-decoration: none !important;
   white-space: nowrap !important;
   flex-shrink: 0 !important;
   box-shadow: none !important;
-  transition: background .2s ease, color .2s ease, transform .2s ease !important;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease !important;
 }
-
-/* Hover — all buttons */
 .site-nav nav a:hover,
 .filter-pill:hover,
 .contact-form button[type="submit"]:hover,
 .cs-pill:hover,
-.story-trigger:hover,
 .nav-close-pill:hover {
-  background: rgba(255,255,255,.19) !important;
-  color: rgba(247,247,242,.95) !important;
+  background: rgba(255, 255, 255, 0.19) !important;
+  color: rgba(247, 247, 242, 0.95) !important;
   transform: translateY(-2px) !important;
   box-shadow: none !important;
 }
-
-/* Active / selected state */
 .site-nav nav a.is-active,
 .filter-pill.is-active {
-  background: rgb(247,247,242) !important;
-  color: rgb(5,5,7) !important;
+  background: rgb(247, 247, 242) !important;
+  color: rgb(5, 5, 7) !important;
   transform: none !important;
   box-shadow: none !important;
 }
 .site-nav nav a.is-active:hover,
 .filter-pill.is-active:hover {
-  background: rgb(247,247,242) !important;
-  color: rgb(5,5,7) !important;
+  background: rgb(247, 247, 242) !important;
+  color: rgb(5, 5, 7) !important;
   transform: translateY(-2px) !important;
   box-shadow: none !important;
 }
-
-/* Contact mode — all buttons invert */
 body.contact-mode .site-nav nav a,
 body.contact-mode .filter-pill,
 body.contact-mode .contact-form button[type="submit"],
 body.contact-mode .cs-pill,
-body.contact-mode .story-trigger,
 body.contact-mode .nav-close-pill {
-  background: rgba(5,5,7,.12) !important;
-  color: rgba(5,5,7,.7) !important;
+  background: rgba(5, 5, 7, 0.12) !important;
+  color: rgba(5, 5, 7, 0.7) !important;
   box-shadow: none !important;
 }
 body.contact-mode .site-nav nav a:hover,
 body.contact-mode .filter-pill:hover,
 body.contact-mode .contact-form button[type="submit"]:hover,
-body.contact-mode .cs-pill:hover,
-body.contact-mode .story-trigger:hover {
-  background: rgba(5,5,7,.2) !important;
-  color: rgb(5,5,7) !important;
+body.contact-mode .cs-pill:hover {
+  background: rgba(5, 5, 7, 0.2) !important;
+  color: rgb(5, 5, 7) !important;
   transform: translateY(-2px) !important;
   box-shadow: none !important;
 }
 body.contact-mode .site-nav nav a.is-active,
 body.contact-mode .filter-pill.is-active {
-  background: rgb(5,5,7) !important;
-  color: rgb(247,247,242) !important;
+  background: rgb(5, 5, 7) !important;
+  color: rgb(247, 247, 242) !important;
   transform: none !important;
   box-shadow: none !important;
 }
-
-/* Remove ALL box-shadows from everything except apple cards */
 *:not(.apple-card):not(.apple-modal) {
   box-shadow: none !important;
 }
-
-
-/* ── Mobile: show nav links directly, hide hamburger ── */
 @media (max-width: 680px) {
-  .nav-hamburger { display: none !important; }
+  .nav-hamburger {
+    display: none !important;
+  }
 
   .site-nav nav {
-    display: flex !important;
-    position: static !important;
-    background: none !important;
-    flex-direction: row !important;
-    gap: 8px !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
     pointer-events: auto !important;
   }
 
@@ -2879,27 +2295,26 @@ body.contact-mode .filter-pill.is-active {
     padding: 7px 10px !important;
   }
 }
-
-
-/* Desktop: fixed top, logo left, links right */
-.site-nav, .cs-header {
+.site-nav,
+.cs-header {
   position: fixed !important;
-  top: 0 !important; bottom: auto !important;
-  left: 0 !important; right: 0 !important;
+  top: 0 !important;
+  bottom: auto !important;
+  left: 0 !important;
+  right: 0 !important;
   height: 64px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  padding: 0 clamp(20px,4vw,48px) !important;
+  padding: 0 clamp(20px, 4vw, 48px) !important;
   background: transparent !important;
   z-index: 60 !important;
 }
-
-/* Logo: absolute top-left */
-.brand, .cs-header__brand {
+.brand,
+.cs-header__brand {
   position: absolute !important;
   top: 50% !important;
-  left: clamp(16px,3vw,40px) !important;
+  left: clamp(16px, 3vw, 40px) !important;
   transform: translateY(-50%) !important;
   display: flex !important;
   align-items: center !important;
@@ -2907,16 +2322,16 @@ body.contact-mode .filter-pill.is-active {
   line-height: 0 !important;
 }
 .nav-logo {
-  display: block !important;
   width: 44px !important;
   height: 44px !important;
   image-rendering: pixelated !important;
 }
-/* Hide any text in brand */
-.brand span, .cs-header__brand span { display: none !important; }
-
-/* Nav links right side */
-.site-nav nav, .cs-header__back {
+.brand span,
+.cs-header__brand span {
+  display: none !important;
+}
+.site-nav nav,
+.cs-header__back {
   pointer-events: auto !important;
 }
 .site-nav nav {
@@ -2925,39 +2340,34 @@ body.contact-mode .filter-pill.is-active {
   gap: 8px !important;
   flex-wrap: nowrap !important;
 }
-
-
-/* ── Mobile: content fills from top edge, no reserved space ── */
 @media (max-width: 680px) {
-  /* Remove any top padding that was reserving space for the nav */
-  body { padding-top: 0 !important; }
-  main { padding-top: 0 !important; }
-  /* Hero fills the full screen from the very top */
-  .hero-pin-stage, .hero { margin-top: 0 !important; padding-top: 0 !important; }
-  /* Case study hero too */
-  .cs-hero { padding-top: clamp(24px,6vw,48px) !important; }
+  body {
+    padding-top: 0 !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+  .hero-pin-stage,
+  .hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .cs-hero {
+    padding-top: clamp(24px, 6vw, 48px) !important;
+  }
 }
-
-/* ── Mobile: hero text top-aligned, no black void above ── */
 @media (max-width: 680px) {
   .hero-pin-stage .hero {
     justify-content: flex-start !important;
     align-items: flex-start !important;
-    padding-top: clamp(48px,12vw,80px) !important;
+    padding-top: clamp(48px, 12vw, 80px) !important;
     min-height: auto !important;
   }
-  .scroll-text {
-    text-align: left !important;
-    padding: 0 clamp(20px,5vw,32px) !important;
-  }
 }
-
-/* ── Mobile hero: headline sits in the vertical middle of the screen on load ── */
 @media (max-width: 680px) {
   .hero,
   .hero-pin-stage .hero,
   body.headline-complete .hero {
-    min-height: 100vh !important;
     min-height: 100svh !important;
     height: auto !important;
     justify-content: center !important;
@@ -2972,12 +2382,7 @@ body.contact-mode .filter-pill.is-active {
     min-height: auto !important;
   }
 }
-
-
-/* ══ MOBILE NAV — FINAL, ONE BLOCK, NO CONFLICTS ══ */
 @media (max-width: 680px) {
-
-  /* Hide logo entirely */
   .brand,
   .cs-header__brand {
     display: none !important;
@@ -2985,16 +2390,12 @@ body.contact-mode .filter-pill.is-active {
     opacity: 0 !important;
     pointer-events: none !important;
   }
-
-  /* Nav bar: centred, no padding */
   .site-nav,
   .cs-header {
     padding: 0 !important;
     justify-content: center !important;
     align-items: center !important;
   }
-
-  /* Nav links: centred row */
   .site-nav nav {
     position: static !important;
     display: flex !important;
@@ -3006,97 +2407,46 @@ body.contact-mode .filter-pill.is-active {
     background: none !important;
     width: 100% !important;
   }
-
-  /* Full pill size */
+  body,
+  main {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+@media (max-width: 680px) {
+  .site-nav,
+  .cs-header {
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: transparent;
+  }
+  .site-nav {
+    justify-content: center;
+  }
+  .site-nav nav {
+    margin-left: 0;
+  }
   .site-nav nav a,
   .cs-header__back {
     font-size: 18px !important;
     padding: 9px 12px !important;
   }
-
-  /* Body padding for bottom nav */
-  body, main {
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+  body,
+  main {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
   }
 }
-
-/* ══════════════════════════════════════════
-   NAV — THE ONLY NAV RULES. DO NOT ADD MORE.
-   ══════════════════════════════════════════ */
-
-/* Desktop: fixed top, logo absolute left, links right */
-.site-nav, .cs-header {
-  position: fixed;
-  top: 0; bottom: auto;
-  left: 0; right: 0;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  padding: 0 clamp(20px,4vw,48px);
-  background: transparent;
-  z-index: 60;
-}
-.brand, .cs-header__brand {
-  position: absolute;
-  top: 50%; left: clamp(16px,3vw,40px);
-  transform: translateY(-50%);
-  display: flex; align-items: center;
-  text-decoration: none; line-height: 0;
-}
-.nav-logo { display: block; width: 44px; height: 44px; image-rendering: pixelated; }
-.brand span, .cs-header__brand span { display: none; }
-.site-nav nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: nowrap;
-  margin-left: auto;
-}
-
-/* Mobile: bottom bar, no logo, buttons centred */
-@media (max-width: 680px) {
-  .site-nav, .cs-header {
-    top: auto;
-    bottom: 0;
-    height: calc(56px + env(safe-area-inset-bottom, 0px));
-    padding: 0 clamp(16px,4vw,24px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    background: transparent;
-  }
-  .brand, .cs-header__brand { display: none; }
-  .site-nav { justify-content: center; }
-  .cs-header { justify-content: center; }
-  .site-nav nav {
-    margin-left: 0;
-    justify-content: center;
-    gap: 8px;
-  }
-  .site-nav nav a, .cs-header__back {
-    font-size: 18px !important;
-    padding: 9px 12px !important;
-  }
-  body, main { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
-}
-
-/* ══ TYPOGRAPHY + MODAL LINKS + SERVICE GRID ══ */
-
-/* 1. All <p> in Apercu: letter-spacing -0.3px, weight 400 */
 p {
   letter-spacing: -0.3px !important;
   font-weight: 400 !important;
 }
-/* Exceptions: serif p tags keep their own tracking */
 .cs-story__text p,
 .cs-read p,
 .cs-read p.first,
 .apple-modal h2,
-.contact-copy h2,
 .display-heading {
   letter-spacing: inherit !important;
   font-weight: inherit !important;
 }
-
-/* 2. Modal <a> links = same as all other buttons */
 .apple-modal a {
   display: inline-flex !important;
   align-items: center !important;
@@ -3104,8 +2454,8 @@ p {
   padding: 9px 12px !important;
   border-radius: 10px !important;
   border: 0 !important;
-  background: rgba(255,255,255,.12) !important;
-  color: rgba(247,247,242,.7) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: rgba(247, 247, 242, 0.7) !important;
   font-family: "Apercu", sans-serif !important;
   font-size: 18px !important;
   font-weight: 400 !important;
@@ -3113,66 +2463,36 @@ p {
   line-height: 1 !important;
   text-decoration: none !important;
   margin-top: 8px !important;
-  transition: background .2s ease, color .2s ease, transform .2s ease !important;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease !important;
 }
 .apple-modal a:hover {
-  background: rgba(255,255,255,.19) !important;
-  color: rgba(247,247,242,.95) !important;
+  background: rgba(255, 255, 255, 0.19) !important;
+  color: rgba(247, 247, 242, 0.95) !important;
   transform: translateY(-2px) !important;
 }
-
-/* 3. Service grid: 2-col desktop, compact cards */
-.apple-service-grid {
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 10px !important;
-}
-.apple-card {
-  min-height: 200px !important;
-  padding: 20px 22px !important;
-}
-.apple-card h3 {
-  font-size: clamp(20px,2.2vw,32px) !important;
-}
-.apple-card b {
-  width: 34px !important;
-  height: 34px !important;
-  font-size: 20px !important;
-  bottom: 20px !important;
-  left: 22px !important;
-}
-
-/* Mobile: 1-col, even more compact */
 @media (max-width: 680px) {
   .apple-service-grid {
-    grid-template-columns: 1fr !important;
     gap: 8px !important;
   }
   .apple-card {
-    min-height: 140px !important;
     padding: 16px 18px !important;
   }
   .apple-card h3 {
-    font-size: clamp(18px,5vw,24px) !important;
+    font-size: clamp(18px, 5vw, 24px) !important;
   }
 }
-
-/* ══ UNIFIED BODY TEXT — one treatment for all prose ══
-   18px / 400 / -0.3px / 1.5 line-height / Apercu
-   Colour adapts to context (dark or pastel bg)
-   ══════════════════════════════════════════════════════ */
-
-/* Apply to every prose element */
 p,
 li,
 .body-copy,
-.contact-copy p,
 .apple-modal p,
 .apple-card h3 + p,
 .hint span,
 .cs-meta dd,
 .cs-more__sub,
 .cs-impact__card p,
-.cs-related__card__frost p,
 .site-footer {
   font-family: "Apercu", sans-serif !important;
   font-size: 16px !important;
@@ -3180,13 +2500,10 @@ li,
   letter-spacing: -0.3px !important;
   line-height: 1.5 !important;
 }
-
-/* Exceptions that should keep their own size/style */
 .cs-read p.first,
 .cs-story__text,
 .cs-hero__title,
 .display-heading,
-.contact-copy h2,
 .apple-modal h2,
 .apple-card h3,
 .scroll-char,
@@ -3196,9 +2513,6 @@ li,
 .contact-form button,
 .hint,
 footer strong,
-.kicker,
-.cs-tldr__kicker,
-.cs-hero__eyebrow,
 .apple-card span,
 .apple-modal span {
   font-size: revert !important;
@@ -3206,218 +2520,266 @@ footer strong,
   letter-spacing: revert !important;
   line-height: revert !important;
 }
-
-/* Colour on dark bg */
-p, li, .body-copy, .contact-copy p, .apple-modal p, .hint span,
-.cs-meta dd, .cs-more__sub, .cs-impact__card p, .site-footer {
-  color: rgba(247,247,242,.72);
+p,
+li,
+.body-copy,
+.apple-modal p,
+.hint span,
+.cs-meta dd,
+.cs-more__sub,
+.cs-impact__card p,
+.site-footer {
+  color: rgba(247, 247, 242, 0.72);
 }
-
-/* Colour on pastel bg */
 body.contact-mode p,
 body.contact-mode li,
-body.contact-mode .body-copy,
-body.contact-mode .contact-copy p {
-  color: rgba(5,5,7,.65) !important;
+body.contact-mode .body-copy {
+  color: rgba(5, 5, 7, 0.65) !important;
 }
-
-/* Case study read sheet — first p stays serif, rest body text */
 .cs-read p {
   font-family: "Apercu", sans-serif !important;
   font-size: 16px !important;
   font-weight: 400 !important;
   letter-spacing: -0.3px !important;
   line-height: 1.5 !important;
-  color: rgba(247,247,242,.72) !important;
+  color: rgba(247, 247, 242, 0.72) !important;
 }
 .cs-read p.first {
   font-family: "Reckless", serif !important;
-  font-size: clamp(22px,2.5vw,30px) !important;
+  font-size: clamp(22px, 2.5vw, 30px) !important;
   font-weight: 500 !important;
-  letter-spacing: .01em !important;
+  letter-spacing: 0.01em !important;
   line-height: 1.08 !important;
   color: var(--fg, #f7f7f2) !important;
 }
-
-/* ══ APERCU: ONE TREATMENT, NO EXCEPTIONS ══ */
-* { font-family: inherit; }
-
-/* Every element using Apercu gets identical treatment */
-body, p, li, a, span, div, input, textarea, button, label,
-dd, dt, figcaption, blockquote, td, th, caption,
-.body-copy, .contact-copy p, .apple-modal p, .apple-card p,
-.hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
-.cs-related__card__frost p, .site-footer, .filter-bar,
-.cs-header__back, .cs-read p, footer {
+* {
+  font-family: inherit;
+}
+body,
+p,
+li,
+a,
+span,
+div,
+input,
+textarea,
+button,
+label,
+dd,
+dt,
+figcaption,
+blockquote,
+td,
+th,
+caption,
+.body-copy,
+.apple-modal p,
+.apple-card p,
+.hint span,
+.cs-meta dd,
+.cs-more__sub,
+.cs-impact__card p,
+.site-footer,
+.filter-bar,
+.cs-header__back,
+.cs-read p,
+footer {
   font-family: "Apercu", sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.3px;
   line-height: 1.5;
 }
-
-/* Only serif/display elements override */
-h1, h2, h3, h4,
-.display-heading, .contact-copy h2, .apple-modal h2,
-.apple-card h3, .cs-hero__title, .cs-story__text,
-.cs-read p.first, .cs-more__title, .cs-impact__card h3,
-.scroll-char, .scroll-text {
-  font-family: "Reckless", Georgia, serif;
+h1,
+h2,
+h3,
+h4,
+.display-heading,
+.apple-modal h2,
+.apple-card h3,
+.cs-hero__title,
+.cs-story__text,
+.cs-read p.first,
+.cs-more__title,
+.cs-impact__card h3,
+.scroll-char {
   font-size: revert;
-  font-weight: revert;
-  letter-spacing: revert;
   line-height: revert;
 }
-
-/* Monospace elements */
-.kicker, .cs-hero__eyebrow, .cs-tldr__kicker,
-.apple-card span, .apple-modal span,
-.cs-related__card__frost p, .nav-label {
+.apple-card span,
+.apple-modal span {
   font-family: "Apercu Mono", monospace;
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   line-height: 1.4;
 }
-
-/* Buttons/nav keep 18px but same font/weight/tracking */
-.filter-pill, .site-nav nav a, .cs-header__back,
-.contact-form button, .cs-pill, .story-trigger,
+.filter-pill,
+.site-nav nav a,
+.cs-header__back,
+.contact-form button,
+.cs-pill,
 .nav-close-pill {
   font-family: "Apercu", sans-serif !important;
   font-size: 18px !important;
   font-weight: 400 !important;
   letter-spacing: -0.3px !important;
 }
-
-/* ══ APERCU: 300 / -0.2px — final update ══ */
-body, p, li, a, span, div, input, textarea, button, label,
-dd, dt, figcaption, blockquote, td, th,
-.body-copy, .contact-copy p, .apple-modal p,
-.hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
-.cs-related__card__frost p, .site-footer, footer,
-.filter-pill, .site-nav nav a, .cs-header__back,
-.contact-form button, .cs-pill, .story-trigger {
+body,
+p,
+li,
+a,
+span,
+div,
+input,
+textarea,
+button,
+label,
+dd,
+dt,
+figcaption,
+blockquote,
+td,
+th,
+.body-copy,
+.apple-modal p,
+.hint span,
+.cs-meta dd,
+.cs-more__sub,
+.cs-impact__card p,
+.site-footer,
+footer,
+.filter-pill,
+.site-nav nav a,
+.cs-header__back,
+.contact-form button,
+.cs-pill {
   font-weight: 300 !important;
   letter-spacing: -0.2px !important;
 }
-
-/* ══ FINAL TYPOGRAPHY ══ */
-/* Apercu: 20px / 300 / -0.2px */
-body, p, li, span, div, input, textarea, button, label,
-dd, dt, figcaption, blockquote,
-.body-copy, .contact-copy p, .apple-modal p,
-.hint span, .cs-meta dd, .cs-more__sub, .cs-impact__card p,
-.cs-related__card__frost p, .site-footer, footer,
-.filter-pill, .site-nav nav a, .cs-header__back,
-.contact-form button, .cs-pill, .story-trigger {
+body,
+p,
+li,
+span,
+div,
+input,
+textarea,
+button,
+label,
+dd,
+dt,
+figcaption,
+blockquote,
+.body-copy,
+.apple-modal p,
+.hint span,
+.cs-meta dd,
+.cs-more__sub,
+.cs-impact__card p,
+.site-footer,
+footer,
+.filter-pill,
+.site-nav nav a,
+.cs-header__back,
+.contact-form button,
+.cs-pill {
   font-size: 20px !important;
   font-weight: 300 !important;
   letter-spacing: -0.2px !important;
 }
-
-/* Reckless: 500 / 0.36px everywhere */
-h1, h2, h3, h4,
-.display-heading, .contact-copy h2, .apple-modal h2,
-.apple-card h3, .cs-hero__title, .cs-story__text,
-.cs-read p.first, .cs-more__title, .cs-impact__card h3,
-.scroll-text, .scroll-char {
+h1,
+h2,
+h3,
+h4,
+.display-heading,
+.apple-modal h2,
+.apple-card h3,
+.cs-hero__title,
+.cs-story__text,
+.cs-read p.first,
+.cs-more__title,
+.cs-impact__card h3,
+.scroll-char {
   font-family: "Reckless", Georgia, serif !important;
   font-weight: 500 !important;
   letter-spacing: 0.36px !important;
 }
-
-/* ══ Apercu: never uppercase ══ */
-body, p, li, span, div, input, textarea, button, label, a, dd, dt {
+body,
+p,
+li,
+span,
+div,
+input,
+textarea,
+button,
+label,
+a,
+dd,
+dt {
   text-transform: none !important;
 }
-/* Keep mono eyebrows as-is (they may legitimately use uppercase) */
-.kicker, .apple-card span, .apple-modal span { text-transform: none; }
-
-/* ══ Site logo ══ */
+.apple-card span,
+.apple-modal span {
+  text-transform: none;
+}
 .site-logo {
   display: block;
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 59; /* just below nav */
+  z-index: 59;
   width: 80px;
   height: auto;
   text-decoration: none;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
-.site-logo:hover { opacity: .75; }
+.site-logo:hover {
+  opacity: 0.75;
+}
 .site-logo img {
   width: 100%;
   height: auto;
   display: block;
 }
-
-/* Mobile: bottom-left */
 @media (max-width: 680px) {
   .site-logo {
     top: auto;
     bottom: calc(8px + env(safe-area-inset-bottom, 0px));
-    left: clamp(16px,4vw,24px);
+    left: clamp(16px, 4vw, 24px);
     transform: none;
     width: 48px;
   }
 }
-
-/* ══ MOBILE NAV: ALWAYS BOTTOM — FINAL OVERRIDE ══ */
 @media (max-width: 680px) {
-  .site-nav, .cs-header {
+  .site-nav,
+  .cs-header {
     top: auto !important;
     bottom: 0 !important;
     position: fixed !important;
   }
 }
-
-/* ══ Site logo colour ══ */
-/* Default (dark bg): white */
 .site-logo img {
   filter: invert(1);
 }
-/* Pastel / light bg: black */
 body.contact-mode .site-logo img {
   filter: invert(0);
 }
-
-/* ══ LOGO + NAV LAYOUT ══ */
-
-/* Remove old nav-logo (pixel gif) entirely */
-.nav-logo { display: none !important; }
-
-/* Site logo: part of the nav bar, flush left on desktop */
-.brand.site-logo, .cs-header__brand.site-logo {
-  position: static !important;
-  transform: none !important;
-  top: auto !important;
-  left: auto !important;
-  display: flex !important;
-  align-items: center !important;
-  flex-shrink: 0;
-  margin-right: auto; /* pushes nav links to the right */
+.nav-logo {
+  display: none !important;
 }
-.brand.site-logo img, .cs-header__brand.site-logo img {
-  width: 48px !important;
-  height: auto !important;
+.brand.site-logo img,
+.cs-header__brand.site-logo img {
   display: block !important;
-  filter: invert(1);
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
-.brand.site-logo:hover img, .cs-header__brand.site-logo:hover img {
-  opacity: .75;
+.brand.site-logo:hover img,
+.cs-header__brand.site-logo:hover img {
+  opacity: 0.75;
 }
-body.contact-mode .brand.site-logo img,
-body.contact-mode .cs-header__brand.site-logo img {
-  filter: invert(0);
-}
-
-/* Mobile: logo centered top, floating above content */
 @media (max-width: 680px) {
-  .brand.site-logo, .cs-header__brand.site-logo {
+  .brand.site-logo,
+  .cs-header__brand.site-logo {
     position: fixed !important;
     top: 16px !important;
     left: 50% !important;
@@ -3425,17 +2787,11 @@ body.contact-mode .cs-header__brand.site-logo img {
     margin-right: 0 !important;
     z-index: 58 !important;
   }
-  .brand.site-logo img, .cs-header__brand.site-logo img {
+  .brand.site-logo img,
+  .cs-header__brand.site-logo img {
     width: 40px !important;
   }
 }
-
-/* ══ FROST OVERLAY TAGS: sentence case, no uppercase ══ */
-.frost-overlay p {
-  text-transform: none !important;
-}
-
-/* ══ APPLE GRID: 3-col 2-row, narrower, + top-right ══ */
 .apple-service-grid {
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 10px !important;
@@ -3448,7 +2804,6 @@ body.contact-mode .cs-header__brand.site-logo img {
   flex-direction: column !important;
   justify-content: flex-end !important;
 }
-/* + button: top-right */
 .apple-card b {
   position: absolute !important;
   top: 14px !important;
@@ -3462,32 +2817,26 @@ body.contact-mode .cs-header__brand.site-logo img {
   align-items: center !important;
   justify-content: center !important;
 }
-.apple-card h3 {
-  font-size: clamp(16px,1.8vw,22px) !important;
-  margin: 0 !important;
-}
 
 @media (max-width: 680px) {
   .apple-service-grid {
     grid-template-columns: 1fr !important;
   }
-  .apple-card { min-height: 120px !important; }
+  .apple-card {
+    min-height: 120px !important;
+  }
 }
-
-/* ══ INPUTS + MODAL OPEN: translucent white, black text ══ */
 body.contact-mode .contact-form input,
 body.contact-mode .contact-form textarea {
-  background: rgba(255,255,255,.55) !important;
+  background: rgba(255, 255, 255, 0.55) !important;
   color: #050507 !important;
 }
 body.contact-mode .contact-form input::placeholder,
 body.contact-mode .contact-form textarea::placeholder {
-  color: rgba(5,5,7,.4) !important;
+  color: rgba(5, 5, 7, 0.4) !important;
 }
-
-/* Apple modal open state */
 .apple-modal.active {
-  background: rgba(255,255,255,.82) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(24px) !important;
   color: #050507 !important;
 }
@@ -3497,91 +2846,37 @@ body.contact-mode .contact-form textarea::placeholder {
   color: #050507 !important;
 }
 .apple-modal.active a {
-  background: rgba(5,5,7,.12) !important;
-  color: rgba(5,5,7,.75) !important;
+  background: rgba(5, 5, 7, 0.12) !important;
+  color: rgba(5, 5, 7, 0.75) !important;
 }
 .apple-modal.active a:hover {
-  background: rgba(5,5,7,.2) !important;
+  background: rgba(5, 5, 7, 0.2) !important;
   color: #050507 !important;
 }
 .apple-modal.active .modal-close {
-  background: rgba(5,5,7,.12) !important;
+  background: rgba(5, 5, 7, 0.12) !important;
   color: #050507 !important;
 }
-
-/* ══ NAV LOGO: truly flush left ══ */
-.brand.site-logo, .cs-header__brand.site-logo {
-  position: static !important;
-  transform: none !important;
-  top: auto !important; left: auto !important;
+.brand.site-logo,
+.cs-header__brand.site-logo {
   display: flex !important;
   align-items: center !important;
   flex-shrink: 0 !important;
-  margin-right: auto !important;
   text-decoration: none !important;
 }
-/* Standalone duplicate logo: hide it */
 #site-logo:not(.brand):not(.cs-header__brand) {
   display: none !important;
 }
-
-/* ══ FROST OVERLAY: tag text always white ══ */
-.frost-overlay p {
-  color: #fff !important;
-  text-transform: none !important;
-}
-
-/* ══ CONTACT SECTION: full-width layout ══ */
-.contact-form {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-  width: 100% !important;
-  max-width: none !important;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-.contact-form button[type="submit"] {
-  align-self: flex-start !important;
-  width: auto !important;
-}
-/* Hide old contact-copy wrapper */
-.contact-copy { display: none !important; }
-
-/* ══ FOOTER: centred, unobtrusive ══ */
-.site-footer, footer {
-  text-align: center !important;
-  padding: 32px !important;
-  color: rgba(247,247,242,.32) !important;
-  font-size: 14px !important;
-  letter-spacing: -0.2px !important;
-  font-weight: 300 !important;
-}
-.site-footer a, footer a {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-.site-footer a:hover, footer a:hover {
-  color: rgba(247,247,242,.6) !important;
-}
-body.contact-mode .site-footer,
-body.contact-mode footer {
-  color: rgba(5,5,7,.32) !important;
+.site-footer a:hover,
+footer a:hover {
+  color: rgba(247, 247, 242, 0.6) !important;
 }
 body.contact-mode .site-footer a:hover,
 body.contact-mode footer a:hover {
-  color: rgba(5,5,7,.6) !important;
+  color: rgba(5, 5, 7, 0.6) !important;
 }
-
-/* ══ FINAL CONTACT + LOGO + FOOTER ══ */
-
-/* Contact: full-width single column, aligned to content */
 .contact {
-  padding: clamp(80px,10vw,140px) clamp(20px,4vw,40px) !important;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 40px) !important;
   max-width: 960px !important;
   margin-inline: auto !important;
   display: block !important;
@@ -3603,24 +2898,22 @@ body.contact-mode footer a:hover {
   align-self: flex-start !important;
   width: auto !important;
 }
-.contact-copy { display: none !important; }
-.contact-panel { display: block !important; }
-
-/* Logo: align with content, no absolute, no boxy bg */
 .site-nav {
-  max-width: none !important;
-  padding: 0 clamp(20px,4vw,40px) !important;
+  padding: 0 clamp(20px, 4vw, 40px) !important;
 }
-.brand.site-logo, .cs-header__brand.site-logo {
+.brand.site-logo,
+.cs-header__brand.site-logo {
   position: static !important;
   transform: none !important;
-  top: auto !important; left: auto !important;
+  top: auto !important;
+  left: auto !important;
   margin-right: auto !important;
   background: none !important;
   border: none !important;
   padding: 0 !important;
 }
-.brand.site-logo img, .cs-header__brand.site-logo img {
+.brand.site-logo img,
+.cs-header__brand.site-logo img {
   width: 48px !important;
   height: auto !important;
   filter: brightness(0) invert(1) !important;
@@ -3630,48 +2923,37 @@ body.contact-mode .brand.site-logo img,
 body.contact-mode .cs-header__brand.site-logo img {
   filter: brightness(0) !important;
 }
-
-/* Footer: centred, quiet */
-.site-footer, footer {
+.site-footer,
+footer {
   text-align: center !important;
-  padding: 24px clamp(20px,4vw,40px) !important;
-  color: rgba(247,247,242,.3) !important;
+  padding: 24px clamp(20px, 4vw, 40px) !important;
+  color: rgba(247, 247, 242, 0.3) !important;
   font-size: 14px !important;
   font-weight: 300 !important;
   letter-spacing: -0.2px !important;
 }
-.site-footer a, footer a {
+.site-footer a,
+footer a {
   color: inherit !important;
   text-decoration: none !important;
 }
 body.contact-mode .site-footer,
 body.contact-mode footer {
-  color: rgba(5,5,7,.3) !important;
+  color: rgba(5, 5, 7, 0.3) !important;
 }
-
-/* ── Frost overlay tag text: always white, always visible ── */
 .frost-overlay p {
-  color: rgba(255,255,255,.85) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-size: 11px !important;
-  letter-spacing: .12em !important;
+  letter-spacing: 0.12em !important;
   font-weight: 400 !important;
   text-transform: none !important;
   opacity: 1 !important;
   display: block !important;
 }
 
-
-
-body.contact-mode 
-
-/* ── Section dividers: black on pastel bg ── */
-body.contact-mode hr,
-body.contact-mode .section-divider,
-body.contact-mode .divider {
-  border-color: rgba(5,5,7,.2) !important;
+body.contact-mode body.contact-mode hr {
+  border-color: rgba(5, 5, 7, 0.2) !important;
 }
-
-/* ── Logo: zero background always ── */
 .brand.site-logo,
 .cs-header__brand.site-logo,
 .site-logo {
@@ -3687,38 +2969,27 @@ body.contact-mode .divider {
   background: none !important;
   background-color: transparent !important;
 }
-
-/* ── Logo: align left edge with section content ── */
-.site-nav {
-  padding-left: clamp(24px,6vw,88px) !important;
-  padding-right: clamp(24px,6vw,88px) !important;
-}
-
-/* ── Logo: align with centred content block ── */
 .site-nav {
   max-width: none !important;
-  padding-left: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
-  padding-right: clamp(24px,6vw,88px) !important;
+  padding-left: max(clamp(24px, 6vw, 88px), calc((100vw - 960px) / 2)) !important;
+  padding-right: clamp(24px, 6vw, 88px) !important;
 }
-
-/* ── Logo: no background, correct colour ── */
-#site-logo, #site-logo img,
-.brand.site-logo, .brand.site-logo img,
-.cs-header__brand.site-logo, .cs-header__brand.site-logo img {
+#site-logo,
+#site-logo img,
+.brand.site-logo,
+.brand.site-logo img,
+.cs-header__brand.site-logo,
+.cs-header__brand.site-logo img {
   background: transparent !important;
   background-color: transparent !important;
   mix-blend-mode: normal !important;
 }
-/* White on dark */
 #site-logo-img {
   filter: brightness(0) invert(1) !important;
 }
-/* Black on pastel */
 body.contact-mode #site-logo-img {
   filter: brightness(0) !important;
 }
-
-/* ── Mobile: logo top-centred, above everything ── */
 @media (max-width: 680px) {
   #site-logo {
     position: fixed !important;
@@ -3729,13 +3000,11 @@ body.contact-mode #site-logo-img {
     width: 48px !important;
     margin: 0 !important;
   }
-  /* Keep it out of the nav bar flow */
-  .brand.site-logo, .cs-header__brand.site-logo {
+  .brand.site-logo,
+  .cs-header__brand.site-logo {
     display: none !important;
   }
 }
-
-/* ── Mobile-only logo: top centre ── */
 #mobile-logo {
   display: none;
 }
@@ -3743,7 +3012,7 @@ body.contact-mode #site-logo-img {
   #mobile-logo {
     display: block;
     position: fixed;
-    top: 12px;
+    top: calc(12px + env(safe-area-inset-top, 0px));
     left: 50%;
     transform: translateX(-50%);
     z-index: 70;
@@ -3761,8 +3030,6 @@ body.contact-mode #site-logo-img {
     filter: brightness(0);
   }
 }
-
-/* ── Mobile: Back to work — centred, no bg ── */
 @media (max-width: 680px) {
   .cs-header {
     justify-content: center !important;
@@ -3772,18 +3039,14 @@ body.contact-mode #site-logo-img {
     margin: 0 auto !important;
   }
 }
-
-/* ── Nav: right edge aligns with content right edge ── */
 @media (min-width: 681px) {
   .site-nav {
-    padding-right: max(clamp(24px,6vw,88px), calc((100vw - 960px) / 2)) !important;
+    padding-right: max(clamp(24px, 6vw, 88px), calc((100vw - 960px) / 2)) !important;
   }
 }
-
-/* ── Apple service grid: font and left alignment ── */
 .apple-card h3 {
   font-family: "Apercu", sans-serif !important;
-  font-size: clamp(16px,1.8vw,22px) !important;
+  font-size: clamp(16px, 1.8vw, 22px) !important;
   font-weight: 300 !important;
   letter-spacing: -0.2px !important;
   text-align: left !important;
@@ -3796,113 +3059,176 @@ body.contact-mode #site-logo-img {
   text-align: left !important;
   align-items: flex-start !important;
 }
-
-/* ── No saving images ── */
-img, video {
+img,
+video {
   -webkit-user-select: none !important;
   user-select: none !important;
   -webkit-touch-callout: none !important;
   pointer-events: none !important;
 }
-/* Restore pointer events on interactive images (tiles, carousel) */
 .work-tile img,
 .cs-carousel__item img,
 .cs-flipbook-card img,
-.collins-card img,
 .apple-card img,
-a img, button img {
+a img,
+button img {
   pointer-events: auto !important;
   -webkit-touch-callout: none !important;
 }
-
-/* ── Block iOS long-press save on every image sitewide ── */
 img {
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
   user-select: none !important;
 }
-
-/* ── Contact form: honeypot + status line ── */
-.contact-hp { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
-.contact-status { margin: 0; min-height: 1.5em; color: rgba(247,247,242,.6); }
-.contact-status a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-body.contact-mode .contact-status { color: rgba(5,5,7,.65); }
-.contact-form button[type="submit"]:disabled { cursor: default !important; transform: none !important; }
-
-/* ══ Keyboard focus — mirrors hover, keyboard only, no outlines ══ */
-:focus-visible { outline: none !important; }
+.contact-hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+.contact-status {
+  margin: 0;
+  min-height: 1.5em;
+  color: rgba(247, 247, 242, 0.6);
+}
+.contact-status a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+body.contact-mode .contact-status {
+  color: rgba(5, 5, 7, 0.65);
+}
+.contact-form button[type="submit"]:disabled {
+  cursor: default !important;
+  transform: none !important;
+}
+:focus-visible {
+  outline: none !important;
+}
 .site-nav nav a:focus-visible,
 .filter-pill:focus-visible,
 .contact-form button[type="submit"]:focus-visible {
-  background: rgba(255,255,255,.19) !important;
-  color: rgba(247,247,242,.95) !important;
+  background: rgba(255, 255, 255, 0.19) !important;
+  color: rgba(247, 247, 242, 0.95) !important;
   transform: translateY(-2px) !important;
 }
 body.contact-mode .site-nav nav a:focus-visible,
 body.contact-mode .filter-pill:focus-visible,
 body.contact-mode .contact-form button[type="submit"]:focus-visible {
-  background: rgba(5,5,7,.2) !important;
-  color: rgb(5,5,7) !important;
+  background: rgba(5, 5, 7, 0.2) !important;
+  color: rgb(5, 5, 7) !important;
 }
 .work-tile:focus-visible .frost-overlay,
-.logo-tile:focus-visible .frost-overlay { opacity: 1; }
-.work-tile:focus-visible .tile-image img { transform: scale(1.04); filter: brightness(.38) blur(3px); }
-.apple-card:focus-visible { transform: translateY(-8px); background: linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.06)); }
-.brand.site-logo:focus-visible img { opacity: .75; }
-
-/* ══ Reduced motion ══ */
+.logo-tile:focus-visible .frost-overlay {
+  opacity: 1;
+}
+.work-tile:focus-visible .tile-image img {
+  transform: scale(1.04);
+  filter: brightness(0.38) blur(3px);
+}
+.apple-card:focus-visible {
+  transform: translateY(-8px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
+}
+.brand.site-logo:focus-visible img {
+  opacity: 0.75;
+}
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .scroll-char { color: #fff !important; opacity: 1 !important; }
-  body.contact-mode .scroll-char { color: #050507 !important; }
+  .scroll-char {
+    color: #fff !important;
+    opacity: 1 !important;
+  }
+  body.contact-mode .scroll-char {
+    color: #050507 !important;
+  }
 }
-
-/* ── Homepage: nav buttons appear once the headline has fully lit up ── */
 .js .site-nav nav {
-  transition: opacity .6s ease, visibility .6s ease;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
 }
 .js body:not(.nav-revealed) .site-nav nav {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
 }
-
-/* ── Standard leading for every h1 and h2 ── */
-h1, h2, h1[class], h2[class] { line-height: 1.2 !important; }
-
-/* ── Smooth page transitions (homepage ⇄ projects): project image morphs, page cross-fades ── */
-@view-transition { navigation: auto; }
-::view-transition-group(*) { animation-duration: .5s; animation-timing-function: cubic-bezier(.22,1,.36,1); }
-::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; }
-@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
-
-/* Splash: only on the first load of a visit */
-.splash-seen #splash { display: none !important; }
-
-/* Comfortable tap targets on phones (44px) */
+h1,
+h2,
+h1[class],
+h2[class] {
+  line-height: 1.2 !important;
+}
+@view-transition {
+  navigation: auto;
+}
+::view-transition-group(*) {
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+.splash-seen #splash {
+  display: none !important;
+}
 @media (max-width: 680px) {
-  .site-nav nav a, .filter-pill, .contact-form button[type="submit"], .apple-modal a { min-height: 44px !important; }
+  .site-nav nav a,
+  .filter-pill,
+  .contact-form button[type="submit"],
+  .apple-modal a {
+    min-height: 44px !important;
+  }
 }
-
-/* ── Motion tiles: a quiet loop plays on hover (title stays; blur lifts so the motion shows) ── */
 .tile-motion {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  opacity: 0; transition: opacity .4s ease; pointer-events: none;
-  filter: none !important; transform: none !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  filter: none !important;
+  transform: none !important;
 }
-.work-tile.has-motion.is-playing .tile-motion { opacity: 1; }
+.work-tile.has-motion.is-playing .tile-motion {
+  opacity: 1;
+}
 .work-tile.has-motion:hover .frost-overlay {
-  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
-/* Footer year */
-.site-footer .js-year { font: inherit !important; letter-spacing: inherit !important; color: inherit !important; }
-
-/* ── Homepage tiles: soft tone while loading, then a gentle fade-in ── */
-.tile-image { background-color: #141417; }
-.tile-image img.fade-img { opacity: 0; transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease; }
-.tile-image img.fade-img.is-loaded { opacity: 1; }
+.site-footer .js-year {
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+}
+.tile-image {
+  background-color: #141417;
+}
+.tile-image img.fade-img {
+  opacity: 0;
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.45s ease;
+}
+.tile-image img.fade-img.is-loaded {
+  opacity: 1;
+}

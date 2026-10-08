@@ -342,7 +342,7 @@ function buildPage(slug, project) {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${esc(title)} | flmno</title>
   <meta name="description" content="${esc(teaser || fillText || "")}">
   <link rel="canonical" href="https://flmno.com/projects/${slug}/">
