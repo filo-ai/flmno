@@ -3232,3 +3232,56 @@ h2[class] {
 .tile-image img.fade-img.is-loaded {
   opacity: 1;
 }
+
+/* ══ GLASS BUTTONS (remove this block to revert to the solid-tint buttons) ══ */
+:root .site-nav nav a,
+:root .filter-pill,
+:root .contact-form button[type="submit"],
+:root .apple-modal a {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
+  color: rgba(247, 247, 242, 0.9) !important;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+:root .site-nav nav a:hover, :root .site-nav nav a:focus-visible,
+:root .filter-pill:hover, :root .filter-pill:focus-visible,
+:root .contact-form button[type="submit"]:hover, :root .contact-form button[type="submit"]:focus-visible,
+:root .apple-modal a:hover, :root .apple-modal a:focus-visible {
+  background: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.38), inset 0 -1px 0 rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+}
+:root .site-nav nav a.is-active,
+:root .filter-pill.is-active {
+  background: rgba(250, 250, 247, 0.88) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  color: #050507 !important;
+}
+/* light backgrounds: contact mode + open service modal */
+:root body.contact-mode .site-nav nav a,
+:root body.contact-mode .filter-pill,
+:root body.contact-mode .contact-form button[type="submit"],
+:root .apple-modal.active a {
+  background: rgba(255, 255, 255, 0.42) !important;
+  border: 0 !important;
+  box-shadow: inset 0 0 0 0.5px rgba(5, 5, 7, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(5, 5, 7, 0.04) !important;
+  color: rgba(5, 5, 7, 0.8) !important;
+}
+:root body.contact-mode .site-nav nav a:hover, :root body.contact-mode .site-nav nav a:focus-visible,
+:root body.contact-mode .filter-pill:hover, :root body.contact-mode .filter-pill:focus-visible,
+:root body.contact-mode .contact-form button[type="submit"]:hover, :root body.contact-mode .contact-form button[type="submit"]:focus-visible,
+:root .apple-modal.active a:hover, :root .apple-modal.active a:focus-visible {
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #050507 !important;
+}
+:root body.contact-mode .site-nav nav a.is-active,
+:root body.contact-mode .filter-pill.is-active {
+  background: #050507 !important;
+  box-shadow: none !important;
+  color: #f7f7f2 !important;
+}
+:root .contact-form button[type="submit"]:disabled { transform: none !important; }
