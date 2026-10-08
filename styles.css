@@ -3336,3 +3336,28 @@ h2[class] {
     width: auto !important;
   }
 }
+
+/* ══ 1. One button spec: 20px light text, 44px tall ══ */
+:root .site-nav nav a,
+:root .filter-pill,
+:root .contact-form button[type="submit"],
+:root .apple-modal a {
+  font-family: "Apercu", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+  line-height: 1 !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+}
+
+/* ══ 2. One corner radius for every image (16px) ══ */
+:root .work-tile, :root .tile-image, :root .frost-overlay { border-radius: 16px !important; }
+
+/* ══ 3. One section rhythm: 120px between sections on desktop, 80px on mobile ══ */
+:root main > .section, :root main > .contact { padding-top: 60px !important; padding-bottom: 60px !important; }
+:root main > #work.section { padding-top: clamp(28px, 4vw, 48px) !important; }
+@media (max-width: 680px) {
+  :root main > .section, :root main > .contact { padding-top: 40px !important; padding-bottom: 40px !important; }
+  :root main > #work.section { padding-top: 28px !important; }
+}

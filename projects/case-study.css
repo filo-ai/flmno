@@ -1784,3 +1784,35 @@ img.fade-img.is-loaded {
   :root .cs-hero__head::after { left: var(--inset); right: var(--inset); bottom: 0; }
   :root .cs-hero { padding-top: calc(var(--cs-titlebar-h, 200px) + 24px) !important; }
 }
+
+/* ══ 1. One button spec: 20px light text, 44px tall ══ */
+:root .cs-header__back,
+:root .cs-pill {
+  font-family: "Apercu", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.2px !important;
+  line-height: 1 !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+}
+
+/* ══ 2. One corner radius for every image (16px) ══ */
+:root .cs-carousel__item, :root .cs-carousel__item img, :root .cs-gallery figure, :root .cs-impact__card { border-radius: 16px !important; }
+:root .cs-flipbook-wrap .cs-flipbook-card {
+  border-radius: 16px !important;
+  clip-path: inset(0 round 16px) !important;
+  -webkit-clip-path: inset(0 round 16px) !important;
+}
+
+/* ══ 3. One section rhythm: 120px between sections on desktop, 80px on mobile ══ */
+:root .cs-hero { margin-bottom: 60px !important; }
+:root .cs-carousel { margin-bottom: 60px !important; }
+:root .cs-impact { padding-top: 60px !important; padding-bottom: 0 !important; }
+:root .cs-more { margin-top: 120px !important; }
+@media (max-width: 680px) {
+  :root .cs-hero { margin-bottom: 40px !important; }
+  :root .cs-carousel { margin-bottom: 40px !important; }
+  :root .cs-impact { padding-top: 40px !important; }
+  :root .cs-more { margin-top: 80px !important; }
+}
