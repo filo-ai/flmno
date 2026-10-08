@@ -589,3 +589,12 @@ document.addEventListener('contextmenu', e => {
   zoom.addEventListener('pointerup', end);
   zoom.addEventListener('pointercancel', end);
 })();
+
+/* ── Flipbook: the card under the pointer shows its label (cards sit beneath the swipe layer) ── */
+document.querySelectorAll('.cs-flipbook-wrap').forEach((wrap) => {
+  const cards = [...wrap.querySelectorAll('.cs-flipbook-card')];
+  wrap.querySelectorAll('.cs-flipbook-slide').forEach((slide, i) => {
+    slide.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && cards[i]) cards[i].classList.add('is-hover'); });
+    slide.addEventListener('pointerleave', () => { if (cards[i]) cards[i].classList.remove('is-hover'); });
+  });
+});

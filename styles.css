@@ -3210,10 +3210,6 @@ h2[class] {
 .work-tile.has-motion.is-playing .tile-motion {
   opacity: 1;
 }
-.work-tile.has-motion:hover .frost-overlay {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
 .site-footer .js-year {
   font: inherit !important;
   letter-spacing: inherit !important;
@@ -3360,4 +3356,45 @@ h2[class] {
 @media (max-width: 680px) {
   :root main > .section, :root main > .contact { padding-top: 40px !important; padding-bottom: 40px !important; }
   :root main > #work.section { padding-top: 28px !important; }
+}
+
+/* ══ EVERY IMAGE, ONE TREATMENT ══
+   hover devices: a frosted panel (dark gradient + 14px glass blur) fades in with eyebrow + title; never zoom or lift
+   touch devices: the same eyebrow + title always visible in a frosted bar along the bottom */
+:root .work-tile { position: relative; }
+:root .work-tile, :root .work-tile:hover, :root .work-tile:focus-visible, :root .work-tile .tile-image, :root .work-tile .tile-image img, :root .work-tile:hover .tile-image img, :root .work-tile:focus-visible .tile-image img { transform: none !important; scale: none !important; }
+:root .work-tile .tile-image, :root .work-tile .tile-image img, :root .work-tile:hover .tile-image img, :root .work-tile:focus-visible .tile-image img { filter: none !important; }
+:root .work-tile .frost-overlay {
+  position: absolute !important; inset: 0 !important; z-index: 2;
+  display: flex !important; flex-direction: column !important;
+  justify-content: flex-start !important; align-items: flex-start !important; text-align: left !important;
+  padding: 20px !important; margin: 0 !important; border-radius: inherit !important;
+  background: linear-gradient(to bottom, rgba(5,5,7,.72) 0%, rgba(5,5,7,.42) 38%, rgba(5,5,7,.08) 100%) !important;
+  -webkit-backdrop-filter: blur(14px) !important; backdrop-filter: blur(14px) !important;
+  opacity: 0; transition: opacity .25s ease !important; pointer-events: none !important;
+}
+:root .work-tile .frost-overlay p {
+  display: block; margin: 0 0 8px !important;
+  font-family: "Apercu", -apple-system, sans-serif !important; font-size: 11px !important; font-weight: 400 !important;
+  letter-spacing: .12em !important; line-height: 1.5 !important; text-transform: none !important;
+  color: rgba(255,255,255,.85) !important;
+}
+:root .work-tile .frost-overlay h2 {
+  display: block; margin: 0 !important;
+  font-family: "Reckless", Georgia, serif !important; font-size: 27px !important; font-weight: 500 !important;
+  letter-spacing: .36px !important; line-height: 1.2 !important; color: #fff !important;
+}
+@media (hover: hover) {
+  :root .work-tile:hover .frost-overlay, :root .work-tile:focus-visible .frost-overlay { opacity: 1 !important; }
+}
+@media (hover: none) {
+  :root .work-tile .frost-overlay {
+    inset: auto 0 0 0 !important; justify-content: flex-end !important;
+    padding: 12px 14px !important; opacity: 1 !important;
+    border-radius: 0 0 16px 16px !important;
+    background: rgba(5,5,7,.42) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(160%) !important; backdrop-filter: blur(14px) saturate(160%) !important;
+  }
+  :root .work-tile .frost-overlay p { margin-bottom: 4px !important; }
+  :root .work-tile .frost-overlay h2 { font-size: 20px !important; }
 }

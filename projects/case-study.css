@@ -1816,3 +1816,44 @@ img.fade-img.is-loaded {
   :root .cs-impact { padding-top: 40px !important; }
   :root .cs-more { margin-top: 80px !important; }
 }
+
+/* ══ EVERY IMAGE, ONE TREATMENT ══
+   hover devices: a frosted panel (dark gradient + 14px glass blur) fades in with eyebrow + title; never zoom or lift
+   touch devices: the same eyebrow + title always visible in a frosted bar along the bottom */
+:root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card { position: relative; }
+:root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card, :root .cs-carousel__item:hover, :root .cs-carousel__item:focus-visible, :root .cs-gallery figure:hover, :root .cs-gallery figure:focus-visible, :root .cs-flipbook-card:hover, :root .cs-flipbook-card:focus-visible, :root .cs-carousel__item img, :root .cs-carousel__item:hover img, :root .cs-gallery figure img, :root .cs-flipbook-card img { transform: none !important; scale: none !important; }
+:root .cs-carousel__item img, :root .cs-carousel__item:hover img, :root .cs-gallery figure img, :root .cs-flipbook-card img { filter: none !important; }
+:root .img-label {
+  position: absolute !important; inset: 0 !important; z-index: 2;
+  display: flex !important; flex-direction: column !important;
+  justify-content: flex-start !important; align-items: flex-start !important; text-align: left !important;
+  padding: 20px !important; margin: 0 !important; border-radius: inherit !important;
+  background: linear-gradient(to bottom, rgba(5,5,7,.72) 0%, rgba(5,5,7,.42) 38%, rgba(5,5,7,.08) 100%) !important;
+  -webkit-backdrop-filter: blur(14px) !important; backdrop-filter: blur(14px) !important;
+  opacity: 0; transition: opacity .25s ease !important; pointer-events: none !important;
+}
+:root .img-label__eyebrow {
+  display: block; margin: 0 0 8px !important;
+  font-family: "Apercu", -apple-system, sans-serif !important; font-size: 11px !important; font-weight: 400 !important;
+  letter-spacing: .12em !important; line-height: 1.5 !important; text-transform: none !important;
+  color: rgba(255,255,255,.85) !important;
+}
+:root .img-label__title {
+  display: block; margin: 0 !important;
+  font-family: "Reckless", Georgia, serif !important; font-size: 27px !important; font-weight: 500 !important;
+  letter-spacing: .36px !important; line-height: 1.2 !important; color: #fff !important;
+}
+@media (hover: hover) {
+  :root .cs-carousel__item:hover .img-label, :root .cs-carousel__item:focus-visible .img-label, :root .cs-gallery figure:hover .img-label, :root .cs-flipbook-card.is-hover .img-label { opacity: 1 !important; }
+}
+@media (hover: none) {
+  :root .img-label {
+    inset: auto 0 0 0 !important; justify-content: flex-end !important;
+    padding: 12px 14px !important; opacity: 1 !important;
+    border-radius: 0 0 16px 16px !important;
+    background: rgba(5,5,7,.42) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(160%) !important; backdrop-filter: blur(14px) saturate(160%) !important;
+  }
+  :root .img-label__eyebrow { margin-bottom: 4px !important; }
+  :root .img-label__title { font-size: 20px !important; }
+}

@@ -77,15 +77,27 @@ function altFor(src, i) {
   let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
   const generic = /~mv2|^[0-9a-f]{6}_[0-9a-f]{12,}|^img[_-]?\d+$|^asset[-_ ]?\d+|^\d+$|f000$/i.test(name) || name.length < 3;
   if (generic) return `${PAGE.title}, image ${i + 1}`;
-  name = name.replace(/[-_]+/g, " ").replace(/\b(\d+x|final|edited|copy)\b/gi, "").replace(/\s+/g, " ").trim();
+  name = name.replace(/[-_]+/g, " ").replace(/\b(\d+x|final|edited|copy|flmno|v\d+)\b/gi, "").replace(/\s+\d+$/, "").replace(/\s+/g, " ").trim();
+  if (!name) return `${PAGE.title}, image ${i + 1}`;
   return `${PAGE.title}: ${name.charAt(0).toUpperCase()}${name.slice(1)}`;
 }
+
+
+// ── One label for every image: small eyebrow + Reckless title ──
+const imgLabel = (eyebrow, title, tag = "span") =>
+  `<${tag} class="img-label"${tag === "span" ? ' aria-hidden="true"' : ""}><span class="img-label__eyebrow">${esc(eyebrow)}</span><span class="img-label__title">${esc(title)}</span></${tag}>`;
+const descFor = (src, i) => { const a = altFor(src, i); return a.includes(": ") ? a.split(": ").slice(1).join(": ") : `Image ${i + 1}`; };
+const tagsFor = (href) => {
+  const m = String(href || "").match(/projects\/([^/"]+)|^\.\.\/([^/"]+)\//);
+  const slug = m && (m[1] || m[2]);
+  return (PROJECT_TAG_LIST[slug] || []).map(t => FILTER_LABELS[t] || t).join(", ") || "Project";
+};
 
 function renderCarousel(gallery) {
   if (!gallery?.length) return "";
   const slides = gallery.slice(0, 3).map((src, i) =>
-    `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery" data-cursor="View" style="background-color:${ph(src)}">` +
-    `${media(src, imgFit(src, 900, 82), ` loading="eager" draggable="false"${i === 0 ? ` style="view-transition-name: p-${PAGE.slug}"` : ""}`, altFor(src, i), "(max-width: 680px) 85vw, 480px")}</button>`
+    `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery" style="background-color:${ph(src)}">` +
+    `${media(src, imgFit(src, 900, 82), ` loading="eager" draggable="false"${i === 0 ? ` style="view-transition-name: p-${PAGE.slug}"` : ""}`, altFor(src, i), "(max-width: 680px) 85vw, 480px")}${imgLabel("Gallery", `View all ${gallery.length} images`)}</button>`
   ).join("\n");
 
   const stills = gallery.filter(s => !isVideo(s));
@@ -191,7 +203,7 @@ function renderRelated(related) {
     const op = i <= 1 ? "1" : "0";
     return `          <div class="cs-flipbook-card${i === 0 ? " is-active" : ""}" aria-hidden="true" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${100 - i * 10};background-color:${ph(n.image)}">
             ${imgTag}
-            <div class="cs-flipbook-card__label">${esc(n.title)}</div>
+            ${imgLabel(tagsFor(n.href), n.title)}
           </div>`;
   }).join("\n");
   const slides = related.map((n) =>
@@ -219,7 +231,7 @@ ${slides}
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
   const figs = gallery.map((src, i) =>
-    `        <figure${i % 3 === 0 ? ' class="full"' : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}</figure>`
+    `        <figure${i % 3 === 0 ? ' class="full"' : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel(`${i + 1} / ${gallery.length}`, descFor(src, i), "figcaption")}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
@@ -289,8 +301,11 @@ function ogImage(slug, gallery) {
 // ── Breadcrumb categories: read from the homepage tiles + filter labels ──
 const HOME_HTML = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 const PROJECT_TAGS = {};
-for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\//g))
+const PROJECT_TAG_LIST = {};
+for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\//g)) {
   PROJECT_TAGS[m[2]] = m[1].trim().split(/\s+/)[0];
+  PROJECT_TAG_LIST[m[2]] = m[1].trim().split(/\s+/);
+}
 const FILTER_LABELS = {};
 for (const m of HOME_HTML.matchAll(/data-filter="([^"]+)">([^<]+)<\/button>/g)) FILTER_LABELS[m[1]] = m[2].trim();
 
