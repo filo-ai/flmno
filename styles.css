@@ -3315,3 +3315,11 @@ h2[class] {
 
 /* ══ Header nav: no margin or padding of its own ══ */
 :root .site-nav nav { margin: 0 !important; padding: 0 !important; }
+
+/* ══ Header aligned to the 880px content column (desktop) ══ */
+@media (min-width: 681px) {
+  :root .site-nav {
+    padding-left: max(clamp(24px, 6vw, 88px), calc((100vw - 880px) / 2)) !important;
+    padding-right: max(clamp(24px, 6vw, 88px), calc((100vw - 880px) / 2)) !important;
+  }
+}
