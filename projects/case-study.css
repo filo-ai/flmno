@@ -1739,3 +1739,9 @@ img.fade-img.is-loaded {
   color: #fff !important;
   transform: translateY(-2px) !important;
 }
+
+/* ══ Mobile: Impact and More Work headings centered ══ */
+@media (max-width: 680px) {
+  .cs-impact__head { text-align: center !important; }
+  .cs-more__head { flex-direction: column !important; align-items: center !important; gap: 6px !important; text-align: center !important; }
+}
