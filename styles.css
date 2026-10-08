@@ -3388,8 +3388,13 @@ h2[class] {
   :root .work-tile:hover .frost-overlay, :root .work-tile:focus-visible .frost-overlay { opacity: 1 !important; }
 }
 
-/* ── Mobile: nav buttons shrink slightly while scrolling down ── */
+/* ── Mobile: nav buttons shrink while scrolling down, smooth and GPU-friendly ── */
 @media (max-width: 680px) {
-  .site-nav nav { transition: transform .3s cubic-bezier(.22,1,.36,1); transform-origin: center bottom; }
-  .nav-compact .site-nav nav { transform: scale(.86); }
+  :root .site-nav nav {
+    scale: 1;
+    transform-origin: center bottom;
+    will-change: scale;
+    transition: opacity .6s ease, visibility .6s ease, scale .35s cubic-bezier(.22, 1, .36, 1) !important;
+  }
+  :root.nav-compact .site-nav nav { scale: .78; }
 }

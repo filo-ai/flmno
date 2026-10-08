@@ -1847,10 +1847,15 @@ img.fade-img.is-loaded {
   :root .cs-carousel__item:hover .img-label, :root .cs-carousel__item:focus-visible .img-label, :root .cs-gallery figure:hover .img-label, :root .cs-flipbook-card.is-hover .img-label { opacity: 1 !important; }
 }
 
-/* ── Mobile: nav buttons shrink slightly while scrolling down ── */
+/* ── Mobile: nav buttons shrink while scrolling down, smooth and GPU-friendly ── */
 @media (max-width: 680px) {
-  .cs-header__back { transition: transform .3s cubic-bezier(.22,1,.36,1); transform-origin: center bottom; }
-  .nav-compact .cs-header__back { transform: scale(.86); }
+  :root .cs-header__back {
+    scale: 1;
+    transform-origin: center bottom;
+    will-change: scale;
+    transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease, opacity .6s ease, visibility .6s ease, scale .35s cubic-bezier(.22, 1, .36, 1) !important;
+  }
+  :root.nav-compact .cs-header__back { scale: .78; }
 }
 
 /* ── Flipbook: a double-ended arrow shows it swipes sideways ── */

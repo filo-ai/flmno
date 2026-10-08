@@ -582,9 +582,9 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
     requestAnimationFrame(() => {
       const y = scrollY, dy = y - lastY;
       if (!mq.matches || y < 40) document.documentElement.classList.remove('nav-compact');
-      else if (dy > 6) document.documentElement.classList.add('nav-compact');
-      else if (dy < -6) document.documentElement.classList.remove('nav-compact');
-      if (Math.abs(dy) > 6) lastY = y;
+      else if (dy > 4) document.documentElement.classList.add('nav-compact');
+      else if (dy < -4) document.documentElement.classList.remove('nav-compact');
+      if (Math.abs(dy) > 4) lastY = y;
       ticking = false;
     });
   }, { passive: true });
