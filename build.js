@@ -307,7 +307,7 @@ for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="(
 }
 // ── More Work: other homepage projects that share this project's tags ──
 const HOME_TILES = [];
-for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\/[^"]*">\s*<div class="tile-image"><img[^>]*?src="([^"]+)"[\s\S]*?<h2>([^<]+)<\/h2>/g)) {
+for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\/[^"]*">[\s\S]*?<div class="tile-image"><img[^>]*?src="([^"]+)"[\s\S]*?<h2>([^<]+)<\/h2>/g)) {
   HOME_TILES.push({ slug: m[2], tags: m[1].trim().split(/\s+/), image: m[3].replace(/\/v1\/fill\/.*$/, ""), title: m[4].trim() });
 }
 function relatedByTags(slug, fallback, max = 6) {

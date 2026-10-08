@@ -3492,3 +3492,32 @@ html.is-returning *::after { transition: none !important; }
 html.is-returned body { animation: flmno-calm-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
 @keyframes flmno-calm-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { html.is-returned body { animation: none; } }
+
+/* ── "Coming soon" glass pill on project tiles ── */
+:root .work-tile { position: relative; }
+:root .tile-soon {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font: 300 16px/1 "Apercu", sans-serif;
+  letter-spacing: -0.2px;
+  color: rgba(247, 247, 242, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+  pointer-events: none;
+  white-space: nowrap;
+  width: auto !important;
+  left: auto !important;
+}
+body.contact-mode .tile-soon { background: rgba(255, 255, 255, 0.42); color: #050507; }
+@media (max-width: 680px) {
+  :root .tile-soon { right: 12px; bottom: 12px; }
+}
