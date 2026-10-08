@@ -570,14 +570,3 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   addEventListener('resize', set);
   document.fonts && document.fonts.ready.then(set);
 })();
-
-/* ── Filtering while the tag bar is pinned: bring the grid back to its first row ── */
-(() => {
-  const work = document.getElementById('work');
-  if (!work) return;
-  document.querySelectorAll('.filter-pill[data-filter]').forEach((pill) => {
-    pill.addEventListener('click', () => {
-      if (work.getBoundingClientRect().top < -10) work.scrollIntoView({ behavior: __RM ? 'auto' : 'smooth' });
-    });
-  });
-})();

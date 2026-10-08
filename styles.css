@@ -3312,9 +3312,3 @@ h2[class] {
     justify-content: center !important;
   }
 }
-
-/* ══ Tag bar stays pinned while browsing the work grid (releases when About arrives) ══ */
-.filter-bar { position: sticky; top: 64px; z-index: 50; }
-@media (max-width: 680px) {
-  .filter-bar { top: calc(64px + env(safe-area-inset-top, 0px)); }
-}
