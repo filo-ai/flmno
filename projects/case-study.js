@@ -590,3 +590,7 @@ document.querySelectorAll('.cs-flipbook-wrap').forEach((wrap) => {
     });
   }, { passive: true });
 })();
+
+/* ── No saving images anywhere on project pages ── */
+document.addEventListener('contextmenu', (e) => { if (e.target.closest('img, video, .cs-carousel__item, .cs-gallery figure, .cs-flipbook-wrap, .cs-zoom')) e.preventDefault(); });
+document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video, .cs-carousel__item, .cs-flipbook-wrap')) e.preventDefault(); });

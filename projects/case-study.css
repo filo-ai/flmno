@@ -1844,7 +1844,7 @@ img.fade-img.is-loaded {
   letter-spacing: .36px !important; line-height: 1.2 !important; color: #fff !important;
 }
 @media all {
-  :root .cs-carousel__item:hover .img-label, :root .cs-carousel__item:focus-visible .img-label, :root .cs-gallery figure:hover .img-label.is-hover .img-label { opacity: 1 !important; }
+  :root .cs-carousel__item:hover .img-label, :root .cs-carousel__item:focus-visible .img-label, :root .cs-gallery figure:hover .img-label, :root .cs-flipbook-card.is-hover .img-label { opacity: 1 !important; }
 }
 
 /* ── Mobile: nav buttons shrink slightly while scrolling down ── */
@@ -1855,3 +1855,12 @@ img.fade-img.is-loaded {
 
 /* ── Flipbook: a double-ended arrow shows it swipes sideways ── */
 .cs-flipbook-scroller, .cs-flipbook-scroller.is-dragging { cursor: ew-resize !important; }
+
+/* ── No saving images on project pages: no context menu, long-press sheet or dragging ── */
+:root img, :root video {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  pointer-events: none !important;   /* taps/clicks land on the card, button or link around the image */
+}
