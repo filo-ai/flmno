@@ -3497,8 +3497,11 @@ html.is-returned body { animation: flmno-calm-in 0.5s cubic-bezier(0.22, 1, 0.36
 :root .work-tile { position: relative; }
 :root .tile-soon {
   position: absolute;
-  right: 16px;
-  bottom: 16px;
+  left: 20px !important;
+  bottom: 20px !important;
+  top: auto !important;
+  margin: 0 !important;
+  transform: none !important;
   z-index: 6;
   display: inline-flex;
   align-items: center;
@@ -3515,9 +3518,6 @@ html.is-returned body { animation: flmno-calm-in 0.5s cubic-bezier(0.22, 1, 0.36
   pointer-events: none;
   white-space: nowrap;
   width: auto !important;
-  left: auto !important;
+  right: auto !important;
 }
 body.contact-mode .tile-soon { background: rgba(255, 255, 255, 0.42); color: #050507; }
-@media (max-width: 680px) {
-  :root .tile-soon { right: 12px; bottom: 12px; }
-}
