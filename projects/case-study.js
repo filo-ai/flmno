@@ -480,32 +480,6 @@ document.addEventListener('contextmenu', e => {
   set();
 })();
 
-/* ══ Desktop cursor label ("Drag" over the flipbook, "View" over images) ══ */
-(() => {
-  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  const el = document.createElement('div');
-  el.className = 'fx-cursor';
-  el.setAttribute('aria-hidden', 'true');
-  el.innerHTML = '<div class="fx-cursor__dot"><span class="fx-cursor__label"></span></div>';
-  document.body.appendChild(el);
-  const label = el.querySelector('.fx-cursor__label');
-  let x = -200, y = -200, tx = -200, ty = -200, raf = 0;
-  const loop = () => {
-    x += (tx - x) * (__RM ? 1 : .22); y += (ty - y) * (__RM ? 1 : .22);
-    el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    raf = (Math.abs(tx - x) > .1 || Math.abs(ty - y) > .1) ? requestAnimationFrame(loop) : 0;
-  };
-  addEventListener('pointermove', (e) => {
-    if (e.pointerType !== 'mouse') return;
-    tx = e.clientX; ty = e.clientY;
-    const target = e.target.closest && e.target.closest('[data-cursor]');
-    if (target) { label.textContent = target.dataset.cursor; el.classList.add('is-on'); } else el.classList.remove('is-on');
-    if (!raf) raf = requestAnimationFrame(loop);
-  }, { passive: true });
-  addEventListener('pointerdown', () => el.classList.add('is-down'));
-  addEventListener('pointerup', () => el.classList.remove('is-down'));
-  document.addEventListener('mouseleave', () => el.classList.remove('is-on'));
-})();
 
 /* ══ Gallery: full-screen viewer — tap to open, pinch/double-tap to zoom, swipe for next ══ */
 (() => {
@@ -598,3 +572,21 @@ document.querySelectorAll('.cs-flipbook-wrap').forEach((wrap) => {
     slide.addEventListener('pointerleave', () => { if (cards[i]) cards[i].classList.remove('is-hover'); });
   });
 });
+
+/* ── Mobile: nav buttons ease smaller while scrolling down, back to full size on scroll up ── */
+(() => {
+  const mq = matchMedia('(max-width: 680px)');
+  let lastY = scrollY, ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = scrollY, dy = y - lastY;
+      if (!mq.matches || y < 40) document.documentElement.classList.remove('nav-compact');
+      else if (dy > 6) document.documentElement.classList.add('nav-compact');
+      else if (dy < -6) document.documentElement.classList.remove('nav-compact');
+      if (Math.abs(dy) > 6) lastY = y;
+      ticking = false;
+    });
+  }, { passive: true });
+})();

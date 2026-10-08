@@ -1819,9 +1819,9 @@ img.fade-img.is-loaded {
 
 /* ══ EVERY IMAGE, ONE TREATMENT ══
    hover devices: a frosted panel (dark gradient + 14px glass blur) fades in with eyebrow + title; never zoom or lift
-   touch devices: the same eyebrow + title always visible in a frosted bar along the bottom */
-:root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card { position: relative; }
-:root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card, :root .cs-carousel__item:hover, :root .cs-carousel__item:focus-visible, :root .cs-gallery figure:hover, :root .cs-gallery figure:focus-visible, :root .cs-flipbook-card:hover, :root .cs-flipbook-card:focus-visible, :root .cs-carousel__item img, :root .cs-carousel__item:hover img, :root .cs-gallery figure img, :root .cs-flipbook-card img { transform: none !important; scale: none !important; }
+   same on every device (tap shows it on phones) */
+:root .cs-carousel__item, :root .cs-gallery figure { position: relative; }
+:root .cs-carousel__item, :root .cs-gallery figure, :root .cs-carousel__item:hover, :root .cs-carousel__item:focus-visible, :root .cs-gallery figure:hover, :root .cs-gallery figure:focus-visible, :root .cs-carousel__item img, :root .cs-carousel__item:hover img, :root .cs-gallery figure img, :root .cs-flipbook-card img { transform: none !important; scale: none !important; }
 :root .cs-carousel__item img, :root .cs-carousel__item:hover img, :root .cs-gallery figure img, :root .cs-flipbook-card img { filter: none !important; }
 :root .img-label {
   position: absolute !important; inset: 0 !important; z-index: 2;
@@ -1834,26 +1834,24 @@ img.fade-img.is-loaded {
 }
 :root .img-label__eyebrow {
   display: block; margin: 0 0 8px !important;
-  font-family: "Apercu", -apple-system, sans-serif !important; font-size: 11px !important; font-weight: 400 !important;
-  letter-spacing: .12em !important; line-height: 1.5 !important; text-transform: none !important;
-  color: rgba(255,255,255,.85) !important;
+  font-family: "Apercu", -apple-system, sans-serif !important; font-size: 20px !important; font-weight: 300 !important;
+  letter-spacing: -0.2px !important; line-height: 1.2 !important; text-transform: none !important;
+  color: rgba(247,247,242,.9) !important;
 }
 :root .img-label__title {
   display: block; margin: 0 !important;
   font-family: "Reckless", Georgia, serif !important; font-size: 27px !important; font-weight: 500 !important;
   letter-spacing: .36px !important; line-height: 1.2 !important; color: #fff !important;
 }
-@media (hover: hover) {
-  :root .cs-carousel__item:hover .img-label, :root .cs-carousel__item:focus-visible .img-label, :root .cs-gallery figure:hover .img-label, :root .cs-flipbook-card.is-hover .img-label { opacity: 1 !important; }
+@media all {
+  :root .cs-carousel__item:hover .img-label, :root .cs-carousel__item:focus-visible .img-label, :root .cs-gallery figure:hover .img-label.is-hover .img-label { opacity: 1 !important; }
 }
-@media (hover: none) {
-  :root .img-label {
-    inset: auto 0 0 0 !important; justify-content: flex-end !important;
-    padding: 12px 14px !important; opacity: 1 !important;
-    border-radius: 0 0 16px 16px !important;
-    background: rgba(5,5,7,.42) !important;
-    -webkit-backdrop-filter: blur(14px) saturate(160%) !important; backdrop-filter: blur(14px) saturate(160%) !important;
-  }
-  :root .img-label__eyebrow { margin-bottom: 4px !important; }
-  :root .img-label__title { font-size: 20px !important; }
+
+/* ── Mobile: nav buttons shrink slightly while scrolling down ── */
+@media (max-width: 680px) {
+  .cs-header__back { transition: transform .3s cubic-bezier(.22,1,.36,1); transform-origin: center bottom; }
+  .nav-compact .cs-header__back { transform: scale(.86); }
 }
+
+/* ── Flipbook: a double-ended arrow shows it swipes sideways ── */
+.cs-flipbook-scroller, .cs-flipbook-scroller.is-dragging { cursor: ew-resize !important; }

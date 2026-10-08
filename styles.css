@@ -3360,7 +3360,7 @@ h2[class] {
 
 /* ══ EVERY IMAGE, ONE TREATMENT ══
    hover devices: a frosted panel (dark gradient + 14px glass blur) fades in with eyebrow + title; never zoom or lift
-   touch devices: the same eyebrow + title always visible in a frosted bar along the bottom */
+   same on every device (tap shows it on phones) */
 :root .work-tile { position: relative; }
 :root .work-tile, :root .work-tile:hover, :root .work-tile:focus-visible, :root .work-tile .tile-image, :root .work-tile .tile-image img, :root .work-tile:hover .tile-image img, :root .work-tile:focus-visible .tile-image img { transform: none !important; scale: none !important; }
 :root .work-tile .tile-image, :root .work-tile .tile-image img, :root .work-tile:hover .tile-image img, :root .work-tile:focus-visible .tile-image img { filter: none !important; }
@@ -3375,26 +3375,21 @@ h2[class] {
 }
 :root .work-tile .frost-overlay p {
   display: block; margin: 0 0 8px !important;
-  font-family: "Apercu", -apple-system, sans-serif !important; font-size: 11px !important; font-weight: 400 !important;
-  letter-spacing: .12em !important; line-height: 1.5 !important; text-transform: none !important;
-  color: rgba(255,255,255,.85) !important;
+  font-family: "Apercu", -apple-system, sans-serif !important; font-size: 20px !important; font-weight: 300 !important;
+  letter-spacing: -0.2px !important; line-height: 1.2 !important; text-transform: none !important;
+  color: rgba(247,247,242,.9) !important;
 }
 :root .work-tile .frost-overlay h2 {
   display: block; margin: 0 !important;
   font-family: "Reckless", Georgia, serif !important; font-size: 27px !important; font-weight: 500 !important;
   letter-spacing: .36px !important; line-height: 1.2 !important; color: #fff !important;
 }
-@media (hover: hover) {
+@media all {
   :root .work-tile:hover .frost-overlay, :root .work-tile:focus-visible .frost-overlay { opacity: 1 !important; }
 }
-@media (hover: none) {
-  :root .work-tile .frost-overlay {
-    inset: auto 0 0 0 !important; justify-content: flex-end !important;
-    padding: 12px 14px !important; opacity: 1 !important;
-    border-radius: 0 0 16px 16px !important;
-    background: rgba(5,5,7,.42) !important;
-    -webkit-backdrop-filter: blur(14px) saturate(160%) !important; backdrop-filter: blur(14px) saturate(160%) !important;
-  }
-  :root .work-tile .frost-overlay p { margin-bottom: 4px !important; }
-  :root .work-tile .frost-overlay h2 { font-size: 20px !important; }
+
+/* ── Mobile: nav buttons shrink slightly while scrolling down ── */
+@media (max-width: 680px) {
+  .site-nav nav { transition: transform .3s cubic-bezier(.22,1,.36,1); transform-origin: center bottom; }
+  .nav-compact .site-nav nav { transform: scale(.86); }
 }

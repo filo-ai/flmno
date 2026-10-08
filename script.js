@@ -562,6 +562,7 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   const links = document.querySelectorAll('.site-nav nav a');
   if (links.length < 2) return;
   const set = () => {
+    if (document.documentElement.classList.contains('nav-compact')) return;   // measure only at full size
     const first = links[0].getBoundingClientRect(), last = links[links.length - 1].getBoundingClientRect();
     const span = Math.round(last.right - first.left);
     if (span > 0) document.documentElement.style.setProperty('--nav-span', span + 'px');
@@ -569,4 +570,22 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   set();
   addEventListener('resize', set);
   document.fonts && document.fonts.ready.then(set);
+})();
+
+/* ── Mobile: nav buttons ease smaller while scrolling down, back to full size on scroll up ── */
+(() => {
+  const mq = matchMedia('(max-width: 680px)');
+  let lastY = scrollY, ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = scrollY, dy = y - lastY;
+      if (!mq.matches || y < 40) document.documentElement.classList.remove('nav-compact');
+      else if (dy > 6) document.documentElement.classList.add('nav-compact');
+      else if (dy < -6) document.documentElement.classList.remove('nav-compact');
+      if (Math.abs(dy) > 6) lastY = y;
+      ticking = false;
+    });
+  }, { passive: true });
 })();
