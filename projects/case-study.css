@@ -2167,3 +2167,14 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   pointer-events: none;
 }
 :root .cs-sheet__title { text-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0 2px 24px rgba(0, 0, 0, 0.45), 0 4px 48px rgba(0, 0, 0, 0.35); }
+
+/* ── Phones: the logo tile shrinks with the nav buttons on scroll ── */
+@media (max-width: 680px) {
+  :root #mobile-logo {
+    transform-origin: 50% 0;
+    transition: background 0.2s ease, box-shadow 0.2s ease, scale 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+  :root.nav-compact #mobile-logo { scale: 0.7; }
+  :root.nav-compact #mobile-logo,
+  :root.nav-compact #mobile-logo:hover { border-radius: calc(10px / 0.7) !important; }
+}

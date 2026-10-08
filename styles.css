@@ -3544,3 +3544,14 @@ body.contact-mode .tile-soon { background: rgba(255, 255, 255, 0.42); color: #05
 :root body.contact-mode .contact-form button[type="submit"]:focus-visible {
   box-shadow: inset 0 0 0 0.5px rgba(5, 5, 7, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(5, 5, 7, 0.04) !important;
 }
+
+/* ── Phones: the logo tile shrinks with the nav buttons on scroll ── */
+@media (max-width: 680px) {
+  :root #mobile-logo {
+    transform-origin: 50% 0;
+    transition: background 0.2s ease, box-shadow 0.2s ease, scale 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+  :root.nav-compact #mobile-logo { scale: 0.7; }
+  :root.nav-compact #mobile-logo,
+  :root.nav-compact #mobile-logo:hover { border-radius: calc(10px / 0.7) !important; }
+}
