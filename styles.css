@@ -3521,3 +3521,12 @@ html.is-returned body { animation: flmno-calm-in 0.5s cubic-bezier(0.22, 1, 0.36
   right: auto !important;
 }
 body.contact-mode .tile-soon { background: rgba(255, 255, 255, 0.42); color: #050507; }
+
+/* ── One corner radius for every button: 10px, same as the Coming soon pill ── */
+:root .modal-close,
+:root .img-lightbox__close { border-radius: 10px !important; }
+/* nav shrinks with scale on phones; keep its corners reading as 10px */
+@media (max-width: 680px) {
+  :root .site-nav nav a { transition-property: background, color, border-radius, transform, opacity; }
+  :root.nav-compact .site-nav nav a { border-radius: calc(10px / 0.78) !important; }
+}

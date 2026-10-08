@@ -1988,3 +1988,13 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 @media (max-width: 680px) {
   :root .cs-more .cs-flipbook-wrap { margin-bottom: -40px !important; }
 }
+
+/* ── One corner radius for every button: 10px, same as the Coming soon pill ── */
+:root .cs-sheet__close { border-radius: 10px !important; }
+@media (max-width: 680px) {
+  :root.nav-compact .cs-header__back { border-radius: calc(10px / 0.78) !important; }
+}
+
+/* ── More Work: never clip the flipbook card (clip sideways only) ── */
+:root .cs-more { overflow: visible !important; overflow-x: clip !important; }
+:root .cs-more .cs-flipbook-wrap { overflow: visible !important; overflow-x: clip !important; }
