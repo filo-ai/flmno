@@ -420,8 +420,10 @@ document.addEventListener('contextmenu', e => {
     ticking = true;
     requestAnimationFrame(() => {
       // stay large until the story text has fully lit up, then tighten (no story text: tighten on scroll)
-      const story = document.querySelector('.cs-story__text');
-      const lit = !story || !story.classList.contains('is-lighting') || story.classList.contains('is-lit');
+      // live check (not remembered): the reveal must be complete on THIS pass
+      const spacer = document.querySelector('.cs-hero-spacer');
+      const dist = spacer ? spacer.offsetHeight : 0;
+      const lit = !dist || scrollY / dist >= 0.985;
       if (scrollY > 24 && lit) head.classList.add('is-compact');
       else if (scrollY < 8) head.classList.remove('is-compact');
       ticking = false;
