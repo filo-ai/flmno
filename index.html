@@ -336,25 +336,26 @@
         <button class="apple-card card-reveal" data-modal="campaign-modal"><span class="svc-plus" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span><h3 class="svc-pill">Campaigns &amp; Storytelling</h3></button>
         <button class="apple-card card-reveal" data-modal="maps-modal"><span class="svc-plus" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span><h3 class="svc-pill">Maps &amp; GIS</h3></button>
       </div>
-      <p class="svc-ways">One-off projects, ongoing retainers, or a quick concept sprint. <a href="#contact">Start a project →</a></p>
     </section>
 
     <section id="contact" class="contact reveal">
       <form class="contact-form" action="/api/contact" method="post" novalidate>
         <h2 class="contact-heading">Ready to close the gap?</h2>
+        <p class="contact-ways">One-off projects, ongoing retainers, or a quick concept sprint. <a href="/#contact" data-start-project>Start a project →</a></p>
         <input id="input2" name="name" type="text" placeholder="Your name" />
         <input id="input3" name="email" type="email" placeholder="you@example.com" />
-        <textarea id="textBox1" name="message" rows="6" placeholder="What are we making?"></textarea>
+        <div class="contact-field"><textarea id="textBox1" name="message" rows="6" placeholder="What are we making?"></textarea>
+          <p class="contact-privacy">Your details are only used to reply. <a href="/privacy/">Privacy</a></p>
+        </div>
         <input class="contact-hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit" class="filter-pill">Send</button>
         <p class="contact-status" role="status" aria-live="polite"></p>
-        <p class="contact-privacy">Your details are only used to reply. <a href="/privacy/">Privacy</a></p>
       </form>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span class="js-year">2026</span> Filo Merid · flmno · Seattle, WA · <a href="/privacy/">Privacy</a></p>
+    <p>Seattle, WA · © <span class="js-year">2026</span> Filo Merid · flmno · <a href="/privacy/">Privacy</a></p>
   </footer>
 
   <div class="modal-backdrop" id="modalBackdrop"></div>

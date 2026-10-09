@@ -781,3 +781,12 @@ document.querySelectorAll('.apple-modal a[data-filter-to]').forEach((a) => a.add
   window.addEventListener('pointercancel', end);
   bar.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
 })();
+
+
+/* "Start a project →" under the contact heading: put the cursor in the name field */
+document.querySelector('[data-start-project]')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('input2');
+  name?.scrollIntoView({ behavior: __RM ? 'auto' : 'smooth', block: 'center' });
+  setTimeout(() => name?.focus({ preventScroll: true }), 350);
+});

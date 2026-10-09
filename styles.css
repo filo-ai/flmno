@@ -3927,9 +3927,7 @@ html:root .apple-card { -webkit-tap-highlight-color: transparent; -webkit-backdr
 }
 html:root .apple-card:focus:not(:focus-visible) { background: #141417 !important; outline: none; }
 
-.contact-privacy { margin: 0; font-size: 14px; color: rgba(247, 247, 242, 0.36); }
-.contact-privacy a { color: inherit; text-underline-offset: 3px; }
-.contact-privacy a:hover { color: var(--fg, #f7f7f2); }
+
 .site-footer a, .contact-privacy a { font: inherit !important; }
 
 /* Service cards: title never gets its own hover/focus background (only the + circle does) */
@@ -3951,3 +3949,32 @@ html:root #work .filter-bar {
 }
 html:root #work .filter-bar.is-dragging { cursor: grabbing; scroll-snap-type: none; }
 html:root #work .filter-bar.is-dragging .filter-pill { pointer-events: none; }
+
+/* Contact: line under the heading (matches the pastel background by going dark) */
+html:root .contact-ways {
+  margin: -4px 0 20px !important;
+  font: 300 20px/1.5 "Apercu", sans-serif !important;
+  letter-spacing: -0.2px !important;
+  color: rgba(247, 247, 242, 0.7) !important;
+}
+html:root .contact-ways a { color: #f7f7f2 !important; font: inherit !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; white-space: nowrap; }
+html:root .contact-ways a:hover { text-decoration-color: transparent; }
+@media (max-width: 680px) { html:root .contact-ways { font-size: 18px !important; } }
+html:root body.contact-mode .contact-ways { color: rgba(5, 5, 7, 0.7) !important; }
+html:root body.contact-mode .contact-ways a { color: #050507 !important; }
+
+/* Contact: privacy note sits inside the message box and disappears once you type */
+.contact-field { position: relative; }
+.contact-field textarea { display: block; }
+.contact-field .contact-privacy {
+  position: absolute; left: 22px; right: 22px; bottom: 14px; margin: 0 !important; padding: 0 !important;
+  font: 300 14px/1.3 "Apercu", sans-serif !important; letter-spacing: -0.1px;
+  color: rgba(247, 247, 242, 0.36) !important;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.contact-field .contact-privacy a { color: inherit !important; font: inherit !important; text-underline-offset: 3px; pointer-events: auto; }
+.contact-field .contact-privacy a:hover { color: #f7f7f2 !important; }
+.contact-field textarea:not(:placeholder-shown) ~ .contact-privacy { opacity: 0; visibility: hidden; }
+body.contact-mode .contact-field .contact-privacy { color: rgba(5, 5, 7, 0.5) !important; }
+body.contact-mode .contact-field .contact-privacy a:hover { color: #050507 !important; }
