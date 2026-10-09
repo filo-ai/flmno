@@ -658,3 +658,51 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
     else img.addEventListener('load', () => check(pill, img), { once: true });
   });
 })();
+
+/* ── Service sheets: drag down to dismiss (follows the finger, flick or pull past a quarter to close) ── */
+(() => {
+  const backdrop = document.getElementById('modalBackdrop');
+  document.querySelectorAll('.apple-modal').forEach((sheet) => {
+    let armed = false, dragging = false, y0 = 0, dy = 0, lastY = 0, lastT = 0, v = 0;
+    const paint = (y) => { sheet.style.setProperty('transition', 'none', 'important'); sheet.style.setProperty('transform', `translateY(${y}px)`, 'important'); backdrop && backdrop.style.setProperty('--drag', Math.max(0, Math.min(1, y / sheet.offsetHeight)).toFixed(3)); };
+    const clear = () => { sheet.style.removeProperty('transition'); sheet.style.removeProperty('transform'); backdrop && backdrop.style.removeProperty('--drag'); };
+    sheet.addEventListener('touchstart', (e) => {
+      if (!sheet.classList.contains('active')) return;
+      armed = true; dragging = false; y0 = lastY = e.touches[0].clientY; dy = 0; v = 0; lastT = performance.now();
+    }, { passive: true });
+    sheet.addEventListener('touchmove', (e) => {
+      if (!armed) return;
+      const y = e.touches[0].clientY, d = y - y0;
+      if (!dragging) {
+        if (d > 6 && sheet.scrollTop <= 0) { dragging = true; y0 = y; }
+        else if (Math.abs(d) > 6) { armed = false; return; }
+        else return;
+      }
+      if (e.cancelable) e.preventDefault();
+      const raw = y - y0;
+      dy = raw >= 0 ? raw : -Math.pow(-raw, 0.6);
+      const now = performance.now(); v = 0.8 * ((y - lastY) / Math.max(1, now - lastT)) + 0.2 * v; lastY = y; lastT = now;
+      paint(dy);
+    }, { passive: false });
+    const end = () => {
+      if (!armed) return; armed = false;
+      if (!dragging) return; dragging = false;
+      const h = sheet.offsetHeight;
+      if (dy > h * 0.25 || (v > 0.5 && dy > 24)) {
+        const ms = Math.max(180, Math.min(380, (h - dy) / Math.max(v, 1.2)));
+        sheet.style.setProperty('transition', `transform ${ms}ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear ${ms}ms`, 'important');
+        sheet.style.setProperty('transform', 'translateY(calc(100% + 20px))', 'important');
+        if (typeof closeAllModals === 'function') closeAllModals();
+        setTimeout(clear, ms + 40);
+      } else {
+        sheet.style.setProperty('transition', 'transform 0.5s cubic-bezier(0.32, 0.72, 0, 1)', 'important');
+        sheet.style.setProperty('transform', 'translateY(0)', 'important');
+        backdrop && backdrop.style.setProperty('--drag', '0');
+        setTimeout(() => { if (!dragging) clear(); }, 520);
+      }
+    };
+    sheet.addEventListener('touchend', end);
+    sheet.addEventListener('touchcancel', end);
+  });
+})();
+document.querySelectorAll('.apple-modal a[href^="#"]').forEach((a) => a.addEventListener('click', () => { if (typeof closeAllModals === 'function') closeAllModals(); }));
