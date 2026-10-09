@@ -2209,3 +2209,12 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 :root #mobile-logo,
 :root.nav-compact #mobile-logo,
 :root.nav-compact #mobile-logo:hover { border-radius: 50% !important; }
+
+/* ── Pinned title / logo / breadcrumb area: frosted glass (keeps the hairline under the title) ── */
+:root .cs-hero__head {
+  background:
+    linear-gradient(rgba(247, 247, 242, 0.14), rgba(247, 247, 242, 0.14)) bottom center / calc(100% - 2 * var(--inset)) 1px no-repeat,
+    color-mix(in srgb, var(--bg) 58%, transparent) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
