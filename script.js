@@ -135,7 +135,7 @@ document.querySelectorAll(".project-link").forEach((link) => {
 });
 
 
-const filterButtons = document.querySelectorAll(".filter-pill");
+const filterButtons = document.querySelectorAll(".filter-bar .filter-pill");
 const filterItems = document.querySelectorAll(".work-item");
 
 filterButtons.forEach((button) => {
