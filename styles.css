@@ -3978,3 +3978,8 @@ html:root body.contact-mode .contact-ways a { color: #050507 !important; }
 .contact-field textarea:not(:placeholder-shown) ~ .contact-privacy { opacity: 0; visibility: hidden; }
 body.contact-mode .contact-field .contact-privacy { color: rgba(5, 5, 7, 0.5) !important; }
 body.contact-mode .contact-field .contact-privacy a:hover { color: #050507 !important; }
+
+/* About headline: phrases never split mid-way (fixes the "…between where / you are…" break on large phones) */
+/* Italic accent words (Reckless Medium Italic) */
+html:root .flourish, html:root .display-heading em { font-style: italic !important; font-weight: 500; letter-spacing: inherit; }
+html:root .scroll-char.flourish { font-family: "Reckless", Georgia, serif !important; }

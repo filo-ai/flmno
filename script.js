@@ -6,6 +6,8 @@ reveals.forEach(el=>observer.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener("click",event=>{const target=document.querySelector(link.getAttribute("href"));if(!target)return;event.preventDefault();target.scrollIntoView({behavior: __RM ? 'auto' : 'smooth',block:"start"});closeAllModals?.();})});
 
 const fullText="I am a multidisciplinary graphic designer bringing magic to the mundane with insight & imagination at the center of my practice.";
+/* Words set in italics for a touch of magic (character positions, since the headline is revealed letter by letter) */
+const flourishAt=(()=>{const m=new Array(fullText.length).fill(false);for(const w of ["multidisciplinary","magic","insight","imagination"]){const i=fullText.indexOf(w);if(i>-1)for(let k=i;k<i+w.length;k++)m[k]=true}return m})();
 const headline=document.getElementById("scrollHeadline");
 const headlineSpacer=document.querySelector(".headline-scroll-spacer");
 let lastCharsVisible=-1;
@@ -17,7 +19,7 @@ function renderHeadline(charsVisible){
   headline.innerHTML=fullText.split("").map((char,index)=>{
     const visible=index<charsVisible;
     const safeChar=char==="&"?"&amp;":char==="<"?"&lt;":char===">"?"&gt;":char;
-    return `<span class="scroll-char ${visible?"visible":""}">${safeChar}</span>`;
+    return `<span class="scroll-char ${visible?"visible":""}${flourishAt[index]?" flourish":""}">${safeChar}</span>`;
   }).join("");
 }
 
