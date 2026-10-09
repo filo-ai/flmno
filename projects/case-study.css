@@ -2283,3 +2283,9 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 }
 :root .cs-zoom__count .cs-zoom__count-n { font: inherit; }
 :root .cs-zoom__count { display: block !important; line-height: 44px !important; white-space: nowrap; }
+:root .cs-zoom .cs-zoom__count {
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
+}
