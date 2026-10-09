@@ -3981,21 +3981,21 @@ body.contact-mode .contact-field .contact-privacy a:hover { color: #050507 !impo
 
 /* About headline: phrases never split mid-way (fixes the "…between where / you are…" break on large phones) */
 
-/* ══ Accent words: Apercu Regular Italic (sans) + a slow, subtle shimmer ══ */
+/* ══ Accent words: Instrument Serif Italic (open licence) + a slow, subtle shimmer ══ */
 @font-face {
   font-family: "Flourish";
-  src: url("assets/fonts/ApercuPro-Italic.woff2") format("woff2");
+  src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 html:root .flourish {
-  font-family: "Flourish", "Apercu", Arial, sans-serif !important;
+  font-family: "Flourish", "Reckless", Georgia, serif !important;
   font-style: italic !important;
   font-weight: 400 !important;
-  font-size: 0.94em;
+  font-size: 1.12em;
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 /* About headline words: a soft light sweeps across */
 html:root .display-heading em.flourish {
