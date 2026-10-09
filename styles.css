@@ -3926,3 +3926,8 @@ html:root .apple-card { -webkit-tap-highlight-color: transparent; -webkit-backdr
   html:root .apple-card:hover, html:root .apple-card:focus, html:root .apple-card:active { background: #141417 !important; }
 }
 html:root .apple-card:focus:not(:focus-visible) { background: #141417 !important; outline: none; }
+
+.contact-privacy { margin: 0; font-size: 14px; color: rgba(247, 247, 242, 0.36); }
+.contact-privacy a { color: inherit; text-underline-offset: 3px; }
+.contact-privacy a:hover { color: var(--fg, #f7f7f2); }
+.site-footer a, .contact-privacy a { font: inherit !important; }
