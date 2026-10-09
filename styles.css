@@ -3824,3 +3824,9 @@ html:root .apple-card .svc-pill {
 html:root .apple-card .svc-plus { margin: 0 !important; inset: auto !important; transform: none !important; }
 html:root .apple-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 @media (max-width: 680px) { html:root .apple-service-grid { grid-template-columns: 1fr !important; } }
+
+/* ── Close buttons are circles everywhere ── */
+html:root .modal-close,
+html:root .apple-modal .modal-close,
+html:root .apple-modal.active .modal-close,
+html:root .img-lightbox__close { border-radius: 50% !important; width: 48px !important; height: 48px !important; }

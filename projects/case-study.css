@@ -2289,3 +2289,8 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
   backdrop-filter: blur(14px) saturate(180%) brightness(1.08) !important;
 }
+
+/* ── Close buttons are circles everywhere ── */
+html:root .cs-sheet__close,
+html:root .cs-sheet > .cs-sheet__close,
+html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !important; height: 48px !important; }
