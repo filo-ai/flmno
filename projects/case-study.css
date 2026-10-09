@@ -2227,3 +2227,22 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
     transition: background 0.2s ease, box-shadow 0.2s ease !important;
   }
 }
+
+/* ── Phones: bottom nav floats as just its buttons — no full-width bar on the screen edge,
+      so iOS Safari doesn't paint a solid band behind its bottom toolbar ── */
+@media (max-width: 680px) {
+  :root .site-nav,
+  :root .cs-header {
+    left: 50% !important;
+    right: auto !important;
+    translate: -50% 0;
+    width: max-content !important;
+    max-width: calc(100vw - 32px);
+    height: 44px !important;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
