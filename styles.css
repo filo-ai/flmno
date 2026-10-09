@@ -3980,6 +3980,51 @@ body.contact-mode .contact-field .contact-privacy { color: rgba(5, 5, 7, 0.5) !i
 body.contact-mode .contact-field .contact-privacy a:hover { color: #050507 !important; }
 
 /* About headline: phrases never split mid-way (fixes the "…between where / you are…" break on large phones) */
-/* Italic accent words (Reckless Medium Italic) */
-html:root .flourish, html:root .display-heading em { font-style: italic !important; font-weight: 500; letter-spacing: inherit; }
-html:root .scroll-char.flourish { font-family: "Reckless", Georgia, serif !important; }
+
+/* ══ Accent words: Instrument Serif Italic (open licence) + a slow, subtle shimmer ══ */
+@font-face {
+  font-family: "Flourish";
+  src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+html:root .flourish {
+  font-family: "Flourish", "Reckless", Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  font-size: 1.12em;
+  line-height: 1;
+  letter-spacing: 0;
+}
+/* About headline words: a soft light sweeps across */
+html:root .display-heading em.flourish {
+  padding-inline: 0.05em; margin-inline: -0.05em;           /* italic overhang isn't clipped */
+  color: transparent;
+  background-image: linear-gradient(100deg, #f7f7f2 0%, #f7f7f2 38%, #d9ccff 47%, #c6f3ee 53%, #f7f7f2 62%, #f7f7f2 100%);
+  background-size: 280% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text;
+  animation: flourish-sheen 6.5s ease-in-out infinite;
+}
+html:root .display-heading em.flourish:nth-of-type(2) { animation-delay: 1.4s; }
+@keyframes flourish-sheen {
+  0%, 25% { background-position: 100% 0; }
+  70%, 100% { background-position: 0% 0; }
+}
+/* Opening headline words: a faint glint travels through the letters once the line is fully revealed */
+body.headline-complete .scroll-char.flourish {
+  animation: flourish-glint 6s ease-in-out infinite;
+  animation-delay: calc(var(--w, 0) * 1.3s + var(--i, 0) * 0.09s);
+}
+@keyframes flourish-glint {
+  0%, 62%, 100% { text-shadow: 0 0 0 rgba(200, 225, 255, 0); }
+  78% { text-shadow: 0 0 14px rgba(200, 225, 255, 0.7), 0 0 1px rgba(255, 255, 255, 0.8); }
+}
+/* Pastel mode and reduced motion: no shimmer, plain dark/light text */
+html:root body.contact-mode .display-heading em.flourish { background: none; color: inherit; animation: none; -webkit-text-fill-color: currentColor; }
+body.contact-mode .scroll-char.flourish { animation: none !important; text-shadow: none; }
+@media (prefers-reduced-motion: reduce) {
+  html:root .display-heading em.flourish { background: none; color: inherit; animation: none; }
+  body.headline-complete .scroll-char.flourish { animation: none; }
+}

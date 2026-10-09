@@ -7,7 +7,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener("
 
 const fullText="I am a multidisciplinary graphic designer bringing magic to the mundane with insight & imagination at the center of my practice.";
 /* Words set in italics for a touch of magic (character positions, since the headline is revealed letter by letter) */
-const flourishAt=(()=>{const m=new Array(fullText.length).fill(false);for(const w of ["multidisciplinary","magic","insight","imagination"]){const i=fullText.indexOf(w);if(i>-1)for(let k=i;k<i+w.length;k++)m[k]=true}return m})();
+const flourishAt=(()=>{const m=new Array(fullText.length).fill(null);["multidisciplinary","magic","insight","imagination"].forEach((w,wi)=>{const i=fullText.indexOf(w);if(i>-1)for(let k=0;k<w.length;k++)m[i+k]={w:wi,i:k}});return m})();
 const headline=document.getElementById("scrollHeadline");
 const headlineSpacer=document.querySelector(".headline-scroll-spacer");
 let lastCharsVisible=-1;
@@ -19,7 +19,7 @@ function renderHeadline(charsVisible){
   headline.innerHTML=fullText.split("").map((char,index)=>{
     const visible=index<charsVisible;
     const safeChar=char==="&"?"&amp;":char==="<"?"&lt;":char===">"?"&gt;":char;
-    return `<span class="scroll-char ${visible?"visible":""}${flourishAt[index]?" flourish":""}">${safeChar}</span>`;
+    return `<span class="scroll-char ${visible?"visible":""}${flourishAt[index]?" flourish":""}"${flourishAt[index]?` style="--w:${flourishAt[index].w};--i:${flourishAt[index].i}"`:""}>${safeChar}</span>`;
   }).join("");
 }
 
