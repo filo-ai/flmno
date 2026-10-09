@@ -3939,3 +3939,15 @@ html:root .apple-card:active .svc-pill {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* Filter bar runs edge to edge of the screen (phones + desktop); first/last pill still line up with the page column */
+html:root #work { overflow-x: clip; }
+html:root #work .filter-bar {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
+  scroll-padding-inline: calc(50vw - 50%);
+  overscroll-behavior-x: contain;
+  cursor: grab;
+}
+html:root #work .filter-bar.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+html:root #work .filter-bar.is-dragging .filter-pill { pointer-events: none; }

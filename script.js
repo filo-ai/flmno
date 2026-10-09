@@ -760,3 +760,24 @@ document.querySelectorAll('.apple-modal a[data-filter-to]').forEach((a) => a.add
   const active = bar.querySelector('.filter-pill.is-active');
   if (active) requestAnimationFrame(() => centre(active, false));
 })();
+
+/* ── Filter bar: click-and-drag to scroll with a mouse (touch and trackpad already scroll natively) ── */
+(() => {
+  const bar = document.querySelector('.filter-bar');
+  if (!bar) return;
+  let down = false, moved = false, startX = 0, startLeft = 0;
+  bar.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    down = true; moved = false; startX = e.clientX; startLeft = bar.scrollLeft;
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    if (!moved && Math.abs(dx) > 4) { moved = true; bar.classList.add('is-dragging'); }
+    if (moved) bar.scrollLeft = startLeft - dx;
+  });
+  const end = () => { if (!down) return; down = false; setTimeout(() => bar.classList.remove('is-dragging'), 0); };
+  window.addEventListener('pointerup', end);
+  window.addEventListener('pointercancel', end);
+  bar.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+})();
