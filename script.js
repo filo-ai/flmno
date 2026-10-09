@@ -718,3 +718,15 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   });
 })();
 document.querySelectorAll('.apple-modal a[href^="#"]').forEach((a) => a.addEventListener('click', () => { if (typeof closeAllModals === 'function') closeAllModals(); }));
+
+/* ── Service sheets: "See … work" closes the sheet, filters the grid, and scrolls to it (no reload) ── */
+document.querySelectorAll('.apple-modal a[data-filter-to]').forEach((a) => a.addEventListener('click', (e) => {
+  const pill = document.querySelector(`.filter-pill[data-filter="${CSS.escape(a.dataset.filterTo)}"]`);
+  const work = document.getElementById('work');
+  if (!pill || !work) return;
+  e.preventDefault();
+  closeAllModals();
+  pill.click();
+  history.replaceState(null, '', `/?filter=${a.dataset.filterTo}#work`);
+  setTimeout(() => work.scrollIntoView({ behavior: __RM ? 'auto' : 'smooth', block: 'start' }), 250);
+}));

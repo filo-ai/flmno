@@ -3830,3 +3830,59 @@ html:root .modal-close,
 html:root .apple-modal .modal-close,
 html:root .apple-modal.active .modal-close,
 html:root .img-lightbox__close { border-radius: 50% !important; width: 48px !important; height: 48px !important; }
+
+/* ══ About · services v3: niche lede · three offers · ways to work ══ */
+html:root .svc-head { margin: 0 0 24px; }
+html:root .svc-eyebrow {
+  margin: 0 0 8px !important;
+  font: 300 20px/1.3 "Apercu", sans-serif !important;
+  letter-spacing: -0.2px !important;
+  color: rgba(247, 247, 242, 0.56) !important;
+}
+html:root .svc-lede {
+  margin: 0 !important;
+  max-width: 22ch;
+  font: 500 27px/1.2 "Reckless", Georgia, serif !important;
+  letter-spacing: 0.36px !important;
+  color: #f7f7f2 !important;
+}
+html:root .apple-service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+@media (max-width: 980px) { html:root .apple-service-grid { grid-template-columns: 1fr !important; } }
+html:root .svc-ways {
+  margin: 24px 0 0 !important;
+  font: 300 20px/1.5 "Apercu", sans-serif !important;
+  letter-spacing: -0.2px !important;
+  color: rgba(247, 247, 242, 0.7) !important;
+}
+html:root .svc-ways a { color: #f7f7f2 !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; white-space: nowrap; }
+html:root .svc-ways a:hover { text-decoration-color: transparent; }
+@media (max-width: 680px) {
+  html:root .svc-lede { font-size: 24px !important; }
+  html:root .svc-eyebrow, html:root .svc-ways { font-size: 18px !important; }
+}
+
+/* sheet: what's included + two actions */
+html:root .apple-modal .am-includes {
+  list-style: none;
+  margin: -8px 0 32px !important;
+  padding: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+html:root .apple-modal .am-includes li {
+  margin: 0 !important;
+  padding: 6px 12px !important;
+  border-radius: 999px;
+  font: 300 16px/1.3 "Apercu", sans-serif !important;
+  letter-spacing: -0.1px !important;
+  color: rgba(247, 247, 242, 0.78) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.22);
+}
+html:root .apple-modal .am-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+html:root .svc-lede { max-width: 30ch; }
+html:root body .svc-ways a { font: inherit !important; letter-spacing: inherit !important; }
+html:root .apple-modal .am-includes li {
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.22) !important;
+}
