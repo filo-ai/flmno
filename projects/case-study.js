@@ -701,13 +701,25 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
     try {
       const w = img.naturalWidth, h = img.naturalHeight;
       if (!w || !h) return;
-      // bottom-left area of the picture, where the pill sits
+      // the exact pixels under the pill (object-fit: cover mapping), with a little margin
       cx.clearRect(0, 0, 24, 12);
-      cx.drawImage(img, 0, h * 0.78, w * 0.5, h * 0.22, 0, 0, 24, 12);
+      const ir = img.getBoundingClientRect(), pr = pill.getBoundingClientRect();
+      let sx, sy, sw, sh;
+      if (ir.width && pr.width) {
+        const sc = Math.max(ir.width / w, ir.height / h);
+        const ox = (ir.width - w * sc) / 2, oy = (ir.height - h * sc) / 2;
+        sx = (pr.left - ir.left - ox - 6) / sc; sy = (pr.top - ir.top - oy - 6) / sc;
+        sw = (pr.width + 12) / sc; sh = (pr.height + 12) / sc;
+        sx = Math.max(0, Math.min(w - 1, sx)); sy = Math.max(0, Math.min(h - 1, sy));
+        sw = Math.max(1, Math.min(w - sx, sw)); sh = Math.max(1, Math.min(h - sy, sh));
+      } else if (pill.classList.contains('svc-plus')) { sx = w * 0.8; sy = 0; sw = w * 0.2; sh = h * 0.2; }
+      else { sx = 0; sy = h * 0.72; sw = w * 0.6; sh = h * 0.28; }
+      cx.drawImage(img, sx, sy, sw, sh, 0, 0, 24, 12);
       const d = cx.getImageData(0, 0, 24, 12).data;
-      let sum = 0, n = 0;
-      for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 16) continue; sum += (0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2]) / 255; n++; }
-      if (n) pill.classList.toggle('is-light', sum / n > 0.6);
+      let sum = 0, n = 0, bright = 0;
+      for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 16) continue; const L = (0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2]) / 255; sum += L; if (L > 0.62) bright++; n++; }
+      // dark text when the area is light overall, or when a good share of it is bright (snow, sky, paper)
+      if (n) pill.classList.toggle('is-light', sum / n > 0.55 || bright / n > 0.3);
     } catch (e) {}
   };
   pills.forEach((pill) => {
