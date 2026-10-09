@@ -3915,3 +3915,14 @@ html:root body .apple-modal.active .am-includes a { height: 32px !important; min
 
 /* About headline: balanced lines, no lonely last words */
 html:root .about .display-heading { text-wrap: balance; }
+
+/* service sheet: the grabber zone is draggable with a mouse too */
+html:root .apple-modal .am-grab::before { content: ""; position: absolute; inset: -14px -80px -22px; cursor: grab; }
+html:root .apple-modal.is-grabbing, html:root .apple-modal.is-grabbing * { cursor: grabbing !important; user-select: none; }
+
+/* service cards: no grey tap flash, and no hover tint that sticks after a tap on touch screens */
+html:root .apple-card { -webkit-tap-highlight-color: transparent; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+@media (hover: none) {
+  html:root .apple-card:hover, html:root .apple-card:focus, html:root .apple-card:active { background: #141417 !important; }
+}
+html:root .apple-card:focus:not(:focus-visible) { background: #141417 !important; outline: none; }

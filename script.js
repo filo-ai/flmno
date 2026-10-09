@@ -713,6 +713,22 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
         setTimeout(() => { if (!dragging) clear(); }, 520);
       }
     };
+    // mouse: grab the top of the sheet (grabber zone) and drag it down, like on a phone
+    sheet.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0 || !sheet.classList.contains('active')) return;
+      if (e.clientY - sheet.getBoundingClientRect().top > 48 || e.target.closest('a, button')) return;
+      e.preventDefault();
+      armed = true; dragging = true; y0 = lastY = e.clientY; dy = 0; v = 0; lastT = performance.now();
+      sheet.classList.add('is-grabbing');
+      const mm = (ev) => {
+        const y = ev.clientY, raw = y - y0;
+        dy = raw >= 0 ? raw : -Math.pow(-raw, 0.6);
+        const now = performance.now(); v = 0.8 * ((y - lastY) / Math.max(1, now - lastT)) + 0.2 * v; lastY = y; lastT = now;
+        paint(dy);
+      };
+      const mu = () => { sheet.classList.remove('is-grabbing'); removeEventListener('pointermove', mm); removeEventListener('pointerup', mu); end(); };
+      addEventListener('pointermove', mm); addEventListener('pointerup', mu);
+    });
     sheet.addEventListener('touchend', end);
     sheet.addEventListener('touchcancel', end);
   });
