@@ -3963,25 +3963,27 @@ html:root .contact-ways a:hover { text-decoration-color: transparent; }
 html:root body.contact-mode .contact-ways { color: rgba(5, 5, 7, 0.7) !important; }
 html:root body.contact-mode .contact-ways a { color: #050507 !important; }
 
-/* Contact: privacy note sits inside the message box and disappears once you type */
+/* Contact: privacy note stays inside the message box; the box grows with the text and reserves room under it so the note is never covered */
 .contact-field { position: relative; }
-.contact-field textarea { display: block; }
+.contact-field textarea {
+  display: block;
+  resize: none !important;
+  overflow-y: hidden;
+  max-height: 75vh;
+  padding-bottom: 46px !important;
+}
 .contact-field .contact-privacy {
   position: absolute; left: 22px; right: 22px; bottom: 14px; margin: 0 !important; padding: 0 !important;
   font: 300 14px/1.3 "Apercu", sans-serif !important; letter-spacing: -0.1px;
   color: rgba(247, 247, 242, 0.36) !important;
   pointer-events: none;
-  transition: opacity 0.15s ease;
 }
 .contact-field .contact-privacy a { color: inherit !important; font: inherit !important; text-underline-offset: 3px; pointer-events: auto; }
 .contact-field .contact-privacy a:hover { color: #f7f7f2 !important; }
-.contact-field textarea:not(:placeholder-shown) ~ .contact-privacy { opacity: 0; visibility: hidden; }
 body.contact-mode .contact-field .contact-privacy { color: rgba(5, 5, 7, 0.5) !important; }
 body.contact-mode .contact-field .contact-privacy a:hover { color: #050507 !important; }
 
-/* About headline: phrases never split mid-way (fixes the "…between where / you are…" break on large phones) */
-
-/* ══ Accent words: Instrument Serif Italic (open licence) + a slow, subtle shimmer ══ */
+/* ══ Accent words: Instrument Serif Italic (open licence) ══ */
 @font-face {
   font-family: "Flourish";
   src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
@@ -3997,34 +3999,8 @@ html:root .flourish {
   line-height: 1;
   letter-spacing: 0;
 }
-/* About headline words: a soft light sweeps across */
-html:root .display-heading em.flourish {
-  padding-inline: 0.05em; margin-inline: -0.05em;           /* italic overhang isn't clipped */
-  color: transparent;
-  background-image: linear-gradient(100deg, #f7f7f2 0%, #f7f7f2 38%, #d9ccff 47%, #c6f3ee 53%, #f7f7f2 62%, #f7f7f2 100%);
-  background-size: 280% 100%;
-  background-position: 100% 0;
-  -webkit-background-clip: text; background-clip: text;
-  animation: flourish-sheen 6.5s ease-in-out infinite;
-}
-html:root .display-heading em.flourish:nth-of-type(2) { animation-delay: 1.4s; }
-@keyframes flourish-sheen {
-  0%, 25% { background-position: 100% 0; }
-  70%, 100% { background-position: 0% 0; }
-}
-/* Opening headline words: a faint glint travels through the letters once the line is fully revealed */
-body.headline-complete .scroll-char.flourish {
-  animation: flourish-glint 6s ease-in-out infinite;
-  animation-delay: calc(var(--w, 0) * 1.3s + var(--i, 0) * 0.09s);
-}
-@keyframes flourish-glint {
-  0%, 62%, 100% { text-shadow: 0 0 0 rgba(200, 225, 255, 0); }
-  78% { text-shadow: 0 0 14px rgba(200, 225, 255, 0.7), 0 0 1px rgba(255, 255, 255, 0.8); }
-}
-/* Pastel mode and reduced motion: no shimmer, plain dark/light text */
-html:root body.contact-mode .display-heading em.flourish { background: none; color: inherit; animation: none; -webkit-text-fill-color: currentColor; }
-body.contact-mode .scroll-char.flourish { animation: none !important; text-shadow: none; }
-@media (prefers-reduced-motion: reduce) {
-  html:root .display-heading em.flourish { background: none; color: inherit; animation: none; }
-  body.headline-complete .scroll-char.flourish { animation: none; }
-}
+
+
+/* About headline: on desktop it breaks after the comma; on narrower screens whole phrases wrap together */
+html:root .about .display-heading .br-d { display: none; }
+@media (min-width: 900px) { html:root .about .display-heading .br-d { display: inline; } }

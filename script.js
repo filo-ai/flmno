@@ -19,7 +19,7 @@ function renderHeadline(charsVisible){
   headline.innerHTML=fullText.split("").map((char,index)=>{
     const visible=index<charsVisible;
     const safeChar=char==="&"?"&amp;":char==="<"?"&lt;":char===">"?"&gt;":char;
-    return `<span class="scroll-char ${visible?"visible":""}${flourishAt[index]?" flourish":""}"${flourishAt[index]?` style="--w:${flourishAt[index].w};--i:${flourishAt[index].i}"`:""}>${safeChar}</span>`;
+    return `<span class="scroll-char ${visible?"visible":""}${flourishAt[index]?" flourish":""}">${safeChar}</span>`;
   }).join("");
 }
 
@@ -792,3 +792,21 @@ document.querySelector('[data-start-project]')?.addEventListener('click', (e) =>
   name?.scrollIntoView({ behavior: __RM ? 'auto' : 'smooth', block: 'center' });
   setTimeout(() => name?.focus({ preventScroll: true }), 350);
 });
+
+
+/* Message box grows as you type (no dragging the corner) */
+(() => {
+  const ta = document.getElementById('textBox1');
+  if (!ta) return;
+  const fit = () => {
+    ta.style.height = 'auto';
+    const h = ta.scrollHeight, max = window.innerHeight * 0.75;
+    ta.style.height = Math.min(h, max) + 'px';
+    ta.style.overflowY = h > max ? 'auto' : 'hidden';
+  };
+  ta.addEventListener('input', fit);
+  window.addEventListener('resize', fit);
+  ta.form?.addEventListener('reset', () => setTimeout(fit, 0));
+  ta.addEventListener('change', fit);
+  fit();
+})();
