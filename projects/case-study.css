@@ -2178,3 +2178,34 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   :root.nav-compact #mobile-logo,
   :root.nav-compact #mobile-logo:hover { border-radius: calc(10px / 0.7) !important; }
 }
+
+/* ── "Coming soon" glass pill on More Work cards (same as the homepage tiles) ── */
+:root .cs-flipbook-card .tile-soon {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font: 300 16px/1 "Apercu", sans-serif;
+  letter-spacing: -0.2px;
+  color: rgba(247, 247, 242, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.07);
+  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+  backdrop-filter: blur(14px) saturate(180%) brightness(1.08);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ── "Coming soon" pill: dark text when the image behind it is light (glass stays) ── */
+:root .tile-soon.is-light { color: #050507 !important; }
+
+/* ── Logo: round glass tile ── */
+:root #site-logo,
+:root #mobile-logo,
+:root.nav-compact #mobile-logo,
+:root.nav-compact #mobile-logo:hover { border-radius: 50% !important; }

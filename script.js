@@ -630,3 +630,31 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   addEventListener('beforeprint', () => on());
   addEventListener('afterprint', () => off());
 })();
+
+/* ── "Coming soon" pill: read the image under it; light image → dark text ── */
+(() => {
+  const pills = document.querySelectorAll('.tile-soon');
+  if (!pills.length) return;
+  const cv = document.createElement('canvas'); cv.width = 24; cv.height = 12;
+  const cx = cv.getContext('2d', { willReadFrequently: true });
+  const check = (pill, img) => {
+    try {
+      const w = img.naturalWidth, h = img.naturalHeight;
+      if (!w || !h) return;
+      // bottom-left area of the picture, where the pill sits
+      cx.clearRect(0, 0, 24, 12);
+      cx.drawImage(img, 0, h * 0.78, w * 0.5, h * 0.22, 0, 0, 24, 12);
+      const d = cx.getImageData(0, 0, 24, 12).data;
+      let sum = 0, n = 0;
+      for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 16) continue; sum += (0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2]) / 255; n++; }
+      if (n) pill.classList.toggle('is-light', sum / n > 0.6);
+    } catch (e) {}
+  };
+  pills.forEach((pill) => {
+    const host = pill.closest('.work-tile, .cs-flipbook-card');
+    const img = host && host.querySelector('img');
+    if (!img) return;
+    if (img.complete && img.naturalWidth) check(pill, img);
+    else img.addEventListener('load', () => check(pill, img), { once: true });
+  });
+})();

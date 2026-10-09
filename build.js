@@ -203,7 +203,7 @@ function renderRelated(related) {
     const op = i <= 1 ? "1" : "0";
     return `          <div class="cs-flipbook-card${i === 0 ? " is-active" : ""}" aria-hidden="true" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${100 - i * 10};background-color:${ph(n.image)}">
             ${imgTag}
-            ${imgLabel(tagsFor(n.href), n.title)}
+            ${imgLabel(tagsFor(n.href), n.title)}${soonPill(n.href)}
           </div>`;
   }).join("\n");
   const slides = related.map((n) =>
@@ -318,6 +318,12 @@ const HOME_TILES = [];
 for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\/[^"]*">[\s\S]*?<div class="tile-image"><img[^>]*?src="([^"]+)"[\s\S]*?<h2>([^<]+)<\/h2>/g)) {
   HOME_TILES.push({ slug: m[2], tags: m[1].trim().split(/\s+/), image: m[3].replace(/\/v1\/fill\/.*$/, ""), title: m[4].trim() });
 }
+// ── "Coming soon" projects: any homepage tile carrying the pill ──
+const SOON = new Set([...HOME_HTML.matchAll(/href="projects\/([^/"]+)\/index\.html">\s*<span class="tile-soon">/g)].map(m => m[1]));
+const soonPill = (href) => {
+  const m = String(href || "").match(/(?:projects\/|^\.\.\/)([^/"]+)\//);
+  return m && SOON.has(m[1]) ? `\n            <span class="tile-soon">Coming soon</span>` : "";
+};
 function relatedByTags(slug, fallback, max = 6) {
   const me = HOME_TILES.find(t => t.slug === slug);
   if (!me) return fallback;

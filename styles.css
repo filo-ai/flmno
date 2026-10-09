@@ -3555,3 +3555,12 @@ body.contact-mode .tile-soon { background: rgba(255, 255, 255, 0.42); color: #05
   :root.nav-compact #mobile-logo,
   :root.nav-compact #mobile-logo:hover { border-radius: calc(10px / 0.7) !important; }
 }
+
+/* ── "Coming soon" pill: dark text when the image behind it is light (glass stays) ── */
+:root .tile-soon.is-light { color: #050507 !important; }
+
+/* ── Logo: round glass tile ── */
+:root #site-logo,
+:root #mobile-logo,
+:root.nav-compact #mobile-logo,
+:root.nav-compact #mobile-logo:hover { border-radius: 50% !important; }
