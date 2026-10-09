@@ -121,39 +121,16 @@ ${thumbHtml}
 
 function renderInstagramFeed(posts) {
   if (!posts?.length) return "";
-  const postsJson = JSON.stringify(posts, null, 4)
-    .split("\n").map(l => "      " + l).join("\n");
+  // Instagram's public embed: no account connection or token needed
+  const items = posts.map(u => {
+    const url = u.split("?")[0];
+    return `      <div class="cs-feed__item"><blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"><a href="${url}" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></div>`;
+  }).join("\n");
   return `
-    <div class="cs-feed" id="cs-feed" aria-label="Instagram posts"></div>
-    <script>
-    (() => {
-      const POSTS = ${postsJson.trimStart()};
-      const feed  = document.getElementById("cs-feed");
-      POSTS.forEach((url, i) => {
-        const item = document.createElement("div");
-        item.className = "cs-feed__item is-loading";
-        feed.appendChild(item);
-        setTimeout(() => {
-          fetch(\`/api/instagram?url=\${encodeURIComponent(url)}\`)
-            .then(r => r.json())
-            .then(data => {
-              if (!data.html) throw new Error(data.error || "no html");
-              item.classList.remove("is-loading");
-              item.innerHTML = data.html;
-              if (window.instgrm) window.instgrm.Embeds.process();
-            })
-            .catch(() => {
-              item.classList.remove("is-loading");
-              item.innerHTML = \`<div class="cs-feed__error"><a href="\${url}" target="_blank" rel="noopener">View on Instagram ↗</a></div>\`;
-            });
-        }, i * 120);
-      });
-      const s = document.createElement("script");
-      s.src = "https://www.instagram.com/embed.js";
-      s.async = true;
-      document.body.appendChild(s);
-    })();
-    </script>`;
+    <section class="cs-feed" aria-label="Instagram posts">
+${items}
+    </section>
+    <script async src="https://www.instagram.com/embed.js"></script>`;
 }
 
 function renderMeta(meta) {

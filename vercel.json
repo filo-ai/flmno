@@ -14,6 +14,11 @@
       "source": "/projects/parks-after-dark/:path*",
       "destination": "/projects/yosemite-national-park-after-dark/",
       "permanent": true
+    },
+    {
+      "source": "/projects/social-media-yosemite/:path*",
+      "destination": "/projects/mount-rainier-social-media/",
+      "permanent": true
     }
   ]
 }
