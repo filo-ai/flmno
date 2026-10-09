@@ -3931,3 +3931,11 @@ html:root .apple-card:focus:not(:focus-visible) { background: #141417 !important
 .contact-privacy a { color: inherit; text-underline-offset: 3px; }
 .contact-privacy a:hover { color: var(--fg, #f7f7f2); }
 .site-footer a, .contact-privacy a { font: inherit !important; }
+
+/* Service cards: title never gets its own hover/focus background (only the + circle does) */
+html:root .apple-card:hover .svc-pill,
+html:root .apple-card:focus-visible .svc-pill,
+html:root .apple-card:active .svc-pill {
+  background: none !important;
+  box-shadow: none !important;
+}
