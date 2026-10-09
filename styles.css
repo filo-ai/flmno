@@ -3886,3 +3886,29 @@ html:root .apple-modal .am-includes li {
   background: rgba(255, 255, 255, 0.06) !important;
   box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.22) !important;
 }
+
+/* sheet chips: the ones with a matching filter are links into the grid */
+html:root body .apple-modal .am-includes li:has(> a) { padding: 0 !important; background: none !important; box-shadow: none !important; }
+html:root body .apple-modal .am-includes a,
+html:root body .apple-modal.active .am-includes a {
+  display: inline-flex !important;
+  height: auto;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  font: 300 16px/1.3 "Apercu", sans-serif !important;
+  letter-spacing: -0.1px !important;
+  color: rgba(247, 247, 242, 0.92) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32) !important;
+}
+html:root body .apple-modal .am-includes a::after { content: "↗"; margin-left: 6px; opacity: 0.6; font-size: 0.85em; }
+html:root body .apple-modal .am-includes a:hover { background: rgba(255, 255, 255, 0.18) !important; color: #fff !important; }
+html:root .apple-modal .am-includes li:not(:has(> a)) { color: rgba(247, 247, 242, 0.6) !important; }
+html:root body .apple-modal .am-includes { align-items: center; }
+html:root body .apple-modal .am-includes li {
+  display: inline-flex !important; align-items: center; white-space: nowrap;
+  height: 32px !important; min-height: 0 !important; line-height: 1 !important; box-sizing: border-box;
+}
+html:root body .apple-modal .am-includes li:not(:has(> a)) { padding: 0 12px !important; }
+html:root body .apple-modal .am-includes a,
+html:root body .apple-modal.active .am-includes a { height: 32px !important; min-height: 0 !important; padding: 0 12px !important; align-items: center; line-height: 1 !important; box-sizing: border-box; }

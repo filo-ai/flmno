@@ -730,3 +730,17 @@ document.querySelectorAll('.apple-modal a[data-filter-to]').forEach((a) => a.add
   history.replaceState(null, '', `/?filter=${a.dataset.filterTo}#work`);
   setTimeout(() => work.scrollIntoView({ behavior: __RM ? 'auto' : 'smooth', block: 'start' }), 250);
 }));
+
+/* ── Filter bar: the chosen tag slides to the centre of the row (matters on phones, where the row scrolls) ── */
+(() => {
+  const bar = document.querySelector('.filter-bar');
+  if (!bar) return;
+  const centre = (pill, smooth) => {
+    const b = bar.getBoundingClientRect(), r = pill.getBoundingClientRect();
+    const left = bar.scrollLeft + (r.left - b.left) - (b.width - r.width) / 2;
+    bar.scrollTo({ left: Math.max(0, left), behavior: smooth && !__RM ? 'smooth' : 'auto' });
+  };
+  bar.querySelectorAll('.filter-pill').forEach((p) => p.addEventListener('click', () => centre(p, true)));
+  const active = bar.querySelector('.filter-pill.is-active');
+  if (active) requestAnimationFrame(() => centre(active, false));
+})();
