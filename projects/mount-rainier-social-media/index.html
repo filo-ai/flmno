@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mount Rainier Social Media</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/projects/case-study.css">
+  <style>
+    .instagram-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 40px; max-width: 1400px; margin: 0 auto; }
+    .instagram-post { position: relative; overflow: hidden; border-radius: 8px; background: #f0f0f0; aspect-ratio: 1; }
+    .instagram-post iframe { width: 100%; height: 100%; border: none; }
+    .instagram-post a { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); color: #fff; text-decoration: none; opacity: 0; transition: opacity 0.3s; font-size: 14px; }
+    .instagram-post:hover a { opacity: 1; }
+    .cs-hero { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 80px 40px; text-align: center; }
+    .cs-hero h1 { font-size: 48px; margin: 0 0 20px; color: #fff; }
+    .cs-hero p { font-size: 20px; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; padding: 60px 40px; background: #fafafa; }
+    .meta-item h3 { font-size: 14px; color: #666; margin: 0 0 8px; text-transform: uppercase; letter-spacing: 1px; }
+    .meta-item p { font-size: 18px; margin: 0; color: #333; }
+  </style>
+</head>
+<body>
+  <header class="cs-header">
+    <a href="/" class="logo">f</a>
+    <nav class="site-nav">
+      <nav><a href="/">Home</a> <a href="/#work">Work</a> <a href="/#about">About</a> <a href="/#contact">Contact</a></nav>
+    </nav>
+  </header>
+
+  <section class="cs-hero">
+    <h1>Mount Rainier Social Media</h1>
+    <p>Turned park rules, natural history, and timely visitor information into social content with a puckish sense of humor and a strong visual point of view.</p>
+  </section>
+
+  <section class="meta">
+    <div class="meta-item">
+      <h3>Client</h3>
+      <p>Mount Rainier National Park</p>
+    </div>
+    <div class="meta-item">
+      <h3>Goals</h3>
+      <p>Communicate, Educate, Inform</p>
+    </div>
+    <div class="meta-item">
+      <h3>Approach</h3>
+      <p>From Mean Girls–inspired "Burn Books" to playful wildlife storytelling, I used cultural references, wit, and unexpected creative concepts to make education feel less like a lecture—and more like something you want to stop scrolling for.</p>
+    </div>
+  </section>
+
+  <div class="instagram-grid" id="posts"></div>
+
+  <script>
+    const posts = [
+      'https://www.instagram.com/p/DeM8w9ZF0DS/?img_index=1',
+      'https://www.instagram.com/p/DbEbjv3CTQZ/',
+      'https://www.instagram.com/p/Ddt8nPfj7nO/',
+      'https://www.instagram.com/p/Ddoy_9KiXgM/',
+      'https://www.instagram.com/p/DdpE2qgiTju/',
+      'https://www.instagram.com/p/DdU5Tf8mbCB/',
+      'https://www.instagram.com/p/Dc1gzkUid2I/',
+      'https://www.instagram.com/p/DcwCsyCCSuN/',
+      'https://www.instagram.com/p/Da3BJltGq2D/',
+      'https://www.instagram.com/mountrainiernps/p/DOjavFBDaAs/',
+      'https://www.instagram.com/mountrainiernps/p/DOhKy5piSyT/',
+      'https://www.instagram.com/mountrainiernps/p/DN8m04jDWoJ/',
+      'https://www.instagram.com/p/DNEyxmrPWYj/',
+      'https://www.instagram.com/p/DMyw-i3taUH/',
+      'https://www.instagram.com/p/DMs3ODFhhlS/',
+      'https://www.instagram.com/p/DMixyZ0hqQe/',
+      'https://www.instagram.com/p/DMZO1tXC4zg/',
+      'https://www.instagram.com/p/DMQkrOwO2ww/',
+      'https://www.instagram.com/p/DLqfDITpD7E/',
+      'https://www.instagram.com/p/DLWIAyWi30n/',
+      'https://www.instagram.com/p/DBSCe5FvQlE/',
+      'https://www.instagram.com/p/DAPY39_P7GJ/',
+      'https://www.instagram.com/p/C_WvXw2CxpQ/',
+      'https://www.instagram.com/p/C-JgeMdOLc_/',
+      'https://www.instagram.com/p/C9V0aNTgiJL/?img_index=1'
+    ];
+    
+    const grid = document.getElementById('posts');
+    posts.forEach(url => {
+      const div = document.createElement('div');
+      div.className = 'instagram-post';
+      div.innerHTML = `
+        <iframe src="https://www.instagram.com/embed.js" scrolling="no"></iframe>
+        <a href="${url}" target="_blank">View on Instagram</a>
+      `;
+      grid.appendChild(div);
+      
+      // Load Instagram embed script
+      if (window.instgrm) window.instgrm.Embeds.process();
+    });
+  </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
