@@ -3912,3 +3912,6 @@ html:root body .apple-modal .am-includes li {
 html:root body .apple-modal .am-includes li:not(:has(> a)) { padding: 0 12px !important; }
 html:root body .apple-modal .am-includes a,
 html:root body .apple-modal.active .am-includes a { height: 32px !important; min-height: 0 !important; padding: 0 12px !important; align-items: center; line-height: 1 !important; box-sizing: border-box; }
+
+/* About headline: balanced lines, no lonely last words */
+html:root .about .display-heading { text-wrap: balance; }
