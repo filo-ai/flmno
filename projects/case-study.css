@@ -2251,3 +2251,35 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
 :root .cs-carousel__item,
 :root .cs-carousel__item img { max-width: none !important; }
 :root .cs-carousel__item img { width: auto !important; height: 100% !important; object-fit: contain !important; }
+
+/* ── Full-screen image counter: same as a glass button (44px, 20px light text), fully rounded, text centered ── */
+:root .cs-zoom__count {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 44px !important;
+  min-width: 88px;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  font: 300 20px/1 "Apercu", sans-serif !important;
+  letter-spacing: -0.2px !important;
+  box-sizing: border-box;
+}
+
+/* ── Full-screen image counter: same as a pill button, fully rounded, text dead-centre ── */
+:root .cs-zoom__count {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  min-width: 88px;
+  padding: 0 18px;
+  border-radius: 999px !important;
+  font: 300 20px/1 "Apercu", sans-serif !important;
+  letter-spacing: -0.2px;
+  text-align: center;
+  color: rgba(247, 247, 242, 0.92);
+}
+:root .cs-zoom__count .cs-zoom__count-n { font: inherit; }
+:root .cs-zoom__count { display: block !important; line-height: 44px !important; white-space: nowrap; }
