@@ -2218,3 +2218,12 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
 }
+
+/* ── Project pages (phones): logo stays full size while scrolling, and shrinks in step with the title ── */
+@media (max-width: 680px) {
+  :root #mobile-logo,
+  :root.nav-compact #mobile-logo {
+    scale: calc(1 - 0.3 * var(--title-k, 0)) !important;
+    transition: background 0.2s ease, box-shadow 0.2s ease !important;
+  }
+}

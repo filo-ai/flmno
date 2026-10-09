@@ -490,11 +490,12 @@ document.addEventListener('contextmenu', e => {
     ticking = false;
     const spacer = document.querySelector('.cs-hero-spacer');
     const dist = spacer ? spacer.offsetHeight : 0;
-    if (!mq.matches) { head.style.removeProperty('--k'); head.classList.remove('is-compact'); return; }
+    if (!mq.matches) { head.style.removeProperty('--k'); head.classList.remove('is-compact'); document.documentElement.style.removeProperty('--title-k'); return; }
     const start = dist + 4;                               // text meets the bar's bottom edge
     const k = Math.min(1, Math.max(0, (scrollY - start) / range));
     head.style.setProperty('--k', k.toFixed(4));
     head.classList.toggle('is-compact', k >= 1);
+    document.documentElement.style.setProperty('--title-k', k.toFixed(4));
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
   addEventListener('resize', () => { measure(); update(); });
