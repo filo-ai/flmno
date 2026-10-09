@@ -2246,3 +2246,8 @@ img, video { -webkit-user-select: none; user-select: none; -webkit-user-drag: no
     backdrop-filter: none !important;
   }
 }
+
+/* ── Image row: one height for all, each image as wide as its own proportions (no width cap, no crop) ── */
+:root .cs-carousel__item,
+:root .cs-carousel__item img { max-width: none !important; }
+:root .cs-carousel__item img { width: auto !important; height: 100% !important; object-fit: contain !important; }
