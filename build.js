@@ -331,6 +331,16 @@ function crumbsSchema(slug, title) {
     itemListElement: list.map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })) }).replace(/</g, "\\u003c");
 }
 
+function workSchema(slug, title, desc, meta, image) {
+  const year = (meta.Year || "").match(/\d{4}/);
+  return JSON.stringify({ "@context": "https://schema.org", "@type": "CreativeWork",
+    name: title, description: desc || undefined, url: `https://flmno.com/projects/${slug}/`,
+    image, creator: { "@id": "https://flmno.com/#person" },
+    ...(year ? { dateCreated: year[0] } : {}),
+    ...(meta.Client ? { sourceOrganization: { "@type": "Organization", name: meta.Client } } : {}),
+    }).replace(/</g, "\\u003c");
+}
+
 function buildPage(slug, project) {
   const {
     title, teaser, story = [], meta = {}, gallery = [],
@@ -377,6 +387,7 @@ function buildPage(slug, project) {
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">${crumbsSchema(slug, title)}</script>
+  <script type="application/ld+json">${workSchema(slug, title, teaser || fillText, meta, ogImage(slug, gallery))}</script>
   <link rel="preload" href="/assets/fonts/RecklessStandardM-TRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ApercuPro-Light.woff2" as="font" type="font/woff2" crossorigin>
   <script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/projects/*"},"eagerness":"moderate"}]}</script>
