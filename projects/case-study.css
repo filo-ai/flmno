@@ -2332,3 +2332,25 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
 .cs-feed::-webkit-scrollbar { display: none; }
 .cs-feed__item { flex: 0 0 clamp(280px, 30vw, 360px); margin: 0 !important; scroll-snap-align: start; }
 @media (max-width: 680px) { .cs-feed__item { flex-basis: 82vw; } }
+
+/* ══ Image frost that can't slip: the image itself is blurred on hover (no separate backdrop layer to drift while scrolling) ══ */
+:root .img-label {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+:root .cs-carousel__item img, :root .cs-carousel__item video,
+:root .cs-gallery figure img, :root .cs-gallery figure video,
+:root .cs-flipbook-card img {
+  transition: filter 0.25s ease, transform 0.25s ease !important;
+}
+@media all {
+  :root .cs-carousel__item:hover img, :root .cs-carousel__item:focus-visible img,
+  :root .cs-carousel__item:hover video, :root .cs-carousel__item:focus-visible video,
+  :root .cs-gallery figure:hover img, :root .cs-gallery figure:focus-visible img,
+  :root .cs-gallery figure:hover video, :root .cs-gallery figure:focus-visible video,
+  :root .cs-flipbook-card.is-hover img {
+    filter: blur(14px) !important;
+    transform: scale(1.1) !important; /* hides the soft edge so the frost stays flush with the frame */
+  }
+}
+:root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card { overflow: hidden !important; }
