@@ -591,22 +591,24 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
   document.fonts && document.fonts.ready.then(set);
 })();
 
-/* ── Mobile: nav buttons ease smaller while scrolling down, back to full size on scroll up ── */
+/* ── Logo + nav buttons: hidden while you scroll down, back as soon as you scroll up (desktop and phones) ── */
 (() => {
-  const mq = matchMedia('(max-width: 680px)');
-  let lastY = scrollY, ticking = false;
-  addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const y = scrollY, dy = y - lastY;
-      if (!mq.matches || y < 40) document.documentElement.classList.remove('nav-compact');
-      else if (dy > 4) document.documentElement.classList.add('nav-compact');
-      else if (dy < -4) document.documentElement.classList.remove('nav-compact');
-      if (Math.abs(dy) > 4) lastY = y;
-      ticking = false;
-    });
-  }, { passive: true });
+  const root = document.documentElement;
+  let lastY = scrollY, acc = 0, ticking = false;
+  const tick = () => {
+    ticking = false;
+    const y = scrollY, max = root.scrollHeight - innerHeight;
+    if (y <= 80) { root.classList.remove('nav-away'); acc = 0; lastY = Math.max(0, y); return; }
+    if (y < 0 || y > max) return;                       // ignore rubber-banding past the ends
+    const dy = y - lastY; lastY = y;
+    if (dy === 0) return;
+    acc = (Math.sign(dy) === Math.sign(acc)) ? acc + dy : dy;   // distance travelled in the current direction
+    if (acc > 12) root.classList.add('nav-away');
+    else if (acc < -12) root.classList.remove('nav-away');
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } }, { passive: true });
+  // keyboard users: Tab always brings the buttons back
+  addEventListener('keydown', (e) => { if (e.key === 'Tab') root.classList.remove('nav-away'); });
 })();
 
 /* ── Screenshot deterrent: images go dark when a screenshot shortcut is pressed or the page loses focus ── */

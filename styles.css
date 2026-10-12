@@ -4004,3 +4004,21 @@ html:root .flourish {
 /* About headline: on desktop it breaks after the comma; on narrower screens whole phrases wrap together */
 html:root .about .display-heading .br-d { display: none; }
 @media (min-width: 900px) { html:root .about .display-heading .br-d { display: inline; } }
+
+
+/* ══ Logo + nav buttons: hidden while scrolling down, back on scroll up (desktop and phones) ══ */
+:root #site-logo, :root #mobile-logo {
+  transition-property: background, box-shadow, opacity, visibility !important;
+  transition-duration: 0.2s, 0.2s, 0.3s, 0.3s !important;
+}
+:root.nav-away #site-logo, :root.nav-away #mobile-logo,
+:root.nav-away .site-nav nav, :root.nav-away .cs-header__back {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition-duration: 0.25s !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root.nav-away #site-logo, :root.nav-away #mobile-logo,
+  :root.nav-away .site-nav nav, :root.nav-away .cs-header__back { transition-duration: 0s !important; }
+}
