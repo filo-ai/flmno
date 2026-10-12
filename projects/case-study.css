@@ -2355,19 +2355,40 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
 :root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card { overflow: hidden !important; }
 
 
-/* ══ Logo + nav buttons: hidden while scrolling down, back on scroll up (desktop and phones) ══ */
+/* ══ Logo + nav buttons: shrink away while scrolling down, spring back on scroll up (desktop and phones) ══ */
 :root #site-logo, :root #mobile-logo {
-  transition-property: background, box-shadow, opacity, visibility !important;
-  transition-duration: 0.2s, 0.2s, 0.3s, 0.3s !important;
+  transition-property: background, box-shadow, opacity, visibility, scale !important;
+  transition-duration: 0.2s, 0.2s, 0.3s, 0.3s, 0.45s !important;
+  transition-timing-function: ease, ease, ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;   /* springy grow-back */
+}
+:root .site-nav nav, :root .cs-header__back {
+  transition-property: opacity, visibility, scale !important;
+  transition-duration: 0.3s, 0.3s, 0.45s !important;
+  transition-timing-function: ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+:root .cs-header__back {
+  transition-property: background, color, transform, box-shadow, opacity, visibility, scale !important;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.3s, 0.3s, 0.45s !important;
+  transition-timing-function: ease, ease, ease, ease, ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+/* each one shrinks toward its own corner */
+:root #site-logo { transform-origin: left center; }
+:root .site-nav nav, :root .cs-header__back { transform-origin: right center; }
+@media (max-width: 680px) {
+  :root #mobile-logo { transform-origin: 50% 0; }
+  :root .site-nav nav, :root .cs-header__back { transform-origin: center bottom; }
 }
 :root.nav-away #site-logo, :root.nav-away #mobile-logo,
 :root.nav-away .site-nav nav, :root.nav-away .cs-header__back {
+  scale: 0.4 !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
   transition-duration: 0.25s !important;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0) !important;                              /* quick, tucks away */
 }
 @media (prefers-reduced-motion: reduce) {
+  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back,
   :root.nav-away #site-logo, :root.nav-away #mobile-logo,
-  :root.nav-away .site-nav nav, :root.nav-away .cs-header__back { transition-duration: 0s !important; }
+  :root.nav-away .site-nav nav, :root.nav-away .cs-header__back { transition-duration: 0s !important; scale: 1 !important; }
 }
