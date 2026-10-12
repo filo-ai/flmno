@@ -2355,40 +2355,35 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
 :root .cs-carousel__item, :root .cs-gallery figure, :root .cs-flipbook-card { overflow: hidden !important; }
 
 
-/* ══ Logo + nav buttons: shrink away while scrolling down, spring back on scroll up (desktop and phones) ══ */
+/* ══ Logo + nav buttons: slide off-screen while scrolling down, slide back on scroll up (desktop and phones) ══ */
 :root #site-logo, :root #mobile-logo {
-  transition-property: background, box-shadow, opacity, visibility, scale !important;
-  transition-duration: 0.2s, 0.2s, 0.3s, 0.3s, 0.45s !important;
-  transition-timing-function: ease, ease, ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;   /* springy grow-back */
+  transition-property: background, box-shadow, translate, visibility !important;
+  transition-duration: 0.2s, 0.2s, 0.35s, 0.35s !important;
+  transition-timing-function: ease, ease, cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
-:root .site-nav nav, :root .cs-header__back {
-  transition-property: opacity, visibility, scale !important;
-  transition-duration: 0.3s, 0.3s, 0.45s !important;
-  transition-timing-function: ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+:root .site-nav nav {
+  transition-property: opacity, visibility, translate !important;
+  transition-duration: 0.6s, 0.35s, 0.35s !important;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 :root .cs-header__back {
-  transition-property: background, color, transform, box-shadow, opacity, visibility, scale !important;
-  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.3s, 0.3s, 0.45s !important;
-  transition-timing-function: ease, ease, ease, ease, ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  transition-property: background, color, transform, box-shadow, opacity, visibility, translate !important;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.6s, 0.35s, 0.35s !important;
+  transition-timing-function: ease, ease, ease, ease, ease, cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
-/* each one shrinks toward its own corner */
-:root #site-logo { transform-origin: left center; }
-:root .site-nav nav, :root .cs-header__back { transform-origin: right center; }
-@media (max-width: 680px) {
-  :root #mobile-logo { transform-origin: 50% 0; }
-  :root .site-nav nav, :root .cs-header__back { transform-origin: center bottom; }
-}
-:root.nav-away #site-logo, :root.nav-away #mobile-logo,
-:root.nav-away .site-nav nav, :root.nav-away .cs-header__back {
-  scale: 0.4 !important;
-  opacity: 0 !important;
+/* desktop: everything lives along the top edge, so it all slides up and away */
+:root.nav-away #site-logo, :root.nav-away .site-nav nav, :root.nav-away .cs-header__back {
+  translate: 0 calc(-100% - 28px) !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  transition-duration: 0.25s !important;
-  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0) !important;                              /* quick, tucks away */
+}
+:root.nav-away #mobile-logo { translate: 0 calc(-100% - 28px) !important; visibility: hidden !important; pointer-events: none !important; }
+/* phones: the logo sits at the top (slides up); the buttons sit at the bottom (slide down) */
+@media (max-width: 680px) {
+  :root.nav-away .site-nav nav, :root.nav-away .cs-header__back {
+    translate: 0 calc(100% + 28px + env(safe-area-inset-bottom, 0px)) !important;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back,
-  :root.nav-away #site-logo, :root.nav-away #mobile-logo,
-  :root.nav-away .site-nav nav, :root.nav-away .cs-header__back { transition-duration: 0s !important; scale: 1 !important; }
+  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
 }
