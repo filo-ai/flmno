@@ -4038,3 +4038,22 @@ html:root .about .display-heading .br-d { display: none; }
 @media (prefers-reduced-motion: reduce) {
   :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
 }
+
+
+/* ══ Smoother, symmetric slide (same motion down and up, ease-in-out, GPU-only) ══ */
+:root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { will-change: translate; }
+:root #site-logo, :root #mobile-logo {
+  transition-duration: 0.2s, 0.2s, 0.6s, 0.6s !important;
+  transition-timing-function: ease, ease, cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1) !important;
+}
+:root .site-nav nav {
+  transition-duration: 0.6s, 0.6s, 0.6s !important;
+  transition-timing-function: ease, cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1) !important;
+}
+:root .cs-header__back {
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.6s, 0.6s, 0.6s !important;
+  transition-timing-function: ease, ease, ease, ease, cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
+}

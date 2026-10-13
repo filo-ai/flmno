@@ -2387,3 +2387,40 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
 @media (prefers-reduced-motion: reduce) {
   :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
 }
+
+
+/* ══ Smoother, symmetric slide (same motion down and up, ease-in-out, GPU-only) ══ */
+:root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { will-change: translate; }
+:root #site-logo, :root #mobile-logo {
+  transition-duration: 0.2s, 0.2s, 0.6s, 0.6s !important;
+  transition-timing-function: ease, ease, cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1) !important;
+}
+:root .site-nav nav {
+  transition-duration: 0.6s, 0.6s, 0.6s !important;
+  transition-timing-function: ease, cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1) !important;
+}
+:root .cs-header__back {
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.6s, 0.6s, 0.6s !important;
+  transition-timing-function: ease, ease, ease, ease, cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1), cubic-bezier(0.45, 0, 0.2, 1) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
+}
+
+/* ── Project pages (phones): the logo stays put at full size until the title starts shrinking, then slides away with the rest ── */
+@media (max-width: 680px) {
+  :root.nav-away:not(.title-shrinking) #mobile-logo {
+    translate: 0 0 !important; visibility: visible !important; pointer-events: auto !important;
+  }
+}
+
+/* ── Phones: glass runs all the way up under the status bar / browser chrome ── */
+.cs-topglass { display: none; }
+@media (max-width: 680px) {
+  .cs-topglass {
+    display: block; position: fixed; left: 0; right: 0; top: -300px; height: 300px; z-index: 59; pointer-events: none;
+    background: color-mix(in srgb, var(--bg) 58%, transparent);
+    -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%);
+  }
+  :root .cs-hero__head { top: 0 !important; }
+}

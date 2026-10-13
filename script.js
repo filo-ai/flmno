@@ -603,8 +603,8 @@ document.querySelectorAll('.js-year').forEach((el) => { el.textContent = String(
     const dy = y - lastY; lastY = y;
     if (dy === 0) return;
     acc = (Math.sign(dy) === Math.sign(acc)) ? acc + dy : dy;   // distance travelled in the current direction
-    if (acc > 12) root.classList.add('nav-away');
-    else if (acc < -12) root.classList.remove('nav-away');
+    if (acc > 40) root.classList.add('nav-away');
+    else if (acc < -14) root.classList.remove('nav-away');
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } }, { passive: true });
   // keyboard users: Tab always brings the buttons back

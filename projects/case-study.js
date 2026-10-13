@@ -490,11 +490,12 @@ document.addEventListener('contextmenu', e => {
     ticking = false;
     const spacer = document.querySelector('.cs-hero-spacer');
     const dist = spacer ? spacer.offsetHeight : 0;
-    if (!mq.matches) { head.style.removeProperty('--k'); head.classList.remove('is-compact'); document.documentElement.style.removeProperty('--title-k'); return; }
+    if (!mq.matches) { head.style.removeProperty('--k'); head.classList.remove('is-compact'); document.documentElement.style.removeProperty('--title-k'); document.documentElement.classList.remove('title-shrinking'); return; }
     const start = dist + 4;                               // text meets the bar's bottom edge
     const k = Math.min(1, Math.max(0, (scrollY - start) / range));
     head.style.setProperty('--k', k.toFixed(4));
     head.classList.toggle('is-compact', k >= 1);
+    document.documentElement.classList.toggle('title-shrinking', k > 0);
     document.documentElement.style.setProperty('--title-k', k.toFixed(4));
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
@@ -657,8 +658,8 @@ document.querySelectorAll('.cs-flipbook-wrap').forEach((wrap) => {
     const dy = y - lastY; lastY = y;
     if (dy === 0) return;
     acc = (Math.sign(dy) === Math.sign(acc)) ? acc + dy : dy;   // distance travelled in the current direction
-    if (acc > 12) root.classList.add('nav-away');
-    else if (acc < -12) root.classList.remove('nav-away');
+    if (acc > 40) root.classList.add('nav-away');            // takes a deliberate scroll down to hide…
+    else if (acc < -14) root.classList.remove('nav-away');   // …and comes back on a small scroll up
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } }, { passive: true });
   // keyboard users: Tab always brings the buttons back
@@ -731,4 +732,14 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
     if (img.complete && img.naturalWidth) check(pill, img);
     else img.addEventListener('load', () => check(pill, img), { once: true });
   });
+})();
+
+
+/* ── Phones: extend the frosted title-bar glass above the screen edge so it reaches the very top (status bar / browser chrome) ── */
+(() => {
+  if (!document.querySelector('.cs-hero__head')) return;
+  const g = document.createElement('div');
+  g.className = 'cs-topglass';
+  g.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(g);
 })();
