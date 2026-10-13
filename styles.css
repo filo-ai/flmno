@@ -139,6 +139,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   overflow-x: hidden;
+  overflow-x: clip;   /* clip, not hidden: 'hidden' turns the body into a scroll container, which confuses iOS Safari's toolbar/edge handling */
   transition:
     background-color 0.45s ease,
     color 0.45s ease;
