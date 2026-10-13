@@ -2424,3 +2424,11 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
   }
   :root .cs-hero__head { top: 0 !important; }
 }
+
+/* ── Slide a touch quicker ── */
+:root #site-logo, :root #mobile-logo { transition-duration: 0.2s, 0.2s, 0.45s, 0.45s !important; }
+:root .site-nav nav { transition-duration: 0.45s, 0.45s, 0.45s !important; }
+:root .cs-header__back { transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.45s, 0.45s, 0.45s !important; }
+@media (prefers-reduced-motion: reduce) {
+  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
+}

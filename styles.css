@@ -4057,3 +4057,16 @@ html:root .about .display-heading .br-d { display: none; }
 @media (prefers-reduced-motion: reduce) {
   :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
 }
+
+/* ── Phones: hero fills the tallest viewport (runs under Safari's bottom bar, no strip when it collapses) ── */
+@media (max-width: 680px) {
+  .hero, .hero-pin-stage .hero, body.headline-complete .hero { min-height: 100vh !important; min-height: 100lvh !important; }
+}
+
+/* ── Slide a touch quicker ── */
+:root #site-logo, :root #mobile-logo { transition-duration: 0.2s, 0.2s, 0.45s, 0.45s !important; }
+:root .site-nav nav { transition-duration: 0.45s, 0.45s, 0.45s !important; }
+:root .cs-header__back { transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.45s, 0.45s, 0.45s !important; }
+@media (prefers-reduced-motion: reduce) {
+  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
+}
