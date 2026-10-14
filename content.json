@@ -866,6 +866,7 @@
         "/assets/images/ltb--typography.webp",
         "/assets/images/ltb--on-the-hunt.webp",
         "/assets/images/ltb--poster.webp",
+        "/assets/images/ltb--satellite-water-geology.webp",
         "/assets/images/ltb--binder.webp",
         "/assets/images/ltb--color-spectra.webp",
         "/assets/images/ltb--mission-patch.webp",
@@ -918,7 +919,8 @@
       "alts": {
         "/assets/images/ltb--on-the-hunt.webp": "Lunar Trailblazer Science: Water Lurking in the Shadows",
         "/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png": "Lunar Trailblazer Science: Branding + Identity",
-        "/assets/images/ltb--spectra-infographic.webp": "Lunar Trailblazer Science: Infographic for satellite mission data acquisition strategy"
+        "/assets/images/ltb--spectra-infographic.webp": "Lunar Trailblazer Science: Infographic for satellite mission data acquisition strategy",
+        "/assets/images/ltb--satellite-water-geology.webp": "Lunar Trailblazer Science: Water + Geology"
       }
     },
     "maccheroni-republic": {
