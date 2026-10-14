@@ -273,7 +273,8 @@ function renderStats(stats) {
 function ogImage(slug, gallery) {
   const SITE = "https://flmno.com";
   const first = (gallery || [])[0];
-  if (first && first.startsWith("/media/")) {
+  const PREFER_OG = new Set(["lunar-trailblazer-science"]);   // custom share image beats the first gallery image
+  if (first && first.startsWith("/media/") && !(PREFER_OG.has(slug) && fs.existsSync(path.join(__dirname, "assets", "og", `${slug}.jpg`)))) {
     const m = first.match(/^\/media\/[^/]+~mv2\.[a-z]+/i);
     if (m) return `${SITE}${m[0]}/v1/fill/w_1200,h_630,al_c,q_85/${m[0].split("/").pop()}`;
   }
