@@ -568,6 +568,7 @@ document.addEventListener('contextmenu', e => {
     index = (i + figs.length) % figs.length;
     const src = figs[index].querySelector('img');
     img.src = src.getAttribute('src'); img.alt = src.alt; reset();
+    if (typeof pts !== 'undefined') { pts.clear(); } zoom.classList.remove('is-gesturing');
     const n = zoom.querySelector('.cs-zoom__count-n'); if (n) n.textContent = String(index + 1);
   };
   const open = (i) => {
@@ -586,55 +587,88 @@ document.addEventListener('contextmenu', e => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); show(index + 1); }
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(index - 1); }
   });
-  zoom.addEventListener('wheel', (e) => {
-    if (!e.ctrlKey) return;
-    e.preventDefault();
-    z = Math.min(4, Math.max(1, z * (1 - e.deltaY * 0.01)));
+  /* zoom about a point (coordinates relative to the screen centre), pan kept inside the image edges */
+  const MAXZ = 6;
+  const clampPan = () => {
+    const w = img.offsetWidth * z, h = img.offsetHeight * z;
+    const mx = Math.max(0, (w - innerWidth) / 2), my = Math.max(0, (h - innerHeight) / 2);
+    px = Math.min(mx, Math.max(-mx, px)); py = Math.min(my, Math.max(-my, py));
+  };
+  const zoomAt = (nz, cx, cy, base) => {          // base = { z, px, py } the gesture started from
+    nz = Math.min(MAXZ, Math.max(1, nz));
+    const u = { x: (cx - base.px) / base.z, y: (cy - base.py) / base.z };
+    z = nz; px = cx - u.x * nz; py = cy - u.y * nz;
     if (z === 1) { px = 0; py = 0; }
-    apply();
+    clampPan(); apply();
+  };
+  const rel = (e) => ({ x: e.clientX - innerWidth / 2, y: e.clientY - innerHeight / 2 });
+  let wheelT;
+  zoom.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    zoom.classList.add('is-gesturing'); clearTimeout(wheelT); wheelT = setTimeout(() => zoom.classList.remove('is-gesturing'), 140);
+    if (e.ctrlKey || e.metaKey) {                  // pinch on a trackpad / ctrl + wheel: zoom toward the cursor
+      const c = rel(e);
+      zoomAt(z * Math.exp(-e.deltaY * 0.012), c.x, c.y, { z, px, py });
+    } else if (z > 1) {                            // two-finger scroll while zoomed: move around the image
+      px -= e.deltaX; py -= e.deltaY; clampPan(); apply();
+    } else if (Math.abs(e.deltaY) > 4 && !e.deltaMode) {   // plain wheel on a fitted image: zoom in a notch
+      const c = rel(e);
+      if (e.deltaY < 0) zoomAt(z * 1.25, c.x, c.y, { z, px, py });
+    }
   }, { passive: false });
+  // stop iOS from zooming the whole page under the viewer
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach(t => zoom.addEventListener(t, (e) => e.preventDefault()));
   const pts = new Map();
-  let start = null, lastTap = 0, moved = false;
+  let start = null, lastTap = 0, lastTapAt = null, moved = false;
+  const mid = () => { const v = [...pts.values()]; return { x: v.reduce((a, p) => a + p.x, 0) / v.length - innerWidth / 2, y: v.reduce((a, p) => a + p.y, 0) / v.length - innerHeight / 2 }; };
   const dist = () => { const [a, b] = [...pts.values()]; return Math.hypot(a.x - b.x, a.y - b.y); };
+  const snap = () => { const m = mid(); start = { x: m.x, y: m.y, px, py, z, d: pts.size === 2 ? dist() : 0 }; };
   zoom.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.cs-zoom__close')) return;
-    zoom.setPointerCapture(e.pointerId);
+    try { zoom.setPointerCapture(e.pointerId); } catch (_) {}
     pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
     zoom.classList.add('is-gesturing');
-    moved = false;
-    start = { x: e.clientX, y: e.clientY, px, py, z, d: pts.size === 2 ? dist() : 0 };
+    if (pts.size === 1) moved = false;
+    snap();
   });
   zoom.addEventListener('pointermove', (e) => {
     if (!pts.has(e.pointerId) || !start) return;
     pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    if (pts.size === 2) {
-      if (!start.d) start.d = dist();
-      z = Math.min(4, Math.max(1, start.z * dist() / start.d)); moved = true;
+    const m = mid();
+    if (pts.size >= 2) {                           // pinch: scale about the fingers' midpoint, and follow them
+      moved = true;
+      zoomAt(start.z * dist() / (start.d || dist()), m.x, m.y, { z: start.z, px: start.px + (m.x - start.x), py: start.py + (m.y - start.y) });
     } else {
-      const dx = e.clientX - start.x, dy = e.clientY - start.y;
+      const dx = m.x - start.x, dy = m.y - start.y;
       if (Math.abs(dx) > 6 || Math.abs(dy) > 6) moved = true;
-      if (z > 1) { px = start.px + dx; py = start.py + dy; }
+      if (z > 1) { px = start.px + dx; py = start.py + dy; clampPan(); apply(); }
     }
-    apply();
   });
   const end = (e) => {
     if (!pts.has(e.pointerId)) return;
+    const gone = pts.get(e.pointerId);
     pts.delete(e.pointerId);
-    if (pts.size) { const p = [...pts.values()][0]; start = { x: p.x, y: p.y, px, py, z, d: 0 }; return; }
+    if (pts.size) { snap(); return; }              // one finger left: carry on panning from here
     zoom.classList.remove('is-gesturing');
-    const dx = e.clientX - start.x, dy = e.clientY - start.y;
+    if (!start) return;
+    const dx = gone.x - innerWidth / 2 - start.x, dy = gone.y - innerHeight / 2 - start.y;
     if (z <= 1.02) {
       reset();
-      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) { show(index + (dx < 0 ? 1 : -1)); return; }
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) { show(index + (dx < 0 ? 1 : -1)); start = null; return; }
     }
     if (!moved) {
-      const now = Date.now();
-      if (now - lastTap < 300) { z = z > 1 ? 1 : 2.5; if (z === 1) { px = 0; py = 0; } apply(); lastTap = 0; }
-      else lastTap = now;
+      const now = Date.now(), c = { x: gone.x - innerWidth / 2, y: gone.y - innerHeight / 2 };
+      if (now - lastTap < 300) {                   // double tap / click: in about the tap point, or back out
+        const base = { z, px, py };
+        if (z > 1) { z = 1; px = 0; py = 0; apply(); } else zoomAt(2.5, c.x, c.y, base);
+        lastTap = 0;
+      } else lastTap = now;
     }
+    start = null;
   };
   zoom.addEventListener('pointerup', end);
   zoom.addEventListener('pointercancel', end);
+  zoom.addEventListener('lostpointercapture', (e) => { if (pts.has(e.pointerId)) end(e); });
 })();
 
 /* ── Flipbook: the card under the pointer shows its label (cards sit beneath the swipe layer) ── */

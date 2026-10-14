@@ -1706,6 +1706,7 @@ img.fade-img.is-loaded {
   opacity: 1;
 }
 .cs-zoom__img {
+  will-change: transform;
   max-width: 100vw;
   max-height: 100dvh;
   object-fit: contain;
