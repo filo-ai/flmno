@@ -914,7 +914,11 @@
           "title": "Interdisciplinary Success",
           "body": "The project bridged science and design in a way that both communities responded to positively."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/ltb--on-the-hunt.webp": "Lunar Trailblazer Science: Where the Water Hides",
+        "/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png": "Lunar Trailblazer Science: Branding + Identity"
+      }
     },
     "maccheroni-republic": {
       "title": "Maccheroni Republic",

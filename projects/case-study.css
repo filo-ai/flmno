@@ -2442,5 +2442,5 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
   :root .cs-flipbook-card.is-hover img, :root .cs-flipbook-card.is-hover video { filter: none !important; }
 }
 :root .img-label {
-  background: linear-gradient(to bottom, rgba(0,0,0,.88) 0%, rgba(0,0,0,.62) 26%, rgba(0,0,0,.26) 58%, rgba(0,0,0,0) 100%) !important;
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.68) 26%, rgba(0,0,0,.26) 58%, rgba(0,0,0,0) 100%) !important;
 }
