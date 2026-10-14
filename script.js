@@ -490,7 +490,6 @@ document.addEventListener('contextmenu', e => {
     const c = document.body.classList.contains('contact-mode')
       ? (document.body.style.getPropertyValue('--contact-bg').trim() || '#b8f0e0')
       : DARK;
-    if (meta && meta.content !== c) meta.setAttribute('content', c);
     document.documentElement.style.backgroundColor = c;
   };
   new MutationObserver(sync).observe(document.body, { attributes: true, attributeFilter: ['class', 'style'] });
