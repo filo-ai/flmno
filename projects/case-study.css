@@ -2432,3 +2432,15 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
 @media (prefers-reduced-motion: reduce) {
   :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
 }
+
+/* ══ EXPERIMENT: simple black fade instead of frosted glass on image hover (revert = remove this block) ══ */
+@media all {
+  :root .cs-carousel__item:hover img, :root .cs-carousel__item:focus-visible img,
+  :root .cs-carousel__item:hover video, :root .cs-carousel__item:focus-visible video,
+  :root .cs-gallery figure:hover img, :root .cs-gallery figure:focus-visible img,
+  :root .cs-gallery figure:hover video, :root .cs-gallery figure:focus-visible video,
+  :root .cs-flipbook-card.is-hover img, :root .cs-flipbook-card.is-hover video { filter: none !important; }
+}
+:root .img-label {
+  background: linear-gradient(to bottom, rgba(0,0,0,.88) 0%, rgba(0,0,0,.62) 26%, rgba(0,0,0,.26) 58%, rgba(0,0,0,0) 100%) !important;
+}
