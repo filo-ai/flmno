@@ -71,7 +71,7 @@ const ph = (src) => (SIZES[src]?.c || "#141417");
 const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
 
 // ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
-let PAGE = { slug: "", title: "", alts: {} };
+let PAGE = { slug: "", title: "", alts: {}, pdfs: {} };
 function altFor(src, i) {
   if (PAGE.alts[src]) return PAGE.alts[src];
   let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
@@ -207,7 +207,7 @@ ${slides}
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
   const figs = gallery.map((src, i) =>
-    `        <figure${i % 3 === 0 ? ' class="full"' : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption")}</figure>`
+    `        <figure${i % 3 === 0 ? ' class="full"' : ""}${PAGE.pdfs[src] ? ` data-pdf="${esc(PAGE.pdfs[src])}"` : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption")}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
@@ -219,6 +219,7 @@ function renderGallerySheet(title, gallery) {
     <div class="cs-zoom" hidden role="dialog" aria-label="Image viewer">
       <p class="cs-zoom__count" aria-live="polite"><span class="cs-zoom__count-n">1</span> / ${gallery.length}</p>
       <img class="cs-zoom__img" alt="" draggable="false">
+      <a class="cs-zoom__pdf" href="#" target="_blank" rel="noopener" hidden>View the full poster (PDF) <span aria-hidden="true">↗</span></a>
       <button class="cs-sheet__close cs-zoom__close" type="button" aria-label="Close image">${CLOSE}</button>
     </div>
     <div class="cs-sheet__scroll">
@@ -347,7 +348,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
-  PAGE = { slug, title, alts: project.alts || {} };
+  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {} };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {

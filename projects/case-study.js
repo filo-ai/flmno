@@ -570,6 +570,8 @@ document.addEventListener('contextmenu', e => {
     img.src = src.getAttribute('src'); img.alt = src.alt; reset();
     if (typeof pts !== 'undefined') { pts.clear(); } zoom.classList.remove('is-gesturing');
     const n = zoom.querySelector('.cs-zoom__count-n'); if (n) n.textContent = String(index + 1);
+    const pdf = zoom.querySelector('.cs-zoom__pdf'), href = figs[index].dataset.pdf;
+    if (pdf) { pdf.hidden = !href; if (href) pdf.href = href; }
   };
   const open = (i) => {
     show(i); zoom.hidden = false; sheet.dataset.zoom = '1';
@@ -624,7 +626,7 @@ document.addEventListener('contextmenu', e => {
   const dist = () => { const [a, b] = [...pts.values()]; return Math.hypot(a.x - b.x, a.y - b.y); };
   const snap = () => { const m = mid(); start = { x: m.x, y: m.y, px, py, z, d: pts.size === 2 ? dist() : 0 }; };
   zoom.addEventListener('pointerdown', (e) => {
-    if (e.target.closest('.cs-zoom__close')) return;
+    if (e.target.closest('.cs-zoom__close, .cs-zoom__pdf')) return;
     try { zoom.setPointerCapture(e.pointerId); } catch (_) {}
     pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
     zoom.classList.add('is-gesturing');

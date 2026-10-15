@@ -872,6 +872,7 @@
         "/assets/images/ltb--logo-archive.webp",
         "/assets/images/ltb--patch.webp",
         "/assets/images/ltb--satellite.webp",
+        "/assets/images/ltb--science-communication.webp",
         "/assets/images/ltb--reference-sample.webp",
         "/assets/images/ltb--reference-surface.webp"
       ],
@@ -916,6 +917,9 @@
           "body": "The project bridged science and design in a way that both communities responded to positively."
         }
       ],
+      "pdfs": {
+        "/assets/images/ltb--science-communication.webp": "/assets/docs/lunar-trailblazer-science-communication.pdf"
+      },
       "alts": {
         "/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png": "Lunar Trailblazer Science: Lunar Trailblazer Hero",
         "/assets/images/ltb--booklet.webp": "Lunar Trailblazer Science: Brand booklet",
@@ -926,6 +930,7 @@
         "/assets/images/ltb--logo-archive.webp": "Lunar Trailblazer Science: Space exploration logo archive",
         "/assets/images/ltb--patch.webp": "Lunar Trailblazer Science: Patch",
         "/assets/images/ltb--satellite.webp": "Lunar Trailblazer Science: Satellite",
+        "/assets/images/ltb--science-communication.webp": "Lunar Trailblazer Science: Science Communication Poster",
         "/assets/images/ltb--reference-sample.webp": "Lunar Trailblazer Science: Inspiration: Lunar sample return",
         "/assets/images/ltb--reference-surface.webp": "Lunar Trailblazer Science: Inspiration: Lunar surface"
       }
