@@ -864,16 +864,16 @@
       },
       "gallery": [
         "/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png",
-        "/assets/images/ltb--mission-patch.webp",
-        "/assets/images/ltb--on-the-hunt.webp",
-        "/assets/images/ltb--binder.webp",
-        "/assets/images/ltb--patch-explainer.webp",
+        "/assets/images/ltb--booklet.webp",
+        "/assets/images/ltb--infographic.webp",
         "/assets/images/ltb--typography.webp",
-        "/assets/images/ltb--color-spectra.webp",
-        "/assets/images/ltb--water-cycle.webp",
-        "/assets/images/ltb--poster.webp",
-        "/assets/images/ltb--satellite-water-geology.webp",
-        "/assets/images/ltb--spectra-infographic.webp"
+        "/assets/images/ltb--color.webp",
+        "/assets/images/ltb--logo.webp",
+        "/assets/images/ltb--logo-archive.webp",
+        "/assets/images/ltb--patch.webp",
+        "/assets/images/ltb--satellite.webp",
+        "/assets/images/ltb--reference-sample.webp",
+        "/assets/images/ltb--reference-surface.webp"
       ],
       "related": [
         {
@@ -917,10 +917,17 @@
         }
       ],
       "alts": {
-        "/assets/images/ltb--on-the-hunt.webp": "Lunar Trailblazer Science: Water Lurking in the Shadows",
         "/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png": "Lunar Trailblazer Science: Branding + Identity",
-        "/assets/images/ltb--spectra-infographic.webp": "Lunar Trailblazer Science: Infographic for satellite mission data acquisition strategy",
-        "/assets/images/ltb--satellite-water-geology.webp": "Lunar Trailblazer Science: Water + Geology"
+        "/assets/images/ltb--booklet.webp": "Lunar Trailblazer Science: Brand booklet",
+        "/assets/images/ltb--infographic.webp": "Lunar Trailblazer Science: Infographic for satellite mission data acquisition strategy",
+        "/assets/images/ltb--typography.webp": "Lunar Trailblazer Science: Typography",
+        "/assets/images/ltb--color.webp": "Lunar Trailblazer Science: Color",
+        "/assets/images/ltb--logo.webp": "Lunar Trailblazer Science: Logo",
+        "/assets/images/ltb--logo-archive.webp": "Lunar Trailblazer Science: Space exploration logo archive",
+        "/assets/images/ltb--patch.webp": "Lunar Trailblazer Science: Patch",
+        "/assets/images/ltb--satellite.webp": "Lunar Trailblazer Science: Satellite",
+        "/assets/images/ltb--reference-sample.webp": "Lunar Trailblazer Science: Reference: lunar sample return",
+        "/assets/images/ltb--reference-surface.webp": "Lunar Trailblazer Science: Reference: lunar surface"
       }
     },
     "maccheroni-republic": {
