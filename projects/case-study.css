@@ -2459,3 +2459,11 @@ html:root .cs-zoom__close { border-radius: 50% !important; width: 48px !importan
 :root .cs-zoom__pdf[hidden] { display: none; }
 :root .cs-zoom.is-gesturing .cs-zoom__pdf { opacity: 0; transition: opacity .15s; }
 @media (hover: hover) { :root .cs-zoom__pdf:hover { background: rgba(255, 255, 255, 0.24); } }
+
+/* ── Desktop only: logo in the far left corner, nav buttons in the far right corner (phones unchanged) ── */
+@media (min-width: 681px) {
+  html:root .site-nav, html:root .cs-header, html:root header.site-nav {
+    padding-left: var(--gutter) !important;
+    padding-right: var(--gutter) !important;
+  }
+}

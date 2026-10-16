@@ -4071,3 +4071,11 @@ html:root .about .display-heading .br-d { display: none; }
 @media (prefers-reduced-motion: reduce) {
   :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back { transition-duration: 0s !important; }
 }
+
+/* ── Desktop only: logo in the far left corner, nav buttons in the far right corner (phones unchanged) ── */
+@media (min-width: 681px) {
+  html:root .site-nav, html:root .cs-header, html:root header.site-nav {
+    padding-left: var(--gutter) !important;
+    padding-right: var(--gutter) !important;
+  }
+}
