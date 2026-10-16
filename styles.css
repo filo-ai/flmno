@@ -4079,3 +4079,19 @@ html:root .about .display-heading .br-d { display: none; }
     padding-right: var(--gutter) !important;
   }
 }
+
+/* ── Logo: keep the round tile, drop the glass (flat solid fill, no blur / highlights) ── */
+:root #site-logo, :root #mobile-logo,
+:root #site-logo:hover, :root #site-logo:focus-visible,
+:root #mobile-logo:hover {
+  background: #1b1b1e !important;
+  background-color: #1b1b1e !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+body.contact-mode #site-logo, body.contact-mode #mobile-logo {
+  background: #e6e6e1 !important;
+  background-color: #e6e6e1 !important;
+  box-shadow: inset 0 0 0 1px rgba(5, 5, 7, 0.1) !important;
+}
