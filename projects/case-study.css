@@ -2483,3 +2483,19 @@ body.contact-mode #site-logo, body.contact-mode #mobile-logo {
   background-color: #e6e6e1 !important;
   box-shadow: inset 0 0 0 1px rgba(5, 5, 7, 0.1) !important;
 }
+
+/* ── Logo: no tile, mark at 2x size (was 40px desktop / 36px phone) ── */
+:root #site-logo, :root #mobile-logo,
+:root #site-logo:hover, :root #site-logo:focus-visible, :root #mobile-logo:hover,
+body.contact-mode #site-logo, body.contact-mode #mobile-logo {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  width: 80px !important; height: 80px !important;
+}
+:root #site-logo img, :root #mobile-logo img { width: 80px !important; }
+@media (max-width: 680px) {
+  :root #mobile-logo { width: 72px !important; height: 72px !important; }
+  :root #mobile-logo img { width: 72px !important; }
+}
