@@ -4415,13 +4415,3 @@ html:root .work-tile .frost-overlay p, html:root .logo-tile .frost-overlay p, ht
   font-size: 11px !important; line-height: 1.4 !important; letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
 }
-
-/* type scale: the 20px light text steps up to 22px across the board */
-html:root .filter-bar .hint span, html:root .hint span,
-html:root .work-tile .tile-soon, html:root .tile-soon,
-html:root .body-copy, html:root .svc-pill,
-html:root .contact-ways, html:root .contact-ways a,
-html:root .apple-modal > span:not(.am-grab), html:root .apple-modal > p {
-  font-size: 22px !important;
-}
-html:root .apple-card h3.svc-pill, html:root .apple-service-grid .svc-pill { font-size: 22px !important; }
