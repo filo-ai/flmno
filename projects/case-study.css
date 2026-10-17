@@ -388,7 +388,7 @@ figure {
 }
 
 .cs-read {
-  width: min(490px, calc(100vw - 48px));
+  width: min(720px, calc(100vw - 48px));
   margin: 0 auto;
   padding: 96px 0 120px;
 }
@@ -2749,11 +2749,3 @@ html:root .cs-read figure.cs-read__fig figcaption { font-size: 12.5px !important
 .cs-read__links{margin:1.6em 0}
 .cs-read__links a{display:inline-block;font-size:.95em;color:inherit;text-decoration:underline;text-underline-offset:3px}
 
-/* project pages: wider content column (title, text, logo line up at 1200) */
-@media (min-width: 981px) {
-  html:root { --content: min(1200px, calc(100vw - 2 * var(--gutter))); }
-  html:root .site-nav, html:root .cs-header, html:root header.site-nav {
-    padding-left: max(var(--gutter), calc((100vw - 1200px) / 2)) !important;
-  }
-  html:root .cs-hero__title { max-width: none !important; }
-}
