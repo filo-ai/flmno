@@ -2649,3 +2649,5 @@ html:root .site-banner .site-banner__item { font: inherit !important; letter-spa
 html:root .site-banner .site-banner__dot { font-size: 6px !important; line-height: var(--banner-h) !important; height: var(--banner-h); vertical-align: baseline; }
 html:root .site-banner__track, html:root .site-banner__group { height: var(--banner-h); align-items: center; }
 html:root .site-banner .site-banner__track, html:root .site-banner .site-banner__group { font: inherit !important; letter-spacing: inherit !important; line-height: var(--banner-h) !important; }
+
+:root { --banner-h: 16px; }
