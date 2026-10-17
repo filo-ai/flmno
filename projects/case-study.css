@@ -2877,3 +2877,12 @@ html:root .cs-read hr + dl dd {
   font-size: 19px !important; line-height: 1.5 !important; letter-spacing: 0 !important; color: #fff !important; margin: 0;
 }
 @media (max-width: 680px) { html:root .cs-read hr + dl dd { font-size: 18px !important; } html:root .cs-read hr + dl dt { padding-top: 0; } }
+
+/* Reckless Light (300) for the text card body */
+@font-face {
+  font-family: "Reckless";
+  src: url("/assets/fonts/RecklessStandardM-TRIAL-Light.woff2") format("woff2"), url("/assets/fonts/RecklessStandardM-TRIAL-Light.otf") format("opentype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links),
+html:root .cs-read hr + dl dd { font-weight: 300 !important; }
