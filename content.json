@@ -875,6 +875,9 @@
         "I consumed a glut of research papers, technical documents, mission resources, imagery, and scientific literature—both internally with the Trailblazer team and externally.",
         "I dug through The New York Times science section. National Geographic infographics. Books detailing lunar water discoveries dating back to the 1960s. Galileo Galilei’s drawings of the Moon.",
         "I looked at other lunar missions, spacecraft representation, scientific data visualization, geology diagrams, decades of space exploration.",
+        {
+          "img": "/assets/images/ltb--moodboard.webp"
+        },
         "And then the research started doing what research does when you aren't careful: it became interesting.",
         "The research had its own gravity.",
         "One question pulled me toward another. Water led to spectroscopy. Spectroscopy led to mineralogy. Mineralogy led to geology. Geology led to craters, craters led to the lunar poles, and the lunar poles led me to some of the coolest photographs of the Moon I’d ever seen.",
@@ -1111,7 +1114,8 @@
         "/assets/images/ltb--patch.webp": "Lunar Trailblazer Science: Patch",
         "/assets/images/ltb--satellite.webp": "Lunar Trailblazer Science: Satellite",
         "/assets/images/ltb--business-cards.webp": "Lunar Trailblazer Science: Business cards",
-        "/assets/images/ltb--science-communication.webp": "Lunar Trailblazer Science: Science Communication Poster"
+        "/assets/images/ltb--science-communication.webp": "Lunar Trailblazer Science: Science Communication Poster",
+        "/assets/images/ltb--moodboard.webp": "Lunar Trailblazer Science: Moodboard"
       }
     },
     "maccheroni-republic": {
