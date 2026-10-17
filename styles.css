@@ -4354,3 +4354,9 @@ html.is-returning .tile-image img { view-transition-name: none !important; }
 
 /* banner: a bit more breathing room */
 :root { --banner-h: 21px; }
+
+/* wordmark turns black with the pastel contact background */
+html:root body.contact-mode .logo-word,
+html:root body.contact-mode #site-logo,
+html:root body.contact-mode #mobile-logo { color: #050507 !important; }
+html:root .logo-word { transition: color .3s ease; }

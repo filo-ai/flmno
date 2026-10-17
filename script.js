@@ -466,7 +466,16 @@ document.addEventListener('contextmenu', e => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
-    if (!data.email || !data.message) { say('Add your email and a message, and I’ll take it from there.'); return; }
+    const name = String(data.name || '').trim(), email = String(data.email || '').trim(), message = String(data.message || '').trim();
+    const missing = [];
+    if (!name) missing.push('your name');
+    if (!email) missing.push('your email');
+    if (!message) missing.push('a message');
+    if (missing.length) {
+      const list = missing.length === 1 ? missing[0] : missing.length === 2 ? missing.join(' and ') : missing.slice(0, -1).join(', ') + ', and ' + missing[missing.length - 1];
+      say('Please add ' + list + ' so I can write back.'); return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('That email doesn’t look right. Check it and try again.'); return; }
     btn.disabled = true; btn.textContent = 'Sending…'; say('');
     try {
       const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
@@ -477,7 +486,7 @@ document.addEventListener('contextmenu', e => {
       setTimeout(() => { btn.textContent = 'Send'; btn.disabled = false; }, 4000);
     } catch {
       btn.textContent = 'Send'; btn.disabled = false;
-      say('Something went wrong. You can email me at <a href="mailto:hello@flmno.com">hello@flmno.com</a>.');
+      say('Something went wrong sending your message. Please try again in a moment.');
     }
   });
 })();

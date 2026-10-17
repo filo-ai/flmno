@@ -19,8 +19,8 @@ export default async function handler(req, res) {
   // Honeypot — real people never fill this hidden field
   if (body.company) return res.status(200).json({ ok: true });
 
-  if (!message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return res.status(400).json({ error: "Please add your email and a message." });
+  if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: "Please add your name, a valid email, and a message." });
   }
 
   const key = process.env.RESEND_API_KEY;
