@@ -623,16 +623,18 @@
     },
     "heavy-met-alphabet": {
       "title": "Heavy Met-alphabet",
-      "teaser": "Somewhere between Cowboy Carter, a machine shop, and an X-ray, I found an alphabet.",
+      "teaser": "Somewhere between a horseshoe, a piece of machinery, and a rhinestone-studded fever dream, I found an alphabet.",
       "story": [
-        "Somewhere between Cowboy Carter, a machine shop, and an X-ray, I found an alphabet.",
-        "I was interested in the strange visual territory where Western Americana starts to feel almost futuristic: polished metal, leather, hardware, machinery, a little rhinestone, a little swagger. Cowboy Carter’s reimagining of the Western felt like a particularly good excuse to lean into that world—not as nostalgia, but as something theatrical, stylized, and a little strange.",
-        "Then there were machines: all those wonderful forms that exist somewhere between function and ornament. Bolts, bends, tubes, plates, handles, things that look like they could either do something important or absolutely nothing.",
-        "And X-rays offered the opposite way of looking at an object. Instead of celebrating the surface, they let you see through it. Structure becomes image. Something solid becomes almost weightless.",
-        "I started wondering what would happen if those three ideas were applied to typography.",
-        "The letters became things to fabricate rather than things to draw. I stretched them, folded them, bent them, layered them, and let them get a little unruly. Some became heavy and mechanical; others almost disappeared into their own structure.",
-        "The goal wasn’t to make a better alphabet. It was to see what happened when familiar letters were given a little more metal, machinery, and myth.",
-        "Heavy Met-alphabet is what happened when typography got a little out of hand."
+        {
+          "h": "HEAVY MET-ALPHABET"
+        },
+        "Somewhere between a horseshoe, a piece of machinery, and a rhinestone-studded fever dream, I found an alphabet.",
+        "Western Americana starts to feel futuristic when you add polished metal, hardware, machinery, a little rhinestone, and a little swashbuckling flair. Beyoncé’s Cowboy Carter and Orville Peck felt like particularly good excuses to push that world somewhere stranger.",
+        "What would metal look like as a ribbon?",
+        "The letters became things to fabricate rather than things to draw. I stretched them, folded them, bent them, layered them, and let them get a little unruly. Some became heavy and mechanical; others revealed their internal structure.",
+        "The result: something solidly metal, machinery, and myth.",
+        "An alphabet somewhere between rodeo hardware, industrial machinery, and something that fell out of a spaceship (Beyoncé’s “Alien Superstar,” anyone?)",
+        "Heavy Met-Alphabet is what happened when typography got a little out of hand."
       ],
       "meta": {
         "Client": "Self-intiated Personal Project",
