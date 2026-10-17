@@ -908,7 +908,7 @@
         "They care if it’s right.",
         "My job was to care about both.",
         "There’s a famous Neil deGrasse Tyson story about Titanic: he noticed that the night sky shown in the film wasn’t actually the sky passengers would have seen that night. A tiny detail, but the kind of thing an expert notices immediately.",
-        "That became a useful reminder for this project.",
+        "That became a useful reminder for this project: somebody, somewhere, is going to notice the sky.",
         "When you’re working with people who know planetary science for a living, the feedback can get wonderfully specific.",
         {
           "quote": "“The radiator on the HVM3 instrument would malfunction if it were facing the Sun.”"
@@ -918,9 +918,15 @@
           "quote": "“The rim around…”"
         },
         "And suddenly you’re three levels deeper into spacecraft engineering than you planned to be that afternoon.",
+        {
+          "lines": [
+            "Not maliciously.",
+            "Precisely."
+          ]
+        },
+        "A line might imply the wrong relationship. An orbit might suggest something physically impossible. A diagram might contain all the right information while still communicating the wrong idea.",
         "That tension was useful.",
         "I was trying to push the visual language toward something more scientific and rigorous without sacrificing accessibility—or making something that only another planetary scientist could understand.",
-        "Some versions looked beautiful but explained nothing. Others explained everything and looked like a hostage situation involving PowerPoint.",
         "The scientists forced me to defend the design. The design forced me to think harder about how someone outside the field would understand it.",
         "That back-and-forth made the work better.",
         {
@@ -991,15 +997,6 @@
         "There were thumbnail sketches. Rough diagrams. Bad ideas. Better ideas. Versions that looked promising until you actually tried to explain them.",
         "Some looked beautiful but explained nothing.",
         "Others explained everything and looked like a hostage situation involving PowerPoint.",
-        "Working with planetary scientists and engineers means the work gets picked apart in a very particular way.",
-        {
-          "lines": [
-            "Not maliciously.",
-            "Precisely."
-          ]
-        },
-        "A line might imply the wrong relationship. An orbit might suggest something physically impossible. A diagram might contain all the right information while still communicating the wrong idea.",
-        "I was trying to push the visual language toward something more scientific, more technical, more rigorous—while still making something people would actually want to look at.",
         "The questions became:",
         {
           "lines": [
@@ -1028,11 +1025,6 @@
           "h": "THE RESULT"
         },
         "Lunar Trailblazer became less about making a collection of attractive graphics and more about building a visual language for a mission that is, at its core, looking for things we can’t simply see.",
-        {
-          "pull": [
-            "Follow the trail. Find the footprint. Read the fingerprint. Look for water."
-          ]
-        },
         "The project sits somewhere between art and science, information and emotion, precision and play.",
         {
           "img": "/assets/images/ltb--booklet.webp"
