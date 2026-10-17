@@ -694,8 +694,8 @@ document.querySelectorAll('.cs-flipbook-wrap').forEach((wrap) => {
     const dy = y - lastY; lastY = y;
     if (dy === 0) return;
     acc = (Math.sign(dy) === Math.sign(acc)) ? acc + dy : dy;   // distance travelled in the current direction
-    if (acc > 40) root.classList.add('nav-away');            // takes a deliberate scroll down to hide…
-    else if (acc < -14) root.classList.remove('nav-away');   // …and comes back on a small scroll up
+    if (acc > 12) root.classList.add('nav-away');            // takes a deliberate scroll down to hide…
+    else if (acc < -12) root.classList.remove('nav-away');   // …and comes back on a small scroll up
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } }, { passive: true });
   // keyboard users: Tab always brings the buttons back

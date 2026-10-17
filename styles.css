@@ -4111,3 +4111,96 @@ body.contact-mode #site-logo, body.contact-mode #mobile-logo {
   :root #mobile-logo { width: 72px !important; height: 72px !important; }
   :root #mobile-logo img { width: 72px !important; }
 }
+/* ══ Logo + nav buttons: shrink away while scrolling down, spring back on scroll up (desktop and phones) ══ */
+:root #site-logo, :root #mobile-logo {
+  transition-property: background, box-shadow, opacity, visibility, scale !important;
+  transition-duration: 0.2s, 0.2s, 0.3s, 0.3s, 0.45s !important;
+  transition-timing-function: ease, ease, ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;   /* springy grow-back */
+}
+:root .site-nav nav, :root .cs-header__back {
+  transition-property: opacity, visibility, scale !important;
+  transition-duration: 0.3s, 0.3s, 0.45s !important;
+  transition-timing-function: ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+:root .cs-header__back {
+  transition-property: background, color, transform, box-shadow, opacity, visibility, scale !important;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.3s, 0.3s, 0.45s !important;
+  transition-timing-function: ease, ease, ease, ease, ease, ease, cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+/* each one shrinks toward its own corner */
+:root #site-logo { transform-origin: left center; }
+:root .site-nav nav, :root .cs-header__back { transform-origin: right center; }
+@media (max-width: 680px) {
+  :root #mobile-logo { transform-origin: 50% 0; }
+  :root .site-nav nav, :root .cs-header__back { transform-origin: center bottom; }
+}
+:root.nav-away #site-logo, :root.nav-away #mobile-logo,
+:root.nav-away .site-nav nav, :root.nav-away .cs-header__back {
+  scale: 0.4 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition-duration: 0.25s !important;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0) !important;                              /* quick, tucks away */
+}
+@media (prefers-reduced-motion: reduce) {
+  :root #site-logo, :root #mobile-logo, :root .site-nav nav, :root .cs-header__back,
+  :root.nav-away #site-logo, :root.nav-away #mobile-logo,
+  :root.nav-away .site-nav nav, :root.nav-away .cs-header__back { transition-duration: 0s !important; scale: 1 !important; }
+}
+
+
+/* ── Restore the earlier shrink/grow nav: neutralise the slide-away translate and logo gating ── */
+:root.nav-away #site-logo, :root.nav-away #mobile-logo,
+:root.nav-away .site-nav nav, :root.nav-away .cs-header__back,
+:root.nav-away:not(.title-shrinking) #mobile-logo,
+:root.nav-away:not(.title-shrinking) #site-logo {
+  translate: none !important;
+  scale: 0.4 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+@media (max-width: 680px) {
+  :root.nav-away .site-nav nav, :root.nav-away .cs-header__back { translate: none !important; }
+}
+
+/* ══ Construction banner: thin, gently scrolling news strip pinned to the top of every page ══ */
+:root { --banner-h: 26px; }
+.site-banner {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--banner-h); z-index: 998; overflow: hidden;
+  background: #050507; color: rgba(247, 247, 242, 0.78);
+  border-bottom: 1px solid rgba(247, 247, 242, 0.1);
+  font: 400 11px/var(--banner-h) "Apercu", sans-serif; letter-spacing: 0.16em; text-transform: uppercase;
+  -webkit-user-select: none; user-select: none;
+}
+.site-banner__track { display: flex; width: max-content; animation: site-banner-scroll 70s linear infinite; will-change: transform; }
+.site-banner__group { display: flex; flex-shrink: 0; }
+.site-banner__item { white-space: nowrap; padding-right: 72px; }
+.site-banner__dot { font-style: normal; margin-right: 10px; color: #ff6a3d; animation: site-banner-pulse 2.6s ease-in-out infinite; }
+@keyframes site-banner-scroll { to { transform: translateX(-50%); } }
+@keyframes site-banner-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .site-banner { text-align: center; }
+  .site-banner__track { animation: none; width: auto; display: block; }
+  .site-banner__group:nth-child(2), .site-banner__item:not(:first-child) { display: none; }
+  .site-banner__item { padding-right: 0; }
+  .site-banner__dot { animation: none; }
+}
+/* everything pinned to the top edge sits just below the banner */
+@media (min-width: 681px) {
+  html:root .site-nav, html:root .cs-header, html:root header.site-nav { top: var(--banner-h) !important; }
+}
+@media (max-width: 680px) {
+  html:root #mobile-logo { top: calc(var(--banner-h) - 2px) !important; }
+}
+
+/* ── Logo: 30% smaller (80px → 56px desktop, 72px → 50px phones) ── */
+:root #site-logo, :root #mobile-logo,
+:root #site-logo:hover, :root #site-logo:focus-visible, :root #mobile-logo:hover,
+body.contact-mode #site-logo, body.contact-mode #mobile-logo { width: 56px !important; height: 56px !important; }
+:root #site-logo img, :root #mobile-logo img { width: 56px !important; }
+@media (max-width: 680px) {
+  :root #mobile-logo { width: 50px !important; height: 50px !important; }
+  :root #mobile-logo img { width: 50px !important; }
+}
