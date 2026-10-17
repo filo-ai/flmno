@@ -242,6 +242,7 @@ function renderStorySheet(title, story, meta) {
     if (it.epigraph) return `        <p class="cs-read__epigraph">${it.epigraph.map(esc).join("<br>")}</p>`;
     if (it.lines) return `        <p class="cs-read__lines">${it.lines.map(esc).join("<br>")}</p>`;
     if (it.pull) return `        <p class="cs-read__pull">${it.pull.map(esc).join("<br>")}</p>`;
+    if (it.links) return `        <p class="cs-read__links">${it.links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} <span aria-hidden="true">↗</span></a>`).join("")}</p>`;
     if (it.quote) return `        <blockquote class="cs-read__quote">${esc(it.quote)}</blockquote>`;
     if (it.terms) return `        <dl class="cs-read__terms">${it.terms.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join("")}</dl>`;
     if (it.img) {
