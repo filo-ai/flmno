@@ -1070,7 +1070,19 @@
       "title": "Maccheroni Republic",
       "teaser": "Branding and Menu Design for DTLA Italian Trattoria.",
       "story": [
-        "Maccheroni Republic is a trattoria located in the Historic Downtown Los Angeles neighborhood. The restaurant is an oasis of good hospitality and excellent food enclosed within a garden setting hidden away from the streets of downtown. The new logo focuses on a pasta known as \"farfalle\" — a butterfly. The pasta shape (also known as a bowtie pasta) is often dressed with light vegetable sauces as a summer pasta, to eat alfresco when the butterflies are in full swing. When invited to step into the restaurant, one can feel immediately transported to a humble, but elegant Italian villa. The treatment of the typeface stays true to the lettering found on the classic, red Fiat stationed nearby the restaurant's pastificio. Reducing the logo down to simple elements, it feels classic, charming, and fresh. Unfortunately, COVID shut down this project and QR codes came to be in favor. *This project is conceptual."
+        "Maccheroni Republic is a trattoria located in the Historic Downtown Los Angeles neighborhood. The restaurant is an oasis of good hospitality and excellent food enclosed within a garden setting hidden away from the streets of downtown. The new logo focuses on a pasta known as \"farfalle\" — a butterfly. The pasta shape (also known as a bowtie pasta) is often dressed with light vegetable sauces as a summer pasta, to eat alfresco when the butterflies are in full swing. When invited to step into the restaurant, one can feel immediately transported to a humble, but elegant Italian villa. The treatment of the typeface stays true to the lettering found on the classic, red Fiat stationed nearby the restaurant's pastificio. Reducing the logo down to simple elements, it feels classic, charming, and fresh. Unfortunately, COVID shut down this project and QR codes came to be in favor. *This project is conceptual.",
+        {
+          "imgs": [
+            "/media/4d1bdb_6a3bb0753c674ee9bddbb57d0239e874~mv2.jpg",
+            "/media/4d1bdb_ee8ab6a3f3da46f783931b22b567c8bc~mv2.jpeg"
+          ]
+        },
+        {
+          "imgs": [
+            "/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg",
+            "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg"
+          ]
+        }
       ],
       "meta": {
         "Client": "Maccheroni Republic*",
@@ -1085,11 +1097,7 @@
         "/media/4d1bdb_c9c225be75f2416bb00a76c47f1d4bb6~mv2.png",
         "/media/4d1bdb_d62926dab0b647788f97954e4ed7768d~mv2.png",
         "/media/4d1bdb_5808703f2cd54d52bae63984ea0907da~mv2.png",
-        "/media/4d1bdb_f650d21cb547449084779def190719bf~mv2.jpg",
-        "/media/4d1bdb_6a3bb0753c674ee9bddbb57d0239e874~mv2.jpg",
-        "/media/4d1bdb_ee8ab6a3f3da46f783931b22b567c8bc~mv2.jpeg",
-        "/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg",
-        "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg"
+        "/media/4d1bdb_f650d21cb547449084779def190719bf~mv2.jpg"
       ],
       "related": [
         {
@@ -1131,7 +1139,13 @@
           "title": "Visual Consistency",
           "body": "The illustration system created a unified look across interior, print, and digital that felt handcrafted and intentional."
         }
-      ]
+      ],
+      "alts": {
+        "/media/4d1bdb_6a3bb0753c674ee9bddbb57d0239e874~mv2.jpg": "Maccheroni Republic: Inspiration",
+        "/media/4d1bdb_ee8ab6a3f3da46f783931b22b567c8bc~mv2.jpeg": "Maccheroni Republic: Inspiration",
+        "/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg": "Maccheroni Republic: Inspiration",
+        "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg": "Maccheroni Republic: Inspiration"
+      }
     },
     "motion-pulse": {
       "title": "Motion Pulse",
