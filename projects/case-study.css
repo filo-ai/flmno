@@ -2858,3 +2858,22 @@ html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not
 
 /* text card body: Apercu Light (was Regular) */
 html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links) { font-weight: 300 !important; }
+
+/* text card: Reckless for body copy; metadata labels styled like captions, values like the body */
+html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links) {
+  font-family: "Reckless", Georgia, serif !important; font-weight: 400 !important;
+  font-size: 19px !important; line-height: 1.5 !important; letter-spacing: 0 !important; color: #fff !important;
+}
+@media (max-width: 680px) {
+  html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links) { font-size: 18px !important; }
+}
+html:root .cs-read hr + dl dt {
+  font-family: "Apercu", sans-serif !important; font-weight: 300 !important;
+  text-transform: uppercase; letter-spacing: 0.08em !important; font-size: 11px !important; line-height: 1.3 !important;
+  color: #fff !important; padding-top: 7px;
+}
+html:root .cs-read hr + dl dd {
+  font-family: "Reckless", Georgia, serif !important; font-weight: 400 !important;
+  font-size: 19px !important; line-height: 1.5 !important; letter-spacing: 0 !important; color: #fff !important; margin: 0;
+}
+@media (max-width: 680px) { html:root .cs-read hr + dl dd { font-size: 18px !important; } html:root .cs-read hr + dl dt { padding-top: 0; } }
