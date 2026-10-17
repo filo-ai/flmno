@@ -1701,10 +1701,7 @@
         "/assets/images/syld--syld-sticker.webp",
         "/assets/images/syld--support-your-local-dealer.webp",
         "/assets/images/syld--support-your-local-dealer-wbg.webp",
-        "/assets/images/illustration--get-a-woof-of-that.webp",
-        "/assets/images/static--woof.webp",
-        "/assets/images/static--peace-edited.webp",
-        "/assets/images/static--palm-tree-drought.webp"
+        "/assets/images/illustration--get-a-woof-of-that.webp"
       ],
       "related": [
         {
@@ -1747,6 +1744,26 @@
           "body": "The posters remain in use at supported businesses years after the initial campaign, a sign of genuine community adoption."
         }
       ]
+    },
+    "illustration": {
+      "title": "Illustration",
+      "teaser": "Selected illustrations.",
+      "story": [],
+      "meta": {
+        "Skills & Tools": "illustration"
+      },
+      "gallery": [
+        "/assets/images/static--palm-tree-drought.webp",
+        "/assets/images/static--peace-edited.webp",
+        "/assets/images/static--woof.webp"
+      ],
+      "related": [],
+      "impact": [],
+      "alts": {
+        "/assets/images/static--palm-tree-drought.webp": "Illustration: Palm tree drought",
+        "/assets/images/static--peace-edited.webp": "Illustration: Peace",
+        "/assets/images/static--woof.webp": "Illustration: Woof"
+      }
     },
     "tedx-website-and-marketing": {
       "title": "TEDx Website & Marketing",
