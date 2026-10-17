@@ -4342,3 +4342,12 @@ html:root #site-logo { width: auto !important; height: auto !important; display:
 /* banner type up a notch */
 .site-banner { font-size: 10px !important; }
 html:root .site-banner .site-banner__dot { font-size: 8px !important; }
+
+/* ══ Smoother page transitions: soft, overlapping cross-fade; eased shared-image morph ══ */
+@keyframes vt-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes vt-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+::view-transition-old(root) { animation: vt-fade-out 0.45s cubic-bezier(0.4, 0, 0.2, 1) both !important; }
+::view-transition-new(root) { animation: vt-fade-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both !important; }
+::view-transition-group(*) { animation-duration: 0.7s !important; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important; }
+/* coming back home: no tile morph (the tile may be off-screen), just the soft fade */
+html.is-returning .tile-image img { view-transition-name: none !important; }

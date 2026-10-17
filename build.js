@@ -314,10 +314,10 @@ for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="(
   HOME_TILES.push({ slug: m[2], tags: m[1].trim().split(/\s+/), image: m[3].replace(/\/v1\/fill\/.*$/, ""), title: m[4].trim() });
 }
 // ── "Coming soon" projects: any homepage tile carrying the pill ──
-const SOON = new Set([...HOME_HTML.matchAll(/href="projects\/([^/"]+)\/index\.html">\s*<span class="tile-soon">/g)].map(m => m[1]));
+const SOON = new Map([...HOME_HTML.matchAll(/href="projects\/([^/"]+)\/index\.html">\s*<span class="tile-soon">([^<]*)<\/span>/g)].map(m => [m[1], m[2]]));
 const soonPill = (href) => {
   const m = String(href || "").match(/(?:projects\/|^\.\.\/)([^/"]+)\//);
-  return m && SOON.has(m[1]) ? `\n            <span class="tile-soon">New</span>` : "";
+  return m && SOON.has(m[1]) ? `\n            <span class="tile-soon">${SOON.get(m[1])}</span>` : "";
 };
 function relatedByTags(slug, fallback, max = 6) {
   const me = HOME_TILES.find(t => t.slug === slug);
