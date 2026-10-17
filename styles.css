@@ -4295,3 +4295,15 @@ html:root .cs-header__back .return-icon, html:root .cs-pill svg { width: 15px !i
 html:root .cs-zoom .cs-zoom__count { height: 36px !important; line-height: 36px !important; min-width: 72px !important; padding: 0 14px !important; font-size: 16px !important; }
 html:root .cs-zoom__pdf { height: 36px !important; font-size: 14px !important; padding: 0 16px !important; bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important; }
 html:root .cs-sheet__close, html:root .cs-sheet > .cs-sheet__close, html:root .cs-zoom__close, html:root .modal-close { width: 40px !important; height: 40px !important; }
+
+/* ══ Nav buttons scroll-shrink as one unit (even gaps); logo aligns to the 960px column on desktop; banner type up a notch ══ */
+html:root.nav-away .site-nav nav a { scale: none !important; }
+html:root.nav-away:not(.nav-compact) .site-nav nav, html:root.nav-away.nav-compact .site-nav nav { scale: 0.7 !important; transform-origin: 50% 50% !important; }
+@media (min-width: 681px) {
+  html:root .site-nav, html:root .cs-header, html:root header.site-nav {
+    padding-left: max(var(--gutter), calc((100vw - 960px) / 2)) !important;
+  }
+}
+.site-banner { font-size: 9px !important; }
+html:root .site-banner .site-banner__dot { font-size: 7px !important; }
+@media (min-width: 681px) { html:root #site-logo { margin-left: -16px !important; } }

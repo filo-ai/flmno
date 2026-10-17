@@ -779,3 +779,18 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
   g.setAttribute('aria-hidden', 'true');
   document.body.appendChild(g);
 })();
+
+
+/* ══ Project pages: scroll-down arrow (same look and bob as the homepage), fades in after load, out once you scroll ══ */
+(() => {
+  const cue = document.querySelector('.cs-scroll-cue');
+  if (!cue) return;
+  let ready = false;
+  const sync = () => cue.classList.toggle('is-visible', ready && window.scrollY < 80);
+  setTimeout(() => { ready = true; sync(); }, 1200);
+  addEventListener('scroll', sync, { passive: true });
+  cue.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollBy({ top: Math.round(window.innerHeight * 0.85), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+})();
