@@ -2809,3 +2809,14 @@ html:root .cs-gallery figure { align-self: start !important; height: auto !impor
 html:root .cs-gallery figure img, html:root .cs-gallery figure video { height: auto !important; max-width: 100% !important; display: block; }
 
 .cs-read p a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* ══ Phones, project pages: the flmno wordmark shrinks in step with the title (scroll-linked, --title-k 0→1);
+      the shrunken Return home button sits closer to the bottom edge ══ */
+@media (max-width: 680px) {
+  html:root #mobile-logo,
+  html:root.nav-compact #mobile-logo {
+    scale: calc(1 - 0.3 * var(--title-k, 0)) !important;
+    transition: background .2s ease, box-shadow .2s ease !important;
+  }
+  html:root.nav-compact .cs-header__back { translate: 0 6px; }
+}
