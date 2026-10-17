@@ -846,13 +846,10 @@
         "Skills & Tools": "web design, branding"
       },
       "gallery": [
+        "/assets/images/jr-com--jr-com-mobile.gif",
         "/assets/images/jr-com--jr-com-main.webp",
         "/assets/images/jr-com--jr-com-m-v.webp",
-        "/assets/images/jr-com--jr-com-terve.webp",
         "/assets/images/jr-com--jr-com_flmno.gif",
-        "/assets/images/jr-com--jr-com-mobile.gif",
-        "/assets/images/jr-com--atlas_logo__flmno.webp",
-        "/assets/images/jr-com--blm_logo__flmno.webp",
         "/assets/images/jr-com--jr-com_logo__flmno.webp",
         "/assets/images/jr-com--site-video.mp4"
       ],
@@ -2468,7 +2465,9 @@
         "/assets/images/logos--la-county.webp",
         "/assets/images/logos--revex.webp",
         "/assets/images/logos--speak-up.webp",
-        "/assets/images/logos--teton-artesian-water.webp"
+        "/assets/images/logos--teton-artesian-water.webp",
+        "/assets/images/logos--atlas.webp",
+        "/assets/images/logos--blm.webp"
       ],
       "alts": {
         "/assets/images/logos--btu-lab.webp": "Logos: BTU Lab",
@@ -2481,7 +2480,9 @@
         "/assets/images/logos--la-county.webp": "Logos: LA County",
         "/assets/images/logos--revex.webp": "Logos: Revex",
         "/assets/images/logos--speak-up.webp": "Logos: Speak Up",
-        "/assets/images/logos--teton-artesian-water.webp": "Logos: Teton Artesian Water"
+        "/assets/images/logos--teton-artesian-water.webp": "Logos: Teton Artesian Water",
+        "/assets/images/logos--atlas.webp": "Logos: Atlas",
+        "/assets/images/logos--blm.webp": "Logos: BLM"
       },
       "grid": true,
       "light": [
