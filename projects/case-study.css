@@ -2802,3 +2802,8 @@ html.is-returning .tile-image img { view-transition-name: none !important; }
 
 /* banner: a bit more breathing room */
 :root { --banner-h: 21px; }
+
+/* gallery: each image keeps its own natural height (no stretching to the tallest in the row) */
+html:root .cs-gallery { align-items: start !important; }
+html:root .cs-gallery figure { align-self: start !important; height: auto !important; }
+html:root .cs-gallery figure img, html:root .cs-gallery figure video { height: auto !important; max-width: 100% !important; display: block; }

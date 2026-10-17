@@ -1742,7 +1742,7 @@
     },
     "illustration": {
       "title": "Illustration",
-      "teaser": "Selected illustrations.",
+      "teaser": "",
       "story": [],
       "meta": {
         "Skills & Tools": "illustration"
@@ -1774,11 +1774,12 @@
         "/assets/images/ill--nasa-destroying-asteroid.webp": "Illustration: NASA destroying asteroid",
         "/assets/images/ill--music-v-horror-movies.webp": "Illustration: Music v horror movies",
         "/assets/images/ill--halloween-houses-of-fiction.webp": "Illustration: Halloween houses of fiction"
-      }
+      },
+      "desc": "Selected illustrations by Filo Merid."
     },
     "gifs": {
       "title": "GIFs",
-      "teaser": "Selected animated GIFs.",
+      "teaser": "",
       "story": [],
       "meta": {
         "Skills & Tools": "animation, GIFs, lettering"
@@ -1798,7 +1799,8 @@
         "/assets/images/gif--frown.gif": "GIFs: Frown",
         "/assets/images/gif--friday-night-movie-club.gif": "GIFs: Friday Night Movie Club",
         "/assets/images/gif--thx.gif": "GIFs: THX!"
-      }
+      },
+      "desc": "Selected animated GIFs by Filo Merid."
     },
     "tedx-website-and-marketing": {
       "title": "TEDx Website & Marketing",

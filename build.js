@@ -393,19 +393,19 @@ function buildPage(slug, project) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${esc(title)} | flmno</title>
-  <meta name="description" content="${esc(teaser || fillText || "")}">
+  <meta name="description" content="${esc(project.desc || teaser || fillText || "")}">
   <link rel="canonical" href="https://flmno.com/projects/${slug}/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="flmno">
   <meta property="og:title" content="${esc(title)} | flmno">
-  <meta property="og:description" content="${esc(teaser || fillText || "")}">
+  <meta property="og:description" content="${esc(project.desc || teaser || fillText || "")}">
   <meta property="og:url" content="https://flmno.com/projects/${slug}/">
   <meta property="og:image" content="${ogImage(slug, gallery)}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">${crumbsSchema(slug, title)}</script>
-  <script type="application/ld+json">${workSchema(slug, title, teaser || fillText, meta, ogImage(slug, gallery))}</script>
+  <script type="application/ld+json">${workSchema(slug, title, project.desc || teaser || fillText, meta, ogImage(slug, gallery))}</script>
   <link rel="preload" href="/assets/fonts/RecklessStandardM-TRIAL-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ApercuPro-Light.woff2" as="font" type="font/woff2" crossorigin>
   <script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/projects/*"},"eagerness":"moderate"}]}</script>
