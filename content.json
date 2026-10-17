@@ -924,8 +924,9 @@
         "They care if it’s right.",
         "Working with planetary scientists and engineers meant the feedback could get wonderfully specific. A line might imply the wrong relationship. An orbit might suggest something physically impossible. A tiny detail on an instrument could suddenly become the most important thing on the page.",
         "The scientists forced me to defend the design. The design forced me to think harder about how someone outside the field would understand it.",
+        "That back-and-forth made the work better.",
         "Some versions looked beautiful but explained nothing.",
-        "Others explained everything, with all the charm of a terms-and-conditions page.",
+        "Others explained everything, but you had to excavate the idea from underneath all the information.",
         "The goal was somewhere in between: rigorous enough for the people who actually knew what they were looking at, but inviting enough for everyone else.",
         "It needed to work for scientists, space nerds, and people who had no idea what a spectral signature was.",
         {
@@ -957,7 +958,7 @@
           "img": "/assets/images/ltb--business-cards.webp"
         },
         "Tragically, Lunar Trailblazer set off for the Moon and then got a little lost in space.",
-        "If you want to know more about that space drama, email me."
+        "If you want to know more about that space drama, [email me](/#contact)."
       ],
       "meta": {
         "Client": "CalTech and NASA JPL",

@@ -236,7 +236,7 @@ function renderStorySheet(title, story, meta) {
   const paras = story.map((it) => {
     if (typeof it === "string") {
       const cls = firstDone ? "" : ' class="first"'; firstDone = true;
-      return `        <p${cls}>${esc(it)}</p>`;
+      return `        <p${cls}>${esc(it).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => `<a href="${u}">${t}</a>`)}</p>`;
     }
     if (it.h) return `        <h3 class="cs-read__h">${esc(it.h)}</h3>`;
     if (it.epigraph) return `        <p class="cs-read__epigraph">${it.epigraph.map(esc).join("<br>")}</p>`;
