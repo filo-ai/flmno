@@ -317,7 +317,7 @@ for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="(
 const SOON = new Set([...HOME_HTML.matchAll(/href="projects\/([^/"]+)\/index\.html">\s*<span class="tile-soon">/g)].map(m => m[1]));
 const soonPill = (href) => {
   const m = String(href || "").match(/(?:projects\/|^\.\.\/)([^/"]+)\//);
-  return m && SOON.has(m[1]) ? `\n            <span class="tile-soon">Coming soon</span>` : "";
+  return m && SOON.has(m[1]) ? `\n            <span class="tile-soon">New</span>` : "";
 };
 function relatedByTags(slug, fallback, max = 6) {
   const me = HOME_TILES.find(t => t.slug === slug);

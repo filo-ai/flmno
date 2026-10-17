@@ -4338,3 +4338,7 @@ html:root #site-logo { width: auto !important; height: auto !important; display:
     padding-left: var(--gutter) !important;
   }
 }
+
+/* banner type up a notch */
+.site-banner { font-size: 10px !important; }
+html:root .site-banner .site-banner__dot { font-size: 8px !important; }
