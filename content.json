@@ -887,7 +887,6 @@
             "it became interesting."
           ]
         },
-        "The research had its own gravity.",
         "One question pulled me toward another. Water led to spectroscopy. Spectroscopy led to mineralogy. Mineralogy led to geology. Geology led to craters, craters led to the lunar poles, and the lunar poles led me to some of the coolest photographs of the Moon I’d ever seen.",
         "Eventually I found myself deep in high-resolution lunar imagery, following one crater into another and falling down a very specific lunar rabbit hole.",
         "Things started to accumulate mass.",
@@ -927,9 +926,15 @@
           "quote": "“The rim around…”"
         },
         "And suddenly you’re three levels deeper into spacecraft engineering than you planned to be that afternoon.",
+        {
+          "lines": [
+            "Not maliciously.",
+            "Precisely."
+          ]
+        },
+        "A line might imply the wrong relationship. An orbit might suggest something that isn’t physically possible. A diagram might technically contain all the right information while still communicating the wrong idea.",
         "That tension was useful.",
         "I was trying to push the visual language toward something more scientific and rigorous without sacrificing accessibility—or making something that only another planetary scientist could understand.",
-        "Some versions looked beautiful but explained nothing. Others explained everything and looked like a hostage situation involving PowerPoint.",
         "The scientists forced me to defend the design. The design forced me to think harder about how someone outside the field would understand it.",
         "That back-and-forth made the work better.",
         {
@@ -938,7 +943,7 @@
         "Through challenges, to the Moon.",
         "The further I got into the project, the more the phrase started to feel less like a motto and more like a working condition.",
         "Water wasn’t simply water.",
-        "It could mean ice. Hydroxyl. Chemically bound water. A spectral absorption feature. A mineral interaction. Something hiding inside a permanently shadowed crater.",
+        "It could mean ice, a spectral absorption feature, or a mineral interaction—depending on who was asking and which instrument was looking.",
         "The Moon itself wasn’t simply a landscape.",
         "It was geology, temperature, light, shadow, mineral composition, orbital geometry, and billions of years of history compressed into something we were trying to read from hundreds of miles above it.",
         "At a certain point, the Moon stopped feeling like a place and started feeling a little more like a very complicated argument.",
@@ -973,7 +978,7 @@
         "The system became less about illustrating individual scientific concepts and more about finding the relationships between them.",
         {
           "pull": [
-            "Follow the trail. Find the footprint. Read the fingerprint. Look for water."
+            "Treat the Moon like a crime scene: a trail, a footprint, a fingerprint, and water as the prime suspect."
           ]
         },
         {
@@ -1017,17 +1022,7 @@
         "Of course, none of this arrived fully formed.",
         "There were thumbnail sketches. Rough diagrams. Bad ideas. Better ideas. Versions that looked promising until you actually tried to explain them.",
         "Some looked beautiful but explained nothing.",
-        "Others explained everything and looked like a hostage situation involving PowerPoint.",
-        "And then there were the scientists.",
-        "Working with planetary scientists and engineers means the work gets picked apart in a very particular way.",
-        {
-          "lines": [
-            "Not maliciously.",
-            "Precisely."
-          ]
-        },
-        "A line might imply the wrong relationship. An orbit might suggest something that isn’t physically possible. A diagram might technically contain all the right information while still communicating the wrong idea.",
-        "I was trying to push the visual language toward something more scientific, more technical, more rigorous—while still making something people would actually want to look at.",
+        "Others explained everything, with all the charm of a terms-and-conditions page.",
         "Sometimes I got there.",
         "Sometimes I didn’t.",
         "But every round of feedback made the system sharper.",
@@ -1061,11 +1056,6 @@
           "h": "THE RESULT"
         },
         "Lunar Trailblazer became less about making a collection of attractive graphics and more about building a visual language for a mission that is, at its core, looking for things we can’t simply see.",
-        {
-          "pull": [
-            "Follow the trail. Find the footprint. Read the fingerprint. Look for water."
-          ]
-        },
         "The project sits somewhere between art and science, information and emotion, precision and play.",
         {
           "img": "/assets/images/ltb--booklet.webp"
