@@ -234,7 +234,26 @@
           "image": "/assets/images/syld--syld-wall-advertisment.webp"
         }
       ],
-      "impact": []
+      "impact": [],
+      "alts": {
+        "/assets/images/cso--cso-concert-series-final-03.webp": "Colorado Symphony Orchestra: Season Calendar Poster, Black",
+        "/assets/images/cso--cso-banner.webp": "Colorado Symphony Orchestra: Banner",
+        "/assets/images/cso--cso-bus-poster.webp": "Colorado Symphony Orchestra: Bus Shelter Poster",
+        "/assets/images/cso--cso-city-poster.webp": "Colorado Symphony Orchestra: City Poster",
+        "/assets/images/cso--cso-concept-drawings.webp": "Colorado Symphony Orchestra: Concept Drawings",
+        "/assets/images/cso--cso-concert-series-final_exterior-artboard.webp": "Colorado Symphony Orchestra: Instrument Illustration",
+        "/assets/images/cso--cso-concert-series-final_interior-artboard.webp": "Colorado Symphony Orchestra: Season Calendar, White",
+        "/assets/images/cso--cso-concert-series-interior-black.webp": "Colorado Symphony Orchestra: Season Calendar, Black",
+        "/assets/images/cso--cso-concert-series-interior.webp": "Colorado Symphony Orchestra: Season Calendar, White Alternate",
+        "/assets/images/cso--cso-poster.webp": "Colorado Symphony Orchestra: Season Poster",
+        "/assets/images/cso--cso-stellar-map.webp": "Colorado Symphony Orchestra: Stellar Map",
+        "/assets/images/cso--asset-11.webp": "Colorado Symphony Orchestra: Concert Ticket",
+        "/assets/images/cso--asset-12.webp": "Colorado Symphony Orchestra: Concert Ticket, Detail",
+        "/assets/images/cso--asset-17.webp": "Colorado Symphony Orchestra: CSO Logo, Blue",
+        "/assets/images/cso--cso-concert-series-final-04.webp": "Colorado Symphony Orchestra: CSO Logo, White",
+        "/assets/images/cso--cso-concert-series-final-05.webp": "Colorado Symphony Orchestra: CSO Logo, Black",
+        "/assets/images/cso--cso-concert-2019_2020-series.webp": "Colorado Symphony Orchestra: CSO Logo, Black Alternate"
+      }
     },
     "editorial-rhythm": {
       "title": "Editorial Rhythm",
@@ -300,7 +319,23 @@
           "title": "Print-to-Screen Translation",
           "body": "The rhythm system translated seamlessly from print to digital formats without losing its energy."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/lettering--a_metal.webp": "Editorial Rhythm: Metal Letter A",
+        "/assets/images/lettering--d_metal.webp": "Editorial Rhythm: Metal Letter D",
+        "/assets/images/lettering--f_metal.webp": "Editorial Rhythm: Metal Letter F",
+        "/assets/images/lettering--h_metal.webp": "Editorial Rhythm: Metal Letter H",
+        "/assets/images/lettering--l_metal.webp": "Editorial Rhythm: Metal Letter L",
+        "/assets/images/lettering--m.webp": "Editorial Rhythm: Metal Letter M",
+        "/assets/images/lettering--n_metal.webp": "Editorial Rhythm: Metal Letter N",
+        "/assets/images/lettering--n2_metal.webp": "Editorial Rhythm: Metal Letter N, Alternate",
+        "/assets/images/lettering--o_metal.webp": "Editorial Rhythm: Metal Letter O",
+        "/assets/images/lettering--o2_metal.webp": "Editorial Rhythm: Metal Letter O, Alternate",
+        "/assets/images/lettering--r_metal.webp": "Editorial Rhythm: Metal Letter R",
+        "/assets/images/lettering--t_metal.webp": "Editorial Rhythm: Metal Letter T",
+        "/assets/images/lettering--x_metal.webp": "Editorial Rhythm: Metal Letter X",
+        "/assets/images/lettering--y_metal.webp": "Editorial Rhythm: Metal Letter Y"
+      }
     },
     "eggslut": {
       "title": "Eggslut",
@@ -361,7 +396,10 @@
           "title": "Streetwear Crossover",
           "body": "The lettering system gave the brand a visual edge that crossed into streetwear and food-culture circles simultaneously."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/eggslut--tshirt.webp": "Eggslut: T-Shirt"
+      }
     },
     "eggslut-x-hbo": {
       "title": "Eggslut x HBO",
@@ -506,7 +544,24 @@
           "body": "Copies of The Granite Gossip were kept as souvenirs — a rare result for ephemeral print in a park setting."
         }
       ],
-      "related_image": null
+      "related_image": null,
+      "alts": {
+        "/assets/images/nps-bear-hug.webp": "Galen-tines Zine: Bear Illustration",
+        "/assets/images/galentines--galentines_1-goc.webp": "Galen-tines Zine: Galentine's Issue Cover",
+        "/assets/images/galentines--img_4620.webp": "Galen-tines Zine: Cupid Bear",
+        "/assets/images/galentines--img_4629.webp": "Galen-tines Zine: Shouts and Murmurs Spread",
+        "/assets/images/galentines--img_4630.webp": "Galen-tines Zine: Maze and Cartoon Spread",
+        "/assets/images/galentines--img_4632.webp": "Galen-tines Zine: Crossword",
+        "/assets/images/galentines--img_4633.webp": "Galen-tines Zine: Zine in the Field",
+        "/assets/images/galentines--img_4640.webp": "Galen-tines Zine: Thank-You Hearts 1",
+        "/assets/images/galentines--img_4650.webp": "Galen-tines Zine: Thank-You Hearts 2",
+        "/assets/images/galentines--img_4651.webp": "Galen-tines Zine: Thank-You Hearts 3",
+        "/assets/images/galentines--img_4652.webp": "Galen-tines Zine: Thank-You Hearts 4",
+        "/assets/images/galentines--img_4653.webp": "Galen-tines Zine: Thank-You Hearts 5",
+        "/assets/images/galentines--img_4654.webp": "Galen-tines Zine: Thank-You Hearts 6",
+        "/assets/images/galentines--img_4655.webp": "Galen-tines Zine: Thank-You Hearts 7",
+        "/assets/images/galentines--img_4679.webp": "Galen-tines Zine: Heart in the Granite"
+      }
     },
     "game-of-cones": {
       "title": "Game of Cones",
@@ -582,7 +637,20 @@
           "title": "Staff Favourite",
           "body": "Rangers reported it as one of the most successful pieces of public-facing print they'd used in the field."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/yose--goc.gif": "Game of Cones: Card Deck, Animated",
+        "/assets/images/goc--hot-cone-summer-goc.webp": "Game of Cones: Hot Cone Summer, Sequoia",
+        "/assets/images/goc--cone-action-shot-goc.webp": "Game of Cones: Hot Cone Summer, Cone Action Shot",
+        "/assets/images/goc--crowded-action-shot-goc.webp": "Game of Cones: Crowded Card",
+        "/assets/images/goc--fire-goc.webp": "Game of Cones: Friendly Fire and Burnt Out",
+        "/assets/images/goc--hcs-square-goc.webp": "Game of Cones: Hot Cone Summer, Bark",
+        "/assets/images/goc--seeds-goc.webp": "Game of Cones: You're a Snack and Beetlemania",
+        "/assets/images/goc--snow-goc.webp": "Game of Cones: Snowmageddon and Arctic El Niño",
+        "/assets/images/goc--sprout-action-shot-goc.webp": "Game of Cones: Suns Out, Seeds Sprout",
+        "/assets/images/goc--goc-gif.gif": "Game of Cones: Card Deck, Mint Animated",
+        "/assets/images/yose--welcome-center.webp": "Game of Cones: Welcome Center"
+      }
     },
     "graphic-objects": {
       "title": "Graphic Objects",
@@ -644,7 +712,19 @@
           "title": "Conceptual Foundation",
           "body": "The body of work has since informed the direction of subsequent branding and spatial design projects."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/square-eyes-illy.webp": "Graphic Objects: Square Eyes",
+        "/assets/images/selfportrait-popsicle-illy.webp": "Graphic Objects: Self-Portrait Popsicle",
+        "/assets/images/woof.webp": "Graphic Objects: Woof",
+        "/assets/images/boom-pow-bang.webp": "Graphic Objects: Boom Pow Bang",
+        "/assets/images/palm-tree-drought-1.webp": "Graphic Objects: Palm Tree Drought",
+        "/assets/images/trash-dump.webp": "Graphic Objects: Trash Dump, Open",
+        "/assets/images/trash-dump-1.webp": "Graphic Objects: Trash Dump, Lid Tipped",
+        "/assets/images/lettering--f_loading_flmno.gif": "Graphic Objects: Loading F, Animated",
+        "/assets/images/lettering--x.gif": "Graphic Objects: X, Animated",
+        "/assets/images/static--peace.webp": "Graphic Objects: Peace"
+      }
     },
     "met-alphabet": {
       "title": "Met-alphabet",
@@ -821,7 +901,16 @@
           "title": "Professional Positioning",
           "body": "The identity helped position Jack distinctly within a crowded field of documentary and portrait photographers."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/jr-com--ltb-logo-thin.webp": "JackRaisanen.com: LTB Logo, Thin",
+        "/assets/images/jr-com--lunar-trailblazer-logo.webp": "JackRaisanen.com: Lunar Trailblazer Logo",
+        "/assets/images/jr-com--ltb-logo.webp": "JackRaisanen.com: LTB Logo, Version 1",
+        "/assets/images/jr-com--ltb-logo_1.webp": "JackRaisanen.com: LTB Logo, Version 2",
+        "/assets/images/jr-com--ltb-logo_2.webp": "JackRaisanen.com: LTB Logo, Version 3",
+        "/assets/images/jr-com--danaclublogo_flmno.webp": "JackRaisanen.com: Dana Club Logo",
+        "/assets/images/jr-com--dana_club_white_logo_flmno-8.webp": "JackRaisanen.com: Dana Club Logo, Teal"
+      }
     },
     "jackraisanen-com": {
       "title": "JR.com",
@@ -897,6 +986,14 @@
       "embed": {
         "url": "https://www.jackraisanen.org/",
         "title": "jackraisanen.org, live"
+      },
+      "alts": {
+        "/assets/images/jr-com--jr-com-mobile.gif": "JR.com: Mobile Site, Animated",
+        "/assets/images/jr-com--jr-com-main.webp": "JR.com: Homepage, Advocate and Activist",
+        "/assets/images/jr-com--jr-com-m-v.webp": "JR.com: Mission and Values",
+        "/assets/images/jr-com--jr-com_flmno.gif": "JR.com: Homepage, Writer and Editor, Animated",
+        "/assets/images/jr-com--jr-com_logo__flmno.webp": "JR.com: JR Logo",
+        "/assets/images/jr-com--site-video.mp4": "JR.com: Mobile Site, Scroll-through"
       }
     },
     "lunar-trailblazer-science": {
@@ -1251,7 +1348,18 @@
           "title": "Reusable Motion Language",
           "body": "The motion principles established in this project became a repeatable system the client applied to future campaigns."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/gifs--motion-study_-amorphous-blob-dancing.gif": "Motion Pulse: Motion Study, Amorphous Blobs",
+        "/assets/images/gifs--motion-study_-amorphous-forms-dancing.gif": "Motion Pulse: Motion Study, Amorphous Forms",
+        "/assets/images/gifs--motion-study_-glitch-wink.gif": "Motion Pulse: Motion Study, Glitch Wink",
+        "/assets/images/gifs--false-mirror.gif": "Motion Pulse: False Mirror",
+        "/assets/images/gifs--thx.gif": "Motion Pulse: Thx",
+        "/assets/images/gifs--friday-night-movie-club.gif": "Motion Pulse: Friday Night Movie Club",
+        "/assets/images/gifs--breakup.gif": "Motion Pulse: Breakup",
+        "/assets/images/gifs--blm.gif": "Motion Pulse: Black Lives Matter",
+        "/assets/images/gifs--reminder_-black-lives-still-matter.gif": "Motion Pulse: Reminder, Black Lives Still Matter"
+      }
     },
     "mount-rainier-in-motion": {
       "title": "Mount Rainier in Motion",
@@ -1458,7 +1566,14 @@
           "title": "Personal Body of Work",
           "body": "The series established a sustained photographic voice and a point of view that distinguishes the practice."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/muse--paradise.webp": "Mountain as a Muse: Paradise, Black and White",
+        "/assets/images/muse--tipsoo.webp": "Mountain as a Muse: Tipsoo Lake",
+        "/assets/images/muse--paradise-snow-day.webp": "Mountain as a Muse: Paradise Snow Day",
+        "/assets/images/muse--fox-in-snow.webp": "Mountain as a Muse: Fox in Snow",
+        "/assets/images/muse--deer-in-lupine-print.webp": "Mountain as a Muse: Deer in Lupine, Framed Print"
+      }
     },
     "park-protest": {
       "title": "Park Protest",
@@ -1521,7 +1636,14 @@
           "title": "Movement Contribution",
           "body": "The work was adopted and redistributed by allied organisations, extending its reach beyond the original campaign."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/illustration--protest-poster-side-a.webp": "Park Protest: Parks Under Attack Poster",
+        "/assets/images/illustration--protest-poster-side-b.webp": "Park Protest: Protest Sign, Blank",
+        "/assets/images/illustration--protest-poster-side-b_1.webp": "Park Protest: Protest Sign, Call Your Reps",
+        "/assets/images/protest--save-public-lands-poster.webp": "Park Protest: Protest Sign in Use",
+        "/assets/images/protest--parks-under-attack.webp": "Park Protest: Parks Under Attack, Phone"
+      }
     },
     "poetry-in-parks": {
       "title": "Poetry in Parks",
@@ -1585,7 +1707,11 @@
           "title": "Unexpected Audience",
           "body": "The series reached readers who had no prior connection to the park, brought in through a shared love of poetry."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/poetry--ada-limon-paradise.webp": "Poetry in Parks: Ada Limón at Paradise",
+        "/assets/images/poetry--ada-limon-conversation.webp": "Poetry in Parks: Ada Limón in Conversation"
+      }
     },
     "reproduction-v-extinction": {
       "title": "Reproduction v Extinction",
@@ -1712,7 +1838,17 @@
           "title": "Collector Demand",
           "body": "Limited print runs sold out ahead of the event, with requests for additional copies continuing afterwards."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/the-courts--the-courts.webp": "Strike a Match: The Courts Logo",
+        "/assets/images/the-courts--strike-a-match.webp": "Strike a Match: Matchbook Poster, Book a Camper",
+        "/assets/images/the-courts--strike-a-match-2.webp": "Strike a Match: Matchbook Poster, Meet Your Match",
+        "/assets/images/the-courts--strike-a-match-02.webp": "Strike a Match: Matchbook Poster, Anza-Borrego",
+        "/assets/images/the-courts--location-inspiration-imagery-2.webp": "Strike a Match: Inspiration, Coffee Cup",
+        "/assets/images/the-courts--location-inspiration-imagery-2-1.webp": "Strike a Match: Inspiration, Clubhouse Interior",
+        "/assets/images/the-courts--location-inspiration-imagery-3.webp": "Strike a Match: Inspiration, Court Fence",
+        "/assets/images/static--matchbook.webp": "Strike a Match: Matchbook Illustration"
+      }
     },
     "support-your-local-dealer": {
       "title": "Support Your Local Dealer",
@@ -1776,7 +1912,14 @@
           "title": "Visual Longevity",
           "body": "The posters remain in use at supported businesses years after the initial campaign, a sign of genuine community adoption."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/syld--syld-wall-advertisment.webp": "Support Your Local Dealer: Wall Advertisement",
+        "/assets/images/syld--syld-sticker.webp": "Support Your Local Dealer: Sticker",
+        "/assets/images/syld--support-your-local-dealer.webp": "Support Your Local Dealer: Poster, Black",
+        "/assets/images/syld--support-your-local-dealer-wbg.webp": "Support Your Local Dealer: Poster, White",
+        "/assets/images/illustration--get-a-woof-of-that.webp": "Support Your Local Dealer: Dog Illustration"
+      }
     },
     "illustration": {
       "title": "Illustration",
@@ -1900,7 +2043,13 @@
           "title": "Brand Consistency",
           "body": "The identity worked coherently across digital, print, and on-site materials without requiring adaptation."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/logos--ted_logo_flmno.webp": "TEDx Website & Marketing: TED Logo, Black",
+        "/assets/images/logos--ted_logo_flmno_1.webp": "TEDx Website & Marketing: TED Logo, Gray",
+        "/assets/images/logos--tedxmilehigh_logo_flmno.webp": "TEDx Website & Marketing: TEDxMileHigh Logo, Black",
+        "/assets/images/logos--tedxmilehigh_logo_flmno_1.webp": "TEDx Website & Marketing: TEDxMileHigh Logo, Gray"
+      }
     },
     "timed-entry-reservation-campaign": {
       "title": "Timed Entry Reservation Campaign",
@@ -2102,7 +2251,27 @@
           "title": "Recognisable Over Time",
           "body": "The system remained coherent and recognisable as the organisation grew, without needing significant revision."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/instruments--cso-before-after_2x.webp": "Visual Systems: CSO Logo, Before and After",
+        "/assets/images/instruments--asset-1.webp": "Visual Systems: Tambourine",
+        "/assets/images/instruments--asset-2.webp": "Visual Systems: Bassoon",
+        "/assets/images/instruments--asset-3.webp": "Visual Systems: Pan Flute",
+        "/assets/images/instruments--asset-4.webp": "Visual Systems: Grand Piano",
+        "/assets/images/instruments--asset-5.webp": "Visual Systems: Timpani",
+        "/assets/images/instruments--asset-6.webp": "Visual Systems: Trombone",
+        "/assets/images/instruments--asset-7.webp": "Visual Systems: Gong",
+        "/assets/images/instruments--asset-8.webp": "Visual Systems: Triangle",
+        "/assets/images/instruments--asset-9.webp": "Visual Systems: Trumpet",
+        "/assets/images/instruments--asset-10.webp": "Visual Systems: Flute",
+        "/assets/images/instruments--asset-11.webp": "Visual Systems: Saxophone",
+        "/assets/images/instruments--asset-12.webp": "Visual Systems: Cymbals",
+        "/assets/images/instruments--asset-13.webp": "Visual Systems: French Horn",
+        "/assets/images/instruments--asset-14.webp": "Visual Systems: Harp",
+        "/assets/images/instruments--asset-15.webp": "Visual Systems: Clarinet",
+        "/assets/images/instruments--asset-16.webp": "Visual Systems: CSO Wordmark",
+        "/assets/images/instruments--asset-16_1.webp": "Visual Systems: Cello"
+      }
     },
     "wild-berry-guide": {
       "title": "Wild Berry Guide",
@@ -2231,7 +2400,20 @@
           "title": "Atmospheric Achievement",
           "body": "The long-exposure photography captured an aspect of the park that most visitors never see — generating genuine wonder."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/yose--yosemite-dark-sky.webp": "Yosemite National Park After Dark: Yosemite Falls, Dark Sky",
+        "/assets/images/yose--firefall-evening.webp": "Yosemite National Park After Dark: Firefall at Evening",
+        "/assets/images/yose--yosemite-horsetail-falls-firefall.webp": "Yosemite National Park After Dark: Horsetail Fall Firefall",
+        "/assets/images/yose--yosemite-falls-at-night.webp": "Yosemite National Park After Dark: Falls at Night, Framed Print",
+        "/assets/images/yose--yosemite-falls-stair-trails.webp": "Yosemite National Park After Dark: Yosemite Falls Star Trails",
+        "/assets/images/yose--cooks-meadow.webp": "Yosemite National Park After Dark: Cook's Meadow",
+        "/assets/images/yose--coopers-hawk.webp": "Yosemite National Park After Dark: Cooper's Hawk",
+        "/assets/images/yose--great-grey-owl.webp": "Yosemite National Park After Dark: Great Grey Owl",
+        "/assets/images/yose--horsetail-fall-firefall-2.webp": "Yosemite National Park After Dark: Horsetail Fall Firefall, Detail",
+        "/assets/images/yose--vernal-falls.webp": "Yosemite National Park After Dark: Vernal Fall",
+        "/assets/images/yose--vernal-falls-overlook.webp": "Yosemite National Park After Dark: Vernal Fall Overlook"
+      }
     },
     "yosemite-orientation-boards": {
       "title": "Yosemite Orientation Boards",

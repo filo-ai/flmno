@@ -90,6 +90,7 @@ const descFor = (src, i) => { const a = altFor(src, i); return a.includes(": ") 
 const tagsFor = (href) => {
   const m = String(href || "").match(/projects\/([^/"]+)|^\.\.\/([^/"]+)\//);
   const slug = m && (m[1] || m[2]);
+  if (HOME_HOVER[slug]) return HOME_HOVER[slug];
   return (PROJECT_TAG_LIST[slug] || []).map(t => FILTER_LABELS[t] || t).join(", ") || "Project";
 };
 
@@ -334,6 +335,8 @@ function ogImage(slug, gallery) {
 
 // ── Breadcrumb categories: read from the homepage tiles + filter labels ──
 const HOME_HTML = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+const HOME_HOVER = {};
+for (const m of HOME_HTML.matchAll(/href="projects\/([^/"]+)\/[^"]*"[\s\S]*?<div class="frost-overlay">\s*<p>([^<]*)<\/p>/g)) if (!(m[1] in HOME_HOVER)) HOME_HOVER[m[1]] = m[2].trim().replace(/&amp;/g, "&");
 const PROJECT_TAGS = {};
 const PROJECT_TAG_LIST = {};
 for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="([^"]*)">\s*<a[^>]*href="projects\/([^/"]+)\//g)) {
