@@ -4408,3 +4408,10 @@ html:root .site-footer p, html:root .site-footer p a, html:root footer p, html:r
   font-family: "Apercu", sans-serif !important;
 }
 @media (max-width: 680px) { html:root .contact-field .field-error { font-size: 10px !important; letter-spacing: 0.06em !important; } }
+
+/* homepage card hover tags: caption style */
+html:root .work-tile .frost-overlay p, html:root .logo-tile .frost-overlay p, html:root .frost-overlay p {
+  font-family: "Apercu", sans-serif !important; font-weight: 300 !important;
+  font-size: 11px !important; line-height: 1.4 !important; letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
