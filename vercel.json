@@ -19,6 +19,11 @@
       "source": "/projects/social-media-yosemite/:path*",
       "destination": "/projects/mount-rainier-social-media/",
       "permanent": true
+    },
+    {
+      "source": "/projects/industri-alphabet/:path*",
+      "destination": "/projects/heavy-met-alphabet/",
+      "permanent": true
     }
   ]
 }

@@ -330,7 +330,7 @@
       "related": [
         {
           "title": "Heavy Met-alphabet",
-          "href": "../industri-alphabet/index.html",
+          "href": "../heavy-met-alphabet/index.html",
           "image": "/assets/images/hma--f-800.webp"
         },
         {
@@ -638,7 +638,7 @@
         }
       ]
     },
-    "industri-alphabet": {
+    "heavy-met-alphabet": {
       "title": "Heavy Met-alphabet",
       "teaser": "What if language were manufactured?",
       "story": [
