@@ -71,7 +71,7 @@ const ph = (src) => (SIZES[src]?.c || "#141417");
 const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
 
 // ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
-let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [] };
+let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [], notes: {} };
 function altFor(src, i) {
   if (PAGE.alts[src]) return PAGE.alts[src];
   let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
@@ -84,8 +84,8 @@ function altFor(src, i) {
 
 
 // ── One label for every image: small eyebrow + Reckless title ──
-const imgLabel = (eyebrow, title, tag = "span") =>
-  `<${tag} class="img-label"${tag === "span" ? ' aria-hidden="true"' : ""}>${eyebrow ? `<span class="img-label__eyebrow">${esc(eyebrow)}</span>` : ""}<span class="img-label__title">${esc(title)}</span></${tag}>`;
+const imgLabel = (eyebrow, title, tag = "span", note = "") =>
+  `<${tag} class="img-label"${tag === "span" ? ' aria-hidden="true"' : ""}>${eyebrow ? `<span class="img-label__eyebrow">${esc(eyebrow)}</span>` : ""}<span class="img-label__title">${esc(title)}</span>${note ? `<span class="img-label__note">${esc(note)}</span>` : ""}</${tag}>`;
 const descFor = (src, i) => { const a = altFor(src, i); return a.includes(": ") ? a.split(": ").slice(1).join(": ") : `Image ${i + 1}`; };
 const tagsFor = (href) => {
   const m = String(href || "").match(/projects\/([^/"]+)|^\.\.\/([^/"]+)\//);
@@ -123,7 +123,7 @@ function renderCarousel(gallery) {
   if (!gallery?.length) return "";
   const slides = gallery.slice(0, 3).map((src, i) =>
     `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery" style="background-color:${ph(src)}">` +
-    `${media(src, imgFit(src, 900, 82), ` loading="eager" draggable="false"${i === 0 ? ` style="view-transition-name: p-${PAGE.slug}"` : ""}`, altFor(src, i), "(max-width: 680px) 85vw, 480px")}${imgLabel("", descFor(src, i))}</button>`
+    `${media(src, imgFit(src, 900, 82), ` loading="eager" draggable="false"${i === 0 ? ` style="view-transition-name: p-${PAGE.slug}"` : ""}`, altFor(src, i), "(max-width: 680px) 85vw, 480px")}${imgLabel("", descFor(src, i), "span", PAGE.notes[src])}</button>`
   ).join("\n");
 
   const stills = gallery.filter(s => !isVideo(s));
@@ -233,7 +233,7 @@ ${slides}
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
   const figs = gallery.map((src, i) =>
-    `        <figure${i % 3 === 0 ? ' class="full"' : ""}${PAGE.pdfs[src] ? ` data-pdf="${esc(PAGE.pdfs[src])}"` : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption")}</figure>`
+    `        <figure${i % 3 === 0 ? ' class="full"' : ""}${PAGE.pdfs[src] ? ` data-pdf="${esc(PAGE.pdfs[src])}"` : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption", PAGE.notes[src])}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
@@ -399,7 +399,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
-  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [] };
+  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [], notes: project.notes || {} };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {

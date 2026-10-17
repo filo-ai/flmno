@@ -585,16 +585,14 @@
         "Skills & Tools": "illustration, print design, park service"
       },
       "gallery": [
-        "/assets/images/yose--goc.gif",
-        "/assets/images/goc--hot-cone-summer-goc.webp",
         "/assets/images/goc--cone-action-shot-goc.webp",
+        "/assets/images/yose--goc.gif",
+        "/assets/images/goc--snow-goc.webp",
         "/assets/images/goc--crowded-action-shot-goc.webp",
         "/assets/images/goc--fire-goc.webp",
-        "/assets/images/goc--hcs-square-goc.webp",
+        "/assets/images/goc--hot-cone-summer-goc.webp",
         "/assets/images/goc--seeds-goc.webp",
-        "/assets/images/goc--snow-goc.webp",
         "/assets/images/goc--sprout-action-shot-goc.webp",
-        "/assets/images/goc--goc-gif.gif",
         "/assets/images/yose--welcome-center.webp"
       ],
       "related": [
@@ -639,17 +637,18 @@
         }
       ],
       "alts": {
-        "/assets/images/yose--goc.gif": "Game of Cones: Card Deck, Animated",
-        "/assets/images/goc--hot-cone-summer-goc.webp": "Game of Cones: Hot Cone Summer, Sequoia",
-        "/assets/images/goc--cone-action-shot-goc.webp": "Game of Cones: Hot Cone Summer, Cone Action Shot",
+        "/assets/images/yose--goc.gif": "Game of Cones: Card Deck Shuffle",
+        "/assets/images/goc--hot-cone-summer-goc.webp": "Game of Cones: Hot Cone Summer Card, Front and Back",
+        "/assets/images/goc--cone-action-shot-goc.webp": "Game of Cones: Hot Cone Summer Card",
         "/assets/images/goc--crowded-action-shot-goc.webp": "Game of Cones: Crowded Card",
-        "/assets/images/goc--fire-goc.webp": "Game of Cones: Friendly Fire and Burnt Out",
-        "/assets/images/goc--hcs-square-goc.webp": "Game of Cones: Hot Cone Summer, Bark",
-        "/assets/images/goc--seeds-goc.webp": "Game of Cones: You're a Snack and Beetlemania",
-        "/assets/images/goc--snow-goc.webp": "Game of Cones: Snowmageddon and Arctic El Niño",
-        "/assets/images/goc--sprout-action-shot-goc.webp": "Game of Cones: Suns Out, Seeds Sprout",
-        "/assets/images/goc--goc-gif.gif": "Game of Cones: Card Deck, Mint Animated",
-        "/assets/images/yose--welcome-center.webp": "Game of Cones: Welcome Center"
+        "/assets/images/goc--fire-goc.webp": "Game of Cones: Friendly Fire and Burnt Out Cards",
+        "/assets/images/goc--seeds-goc.webp": "Game of Cones: You're a Snack and Beetlemania Cards",
+        "/assets/images/goc--snow-goc.webp": "Game of Cones: Snowmageddon and Arctic El Niño Cards",
+        "/assets/images/goc--sprout-action-shot-goc.webp": "Game of Cones: Suns Out, Seeds Sprout Card",
+        "/assets/images/yose--welcome-center.webp": "Game of Cones: Performing as the game host park ranger"
+      },
+      "notes": {
+        "/assets/images/yose--welcome-center.webp": "Initiating the game, I test the crowd on which cone in my hands grow into the largest tree. Most people choose the one on the right (the sugar pine tree cone, not the true tiny sequoia tree cone, let alone the smaller seeds)."
       }
     },
     "graphic-objects": {

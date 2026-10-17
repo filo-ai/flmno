@@ -2942,3 +2942,6 @@ html:root .cs-flipbook-card .img-label__eyebrow {
   line-height: 1.4 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important;
   margin: 0 0 8px !important; color: rgba(247,247,242,.9) !important;
 }
+
+/* optional longer image note under the label title */
+html:root .img-label__note { display: block; margin-top: 10px; max-width: 46ch; font-family: "Apercu", sans-serif; font-weight: 300; font-size: 15px; line-height: 1.4; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.92); }
