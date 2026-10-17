@@ -2651,3 +2651,35 @@ html:root .site-banner__track, html:root .site-banner__group { height: var(--ban
 html:root .site-banner .site-banner__track, html:root .site-banner .site-banner__group { font: inherit !important; letter-spacing: inherit !important; line-height: var(--banner-h) !important; }
 
 :root { --banner-h: 16px; }
+
+/* ══ Scrolling down: logo + buttons shrink to 70% about their own centres and stay visible ══ */
+html:root.nav-away #site-logo, html:root.nav-away #mobile-logo, html:root.nav-away .cs-header__back, html:root.nav-away .site-nav nav a,
+html:root.nav-away:not(.title-shrinking) #site-logo, html:root.nav-away:not(.title-shrinking) #mobile-logo {
+  scale: 0.7 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transition-duration: 0.24s !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+html:root.nav-away body.nav-revealed .site-nav nav,
+html:root:not(.js).nav-away .site-nav nav {
+  opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+}
+html:root.nav-away:not(.nav-compact) .site-nav nav { scale: none !important; }
+html:root.nav-away.nav-compact .site-nav nav { scale: 0.7 !important; }
+
+/* ══ Buttons across the site: smaller, more refined (was 44px tall / 20px type) ══ */
+html:root .site-nav nav a, html:root .filter-pill, html:root .cs-header__back, html:root .cs-pill,
+html:root .contact-form button[type="submit"] {
+  font-size: 16px !important;
+  height: 36px !important; min-height: 36px !important;
+  padding: 0 13px !important;
+  line-height: 1 !important;
+  border-radius: 9px !important;
+  align-items: center;
+}
+html:root .cs-header__back .return-icon, html:root .cs-pill svg { width: 15px !important; height: 15px !important; }
+html:root .cs-zoom .cs-zoom__count { height: 36px !important; line-height: 36px !important; min-width: 72px !important; padding: 0 14px !important; font-size: 16px !important; }
+html:root .cs-zoom__pdf { height: 36px !important; font-size: 14px !important; padding: 0 16px !important; bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important; }
+html:root .cs-sheet__close, html:root .cs-sheet > .cs-sheet__close, html:root .cs-zoom__close, html:root .modal-close { width: 40px !important; height: 40px !important; }
