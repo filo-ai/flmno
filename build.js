@@ -71,7 +71,7 @@ const ph = (src) => (SIZES[src]?.c || "#141417");
 const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
 
 // ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
-let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [], notes: {}, carousel: [], triples: 0 };
+let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [], notes: {}, carousel: [], triples: 0, fulls: [] };
 function altFor(src, i) {
   if (PAGE.alts[src]) return PAGE.alts[src];
   let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
@@ -233,8 +233,16 @@ ${slides}
 
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
+  const T = PAGE.triples || 0;
+  let slot = 0;
+  const kinds = gallery.map((src, i) => {
+    if (i < T) return "third";
+    if ((PAGE.fulls || []).includes(src)) { slot = 1; return "full"; }
+    if (slot === 0) { slot = 1; return "full"; }
+    slot = slot === 1 ? 2 : 0; return "";
+  });
   const figs = gallery.map((src, i) =>
-    `        <figure${i < (PAGE.triples || 0) ? ' class="third"' : (i - (PAGE.triples || 0)) % 3 === 0 ? ' class="full"' : ""}${PAGE.pdfs[src] ? ` data-pdf="${esc(PAGE.pdfs[src])}"` : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), (i - (PAGE.triples || 0)) % 3 === 0 && i >= (PAGE.triples || 0) ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption", PAGE.notes[src])}</figure>`
+    `        <figure${kinds[i] ? ` class="${kinds[i]}"` : ""}${PAGE.pdfs[src] ? ` data-pdf="${esc(PAGE.pdfs[src])}"` : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), kinds[i] === "full" ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption", PAGE.notes[src])}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
@@ -400,7 +408,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
-  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [], notes: project.notes || {}, carousel: project.carousel || [], triples: project.triples || 0 };
+  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [], notes: project.notes || {}, carousel: project.carousel || [], triples: project.triples || 0, fulls: project.fulls || [] };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {
