@@ -2945,3 +2945,10 @@ html:root .cs-flipbook-card .img-label__eyebrow {
 
 /* optional longer image note under the label title */
 html:root .img-label__note { display: block; margin-top: 10px; max-width: 46ch; font-family: "Apercu", sans-serif; font-weight: 300; font-size: 15px; line-height: 1.4; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.92); }
+
+/* galleries with a leading row of three */
+html:root .cs-gallery--six { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+html:root .cs-gallery--six figure { grid-column: span 3; }
+html:root .cs-gallery--six figure.third { grid-column: span 2; }
+html:root .cs-gallery--six figure.full { grid-column: 1 / -1; }
+@media (max-width: 680px) { html:root .cs-gallery--six { grid-template-columns: 1fr; } html:root .cs-gallery--six figure, html:root .cs-gallery--six figure.third { grid-column: auto; } }

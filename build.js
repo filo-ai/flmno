@@ -71,7 +71,7 @@ const ph = (src) => (SIZES[src]?.c || "#141417");
 const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
 
 // ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
-let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [], notes: {} };
+let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [], notes: {}, carousel: [], triples: 0 };
 function altFor(src, i) {
   if (PAGE.alts[src]) return PAGE.alts[src];
   let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
@@ -121,7 +121,8 @@ ${tiles}
 
 function renderCarousel(gallery) {
   if (!gallery?.length) return "";
-  const slides = gallery.slice(0, 3).map((src, i) =>
+  const lead = (PAGE.carousel && PAGE.carousel.length ? PAGE.carousel : gallery).slice(0, 3);
+  const slides = lead.map((src, i) =>
     `      <button class="cs-carousel__item" type="button" data-open="gallery" aria-label="Open gallery" style="background-color:${ph(src)}">` +
     `${media(src, imgFit(src, 900, 82), ` loading="eager" draggable="false"${i === 0 ? ` style="view-transition-name: p-${PAGE.slug}"` : ""}`, altFor(src, i), "(max-width: 680px) 85vw, 480px")}${imgLabel("", descFor(src, i), "span", PAGE.notes[src])}</button>`
   ).join("\n");
@@ -233,7 +234,7 @@ ${slides}
 function renderGallerySheet(title, gallery) {
   if (!gallery?.length) return "";
   const figs = gallery.map((src, i) =>
-    `        <figure${i % 3 === 0 ? ' class="full"' : ""}${PAGE.pdfs[src] ? ` data-pdf="${esc(PAGE.pdfs[src])}"` : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), i % 3 === 0 ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption", PAGE.notes[src])}</figure>`
+    `        <figure${i < (PAGE.triples || 0) ? ' class="third"' : (i - (PAGE.triples || 0)) % 3 === 0 ? ' class="full"' : ""}${PAGE.pdfs[src] ? ` data-pdf="${esc(PAGE.pdfs[src])}"` : ""} style="background-color:${ph(src)}">${media(src, imgFill(src, 1400, null, 85), ' loading="lazy"', altFor(src, i), (i - (PAGE.triples || 0)) % 3 === 0 && i >= (PAGE.triples || 0) ? "(max-width: 680px) 100vw, 960px" : "(max-width: 680px) 100vw, 480px")}${imgLabel("", descFor(src, i), "figcaption", PAGE.notes[src])}</figure>`
   ).join("\n");
   return `
   <dialog class="cs-sheet" data-key="gallery" aria-label="${esc(title)} gallery">
@@ -249,7 +250,7 @@ function renderGallerySheet(title, gallery) {
       <button class="cs-sheet__close cs-zoom__close" type="button" aria-label="Close image">${CLOSE}</button>
     </div>
     <div class="cs-sheet__scroll">
-      <div class="cs-gallery">
+      <div class="cs-gallery${PAGE.triples ? " cs-gallery--six" : ""}">
 ${figs}
       </div>
     </div>
@@ -399,7 +400,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
-  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [], notes: project.notes || {} };
+  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [], notes: project.notes || {}, carousel: project.carousel || [], triples: project.triples || 0 };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {

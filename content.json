@@ -195,17 +195,17 @@
         "Skills & Tools": "branding, identity, poster, *"
       },
       "gallery": [
+        "/assets/images/cso--asset-17.webp",
+        "/assets/images/cso--cso-concert-series-final-04.webp",
+        "/assets/images/cso--cso-concert-series-final-05.webp",
+        "/assets/images/cso--cso-poster.webp",
         "/assets/images/cso--cso-concert-series-final-03.webp",
         "/assets/images/cso--cso-concert-series-final_interior-artboard.webp",
         "/assets/images/cso--cso-banner.webp",
-        "/assets/images/cso--cso-bus-poster.webp",
         "/assets/images/cso--cso-city-poster.webp",
-        "/assets/images/cso--cso-concert-series-final_exterior-artboard.webp",
-        "/assets/images/cso--cso-poster.webp",
         "/assets/images/cso--asset-11.webp",
-        "/assets/images/cso--asset-17.webp",
-        "/assets/images/cso--cso-concert-series-final-04.webp",
-        "/assets/images/cso--cso-concert-series-final-05.webp"
+        "/assets/images/cso--cso-bus-poster.webp",
+        "/assets/images/cso--cso-concert-series-final_exterior-artboard.webp"
       ],
       "related": [
         {
@@ -250,7 +250,13 @@
         "/assets/images/cso--cso-concert-series-final-04.webp": "Colorado Symphony Orchestra: CSO Logo, White",
         "/assets/images/cso--cso-concert-series-final-05.webp": "Colorado Symphony Orchestra: CSO Logo, Black",
         "/assets/images/cso--cso-concert-2019_2020-series.webp": "Colorado Symphony Orchestra: CSO Logo, Black Alternate"
-      }
+      },
+      "carousel": [
+        "/assets/images/cso--cso-banner.webp",
+        "/assets/images/cso--cso-city-poster.webp",
+        "/assets/images/cso--asset-11.webp"
+      ],
+      "triples": 3
     },
     "editorial-rhythm": {
       "title": "Editorial Rhythm",
