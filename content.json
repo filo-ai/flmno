@@ -181,6 +181,12 @@
         "I started looking at the Colorado Symphony as a constellation: individual musicians and instruments, each with a precise place in the larger composition. Traditional star charts became the jumping-off point, with the orchestra’s stage arrangement translated into a celestial system of points, lines, and patterns.",
         "The visual identity turns the concert hall into something closer to an observatory. Posters, concert collateral, and merchandise map the orchestra into a visual universe—part celestial atlas, part concert identity.",
         "The result is a system that gives the symphony a little more mystery, a little more wonder, and hopefully a reason to look twice.",
+        {
+          "imgs": [
+            "/assets/images/cso--cso-concept-drawings.webp",
+            "/assets/images/cso--cso-stellar-map.webp"
+          ]
+        },
         "This project is conceptual."
       ],
       "meta": {
@@ -190,22 +196,16 @@
       },
       "gallery": [
         "/assets/images/cso--cso-concert-series-final-03.webp",
+        "/assets/images/cso--cso-concert-series-final_interior-artboard.webp",
         "/assets/images/cso--cso-banner.webp",
         "/assets/images/cso--cso-bus-poster.webp",
         "/assets/images/cso--cso-city-poster.webp",
-        "/assets/images/cso--cso-concept-drawings.webp",
         "/assets/images/cso--cso-concert-series-final_exterior-artboard.webp",
-        "/assets/images/cso--cso-concert-series-final_interior-artboard.webp",
-        "/assets/images/cso--cso-concert-series-interior-black.webp",
-        "/assets/images/cso--cso-concert-series-interior.webp",
         "/assets/images/cso--cso-poster.webp",
-        "/assets/images/cso--cso-stellar-map.webp",
         "/assets/images/cso--asset-11.webp",
-        "/assets/images/cso--asset-12.webp",
         "/assets/images/cso--asset-17.webp",
         "/assets/images/cso--cso-concert-series-final-04.webp",
-        "/assets/images/cso--cso-concert-series-final-05.webp",
-        "/assets/images/cso--cso-concert-2019_2020-series.webp"
+        "/assets/images/cso--cso-concert-series-final-05.webp"
       ],
       "related": [
         {
@@ -236,19 +236,16 @@
       ],
       "impact": [],
       "alts": {
-        "/assets/images/cso--cso-concert-series-final-03.webp": "Colorado Symphony Orchestra: Season Calendar Poster, Black",
+        "/assets/images/cso--cso-concert-series-final-03.webp": "Colorado Symphony Orchestra: Season Calendar, Black",
         "/assets/images/cso--cso-banner.webp": "Colorado Symphony Orchestra: Banner",
         "/assets/images/cso--cso-bus-poster.webp": "Colorado Symphony Orchestra: Bus Shelter Poster",
         "/assets/images/cso--cso-city-poster.webp": "Colorado Symphony Orchestra: City Poster",
         "/assets/images/cso--cso-concept-drawings.webp": "Colorado Symphony Orchestra: Concept Drawings",
-        "/assets/images/cso--cso-concert-series-final_exterior-artboard.webp": "Colorado Symphony Orchestra: Instrument Illustration",
+        "/assets/images/cso--cso-concert-series-final_exterior-artboard.webp": "Colorado Symphony Orchestra: Tuning the Constellation",
         "/assets/images/cso--cso-concert-series-final_interior-artboard.webp": "Colorado Symphony Orchestra: Season Calendar, White",
-        "/assets/images/cso--cso-concert-series-interior-black.webp": "Colorado Symphony Orchestra: Season Calendar, Black",
-        "/assets/images/cso--cso-concert-series-interior.webp": "Colorado Symphony Orchestra: Season Calendar, White Alternate",
         "/assets/images/cso--cso-poster.webp": "Colorado Symphony Orchestra: Season Poster",
         "/assets/images/cso--cso-stellar-map.webp": "Colorado Symphony Orchestra: Stellar Map",
         "/assets/images/cso--asset-11.webp": "Colorado Symphony Orchestra: Concert Ticket",
-        "/assets/images/cso--asset-12.webp": "Colorado Symphony Orchestra: Concert Ticket, Detail",
         "/assets/images/cso--asset-17.webp": "Colorado Symphony Orchestra: CSO Logo, Blue",
         "/assets/images/cso--cso-concert-series-final-04.webp": "Colorado Symphony Orchestra: CSO Logo, White",
         "/assets/images/cso--cso-concert-series-final-05.webp": "Colorado Symphony Orchestra: CSO Logo, Black",
@@ -998,7 +995,7 @@
     "lunar-trailblazer-science": {
       "title": "Lunar Trailblazer Science",
       "teaser": "Science Communication for a CalTech x NASA Mission to the Moon",
-      "lede": "The Moon has water written all over it. The challenge is knowing how to read the signatures. So I translated Lunar Trailblazer’s search into a visual language of spectral fingerprints, water, geology, and the satellite reading the Moon from above.",
+      "lede": "The Moon has water written all over it. The challenge is knowing how to read the signatures. So I translated Lunar Trailblazer’s search into a visual language of spectral fingerprints that everyone could understand.",
       "story": [
         {
           "h": "LUNAR TRAILBLAZER"
