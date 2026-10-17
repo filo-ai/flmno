@@ -2855,3 +2855,6 @@ html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not
 @media (max-width: 680px) {
   html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links) { font-size: 17px !important; }
 }
+
+/* text card body: Apercu Light (was Regular) */
+html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links) { font-weight: 300 !important; }
