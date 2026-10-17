@@ -22,7 +22,12 @@
     },
     {
       "source": "/projects/industri-alphabet/:path*",
-      "destination": "/projects/heavy-met-alphabet/",
+      "destination": "/projects/met-alphabet/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/heavy-met-alphabet/:path*",
+      "destination": "/projects/met-alphabet/",
       "permanent": true
     }
   ]

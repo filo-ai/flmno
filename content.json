@@ -312,8 +312,8 @@
       ],
       "related": [
         {
-          "title": "Heavy Met-alphabet",
-          "href": "../heavy-met-alphabet/index.html",
+          "title": "Met-alphabet",
+          "href": "../met-alphabet/index.html",
           "image": "/assets/images/hma--f-800.webp"
         },
         {
@@ -622,12 +622,12 @@
         }
       ]
     },
-    "heavy-met-alphabet": {
-      "title": "Heavy Met-alphabet",
+    "met-alphabet": {
+      "title": "Met-alphabet",
       "teaser": "Yee-haw, but make it industrial and future.",
       "story": [
         {
-          "h": "HEAVY MET-ALPHABET"
+          "h": "MET-ALPHABET"
         },
         "Somewhere between a horseshoe, a piece of machinery, and a rhinestone-studded fever dream, I found one.",
         {
@@ -708,25 +708,25 @@
       ],
       "impact": [],
       "alts": {
-        "/assets/images/hma--a.webp": "Heavy Met-alphabet: A",
-        "/assets/images/hma--b.webp": "Heavy Met-alphabet: B",
-        "/assets/images/hma--d.webp": "Heavy Met-alphabet: D",
-        "/assets/images/hma--f.webp": "Heavy Met-alphabet: F",
-        "/assets/images/hma--h.webp": "Heavy Met-alphabet: H",
-        "/assets/images/hma--m.webp": "Heavy Met-alphabet: M",
-        "/assets/images/hma--n.webp": "Heavy Met-alphabet: N",
-        "/assets/images/hma--o.webp": "Heavy Met-alphabet: O",
-        "/assets/images/hma--o2.webp": "Heavy Met-alphabet: O",
-        "/assets/images/hma--r.webp": "Heavy Met-alphabet: R",
-        "/assets/images/hma--t.webp": "Heavy Met-alphabet: T",
-        "/assets/images/hma--w.webp": "Heavy Met-alphabet: W",
-        "/assets/images/hma--x.webp": "Heavy Met-alphabet: X",
-        "/assets/images/hma--y.webp": "Heavy Met-alphabet: Y",
-        "/assets/images/hma--inspiration-horseshoe-stage.webp": "Heavy Met-alphabet: Inspiration: horseshoe stage",
-        "/assets/images/hma--inspiration-silver-western.webp": "Heavy Met-alphabet: Inspiration: silver Western",
-        "/assets/images/hma--inspiration-silver-armor.webp": "Heavy Met-alphabet: Inspiration: silver armor",
-        "/assets/images/hma--inspiration-mirrored-horse.webp": "Heavy Met-alphabet: Inspiration: mirrored horse",
-        "/assets/images/hma--inspiration-silver-hat.webp": "Heavy Met-alphabet: Inspiration: silver hat and boots"
+        "/assets/images/hma--a.webp": "Met-alphabet: A",
+        "/assets/images/hma--b.webp": "Met-alphabet: B",
+        "/assets/images/hma--d.webp": "Met-alphabet: D",
+        "/assets/images/hma--f.webp": "Met-alphabet: F",
+        "/assets/images/hma--h.webp": "Met-alphabet: H",
+        "/assets/images/hma--m.webp": "Met-alphabet: M",
+        "/assets/images/hma--n.webp": "Met-alphabet: N",
+        "/assets/images/hma--o.webp": "Met-alphabet: O",
+        "/assets/images/hma--o2.webp": "Met-alphabet: O",
+        "/assets/images/hma--r.webp": "Met-alphabet: R",
+        "/assets/images/hma--t.webp": "Met-alphabet: T",
+        "/assets/images/hma--w.webp": "Met-alphabet: W",
+        "/assets/images/hma--x.webp": "Met-alphabet: X",
+        "/assets/images/hma--y.webp": "Met-alphabet: Y",
+        "/assets/images/hma--inspiration-horseshoe-stage.webp": "Met-alphabet: Inspiration: horseshoe stage",
+        "/assets/images/hma--inspiration-silver-western.webp": "Met-alphabet: Inspiration: silver Western",
+        "/assets/images/hma--inspiration-silver-armor.webp": "Met-alphabet: Inspiration: silver armor",
+        "/assets/images/hma--inspiration-mirrored-horse.webp": "Met-alphabet: Inspiration: mirrored horse",
+        "/assets/images/hma--inspiration-silver-hat.webp": "Met-alphabet: Inspiration: silver hat and boots"
       }
     },
     "jackraisanen": {
