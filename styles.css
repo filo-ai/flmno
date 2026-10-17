@@ -4360,3 +4360,28 @@ html:root body.contact-mode .logo-word,
 html:root body.contact-mode #site-logo,
 html:root body.contact-mode #mobile-logo { color: #050507 !important; }
 html:root .logo-word { transition: color .3s ease; }
+
+/* contact form: validation message sits inside its own box, right-aligned */
+.contact-field .field-error {
+  position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+  font: 300 16px/1.2 "Apercu", sans-serif; letter-spacing: -0.1px; text-align: right;
+  color: #ff9d8f; pointer-events: none; white-space: nowrap; display: none;
+}
+.contact-field textarea ~ .field-error { top: 22px; transform: none; }
+.contact-field.has-error .field-error { display: block; }
+.contact-field.has-error input { padding-right: 190px !important; }
+.contact-field.has-error textarea { padding-right: 190px !important; }
+body.contact-mode .contact-field .field-error { color: #b3261e; }
+@media (max-width: 680px) {
+  .contact-field .field-error { right: 16px; font-size: 14px; }
+  .contact-field.has-error input, .contact-field.has-error textarea { padding-right: 150px !important; }
+}
+
+/* wordmark: plain text, no glass tile behind it (it was the old logo's tile) */
+html:root #site-logo, html:root #mobile-logo,
+html:root body.contact-mode #site-logo, html:root body.contact-mode #mobile-logo,
+html:root #site-logo:hover, html:root #site-logo:focus-visible, html:root #mobile-logo:hover {
+  background: none !important; box-shadow: none !important;
+  -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  width: auto !important; height: auto !important; border-radius: 0 !important;
+}

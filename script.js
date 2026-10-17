@@ -463,19 +463,17 @@ document.addEventListener('contextmenu', e => {
   const btn = form.querySelector('button[type="submit"]');
   const status = form.querySelector('.contact-status');
   const say = (html) => { status.innerHTML = html; };
+  form.addEventListener('input', (e) => { const f = e.target.closest && e.target.closest('.contact-field'); if (f && f.classList.contains('has-error')) { f.classList.remove('has-error'); const t = f.querySelector('.field-error'); if (t) t.textContent = ''; e.target.setAttribute('aria-invalid', 'false'); } });
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
     const name = String(data.name || '').trim(), email = String(data.email || '').trim(), message = String(data.message || '').trim();
-    const missing = [];
-    if (!name) missing.push('your name');
-    if (!email) missing.push('your email');
-    if (!message) missing.push('a message');
-    if (missing.length) {
-      const list = missing.length === 1 ? missing[0] : missing.length === 2 ? missing.join(' and ') : missing.slice(0, -1).join(', ') + ', and ' + missing[missing.length - 1];
-      say('Please add ' + list + ' so I can write back.'); return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('That email doesn’t look right. Check it and try again.'); return; }
+    const setErr = (el, msg) => { const f = el.closest('.contact-field'); const t = f && f.querySelector('.field-error'); if (t) t.textContent = msg; if (f) f.classList.toggle('has-error', !!msg); if (el.setAttribute) el.setAttribute('aria-invalid', msg ? 'true' : 'false'); };
+    const fName = form.elements.name, fEmail = form.elements.email, fMsg = form.elements.message;
+    setErr(fName, name ? '' : 'Add your name');
+    setErr(fEmail, !email ? 'Add your email' : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '' : 'Enter a valid email');
+    setErr(fMsg, message ? '' : 'Add a message');
+    if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say(''); (!name ? fName : !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? fEmail : fMsg).focus(); return; }
     btn.disabled = true; btn.textContent = 'Sending…'; say('');
     try {
       const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
