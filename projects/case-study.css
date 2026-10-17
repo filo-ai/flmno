@@ -2592,3 +2592,60 @@ body.contact-mode #site-logo, body.contact-mode #mobile-logo { width: 56px !impo
   :root #mobile-logo { width: 50px !important; height: 50px !important; }
   :root #mobile-logo img { width: 50px !important; }
 }
+
+/* ── Banner: 14px, grey dot separators evenly spaced ── */
+:root { --banner-h: 14px; }
+.site-banner { font-size: 8px !important; letter-spacing: 0.18em !important; line-height: var(--banner-h) !important; }
+.site-banner__item { padding-right: 0 !important; }
+.site-banner__dot { margin: 0 40px !important; color: rgba(247, 247, 242, 0.4) !important; animation: none !important; opacity: 1 !important; font-size: 6px; vertical-align: 1px; }
+@media (max-width: 680px) { html:root #mobile-logo { top: calc(var(--banner-h) + 8px) !important; } }
+
+/* ── Nav: every piece shrinks about its own centre; swift, smooth, no bounce ── */
+html:root #site-logo, html:root #mobile-logo, html:root .cs-header__back, html:root .site-nav nav a { transform-origin: 50% 50% !important; }
+html:root #site-logo, html:root #mobile-logo {
+  transition-property: background, box-shadow, opacity, visibility, scale !important;
+  transition-duration: 0.2s, 0.2s, 0.22s, 0.22s, 0.3s !important;
+  transition-timing-function: ease, ease, ease, ease, cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+html:root .site-nav nav {
+  transition-property: opacity, visibility, scale !important;
+  transition-duration: 0.22s, 0.22s, 0.3s !important;
+  transition-timing-function: ease, ease, cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+html:root .site-nav nav a {
+  transition-property: background, background-color, color, border-color, box-shadow, opacity, scale !important;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.22s, 0.3s !important;
+  transition-timing-function: ease, ease, ease, ease, ease, ease, cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+html:root .cs-header__back {
+  transition-property: background, color, transform, box-shadow, opacity, visibility, scale !important;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.22s, 0.22s, 0.3s !important;
+  transition-timing-function: ease, ease, ease, ease, ease, ease, cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+html:root.nav-away #site-logo, html:root.nav-away #mobile-logo, html:root.nav-away .cs-header__back, html:root.nav-away .site-nav nav a {
+  scale: 0.4 !important; opacity: 0 !important;
+  transition-duration: 0.24s !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+html:root.nav-away .site-nav nav {
+  opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+  transition-duration: 0.24s !important; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+html:root.nav-away:not(.nav-compact) .site-nav nav { scale: none !important; }
+html:root.nav-away.nav-compact .site-nav nav { scale: 0.7 !important; }
+@media (prefers-reduced-motion: reduce) {
+  html:root #site-logo, html:root #mobile-logo, html:root .site-nav nav, html:root .site-nav nav a, html:root .cs-header__back { transition-duration: 0s !important; }
+}
+
+/* phones: centre the floating logo with the translate property so scaling stays about its own centre */
+@media (max-width: 680px) {
+  html:root #mobile-logo,
+  html:root.nav-away #mobile-logo,
+  html:root.nav-away:not(.title-shrinking) #mobile-logo { transform: none !important; translate: -50% 0 !important; left: 50% !important; }
+}
+
+/* banner text must not pick up global span styles */
+html:root .site-banner .site-banner__item { font: inherit !important; letter-spacing: inherit !important; text-transform: inherit !important; color: inherit !important; line-height: var(--banner-h) !important; height: var(--banner-h); }
+html:root .site-banner .site-banner__dot { font-size: 6px !important; line-height: var(--banner-h) !important; height: var(--banner-h); vertical-align: baseline; }
+html:root .site-banner__track, html:root .site-banner__group { height: var(--banner-h); align-items: center; }
+html:root .site-banner .site-banner__track, html:root .site-banner .site-banner__group { font: inherit !important; letter-spacing: inherit !important; line-height: var(--banner-h) !important; }
