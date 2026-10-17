@@ -2919,3 +2919,8 @@ html:root .cs-grid .cs-grid__item figure figcaption {
 html:root .cs-grid .cs-grid__item figure:hover figcaption, html:root .cs-grid .cs-grid__item figure:focus-within figcaption { opacity: 1 !important; }
 @media (hover: none) { html:root .cs-grid .cs-grid__item figure figcaption { opacity: 1; } }
 @media (max-width: 680px) { html:root .cs-grid .cs-grid__item figure figcaption { font-size: 11px !important; padding: 36px 10px 10px !important; } }
+
+/* breadcrumb: caption style (Apercu Light, all caps, tracked) */
+html:root .cs-crumbs li, html:root .cs-crumbs a {
+  font-size: 12px !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; line-height: 1.4 !important;
+}
