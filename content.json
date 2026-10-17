@@ -840,7 +840,13 @@
       "lede": "The Moon has water written all over it. You just need to know how to read the signatures. So I translated Lunar Trailblazer’s search into a visual language of spectral fingerprints, water, geology, and the satellite reading the Moon from above.",
       "story": [
         {
-          "h": "THERE'S WATER ON THE MOON"
+          "h": "LUNAR TRAILBLAZER"
+        },
+        {
+          "epigraph": [
+            "Per aspera ad luna.",
+            "Through challenges, to the Moon."
+          ]
         },
         "The Moon was once thought to have seas.",
         "The name stuck. Maria—Latin for seas—are actually vast basalt plains left behind by ancient volcanic activity.",
@@ -848,31 +854,21 @@
         "Turns out, there’s water there.",
         "Not rivers and oceans but water ice and hydroxyl water bound to minerals. Some of it hides in permanently shadowed craters near the poles.",
         "Funny enough, the astronomers weren’t completely wrong. The question is how much water is actually there.",
-        "I was selected as a candidate for the Lunar Trailblazer by the mission’s principal investigator to help develop its visual identity and communications. And I was salivating. With a background in art, design, and even geology, I was honored to help communicate the science of a mission to the Moon.",
+        "I was selected as a candidate for the Lunar Trailblazer by the mission’s principal investigator to help develop its visual identity and communications. And I was salivating. With a background in art, design, and even geology, I was honored to have a chance at branding and communicating the science of a mission to the Moon.",
         "Lunar Trailblazer has a deceptively simple assignment: find the water without so much as touching the surface.",
         "Its instruments measure reflected light and send the data back to the Jet Propulsion Laboratory at Caltech, where spectral signatures reveal water and the minerals around it.",
         "My job was to bring it down to Earth and translate all of that into…English.",
+        "There were spectral signatures to decode, instruments to explain, and an entire mission to make legible without turning it into a science textbook.",
         {
-          "h": "THE RESEARCH HAD ITS OWN GRAVITY"
+          "h": "FINDING OUT WHAT ON EARTH I WAS LOOKING AT"
         },
-        "Before I could figure out what the graphic should look like, I had to figure out what the hell I was looking at.",
-        "So I read everything: research papers, technical documents, mission resources, imagery and scientific literature, from inside the Trailblazer team and out.",
-        "I dug through The New York Times science section. National Geographic infographics. Physical books detailing lunar water discoveries dating back to the 1960s. Galileo Galilei’s drawings of the Moon.",
-        "I looked at other lunar missions. Studied spacecraft representation, scientific data visualization, geology diagrams, decades of space exploration.",
+        "Before I could figure out what the graphic should look like, I had to figure out what on earth I was looking at.",
+        "So I embarked on a mission of my own, consuming a glut of research papers, technical documents, mission resources, imagery, and scientific literature—both from the team and externally.",
+        "Old National Geographic infographics on space. The New York Times science section. Physical books detailing lunar water discoveries dating back to the 1960s. I looked at lunar missions. Studied spacecraft representations, scientific data visualization, geology, diagrams, and decades of space exploration.",
         {
           "img": "/assets/images/ltb--moodboard.webp"
         },
-        {
-          "lines": [
-            "And then the research started doing what research does when you aren't careful:",
-            "it became interesting."
-          ]
-        },
-        "One question pulled me toward another. Water led to spectroscopy. Spectroscopy led to mineralogy. Mineralogy led to geology. Geology led to craters, craters led to the lunar poles, and the lunar poles led me to some of the coolest photographs of the Moon I’d ever seen.",
-        "Eventually I was deep in high-resolution lunar imagery, following one crater into another.",
-        "Things started to accumulate mass.",
-        "At some point, I wasn't just researching the mission anymore.",
-        "I was orbiting it.",
+        "There was no shortage of high-quality Moon imagery, either. LROC had that covered.",
         {
           "links": [
             [
@@ -881,154 +877,87 @@
             ]
           ]
         },
+        "Things started to accumulate mass.",
+        "I had finally reached productive saturation.",
         {
-          "h": "SCIENCE LITERACY, OR: PLEASE DON'T MAKE ME MEMORIZE A TEXTBOOK"
+          "h": "THE MOON, READ DIFFERENTLY"
         },
-        "I care about science literacy. Not necessarily the “here are five fun facts about Saturn!” variety. I’m more interested in the moment when something intimidating suddenly becomes legible.",
-        "When the diagram you’ve been staring at finally clicks. When you realize that a weird squiggly line isn’t just a weird squiggly line—it’s telling you something about what a material is made of.",
-        "I didn’t want to make the science simpler.",
-        "I wanted to make it legible.",
-        "There’s a difference.",
-        "Simplification can remove information. Legibility gives you a way into it.",
+        "I had plenty of Moon to work with. The trick was figuring out how to make it feel less like the Moon we’ve already seen a thousand times.",
+        "The interesting part of Trailblazer wasn’t simply the Moon itself. It was the way the spacecraft reads it.",
+        "Water leaves a signature. Minerals leave signatures. Light carries information about what the surface is made of.",
+        "That gave me a much more interesting place to start than another picture of a spacecraft floating heroically over a lunar landscape.",
+        "The science itself could become the visual material.",
+        "Those spectral signatures—normally the kind of thing you leave to scientists—became the bones of the visual system. Data became graphic forms. Lunar terrain became contours and linework. Observation footprints became geometric fields. Orbital paths became a way of showing the relationship between the spacecraft and the surface below.",
+        "The identity started to feel less like an illustration of a space mission and more like a visual record of what the mission was actually doing.",
         {
-          "h": "ACCURACY IS A DESIGN PROBLEM"
+          "h": "A SMALL SPACECRAFT WITH A BIG JOB"
         },
-        "Scientists don’t necessarily care if your graphic is attractive.",
-        "They care if it’s right.",
-        "My job was to care about both.",
-        "There’s a famous Neil deGrasse Tyson story about Titanic: he noticed that the night sky shown in the film wasn’t actually the sky passengers would have seen that night. A tiny detail, but the kind of thing an expert notices immediately.",
-        "Somebody, somewhere, is going to notice the sky. I tried to keep that in mind.",
-        "When you’re working with people who know planetary science for a living, the feedback can get wonderfully specific.",
-        {
-          "quote": "“The radiator on the HVM3 instrument would malfunction if it were facing the Sun.”"
-        },
-        "Or:",
-        {
-          "quote": "“The rim around…”"
-        },
-        "And suddenly you’re three levels deeper into spacecraft engineering than you planned to be that afternoon.",
-        {
-          "lines": [
-            "Not maliciously.",
-            "Precisely."
-          ]
-        },
-        "A line might imply the wrong relationship. An orbit might suggest something that isn’t physically possible. A diagram might technically contain all the right information while still communicating the wrong idea.",
-        "That tension was useful.",
-        "I was pushing the visual language toward something more scientific and rigorous without losing accessibility, or making something only another planetary scientist could understand.",
-        "The scientists made me defend the design, and defending it made me think harder about how someone outside the field would read it.",
-        {
-          "h": "PER ASPERA AD LUNA"
-        },
-        "Through challenges, to the Moon.",
-        "The further I got, the more the phrase read like a working condition than a motto.",
-        {
-          "h": "FINDING THE STORY"
-        },
-        "What does Trailblazer actually do?",
-        "It follows a trail around the Moon, looks through a defined footprint, and collects spectral fingerprints that help scientists distinguish water, ice, hydroxyl, minerals, and other materials on the lunar surface.",
-        "That gave me a simple framework.",
-        {
-          "terms": [
-            [
-              "FINGERPRINT",
-              "What it finds. Spectral signatures give materials their fingerprints—the particular patterns of reflected infrared light that tell scientists what they’re looking at."
-            ],
-            [
-              "FOOTPRINT",
-              "Where it looks. Every observation covers a defined area of the lunar surface: an imaging footprint."
-            ],
-            [
-              "TRAIL",
-              "How it gets there. The spacecraft follows an orbit around the Moon, building a path of observations as it goes."
-            ],
-            [
-              "THE EYE",
-              "What is doing the looking. A compact machine in orbit, turning reflected light into information."
-            ]
-          ]
-        },
-        "The system stopped illustrating individual scientific concepts and started showing how they relate.",
-        {
-          "pull": [
-            "Treat the Moon like a crime scene: a trail, a footprint, a fingerprint, and water as the prime suspect."
-          ]
-        },
+        "It’s not a giant spacecraft bristling with lasers. It’s a relatively small instrument platform doing some very sophisticated detective work.",
         {
           "img": "/assets/images/ltb--satellite.webp"
         },
-        {
-          "h": "TURNING SCIENCE INTO A VISUAL SYSTEM"
-        },
-        "The logo was the place to start.",
-        "The central water droplet represents the mission’s central quarry: lunar water.",
-        "The hexagonal geometry references crystalline structures, ice, minerals, and the geological language of the Moon.",
-        "The expanding contour lines suggest both lunar topography and spectral fingerprints—information radiating outward from something you can’t necessarily see with your own eyes.",
-        "The square field references the spacecraft’s imaging footprint: a defined piece of the Moon being observed from orbit.",
+        "That distinction mattered.",
+        "Trailblazer observes reflected light, maps the lunar surface, and looks for the spectral evidence of water and minerals from orbit. So instead of leaning into generic futuristic space imagery, I wanted the identity to feel observational, technical, and a little geological.",
+        "The mission mark became a starting point for that system.",
+        "The water droplet represents the obvious quarry. The geometric structure pulls from the crystalline and mineral world. Contours suggest both lunar topography and the signatures Trailblazer is looking for. The square field references the defined footprint being observed from orbit.",
         {
           "img": "/assets/images/ltb--logo.webp"
         },
         {
           "img": "/assets/images/ltb--logo-archive.webp"
         },
-        "From there, the visual language could expand naturally: technical linework, contours, measurement marks, spectral graphs, orbital paths, geological forms, data.",
-        "The palette draws from the Moon itself: cool mineral blues for lunar materials, water, and shadow; warm oranges and rusts for heat, sunlight, and iron-rich terrain; and near-black for the darkness of space and permanently shadowed regions.",
-        {
-          "lines": [
-            "Cold and heat.",
-            "Light and shadow.",
-            "Water and rock."
-          ]
-        },
+        "From there, the language could expand into technical linework, measurement marks, spectral graphs, orbital paths, geological forms, and the spacecraft itself.",
         {
           "img": "/assets/images/ltb--color.webp"
         },
         {
-          "h": "THE ART OF GETTING IT WRONG"
-        },
-        "Of course, none of this arrived fully formed.",
-        "There were thumbnail sketches. Rough diagrams. Bad ideas. Better ideas. Versions that looked promising until you actually tried to explain them.",
-        "Some looked beautiful but explained nothing.",
-        "Others explained everything, with all the charm of a terms-and-conditions page.",
-        "Sometimes I got there, sometimes I didn’t, and every round of feedback made the system sharper.",
-        "The questions became:",
-        {
           "lines": [
-            "Is it useful?",
-            "Is it accurate?",
-            "Does it create curiosity?",
-            "Or does it just look cool?"
+            "The Moon didn’t need another crescent.",
+            "It had better material."
           ]
         },
-        "The last one is occasionally a perfectly valid reason.",
-        "It just can’t be the only one.",
         {
-          "h": "MAKING COMPLEXITY FEEL SIMPLE"
+          "h": "GETTING IT RIGHT"
         },
-        "The final compositions needed to hold a lot at once: spacecraft motion, instruments, lunar terrain, water signatures, geology, data, and the relationship between the spacecraft and the surface below it.",
-        "The trick was giving the complexity a hierarchy.",
-        "A good diagram doesn’t make a complicated subject less complicated. It gives you somewhere to start.",
-        "You don’t need to understand spectroscopy before you look at a spectral graph.",
-        "You don’t need a geology degree before a crater becomes interesting.",
-        "Design can give complexity a door.",
-        "You just have to make someone want to open it.",
+        "The other half of the problem was accuracy.",
+        "Scientists don’t necessarily care if your graphic is attractive.",
+        "They care if it’s right.",
+        "Working with planetary scientists and engineers meant the feedback could get wonderfully specific. A line might imply the wrong relationship. An orbit might suggest something physically impossible. A tiny detail on an instrument could suddenly become the most important thing on the page.",
+        "The scientists forced me to defend the design. The design forced me to think harder about how someone outside the field would understand it.",
+        "Some versions looked beautiful but explained nothing.",
+        "Others explained everything, with all the charm of a terms-and-conditions page.",
+        "The goal was somewhere in between: rigorous enough for the people who actually knew what they were looking at, but inviting enough for everyone else.",
+        "It needed to work for scientists, space nerds, and people who had no idea what a spectral signature was.",
+        {
+          "h": "MAKING ROOM FOR COMPLEXITY"
+        },
+        "The final system had to hold a lot at once: spacecraft motion, lunar terrain, instruments, water signatures, geology, data, and the relationship between the spacecraft and the surface below it.",
+        "I didn’t want to make the science simpler.",
+        "I wanted to make it legible.",
+        "There’s a difference.",
+        "A spectral graph doesn’t need to become less scientific to become interesting. A contour doesn’t need to stop being geological to become graphic. And you don’t need to understand orbital mechanics before you can follow a line around the Moon.",
+        "The design became a way in.",
+        {
+          "pull": [
+            "Follow the trail. Find the footprint. Read the fingerprint. Look for water."
+          ]
+        },
         {
           "img": "/assets/images/ltb--infographic.webp"
         },
         {
           "h": "THE RESULT"
         },
-        "What Lunar Trailblazer needed was a visual language, not a collection of attractive graphics. The mission is looking for things we can’t simply see.",
-        "It ended up somewhere between a science diagram and an art project, which is where I like to work.",
+        "Lunar Trailblazer became a visual language for a mission looking for things we can’t simply see.",
         {
           "img": "/assets/images/ltb--booklet.webp"
         },
-        "Planetary science isn’t easy, and no single graphic can flatten billions of years of lunar history.",
-        "But a good one can get someone to lean in.",
-        "Sometimes that’s all it takes to keep them reading.",
+        "The Moon is still full of unanswered questions. At least now, they have a visual language.",
         {
           "img": "/assets/images/ltb--business-cards.webp"
-        }
+        },
+        "Tragically, Lunar Trailblazer set off for the Moon and then got a little lost in space.",
+        "If you want to know more about that space drama, email me."
       ],
       "meta": {
         "Client": "CalTech and NASA JPL",
