@@ -2380,7 +2380,11 @@
         "/assets/images/logos--revex.webp": "Logos: Revex",
         "/assets/images/logos--speak-up.webp": "Logos: Speak Up",
         "/assets/images/logos--teton-artesian-water.webp": "Logos: Teton Artesian Water"
-      }
+      },
+      "grid": true,
+      "light": [
+        "/assets/images/logos--dana-club-wordmark.webp"
+      ]
     }
   }
 }

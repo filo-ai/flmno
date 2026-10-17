@@ -93,6 +93,19 @@ const tagsFor = (href) => {
   return (PROJECT_TAG_LIST[slug] || []).map(t => FILTER_LABELS[t] || t).join(", ") || "Project";
 };
 
+function renderGrid(gallery) {
+  if (!gallery?.length) return "";
+  const tiles = gallery.map((src, i) =>
+    `        <li class="cs-grid__item"><figure style="background-color:${(PAGE.light || []).includes(src) ? "#f1f0ea" : ph(src)}">${media(src, imgFit(src, 600, 80), ' loading="lazy" draggable="false"', altFor(src, i), "(max-width: 680px) 50vw, 320px")}<figcaption>${esc(descFor(src, i))}</figcaption></figure></li>`
+  ).join("\n");
+  return `
+    <section class="cs-grid" aria-label="Project images">
+      <ul class="cs-grid__list">
+${tiles}
+      </ul>
+    </section>`;
+}
+
 function renderCarousel(gallery) {
   if (!gallery?.length) return "";
   const slides = gallery.slice(0, 3).map((src, i) =>
@@ -371,7 +384,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
-  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [] };
+  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [] };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {
@@ -447,13 +460,13 @@ function buildPage(slug, project) {
 ${renderStory(fillText, hasStory)}
     </section>${fillText ? `\n      <div class="cs-hero-spacer" aria-hidden="true"></div>` : ""}
     </div>
-${renderCarousel(gallery)}
+${project.grid ? renderGrid(gallery) : renderCarousel(gallery)}
 ${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}
 ${renderImpact(impact)}
 ${renderRelated(relatedByTags(slug, related))}
   </main>
-${renderGallerySheet(title, gallery)}
+${project.grid ? "" : renderGallerySheet(title, gallery)}
 ${renderStorySheet(title, story, meta)}
   <script src="../case-study.js"></script>
 </body>
