@@ -2847,3 +2847,11 @@ html:root .cs-read .cs-read__row figure.cs-read__fig img { width: 100%; height: 
 html:root .cs-read figure.cs-read__fig figcaption { text-transform: uppercase; letter-spacing: 0.08em !important; font-size: 11px !important; }
 html:root .cs-read .cs-read__row figure.cs-read__fig figcaption { padding: 40px 10px 10px !important; font-size: 10px !important; letter-spacing: 0.06em !important; }
 @media (max-width: 680px) { html:root .cs-read .cs-read__row figure.cs-read__fig figcaption { font-size: 9px !important; padding: 32px 8px 8px !important; } }
+
+/* text card: body copy a couple of points larger, pure white */
+html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links) {
+  font-size: 18px !important; line-height: 1.55 !important; color: #fff !important;
+}
+@media (max-width: 680px) {
+  html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links) { font-size: 17px !important; }
+}
