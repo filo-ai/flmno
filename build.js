@@ -249,6 +249,13 @@ function renderStorySheet(title, story, meta) {
       const i = (PAGE.gallery || []).indexOf(it.img);
       return `        <figure class="cs-read__fig" style="background-color:${ph(it.img)}">${media(it.img, imgFit(it.img, 900, 82), ' loading="lazy"', altFor(it.img, i), "(max-width: 680px) 100vw, 760px")}<figcaption>${esc(descFor(it.img, i))}</figcaption></figure>`;
     }
+    if (it.imgs) {
+      const figs = it.imgs.map((src) => {
+        const i = (PAGE.gallery || []).indexOf(src);
+        return `<figure class="cs-read__fig" style="background-color:${ph(src)}">${media(src, imgFit(src, 700, 80), ' loading="lazy"', altFor(src, i), "(max-width: 680px) 50vw, 250px")}<figcaption>${esc(descFor(src, i))}</figcaption></figure>`;
+      }).join("");
+      return `        <div class="cs-read__row cs-read__row--${it.imgs.length}">${figs}</div>`;
+    }
     return "";
   }).join("\n");
   const credits = meta

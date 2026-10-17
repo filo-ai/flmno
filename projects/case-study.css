@@ -2834,3 +2834,16 @@ html:root .cs-read figure.cs-read__fig figcaption {
   pointer-events: none;
 }
 html:root .cs-read figure.cs-read__fig img { display: block; }
+
+/* story: inspiration images in rows of two or three; all-caps captions */
+html:root .cs-read .cs-read__row {
+  display: grid; gap: 10px; width: min(760px, calc(100vw - 32px)); margin: 44px 0 52px; position: relative; left: 50%; translate: -50% 0;
+  grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr));
+}
+html:root .cs-read .cs-read__row--2 { --n: 2; }
+html:root .cs-read .cs-read__row--3 { --n: 3; }
+html:root .cs-read .cs-read__row figure.cs-read__fig { width: 100%; margin: 0; left: 0; translate: none; aspect-ratio: 4 / 5; }
+html:root .cs-read .cs-read__row figure.cs-read__fig img { width: 100%; height: 100% !important; object-fit: cover; }
+html:root .cs-read figure.cs-read__fig figcaption { text-transform: uppercase; letter-spacing: 0.08em !important; font-size: 11px !important; }
+html:root .cs-read .cs-read__row figure.cs-read__fig figcaption { padding: 40px 10px 10px !important; font-size: 10px !important; letter-spacing: 0.06em !important; }
+@media (max-width: 680px) { html:root .cs-read .cs-read__row figure.cs-read__fig figcaption { font-size: 9px !important; padding: 32px 8px 8px !important; } }
