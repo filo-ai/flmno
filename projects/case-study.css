@@ -2818,5 +2818,5 @@ html:root .cs-gallery figure img, html:root .cs-gallery figure video { height: a
     scale: calc(1 - 0.3 * var(--title-k, 0)) !important;
     transition: background .2s ease, box-shadow .2s ease !important;
   }
-  html:root.nav-compact .cs-header__back { translate: 0 6px; }
+  html:root.title-shrinking .cs-header__back, html:root.nav-away.title-shrinking .cs-header__back { translate: 0 calc(6px * var(--title-k, 0)) !important; }
 }
