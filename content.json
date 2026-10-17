@@ -2673,6 +2673,40 @@
       "light": [
         "/assets/images/logos--dana-club-wordmark.webp"
       ]
+    },
+    "bear-with-me": {
+      "title": "Bear With Me",
+      "teaser": "Season three of photographing a mountain that still has not moved. The bears, to be fair, did.",
+      "lede": "Season three of photographing a mountain that still has not moved. The bears, to be fair, did.",
+      "desc": "Season three of photographing a mountain that still has not moved. The bears, to be fair, did.",
+      "story": [],
+      "meta": {
+        "Skills & Tools": "photography"
+      },
+      "gallery": [
+        "/assets/images/bwm--bear-snack-break.webp",
+        "/assets/images/bwm--bear-on-the-move.webp",
+        "/assets/images/bwm--two-cubs.webp",
+        "/assets/images/bwm--mama-and-cubs.webp",
+        "/assets/images/bwm--hiker-tipsoo.webp",
+        "/assets/images/bwm--fall-color-study.webp",
+        "/assets/images/bwm--pastel-sky-tipsoo.webp",
+        "/assets/images/bwm--milky-way-rainier.webp",
+        "/assets/images/bwm--golden-hour-tipsoo.webp"
+      ],
+      "related": [],
+      "impact": [],
+      "alts": {
+        "/assets/images/bwm--bear-snack-break.webp": "Bear With Me: Black Bear, Snack Break",
+        "/assets/images/bwm--bear-on-the-move.webp": "Bear With Me: Black Bear, On the Move",
+        "/assets/images/bwm--two-cubs.webp": "Bear With Me: Two Cubs",
+        "/assets/images/bwm--mama-and-cubs.webp": "Bear With Me: Mama Bear and Cubs",
+        "/assets/images/bwm--hiker-tipsoo.webp": "Bear With Me: Hiker at Tipsoo Lake",
+        "/assets/images/bwm--fall-color-study.webp": "Bear With Me: Fall Color Study",
+        "/assets/images/bwm--pastel-sky-tipsoo.webp": "Bear With Me: Pastel Sky over Tipsoo Lake",
+        "/assets/images/bwm--milky-way-rainier.webp": "Bear With Me: Milky Way over Rainier",
+        "/assets/images/bwm--golden-hour-tipsoo.webp": "Bear With Me: Golden Hour over Tipsoo Lake"
+      }
     }
   }
 }
