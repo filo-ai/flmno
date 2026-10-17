@@ -1115,7 +1115,8 @@
         {
           "imgs": [
             "/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg",
-            "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg"
+            "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg",
+            "/assets/images/mr--fiat.webp"
           ]
         }
       ],
@@ -1132,7 +1133,6 @@
         "/assets/images/mr--logo.webp",
         "/assets/images/mr--logo-before-after.webp",
         "/assets/images/mr--menus-drinks-antipasti.webp",
-        "/assets/images/mr--fiat.webp",
         "/assets/images/mr--instagram.webp"
       ],
       "related": [
@@ -1188,7 +1188,7 @@
         "/assets/images/mr--logo-before-after.webp": "Maccheroni Republic: Logo, Before and After",
         "/assets/images/mr--hanging-sign.webp": "Maccheroni Republic: Hanging Sign",
         "/assets/images/mr--menus-drinks-antipasti.webp": "Maccheroni Republic: Drinks and Antipasti Menus",
-        "/assets/images/mr--fiat.webp": "Maccheroni Republic: Fiat 500",
+        "/assets/images/mr--fiat.webp": "Maccheroni Republic: Inspiration",
         "/assets/images/mr--instagram.webp": "Maccheroni Republic: Instagram"
       }
     },
