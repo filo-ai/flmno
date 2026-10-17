@@ -4331,3 +4331,10 @@ html:root #site-logo { width: auto !important; height: auto !important; display:
   }
 }
 @media (max-width: 680px) { html:root #site-logo { display: none !important; } }
+
+/* wordmark: far-left corner on desktop (phone stays centered) */
+@media (min-width: 681px) {
+  html:root .site-nav, html:root .cs-header, html:root header.site-nav {
+    padding-left: var(--gutter) !important;
+  }
+}
