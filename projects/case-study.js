@@ -137,14 +137,15 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       let run = [];
       const flush = () => { if (run.length % 2) run[run.length - 1].classList.add("full"); run = []; };
       figs.forEach((f) => {
-        const img = f.querySelector("img");
+        const img = f.querySelector("img, video");
         f.classList.remove("full");
-        const wide = img.naturalWidth && img.naturalWidth / img.naturalHeight > 1.15;
+        const iw = img.naturalWidth || img.videoWidth, ih = img.naturalHeight || img.videoHeight;
+        const wide = iw && iw / ih > 1.15;
         if (wide) { flush(); f.classList.add("full"); } else run.push(f);
       });
       flush();
     };
-    figs.forEach((f) => f.querySelector("img").addEventListener("load", layout));
+    figs.forEach((f) => { const m = f.querySelector("img, video"); m.addEventListener("load", layout); m.addEventListener("loadedmetadata", layout); });
     layout();
   }
 

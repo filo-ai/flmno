@@ -308,14 +308,6 @@
         "Skills & Tools": "merchandise design, identity, merchandise, lettering"
       },
       "gallery": [
-        "/assets/images/logos--eggslut_logo_flmno.webp",
-        "/assets/images/logos--eggslut_logo_flmno_1.webp",
-        "/assets/images/logos--glamazon_logo_flmno.webp",
-        "/assets/images/logos--glamazon_logo_flmno_1.webp",
-        "/assets/images/logos--r-co_logo_flmno.webp",
-        "/assets/images/logos--r-co_logo_flmno_1.webp",
-        "/assets/images/logos--amazon_studios_logo_flmno.webp",
-        "/assets/images/logos--amazon_studios_logo_flmno_1.webp",
         "/assets/images/eggslut--tshirt.webp"
       ],
       "related": [
@@ -1264,6 +1256,9 @@
       },
       "gallery": [
         "/media/4d1bdb_f3d3908b2bbf4ca39e78322ef0eae496~mv2.gif",
+        "/assets/images/mora--125th-anniversary-brochures.mp4",
+        "/assets/images/mora--social-media-videos.mp4",
+        "/assets/images/mora--125th-series-intro.mp4",
         "/media/4d1bdb_dd2e13c9a82144f7b4f815c501545ddff000.jpg",
         "/media/4d1bdb_92d922262abf48a0806cb1b4be3ea7e0f000.jpg",
         "/media/4d1bdb_9baa0d140e144b6ba2595fdd967c57a3f000.jpg"
@@ -1308,7 +1303,12 @@
           "title": "Emotional Connection",
           "body": "Viewer responses highlighted the film as something that genuinely moved them — an unusual response for park media."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/mora--125th-anniversary-brochures.mp4": "Mount Rainier in Motion: 125th Anniversary: Brochures for Social Media",
+        "/assets/images/mora--social-media-videos.mp4": "Mount Rainier in Motion: Social Media Videos",
+        "/assets/images/mora--125th-series-intro.mp4": "Mount Rainier in Motion: 125th Series Intro"
+      }
     },
     "mount-rainier-visitor-center-winter-and-spring-panels": {
       "title": "Mount Rainier Visitor Center Winter and Spring Panels",
@@ -1753,7 +1753,12 @@
         "/assets/images/static--woof.webp",
         "/assets/images/boom-pow-bang.webp",
         "/assets/images/illustration--the-courts-poster.webp",
-        "/assets/images/illustration--the-courts-poster_1.webp"
+        "/assets/images/illustration--the-courts-poster_1.webp",
+        "/assets/images/ill--trump-dump.webp",
+        "/assets/images/ill--evolution-of-arrowheads.webp",
+        "/assets/images/ill--nasa-destroying-asteroid.webp",
+        "/assets/images/ill--music-v-horror-movies.webp",
+        "/assets/images/ill--halloween-houses-of-fiction.webp"
       ],
       "related": [],
       "impact": [],
@@ -1763,7 +1768,36 @@
         "/assets/images/static--woof.webp": "Illustration: Woof",
         "/assets/images/boom-pow-bang.webp": "Illustration: Boom pow bang",
         "/assets/images/illustration--the-courts-poster.webp": "Illustration: The Courts",
-        "/assets/images/illustration--the-courts-poster_1.webp": "Illustration: The Courts"
+        "/assets/images/illustration--the-courts-poster_1.webp": "Illustration: The Courts",
+        "/assets/images/ill--trump-dump.webp": "Illustration: Trump dump",
+        "/assets/images/ill--evolution-of-arrowheads.webp": "Illustration: Evolution of arrowheads",
+        "/assets/images/ill--nasa-destroying-asteroid.webp": "Illustration: NASA destroying asteroid",
+        "/assets/images/ill--music-v-horror-movies.webp": "Illustration: Music v horror movies",
+        "/assets/images/ill--halloween-houses-of-fiction.webp": "Illustration: Halloween houses of fiction"
+      }
+    },
+    "gifs": {
+      "title": "GIFs",
+      "teaser": "Selected animated GIFs.",
+      "story": [],
+      "meta": {
+        "Skills & Tools": "animation, GIFs, lettering"
+      },
+      "gallery": [
+        "/assets/images/gif--heart.gif",
+        "/assets/images/gif--black-lives-matter.gif",
+        "/assets/images/gif--frown.gif",
+        "/assets/images/gif--friday-night-movie-club.gif",
+        "/assets/images/gif--thx.gif"
+      ],
+      "related": [],
+      "impact": [],
+      "alts": {
+        "/assets/images/gif--heart.gif": "GIFs: Heart",
+        "/assets/images/gif--black-lives-matter.gif": "GIFs: Black Lives Matter",
+        "/assets/images/gif--frown.gif": "GIFs: Frown",
+        "/assets/images/gif--friday-night-movie-club.gif": "GIFs: Friday Night Movie Club",
+        "/assets/images/gif--thx.gif": "GIFs: THX!"
       }
     },
     "tedx-website-and-marketing": {
