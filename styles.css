@@ -4307,3 +4307,13 @@ html:root.nav-away:not(.nav-compact) .site-nav nav, html:root.nav-away.nav-compa
 .site-banner { font-size: 9px !important; }
 html:root .site-banner .site-banner__dot { font-size: 7px !important; }
 @media (min-width: 681px) { html:root #site-logo { margin-left: -16px !important; } }
+
+/* ══ Desktop: logo lives in the left margin (never over content); bar sits higher ══ */
+@media (min-width: 681px) {
+  html:root .site-nav, html:root .cs-header, html:root header.site-nav {
+    padding-left: max(var(--gutter), calc((100vw - 960px) / 2 - 76px)) !important;
+    top: calc(var(--banner-h) + 4px) !important;
+    height: 48px !important;
+  }
+  html:root #site-logo { margin-left: 0 !important; }
+}

@@ -2749,3 +2749,19 @@ html:root .cs-read figure.cs-read__fig figcaption { font-size: 12.5px !important
 .cs-read__links{margin:1.6em 0}
 .cs-read__links a{display:inline-block;font-size:.95em;color:inherit;text-decoration:underline;text-underline-offset:3px}
 
+
+/* ══ Desktop: logo lives in the left margin (never over content); bar sits higher ══ */
+@media (min-width: 681px) {
+  html:root .site-nav, html:root .cs-header, html:root header.site-nav {
+    padding-left: max(var(--gutter), calc((100vw - 960px) / 2 - 76px)) !important;
+    top: calc(var(--banner-h) + 4px) !important;
+    height: 48px !important;
+  }
+  html:root #site-logo { margin-left: 0 !important; }
+}
+
+/* project page: breadcrumb + title scooted up; Return home shares the title's line, far right */
+@media (min-width: 681px) {
+  html:root .cs-hero__head { padding-top: 36px !important; }
+  html:root .cs-header__back { position: relative !important; top: 44px !important; }
+}
