@@ -71,7 +71,7 @@ const ph = (src) => (SIZES[src]?.c || "#141417");
 const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
 
 // ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
-let PAGE = { slug: "", title: "", alts: {}, pdfs: {} };
+let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [] };
 function altFor(src, i) {
   if (PAGE.alts[src]) return PAGE.alts[src];
   let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
@@ -232,9 +232,24 @@ ${figs}
 
 function renderStorySheet(title, story, meta) {
   if (!story?.length) return "";
-  const paras = story.map((p, i) =>
-    `        <p${i === 0 ? ' class="first"' : ""}>${esc(p)}</p>`
-  ).join("\n");
+  let firstDone = false;
+  const paras = story.map((it) => {
+    if (typeof it === "string") {
+      const cls = firstDone ? "" : ' class="first"'; firstDone = true;
+      return `        <p${cls}>${esc(it)}</p>`;
+    }
+    if (it.h) return `        <h3 class="cs-read__h">${esc(it.h)}</h3>`;
+    if (it.epigraph) return `        <p class="cs-read__epigraph">${it.epigraph.map(esc).join("<br>")}</p>`;
+    if (it.lines) return `        <p class="cs-read__lines">${it.lines.map(esc).join("<br>")}</p>`;
+    if (it.pull) return `        <p class="cs-read__pull">${it.pull.map(esc).join("<br>")}</p>`;
+    if (it.quote) return `        <blockquote class="cs-read__quote">${esc(it.quote)}</blockquote>`;
+    if (it.terms) return `        <dl class="cs-read__terms">${it.terms.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join("")}</dl>`;
+    if (it.img) {
+      const i = (PAGE.gallery || []).indexOf(it.img);
+      return `        <figure class="cs-read__fig" style="background-color:${ph(it.img)}">${media(it.img, imgFit(it.img, 900, 82), ' loading="lazy"', altFor(it.img, i), "(max-width: 680px) 100vw, 760px")}<figcaption>${esc(descFor(it.img, i))}</figcaption></figure>`;
+    }
+    return "";
+  }).join("\n");
   const credits = meta
     ? Object.entries(meta)
         .filter(([, v]) => v && v.trim())
@@ -348,7 +363,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
-  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {} };
+  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [] };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {
@@ -362,7 +377,7 @@ function buildPage(slug, project) {
     return out || text.slice(0, limit).replace(/\W+$/, "") + "…";
   }
 
-  const fillText = story.length ? excerpt(story.join(" ")) : teaser;
+  const fillText = project.lede || (story.length ? excerpt(story.filter(s => typeof s === "string").join(" ")) : teaser);
   const hasGallery = gallery.length > 0;
   const hasStory   = story.length > 0;
   const hasIG      = instagram_posts?.length > 0;
