@@ -2886,3 +2886,10 @@ html:root .cs-read hr + dl dd {
 }
 html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links),
 html:root .cs-read hr + dl dd { font-weight: 300 !important; }
+
+/* type scale: the 20px light text steps up to 22px across the board */
+html:root .cs-explore__label > span, html:root .hint span,
+html:root .img-label__eyebrow, html:root .tile-soon,
+html:root .cs-sheet__title, html:root .cs-zoom__pdf > span {
+  font-size: 22px !important;
+}
