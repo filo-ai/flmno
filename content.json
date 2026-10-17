@@ -1455,11 +1455,6 @@
         "/assets/images/illustration--protest-poster-side-a.webp",
         "/assets/images/illustration--protest-poster-side-b.webp",
         "/assets/images/illustration--protest-poster-side-b_1.webp",
-        "/assets/images/illustration--qblm.webp",
-        "/assets/images/illustration--the-courts-poster.webp",
-        "/assets/images/illustration--the-courts-poster_1.webp",
-        "/assets/images/peace-edited.webp",
-        "/assets/images/boom-pow-bang.webp",
         "/assets/images/protest--save-public-lands-poster.webp",
         "/assets/images/protest--parks-under-attack.webp"
       ],
@@ -1755,14 +1750,20 @@
       "gallery": [
         "/assets/images/static--palm-tree-drought.webp",
         "/assets/images/static--peace-edited.webp",
-        "/assets/images/static--woof.webp"
+        "/assets/images/static--woof.webp",
+        "/assets/images/boom-pow-bang.webp",
+        "/assets/images/illustration--the-courts-poster.webp",
+        "/assets/images/illustration--the-courts-poster_1.webp"
       ],
       "related": [],
       "impact": [],
       "alts": {
         "/assets/images/static--palm-tree-drought.webp": "Illustration: Palm tree drought",
         "/assets/images/static--peace-edited.webp": "Illustration: Peace",
-        "/assets/images/static--woof.webp": "Illustration: Woof"
+        "/assets/images/static--woof.webp": "Illustration: Woof",
+        "/assets/images/boom-pow-bang.webp": "Illustration: Boom pow bang",
+        "/assets/images/illustration--the-courts-poster.webp": "Illustration: The Courts",
+        "/assets/images/illustration--the-courts-poster_1.webp": "Illustration: The Courts"
       }
     },
     "tedx-website-and-marketing": {
