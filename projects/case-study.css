@@ -2886,3 +2886,13 @@ html:root .cs-read hr + dl dd {
 }
 html:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links),
 html:root .cs-read hr + dl dd { font-weight: 300 !important; }
+
+/* all-caps Apercu small text: one step up (+10%) */
+html:root .cs-read figure.cs-read__fig figcaption { font-size: 12px !important; }
+html:root .cs-read .cs-read__row figure.cs-read__fig figcaption { font-size: 11px !important; }
+@media (max-width: 680px) { html:root .cs-read .cs-read__row figure.cs-read__fig figcaption { font-size: 10px !important; } }
+html:root .cs-read hr + dl dt { font-size: 12px !important; }
+html:root .cs-read h3.cs-read__h { font-size: 13px !important; }
+.site-banner { font-size: 11px !important; }
+html:root .site-banner .site-banner__dot { font-size: 9px !important; }
+:root { --banner-h: 23px; }

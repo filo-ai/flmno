@@ -4415,3 +4415,15 @@ html:root .work-tile .frost-overlay p, html:root .logo-tile .frost-overlay p, ht
   font-size: 11px !important; line-height: 1.4 !important; letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
 }
+
+/* all-caps Apercu small text: one step up (+10%) */
+html:root .work-tile .frost-overlay p, html:root .logo-tile .frost-overlay p, html:root .frost-overlay p,
+html:root .contact-field .contact-privacy, html:root .contact-field .contact-privacy a,
+html:root .contact-field .field-error, html:root .contact-status, html:root .contact-status a,
+html:root .site-footer p, html:root .site-footer p a, html:root footer p, html:root footer p a {
+  font-size: 12px !important;
+}
+@media (max-width: 680px) { html:root .contact-field .field-error { font-size: 11px !important; } }
+.site-banner { font-size: 11px !important; }
+html:root .site-banner .site-banner__dot { font-size: 9px !important; }
+:root { --banner-h: 23px; }

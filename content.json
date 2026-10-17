@@ -800,15 +800,23 @@
       ]
     },
     "jackraisanen-com": {
-      "title": "JackRaisanen.com",
+      "title": "JR.com",
       "teaser": "A fresh website for an emerging professional",
       "story": [
-        "A fresh website for an emerging professional"
+        "A fresh website for an emerging professional",
+        {
+          "links": [
+            [
+              "Visit jackraisanen.org",
+              "https://www.jackraisanen.org/"
+            ]
+          ]
+        }
       ],
       "meta": {
         "Client": "Jack Raisanen",
         "Year": "2022",
-        "Skills & Tools": "—"
+        "Skills & Tools": "web design, branding"
       },
       "gallery": [
         "/assets/images/jr-com--jr-com-main.webp",
@@ -818,18 +826,7 @@
         "/assets/images/jr-com--jr-com-mobile.gif",
         "/assets/images/jr-com--atlas_logo__flmno.webp",
         "/assets/images/jr-com--blm_logo__flmno.webp",
-        "/assets/images/jr-com--btu_logo__flmno.webp",
-        "/assets/images/jr-com--cso_logo__flmno.webp",
-        "/assets/images/jr-com--dana_club_white_logo_flmno.webp",
-        "/assets/images/jr-com--jaxs_logo__flmno.webp",
         "/assets/images/jr-com--jr-com_logo__flmno.webp",
-        "/assets/images/jr-com--lacroix_logo__flmno.webp",
-        "/assets/images/jr-com--mr_logo__flmno.webp",
-        "/assets/images/jr-com--danaclublogo_flmno_1.webp",
-        "/assets/images/jr-com--lac_logo__flmno.webp",
-        "/assets/images/jr-com--revex_logo__flmno.webp",
-        "/assets/images/jr-com--speakup_logo__flmno.webp",
-        "/assets/images/jr-com--teton_logo__flmno.webp",
         "/assets/images/jr-com--site-video.mp4"
       ],
       "related": [
@@ -2333,6 +2330,43 @@
           "body": "Several images were selected for use in park print and digital communications beyond the original social context."
         }
       ]
+    },
+    "logos": {
+      "title": "Logos",
+      "teaser": "",
+      "story": [],
+      "meta": {
+        "Skills & Tools": "logo design, branding"
+      },
+      "related": [],
+      "impact": [],
+      "desc": "Selected logos by Filo Merid.",
+      "gallery": [
+        "/assets/images/logos--btu-lab.webp",
+        "/assets/images/logos--cso.webp",
+        "/assets/images/logos--dana-club-pcc-geosciences.webp",
+        "/assets/images/logos--dana-club-wordmark.webp",
+        "/assets/images/logos--jaxs-nut-butters.webp",
+        "/assets/images/logos--la-croix.webp",
+        "/assets/images/logos--maccheroni-republic.webp",
+        "/assets/images/logos--la-county.webp",
+        "/assets/images/logos--revex.webp",
+        "/assets/images/logos--speak-up.webp",
+        "/assets/images/logos--teton-artesian-water.webp"
+      ],
+      "alts": {
+        "/assets/images/logos--btu-lab.webp": "Logos: BTU Lab",
+        "/assets/images/logos--cso.webp": "Logos: CSO",
+        "/assets/images/logos--dana-club-pcc-geosciences.webp": "Logos: Dana Club, PCC Geosciences",
+        "/assets/images/logos--dana-club-wordmark.webp": "Logos: Dana Club wordmark",
+        "/assets/images/logos--jaxs-nut-butters.webp": "Logos: Jax's Nut Butters",
+        "/assets/images/logos--la-croix.webp": "Logos: La Croix",
+        "/assets/images/logos--maccheroni-republic.webp": "Logos: Maccheroni Republic",
+        "/assets/images/logos--la-county.webp": "Logos: LA County",
+        "/assets/images/logos--revex.webp": "Logos: Revex",
+        "/assets/images/logos--speak-up.webp": "Logos: Speak Up",
+        "/assets/images/logos--teton-artesian-water.webp": "Logos: Teton Artesian Water"
+      }
     }
   }
 }
