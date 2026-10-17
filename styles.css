@@ -4351,3 +4351,6 @@ html:root .site-banner .site-banner__dot { font-size: 8px !important; }
 ::view-transition-group(*) { animation-duration: 0.7s !important; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important; }
 /* coming back home: no tile morph (the tile may be off-screen), just the soft fade */
 html.is-returning .tile-image img { view-transition-name: none !important; }
+
+/* banner: a bit more breathing room */
+:root { --banner-h: 21px; }
