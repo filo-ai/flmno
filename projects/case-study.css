@@ -2820,3 +2820,7 @@ html:root .cs-gallery figure img, html:root .cs-gallery figure video { height: a
   }
   html:root.title-shrinking .cs-header__back, html:root.nav-away.title-shrinking .cs-header__back { translate: 0 calc(6px * var(--title-k, 0)) !important; }
 }
+
+/* gallery counter: the current-number span matches the rest of the counter (it was 20px next to 16px text) */
+html:root .cs-zoom .cs-zoom__count .cs-zoom__count-n,
+html:root p.cs-sheet__count .cs-sheet__count-n { font: inherit !important; letter-spacing: inherit !important; }
