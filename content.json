@@ -639,7 +639,13 @@
         },
         "What would metal look like as a ribbon?",
         "The letters became things to fabricate rather than things to draw. I stretched them, folded them, bent them, layered them, and let them get a little unruly. Some became heavy and mechanical; others revealed their internal structure.",
+        {
+          "img": "/assets/images/hma--inspiration-mirrored-horse.webp"
+        },
         "The result: something solidly metal, machinery, and myth.",
+        {
+          "img": "/assets/images/hma--inspiration-silver-hat.webp"
+        },
         "An alphabet somewhere between rodeo hardware, industrial machinery, and something that fell out of a spaceship (Beyoncé’s “Alien Superstar,” anyone?)",
         {
           "img": "/assets/images/hma--inspiration-silver-armor.webp"
@@ -713,7 +719,9 @@
         "/assets/images/hma--y.webp": "Heavy Met-alphabet: Y",
         "/assets/images/hma--inspiration-horseshoe-stage.webp": "Heavy Met-alphabet: Inspiration: horseshoe stage",
         "/assets/images/hma--inspiration-silver-western.webp": "Heavy Met-alphabet: Inspiration: silver Western",
-        "/assets/images/hma--inspiration-silver-armor.webp": "Heavy Met-alphabet: Inspiration: silver armor"
+        "/assets/images/hma--inspiration-silver-armor.webp": "Heavy Met-alphabet: Inspiration: silver armor",
+        "/assets/images/hma--inspiration-mirrored-horse.webp": "Heavy Met-alphabet: Inspiration: mirrored horse",
+        "/assets/images/hma--inspiration-silver-hat.webp": "Heavy Met-alphabet: Inspiration: silver hat and boots"
       }
     },
     "jackraisanen": {
