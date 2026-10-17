@@ -329,9 +329,9 @@
       ],
       "related": [
         {
-          "title": "Industri-alphabet",
+          "title": "Heavy Met-alphabet",
           "href": "../industri-alphabet/index.html",
-          "image": "/assets/images/36-days-of-type--36-days-of-type.webp"
+          "image": "/assets/images/hma--f-800.webp"
         },
         {
           "title": "Reproduction v Extinction",
@@ -639,10 +639,16 @@
       ]
     },
     "industri-alphabet": {
-      "title": "Industri-alphabet",
-      "teaser": "A study on metallic lettering",
+      "title": "Heavy Met-alphabet",
+      "teaser": "What if language were manufactured?",
       "story": [
-        "That's it. That's the tweet."
+        "What if language were manufactured?",
+        "I started wondering what an alphabet would look like if it had been designed by an engineer rather than a typographer.",
+        "Instead of thinking about letters as flat marks, I treated each character as something manufactured: extruded, bent, welded, folded, stretched, and occasionally pushed past the point of usefulness.",
+        "I began with the basic construction of familiar letterforms, then started breaking them apart and rebuilding them as physical structures. A stroke became a tube. A counter became an opening. A curve became a continuous strip of material.",
+        "The process was deliberately exploratory. Some forms became more recognizable as they evolved; others became increasingly abstract. I kept the ones that felt as though they had a function that I couldn't quite identify.",
+        "Eventually, the alphabet stopped feeling like a collection of letters and started feeling like a collection of industrial artifacts—objects from a visual language that doesn't quite exist yet.",
+        "Heavy Met-alphabet is the result: an experimental alphabet somewhere between typography, fabrication, and sculpture."
       ],
       "meta": {
         "Client": "Self-intiated Personal Project",
@@ -650,30 +656,20 @@
         "Skills & Tools": "typography, lettering"
       },
       "gallery": [
-        "/assets/images/36-days-of-type--36-days-of-type.webp",
-        "/assets/images/36-days-of-type--the-first-9_36-days-of-type.webp",
-        "/assets/images/36-days-of-type--a.webp",
-        "/assets/images/36-days-of-type--b.webp",
-        "/assets/images/36-days-of-type--c.webp",
-        "/assets/images/36-days-of-type--e.webp",
-        "/assets/images/36-days-of-type--f.webp",
-        "/assets/images/36-days-of-type--g2.webp",
-        "/assets/images/36-days-of-type--h.webp",
-        "/assets/images/36-days-of-type--i.webp",
-        "/assets/images/36-days-of-type--j.webp",
-        "/assets/images/36-days-of-type--k.webp",
-        "/assets/images/36-days-of-type--m.webp",
-        "/assets/images/36-days-of-type--n.webp",
-        "/assets/images/36-days-of-type--o.webp",
-        "/assets/images/36-days-of-type--p.webp",
-        "/assets/images/36-days-of-type--q.webp",
-        "/assets/images/36-days-of-type--r.webp",
-        "/assets/images/36-days-of-type--s.webp",
-        "/assets/images/36-days-of-type--t.webp",
-        "/assets/images/36-days-of-type--v.webp",
-        "/assets/images/36-days-of-type--w.webp",
-        "/assets/images/36-days-of-type--y.webp",
-        "/assets/images/36-days-of-type--z.webp"
+        "/assets/images/hma--a.webp",
+        "/assets/images/hma--b.webp",
+        "/assets/images/hma--d.webp",
+        "/assets/images/hma--f.webp",
+        "/assets/images/hma--h.webp",
+        "/assets/images/hma--m.webp",
+        "/assets/images/hma--n.webp",
+        "/assets/images/hma--o.webp",
+        "/assets/images/hma--r.webp",
+        "/assets/images/hma--s.webp",
+        "/assets/images/hma--t.webp",
+        "/assets/images/hma--x.webp",
+        "/assets/images/hma--y.webp",
+        "/assets/images/hma--0.webp"
       ],
       "related": [
         {
@@ -715,7 +711,23 @@
           "title": "Type as Identity",
           "body": "The letterforms became a core part of the visual identity, functioning as both a logo and a communication tool."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/hma--a.webp": "Heavy Met-alphabet: A",
+        "/assets/images/hma--b.webp": "Heavy Met-alphabet: B",
+        "/assets/images/hma--d.webp": "Heavy Met-alphabet: D",
+        "/assets/images/hma--f.webp": "Heavy Met-alphabet: F",
+        "/assets/images/hma--h.webp": "Heavy Met-alphabet: H",
+        "/assets/images/hma--m.webp": "Heavy Met-alphabet: M",
+        "/assets/images/hma--n.webp": "Heavy Met-alphabet: N",
+        "/assets/images/hma--o.webp": "Heavy Met-alphabet: O",
+        "/assets/images/hma--r.webp": "Heavy Met-alphabet: R",
+        "/assets/images/hma--s.webp": "Heavy Met-alphabet: S",
+        "/assets/images/hma--t.webp": "Heavy Met-alphabet: T",
+        "/assets/images/hma--x.webp": "Heavy Met-alphabet: X",
+        "/assets/images/hma--y.webp": "Heavy Met-alphabet: Y",
+        "/assets/images/hma--0.webp": "Heavy Met-alphabet: 0"
+      }
     },
     "jackraisanen": {
       "title": "JackRaisanen.com",
