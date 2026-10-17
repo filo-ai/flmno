@@ -93,6 +93,18 @@ const tagsFor = (href) => {
   return (PROJECT_TAG_LIST[slug] || []).map(t => FILTER_LABELS[t] || t).join(", ") || "Project";
 };
 
+function renderEmbed(e) {
+  if (!e?.url) return "";
+  const host = e.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  return `
+    <section class="cs-embed" aria-label="Live website">
+      <div class="cs-embed__window">
+        <div class="cs-embed__bar"><span class="cs-embed__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="cs-embed__url">${esc(host)}</span><a class="cs-embed__open" href="${esc(e.url)}" target="_blank" rel="noopener">Open site &#8599;</a></div>
+        <iframe class="cs-embed__frame" src="${esc(e.url)}" title="${esc(e.title || "Live website")}" loading="lazy" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </section>`;
+}
+
 function renderGrid(gallery) {
   if (!gallery?.length) return "";
   const tiles = gallery.map((src, i) =>
@@ -174,7 +186,7 @@ function renderImpact(cards) {
         </div>`).join("\n");
   return `
     <section class="cs-impact">
-      <div class="cs-impact__head"><h2>Impact</h2></div>
+      <div class="cs-impact__head"><h2>Highlights</h2></div>
       <div class="cs-impact__track">
 ${items}
       </div>
@@ -461,6 +473,7 @@ ${renderStory(fillText, hasStory)}
     </section>${fillText ? `\n      <div class="cs-hero-spacer" aria-hidden="true"></div>` : ""}
     </div>
 ${project.grid ? renderGrid(gallery) : renderCarousel(gallery)}
+${renderEmbed(project.embed)}
 ${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}
 ${renderImpact(impact)}

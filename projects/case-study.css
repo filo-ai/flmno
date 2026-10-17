@@ -2924,3 +2924,14 @@ html:root .cs-grid .cs-grid__item figure:hover figcaption, html:root .cs-grid .c
 html:root .cs-crumbs li, html:root .cs-crumbs a {
   font-size: 12px !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; line-height: 1.4 !important;
 }
+
+/* live site embed */
+html:root .cs-embed { width: var(--content); margin: 0 auto; padding: 0 0 64px; }
+html:root .cs-embed__window { border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px rgba(255,255,255,.14); }
+html:root .cs-embed__bar { display: flex; align-items: center; gap: 14px; height: 40px; padding: 0 14px; background: #1c1c1c; color: #fff; font-family: "Apercu Light", "Apercu", sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+html:root .cs-embed__dots { display: flex; gap: 6px; }
+html:root .cs-embed__dots i { width: 10px; height: 10px; border-radius: 50%; background: #444; display: block; }
+html:root .cs-embed__url { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; opacity: .7; }
+html:root .cs-embed__open { color: #fff; text-decoration: none; white-space: nowrap; }
+html:root .cs-embed__frame { display: block; width: 100%; height: min(78vh, 760px); border: 0; background: #fff; }
+@media (max-width: 680px) { html:root .cs-embed__dots { display: none; } html:root .cs-embed__frame { height: 70vh; } }

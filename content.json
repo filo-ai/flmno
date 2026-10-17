@@ -896,7 +896,11 @@
           "title": "Ongoing Platform",
           "body": "The site has been updated repeatedly since launch with new projects — a sign the system was built to grow."
         }
-      ]
+      ],
+      "embed": {
+        "url": "https://www.jackraisanen.org/",
+        "title": "jackraisanen.org, live"
+      }
     },
     "lunar-trailblazer-science": {
       "title": "Lunar Trailblazer Science",
@@ -1124,14 +1128,15 @@
         "Skills & Tools": "branding, identity, menu design, Illustration"
       },
       "gallery": [
-        "/media/4d1bdb_299609df50204297bd0debdeb38765e2~mv2.png",
-        "/media/4d1bdb_715b29fdbcc746fd997a18d48d61cef1~mv2.png",
-        "/media/4d1bdb_d62926dab0b647788f97954e4ed7768d~mv2.png",
-        "/media/4d1bdb_8dfe181491df42bc85f460ef9d2c3436~mv2.png",
-        "/media/4d1bdb_32368e4d01234986848c9acdb4cc4a5b~mv2.png",
-        "/media/4d1bdb_c9c225be75f2416bb00a76c47f1d4bb6~mv2.png",
-        "/media/4d1bdb_5808703f2cd54d52bae63984ea0907da~mv2.png",
-        "/media/4d1bdb_f650d21cb547449084779def190719bf~mv2.jpg"
+        "/assets/images/mr--menu-cover-dolce.webp",
+        "/assets/images/mr--menus-pasta-bottega.webp",
+        "/assets/images/mr--coasters.webp",
+        "/assets/images/mr--logo.webp",
+        "/assets/images/mr--logo-before-after.webp",
+        "/assets/images/mr--hanging-sign.webp",
+        "/assets/images/mr--menus-drinks-antipasti.webp",
+        "/assets/images/mr--fiat.webp",
+        "/assets/images/mr--instagram.webp"
       ],
       "related": [
         {
@@ -1178,7 +1183,16 @@
         "/media/4d1bdb_6a3bb0753c674ee9bddbb57d0239e874~mv2.jpg": "Maccheroni Republic: Inspiration",
         "/media/4d1bdb_ee8ab6a3f3da46f783931b22b567c8bc~mv2.jpeg": "Maccheroni Republic: Inspiration",
         "/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg": "Maccheroni Republic: Inspiration",
-        "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg": "Maccheroni Republic: Inspiration"
+        "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg": "Maccheroni Republic: Inspiration",
+        "/assets/images/mr--menu-cover-dolce.webp": "Maccheroni Republic: Menu Cover and Dolce",
+        "/assets/images/mr--menus-pasta-bottega.webp": "Maccheroni Republic: Pasta and Bottega Menus",
+        "/assets/images/mr--coasters.webp": "Maccheroni Republic: Pasta of the Month Coasters",
+        "/assets/images/mr--logo.webp": "Maccheroni Republic: Logo",
+        "/assets/images/mr--logo-before-after.webp": "Maccheroni Republic: Logo, Before and After",
+        "/assets/images/mr--hanging-sign.webp": "Maccheroni Republic: Hanging Sign",
+        "/assets/images/mr--menus-drinks-antipasti.webp": "Maccheroni Republic: Drinks and Antipasti Menus",
+        "/assets/images/mr--fiat.webp": "Maccheroni Republic: Fiat 500",
+        "/assets/images/mr--instagram.webp": "Maccheroni Republic: Instagram"
       }
     },
     "motion-pulse": {
