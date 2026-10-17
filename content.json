@@ -875,7 +875,7 @@
           "h": "THE RESEARCH HAD ITS OWN GRAVITY"
         },
         "Before I could figure out what the graphic should look like, I had to figure out what the hell I was looking at.",
-        "I embarked on a mission of my own, consuming a glut of research papers, technical documents, mission resources, imagery, and scientific literature—both internally with the Trailblazer team and externally.",
+        "So I read everything: research papers, technical documents, mission resources, imagery and scientific literature, from inside the Trailblazer team and out.",
         "I dug through The New York Times science section. National Geographic infographics. Physical books detailing lunar water discoveries dating back to the 1960s. Galileo Galilei’s drawings of the Moon.",
         "I looked at other lunar missions. Studied spacecraft representation, scientific data visualization, geology diagrams, decades of space exploration.",
         {
@@ -888,7 +888,7 @@
           ]
         },
         "One question pulled me toward another. Water led to spectroscopy. Spectroscopy led to mineralogy. Mineralogy led to geology. Geology led to craters, craters led to the lunar poles, and the lunar poles led me to some of the coolest photographs of the Moon I’d ever seen.",
-        "Eventually I found myself deep in high-resolution lunar imagery, following one crater into another and falling down a very specific lunar rabbit hole.",
+        "Eventually I was deep in high-resolution lunar imagery, following one crater into another.",
         "Things started to accumulate mass.",
         "At some point, I wasn't just researching the mission anymore.",
         "I was orbiting it.",
@@ -916,7 +916,7 @@
         "They care if it’s right.",
         "My job was to care about both.",
         "There’s a famous Neil deGrasse Tyson story about Titanic: he noticed that the night sky shown in the film wasn’t actually the sky passengers would have seen that night. A tiny detail, but the kind of thing an expert notices immediately.",
-        "That became a useful reminder for this project.",
+        "Somebody, somewhere, is going to notice the sky. I tried to keep that in mind.",
         "When you’re working with people who know planetary science for a living, the feedback can get wonderfully specific.",
         {
           "quote": "“The radiator on the HVM3 instrument would malfunction if it were facing the Sun.”"
@@ -934,19 +934,16 @@
         },
         "A line might imply the wrong relationship. An orbit might suggest something that isn’t physically possible. A diagram might technically contain all the right information while still communicating the wrong idea.",
         "That tension was useful.",
-        "I was trying to push the visual language toward something more scientific and rigorous without sacrificing accessibility—or making something that only another planetary scientist could understand.",
-        "The scientists forced me to defend the design. The design forced me to think harder about how someone outside the field would understand it.",
-        "That back-and-forth made the work better.",
+        "I was pushing the visual language toward something more scientific and rigorous without losing accessibility, or making something only another planetary scientist could understand.",
+        "The scientists made me defend the design, and defending it made me think harder about how someone outside the field would read it.",
         {
           "h": "PER ASPERA AD LUNA"
         },
         "Through challenges, to the Moon.",
-        "The further I got into the project, the more the phrase started to feel less like a motto and more like a working condition.",
-        "Water wasn’t simply water.",
-        "It could mean ice, a spectral absorption feature, or a mineral interaction—depending on who was asking and which instrument was looking.",
-        "The Moon itself wasn’t simply a landscape.",
-        "It was geology, temperature, light, shadow, mineral composition, orbital geometry, and billions of years of history compressed into something we were trying to read from hundreds of miles above it.",
-        "At a certain point, the Moon stopped feeling like a place and started feeling a little more like a very complicated argument.",
+        "The further I got, the more the phrase read like a working condition than a motto.",
+        "Water turned out to be several things at once: ice, a spectral absorption feature, a mineral interaction—depending on who was asking and which instrument was looking.",
+        "The Moon turned out to be geology, temperature, light, shadow, mineral composition, orbital geometry, and billions of years of history, all of it something we were trying to read from hundreds of miles up.",
+        "At some point, the Moon stopped feeling like a place and started feeling like a very complicated argument.",
         "So the design question became:",
         "How do I give someone a foothold in an argument that is already several billion years old?",
         {
@@ -975,7 +972,7 @@
             ]
           ]
         },
-        "The system became less about illustrating individual scientific concepts and more about finding the relationships between them.",
+        "The system stopped illustrating individual scientific concepts and started showing how they relate.",
         {
           "pull": [
             "Treat the Moon like a crime scene: a trail, a footprint, a fingerprint, and water as the prime suspect."
@@ -987,8 +984,7 @@
         {
           "h": "TURNING SCIENCE INTO A VISUAL SYSTEM"
         },
-        "So what does invisible information look like?",
-        "The logo became a place to start.",
+        "The logo was the place to start.",
         "The central water droplet represents the mission’s central quarry: lunar water.",
         "The hexagonal geometry references crystalline structures, ice, minerals, and the geological language of the Moon.",
         "The expanding contour lines suggest both lunar topography and spectral fingerprints—information radiating outward from something you can’t necessarily see with your own eyes.",
@@ -1023,9 +1019,7 @@
         "There were thumbnail sketches. Rough diagrams. Bad ideas. Better ideas. Versions that looked promising until you actually tried to explain them.",
         "Some looked beautiful but explained nothing.",
         "Others explained everything, with all the charm of a terms-and-conditions page.",
-        "Sometimes I got there.",
-        "Sometimes I didn’t.",
-        "But every round of feedback made the system sharper.",
+        "Sometimes I got there, sometimes I didn’t, and every round of feedback made the system sharper.",
         "The questions became:",
         {
           "lines": [
@@ -1041,11 +1035,9 @@
           "h": "MAKING COMPLEXITY FEEL SIMPLE"
         },
         "The final compositions needed to hold a lot at once: spacecraft motion, instruments, lunar terrain, water signatures, geology, data, and the relationship between the spacecraft and the surface below it.",
-        "The trick wasn’t to remove the complexity.",
-        "It was to give the complexity a hierarchy.",
+        "The trick was giving the complexity a hierarchy.",
         "A good diagram doesn’t make a complicated subject less complicated. It gives you somewhere to start.",
         "You don’t need to understand spectroscopy before you look at a spectral graph.",
-        "You don’t need to understand orbital mechanics before you follow a trajectory.",
         "You don’t need a geology degree before a crater becomes interesting.",
         "Design can give complexity a door.",
         "You just have to make someone want to open it.",
@@ -1055,15 +1047,14 @@
         {
           "h": "THE RESULT"
         },
-        "Lunar Trailblazer became less about making a collection of attractive graphics and more about building a visual language for a mission that is, at its core, looking for things we can’t simply see.",
-        "The project sits somewhere between art and science, information and emotion, precision and play.",
+        "What Lunar Trailblazer needed was a visual language, not a collection of attractive graphics. The mission is looking for things we can’t simply see.",
+        "It ended up somewhere between a science diagram and an art project, which is where I like to work.",
         {
           "img": "/assets/images/ltb--booklet.webp"
         },
-        "Not the idea that planetary science is easy. It isn’t.",
-        "Not the idea that design can flatten billions of years of lunar history into one clever graphic. It can’t.",
-        "But it can give people a way in.",
-        "And sometimes that’s enough to start pulling them in.",
+        "Planetary science isn’t easy, and no single graphic can flatten billions of years of lunar history.",
+        "But a good one can get someone to lean in.",
+        "Sometimes that’s all it takes to keep them reading.",
         {
           "img": "/assets/images/ltb--business-cards.webp"
         }
