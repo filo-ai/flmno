@@ -1612,8 +1612,8 @@
       },
       "gallery": [
         "/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png",
-        "/media/4d1bdb_aad29aaf2a4848db837573386efd699b~mv2.jpg",
-        "/media/4d1bdb_bd0cb058ee514940852ad094e54ba229~mv2.jpg",
+        "/assets/images/poetry--ada-limon-paradise.webp",
+        "/assets/images/poetry--ada-limon-conversation.webp",
         "/media/4d1bdb_aa0a991106fb4bd9861203ef05acbf4f~mv2.jpg"
       ],
       "related": [
@@ -1659,8 +1659,8 @@
       ],
       "alts": {
         "/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png": "Poetry in Parks: Poetry in Parks Postcard",
-        "/media/4d1bdb_aad29aaf2a4848db837573386efd699b~mv2.jpg": "Poetry in Parks: Ada Limón, U.S. Poet Laureate, Set Against the Mountains That Inspired Her",
-        "/media/4d1bdb_bd0cb058ee514940852ad094e54ba229~mv2.jpg": "Poetry in Parks: Ada Limón Addressing the Crowd and My Questions",
+        "/assets/images/poetry--ada-limon-paradise.webp": "Poetry in Parks: Ada Limón, U.S. Poet Laureate, Set Against the Mountains That Inspired Her",
+        "/assets/images/poetry--ada-limon-conversation.webp": "Poetry in Parks: Ada Limón Addressing the Crowd and My Questions",
         "/media/4d1bdb_aa0a991106fb4bd9861203ef05acbf4f~mv2.jpg": "Poetry in Parks: Her Autograph for Me"
       }
     },
