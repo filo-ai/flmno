@@ -795,3 +795,17 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
     window.scrollBy({ top: Math.round(window.innerHeight * 0.85), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
 })();
+
+/* ══ Return home appears only once you've scrolled past the intro (so the scroll arrow never points at it) ══ */
+(() => {
+  const root = document.documentElement;
+  const target = document.querySelector('.cs-hero-stage') || document.querySelector('.cs-carousel');
+  if (!target) { root.classList.add('back-ready'); return; }
+  const sync = () => {
+    const r = target.getBoundingClientRect();
+    root.classList.toggle('back-ready', r.bottom < window.innerHeight * 0.55);
+  };
+  sync();
+  addEventListener('scroll', sync, { passive: true });
+  addEventListener('resize', sync);
+})();

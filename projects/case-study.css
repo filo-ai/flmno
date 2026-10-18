@@ -2962,3 +2962,6 @@ html:root .cs-gallery--six figure.full { grid-column: 1 / -1; }
   }
 }
 @media (min-width: 681px) { html:root .cs-scroll-cue { bottom: 68px !important; } }
+
+/* Return home stays hidden until the intro has been scrolled past */
+html:root:not(.back-ready) .cs-header__back { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
