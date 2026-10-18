@@ -11,8 +11,13 @@
   ],
   "redirects": [
     {
+      "source": "/projects/yosemite-national-park-after-dark/:path*",
+      "destination": "/projects/yosemite-national-park/",
+      "permanent": true
+    },
+    {
       "source": "/projects/parks-after-dark/:path*",
-      "destination": "/projects/yosemite-national-park-after-dark/",
+      "destination": "/projects/yosemite-national-park/",
       "permanent": true
     },
     {

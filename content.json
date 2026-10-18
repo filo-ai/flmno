@@ -1471,7 +1471,7 @@
         },
         {
           "title": "Yosemite National Park",
-          "href": "../yosemite-national-park-after-dark/index.html",
+          "href": "../yosemite-national-park/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
         {
@@ -1528,7 +1528,7 @@
       "related": [
         {
           "title": "Yosemite National Park",
-          "href": "../yosemite-national-park-after-dark/index.html",
+          "href": "../yosemite-national-park/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
         {
@@ -1674,7 +1674,7 @@
         },
         {
           "title": "Yosemite National Park",
-          "href": "../yosemite-national-park-after-dark/index.html",
+          "href": "../yosemite-national-park/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
         {
@@ -2356,7 +2356,7 @@
         "/assets/images/wbg--oregon-grape.webp": "Wild Berry Guide: Tall Oregon-Grape, Berberis aquifolium"
       }
     },
-    "yosemite-national-park-after-dark": {
+    "yosemite-national-park": {
       "title": "Yosemite National Park",
       "teaser": "A modest mélange of my photos from Yosemite National Park",
       "story": [
@@ -2626,7 +2626,7 @@
         },
         {
           "title": "Yosemite National Park",
-          "href": "../yosemite-national-park-after-dark/index.html",
+          "href": "../yosemite-national-park/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         }
       ],
