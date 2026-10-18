@@ -205,7 +205,8 @@ ${items}
     </section>`;
 }
 
-function renderRelated(related) {
+function renderRelated(related, opts = {}) {
+  const linked = opts.linked !== false;
   related = (related || []).filter(n => n.image);
   if (!related.length) return "";
     const cards = related.map((n, i) => {
@@ -217,16 +218,18 @@ function renderRelated(related) {
     const op = i <= 1 ? "1" : "0";
     return `          <div class="cs-flipbook-card${i === 0 ? " is-active" : ""}" aria-hidden="true" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${100 - i * 10};background-color:${ph(n.image)}">
             ${imgTag}
-            ${imgLabel(tagsFor(n.href), n.title)}${soonPill(n.href)}
+            ${imgLabel(linked ? tagsFor(n.href) : (n.eyebrow || ""), n.title)}${linked ? soonPill(n.href) : ""}
           </div>`;
   }).join("\n");
   const slides = related.map((n) =>
-    `          <a class="cs-flipbook-slide" href="${esc(n.href)}" draggable="false" aria-label="${esc(n.title)}"></a>`
+    linked
+      ? `          <a class="cs-flipbook-slide" href="${esc(n.href)}" draggable="false" aria-label="${esc(n.title)}"></a>`
+      : `          <span class="cs-flipbook-slide" role="img" aria-label="${esc(n.title)}"></span>`
   ).join("\n");
   return `
-    <section class="cs-more">
+    <section class="cs-more${opts.cls ? " " + opts.cls : ""}">
       <div class="cs-more__head">
-        <h1 class="cs-more__title">Related Work</h1>
+        <h1 class="cs-more__title">${esc(opts.title || "Related Work")}</h1>
       </div>
       <div class="cs-flipbook-wrap">
         <div class="cs-flipbook-stage">
@@ -500,6 +503,7 @@ ${renderEmbed(project.embed)}
 ${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}
 ${renderImpact(impact)}
+${renderRelated((project.inspiration || []).map(n => ({ title: n.title, eyebrow: n.source, image: n.image })), { linked: false, title: "Inspiration", cls: "cs-more--inspo" })}
 ${renderRelated(relatedByTags(slug, related))}
   </main>
 ${project.grid ? "" : renderGallerySheet(title, gallery)}

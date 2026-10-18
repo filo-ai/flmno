@@ -1185,7 +1185,59 @@
         "/assets/images/ltb--business-cards.webp": "Lunar Trailblazer Science: Business cards",
         "/assets/images/ltb--science-communication.webp": "Lunar Trailblazer Science: Science Communication Poster",
         "/assets/images/ltb--moodboard.webp": "Lunar Trailblazer Science: Moodboard"
-      }
+      },
+      "inspiration": [
+        {
+          "title": "A Year After Pluto",
+          "source": "The New York Times",
+          "image": "/assets/images/ltb-inspo--nyt-a-year-after-pluto.webp"
+        },
+        {
+          "title": "Approaching Jupiter",
+          "source": "The New York Times",
+          "image": "/assets/images/ltb-inspo--nyt-approaching-jupiter.webp"
+        },
+        {
+          "title": "Antarctic Peninsula",
+          "source": "",
+          "image": "/assets/images/ltb-inspo--antarctic-peninsula-map.webp"
+        },
+        {
+          "title": "Permanently Shadowed Crater",
+          "source": "",
+          "image": "/assets/images/ltb-inspo--shadowed-lunar-crater.webp"
+        },
+        {
+          "title": "Historical Lunar Map",
+          "source": "",
+          "image": "/assets/images/ltb-inspo--historical-lunar-map.webp"
+        },
+        {
+          "title": "Trail Blazers Logo",
+          "source": "Portland Trail Blazers",
+          "image": "/assets/images/ltb-inspo--portland-trail-blazers-logo.webp"
+        },
+        {
+          "title": "Feltron Dot Field",
+          "source": "Nicholas Felton",
+          "image": "/assets/images/ltb-inspo--feltron-dot-field.webp"
+        },
+        {
+          "title": "Feltron 2012 Annual Report",
+          "source": "Nicholas Felton",
+          "image": "/assets/images/ltb-inspo--feltron-2012-annual-report.webp"
+        },
+        {
+          "title": "Diviner Daytime Temperature",
+          "source": "NASA",
+          "image": "/assets/images/ltb-inspo--diviner-daytime-temperature.webp"
+        },
+        {
+          "title": "Deep Impact Water Signature",
+          "source": "NASA",
+          "image": "/assets/images/ltb-inspo--deep-impact-water-signature.webp"
+        }
+      ]
     },
     "maccheroni-republic": {
       "title": "Maccheroni Republic",
