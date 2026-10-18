@@ -2704,6 +2704,7 @@
         "Skills & Tools": "photography"
       },
       "gallery": [
+        "/assets/images/bwm--myrtle-falls.webp",
         "/assets/images/bwm--fall-color-study.webp",
         "/assets/images/bwm--bear-on-the-move.webp",
         "/assets/images/bwm--two-cubs.webp",
@@ -2714,8 +2715,7 @@
         "/assets/images/bwm--golden-hour-tipsoo.webp",
         "/assets/images/bwm--garter-snake.webp",
         "/assets/images/bwm--crystal-lake-rainier.webp",
-        "/assets/images/bwm--lupine-meadow.webp",
-        "/assets/images/bwm--myrtle-falls.webp"
+        "/assets/images/bwm--lupine-meadow.webp"
       ],
       "related": [],
       "impact": [],
