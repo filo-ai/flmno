@@ -3112,3 +3112,13 @@ html:root:root .cs-more--inspo .cs-read__cap {
 }
 html:root:root .cs-more--inspo .cs-flipbook-scroller { cursor: zoom-in; }
 html:root:root .cs-more--inspo .cs-flipbook-scroller.is-dragging { cursor: grabbing; }
+
+/* Inspiration captions: exactly Caption Caps (beats the card's own label sizing) */
+html:root:root .cs-more--inspo .cs-flipbook-card .cs-read__cap {
+  font-family: "Apercu Light", "Apercu", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: var(--caption-caps-size) !important;
+  letter-spacing: var(--caption-caps-tracking) !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
