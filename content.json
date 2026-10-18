@@ -2711,7 +2711,11 @@
         "/assets/images/bwm--hiker-tipsoo.webp",
         "/assets/images/bwm--pastel-sky-tipsoo.webp",
         "/assets/images/bwm--milky-way-rainier.webp",
-        "/assets/images/bwm--golden-hour-tipsoo.webp"
+        "/assets/images/bwm--golden-hour-tipsoo.webp",
+        "/assets/images/bwm--garter-snake.webp",
+        "/assets/images/bwm--crystal-lake-rainier.webp",
+        "/assets/images/bwm--lupine-meadow.webp",
+        "/assets/images/bwm--myrtle-falls.webp"
       ],
       "related": [],
       "impact": [],
@@ -2723,7 +2727,11 @@
         "/assets/images/bwm--fall-color-study.webp": "Peak Season: A sea of huckleberry plants setting a blaze to Paradise meadows",
         "/assets/images/bwm--pastel-sky-tipsoo.webp": "Peak Season: Pastel Sky over Tipsoo Lake",
         "/assets/images/bwm--milky-way-rainier.webp": "Peak Season: Milky Way over Rainier",
-        "/assets/images/bwm--golden-hour-tipsoo.webp": "Peak Season: Golden Hour over Tipsoo Lake"
+        "/assets/images/bwm--golden-hour-tipsoo.webp": "Peak Season: Golden Hour over Tipsoo Lake",
+        "/assets/images/bwm--garter-snake.webp": "Peak Season: Garter Snake",
+        "/assets/images/bwm--crystal-lake-rainier.webp": "Peak Season: Rainier above Crystal Lake",
+        "/assets/images/bwm--lupine-meadow.webp": "Peak Season: Lupine and Aster Meadow",
+        "/assets/images/bwm--myrtle-falls.webp": "Peak Season: Myrtle Falls"
       }
     }
   }
