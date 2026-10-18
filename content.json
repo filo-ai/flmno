@@ -1868,8 +1868,7 @@
         "/assets/images/syld--syld-wall-advertisment.webp",
         "/assets/images/syld--syld-sticker.webp",
         "/assets/images/syld--support-your-local-dealer.webp",
-        "/assets/images/syld--support-your-local-dealer-wbg.webp",
-        "/assets/images/illustration--get-a-woof-of-that.webp"
+        "/assets/images/syld--support-your-local-dealer-wbg.webp"
       ],
       "related": [
         {
@@ -1916,8 +1915,7 @@
         "/assets/images/syld--syld-wall-advertisment.webp": "Support Your Local Dealer: Wall Advertisement",
         "/assets/images/syld--syld-sticker.webp": "Support Your Local Dealer: Sticker",
         "/assets/images/syld--support-your-local-dealer.webp": "Support Your Local Dealer: Poster, Black",
-        "/assets/images/syld--support-your-local-dealer-wbg.webp": "Support Your Local Dealer: Poster, White",
-        "/assets/images/illustration--get-a-woof-of-that.webp": "Support Your Local Dealer: Dog Illustration"
+        "/assets/images/syld--support-your-local-dealer-wbg.webp": "Support Your Local Dealer: Poster, White"
       }
     },
     "illustration": {
