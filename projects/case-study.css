@@ -2952,3 +2952,13 @@ html:root .cs-gallery--six figure { grid-column: span 3; }
 html:root .cs-gallery--six figure.third { grid-column: span 2; }
 html:root .cs-gallery--six figure.full { grid-column: 1 / -1; }
 @media (max-width: 680px) { html:root .cs-gallery--six { grid-template-columns: 1fr; } html:root .cs-gallery--six figure, html:root .cs-gallery--six figure.third { grid-column: auto; } }
+
+/* desktop project pages: Return home floats bottom-centre, same as phones */
+@media (min-width: 681px) {
+  html:root .cs-header__back {
+    position: fixed !important; top: auto !important; bottom: 14px !important;
+    left: 0 !important; right: 0 !important; margin: 0 auto !important; width: max-content !important;
+    z-index: 61 !important; transform-origin: center bottom !important;
+  }
+}
+@media (min-width: 681px) { html:root .cs-scroll-cue { bottom: 68px !important; } }
