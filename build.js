@@ -44,9 +44,20 @@ function imgFill(url, w, h, q = 82) {
 }
 
 // Image or looping video, whichever the source is
+const VIDEO_DIMS = {};
+function videoRatio(src) {
+  if (src in VIDEO_DIMS) return VIDEO_DIMS[src];
+  let r = "";
+  try {
+    const out = require("child_process").execFileSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", path.join(__dirname, src)], { encoding: "utf8" }).trim();
+    const [w, h] = out.split(",").map(Number);
+    if (w && h) r = ` style="aspect-ratio:${w}/${h}"`;
+  } catch {}
+  return (VIDEO_DIMS[src] = r);
+}
 function media(src, url, attrs = "", alt = "", sizes = "") {
   return isVideo(src)
-    ? `<video src="${src}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(alt)}"${attrs}></video>`
+    ? `<video src="${src}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(alt)}"${videoRatio(src)}${attrs}></video>`
     : `<img src="${url}" alt="${esc(alt)}" class="fade-img" onload="this.classList.add('is-loaded')" onerror="this.classList.add('is-loaded')"${sizeAttrs(src, sizes)}${attrs}>`;
 }
 

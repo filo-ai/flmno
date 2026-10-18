@@ -3060,3 +3060,6 @@ html:root:root .cs-sheet[data-key] .cs-sheet__scroll { padding-top: 12px; box-si
 /* the fixed header bar must not sit on top of the breadcrumb links */
 html:root:root .cs-header { pointer-events: none !important; }
 html:root:root .cs-header > * { pointer-events: auto; }
+
+/* image row: videos fit the row exactly like images (full frame, capped height, no crop) */
+:root .cs-carousel__item video { display: block; width: auto !important; height: 100% !important; max-width: none !important; object-fit: contain !important; }
