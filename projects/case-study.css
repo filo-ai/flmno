@@ -3028,3 +3028,27 @@ html:root:root .site-banner .site-banner__dot { font-size: 12px !important; }
 /* flmno lives in the breadcrumb on project pages; the floating logo is hidden there */
 html:root:root #site-logo, html:root:root #mobile-logo { display: none !important; }
 html:root:root .cs-crumbs a[href="/"] { color: rgba(247, 247, 242, 0.5) !important; }
+
+/* ── Swipe cue: a soft right arrow over the image row; gone as soon as the row moves ── */
+.cs-carousel-wrap { position: relative; }
+.cs-swipe-cue {
+  position: absolute; top: 50%; right: clamp(20px, 3vw, 40px);
+  translate: 0 -50%; z-index: 5; pointer-events: none;
+  color: rgba(255, 255, 255, 0.85);
+  filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.55));
+  opacity: 0; transition: opacity 0.5s ease;
+}
+.cs-swipe-cue.is-visible { opacity: 1; }
+.cs-swipe-cue.is-visible svg { animation: csSwipeNudge 1.8s ease-in-out infinite; }
+.cs-swipe-cue.is-gone { opacity: 0; transition-duration: 0.2s; }
+.cs-swipe-cue svg { display: block; }
+@keyframes csSwipeNudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+@media (prefers-reduced-motion: reduce) { .cs-swipe-cue.is-visible svg { animation: none; } }
+
+/* ── Story card: black fade behind the title, clear at the bottom ── */
+html:root:root .cs-sheet[data-key="story"] .cs-sheet__head {
+  padding-bottom: 64px !important;
+  background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.94) 24%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 72%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%) !important;
+  pointer-events: none;
+}
+html:root:root .cs-sheet[data-key="story"] .cs-sheet__head > * { pointer-events: auto; }

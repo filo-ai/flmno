@@ -4487,3 +4487,6 @@ html:root:root .work-tile .frost-overlay p,
 html:root:root .logo-tile .frost-overlay p,
 html:root:root .frost-overlay p,
 html:root:root .frost-overlay h2 { padding-left: 0 !important; padding-inline: 0 !important; margin-left: 0 !important; margin-inline: 0 !important; text-indent: 0 !important; }
+
+/* homepage scroll-down arrow: centered on the page, not on the 820px wrapper */
+html:root:root .hero-actions.hero-scroll-cue-wrap { left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; margin-inline: 0 !important; }

@@ -322,7 +322,24 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
   const carousel = document.querySelector(".cs-carousel");
-  if (carousel) showHint(carousel, "Drag or scroll to browse", "carousel", 900);
+  if (carousel) {
+    /* right-arrow cue over the image row; fades the moment the row is moved */
+    const wrap = document.createElement("div");
+    wrap.className = "cs-carousel-wrap";
+    carousel.parentNode.insertBefore(wrap, carousel);
+    wrap.appendChild(carousel);
+    const cue = document.createElement("div");
+    cue.className = "cs-swipe-cue";
+    cue.setAttribute("aria-hidden", "true");
+    cue.innerHTML = '<svg width="40" height="24" viewBox="0 0 40 24" fill="none"><line x1="0" y1="12" x2="32" y2="12" stroke="currentColor" stroke-width="1.4"/><path d="M24 4 L34 12 L24 20" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    wrap.appendChild(cue);
+    const goneNow = () => { cue.classList.remove("is-visible"); cue.classList.add("is-gone"); };
+    setTimeout(() => {
+      if (carousel.scrollWidth <= carousel.clientWidth + 4 || carousel.scrollLeft > 4) return;
+      cue.classList.add("is-visible");
+      ["scroll", "wheel", "touchstart", "pointerdown"].forEach((ev) => carousel.addEventListener(ev, goneNow, { once: true, passive: true }));
+    }, 900);
+  }
 
   const related = document.querySelector(".cs-related");
   if (related) showHint(related, "Drag or scroll to browse", "related", 1000);
