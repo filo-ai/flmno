@@ -3056,3 +3056,7 @@ html:root:root .cs-sheet[data-key] .cs-sheet__head > * { pointer-events: auto; }
 html:root:root .cs-sheet[data-key] { inset: 0 !important; height: auto !important; max-height: none !important; border-radius: 0 !important; }
 html:root:root .cs-sheet[data-key] .cs-sheet__head { border-radius: 0 !important; padding-top: calc(36px + env(safe-area-inset-top, 0px)) !important; padding-bottom: 44px !important; }
 html:root:root .cs-sheet[data-key] .cs-sheet__scroll { padding-top: 12px; box-sizing: border-box; }
+
+/* the fixed header bar must not sit on top of the breadcrumb links */
+html:root:root .cs-header { pointer-events: none !important; }
+html:root:root .cs-header > * { pointer-events: auto; }
