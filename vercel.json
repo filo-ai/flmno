@@ -11,6 +11,11 @@
   ],
   "redirects": [
     {
+      "source": "/projects/tedx-website-andamp-marketing/:path*",
+      "destination": "/projects/tedx-website-and-marketing/",
+      "permanent": true
+    },
+    {
       "source": "/projects/reproduction-v-extinction/:path*",
       "destination": "/projects/reproduction-in-the-age-of-extinction/",
       "permanent": true
