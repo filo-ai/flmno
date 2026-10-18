@@ -29,6 +29,11 @@
       "source": "/projects/heavy-met-alphabet/:path*",
       "destination": "/projects/met-alphabet/",
       "permanent": true
+    },
+    {
+      "source": "/projects/bear-with-me/:path*",
+      "destination": "/projects/peak-season/",
+      "permanent": true
     }
   ]
 }
