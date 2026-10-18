@@ -1614,7 +1614,14 @@
         "/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png",
         "/assets/images/poetry--ada-limon-paradise.webp",
         "/assets/images/poetry--ada-limon-conversation.webp",
-        "/media/4d1bdb_aa0a991106fb4bd9861203ef05acbf4f~mv2.jpg"
+        "/media/4d1bdb_aa0a991106fb4bd9861203ef05acbf4f~mv2.jpg",
+        "/assets/images/poetry--unveiling.webp",
+        "/assets/images/poetry--uppermost-poster.webp",
+        "/assets/images/poetry--you-are-here-book.webp",
+        "/assets/images/poetry--gathering-at-the-table.webp",
+        "/assets/images/poetry--uppermost-table-rainier.webp",
+        "/assets/images/poetry--ada-limon-podium.webp",
+        "/assets/images/poetry--ada-limon-rangers.webp"
       ],
       "related": [
         {
@@ -1661,7 +1668,14 @@
         "/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png": "Poetry in Parks: Poetry in Parks Postcard",
         "/assets/images/poetry--ada-limon-paradise.webp": "Poetry in Parks: Ada Limón, U.S. Poet Laureate, Set Against the Mountains That Inspired Her",
         "/assets/images/poetry--ada-limon-conversation.webp": "Poetry in Parks: Ada Limón Addressing the Crowd and My Questions",
-        "/media/4d1bdb_aa0a991106fb4bd9861203ef05acbf4f~mv2.jpg": "Poetry in Parks: Her Autograph for Me"
+        "/media/4d1bdb_aa0a991106fb4bd9861203ef05acbf4f~mv2.jpg": "Poetry in Parks: Her Autograph for Me",
+        "/assets/images/poetry--unveiling.webp": "Poetry in Parks: The Unveiling",
+        "/assets/images/poetry--uppermost-poster.webp": "Poetry in Parks: Uppermost by A. R. Ammons, the Table Artwork",
+        "/assets/images/poetry--you-are-here-book.webp": "Poetry in Parks: You Are Here, Edited by Ada Limón, and a Ranger Hat",
+        "/assets/images/poetry--gathering-at-the-table.webp": "Poetry in Parks: Visitors Gathering Around the Poem Table",
+        "/assets/images/poetry--uppermost-table-rainier.webp": "Poetry in Parks: Uppermost, with Mount Rainier Behind",
+        "/assets/images/poetry--ada-limon-podium.webp": "Poetry in Parks: Ada Limón at the Podium",
+        "/assets/images/poetry--ada-limon-rangers.webp": "Poetry in Parks: Ada Limón in Conversation with Park Rangers"
       }
     },
     "reproduction-v-extinction": {
