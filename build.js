@@ -146,7 +146,7 @@ function renderCarousel(gallery) {
   ).join("\n");
 
   return `
-    <section class="cs-carousel" aria-label="Project images">
+    <section class="cs-carousel"${PAGE.scrollshots ? " data-shots" : ""} aria-label="Project images">
 ${slides}
       <button class="cs-explore" type="button" data-open="gallery">
         <span class="cs-explore__stack" aria-hidden="true">

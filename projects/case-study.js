@@ -851,7 +851,7 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
         const sc = row.find((f) => f.classList.contains('is-scroll'));
         if (sc) {
           const h = Math.round(sc.getBoundingClientRect().height);
-          row.filter((f) => f !== sc).forEach((f) => {
+          row.filter((f) => !f.classList.contains('is-scroll')).forEach((f) => {
             const m = f.querySelector('img, video'); if (!m) return;
             f.style.setProperty('height', h + 'px', 'important');
             m.style.setProperty('height', '100%', 'important'); m.style.setProperty('width', '100%', 'important'); m.style.setProperty('object-fit', 'cover', 'important');

@@ -1954,11 +1954,7 @@
         "/assets/images/ted--wonder-women.webp",
         "/assets/images/ted--landscape-of-hospitality.webp",
         "/assets/images/ted--adventures.webp",
-        "/assets/images/ted--brand-assets.webp",
-        "/assets/images/logos--ted_logo_flmno.webp",
-        "/assets/images/logos--ted_logo_flmno_1.webp",
-        "/assets/images/logos--tedxmilehigh_logo_flmno.webp",
-        "/assets/images/logos--tedxmilehigh_logo_flmno_1.webp"
+        "/assets/images/ted--brand-assets.webp"
       ],
       "related": [
         {
@@ -2002,10 +1998,6 @@
         }
       ],
       "alts": {
-        "/assets/images/logos--ted_logo_flmno.webp": "TEDx Website & Marketing: TED Logo, Black",
-        "/assets/images/logos--ted_logo_flmno_1.webp": "TEDx Website & Marketing: TED Logo, Gray",
-        "/assets/images/logos--tedxmilehigh_logo_flmno.webp": "TEDx Website & Marketing: TEDxMileHigh Logo, Black",
-        "/assets/images/logos--tedxmilehigh_logo_flmno_1.webp": "TEDx Website & Marketing: TEDxMileHigh Logo, Gray",
         "/assets/images/ted--uncommon-speakers.webp": "TEDx Website & Marketing: Uncommon speaker lineup page",
         "/assets/images/ted--uncommon-tickets.webp": "TEDx Website & Marketing: Uncommon tickets page",
         "/assets/images/ted--ticket-guide.webp": "TEDx Website & Marketing: Uncommon ticket guide",
@@ -2015,12 +2007,7 @@
         "/assets/images/ted--adventures.webp": "TEDx Website & Marketing: Adventures page",
         "/assets/images/ted--brand-assets.webp": "TEDx Website & Marketing: Logo and brand assets page"
       },
-      "scrollshots": true,
-      "carousel": [
-        "/assets/images/logos--ted_logo_flmno.webp",
-        "/assets/images/logos--ted_logo_flmno_1.webp",
-        "/assets/images/logos--tedxmilehigh_logo_flmno.webp"
-      ]
+      "scrollshots": true
     },
     "timed-entry-reservation-campaign": {
       "title": "Timed Entry Reservation Campaign",

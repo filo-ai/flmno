@@ -3083,3 +3083,7 @@ html:root:root .cs-scrollshot__cue {
 html:root:root .cs-scrollshot__cue.is-gone { opacity: 0; }
 @keyframes csScrollBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 @media (prefers-reduced-motion: reduce) { html:root:root .cs-scrollshot__cue { animation: none; } }
+
+/* Scrollshot projects: tall page screenshots lead the carousel as top-aligned crops */
+html:root:root .cs-carousel[data-shots] .cs-carousel__item { width: 340px !important; min-width: 0 !important; max-width: 78vw !important; }
+html:root:root .cs-carousel[data-shots] .cs-carousel__item img { width: 100% !important; height: 100% !important; max-width: none !important; object-fit: cover !important; object-position: top center !important; }
