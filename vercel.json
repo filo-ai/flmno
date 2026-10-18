@@ -11,6 +11,11 @@
   ],
   "redirects": [
     {
+      "source": "/projects/reproduction-v-extinction/:path*",
+      "destination": "/projects/reproduction-in-the-age-of-extinction/",
+      "permanent": true
+    },
+    {
       "source": "/projects/:slug/index.html",
       "destination": "/projects/:slug/",
       "permanent": true

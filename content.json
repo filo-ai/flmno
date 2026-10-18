@@ -202,8 +202,8 @@
       ],
       "related": [
         {
-          "title": "Reproduction v Extinction",
-          "href": "../reproduction-v-extinction/",
+          "title": "Reproduction in the Age of Extinction",
+          "href": "../reproduction-in-the-age-of-extinction/",
           "image": "/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
         },
         {
@@ -359,8 +359,8 @@
           "image": "/assets/images/hma--f-800.webp"
         },
         {
-          "title": "Reproduction v Extinction",
-          "href": "../reproduction-v-extinction/",
+          "title": "Reproduction in the Age of Extinction",
+          "href": "../reproduction-in-the-age-of-extinction/",
           "image": "/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
         },
         {
@@ -1112,8 +1112,8 @@
           "image": "/media/4d1bdb_299609df50204297bd0debdeb38765e2~mv2.png"
         },
         {
-          "title": "Reproduction v Extinction",
-          "href": "../reproduction-v-extinction/",
+          "title": "Reproduction in the Age of Extinction",
+          "href": "../reproduction-in-the-age-of-extinction/",
           "image": "/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
         },
         {
@@ -1205,8 +1205,8 @@
           "image": "/media/4d1bdb_ea874cfda78549aeb92c98e66a860b95~mv2.png"
         },
         {
-          "title": "Reproduction v Extinction",
-          "href": "../reproduction-v-extinction/",
+          "title": "Reproduction in the Age of Extinction",
+          "href": "../reproduction-in-the-age-of-extinction/",
           "image": "/media/4d1bdb_eaf9adbf68584db891840ba3000c07a1~mv2.png"
         },
         {
@@ -1678,8 +1678,8 @@
         "/assets/images/poetry--ada-limon-rangers.webp": "Poetry in Parks: Ada Limón in Conversation with Park Rangers"
       }
     },
-    "reproduction-v-extinction": {
-      "title": "Reproduction v Extinction",
+    "reproduction-in-the-age-of-extinction": {
+      "title": "Reproduction in the Age of Extinction",
       "teaser": "A project on Humans v Nature. Details coming soon!",
       "story": [
         "A project aiming to put a spotlight on crucial conversations involving the sustainability of human reproduction in the age of ecological extinctions. More details to come in 2022."
@@ -2616,7 +2616,7 @@
         "/assets/images/logos--la-croix.webp": "Logos: La Croix",
         "/assets/images/logos--maccheroni-republic.webp": "Logos: Maccheroni Republic",
         "/assets/images/logos--la-county.webp": "Logos: LA County",
-        "/assets/images/logos--revex.webp": "Logos: Revex",
+        "/assets/images/logos--revex.webp": "Logos: Reproduction in the Age of Extinction",
         "/assets/images/logos--speak-up.webp": "Logos: Speak Up",
         "/assets/images/logos--teton-artesian-water.webp": "Logos: Teton Artesian Water",
         "/assets/images/logos--atlas.webp": "Logos: Atlas",
