@@ -847,7 +847,7 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
       const rows = new Map();
       figs.forEach((f) => { const k = Math.round(f.offsetTop); (rows.get(k) || rows.set(k, []).get(k)).push(f); });
       rows.forEach((row) => {
-        if (row.length < 2) return;
+        if (row.length < 2 || row.some((f) => f.classList.contains('quad'))) return;
         const sc = row.find((f) => f.classList.contains('is-scroll'));
         if (sc) {
           const h = Math.round(sc.getBoundingClientRect().height);

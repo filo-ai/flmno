@@ -82,7 +82,7 @@ const ph = (src) => (SIZES[src]?.c || "#141417");
 const smallest = (src) => (SIZES[src]?.v.length ? variant(src, SIZES[src].v[0]) : src);
 
 // ── Alt text: explicit override in content.json ("alts": { "<path>": "text" }), else drafted from the filename ──
-let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [], notes: {}, carousel: [], triples: 0, fulls: [], scrollshots: false };
+let PAGE = { slug: "", title: "", alts: {}, pdfs: {}, gallery: [], notes: {}, carousel: [], triples: 0, quads: [], fulls: [], scrollshots: false };
 function altFor(src, i) {
   if (PAGE.alts[src]) return PAGE.alts[src];
   let name = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").split("--").pop();
@@ -247,6 +247,7 @@ function renderGallerySheet(title, gallery) {
   let slot = 0;
   const kinds = gallery.map((src, i) => {
     if (i < T) return "third";
+    if ((PAGE.quads || []).includes(src)) return "quad";
     if ((PAGE.fulls || []).includes(src)) { slot = 1; return "full"; }
     if (slot === 0) { slot = 1; return "full"; }
     slot = slot === 1 ? 2 : 0; return "";
@@ -268,7 +269,7 @@ function renderGallerySheet(title, gallery) {
       <button class="cs-sheet__close cs-zoom__close" type="button" aria-label="Close image">${CLOSE}</button>
     </div>
     <div class="cs-sheet__scroll">
-      <div class="cs-gallery${PAGE.triples ? " cs-gallery--six" : ""}"${PAGE.scrollshots ? " data-scrollshots" : ""}${PAGE.triples || (PAGE.fulls || []).length ? " data-manual" : ""}>
+      <div class="cs-gallery${PAGE.triples || (PAGE.quads || []).length ? " cs-gallery--six" : ""}"${PAGE.scrollshots ? " data-scrollshots" : ""}${PAGE.triples || (PAGE.quads || []).length || (PAGE.fulls || []).length ? " data-manual" : ""}>
 ${figs}
       </div>
     </div>
@@ -418,7 +419,7 @@ function buildPage(slug, project) {
     title, teaser, story = [], meta = {}, gallery = [],
     instagram_posts, related = [], impact = [], stats,
   } = project;
-  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [], notes: project.notes || {}, carousel: project.carousel || [], triples: project.triples || 0, fulls: project.fulls || [], scrollshots: !!project.scrollshots };
+  PAGE = { slug, title, alts: project.alts || {}, pdfs: project.pdfs || {}, gallery: project.gallery || [], light: project.light || [], notes: project.notes || {}, carousel: project.carousel || [], triples: project.triples || 0, fulls: project.fulls || [], quads: project.quads || [], scrollshots: !!project.scrollshots };
 
   // Excerpt for the scroll-lit preview: first sentence(s) up to ~240 chars
   function excerpt(text, limit = 240) {

@@ -2947,11 +2947,16 @@ html:root .cs-flipbook-card .img-label__eyebrow {
 html:root .img-label__note { display: block; margin-top: 10px; max-width: 46ch; font-family: "Apercu", sans-serif; font-weight: 300; font-size: 15px; line-height: 1.4; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.92); }
 
 /* galleries with a leading row of three */
-html:root .cs-gallery--six { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-html:root .cs-gallery--six figure { grid-column: span 3; }
-html:root .cs-gallery--six figure.third { grid-column: span 2; }
+html:root .cs-gallery--six { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+html:root .cs-gallery--six figure { grid-column: span 6; }
+html:root .cs-gallery--six figure.third { grid-column: span 4; }
+html:root .cs-gallery--six figure.quad { grid-column: span 3; }
 html:root .cs-gallery--six figure.full { grid-column: 1 / -1; }
-@media (max-width: 680px) { html:root .cs-gallery--six { grid-template-columns: 1fr; } html:root .cs-gallery--six figure, html:root .cs-gallery--six figure.third { grid-column: auto; } }
+@media (max-width: 680px) { html:root .cs-gallery--six { grid-template-columns: repeat(2, minmax(0, 1fr)); } html:root .cs-gallery--six figure, html:root .cs-gallery--six figure.third, html:root .cs-gallery--six figure.full { grid-column: 1 / -1; } html:root .cs-gallery--six figure.quad { grid-column: auto; } }
+/* four-up instrument row: square white tiles, artwork contained */
+html:root:root .cs-gallery figure.quad::before { content: ''; display: block; padding-top: 100%; }
+html:root:root .cs-gallery figure.quad { aspect-ratio: auto !important; width: 100% !important; min-width: 0; justify-self: stretch; background: #fff !important; }
+html:root:root .cs-gallery figure.quad img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; object-fit: contain !important; padding: 9%; box-sizing: border-box; }
 
 /* desktop project pages: Return home floats bottom-centre, same as phones */
 @media (min-width: 681px) {
