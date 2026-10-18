@@ -2292,7 +2292,13 @@
         "/assets/images/wbg--salmonberry.webp",
         "/assets/images/wbg--pacific-yew.webp",
         "/assets/images/wbg--woodland-strawberry.webp",
-        "/assets/images/wbg--garden-strawberry.webp"
+        "/assets/images/wbg--garden-strawberry.webp",
+        "/assets/images/wbg--red-huckleberry.webp",
+        "/assets/images/wbg--huckleberry-picking.webp",
+        "/assets/images/wbg--bog-blueberry.webp",
+        "/assets/images/wbg--bluebead-lily.webp",
+        "/assets/images/wbg--red-elderberry.webp",
+        "/assets/images/wbg--oregon-grape.webp"
       ],
       "related": [
         {
@@ -2341,7 +2347,13 @@
         "/assets/images/wbg--salmonberry.webp": "Wild Berry Guide: Salmonberry, Rubus spectabilis",
         "/assets/images/wbg--pacific-yew.webp": "Wild Berry Guide: Pacific Yew, Taxus brevifolia",
         "/assets/images/wbg--woodland-strawberry.webp": "Wild Berry Guide: Woodland Strawberry, Fragaria vesca",
-        "/assets/images/wbg--garden-strawberry.webp": "Wild Berry Guide: Garden Strawberry, Fragaria × ananassa"
+        "/assets/images/wbg--garden-strawberry.webp": "Wild Berry Guide: Garden Strawberry, Fragaria × ananassa",
+        "/assets/images/wbg--red-huckleberry.webp": "Wild Berry Guide: Red Huckleberry, Vaccinium parvifolium",
+        "/assets/images/wbg--huckleberry-picking.webp": "Wild Berry Guide: Picking Thinleaf Huckleberries, Vaccinium membranaceum",
+        "/assets/images/wbg--bog-blueberry.webp": "Wild Berry Guide: Bog Blueberry, Vaccinium uliginosum",
+        "/assets/images/wbg--bluebead-lily.webp": "Wild Berry Guide: Bluebead Lily, Clintonia borealis",
+        "/assets/images/wbg--red-elderberry.webp": "Wild Berry Guide: Red Elderberry, Sambucus racemosa",
+        "/assets/images/wbg--oregon-grape.webp": "Wild Berry Guide: Tall Oregon-Grape, Berberis aquifolium"
       }
     },
     "yosemite-national-park-after-dark": {
