@@ -2965,3 +2965,14 @@ html:root .cs-gallery--six figure.full { grid-column: 1 / -1; }
 
 /* Return home stays hidden until the intro has been scrolled past */
 html:root:not(.back-ready) .cs-header__back { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+
+/* Highlights: no arrows, compact cards */
+:root .cs-impact__card { grid-template-rows: auto !important; min-height: 0 !important; gap: 0 !important; padding: 22px 24px 26px !important; align-self: start; }
+:root .cs-impact__track { grid-auto-columns: 280px; align-items: start; }
+:root .cs-impact__head { margin-bottom: 28px; }
+@media (max-width: 700px) { :root .cs-impact__track { grid-auto-columns: 250px; } }
+:root .cs-impact__track { align-items: stretch; grid-auto-columns: 260px; }
+:root .cs-impact__card { align-self: stretch; padding: 18px 20px 20px !important; }
+:root .cs-impact__card__body { gap: 8px !important; padding: 0 !important; margin: 0 !important; }
+:root .cs-impact__card h3 { font-size: 17px !important; line-height: 1.25 !important; margin: 0 !important; }
+:root .cs-impact__card p { font-size: 14px !important; line-height: 1.45 !important; margin: 0 !important; }

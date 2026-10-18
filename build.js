@@ -180,7 +180,6 @@ function renderStory(fill, hasFullStory) {
 function renderImpact(cards) {
   if (!cards?.length) return "";
   const items = cards.map(c => `        <div class="cs-impact__card is-placeholder">
-          ${ARROW}
           <div class="cs-impact__card__body">
             <h3>${esc(c.title)}</h3>
             <p>${esc(c.body)}</p>
