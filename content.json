@@ -1736,11 +1736,12 @@
     },
     "strike-a-match": {
       "title": "Strike a Match",
-      "teaser": "A tennis oasis in a California desert",
+      "teaser": "The Courts is what happens when tennis takes a vacation in the Anza-Borrego Desert.",
       "story": [
-        "The Courts is a playful tennis resort with the hills of the Anza-Borrego Desert as a panoramic backdrop.",
-        "Full of tennis courts, a pool, and some overnight camper vans, the Courts invites the public to enjoy a casually bohemian holiday. Recently acquired by a young design couple, the Courts is a charming, inclusive scene awash in color that vibrates amidst the sandy environment.",
-        "Taking inspiration from the vintage tennis vibe, the poster calls attention to booking a stay with puns and a book of matches."
+        "The Courts is what happens when tennis takes a vacation in the Anza-Borrego Desert.",
+        "There are courts, a pool, camper vans, and a panoramic view of the desert hills. Recently acquired by a young design couple, the resort has a colorful, bohemian spirit that feels less country club and more tennis, but make it a holiday.",
+        "The poster borrows from vintage tennis ephemera and gives it a desert vacation. A book of matches doubles as the pitch: come for the game, stay for the desert.",
+        "Love-all."
       ],
       "meta": {
         "Client": "The Courts",
