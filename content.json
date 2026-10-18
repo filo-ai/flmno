@@ -2288,7 +2288,13 @@
       },
       "gallery": [
         "/media/4d1bdb_986849fe1085410aa86b86780a61f30c~mv2.png",
-        "/media/4d1bdb_346a72dde8dd4529ada073eabb5b43c9~mv2.png"
+        "/media/4d1bdb_346a72dde8dd4529ada073eabb5b43c9~mv2.png",
+        "/assets/images/wbg--mountain-ash-autumn.webp",
+        "/assets/images/wbg--mountain-ash-berries.webp",
+        "/assets/images/wbg--salmonberry.webp",
+        "/assets/images/wbg--pacific-yew.webp",
+        "/assets/images/wbg--woodland-strawberry.webp",
+        "/assets/images/wbg--garden-strawberry.webp"
       ],
       "related": [
         {
@@ -2330,7 +2336,15 @@
           "title": "Illustration as Authority",
           "body": "The detailed botanical illustration style lent the guide a credibility that photography alone couldn't have achieved."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/wbg--mountain-ash-autumn.webp": "Wild Berry Guide: Western Mountain-Ash, Sorbus scopulina",
+        "/assets/images/wbg--mountain-ash-berries.webp": "Wild Berry Guide: Western Mountain-Ash, Sorbus scopulina",
+        "/assets/images/wbg--salmonberry.webp": "Wild Berry Guide: Salmonberry, Rubus spectabilis",
+        "/assets/images/wbg--pacific-yew.webp": "Wild Berry Guide: Pacific Yew, Taxus brevifolia",
+        "/assets/images/wbg--woodland-strawberry.webp": "Wild Berry Guide: Woodland Strawberry, Fragaria vesca",
+        "/assets/images/wbg--garden-strawberry.webp": "Wild Berry Guide: Garden Strawberry, Fragaria × ananassa"
+      }
     },
     "yosemite-national-park-after-dark": {
       "title": "Yosemite National Park After Dark",
