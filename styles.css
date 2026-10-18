@@ -3809,7 +3809,7 @@ html:root .apple-card .svc-plus.is-light { color: rgba(247, 247, 242, 0.92) !imp
 @media (max-width: 680px) {
   html:root .apple-service-grid { gap: 10px !important; }
   html:root .apple-card, html:root .apple-card:hover { height: 64px !important; }
-  html:root .apple-card .svc-pill { font-size: 18px !important; }
+  html:root .apple-card .svc-pill { font-size: 16px !important; }
 }
 html:root .apple-card, html:root .apple-card:hover {
   flex-direction: row !important;
@@ -3859,7 +3859,7 @@ html:root .svc-ways a { color: #f7f7f2 !important; text-decoration: underline; t
 html:root .svc-ways a:hover { text-decoration-color: transparent; }
 @media (max-width: 680px) {
   html:root .svc-lede { font-size: 24px !important; }
-  html:root .svc-eyebrow, html:root .svc-ways { font-size: 18px !important; }
+  html:root .svc-eyebrow, html:root .svc-ways { font-size: 16px !important; }
 }
 
 /* sheet: what's included + two actions */
@@ -4429,11 +4429,11 @@ html:root .site-banner .site-banner__dot { font-size: 9px !important; }
 :root { --banner-h: 23px; }
 
 /* ══ CAPTION CAPS ══
-   The site's small-label style: Apercu Light, all caps, normal spacing, 18px.
+   The site's small-label style: Apercu Light, all caps, normal spacing, 16px.
    Used by: top banner, breadcrumbs, image captions and hover tags, story-card
    section labels, contact warnings and status, footer line, homepage hover tags. */
 html:root:root {
-  --caption-caps-size: 18px;
+  --caption-caps-size: 16px;
 }
 html:root:root .site-banner,
 html:root:root .cs-crumbs li,
@@ -4467,10 +4467,10 @@ html:root:root footer p a {
 }
 html:root:root .site-banner { line-height: var(--banner-h) !important; }
 html:root:root .site-banner .site-banner__dot { font-size: 12px !important; }
-:root { --banner-h: 32px; }
+:root { --banner-h: 28px; }
 @media (max-width: 680px) {
   html:root:root .contact-field .field-error,
   html:root:root .cs-read figure.cs-read__fig figcaption,
   html:root:root .cs-read .cs-read__row figure.cs-read__fig figcaption,
-  html:root:root .cs-grid .cs-grid__item figure figcaption { font-size: 18px !important; }
+  html:root:root .cs-grid .cs-grid__item figure figcaption { font-size: 16px !important; }
 }
