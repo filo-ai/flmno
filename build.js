@@ -258,7 +258,7 @@ function renderGallerySheet(title, gallery) {
       <button class="cs-sheet__close cs-zoom__close" type="button" aria-label="Close image">${CLOSE}</button>
     </div>
     <div class="cs-sheet__scroll">
-      <div class="cs-gallery${PAGE.triples ? " cs-gallery--six" : ""}">
+      <div class="cs-gallery${PAGE.triples ? " cs-gallery--six" : ""}"${PAGE.triples || (PAGE.fulls || []).length ? " data-manual" : ""}>
 ${figs}
       </div>
     </div>

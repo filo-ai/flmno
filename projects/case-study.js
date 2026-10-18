@@ -134,6 +134,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (gallery) {
     const figs = [...gallery.children];
     const layout = () => {
+      if (gallery.hasAttribute("data-manual")) return;
       let run = [];
       const flush = () => { if (run.length % 2) run[run.length - 1].classList.add("full"); run = []; };
       figs.forEach((f) => {
@@ -808,4 +809,42 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
   sync();
   addEventListener('scroll', sync, { passive: true });
   addEventListener('resize', sync);
+})();
+
+/* ══ Gallery sheet: images sharing a row get the same height (the taller one is cropped a little, never gaps) ══ */
+(() => {
+  const gal = document.querySelector('.cs-gallery');
+  if (!gal) return;
+  const dims = (m) => {
+    const w = +m.getAttribute('width') || m.naturalWidth || m.videoWidth || 0;
+    const h = +m.getAttribute('height') || m.naturalHeight || m.videoHeight || 0;
+    return w && h ? h / w : 0;
+  };
+  let lastW = 0, busy = false;
+  const apply = () => {
+    if (busy) return; busy = true;
+    const figs = [...gal.querySelectorAll(':scope > figure')];
+    figs.forEach((f) => { f.style.removeProperty('height'); const m = f.querySelector('img, video'); if (m) { ['height', 'width', 'object-fit'].forEach((p) => m.style.removeProperty(p)); } });
+    if (gal.clientWidth) {
+      const rows = new Map();
+      figs.forEach((f) => { const k = Math.round(f.offsetTop); (rows.get(k) || rows.set(k, []).get(k)).push(f); });
+      rows.forEach((row) => {
+        if (row.length < 2) return;
+        const hs = row.map((f) => { const m = f.querySelector('img, video'); const r = m ? dims(m) : 0; return r ? f.clientWidth * r : 0; });
+        if (hs.some((h) => !h)) return;
+        const target = Math.round(Math.max(Math.min(...hs), 0.7 * Math.max(...hs)));
+        row.forEach((f) => {
+          f.style.setProperty('height', target + 'px', 'important');
+          const m = f.querySelector('img, video');
+          m.style.setProperty('height', '100%', 'important');
+          m.style.setProperty('width', '100%', 'important');
+          m.style.setProperty('object-fit', 'cover', 'important');
+        });
+      });
+    }
+    busy = false;
+  };
+  if ('ResizeObserver' in window) new ResizeObserver(() => { const w = gal.clientWidth; if (w !== lastW) { lastW = w; apply(); } }).observe(gal);
+  gal.querySelectorAll('img, video').forEach((m) => { m.addEventListener('load', apply); m.addEventListener('loadedmetadata', apply); });
+  addEventListener('resize', apply);
 })();
