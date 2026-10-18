@@ -4480,4 +4480,4 @@ html:root:root .site-banner .site-banner__dot { font-size: 12px !important; }
 @font-face { font-family: "Reckless Book"; src: url("assets/fonts/RecklessStandardM-TRIAL-BookItalic.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
 html:root:root .scroll-headline { font-family: "Apercu", Helvetica, Arial, sans-serif !important; font-weight: 400 !important; letter-spacing: -0.005em !important; }
 html:root:root .scroll-headline .scroll-char { font-family: "Apercu", Helvetica, Arial, sans-serif !important; font-weight: 400 !important; letter-spacing: 0 !important; }
-html:root:root .scroll-headline .scroll-char.flourish { font-family: "Reckless", Georgia, serif !important; font-style: italic !important; font-weight: 500 !important; font-size: 1.08em; line-height: 1; letter-spacing: 0 !important; }
+html:root:root .scroll-headline .scroll-char.flourish { font-family: "Reckless Book", "Reckless", Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; font-size: 1.08em; line-height: 1; letter-spacing: 0 !important; }
