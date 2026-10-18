@@ -418,7 +418,10 @@
         "/media/4d1bdb_b2791b92c3a043c7875d60719f2cfe39~mv2.png",
         "/media/4d1bdb_bd58ac4404bf42b5b9087c3238a7b6e4~mv2.png",
         "/media/4d1bdb_5435ad75ffe34627a3c747aba21a19a8~mv2.jpg",
-        "/media/4d1bdb_a1ffcd4b3a874bbda300e23f1ab9060d~mv2.jpg"
+        "/media/4d1bdb_a1ffcd4b3a874bbda300e23f1ab9060d~mv2.jpg",
+        "/assets/images/eggslut--tote-bag.webp",
+        "/assets/images/eggslut--tshirt-worn.webp",
+        "/assets/images/eggslut--tshirt-back-kitchen.webp"
       ],
       "related": [
         {
@@ -460,7 +463,12 @@
           "title": "Limited-Run Success",
           "body": "The limited promotional items became sought-after collectibles among fans of both properties."
         }
-      ]
+      ],
+      "alts": {
+        "/assets/images/eggslut--tote-bag.webp": "Eggslut x HBO: black tote bag printed with the Eggslut egg and \"Have a nice day\"",
+        "/assets/images/eggslut--tshirt-worn.webp": "Eggslut x HBO: black Eggslut t-shirt, front",
+        "/assets/images/eggslut--tshirt-back-kitchen.webp": "Eggslut x HBO: Eggslut staff wearing the back-print t-shirt in the kitchen"
+      }
     },
     "galen-tines-zine": {
       "title": "Galen-tines Zine",
