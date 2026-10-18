@@ -3052,3 +3052,9 @@ html:root:root .cs-sheet[data-key="story"] .cs-sheet__head {
   pointer-events: none;
 }
 html:root:root .cs-sheet[data-key="story"] .cs-sheet__head > * { pointer-events: auto; }
+/* story card: the black fade also covers the strip above the card, edge to edge */
+html:root:root .cs-sheet[data-key="story"].is-open::backdrop {
+  background:
+    linear-gradient(to bottom, #000 0, #000 12px, rgba(0,0,0,0.94) 36px, rgba(0,0,0,0.72) 62px, rgba(0,0,0,0.34) 92px, rgba(0,0,0,0.1) 112px, rgba(0,0,0,0) 124px),
+    rgba(0, 0, 0, calc(0.55 * (1 - var(--drag, 0)))) !important;
+}
