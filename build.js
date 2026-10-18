@@ -378,7 +378,7 @@ for (const m of HOME_HTML.matchAll(/data-filter="([^"]+)">([^<]+)<\/button>/g)) 
 
 function crumbsFor(slug) {
   const tag = PROJECT_TAGS[slug], label = tag && FILTER_LABELS[tag];
-  const items = [`<li><a href="/#work">Work</a></li>`];
+  const items = [`<li><a href="/">flmno</a></li>`, `<li><a href="/#work">Work</a></li>`];
   if (label) items.push(`<li><a href="/?filter=${tag}#work">${esc(label)}</a></li>`);
   return `<nav class="cs-crumbs" aria-label="Breadcrumb"><ol>${items.join("")}</ol></nav>`;
 }

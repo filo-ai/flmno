@@ -3024,3 +3024,7 @@ html:root:root .site-banner .site-banner__dot { font-size: 12px !important; }
   html:root:root .cs-read .cs-read__row figure.cs-read__fig figcaption,
   html:root:root .cs-grid .cs-grid__item figure figcaption { font-size: 14px !important; }
 }
+
+/* flmno lives in the breadcrumb on project pages; the floating logo is hidden there */
+html:root:root #site-logo, html:root:root #mobile-logo { display: none !important; }
+html:root:root .cs-crumbs a[href="/"] { color: rgba(247, 247, 242, 0.5) !important; }
