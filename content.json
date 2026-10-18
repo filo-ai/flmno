@@ -111,7 +111,7 @@
       "meta": {
         "Client": "Mount Rainier National Park",
         "Year": "2025",
-        "Skills & Tools": "—"
+        "Skills & Tools": "Photography"
       },
       "gallery": [
         "/media/4d1bdb_e991e031885646219d562ac5ef78aa7a~mv2.jpeg",
@@ -1323,12 +1323,12 @@
       ],
       "impact": [
         {
-          "title": "Opening Day Attention",
+          "title": "Opening Day Anticipation Post-Pandemic",
           "body": "The brand identity was cited in local press coverage of the restaurant's opening as a standout element."
         },
         {
-          "title": "Menu as Keepsake",
-          "body": "Guests frequently asked to keep the menu — an unusual outcome that reflected how much the design added to the experience."
+          "title": "Easily editable, printable in office",
+          "body": "It was important to the owner and chefs to be able to update the menu often. So I gave them the power to edit it through Figma."
         },
         {
           "title": "Visual Consistency",
@@ -1518,7 +1518,7 @@
       "title": "Mount Rainier Visitor Center Winter and Spring Panels",
       "teaser": "A PSAR guide to navigating Mount Rainier National Park in the winter and spring.",
       "story": [
-        "The snowiest place in the U.S. is also one of the most breathtaking—and the most dangerous.",
+        "The snowiest place in the [continuguous] U.S. is spectacular in the Summer—but dangerous and deadly in the winter.",
         "At Mount Rainier National Park, winter is pure magic, but it’s also deep snow, whiteout conditions, and terrain that doesn’t forgive mistakes. As a Visual Information Specialist, I designed brand-new preventative Search and Rescue panels for the winter and spring seasons—now installed at the Paradise Visitor Center—to help visitors stay safe in an unpredictable landscape.",
         "I worked with other rangers and subject matter experts to make sure the messaging was accurate, clear, and visually sharp. Every detail was intentional: from the photography (which I shot myself) to the copywriting, layout, and even a ski route map. Because staying safe in the backcountry starts long before you step into the snow."
       ],
@@ -1571,8 +1571,8 @@
           "body": "The winter and spring editions ensured the visitor centre felt current and useful year-round, not just in peak season."
         },
         {
-          "title": "Cartographic Clarity",
-          "body": "Complex topographic and trail data was made immediately readable by a broad and often non-technical audience."
+          "title": "Reduction in SARs",
+          "body": "Though causation is not correlation, the number of search and rescue operations declined over the season."
         }
       ]
     },
