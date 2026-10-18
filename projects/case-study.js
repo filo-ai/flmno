@@ -29,7 +29,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     sheet.showModal();
     sheet.querySelector(".cs-sheet__scroll").scrollTop = 0;
     document.documentElement.style.overflow = "hidden";
-    requestAnimationFrame(() => requestAnimationFrame(() => sheet.classList.add("is-open")));
+    requestAnimationFrame(() => requestAnimationFrame(() => { sheet.classList.add("is-open"); window.dispatchEvent(new Event("resize")); }));
     const url = new URL(location.href);
     url.searchParams.set(key, "true");
     history.replaceState(null, "", url);

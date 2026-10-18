@@ -3092,3 +3092,7 @@ html:root:root .cs-scrollshot__cue.is-gone { opacity: 0; }
 /* Scrollshot projects: tall page screenshots lead the carousel as top-aligned crops */
 html:root:root .cs-carousel[data-shots] .cs-carousel__item { width: 340px !important; min-width: 0 !important; max-width: 78vw !important; }
 html:root:root .cs-carousel[data-shots] .cs-carousel__item img { width: 100% !important; height: 100% !important; max-width: none !important; object-fit: cover !important; object-position: top center !important; }
+
+/* Inspiration stack inside the story card */
+html:root:root .cs-read .cs-more--inspo { margin: 8px 0 40px !important; }
+html:root:root .cs-read .cs-more--inspo .cs-flipbook-wrap { margin: 0 !important; width: 100% !important; }

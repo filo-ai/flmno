@@ -227,10 +227,10 @@ function renderRelated(related, opts = {}) {
       : `          <span class="cs-flipbook-slide" role="img" aria-label="${esc(n.title)}"></span>`
   ).join("\n");
   return `
-    <section class="cs-more${opts.cls ? " " + opts.cls : ""}">
+    <section class="cs-more${opts.cls ? " " + opts.cls : ""}">${opts.bare ? "" : `
       <div class="cs-more__head">
         <h1 class="cs-more__title">${esc(opts.title || "Related Work")}</h1>
-      </div>
+      </div>`}
       <div class="cs-flipbook-wrap">
         <div class="cs-flipbook-stage">
           <div class="cs-flipbook-stack">
@@ -279,7 +279,7 @@ ${figs}
   </dialog>`;
 }
 
-function renderStorySheet(title, story, meta) {
+function renderStorySheet(title, story, meta, inspo = []) {
   if (!story?.length) return "";
   let firstDone = false;
   const paras = story.map((it) => {
@@ -313,6 +313,7 @@ function renderStorySheet(title, story, meta) {
         .map(([k, v]) => `          <dt>${esc(k)}</dt><dd>${esc(v)}</dd>`)
         .join("\n")
     : "";
+  const inspoHtml = inspo.length ? `\n        <h3 class="cs-read__h">Inspiration</h3>\n${renderRelated(inspo, { linked: false, bare: true, cls: "cs-more--inspo" })}` : "";
   const hr = credits ? `\n      <hr>\n      <dl>\n${credits}\n      </dl>` : "";
   return `
   <dialog class="cs-sheet" data-key="story" aria-label="${esc(title)}: the full story">
@@ -323,7 +324,7 @@ function renderStorySheet(title, story, meta) {
     </div>
     <div class="cs-sheet__scroll">
       <article class="cs-read">
-${paras}${hr}
+${paras}${inspoHtml}${hr}
       </article>
     </div>
   </dialog>`;
@@ -503,11 +504,10 @@ ${renderEmbed(project.embed)}
 ${renderStats(stats)}
 ${hasIG ? renderInstagramFeed(instagram_posts) : ""}
 ${renderImpact(impact)}
-${renderRelated((project.inspiration || []).map(n => ({ title: n.title, eyebrow: n.source, image: n.image })), { linked: false, title: "Inspiration", cls: "cs-more--inspo" })}
 ${renderRelated(relatedByTags(slug, related))}
   </main>
 ${project.grid ? "" : renderGallerySheet(title, gallery)}
-${renderStorySheet(title, story, meta)}
+${renderStorySheet(title, story, meta, (project.inspiration || []).map(n => ({ title: n.title, eyebrow: n.source, image: n.image })))}
   <script src="../case-study.js"></script>
 </body>
 </html>
