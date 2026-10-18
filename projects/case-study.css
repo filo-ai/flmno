@@ -3046,13 +3046,13 @@ html:root:root .cs-crumbs a[href="/"] { color: rgba(247, 247, 242, 0.5) !importa
 @media (prefers-reduced-motion: reduce) { .cs-swipe-cue.is-visible svg { animation: none; } }
 
 /* ── Story card: black fade behind the title, clear at the bottom ── */
-html:root:root .cs-sheet[data-key="story"] .cs-sheet__head {
+html:root:root .cs-sheet[data-key] .cs-sheet__head {
   padding-bottom: 64px !important;
   background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.94) 24%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 72%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%) !important;
   pointer-events: none;
 }
-html:root:root .cs-sheet[data-key="story"] .cs-sheet__head > * { pointer-events: auto; }
+html:root:root .cs-sheet[data-key] .cs-sheet__head > * { pointer-events: auto; }
 /* story card: sheet runs to the very top of the screen; the fade is one solid black-to-clear gradient with a soft blur under it */
-html:root:root .cs-sheet[data-key="story"] { inset: 0 !important; height: auto !important; max-height: none !important; border-radius: 0 !important; }
-html:root:root .cs-sheet[data-key="story"] .cs-sheet__head { border-radius: 0 !important; padding-top: calc(36px + env(safe-area-inset-top, 0px)) !important; padding-bottom: 44px !important; }
-html:root:root .cs-sheet[data-key="story"] .cs-sheet__scroll { padding-top: 12px; box-sizing: border-box; }
+html:root:root .cs-sheet[data-key] { inset: 0 !important; height: auto !important; max-height: none !important; border-radius: 0 !important; }
+html:root:root .cs-sheet[data-key] .cs-sheet__head { border-radius: 0 !important; padding-top: calc(36px + env(safe-area-inset-top, 0px)) !important; padding-bottom: 44px !important; }
+html:root:root .cs-sheet[data-key] .cs-sheet__scroll { padding-top: 12px; box-sizing: border-box; }
