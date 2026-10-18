@@ -139,6 +139,7 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const flush = () => { if (run.length % 2) run[run.length - 1].classList.add("full"); run = []; };
       figs.forEach((f) => {
         const img = f.querySelector("img, video");
+        if (f.classList.contains("is-scroll")) return;
         f.classList.remove("full");
         const iw = img.naturalWidth || img.videoWidth, ih = img.naturalHeight || img.videoHeight;
         const wide = iw && iw / ih > 1.15;
@@ -847,6 +848,16 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
       figs.forEach((f) => { const k = Math.round(f.offsetTop); (rows.get(k) || rows.set(k, []).get(k)).push(f); });
       rows.forEach((row) => {
         if (row.length < 2) return;
+        const sc = row.find((f) => f.classList.contains('is-scroll'));
+        if (sc) {
+          const h = Math.round(sc.getBoundingClientRect().height);
+          row.filter((f) => f !== sc).forEach((f) => {
+            const m = f.querySelector('img, video'); if (!m) return;
+            f.style.setProperty('height', h + 'px', 'important');
+            m.style.setProperty('height', '100%', 'important'); m.style.setProperty('width', '100%', 'important'); m.style.setProperty('object-fit', 'cover', 'important');
+          });
+          return;
+        }
         const hs = row.map((f) => { const m = f.querySelector('img, video'); const r = m ? dims(m) : 0; return r ? f.clientWidth * r : 0; });
         if (hs.some((h) => !h)) return;
         const target = Math.round(Math.max(Math.min(...hs), 0.7 * Math.max(...hs)));
@@ -864,4 +875,40 @@ document.addEventListener('dragstart', (e) => { if (e.target.closest('img, video
   if ('ResizeObserver' in window) new ResizeObserver(() => { const w = gal.clientWidth; if (w !== lastW) { lastW = w; apply(); } }).observe(gal);
   gal.querySelectorAll('img, video').forEach((m) => { m.addEventListener('load', apply); m.addEventListener('loadedmetadata', apply); });
   addEventListener('resize', apply);
+})();
+
+
+/* ══ Scrollshots: long page screenshots sit in a normal-sized window and scroll inside it ══ */
+(() => {
+  const gal = document.querySelector('.cs-gallery[data-scrollshots]');
+  if (!gal) return;
+  const TALL = 1.7;                                   // height / width above this = a long screenshot
+  const ARROW = '<svg width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true"><line x1="12" y1="0" x2="12" y2="32" stroke="currentColor" stroke-width="1.4"/><path d="M4 24 L12 34 L20 24" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const make = (f, m) => {
+    if (f.classList.contains('is-scroll')) return;
+    f.classList.add('is-scroll'); f.classList.remove('full');
+    const box = document.createElement('div');
+    box.className = 'cs-scrollshot';
+    m.parentNode.insertBefore(box, m); box.appendChild(m);
+    const cue = document.createElement('span');
+    cue.className = 'cs-scrollshot__cue'; cue.setAttribute('aria-hidden', 'true'); cue.innerHTML = ARROW;
+    f.appendChild(cue);
+    const done = () => cue.classList.add('is-gone');
+    box.addEventListener('scroll', () => { if (box.scrollTop > 4) done(); }, { passive: true });
+    box.addEventListener('wheel', done, { passive: true, once: true });
+    box.addEventListener('touchstart', done, { passive: true, once: true });
+    box.addEventListener('keydown', done, { once: true });
+    box.tabIndex = 0;
+  };
+  const check = (f) => {
+    const m = f.querySelector('img, video'); if (!m) return;
+    const w = +m.getAttribute('width') || m.naturalWidth || m.videoWidth || 0;
+    const h = +m.getAttribute('height') || m.naturalHeight || m.videoHeight || 0;
+    if (w && h && h / w > TALL) { make(f, m); window.dispatchEvent(new Event('resize')); }
+  };
+  [...gal.querySelectorAll(':scope > figure')].forEach((f) => {
+    const m = f.querySelector('img, video'); if (!m) return;
+    check(f);
+    m.addEventListener('load', () => check(f)); m.addEventListener('loadedmetadata', () => check(f));
+  });
 })();

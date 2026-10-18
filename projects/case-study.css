@@ -3063,3 +3063,23 @@ html:root:root .cs-header > * { pointer-events: auto; }
 
 /* image row: videos fit the row exactly like images (full frame, capped height, no crop) */
 :root .cs-carousel__item video { display: block; width: auto !important; height: 100% !important; max-width: none !important; object-fit: contain !important; }
+
+/* ── Scrollshots: long page screenshots scroll inside a normal-sized gallery window ── */
+html:root:root .cs-gallery figure.is-scroll { position: relative; aspect-ratio: 4 / 3; height: auto !important; align-self: start; overflow: hidden !important; cursor: default; }
+html:root:root .cs-scrollshot {
+  position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden;
+  overscroll-behavior: auto; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.35) transparent;
+  -webkit-overflow-scrolling: touch; outline: none;
+}
+html:root:root .cs-scrollshot::-webkit-scrollbar { width: 8px; }
+html:root:root .cs-scrollshot::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.32); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+html:root:root .cs-gallery figure.is-scroll .cs-scrollshot img { display: block; width: 100% !important; height: auto !important; max-width: none !important; object-fit: fill !important; }
+html:root:root .cs-gallery figure.is-scroll .img-label { pointer-events: none !important; }
+html:root:root .cs-scrollshot__cue {
+  position: absolute; left: 50%; bottom: 14px; translate: -50% 0; z-index: 4; pointer-events: none;
+  color: rgba(255,255,255,0.9); filter: drop-shadow(0 1px 8px rgba(0,0,0,0.6));
+  animation: csScrollBob 1.8s ease-in-out infinite; transition: opacity 0.4s ease;
+}
+html:root:root .cs-scrollshot__cue.is-gone { opacity: 0; }
+@keyframes csScrollBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) { html:root:root .cs-scrollshot__cue { animation: none; } }

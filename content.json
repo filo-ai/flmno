@@ -1998,7 +1998,8 @@
         "/assets/images/logos--ted_logo_flmno_1.webp": "TEDx Website & Marketing: TED Logo, Gray",
         "/assets/images/logos--tedxmilehigh_logo_flmno.webp": "TEDx Website & Marketing: TEDxMileHigh Logo, Black",
         "/assets/images/logos--tedxmilehigh_logo_flmno_1.webp": "TEDx Website & Marketing: TEDxMileHigh Logo, Gray"
-      }
+      },
+      "scrollshots": true
     },
     "timed-entry-reservation-campaign": {
       "title": "Timed Entry Reservation Campaign",
