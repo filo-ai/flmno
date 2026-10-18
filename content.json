@@ -174,13 +174,7 @@
         "What do you get when you cross a symphony orchestra with a star chart? Hopefully, a younger audience.",
         "I started looking at the Colorado Symphony as a constellation: individual musicians and instruments, each with a precise place in the larger composition. Traditional star charts became the jumping-off point, with the orchestra’s stage arrangement translated into a celestial system of points, lines, and patterns.",
         "The visual identity turns the concert hall into something closer to an observatory. Posters, concert collateral, and merchandise map the orchestra into a visual universe—part celestial atlas, part concert identity.",
-        "The result is a system that gives the symphony a little more mystery, a little more wonder, and hopefully a reason to look twice.",
-        {
-          "imgs": [
-            "/assets/images/cso--cso-concept-drawings.webp",
-            "/assets/images/cso--cso-stellar-map.webp"
-          ]
-        }
+        "The result is a system that gives the symphony a little more mystery, a little more wonder, and hopefully a reason to look twice."
       ],
       "meta": {
         "Client": "Colorado Symphony Orchestra",
@@ -272,6 +266,18 @@
         "/assets/images/cso--instrument-trombone.webp",
         "/assets/images/cso--instrument-trumpet.webp",
         "/assets/images/cso--instrument-french-horn.webp"
+      ],
+      "inspiration": [
+        {
+          "title": "Concept Drawings",
+          "source": "",
+          "image": "/assets/images/cso--cso-concept-drawings.webp"
+        },
+        {
+          "title": "Stellar Map",
+          "source": "",
+          "image": "/assets/images/cso--cso-stellar-map.webp"
+        }
       ]
     },
     "editorial-rhythm": {
@@ -744,36 +750,14 @@
       "teaser": "Somewhere between a horseshoe, a piece of machinery, and a rhinestone-studded fever dream, I found an alphabet. Yeeeee-hawwww.",
       "story": [
         "Somewhere between a horseshoe, a piece of machinery, and a rhinestone-studded fever dream, I found an alphabet. Yeeeee-hawwww.",
-        {
-          "img": "/assets/images/hma--inspiration-horseshoe-stage.webp"
-        },
         "You ever seen Beyoncé on stage?",
         "Neither have I. Maybe you have. All I can do is devour whatever crumbs of shaky cellphone footage make it onto YouTube. Bless those people.",
         "Cowboy Carter makes cowboy core feel futuristic and glamorous: polished chrome, glowing horseshoes, rhinestones, fringe, and a little swashbuckling flair. Add some literal spaghetti Western imagery, a little Orville Peck, and a healthy dose of machinery, and I had an excuse to go a little feral.",
-        {
-          "imgs": [
-            "/assets/images/hma--inspiration-spaghetti-western.webp",
-            "/assets/images/hma--inspiration-color.webp",
-            "/assets/images/hma--inspiration-vintage-poster.webp"
-          ]
-        },
-        {
-          "imgs": [
-            "/assets/images/hma--inspiration-silver-western.webp",
-            "/assets/images/hma--inspiration-silver-armor.webp"
-          ]
-        },
         "The letters became things to fabricate rather than things to draw. I stretched them, folded them, bent them, layered them, and let them get a little unruly.",
         "Some became heavy and mechanical; others revealed their internal structure.",
         "The question became less How do I make a letter out of metal? and more What would metal look like if it behaved like a ribbon?",
-        {
-          "img": "/assets/images/hma--inspiration-mirrored-horse.webp"
-        },
         "Forged in the West.",
         "The result is an alphabet somewhere between rodeo hardware, industrial machinery, and something that fell out of a spaceship (Beyoncé’s “Alien Superstar,” anyone?).",
-        {
-          "img": "/assets/images/hma--inspiration-silver-hat.webp"
-        },
         "Ride ’em, typeboy.",
         "A new alphabet, forged somewhere between the frontier and the future."
       ],
@@ -851,7 +835,49 @@
         "/assets/images/hma--inspiration-color.webp": "Met-alphabet: Lotsa reds and yellers",
         "/assets/images/hma--inspiration-vintage-poster.webp": "Met-alphabet: Inspiration: vintage Western poster"
       },
-      "lede": "Somewhere between a horseshoe, a piece of machinery, and a rhinestone-studded fever dream, I found an alphabet. Yeeeee-hawwww."
+      "lede": "Somewhere between a horseshoe, a piece of machinery, and a rhinestone-studded fever dream, I found an alphabet. Yeeeee-hawwww.",
+      "inspiration": [
+        {
+          "title": "Horseshoe Stage",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-horseshoe-stage.webp"
+        },
+        {
+          "title": "Spaghetti Western",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-spaghetti-western.webp"
+        },
+        {
+          "title": "Color",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-color.webp"
+        },
+        {
+          "title": "Vintage Western Poster",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-vintage-poster.webp"
+        },
+        {
+          "title": "Silver Western",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-silver-western.webp"
+        },
+        {
+          "title": "Silver Armor",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-silver-armor.webp"
+        },
+        {
+          "title": "Mirrored Horse",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-mirrored-horse.webp"
+        },
+        {
+          "title": "Silver Hat and Boots",
+          "source": "",
+          "image": "/assets/images/hma--inspiration-silver-hat.webp"
+        }
+      ]
     },
     "jackraisanen": {
       "title": "JackRaisanen.com",
@@ -1021,9 +1047,6 @@
         "Before I could figure out what the graphic should look like, I had to figure out what on earth I was looking at.",
         "So I embarked on a mission of my own, consuming a glut of research papers, technical documents, mission resources, imagery, and scientific literature—both from the team and externally.",
         "Old National Geographic infographics on space. The New York Times science section. Physical books detailing lunar water discoveries dating back to the 1960s. I looked at lunar missions. Studied spacecraft representations, scientific data visualization, geology, diagrams, and decades of space exploration.",
-        {
-          "img": "/assets/images/ltb--moodboard.webp"
-        },
         "[There was no shortage of high-quality Moon imagery, either. LROC had that covered.](https://lroc.im-ldi.com/images/)",
         "Things started to accumulate mass.",
         "I had finally reached productive saturation.",
@@ -1050,9 +1073,6 @@
         "The water droplet represents the obvious quarry. The geometric structure pulls from the crystalline and mineral world. Contours suggest both lunar topography and the signatures Trailblazer is looking for. The square field references the defined footprint being observed from orbit.",
         {
           "img": "/assets/images/ltb--logo.webp"
-        },
-        {
-          "img": "/assets/images/ltb--logo-archive.webp"
         },
         "From there, the language could expand into technical linework, measurement marks, spectral graphs, orbital paths, geological forms, and the spacecraft itself.",
         {
@@ -1188,6 +1208,16 @@
       },
       "inspiration": [
         {
+          "title": "Moodboard",
+          "source": "",
+          "image": "/assets/images/ltb--moodboard.webp"
+        },
+        {
+          "title": "Space Exploration Logo Archive",
+          "source": "",
+          "image": "/assets/images/ltb--logo-archive.webp"
+        },
+        {
           "title": "A Year After Pluto",
           "source": "The New York Times",
           "image": "/assets/images/ltb-inspo--nyt-a-year-after-pluto.webp"
@@ -1247,20 +1277,7 @@
         "The restaurant is an oasis of good hospitality and excellent food enclosed within a garden setting hidden away from the streets of downtown. The new logo focuses on a pasta known as \"farfalle\" — a butterfly.",
         "The pasta shape (also known as a bowtie pasta) is often dressed with light vegetable sauces as a summer pasta, to eat alfresco when the butterflies are in full swing. When invited to step into the restaurant, one can feel immediately transported to a humble, but elegant Italian villa.",
         "The treatment of the typeface stays true to the lettering found on the classic, red Fiat stationed nearby the restaurant's pastificio. Reducing the logo down to simple elements, it feels classic, charming, and fresh.",
-        "Unfortunately, COVID shut down this project and QR codes came to be in favor.",
-        {
-          "imgs": [
-            "/media/4d1bdb_6a3bb0753c674ee9bddbb57d0239e874~mv2.jpg",
-            "/media/4d1bdb_ee8ab6a3f3da46f783931b22b567c8bc~mv2.jpeg"
-          ]
-        },
-        {
-          "imgs": [
-            "/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg",
-            "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg",
-            "/assets/images/mr--fiat.webp"
-          ]
-        }
+        "Unfortunately, COVID shut down this project and QR codes came to be in favor."
       ],
       "meta": {
         "Client": "Maccheroni Republic",
@@ -1332,7 +1349,34 @@
         "/assets/images/mr--menus-drinks-antipasti.webp": "Maccheroni Republic: Drinks and Antipasti Menus",
         "/assets/images/mr--fiat.webp": "Maccheroni Republic: Inspiration",
         "/assets/images/mr--instagram.webp": "Maccheroni Republic: Instagram"
-      }
+      },
+      "inspiration": [
+        {
+          "title": "Inspiration 1",
+          "source": "",
+          "image": "/media/4d1bdb_6a3bb0753c674ee9bddbb57d0239e874~mv2.jpg"
+        },
+        {
+          "title": "Inspiration 2",
+          "source": "",
+          "image": "/media/4d1bdb_ee8ab6a3f3da46f783931b22b567c8bc~mv2.jpeg"
+        },
+        {
+          "title": "Inspiration 3",
+          "source": "",
+          "image": "/media/4d1bdb_2a5423a659e24230b8d48f48b7c706fa~mv2.jpeg"
+        },
+        {
+          "title": "Inspiration 4",
+          "source": "",
+          "image": "/media/4d1bdb_2bcae1d2e6a84574897643394960b54d~mv2.jpeg"
+        },
+        {
+          "title": "The Classic Red Fiat",
+          "source": "",
+          "image": "/assets/images/mr--fiat.webp"
+        }
+      ]
     },
     "motion-pulse": {
       "title": "Motion Pulse",
@@ -1829,9 +1873,6 @@
         "/assets/images/the-courts--strike-a-match.webp",
         "/assets/images/the-courts--strike-a-match-2.webp",
         "/assets/images/the-courts--strike-a-match-02.webp",
-        "/assets/images/the-courts--location-inspiration-imagery-2.webp",
-        "/assets/images/the-courts--location-inspiration-imagery-2-1.webp",
-        "/assets/images/the-courts--location-inspiration-imagery-3.webp",
         "/assets/images/static--matchbook.webp"
       ],
       "related": [
@@ -1885,7 +1926,24 @@
         "/assets/images/the-courts--location-inspiration-imagery-3.webp": "Strike a Match: Inspiration, Court Fence",
         "/assets/images/static--matchbook.webp": "Strike a Match: Matchbook Illustration"
       },
-      "lede": "The Courts is what happens when tennis takes a vacation in the Anza-Borrego Desert."
+      "lede": "The Courts is what happens when tennis takes a vacation in the Anza-Borrego Desert.",
+      "inspiration": [
+        {
+          "title": "Coffee Cup",
+          "source": "",
+          "image": "/assets/images/the-courts--location-inspiration-imagery-2.webp"
+        },
+        {
+          "title": "Clubhouse Interior",
+          "source": "",
+          "image": "/assets/images/the-courts--location-inspiration-imagery-2-1.webp"
+        },
+        {
+          "title": "Court Fence",
+          "source": "",
+          "image": "/assets/images/the-courts--location-inspiration-imagery-3.webp"
+        }
+      ]
     },
     "support-your-local-dealer": {
       "title": "Support Your Local Dealer",
