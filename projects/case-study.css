@@ -3096,3 +3096,19 @@ html:root:root .cs-carousel[data-shots] .cs-carousel__item img { width: 100% !im
 /* Inspiration stack inside the story card */
 html:root:root .cs-read .cs-more--inspo { margin: 8px 0 40px !important; }
 html:root:root .cs-read .cs-more--inspo .cs-flipbook-wrap { margin: 0 !important; width: 100% !important; }
+
+/* ── Text card body: one step heavier (Reckless Medium) ── */
+html:root:root .cs-read p:not(.first):not(.cs-read__epigraph):not(.cs-read__pull):not(.cs-read__lines):not(.cs-read__links),
+html:root:root .cs-read hr + dl dd { font-weight: 500 !important; }
+
+/* ── Inspiration stack: captions styled like the other story images; click opens the viewer ── */
+html:root:root .cs-more--inspo .cs-flipbook-card .img-label { display: none !important; }
+html:root:root .cs-more--inspo .cs-read__cap {
+  position: absolute; left: 0; right: 0; bottom: 0; margin: 0; z-index: 3;
+  padding: 56px 16px 14px; text-align: left; color: #fff; pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0) 100%);
+  font-family: "Apercu Light", "Apercu", sans-serif; font-weight: 300; font-size: var(--caption-caps-size, 14px);
+  letter-spacing: var(--caption-caps-tracking, 0.04em); text-transform: uppercase; line-height: 1.3;
+}
+html:root:root .cs-more--inspo .cs-flipbook-scroller { cursor: zoom-in; }
+html:root:root .cs-more--inspo .cs-flipbook-scroller.is-dragging { cursor: grabbing; }

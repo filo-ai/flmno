@@ -218,7 +218,7 @@ function renderRelated(related, opts = {}) {
     const op = i <= 1 ? "1" : "0";
     return `          <div class="cs-flipbook-card${i === 0 ? " is-active" : ""}" aria-hidden="true" style="--tx:${tx};--tz:${tz};--ry:${ry};--op:${op};z-index:${100 - i * 10};background-color:${ph(n.image)}">
             ${imgTag}
-            ${imgLabel(linked ? tagsFor(n.href) : (n.eyebrow || ""), n.title)}${linked ? soonPill(n.href) : ""}
+            ${linked ? imgLabel(tagsFor(n.href), n.title) + soonPill(n.href) : `<span class="cs-read__cap">${esc(n.title)}${n.eyebrow ? ` — ${esc(n.eyebrow)}` : ""}</span>`}
           </div>`;
   }).join("\n");
   const slides = related.map((n) =>
@@ -323,7 +323,12 @@ function renderStorySheet(title, story, meta, inspo = []) {
       <span class="cs-sheet__grab" aria-hidden="true"></span>
       <h2 class="cs-sheet__title">${esc(title)}</h2>
     </div>
-    <div class="cs-sheet__scroll">
+${inspo.length ? `    <div class="cs-zoom" hidden role="dialog" aria-label="Image viewer">
+      <p class="cs-zoom__count" aria-live="polite"><span class="cs-zoom__count-n">1</span> / ${inspo.length}</p>
+      <img class="cs-zoom__img" alt="" draggable="false">
+      <button class="cs-sheet__close cs-zoom__close" type="button" aria-label="Close image">${CLOSE}</button>
+    </div>
+` : ""}    <div class="cs-sheet__scroll">
       <article class="cs-read">
 ${paras}${inspoUsed ? "" : inspoHtml}${hr}
       </article>

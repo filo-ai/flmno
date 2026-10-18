@@ -432,6 +432,9 @@ const __RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (i !== activeIndex()) {
           e.preventDefault();
           scroller.scrollTo({ left: i * slideW, behavior: __RM ? 'auto' : 'smooth' });
+        } else if (wrap.closest('.cs-more--inspo')) {
+          const sh = wrap.closest('.cs-sheet');
+          if (sh && sh._openZoom) sh._openZoom(i);
         }
       });
     });
@@ -574,12 +577,13 @@ document.addEventListener('contextmenu', e => {
 
 
 /* ══ Gallery: full-screen viewer — tap to open, pinch/double-tap to zoom, swipe for next ══ */
-(() => {
-  const sheet = document.querySelector('.cs-sheet[data-key="gallery"]');
-  const zoom = sheet && sheet.querySelector('.cs-zoom');
+document.querySelectorAll('.cs-sheet').forEach((sheet) => {
+  const zoom = sheet.querySelector('.cs-zoom');
   if (!zoom) return;
   const img = zoom.querySelector('.cs-zoom__img');
-  const figs = [...sheet.querySelectorAll('.cs-gallery figure')].filter(f => f.querySelector('img'));
+  const figs = (sheet.dataset.key === 'gallery'
+    ? [...sheet.querySelectorAll('.cs-gallery figure')]
+    : [...sheet.querySelectorAll('.cs-more--inspo .cs-flipbook-card')]).filter(f => f.querySelector('img'));
   if (!figs.length) return;
   let index = 0, z = 1, px = 0, py = 0;
   const apply = () => { img.style.setProperty('--z', z); img.style.setProperty('--x', px + 'px'); img.style.setProperty('--y', py + 'px'); };
@@ -691,7 +695,8 @@ document.addEventListener('contextmenu', e => {
   zoom.addEventListener('pointerup', end);
   zoom.addEventListener('pointercancel', end);
   zoom.addEventListener('lostpointercapture', (e) => { if (pts.has(e.pointerId)) end(e); });
-})();
+  sheet._openZoom = open;
+});
 
 /* ── Flipbook: the card under the pointer shows its label (cards sit beneath the swipe layer) ── */
 document.querySelectorAll('.cs-flipbook-wrap').forEach((wrap) => {
