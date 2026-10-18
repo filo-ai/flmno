@@ -2976,3 +2976,50 @@ html:root:not(.back-ready) .cs-header__back { opacity: 0 !important; visibility:
 :root .cs-impact__card__body { gap: 8px !important; padding: 0 !important; margin: 0 !important; }
 :root .cs-impact__card h3 { font-size: 17px !important; line-height: 1.25 !important; margin: 0 !important; }
 :root .cs-impact__card p { font-size: 14px !important; line-height: 1.45 !important; margin: 0 !important; }
+
+/* ══ CAPTION CAPS ══
+   The site's small-label style: Apercu Light, all caps, normal spacing, 18px.
+   Used by: top banner, breadcrumbs, image captions and hover tags, story-card
+   section labels, contact warnings and status, footer line, homepage hover tags. */
+html:root:root {
+  --caption-caps-size: 18px;
+}
+html:root:root .site-banner,
+html:root:root .cs-crumbs li,
+html:root:root .cs-crumbs a,
+html:root:root .img-label__eyebrow,
+html:root:root .cs-flipbook-card .img-label__eyebrow,
+html:root:root .cs-read h3.cs-read__h,
+html:root:root .cs-read dl.cs-read__terms dt,
+html:root:root .cs-read hr + dl dt,
+html:root:root .cs-read figure.cs-read__fig figcaption,
+html:root:root .cs-read .cs-read__row figure.cs-read__fig figcaption,
+html:root:root .cs-grid__item figcaption,
+html:root:root .cs-grid .cs-grid__item figure figcaption,
+html:root:root .cs-embed__bar,
+html:root:root .frost-overlay p,
+html:root:root .work-tile .frost-overlay p,
+html:root:root .logo-tile .frost-overlay p,
+html:root:root .contact-field .field-error,
+html:root:root .contact-status,
+html:root:root .contact-status a,
+html:root:root .site-footer p,
+html:root:root .site-footer p a,
+html:root:root footer p,
+html:root:root footer p a {
+  font-family: "Apercu Light", "Apercu", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: var(--caption-caps-size) !important;
+  letter-spacing: normal !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
+html:root:root .site-banner { line-height: var(--banner-h) !important; }
+html:root:root .site-banner .site-banner__dot { font-size: 12px !important; }
+:root { --banner-h: 32px; }
+@media (max-width: 680px) {
+  html:root:root .contact-field .field-error,
+  html:root:root .cs-read figure.cs-read__fig figcaption,
+  html:root:root .cs-read .cs-read__row figure.cs-read__fig figcaption,
+  html:root:root .cs-grid .cs-grid__item figure figcaption { font-size: 18px !important; }
+}
