@@ -1470,7 +1470,7 @@
           "image": "/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png"
         },
         {
-          "title": "Yosemite NP After Dark",
+          "title": "Yosemite National Park",
           "href": "../yosemite-national-park-after-dark/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
@@ -1527,7 +1527,7 @@
       ],
       "related": [
         {
-          "title": "Yosemite NP After Dark",
+          "title": "Yosemite National Park",
           "href": "../yosemite-national-park-after-dark/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
@@ -1673,7 +1673,7 @@
           "image": "/media/4d1bdb_06168b181b92410e99faf6b76332d5e0~mv2.png"
         },
         {
-          "title": "Yosemite NP After Dark",
+          "title": "Yosemite National Park",
           "href": "../yosemite-national-park-after-dark/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         },
@@ -2357,7 +2357,7 @@
       }
     },
     "yosemite-national-park-after-dark": {
-      "title": "Yosemite National Park After Dark",
+      "title": "Yosemite National Park",
       "teaser": "A modest mélange of my photos from Yosemite National Park",
       "story": [
         {
@@ -2425,17 +2425,17 @@
         }
       ],
       "alts": {
-        "/assets/images/yose--yosemite-dark-sky.webp": "Yosemite National Park After Dark: Yosemite Falls, Dark Sky",
-        "/assets/images/yose--firefall-evening.webp": "Yosemite National Park After Dark: Firefall at Evening",
-        "/assets/images/yose--yosemite-horsetail-falls-firefall.webp": "Yosemite National Park After Dark: Horsetail Fall Firefall",
-        "/assets/images/yose--yosemite-falls-at-night.webp": "Yosemite National Park After Dark: Falls at Night, Framed Print",
-        "/assets/images/yose--yosemite-falls-stair-trails.webp": "Yosemite National Park After Dark: Yosemite Falls Star Trails",
-        "/assets/images/yose--cooks-meadow.webp": "Yosemite National Park After Dark: Cook's Meadow",
-        "/assets/images/yose--coopers-hawk.webp": "Yosemite National Park After Dark: Cooper's Hawk",
-        "/assets/images/yose--great-grey-owl.webp": "Yosemite National Park After Dark: Great Grey Owl",
-        "/assets/images/yose--horsetail-fall-firefall-2.webp": "Yosemite National Park After Dark: Horsetail Fall Firefall, Detail",
-        "/assets/images/yose--vernal-falls.webp": "Yosemite National Park After Dark: Vernal Fall",
-        "/assets/images/yose--vernal-falls-overlook.webp": "Yosemite National Park After Dark: Vernal Fall Overlook"
+        "/assets/images/yose--yosemite-dark-sky.webp": "Yosemite National Park: Yosemite Falls, Dark Sky",
+        "/assets/images/yose--firefall-evening.webp": "Yosemite National Park: Firefall at Evening",
+        "/assets/images/yose--yosemite-horsetail-falls-firefall.webp": "Yosemite National Park: Horsetail Fall Firefall",
+        "/assets/images/yose--yosemite-falls-at-night.webp": "Yosemite National Park: Falls at Night, Framed Print",
+        "/assets/images/yose--yosemite-falls-stair-trails.webp": "Yosemite National Park: Yosemite Falls Star Trails",
+        "/assets/images/yose--cooks-meadow.webp": "Yosemite National Park: Cook's Meadow",
+        "/assets/images/yose--coopers-hawk.webp": "Yosemite National Park: Cooper's Hawk",
+        "/assets/images/yose--great-grey-owl.webp": "Yosemite National Park: Great Grey Owl",
+        "/assets/images/yose--horsetail-fall-firefall-2.webp": "Yosemite National Park: Horsetail Fall Firefall, Detail",
+        "/assets/images/yose--vernal-falls.webp": "Yosemite National Park: Vernal Fall",
+        "/assets/images/yose--vernal-falls-overlook.webp": "Yosemite National Park: Vernal Fall Overlook"
       }
     },
     "yosemite-orientation-boards": {
@@ -2625,7 +2625,7 @@
           "image": "/media/4d1bdb_61cf2ae0be3048c184526937b24695dd~mv2.png"
         },
         {
-          "title": "Yosemite NP After Dark",
+          "title": "Yosemite National Park",
           "href": "../yosemite-national-park-after-dark/index.html",
           "image": "/assets/images/yose--yosemite-dark-sky.webp"
         }
