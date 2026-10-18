@@ -2978,11 +2978,12 @@ html:root:not(.back-ready) .cs-header__back { opacity: 0 !important; visibility:
 :root .cs-impact__card p { font-size: 14px !important; line-height: 1.45 !important; margin: 0 !important; }
 
 /* ══ CAPTION CAPS ══
-   The site's small-label style: Apercu Light, all caps, normal spacing, 14px.
+   The site's small-label style: Apercu Light, all caps, slight spacing (0.04em), 14px.
    Used by: top banner, breadcrumbs, image captions and hover tags, story-card
    section labels, contact warnings and status, footer line, homepage hover tags. */
 html:root:root {
   --caption-caps-size: 14px;
+  --caption-caps-tracking: 0.04em;
 }
 html:root:root .site-banner,
 html:root:root .cs-crumbs li,
@@ -3010,7 +3011,7 @@ html:root:root footer p a {
   font-family: "Apercu Light", "Apercu", sans-serif !important;
   font-weight: 300 !important;
   font-size: var(--caption-caps-size) !important;
-  letter-spacing: normal !important;
+  letter-spacing: var(--caption-caps-tracking) !important;
   text-transform: uppercase !important;
   line-height: 1.3 !important;
 }
