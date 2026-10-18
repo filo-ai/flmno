@@ -11,6 +11,11 @@
   ],
   "redirects": [
     {
+      "source": "/projects/:slug/index.html",
+      "destination": "/projects/:slug/",
+      "permanent": true
+    },
+    {
       "source": "/projects/yosemite-national-park-after-dark/:path*",
       "destination": "/projects/yosemite-national-park/",
       "permanent": true
@@ -40,5 +45,7 @@
       "destination": "/projects/peak-season/",
       "permanent": true
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true
 }

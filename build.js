@@ -357,7 +357,7 @@ for (const m of HOME_HTML.matchAll(/<article class="work-item[^"]*" data-tags="(
   HOME_TILES.push({ slug: m[2], tags: m[1].trim().split(/\s+/), image: m[3].replace(/\/v1\/fill\/.*$/, ""), title: m[4].trim() });
 }
 // ── "Coming soon" projects: any homepage tile carrying the pill ──
-const SOON = new Map([...HOME_HTML.matchAll(/href="projects\/([^/"]+)\/index\.html">\s*<span class="tile-soon">([^<]*)<\/span>/g)].map(m => [m[1], m[2]]));
+const SOON = new Map([...HOME_HTML.matchAll(/href="projects\/([^/"]+)\/(?:index\.html)?">\s*<span class="tile-soon">([^<]*)<\/span>/g)].map(m => [m[1], m[2]]));
 const soonPill = (href) => {
   const m = String(href || "").match(/(?:projects\/|^\.\.\/)([^/"]+)\//);
   return m && SOON.has(m[1]) ? `\n            <span class="tile-soon">${SOON.get(m[1])}</span>` : "";
@@ -370,7 +370,7 @@ function relatedByTags(slug, fallback, max = 6) {
     .filter(x => x.t.slug !== slug && x.shared > 0)
     .sort((a, b) => b.primary - a.primary || b.shared - a.shared || a.order - b.order)
     .slice(0, max)
-    .map(({ t }) => ({ title: t.title.replace(/&amp;/g, "&"), href: `../${t.slug}/index.html`, image: t.image }));
+    .map(({ t }) => ({ title: t.title.replace(/&amp;/g, "&"), href: `../${t.slug}/`, image: t.image }));
   return picks.length ? picks : fallback;
 }
 const FILTER_LABELS = {};
@@ -461,10 +461,10 @@ function buildPage(slug, project) {
 </head>
 <body>
   <div class="site-banner" role="region" aria-label="Site notice"><div class="site-banner__track"><div class="site-banner__group"><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i></div><div class="site-banner__group" aria-hidden="true"><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i><span class="site-banner__item">PARDON THE CONSTRUCTION — THIS SITE IS STILL BEING CALIBRATED</span><i class="site-banner__dot" aria-hidden="true">●</i></div></div></div>
-  <a href="../../index.html" id="mobile-logo" aria-label="flmno home"><span class="logo-word">flmno</span></a>
+  <a href="/" id="mobile-logo" aria-label="flmno home"><span class="logo-word">flmno</span></a>
   <header class="cs-header">
-    <a class="cs-header__brand site-logo" href="../../index.html" id="site-logo" aria-label="flmno home"><span class="logo-word">flmno</span></a>
-    <a class="cs-header__back" href="../../index.html#work"><svg class="return-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>Return home</a>
+    <a class="cs-header__brand site-logo" href="/" id="site-logo" aria-label="flmno home"><span class="logo-word">flmno</span></a>
+    <a class="cs-header__back" href="/#work"><svg class="return-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>Return home</a>
   </header>
   <a class="cs-scroll-cue" href="#" aria-label="Scroll down">
     <svg width="24" height="40" viewBox="0 0 24 40" fill="none" aria-hidden="true">
