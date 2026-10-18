@@ -281,12 +281,14 @@ ${figs}
 
 function renderStorySheet(title, story, meta, inspo = []) {
   if (!story?.length) return "";
-  let firstDone = false;
+  let firstDone = false, inspoUsed = false;
+  const inspoHtml = inspo.length ? `\n        <h3 class="cs-read__h">Inspiration</h3>\n${renderRelated(inspo, { linked: false, bare: true, cls: "cs-more--inspo" })}` : "";
   const paras = story.map((it) => {
     if (typeof it === "string") {
       const cls = firstDone ? "" : ' class="first"'; firstDone = true;
       return `        <p${cls}>${esc(it).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => `<a href="${u}">${t}</a>`)}</p>`;
     }
+    if (it.inspiration) { inspoUsed = true; return inspoHtml; }
     if (it.h) return `        <h3 class="cs-read__h">${esc(it.h)}</h3>`;
     if (it.epigraph) return `        <p class="cs-read__epigraph">${it.epigraph.map(esc).join("<br>")}</p>`;
     if (it.lines) return `        <p class="cs-read__lines">${it.lines.map(esc).join("<br>")}</p>`;
@@ -313,7 +315,6 @@ function renderStorySheet(title, story, meta, inspo = []) {
         .map(([k, v]) => `          <dt>${esc(k)}</dt><dd>${esc(v)}</dd>`)
         .join("\n")
     : "";
-  const inspoHtml = inspo.length ? `\n        <h3 class="cs-read__h">Inspiration</h3>\n${renderRelated(inspo, { linked: false, bare: true, cls: "cs-more--inspo" })}` : "";
   const hr = credits ? `\n      <hr>\n      <dl>\n${credits}\n      </dl>` : "";
   return `
   <dialog class="cs-sheet" data-key="story" aria-label="${esc(title)}: the full story">
@@ -324,7 +325,7 @@ function renderStorySheet(title, story, meta, inspo = []) {
     </div>
     <div class="cs-sheet__scroll">
       <article class="cs-read">
-${paras}${inspoHtml}${hr}
+${paras}${inspoUsed ? "" : inspoHtml}${hr}
       </article>
     </div>
   </dialog>`;

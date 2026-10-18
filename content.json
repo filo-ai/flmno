@@ -173,6 +173,9 @@
       "story": [
         "What do you get when you cross a symphony orchestra with a star chart? Hopefully, a younger audience.",
         "I started looking at the Colorado Symphony as a constellation: individual musicians and instruments, each with a precise place in the larger composition. Traditional star charts became the jumping-off point, with the orchestra’s stage arrangement translated into a celestial system of points, lines, and patterns.",
+        {
+          "inspiration": true
+        },
         "The visual identity turns the concert hall into something closer to an observatory. Posters, concert collateral, and merchandise map the orchestra into a visual universe—part celestial atlas, part concert identity.",
         "The result is a system that gives the symphony a little more mystery, a little more wonder, and hopefully a reason to look twice."
       ],
@@ -753,6 +756,9 @@
         "You ever seen Beyoncé on stage?",
         "Neither have I. Maybe you have. All I can do is devour whatever crumbs of shaky cellphone footage make it onto YouTube. Bless those people.",
         "Cowboy Carter makes cowboy core feel futuristic and glamorous: polished chrome, glowing horseshoes, rhinestones, fringe, and a little swashbuckling flair. Add some literal spaghetti Western imagery, a little Orville Peck, and a healthy dose of machinery, and I had an excuse to go a little feral.",
+        {
+          "inspiration": true
+        },
         "The letters became things to fabricate rather than things to draw. I stretched them, folded them, bent them, layered them, and let them get a little unruly.",
         "Some became heavy and mechanical; others revealed their internal structure.",
         "The question became less How do I make a letter out of metal? and more What would metal look like if it behaved like a ribbon?",
@@ -1048,6 +1054,9 @@
         "So I embarked on a mission of my own, consuming a glut of research papers, technical documents, mission resources, imagery, and scientific literature—both from the team and externally.",
         "Old National Geographic infographics on space. The New York Times science section. Physical books detailing lunar water discoveries dating back to the 1960s. I looked at lunar missions. Studied spacecraft representations, scientific data visualization, geology, diagrams, and decades of space exploration.",
         "[There was no shortage of high-quality Moon imagery, either. LROC had that covered.](https://lroc.im-ldi.com/images/)",
+        {
+          "inspiration": true
+        },
         "Things started to accumulate mass.",
         "I had finally reached productive saturation.",
         {
@@ -1073,6 +1082,12 @@
         "The water droplet represents the obvious quarry. The geometric structure pulls from the crystalline and mineral world. Contours suggest both lunar topography and the signatures Trailblazer is looking for. The square field references the defined footprint being observed from orbit.",
         {
           "img": "/assets/images/ltb--logo.webp"
+        },
+        {
+          "imgs": [
+            "/assets/images/ltb--patch.webp",
+            "/assets/images/ltb--logo-archive.webp"
+          ]
         },
         "From there, the language could expand into technical linework, measurement marks, spectral graphs, orbital paths, geological forms, and the spacecraft itself.",
         {
@@ -1213,11 +1228,6 @@
           "image": "/assets/images/ltb--moodboard.webp"
         },
         {
-          "title": "Space Exploration Logo Archive",
-          "source": "",
-          "image": "/assets/images/ltb--logo-archive.webp"
-        },
-        {
           "title": "A Year After Pluto",
           "source": "The New York Times",
           "image": "/assets/images/ltb-inspo--nyt-a-year-after-pluto.webp"
@@ -1277,6 +1287,9 @@
         "The restaurant is an oasis of good hospitality and excellent food enclosed within a garden setting hidden away from the streets of downtown. The new logo focuses on a pasta known as \"farfalle\" — a butterfly.",
         "The pasta shape (also known as a bowtie pasta) is often dressed with light vegetable sauces as a summer pasta, to eat alfresco when the butterflies are in full swing. When invited to step into the restaurant, one can feel immediately transported to a humble, but elegant Italian villa.",
         "The treatment of the typeface stays true to the lettering found on the classic, red Fiat stationed nearby the restaurant's pastificio. Reducing the logo down to simple elements, it feels classic, charming, and fresh.",
+        {
+          "inspiration": true
+        },
         "Unfortunately, COVID shut down this project and QR codes came to be in favor."
       ],
       "meta": {
@@ -1860,6 +1873,9 @@
       "story": [
         "The Courts is what happens when tennis takes a vacation in the Anza-Borrego Desert.",
         "There are courts, a pool, camper vans, and a panoramic view of the desert hills. Recently acquired by a young design couple, the resort has a colorful, bohemian spirit that feels less country club and more tennis, but make it a holiday.",
+        {
+          "inspiration": true
+        },
         "The poster borrows from vintage tennis ephemera and gives it a desert vacation. A book of matches doubles as the pitch: come for the game, stay for the desert.",
         "Love-all."
       ],
