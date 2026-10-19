@@ -76,29 +76,34 @@ if (scribblePath && scribbleSection) {
   scribblePath.style.strokeDashoffset = scribbleLength;
 
   function animateScribbleOnScroll() {
+    scribbleTick = false;
     const rect = scribbleSection.getBoundingClientRect();
     const windowHeight = window.innerHeight;
+    const centre = rect.top + rect.height / 2;
 
     /*
-      Delay the animation until the scribble is comfortably visible.
-      It stays fully gray until the section top reaches about 38% down
-      the viewport, then completes as the section moves upward.
+      Starts as the drawing's middle enters the lower part of the screen and is
+      fully drawn by the time that middle reaches just above the screen centre,
+      so the whole line is finished while the drawing is still comfortably in view.
     */
-    const start = windowHeight * 0.38;
-    const end = -rect.height * 0.18;
+    const start = windowHeight * 0.88;
+    const end = windowHeight * 0.48;
 
-    const rawProgress = (start - rect.top) / (start - end);
-    const progress = Math.min(1, Math.max(0, rawProgress));
+    let progress = Math.min(1, Math.max(0, (start - centre) / (start - end)));
+    // if the page can't scroll any further, never leave it half-drawn
+    if (window.scrollY + windowHeight >= document.documentElement.scrollHeight - 2 && rect.top < windowHeight) progress = 1;
 
     scribblePath.style.strokeDashoffset = scribbleLength * (1 - progress);
 
     scribbleSection.classList.toggle("is-drawing", progress > 0.03 && progress < 0.98);
     scribbleSection.classList.toggle("is-complete", progress >= 0.98);
-
-    requestAnimationFrame(animateScribbleOnScroll);
   }
 
-  requestAnimationFrame(animateScribbleOnScroll);
+  let scribbleTick = false;
+  const queueScribble = () => { if (!scribbleTick) { scribbleTick = true; requestAnimationFrame(animateScribbleOnScroll); } };
+  window.addEventListener("scroll", queueScribble, { passive: true });
+  window.addEventListener("resize", queueScribble);
+  queueScribble();
 }
 
 
